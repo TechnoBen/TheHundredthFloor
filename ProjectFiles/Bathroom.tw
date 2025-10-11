@@ -1,0 +1,9 @@
+:: Bathroom {"position":"300,950","size":"100,100"}
+You entered the bathroom.
+It's not big but theres a shower, a toilet and a sink... You look around thinking that something is missing.
+
+"God dammit I forgot to put toilet paper after I finished using it..."
+
+[[Go back |Go out of the room]]
+
+

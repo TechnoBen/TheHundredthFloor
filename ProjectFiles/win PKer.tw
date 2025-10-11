@@ -1,0 +1,46 @@
+:: win PKer [autosave] {"position":"300,2700","size":"100,100"}
+You beated the PKer that has attacked you.
+What are you gonna do with him?
+
+@@#opt3;
+<<link "Spare him.">><<replace "#opt3">>
+You put your weapon away and tell him to run away. 
+He stands up and goes away.
+
+<<link "Continue">>
+<<goto $lastVisitedPassage>>
+<</link>>
+<</replace>><</link>>
+<<link "Kill him.">><<replace "#opt3">>
+You killed the PKer...
+
+<<link "Continue">>
+<<set $Reputation -= 75>>
+<<set $killedPKers += 1>>
+<<if $killedPKers >= 100>>
+	<<if $lootchance lte 30>>
+		<<BloodlustGain>>
+	<</if>>
+<<elseif $killedPKers >= 85>>
+	<<if $lootchance lte 20>>
+		<<BloodlustGain>>
+	<</if>>
+<<elseif $killedPKers >= 70>>
+	<<if $lootchance lte 12>>
+		<<BloodlustGain>>
+	<</if>>
+<<elseif $killedPKers >= 50>>
+	<<if $lootchance lte 8>>
+		<<BloodlustGain>>
+	<</if>>
+<<elseif $killedPKers >= 30>>
+	<<if $lootchance lte 5>>
+		<<BloodlustGain>>
+	<</if>>
+<</if>>
+<<goto $lastVisitedPassage>>
+<</link>>
+<</replace>><</link>>
+@@
+
+

@@ -1,0 +1,22 @@
+:: Run away... {"position":"300,2075","size":"100,100"}
+You decided that you should run away...
+
+<<link "Go back">>
+	<<set $turnChanceCur to $turnChanceMax>>
+    <<set $NPCs.RadiantRose.turnChanceCur to $NPCs.RadiantRose.turnChanceMax>>
+    <<set $NPCs.ShadowScythe.turnChanceCur to $NPCs.ShadowScythe.turnChanceMax>>
+    <<set $NPCs.CrimsonSentinel.turnChanceCur to $NPCs.CrimsonSentinel.turnChanceMax>>
+    <<set $NPCs.Zegrath.turnChanceCur to $NPCs.Zegrath.turnChanceMax>>
+    <<unset $bonusTurnPlayer>>
+    <<unset $bonusTurnRadiantRose>>
+    <<unset $bonusTurnShadowScythe>>
+    <<unset $bonusTurnCrimsonSentinel>>
+    <<unset $bonusTurnZegrath>>
+    <<set $combat_drops = []>>
+    <<set $combatCol to 0>>
+    <<set $combatXP to 0>>
+    <<set $combat_log = []>>
+<<goto $lastVisitedPassage>>
+<</link>>
+
+

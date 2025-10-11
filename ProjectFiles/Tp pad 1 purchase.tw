@@ -1,0 +1,26 @@
+:: Tp pad 1 purchase {"position":"1850,1775","size":"100,100"}
+You get closer to the Teleportation pad to see a screen popup infront of you...
+
+"You need to buy access to the Teleportation pad to use it."
+
+<div class="UIButtons">
+<<button "Buy access to the teleportation pad. | 1000 coins">>
+<<if $Coins >= 1000>>
+<<set $Coins -= 1000>>
+<<set $tppadONE to true>>
+<<goto "Town centre">>
+<<elseif $tppadONE == true>>
+<<script>>
+UI.alert("You already bought the house!");
+<</script>>
+<<elseif $Coins <= 999>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+</div>
+
+[[Go back|Town centre]]
+
+

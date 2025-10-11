@@ -1,0 +1,79 @@
+:: Achievements points [NoSave no-fainting-or-hunger] {"position":"800,675","size":"100,100"}
+<div class="UIButtons">\
+Your achievement points: $achvPoints
+
+<<button "Start with 50 bonus coins | 1 achievement points">>
+<<if $achvPoints >= 1>>
+<<set $Coins += 50>>
+<<set $achvPoints -= 1>>
+<<goto "Achievements points">>
+<<elseif $achvPoints < 1>>
+<<script>>
+UI.alert("You dont have enough achievements points!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Start with 1 bonus bread | 1 achievement points">>
+<<if $achvPoints >= 1>>
+<<set $bread += 1>>
+<<set $achvPoints -= 1>>
+<<goto "Achievements points">>
+<<elseif $achvPoints < 1>>
+<<script>>
+UI.alert("You dont have enough achievements points!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Add 25 HP | 2 achievement points">>
+<<if $achvPoints >= 2>>
+<<set $MaxHP += 25>>
+<<set $achvPoints -= 2>>
+<<goto "Achievements points">>
+<<elseif $achvPoints < 2>>
+<<script>>
+UI.alert("You dont have enough achievements points!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Add 10 STM | 2 achievement points">>
+<<if $achvPoints >= 2>>
+<<set $maxStamina += 10>>
+<<set $achvPoints -= 2>>
+<<goto "Achievements points">>
+<<elseif $achvPoints < 2>>
+<<script>>
+UI.alert("You dont have enough achievements points!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Add 1 bonus point | 6 achievement points">>
+<<if $achvPoints >= 6>>
+<<set $Points += 1>>
+<<set $achvPoints -= 6>>
+<<goto "Achievements points">>
+<<elseif $achvPoints < 6>>
+<<script>>
+UI.alert("You dont have enough achievements points!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a ring of achieving | 15 achievement points">>
+<<if $ringOfAchieving >= 1>>
+<<script>>
+	UI.alert("You cant buy more than 1 rings of achieving!");
+<</script>>
+<<elseif $achvPoints >= 15>>
+<<set $ringOfAchieving += 1>>
+<<set $achvPoints -= 15>>
+<<goto "Achievements points">>
+<<elseif $achvPoints < 15>>
+	<<script>>
+UI.alert("You dont have enough achievements points!");
+<</script>>
+<</if>>
+<</button>>
+</div>\
+
+[[Go back|Finish]]
+
+

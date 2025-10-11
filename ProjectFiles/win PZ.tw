@@ -1,0 +1,10 @@
+:: win PZ [autosave] {"position":"300,3100","size":"100,100"}
+You killed the poisonous lizard and won the battle, gaining <<print ($mobLvl * 1.5 + $mobXP).toFixed(0)>> XP and $mobCoins Coins.
+<<EventCurrencies>>\
+<<link "Go back">>
+	<<goto $lastVisitedPassage>>
+	<<set $killedPZ += 1>>
+	<<MobRewards>>
+<</link>>
+
+

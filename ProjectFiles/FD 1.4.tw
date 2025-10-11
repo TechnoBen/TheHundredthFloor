@@ -1,0 +1,37 @@
+:: FD 1.4 {"position":"2350,2150","size":"100,100"}
+You went right...
+Infront of you there is a huge door with a keyhole in it... You are wondering where you'll get the key from.
+<<if setup.datesystems.default.getDate().h gte 16 and setup.datesystems.default.getDate().h lte 16 and setup.datesystems.default.getDate().m gte 30 and setup.datesystems.default.getDate().m lte 60 && $asteriaAffection >= 10>>\
+You can see Asteria going out of the Boss room.
+<</if>>\
+
+You can:
+<<nobr>>
+<<if $f1key >= 1>>
+<<link [[Unlock the door|F1 BOSS]]>>
+<<dateadd '10m'>>
+<<set $f1key -= 1>>
+<</link>>
+<<elseif $f1key <= 0>>
+You need a key to unlock this door.
+<</if>>
+<</nobr>>
+<<link [[Waste time|FD 1.4]]>>
+	<<dateadd '10m'>>
+	<<Resting>>
+<</link>>
+<<if setup.datesystems.default.getDate().h gte 16 and setup.datesystems.default.getDate().h lte 16 and setup.datesystems.default.getDate().m gte 30 and setup.datesystems.default.getDate().m lte 60 && $asteriaAffection >= 10>>\
+<<link [[Speak to Asteria|Asteria dungeon]]>>
+	<<dateadd '2m'>>
+<</link>>
+<</if>>\
+
+Directions:
+<<link [[Go back...|FD 1.2]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.4">>
+    <<F1Dungeon>>
+<</link>>
+
+

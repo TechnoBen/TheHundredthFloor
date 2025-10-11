@@ -1,0 +1,37 @@
+:: hut event {"position":"1875,2900","size":"100,100"}
+You finally finished your hut.
+You come out of the house to take a look at your house when you hear a stick snap from behind. You quickly turn back reaching out for your sword to see a person come out.
+<span class="radiant">"Wait, wait! It's me!"</span> you hear the person say...
+"Radiant? What are you doing here? How did you know I was here?"
+<span class="radiant">"Actually It's me, Crimson and Shadow... We saw you going to the forest a lot and decided to follow you here..."</span> says your sister while you put your sword back. You then see CrimsonSentinel and ShadowScythe coming out of the forest too. <span class="shadow">"God dammit Crimson you loud dumbass!"</span> <span class="crimson">"Hey I didn't mean to step on that stick! How was I meant to see it"</span>
+"Does it really matter...? So uh... I bought this house a few days ago and decided to turn it into a house I can live in... And I just finished fixing it. So yall wanna do something or...?" you ask them.
+<span class="shadow">"Hell yeah we do! We decided to bring some food with us. We were gonna ask you to come with us to eat out but now that you have this house let's do it inside!"</span>
+<span class="radiant">"Man we have some good stuff with us! Look at this!!!"</span> says Radiant, taking out a huge piece of meat from her bag. It looked really well cooked. Though you are a bit confused on //why// its inside a bag
+"Alright let's go in then..." you say as you all go inside the house.
+
+Everyone goes in as you get them to the bedroom since there Isn't really a living room. You bring the table from the kitchen and some chairs.
+After that Crimson and Radiant fell asleep leaving you and Shadow awake.
+<span class="shadow">"These two sure fell asleep fast..."</span>
+"Yeah... So what are you up to these days?"
+<span class="shadow">"Well nothing much. Just going out to level up. I'm trying to get to level 20 so I can go inside the harder dungeons and shit y'know?"</span>
+"Alright. Make sure not to die though. The mobs there used to be tougher than the others. The beta at least had them a bit too hard... Perhaps they were buffed."
+<span class="shadow">"Nah they are still at the same stats as the beta. Speaking off enemies have you noticed anyone following you?"</span> his question takes you out by surprise. What did he mean by that? Has someone been following me?
+"Huh no? What do you mean?"
+<span class="shadow">"What I mean is have you seen a PKer. I've heard that they have started appearing a lot more lately. I've had to deal with 1 of them myself. I didn't kill him though because that's just... Wrong. Even for me."</span>
+"PKers?! Why would anyone do that in a game where death is permament?!"
+<span class="shadow">"Who knows. This is gonna be a problem if they do continue though."</span>
+"It sure is gonna be a problem."
+<span class="shadow">"So um... What are we gonna do now?"</span>
+"I don't know... You should go to sleep though."
+<span class="shadow">"Yeah sure."</span>
+
+I stood out of my chair and went to my bed... Radiant was laying on it so I just decided to sleep on the floor today.
+You look over at ShadowScythe. He said <span class="shadow">"The floor eh? That sounds uncomfy. I'm sleeping on this chair"</span> he says.
+You close your eyes and fall asleep.
+
+As you woke up you saw that everyone had left the hut expect for you.
+<<dateadd '10h'>> <<set $curFatigue to 0>>
+[[Continue|Hut bedroom]]
+
+
+

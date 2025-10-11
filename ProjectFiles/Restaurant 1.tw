@@ -1,0 +1,10 @@
+:: Restaurant 1 [no-fainting-or-hunger no-party-time-loss] {"position":"1475,1925","size":"100,100"}
+You go inside the restaurant to see people that no one here is wearing armor... You are a bit confused as of why considering that PKers can attack at any time.
+You sit down at one of the tables and a waitress comes to you.
+"Would you like to order something?" asks you the waitress
+
+1. [[Order food]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Jewelry shop 1">> <</link>>
+3. <<link [[Go back|Town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

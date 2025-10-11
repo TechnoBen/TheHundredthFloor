@@ -1,0 +1,10 @@
+:: win pm [autosave] {"position":"400,2500","size":"100,100"}
+You killed the plant monster and won the battle, gaining <<print ($mobLvl*3 + $mobXP).toFixed(0)>> XP and $mobCoins Coins.
+<<EventCurrencies>>\
+<<link "Go back">>
+<<goto $lastVisitedPassage>>
+<<set $killedPM += 1>>
+<<MobRewards>>
+<</link>>
+
+

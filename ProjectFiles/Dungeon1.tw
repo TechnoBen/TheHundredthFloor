@@ -1,0 +1,13 @@
+:: Dungeon1 {"position":"1525,2650","size":"100,100"}
+You are standing outside a dungeon that you randomly found in the forest.
+
+Directions:
+<<link [[Go in|Dungeon1.1]]>>
+<<set $location to "dungeon">>
+<<set $lastVisitedPassage to "Dungeon1">>
+<</link>>
+<<link "Go back">>
+<<goto "Path 3.1">>
+<</link>>
+
+

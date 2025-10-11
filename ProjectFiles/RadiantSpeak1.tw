@@ -1,0 +1,14 @@
+:: RadiantSpeak1 {"position":"3025,1975","size":"100,100"}
+"Hey, Radiant what are you doing right now?" you ask.
+<span class="radiant">"Honestly... Just thinking. The first floor boss was strong. This couldve gone very wrong."</span>
+"True."
+
+The two of you talk about the first floor and how pretty the jewelry there was.
+
+<<link [[Go back|Town centre]]>> <<dateadd '1h'>>
+	<<set $NPCs.RadiantRose.Affection += 1>>
+    <<set $CurFear -= 1>>
+<</link>>
+
+
+

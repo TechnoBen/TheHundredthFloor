@@ -1,0 +1,11 @@
+:: Shop 2 {"position":"3650,1850","size":"100,100"}
+You enter the shop.
+
+Inside you see a glass counter with items inside of it and food on the other side of the shop with baskets full off food and ingredients.
+You also see a wardrobe that you can access.
+
+1. [[Buy items|Buy items 2]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Shop 2">> <</link>>
+3. <<link [[Go back|Town street 2]]>> <<dateadd '1m'>> <</link>>
+
+

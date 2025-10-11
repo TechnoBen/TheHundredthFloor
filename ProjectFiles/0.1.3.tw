@@ -1,0 +1,51 @@
+:: 0.1.3 [NoSave] {"position":"75,150","size":"100,100"}
+ [[Back|Changelogs and game information]]
+
+- Rewrote the entire combat system. It's not really noticeable but a lot of bugs were fixed that way
+	- Added a mob turn
+    - Added a way to block attacks by 50%
+    - Stamina costs have been changed by a bit
+    - Code is WAYYY more organized! Finally I can read this shit without suffering lol.
+    - Reworked escaping
+    - Added mob lvl
+    	- mob lvls deal (mob dmg) + (mob level)/2
+    	- mob lvls give more xp depending on their level. Some mobs give more XP than others though. (boars for an example are 10XP + (mob lvl * 1.5))
+    - You can finally punch now... does STR/2 damage but it takes 5 stamina 
+- Meals/Snacks wont appear on the crafting menu UNLESS you have the mats needed to cook the certain item.
+- Added a cook book at the cooking spot in floor 1, Oakheart
+- Party members stay for a limited amount of time now.
+- Reworked the inventory... My eyes really fucking hurt after that one and the code is still messy. I dont want to organize it as im scared of breaking something
+- Item descriptions 
+- Buffed the light shadow hunters def from 5 to 6
+- Added a new secret name :)
+- Added a new secret boss :)
+- Made the max fatigue from 1000 to 1250
+- You now gain 25 max fatigue on lvl up
+- Added a level up message (changed the message to a image :thumbsup:)
+- Made choices less scuffed in the random interactions
+- You now exist in the party list lmao
+- The floor boss can now be killed by players if you wait for... ages...
+- Armor and weapon stats get displayed in the stats screen too (and removed from the game stats screen)
+- Lowered the DEX needed to dodge the floor boss attack
+- Congratulations!!! image for when you beat the fboss
+
+- Fixed a bug where you could use weapons even if you dont have the stamina needed
+- Fixed a bug in the stats guide
+- Fixed a bug where 3 star wolf meat would appear if you have three star ragout meat
+- Fixed a bug where the text gets connected to the other text when a party member leaves your party
+- Fixed a bug where your INT gets set to 3 if you get robbed... Forgot to remove it from testing in [[0.1.2]] lol
+- Fixed some typos
+- Fixed some caps 
+
+- Removed the text before the living room and eating the sandwich
+
+NEW ITEMS:
+Open shoulder shirts for every color
+Otherworldy remnant
+Mysteriously vague pancho
+White pants
+Gray pants
+
+[[Back|Changelogs and game information]]
+
+

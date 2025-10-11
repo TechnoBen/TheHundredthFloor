@@ -1,0 +1,27 @@
+:: F1BOSSBATTLE 1.3 {"position":"950,2650","size":"100,100"}
+The boss throws one of its axes at you and your raid group.
+<span class="Blu3b3llrex">"Are yall alright?!"</span> you hear blu3 scream at you.
+"Yeah! We are fine... so far."
+The boss has tired itself out... It seems to be realizing that you and Blu3 are leading the group, so its preparing for a attack.
+
+Floor boss health: $MonsterHP
+
+Your HP: $CurHP/$MaxHP
+Your raid partys HP: $raidHP/1000
+
+You can:
+<<if $raidParty == true>>
+<<link [[Command your people to attack|F1BOSSBATTLE 1.4]]>>
+<<set $mobs.Deathlord.CurHP -= 45>>
+<</link>>
+<<link [[Command your people to charge|F1BOSSBATTLE 1.4]]>>
+<<set $mobs.Deathlord.CurHP -= 52>>
+<</link>>
+<<link [[Command your people to dodge|F1BOSSBATTLE 1.4]]>>
+<</link>>
+<<elseif $raidParty == false>>
+You don't have a raid party to command.
+<</if>>
+[[Fight it alone|Combat remake]]
+
+

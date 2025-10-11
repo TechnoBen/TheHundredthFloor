@@ -1,0 +1,23 @@
+:: Tree 1 [no-party-time-loss Town] {"position":"1600,2525","size":"100,100"}
+You went closer to the tree. It looks to be decorated pretty well. Someone has spent a lot of time making it look clean and the grass seems to be cut. Around it there are a bunch of stones that are making a small wall.
+Infront of the tree there is a huge stone with engraving on it.
+"Rest in piece, rockrockerrockify289"
+This is someones grave... Next to it theres a ragged potato sack. Out of the opening you can see fur. You can also see a pillow made out of leaves.
+<<if setup.datesystems.default.getDate().h gte 18 and setup.datesystems.default.getDate().h lte 20>>There's a person sitting next to the grave. They are wearing a cape and have a hood on. You cannot see their face.<</if>>
+You can:
+1. <<link [[Sit down and take a break|Tree 1]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5 + $INT>>
+<</link>>
+<<if setup.datesystems.default.getDate().h gte 18 and setup.datesystems.default.getDate().h lte 20>>2. <<link [[Speak to the person|Tree person convo]]>>
+    <<if $AsteriaEvents === undefined>>
+        <<set $AsteriaEvents to []>>
+    <</if>>
+<</link>> <</if>>\
+
+Directions:
+1. <<link [[Go back to the main path|Path 3]]>>
+	<<dateadd '2m'>>
+<</link>>
+
+

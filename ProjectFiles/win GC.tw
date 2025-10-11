@@ -1,0 +1,10 @@
+:: win GC [autosave] {"position":"400,3100","size":"100,100"}
+You destroyed the Glowing chest and won the battle, gaining <<print ($mobLvl * 1.5 + $mobXP).toFixed(0)>> XP and $mobCoins Coins.
+<<EventCurrencies>>\
+<<link "Go back">>
+	<<goto $lastVisitedPassage1>>
+	<<set $killedGC += 1>>
+	<<MobRewards>>
+<</link>>
+
+

@@ -1,0 +1,10 @@
+:: Trap 1.3 {"position":"5150,1150","size":"100,100"}
+You killed one of the onis... Another one comes and the other one just watches.
+
+
+<<link [[Continue|Combat remake]]>>
+<<set $lastVisitedPassage to "Trap 1.4">>
+<<mob traponi>>
+<</link>>
+
+

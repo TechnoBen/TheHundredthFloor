@@ -1,0 +1,10 @@
+:: Hairsalon 1 {"position":"2100,2650","size":"100,100"}
+You go inside the hair saloon to see a really tired man...
+"Oh hey there... Here for a haircut?" he says barely awake. He looks so tired that he might as well fall asleep while cutting your hair.
+<<set $achievement_001 to recall('achievement_001')>>
+1. [[Take a haircut]]
+2. <<link [[Go back|Oakheart centre]]>>
+<<dateadd '1m'>>
+<</link>>
+
+

@@ -1,0 +1,18 @@
+:: FD2.5 {"position":"5350,650","size":"100,100"}
+You walk down the path of the cave. Infront of you is a room made out of stone bricks and a few pillars, the floor is made out of wooden planks. The path is going forward.
+
+Directions:
+<<link [[Go deeper into the cave|FD2.6]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.6">>
+<<F2Dungeon>>
+<</link>>
+<<link [[Go back|FD2.4]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.4">>
+  <<F2Dungeon>>
+<</link>>
+
+

@@ -1,0 +1,36 @@
+:: Molly event 3 {"position":"3325,875","size":"100,100"}
+<<if $event5part2 == 1>>\
+You start looking for JustifiedBlade12. You look around, checking the inns, the shops and the hospital. You spent 2 hours without finding anything.
+
+Maybe you could try later?
+
+<<link [[Continue|3rd town entarance]]>>
+	<<dateadd '2h'>>
+<</link>>
+<<elseif $event5part2 == 2>>\
+You start looking again. This time you decide to look around the quiet street. You sit on one of the benches and look for anyone that looks familiar...
+After a hour you stand up and look at the shops in case he is in one of them. You find nothing so you go to the town center.
+<<if $AmberEmberShop == true>>\
+You decide to ask Amber. You go to her shop.
+"Hey, Amber! Sorry to bother you but have you seen a tall man with a red cape, white clothes, blonde hair and bright red eyes? His gamertag is JustifiedBlade12."
+<span class="amber">"I haven't... Sorry."</span>
+"It's fine dont worry."
+<</if>>
+Once again. You find nothing. You could try again later.
+<<link [[Continue|3rd town entarance]]>>
+	<<dateadd '2h'>>
+<</link>>
+<<elseif $event5part2 == 3>>\
+You decide to look again. This time you decide to knock on each door at the inn.
+You go inside of the inn and head upstairs to the room. You get close to one of the doors until you hear a beep and a small UI opens infront of you.
+"You've got a new message."
+You wonder who would send a message and click on it. It's Molly.
+<span class="Molly">"I found the bastard. I'm gonna be following him."</span> is all that the message says. You are trying to think of where the hell she would be at. You then remember that the friends list gives you the location of your friend.
+
+<<link [[Continue|Inn 3]]>>
+	<<dateadd '15m'>>
+    <<set $event5part3 to false>>
+<</link>>
+<</if>>
+
+

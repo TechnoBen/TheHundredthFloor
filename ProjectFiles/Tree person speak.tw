@@ -1,0 +1,55 @@
+:: Tree person speak {"position":"1350,2525","size":"100,100"}
+<<set _asteriaRNGTxt to kitsuneRNG(1, 100)>><<if _asteriaRNGTxt lte 20>>You look at Asteria... She seems to be sleeping. You poke her.
+<span class="Asteria">"Oh... Hello $gamename, sorry for not waking up before you came..."</span> she says yawning.
+"Don't worry about it. Why are you always so tired though?" you ask curiously.
+<span class="Asteria">"I can't really sleep well at night... This whole thing is just messing with me yknow?"</span> she says.
+"I see. That sucks. Good thing you can sleep here I guess. Are you not worried about PKers though?"
+<span class="Asteria">"Never thought about it. I forgot such people even exist not gonna lie. Why would you go around killing people that have families and stuff..."</span>
+"Oh yeah... Why are you not sleeping on the bed you've made?"
+<span class="Asteria">"Honestly. I don't know. I just sit here and suddenly feel like sleeping."</span>
+"I see."<<elseif _asteriaRNGTxt lte 40>>You shake Asteria gently. She opens her eyes and yawns.
+"Morning Asteria..."
+<span class="Asteria">"Isnt it too late to call it a morning?"</span> she chuckles.
+"Fair point. How was your sleep?"
+<span class="Asteria">"It was really good. I had a dream about him."</span>
+"That's nice. What was the dream about?"
+<span class="Asteria">"We were running around in a snowy field. Throwing snowballs at each other and just enjoying life. He really loved snow you know? Too bad he never got to see snow in real life because in the place we live in it never snowed... He really would've enjoyed it. Well at least he got to see snow at floor 2. He was so happy. We even made a house there."</span><<elseif _asteriaRNGTxt lte 60>>You look at Asteria. She is sleeping peacefully. You cover her with a potato sack. She wakes up.
+<span class="Asteria">"Oh thank you."</span> she says, tired.
+"Sorry for waking you up."
+<span class="Asteria">"Don't worry about it. How's your day been"</span> she asks.
+"Eh. It's been fine. How about yours?"
+<span class="Asteria">"Well I almost fell when I was going down the dungeon stairs... I still haven't bought access to the teleportation pad. They are pretty expensive for no reason yknow? I'm kinda on the poor side."</span>
+"Might as well get heavy armor for when you do fall." she laughs.
+<span class="Asteria">"I didn't think of that now did I. I should seriously get out of that house and kill a boar or two huh..."</span>
+"Is the only time you come out to come here?"
+<span class="Asteria">"Well kind of. I also go to the forest of this floor to get some mushrooms. That's all I've been eating since that day..."</span>
+"I see... If you need anything to eat I can give you something. I have some food."
+<span class="Asteria">"No it's fine. Don't worry about me."</span><<elseif _asteriaRNGTxt lte 80>>You look at Asteria... "Pssst Asteria." you whisper to her.
+She opens her eyes in a bit of a panic<span class="Asteria"> "Eek! Oh! It's you! $gamename... You scared me!"</span>
+"Oh didn't expect that to scare you." you chuckle.
+<span class="Asteria">"I get scared by sudden noises..."</span>
+"i see. Sorry about that."
+<span class="Asteria">"Don't worry about it. It actually reminds me of my boyfriend. He used to scare me from times to times."</span> she looks down sadly <span class="Asteria">"Sometimes he would wake me up that way. After which I would try to scare him back later in the day. He also felt bad about scaring me most of the times and to say sorry he would make banana pancakes. Those were so nice."</span>
+"Banana pancakes? Your man had a good taste."
+<span class="Asteria">"Ah no he didn't eat any. He was midly allergic to them. Wouldn't stop sneezing every time he smells one."</span>
+"And he would be the one making the pancakes?!"
+<span class="Asteria">"Yeah! He would come into my bedroom holding a plate and trying not to sneeze the entire time. One time he looked like he was about to blow up! No idea how he managed to hold out that one."</span><<elseif _asteriaRNGTxt lte 100>>Asteria seems to be deeply alseep. She is holding a basket full of mushrooms and a few flowers. She suddenly wakes up. <span class="Asteria">"Ah the baske-"</span> mid sentence she looks down to see the basket being in her hands. You look at her confused. She then sees you.
+<span class="Asteria">"This is awkward... Hello $gamename!"</span> she says as she puts down the basket. She looks like a complete mess.
+"What was that about" you silently laugh
+<span class="Asteria">"I had a dream that I forgot the basket..."</span>
+"Oh I see. So you were to the forest huh."
+<span class="Asteria">"Yeah... I was going for a few flowers to place here but decided to take some mushrooms for dinner too. Then a few rabbits chased me and I didn't have my sword with me."</span>
+"You have a sword? I haven't seen you with one."
+<span class="Asteria">"Oh yeah I do! I just don't take it with me..."</span>
+"Where do you live again...?"
+<span class="Asteria">"The second floor..."</span>
+"How are you not getting attacked by the floor dungeon mobs when you come down here?"
+<span class="Asteria">"... good question."</span><</if>>
+
+<<link [[Continue|Tree 1]]>>
+	<<dateadd "1h">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 2>>
+<</link>>
+
+

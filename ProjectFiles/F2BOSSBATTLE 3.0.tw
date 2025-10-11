@@ -1,0 +1,9 @@
+:: F2BOSSBATTLE 3.0 [no-party-time-loss] {"position":"5900,850","size":"100,100"}
+You destroyed the right arm of the boss.
+
+<<link [[Continue|F2BOSSBATTLE]]>>
+	<<set $F2Right to false>>
+    <<set $MonsterDMGDealt to 0>>
+<</link>>
+
+

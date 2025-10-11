@@ -1,0 +1,24 @@
+:: Path 9 [Path] {"position":"3650,1400","size":"100,100"}
+You started going down the path. There seems to be snow that reaches your kneecaps.
+Once again you see the path split to a new location. You don't remember where it leads to.
+
+1. <<link [[Follow the path|Path 10]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 10">>
+<<SnowPlains1>>
+<</link>>
+2. <<link [[Follow the 2nd path|Path 9.1]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 9.1">>
+<<SnowPlains1>>
+<</link>>
+3. <<link [[Go back|Path 8]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 8">>
+<<SnowPlains1>>
+<</link>>
+
+

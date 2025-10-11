@@ -1,0 +1,14 @@
+:: Doc heal [no-fainting-or-hunger no-party-time-loss] {"position":"1100,1950","size":"100,100"}
+"Hey there. What do you need from me?" asks the receptionist.
+"I need to heal..." you respond.
+"Healing will cost 50 col... We will heal you back to max health."
+
+Your hp:
+$CurHP/$MaxHP
+
+Do you accept?
+1. <<link [[Yes|Doc heal]]>> <<if $Coins >= 50>> <<set $Coins -= 50>> <<set $CurHP to $MaxHP>> <<set $CurHP to $MaxHP>> <<set $CurHPRadiantRose to $MaxHPRadiantRose>> <<set $CurHPShadowScythe to $MaxHPShadowScythe>> <<set $CurHPCrimsonSentinel to $MaxHPCrimsonSentinel>> <<set $NPCs.BlackWolf.CurHP to $NPCs.BlackWolf.MaxHP>> <</if>>
+<</link>>
+2. [[No|Hospital]] 
+
+

@@ -1,0 +1,20 @@
+:: Hut bedroom [no-party-time-loss] {"position":"2100,3175","size":"100,100"}
+You enter your bedroom.
+Inside there's a pretty comfy bed, a wardrobe, four chairs and a table.
+
+You can:
+1. <<link [[Open your stats screen|Stat points]]>>
+	<<set $lastVisitedPassage1 to "Hut bedroom">>
+<</link>>
+2. <<link [[Open the wardrobe|Wardrobe]]>>
+	<<set $lastVisitedPassage1 to "Hut bedroom">>
+<</link>>
+3. <<link [[Sleep|Sleep]]>>
+	<<set $lastVisitedPassage1 to "Hut bedroom">>
+<</link>>
+4. <<link [[Invite friends over|InviteSelect1]]>>
+	<<set $hutInvites to []>>
+<</link>>
+5. [[Go outside your room|Forest hut corridor]]
+
+

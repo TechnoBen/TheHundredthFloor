@@ -1,0 +1,14 @@
+:: Blue 1 {"position":"2400,2550","size":"100,100"}
+"Hey Blu3! Finally got to speak with you haha...It's been a while hasn't it."
+<span class="Blu3b3llrex">"It sure has been. What did you doa fter the floor 9 raid after I had to leave?"</span>
+"Well the team pretty much fell apart so it was me and Crimson... We pretty much got a few floors higher."
+<span class="Blu3b3llrex">"Ah I see. Sorry that I had to leave so suddenly by the way. Something came up..."</span>
+"Nah don't worry about it. So what did you want to talk about?"
+<span class="Blu3b3llrex">"Well I was thinking of having you lead the 2nd team. After all we were pretty good when we worked together. I also wanted to ask you to find the floor dungeon while we prepare for the raid." </span>
+
+<<link [[I'll think about it|Gathering area]]>> <<dateadd '5m'>> <<set $hasSpokenWithBlue to true>>
+<</link>>
+
+"That's fine. Take your time."
+
+

@@ -1,0 +1,52 @@
+:: 0.1.7 [NoSave] {"position":"175,150","size":"100,100"}
+ [[Back|Changelogs and game information]]
+
+- Remade every mob to be a widget. That way I can edit mobs easier.
+- Remade parties to use arrays instead of variables
+- Mobs have been debuffed a lot.
+	- Rabbits HP: 40 > 35
+    - Plant monsters HP: 75 > 65
+    - Skeleton warriors HP: 100 > 90
+    - Skeletons HP: 134 > 75
+    - Wolfs HP: 170 > 100
+    - Baby wolfs HP: 102 > 75
+- Theres now a 50% chance to get either oni leather or teeth in the cave
+- Raised down the small bars room price from 500 to 320 coins
+- Thanks to a user from the Twine discord server names are now random in the char customization. The code is way better than what i had made too.
+- Added color to party members in combat so you can have a easier time seeing whos who.
+- A new party member
+- Added a path you can make from whitetown to the frozen lake
+- New effect "IT BURNS!" and it takes 5% of your health every turn
+- Zegrath has a 25% of setting you on fire
+- Added a new event (random encounter one)
+- Added 1 unfinished random encounter on F2
+- Finally added a dungeon background
+- Added a cave background
+- Changed Zegraths beginner stats (not listing them cuz too lazy)
+- Mob levels now affect HP and STR in a different way. I added modifiers and depending on what they are the mob stats will change acording to their lvls. HP doesnt get affected a lot.
+- Added a boss rush challange 
+- Added a book in the library for the mobs of f1 and f2.
+- Added a blacksmith in Whitewall.
+- Made a widget for selling items. That way I can chose which shop will let you sell a type of item
+- Remade the mob rewards to be a widget instead of it being pasted in every single fucking enemy win passage. Ill be still making new passages for new mobs at least for now.
+- Added Zegraths stats to load for older players
+- Added a new characters stats
+
+- Fixed some bad numeration in links
+- Fixed killed onis stat not being shown, not being counted for total kills AND not working for older players
+- Fixed PKing being able to start during combat
+- Fixed the character portrait expanding by a line when starting a new game. That was cuz i added a extra > on some if statment. Checking code i realized that ive done that on multiple spots. Not sure why the game didnt break on those spots but the extra arrows have been removed everywhere
+- Fixed a mistake on ShadowScythes death. He isnt meant to turn to dust. That goes for most mobs only.
+- Fixed gaining fatigue, hunger and fainting in passages like the wardrobe, shopping and others
+- Fixed the party time counter going up in passages like sleeping, crafting and buying. Ive also disabled it for the forest house cuz im nice.
+- Fixed a bug where tp pads wont give a background if you are in a town
+- Fixed XP going bonkers (too long idk what its called lmao my b) when putting stats.
+
+- Removed spots where you can get a PK encouner... They were too many IMO
+
+NEW ENEMIES:
+Black wolf
+
+[[Back|Changelogs and game information]]
+
+

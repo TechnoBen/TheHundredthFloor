@@ -1,0 +1,14 @@
+:: speak to shadow {"position":"1125,1650","size":"100,100"}
+"So... What are you up to?"
+<span class="shadow">"Well nothing much. My scythe has been starting to break though so I gotta get It fixed."</span>
+"Ah I see."
+
+The two of you talk about scythes.
+
+<<link [[Go back|Town centre]]>>
+	<<dateadd '1h'>>
+	<<set $NPCs.ShadowScythe.Affection += 1>>
+	<<set $CurFear -= 1>>
+<</link>>
+
+

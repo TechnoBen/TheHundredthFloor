@@ -1,0 +1,14 @@
+:: Wolf convo {"position":"4400,1775","size":"100,100"}
+$NPCs.BlackWolf.name is staying on her bed. She looks at you and her tail starts wagging.
+
+1. <<link [[Pet her|Wolf convo 1]]>>
+	<<dateadd "2m">>
+<</link>>
+2. <<link [[Play with her|Wolf convo 2]]>>
+	<<dateadd "5m">>
+<</link>>
+3. <<link [[Nevermind|Cave 2.2]]>>
+	<<dateadd "1m">>
+<</link>>
+
+

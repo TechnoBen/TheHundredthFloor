@@ -1,0 +1,14 @@
+:: Speak to blue {"position":"2525,2525","size":"100,100"}
+"Yo Blu3! Wanna talk about the most random bullshit ever?"
+<span class="Blu3b3llrex">"Sure! What are we gonna talk about...?"</span>
+"Uhhh.... Why didn't you opened a guild in the beta?"
+<span class="Blu3b3llrex">"Pfff idk... I could do it this time though. Which floor had the guild bs again?" </span>
+"The 2nd or the 3rd floor..."
+
+You guys think about how cool it would be to lead a guild...
+<<set $blueBellAffection += 1>>
+<<link [[Go back|Gathering area]] 
+<<dateadd '1h'>>
+<</link>>
+
+

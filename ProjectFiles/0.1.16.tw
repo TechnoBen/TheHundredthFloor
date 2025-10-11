@@ -1,0 +1,101 @@
+:: 0.1.16 [NoSave] {"position":"400,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+Man ill probably have to give combat another rework... Adding in combat moves is such a pain right now.
+This changelog might have a shit ton of 
+- Buffed this
+- Debuffed this same thing
+Im sorry if that has happened, I dont read through the logs after Ive written them, whatever is lowest is the final change of said feature.
+ I have also forgotten some changes, my bad for that.
+
+Also made a feedback form. Please do fill it out so that I can know what parts of the game should be focused on or looked at again!
+https://docs.google.com/forms/d/e/1FAIpQLSemMPczuoTWr32H5aa0M3b7FxKR9DLEaZL5nm2M2pMvji89ug/viewform?usp=sharing&ouid=101155031814584606146
+
+- Completely reworked combat
+Combat changes: (some changes have been forgotten which im sorry about)
+You can fight more than one enemy now and select which one to attack (Limit is 99 unless something doesnt work with that many mobs lmao)
+Changed the way that the mobs are now made, making it easier on me to add new stats and others to enemies. (Thanks to Hituro for the massive help with that)
+Changed the STR and DEF system to have 4 types: Slash, pierce, blunt and magic. Magic cant be upgraded through stat points and will be only for armor and unique weapons/enemies that might use it,
+Added crits for mobs and players
+Added unique skills to each weapon type
+Added unique skills to some party members (ex. Crimson now has shield bash and slash instead of charge and stab.)
+Made the party member stats/attacks get displayed depending on their party list place.
+Made a new combat end passage.
+Mobs drop items and other stuff on death now instead of when you finish the battle, meaning that if you kill 1 enemy and cant handle the other you can pull the secret Joestar technique
+Added extra turns for mobs and players
+Reworked blocking
+Reworked dodging
+Added the ability for a mob to have more than 1 attack
+A more advanced system for combat logs (Massive thanks to fg109 for the help with the combat log. This absolute chad helped me with a lot more during the combat rewrite. Dude also made a remake of my combat remake where I took the combat log from and it seriously gave me a motivation boost as well since that was hella cool to wake up to. Also helped on other spots during the rewrite especially when I was being stupid and just missed to write stuff because my blind ass didnt see that I forgot to.)
+A more advanced system for showing you what loot you got
+Added bleeding (and bleeding defence), you have count which once filled up you get dmg dealt depending on the potency. Each weapon (expect for the blunties) will make your enemy bleed. This is the first effect ever that exists for mobs, players AND party members.
+Added a turn counter
+Added burn, count gets lowered for players at player turn end while mobs lose count at enemy turn end. Potency deals damage as well and then gets halved.
+- Completely reworked NPCs
+NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
+- Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats
+- CritChance gets raised by 0.1 with every STR lvl
+- Extra turns get raised by 0.5 with every DEX lvl
+- Made the level up notif to stay for 3 passages
+- Resting now gives everyone stamina instead of the player only
+- NPCs can now level each stat but they have their prefered ones
+- Buffed the Boulder slayer to do a bit more dmg since I think its kinda weak as of now
+- Changed the wardrobe code to match the new dmg types and made the code look a little bit better
+- Replaced every shop showing the correct stats
+- You gain 25 fear when the f1 gang escapes and 50 when any other NPC dies during combat
+- Added an easteregg to doing nothing
+- Made mob levels give more stats to them to attempt and balance the new combat changes
+- Added new items for the anni shop since as of rn its the 2nd THF anniversary!!! Peak!!! (2 armor skins, 1 weapon skin and new eyes)
+- Changed most of the mobs XP and col drops
+- Hunger debuff changes:
+Stage 1: 15% > 10%
+Stage 2: 25% > 15%
+Stage 3: 50% > 25%
+- Changed the hall of fame saying beta testers when it was... Alpha testers... Lmfao.
+- Added a spot for people that just had to be mentioned (Absolute chads)
+- Added new movesets (maces, gauntlets and daggers)
+- Buffed the stamina you get outside of combat
+- Debuffed sleep stamina
+- Buffed sleeping fatigue loss
+- Lowered the speed of which the boss gets auto killed
+- Remade the encounters to be widgets instead of pasting them in every passage, making it easier for me and modders to edit encounters
+- Made it so that you cant lose hunger in the main menu lmao
+- Added a notification for when you buy items from any shop (thanks to opti for suggesting it)
+- Changed the ring of the undead drop rate to be a 5 in 1000 chance instead a 5% since it was too common...
+- Added some basic options into game customization due to me finally figuring out how it works lmao (Also thanks to Greyelf for making my code better)
+- Slightly debuffed XP from mobs
+- Heavily debuffed Col from mobs
+- Added X new encounter in F2
+
+- Fixed my dumbass scuffed code that when you walk from path 1 to path 2 but get into a fight it would send you back to path 1 instead of path 2
+- Fixed CrimsonSentinel not getting HP when you sleep
+- Fixed sleeping on a avarage bed sending you to the passage for sleeping on a uncomfy bed
+- Fixed some spots saying coins instead of col. I've done that... A lot. Fuck me.
+- Fixed typos (Thanks to Nako for finding some)
+- Fixed a weird ass typo I made in selling materials where it sells youre selling wolf fur, yet youre selling planks.
+- Fixed a bug where you wouldnt get the fatigue from walking down the paths
+- Fixed infinite fainting. Again.
+- Fixed a bug where the new F2 encounters from previous versions wouldnt have a chance to be seen... lmao...
+
+- Removed the THF forum from [[Links] due to it being unfortunately dead. Once again thanks to Jaedo for making it. It was really cool to see it happen!
+- Removed the ingame guide since its getting outdated and I dont want to update it
+
+NEW ITEMS:
+Copper gauntlets (upgrade variant too)
+Copper mace (upgrade variant too)
+Copper dagger (upgrade variant too)
+Iron gauntlets (upgrade variant too, uses crystal instead of woof)
+Iron mace (upgrade variant too)
+Iron dagger (upgrade variant too)
+Oni teeth gauntlets (upgrade variant too)
+Oni teeth mace (upgrade variant too)
+Oni teeth dagger (upgrade variant too)
+Boar leather (sellable, will be used in the future)
+Ram horns
+
+NEW ENEMIES:
+Rams
+
+[[Back|Changelogs and game information]]
+
+

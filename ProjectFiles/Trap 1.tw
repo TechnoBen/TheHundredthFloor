@@ -1,0 +1,10 @@
+:: Trap 1 {"position":"4775,1150","size":"100,100"}
+You are walking in the cave until you notice a wall that seems out of place. Almost as if its asking you to touch it...
+
+<<link [[Touch it|Trap 1.1]]>>
+<</link>>
+<<link "Go away.">>
+<<goto $lastVisitedPassage>>
+<</link>>
+
+

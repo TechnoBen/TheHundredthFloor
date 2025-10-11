@@ -1,0 +1,93 @@
+:: Game customization [NoSave no-fainting-or-hunger] {"position":"700,675","size":"100,100"}
+This feature is NOT complete and may lead to a lot of issues. Be careful with how you use it!
+<<set _MaxHP1 to $MaxHP>>\
+<<set _MaxXP1 to $MaxXP>>\
+<<set _maxStamina1 to $maxStamina>>\
+<<set _difficultySTRmodifier1 to $difficultySTRmodifier>>\
+<<set _difficultyHPmodifier1 to $difficultyHPmodifier>>\
+<<set _XPmodifier1 to $XPmodifier>>\
+<<set _bleedDefGain1 to $bleedDefGain>>\
+<<set _XPadd1 to $XPadd>>\
+
+Player related:
+Starting HP: <<textbox "_MaxHP1" _MaxHP1>> <<link "Set">>
+	<<set _MaxHP1 to Number(_MaxHP1)>>
+	<<if _MaxHP1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $MaxHP to _MaxHP1>>
+    <<set  $CurHP to $MaxHP>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+Starting stamina: <<textbox "_maxStamina1" _maxStamina1>> <<link "Set">>
+	<<set _maxStamina1 to Number(_maxStamina1)>>
+	<<if _maxStamina1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $maxStamina to _maxStamina1>>
+    <<set  $curStamina to $maxStamina>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+Starting max XP: <<textbox "_MaxXP1" _MaxXP1>> <<link "Set">>
+	<<set _MaxXP1 to Number(_MaxXP1)>>
+	<<if _MaxXP1 is NaN>>
+  	<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $MaxXP to _MaxXP1>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+XP modifier: <<textbox "_XPmodifier1" _XPmodifier1>> <<link "Set">>
+	<<set _XPmodifier1 to Number(_XPmodifier1)>>
+	<<if _XPmodifier1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $XPmodifier to _XPmodifier1>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+XP modifier additive: <<textbox "_XPadd1" _XPadd1>> <<link "Set">>
+	<<set _XPadd1 to Number(_XPadd1)>>
+	<<if _XPadd1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $XPadd to _XPadd1>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+Bleed defence gained on DEF stat raised: <<textbox "_bleedDefGain1" _bleedDefGain1>> <<link "Set">>
+	<<set _bleedDefGain1 to Number(_MaxHP1)>>
+	<<if _bleedDefGain1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $bleedDefGain to _bleedDefGain1>>
+    	<<goto "Game customization">>
+	<</if>>
+<</link>>
+
+Enemy related:
+Mob health modifier: <<textbox "_difficultyHPmodifier1" _difficultyHPmodifier1>> <<link "Set">>
+	<<set _difficultyHPmodifier1 to Number(_difficultyHPmodifier1)>>
+	<<if _difficultyHPmodifier1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $difficultyHPmodifier to _difficultyHPmodifier1>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+Mob strength modifier: <<textbox "_difficultySTRmodifier1" _difficultySTRmodifier1>> <<link "Set">>
+	<<set _difficultySTRmodifier1 to Number(_difficultySTRmodifier1)>>
+	<<if _difficultySTRmodifier1 is NaN>>
+  		<<run UI.alert("Not a valid number!")>>
+	<<else>>
+		<<set $difficultySTRmodifier to _difficultySTRmodifier1>>
+    <<goto "Game customization">>
+	<</if>>
+<</link>>
+
+<<link [[Go back|Finish]]>>
+<</link>>
+
+

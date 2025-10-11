@@ -1,0 +1,9 @@
+:: ChristmasEvent [no-party-time-loss no-fainting-or-hunger] {"position":"1475,1375","size":"100,100"}
+You enter the shop.
+<span class="Techno">"Hello there $gamename. First of all, Merry Christmas, second of all we've got some stuff in the event shop that you might like. Its mostly skins again but we've got some delicious stuff too y'know."</span> says the man on the counter. He looks like the dev. You wonder who could that be.
+
+1. <<link [[Check out the event shop|Christmas shop sellables]]>> <</link>>
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "ChristmasEvent">> <</link>>
+3. <<link [[Go back|Town centre]]>> <<dateadd '1m'>> <</link>>
+
+

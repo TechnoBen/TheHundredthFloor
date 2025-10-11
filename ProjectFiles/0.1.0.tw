@@ -1,0 +1,55 @@
+:: 0.1.0 [NoSave] {"position":"0,150","size":"100,100"}
+ [[Back|Changelogs and game information]]
+
+Small note:
+For the custom languages when its being spoken there will be a - after a letter so you wont get confused. If people REALLY dont want that to be a thing ill remove them though.
+Example:
+Henz-aie-ai! which translates to Hey!
+
+- Changed the starting screen for the text to be in the middle.
+ - Added a secret boss :) you have a 25% of finding it by the way
+ - Added the first ever look of F2
+ - You can now travel in F2 (Going up and down the path at the mountain)
+ - You can no longer use potions from your inventory as it could create some problems during combat
+ - Added a cooking skill which when leveled up gives a boost the tier of food you get when cooking
+ - Charge no longer deals damage by DEX alone. Now DEX gets devided by 2 but STR is counted
+ - Boosted Shadow Hunters coat
+ - Added a language system (Evese) with a custom font for it <span class= Evese> Here's how it looks! </span>
+ - Added more text about the new language system at the 3pm event
+ - Changed the pants outlines to be a bit lighter
+ - Blue shirt was updated since i forgot...
+ - Remade combat for it to be easier to edit. Might run into some issues though as I mightve skipped some stuff when you encounter a monster.
+ - You can now cook at the small camp next to the F1 dungeon
+ - Added a new location to the path to Oakheart
+ - Added a new area for cooking in Oakheart
+ - You lose less hunger when sleeping
+ - Added a new scene if you fight the floor boss with blues help
+ - Added mushroob kebab
+ - Added blond as a hair option
+ - Made the chance to get mushrooms higher... No idea why it was at 33%.
+ - Added a guide button
+ - Changed the location of the party information to be at the top instead of the bottom.
+ - Added blue eyes
+ 
+ - Fixed the weird spacing in The Starters town
+ - Fixed the player going to the restaurant if they click on Go back when going to work at the Inn
+ - Fixed skeleton warrior kills not being displayed in the game stats (wrong variable time goes brrr)
+ - Fixed the huge amount of spacing during combat... I finally figured how lol
+ - Decimals being just... a lot. Now they aren't :)
+ - Fixed other players stats being more than the max if you sleep
+ - Removed 'a' from the I am a (gender) as it seems to be wrong... Or not? Idk it is deffo wrong if ur non doe. I dont want to spend time writing a If statement to check ur gender. Instead im gonna write this even more time wasting sentence! Good job me!
+ - Fixed the player being tped to the first weaponsmith if you click any of the exit options in the 2nd weaponsmith
+ - Fixed typos
+ - Fixed a bug where you won't die outside of combat and you can undo death. Now without a save you cant undo your death :)
+ - Fixed a spot where theres a chance to get sent to the old combat (rabbit, Path 3.2)
+ - The game now completely restarts when dying (if you click on start a new game)
+ 
+ - Removed the warning that the game is in alpha (also changed the text to say beta B)) and putted it in the start screen.
+ - Removed the spacing between the bars and buttons on the sidebar (and stats screen)
+ 
+ NEW ITEMS:
+Mushroom kebab (3 tiers)
+ 
+[[Back|Changelogs and game information]]
+
+

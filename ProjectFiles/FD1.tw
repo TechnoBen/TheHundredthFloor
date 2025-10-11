@@ -1,0 +1,16 @@
+:: FD1 {"position":"2100,2025","size":"100,100"}
+You go inside the floor dungeon.
+This place is HUGE from the inside. You dont remember it being THIS big in the beta of the game so you are wondering why it has been changed...
+"God damn this place is massive" you say to yourself.
+There are no enemies in here so far but you can see a huge door. You get closer to it and it opens.
+
+Directions:
+<<link [[Go deeper into the floor dungeon...|FD 1.1]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.1">>
+    <<F1Dungeon>>
+<</link>>
+<<link [[Go back...|Path 5.3]]>> <<set $location to "plains">> <</link>>
+
+

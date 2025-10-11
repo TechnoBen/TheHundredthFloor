@@ -1,0 +1,44 @@
+:: F2 BOSS {"position":"5600,650","size":"100,100"}
+You go in the room. As you go in you can hear that the door closes behind you. 
+
+There is nothing in here but the boss room is a giant circle. Its made out of a light blue stone and there are random spots where theres glass, behind the glass you can see some darker blue liquid that glows strongly.
+<<if $f2BossKilled == true or $f2BossTimeKilled == true>>\
+A door at the other end of the boss room opens. Unlike last time this one is a hallway that goes forward.
+<</if>>
+
+You can:
+<<nobr>>\
+<<if $f2BossKilled == true or $f2BossTimeKilled == true>>
+This floor boss has already been defeated... It can't be killed it twice.
+<<else>>
+<<link [[Fight the floor boss|F2BOSSBATTLE]]>>
+	<<set $floorBossBattle to true>>
+	<<set $lastVisitedPassage to "F2 BOSS">>
+	<<mob boldegar>>
+    <<set $MonsterDMGDealt to 0>>
+    <<set $F2Left to true>>
+    <<set $F2Right to true>>
+    <<set $F2Body to true>>
+<</link>>
+<</if>>
+<</nobr>>
+
+Directions:
+<<nobr>>\
+<<if $f2BossKilled == true or $f2BossTimeKilled == true>>
+<<link [[Go down the hall to floor 3|Floor 3 staircase 3]]>>
+  <<dateadd '1h'>>
+  <<set $location to "dungeon1">>
+  <<set $curFatigue += 50>>
+<</link>>
+<<else>>
+You need to kill the Second floor boss to proceed to floor 3.
+<</if>>
+<</nobr>>
+<<if $f2BossKilled == true or $f2BossTimeKilled == true>>\
+[[Go back|FD2.6]]
+<<else>>\
+You can't go back unless you kill the floor boss.
+<</if>>
+
+

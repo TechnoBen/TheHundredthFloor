@@ -1,0 +1,25 @@
+:: F2BOSSBATTLE [no-party-time-loss] {"position":"5800,650","size":"100,100"}
+You get closer to the middle of the room, hearing something from behind.
+
+You turn around to see a giant boulder fall next to the door. The boulder spins around to reveal its head.
+3 health bars pop out with the name "Bouldegar"
+
+<<if $raidParty == true>>\
+<span class="Blu3b3llrex">"This boss hits really hard with its arms and summons magma bullets that attack us! Make sure to destroy those before fighting the boss itself! It will attack with its head after that though so dont get careless! Everyone get a potion!"</span> <<set $hpPOT1 += 1>>
+<</if>>\
+
+You can:
+<<if $F2Left == true>><<link [[Attack the left arm|F2BOSSBATTLE 1.1]]>>
+	<<set $attackOutcome to "You do nothing.">>
+<</link>><<else>>The left arm is destroyed<</if>>
+<<if $F2Right == true>><<link [[Attack the right arm|F2BOSSBATTLE 3.1]]>>
+	<<set $attackOutcome to "You do nothing.">>
+<</link>><<else>>The right arm is destroyed<</if>>
+<<if $F2Body == true>><<link [[Attack the body|F2BOSSBATTLE 2.1]]>>
+	<<set $position to 2>>
+    <<set $attackOutcome to "You do nothing.">>
+<</link>><<else>>The body is destroyed<</if>>
+<<link [[Attack the boss|Combat remake]]>>
+<</link>>
+
+

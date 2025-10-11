@@ -1,0 +1,9 @@
+:: Dungeon 1.6 {"position":"1275,3150","size":"100,100"}
+You enter the room to see a single skeleton standing in the middle of it. It's wearing a blue jacket, some armor and a scythe. It's eyes start growing in red and a health bar comes up. It's name is Skulltron.
+
+<<link [[Fight it.|Combat remake]]>>
+<<set $lastVisitedPassage to "Dungeon1.4">>
+<<mob skulltron>>
+<</link>>
+
+

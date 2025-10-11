@@ -1,0 +1,83 @@
+:: Forest unfin [no-party-time-loss] {"position":"1475,3050","size":"100,100"}
+You go inside your forest hut. It's <<if $hutTask1 == false>>pretty dusty<<elseif $hutTask1>>clean<</if>>, the floor is <<if $hutTask2 == false>>pretty much destroyed<<elseif $hutTask2>>fixed<</if>>.
+<<nobr>>
+<<if $hutTask4 == false>>The bedroom looks really, really bad. You can barely go inside of it but its somehow manageable. There are vines inside of it, theres a small tree coming out of the floor, the floor is absolutely missing, the wardrobe is barely kept together. Its just a huge mess.
+<<elseif $hutTask4 == true>>
+The bedroom looks much better now. Its clean, the floor is nice, and the wardrobe is in a much better condition than it was.
+<</if>>
+<</nobr>>
+<<nobr>>
+<<if $hutTask5 == false>>The kitchen looks better than the bedroom. It has a stove, a fridge and a table. It has a chair to the corner but its broken in two... The floor is missing a few planks.
+<<elseif $hutTask5 == true>>
+The kitchen looks good to you. The floor is well made, the chair is fixed, the table is cleaner and everything about it looks better.
+<</if>>
+<</nobr>>
+<<nobr>>
+<<if $hutTask1 == false>>
+<<link [[Clean up the place|Forest unfin]]>>
+<<dateadd '1h'>>
+<<set $curFatigue += 85>>
+<<set $hutCleaned += 1>>
+<</link>>
+ | Cleanliness: $hutCleaned/20
+<<elseif $hutTask1 == true>>
+The hut is now clean. Well done.
+<</if>>
+<<if $hutCleaned >= 20>>
+<<set $hutTask1 to true>>
+<<set $hutCleaned to 0>>
+<<goto "Forest unfin">>
+<</if>> <</nobr>>
+<<nobr>>
+<<if $hutTask2 == false>>
+<<link [[Repair the floor|Forest unfin]]>>
+<<if $planks >= 25>>
+<<dateadd '5h'>>
+<<set $curFatigue += 625>>
+<<set $hutTask2 to true>>
+<<set $planks -= 25>>
+<</if>>
+<</link>>
+ | Planks needed $planks/25
+<<elseif $hutTask2 == true>>
+The floor is now fixed. Well done.
+<</if>>
+<</nobr>>
+<<nobr>>
+<<if $hutTask4 == false>>
+<<link [[Repair the bedroom|Forest unfin]]>>
+<<if $planks >= 55>>
+<<dateadd '12h'>>
+<<set $curFatigue += 925>>
+<<set $hutTask4 to true>>
+<<set $planks -= 55>>
+<</if>>
+<</link>>
+ | Planks needed $planks/55
+<<elseif $hutTask4 == true>>
+The bedroom is now repaired. Well done.
+<</if>>
+<</nobr>>
+<<nobr>>
+<<if $hutTask5 == false>>
+<<link [[Repair the kitchen|Forest unfin]]>>
+<<if $planks >= 35>>
+<<dateadd '10h'>>
+<<set $curFatigue += 885>>
+<<set $hutTask5 to true>>
+<<set $planks -= 35>>
+<</if>>
+<</link>>
+ | Planks needed $planks/35
+<<elseif $hutTask5 == true>>
+The kitchen is now repaired. Well done.
+<</if>>
+<</nobr>>
+
+<<link [[Go outside|Forest unfin outside]]>> <<set $location to "forest1">> <</link>>
+<<link [[Go to the bedroom|Sleep 1]]>>
+<<set $lastVisitedPassage1 to "Forest unfin">>
+<</link>>
+<<link [[Open the stats menu|Stat points]]>> <<set $lastVisitedPassage1 to "Forest unfin">> <</link>>
+
+

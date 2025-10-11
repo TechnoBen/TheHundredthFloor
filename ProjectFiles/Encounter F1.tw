@@ -1,0 +1,156 @@
+:: Encounter F1 {"position":"0,2475","size":"100,100"}
+<<set _randomencounter1 to random(50)>>\
+<<if _randomencounter1 lte 10 && $event5 == false>>
+You are walking around as you see a tall, white man wearing white clothes with a long red cape and a red hood, he has bright red eyes and long blonde hair... Something about him feels weird.
+"Is something wrong?" he asks holding his sword.
+"Oh no. Sorry." you respond, trying not to start a fight.
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+	<<set $event5 to true>>
+    <<set $event5part1 to false>>
+    <<set $event5fail to false>>
+<</link>>
+<<elseif _randomencounter1 lte 10>>
+Some dude walks past you and hits you by the shoulder...
+
+"Sorry this was an accident..." he says as he continues on his way...
+<<set $coinsloss to random(400)>>\
+<<set $Coins -= $coinsloss>>\
+<<if $Coins < 0>>\
+<<set $Coins to 0>>\
+<</if>>\
+Later on you realize that $coinsloss coins are missing from you...
+
+<<if $INT >= 2>>\
+<<linkreplace "Check youself">> You decided to check if something is missing from you. You realize that you are $coinsloss short so you run back.
+"Hey there. Seems like you stole something from me." You say as you draw your weapon...
+"WAIT WAIT NO! TAKE IT BACK!" The thief says back, throwing your coins back. <<set $Coins += $coinsloss>><</linkreplace>>
+<</if>>\
+<<link "Continue">>
+<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 20>>
+While walking you notice a person staring at you.
+You look at them.
+"Ah sorry for staring! You just have a cool outfit!" they say at you as they start running away awkwardly...
+
+<<link "Continue">>
+<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 30>>
+You see a small, red feathery dragon walking across the path...
+It looked like it was in hury...
+You wonder where It's headed to.
+
+<<link "Continue">>
+<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 40>>
+You are walking on the path until some random person waves at you...
+
+"Hey mind if you give me a hand here? My friend did something dumb and needs to be carried to the hospital..." he seems pretty worried... You are unsure of what to do.
+
+@@#opt3;
+<<link "Help them">><<replace "#opt3">>
+You decided to help them.
+"Alright where is your friend..."
+"Right over there" he says as he point to the location. You guys head there.
+The person looks like he has fainted... You pick him up with the other person and head to the hospital.
+"Thank you for helping us... Please take this as a reward." he hands you 100 coins. "Its not much since we are slightly poor but It's something..." <<set $Coins += 100>> <<dateadd '1h'>>
+
+<<link [[Next|Hospital]]>>
+<<set $Reputation += 5>>
+<</link>>
+<</replace>><</link>>
+<<link "Continue on your way">><<replace "#opt3">> <<goto $lastVisitedPassage>> <</replace>><</link>>
+@@
+
+<<elseif _randomencounter1 lte 50>>
+	<<if $event2 == true>>\
+You are walking on the path until some random person waves at you...
+
+"Hey mind if you give me a hand here? My friend did something dumb and needs to be carried to the hospital..." he seems pretty worried... You are unsure of what to do.
+
+@@#opt3;
+<<link "Help them">><<replace "#opt3">>
+You decided to help them.
+"Alright where is your friend..."
+"Right over there" he says as he point to the location. You guys head there.
+The person looks like he has fainted... You pick him up with the other person and head to the hospital.
+"Thank you for helping us... Please take this as a reward." he hands you 100 coins. "Its not much since we are slightly poor but It's something..." <<set $Coins += 100>> <<dateadd '1h'>>
+
+<<link [[Next|Hospital]]>>
+<<set $Reputation += 5>>
+<</link>>
+<</replace>><</link>>
+<<link "Continue on your way">><<replace "#opt3">> <<goto $lastVisitedPassage>> <</replace>><</link>>
+@@
+	<<elseif $event2 == false>>\
+You are walking around to wherever you are going to. As you are walking you can see some lost looking girl in a blue poncho, a blue shirt, what seems to be the starter chestplate and white jeans looking around. She sees you and started coming at you.
+<<if $gamename is "Toru">>\
+"Woah you look like me? That's so weird-" says the girl... <</if>>
+"Have you seen a man that is slightly taller than me, wears a white coat with a cool black star on the back of it, a gray shirt, boots, the starter chestplate, jeans and a belt His name is Kirin." she asks looking slightly worried.
+
+@@#opt1;
+<<link "I haven't seen him but I can help you look for him.">>
+<<replace "#opt1">>\
+You say that you haven't seen him but you can help with searching for him.
+"Ah thank you so much!" she replies...
+"So where do we start looking?" you ask and she looks at you unsure of what to say...
+"How about you decide...?" she says...
+
+@@#opt2;
+<<link "The inn.">><<replace "#opt2">>\
+You think it would be a good idea to look for him at the inn. The two of you head to the inn.
+"So how did you guys loose eachother...?" you ask out of curiosity.
+"Well we decided to go at some dungeon after which he realized that he forgot to take something so he went back... He has been taking a bit too long and I decided to go and find him..." she responds. "Oh yeah. My name is Toru. I forgot to tell you."
+"Ah I see. My name is $gamename by the way."
+After a while you get there and go inside.
+"Hey yall. We are looking for a player named Kirin. He is wearing a white coat and a gray shirt. Has anyone seen him?" you ask as everyone looks at you. A player says back "Kirin you say? I remember seeing him going up stairs but i'm pretty sure he left by now. It's been a while since he got up there." they respond with. Toru has already started going upstairs and you follow her.
+Toru goes to the left hall so you head to the right hall of the 2nd floor. You can see a open door in the distance and you go to it.
+"Anyone there?" you say as you see a man in a white coat look for something inside his room. "God dammit where did I put it!" he says. He doesn't seem to notice you. You look over to Toru who is still on the other side of the hall and wave at her. The man finally seems to notice you... "Oh hello there do you need something?" he says slightly confused. "Your friend Toru has been looking for you... So we were looking for you." you say. "Oh shit was I taking ages...?" the man says as Toru enters the room.
+"Finally found you! What the hell were you looking for all this time?!" Toru says as she lightly punches Kirin. "Thank you for helping me $gamename, please take this." she says as she opens her menu to unequip her poncho. She then hands it to you. "I will ask my friend to craft me a new one so don't worry about that." You take it and leave.
+
+<<link [[Continue|Town centre]]>>
+	<<set $Reputation += 5>>
+	<<set $cape3 to true>>
+    <<set $event2 to true>>
+    <<dateadd '1h'>>
+<</link>>
+<</replace>><</link>>
+<<link "The forest.">><<replace "#opt2">>
+You think it would be a good idea to check out the forest. The two of you head to the forest.
+"So how did you guys loose eachother...?" you ask out of curiosity.
+"Well we decided to go at some dungeon after which he realized that he forgot to take something so he went back... He has been taking a bit too long and I decided to go and find him..." she responds. "Oh yeah. My name is Toru. I forgot to tell you."
+"Ah I see. My name is $gamename by the way."
+After a while the two of you reach the forest. "So if yall were at the forest dungeon perhaps he has already went back and you passed each other. It would be a good idea to check just in case I guess..." you say. "Ah that's possible. Maybe we did." you two continue walking around the forest seeing a bunch of rabbits and plant monsters. You avoid them. After a while you get close to the dungeon they were at and you can hear movement... You hide behind a nearby bush to see a player running away from 3 rabbits. He is wearing a white coat with a black star on the behind and you remember the description Toru gave you. You jump out of the bush "Yo your friend has been looking for you!" you say as you see Kirin getting scared. The two of you kill the rabbits and Toru sees the two of you and comes.
+"What took you so long? I've been looking for you for a while!" says Toru as she lightly punches him... "Sorry... I was looking for something in my Inn room. I ended up finding it though." he says as he hands her something. "Thank you for helping me $gamename, please take this." she says as she opens her menu to unequip her poncho. She then hands it to you. "I will ask my friend to craft me a new one so don't worry about that." You take it and leave.
+
+<<link [[Continue|Path 3.3]]>>
+	<<set $Reputation += 5>>
+	<<set $cape3 to true>>
+    <<set $event2 to true>>
+    <<dateadd '1h'>>
+    <<dateadd '30m'>>
+<</link>>
+<</replace>><</link>>
+@@
+<</replace>>
+<</link>>
+<<link "No">>
+<<replace "#opt1">>\
+You say that you haven't seen him and continue on your way...
+
+<<link "Continue on your way">>
+<<set $event2 to true>>
+<<goto $lastVisitedPassage>>
+<</link>>
+<</replace>>
+<</link>>
+@@
+	<</if>>
+<</if>>
+
+
+

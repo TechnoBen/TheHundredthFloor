@@ -1,0 +1,10 @@
+:: SC Encounter {"position":"0,2175","size":"100,100"}
+<span class="shadow">"So... you lied."</span> a menacing voice hisses from behind. You slowly turn around, only to be met with the sight of a figure wielding a wicked scythe. It's ShadowScythe...
+
+<span class="shadow">As a result of becoming a PKer, he has came to kill you... You lock eyes with him, and the sheer fury radiating from his expression sends shivers down your spine.</span>
+
+<<link [[Continue|Combat remake]]>>
+    <<shadowScythe>><</shadowScythe>>
+<</link>>
+
+

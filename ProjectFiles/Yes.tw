@@ -1,0 +1,25 @@
+:: Yes {"position":"100,1325","size":"100,100"}
+You click on [[Yes]] and you get sent to a room. You look around to see your sister there. In the room there's a small coffee table, a couch and a TV. It doesn't look super fancy but It looks nice.
+
+<span class="radiant">"You finally came. Took you a while."</span> she said annoyed.
+"Thanks for the sandwich." you respond as you look at the countdown. It says that there's 1:30 minutes left.
+<span class="radiant">"Hell yeah it's getting released soon."</span> she says as you both sit down at a couch still looking at the countdown. You and your sister talk about the game as you explain what you did in the beta.
+
+<<link [[The countdown ends]]>>
+<<set $NPCs.RadiantRose.Affection += 1>>
+<<set $breastPlate to true>>
+<<set $isChestplateOn to "Starter breastplate">>
+<<set $starterSword to true>>
+<<set $isWeaponOn to "Starter sword">>
+<<dateadd '3m'>>
+<<set $weaponSlashDMG += 1>>
+<<set $weaponPierceDMG += 0.25>>
+<<set $bleedCountDealt += 1.25>>
+<<set $bleedPotencyDealt += 0.43>>
+<<set $armorBluntDEF += 1>>
+<<set $armorPierceDEF += 1>>
+<<set $location to "town">>
+<<set $weaponType to "Short sword">>
+<</link>>
+
+

@@ -1,0 +1,41 @@
+:: Molly library event {"position":"3325,750","size":"100,100"}
+You see the girl in blue and green and go to her.
+<span class="Molly">"Oh you're here. So what do I need to do to get the information?"</span>
+"Well I did say I want your reason for searching this person."
+<span class="Molly">"If that's the case then alright. He killed my brother in real life. He was his best friend. I've actually never seen him but my brother and him used to go out all of the time and play games every day. If you've noticed by now my username is pretty... Weird. That's because im using my brothers account for this."</span> she says. You didn't even check her name. You check her name to see its XxWryEdwinxX.
+"I see. How are you so sure its him?" you ask.
+<span class="Molly"> "Well as soon as my brother was found dead he dissapeard. The police couldn't find him either."</span>
+"Why would a person hiding be playing a game...?"
+<span class="Molly">"He is a massive VRMMO nerd. I doubt he would miss this game whatever he does. My brother wanted to play this too so I know a bit about this game. He was a beta tester."</span>
+"How are you so sure about his outfit?"
+<span class="Molly">"My brother and him wouldnt shut up about them wanting to lead a guild wearing those colors on their clothes. So Maybe he would wear clothes like that maybe not. I am sure he would though."</span>
+"Have you checked if he is on your brothers friend list? Or do you by chance know his username."
+<span class="Molly">"Yeah he is offline. Maybe using a different account? Dunno."</span>
+"What do I call you by the way?"
+<span class="Molly">"You can call me Molly. I don't like the whole username shit. It feels too detached from reality I guess?"</span>
+"Thats fair. You can call me $gamename."
+<span class="Molly">"Alright. So what do you know about the dude im looking for."</span>
+"Well I saw him in the first floor. He was walking to somewhere and was wearing a red cape, white clothes, bright red eyes and blonde hair. He was pretty tall too."
+<span class="Molly">"That's how my brother used to describe him too... This might be him. So what was the book you were talking about?"</span>
+"We are looking for the book of players, the thing is I have no idea where it is. During the beta it used to be somewhere around here" you say pointing to a shelf in the distance "but that was a long time ago. Let's start looking from there."
+<span class="Molly">"This better be worth my time."</span> she says as you two start looking for the book of players.
+After a hour you hear Molly.
+<span class="Molly">"AHA! I FOUND IT!"</span> she screams out loud. You can hear someone shush her.
+You go to her "Oh shit yeah thats the book..."
+Both of you go to one of the tables and shit down, opening the book. You can see every players face, status and their username. After a while you find him. "This is him. His username is JustifiedBlade12 and he is alive."
+<span class="Molly">"Such a dumb fucking username, justified blade my ass."</span> she says as she balled her hand into a fist. She looks REALLY pissed off.
+"Do you know how he acts or anything about him...?"
+<span class="Molly">"I've never seen him in real life but I have watched them play and talk. From what ive seen he usually uses a rapier and is playing REALLY carefully. He makes sure to plan everything out before doing what he does."</span>
+"Well that's gonna be troublesome."
+<span class="Molly">"So where are we gonna start our search for him?"</span>
+"How about this floor? Maybe we could find him and follow him?"
+<span class="Molly">"I mean sure. But this could take longer than you think. Also can you send me a friend request? I don't know how that thing works so it would be easier if you do it..."</span> she says. You nod, sending her a friend request. She accepts it.
+
+<<link [[Continue|Library 1]]>>
+	<<dateadd '1h'>>
+	<<dateadd '30m'>>
+	<<set $event5part2 to 0>>
+    <<set $mollyAffection to 1>>
+<</link>>
+
+

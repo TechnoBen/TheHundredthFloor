@@ -1,0 +1,24 @@
+:: FD 1.5 {"position":"2350,1775","size":"100,100"}
+You went inside the room.
+Inside of it you see a lot of beds and chests... You are extremely confused. A safe room inside the floor dungeon...?
+<<nobr>>
+<<if $f1key >= 1>>
+You found a key inside the chests...
+<</if>>
+<</nobr>>
+
+You can:
+<<link [[Look around|FD 1.5]]>>
+<<set $f1key to 1>>
+<<dateadd '45m'>>
+<</link>>
+
+Directions:
+<<link [[Go back...|FD 1.3]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<<set $lastVisitedPassage to "FD 1.3">>
+<<F1Dungeon>>
+<</link>>
+
+

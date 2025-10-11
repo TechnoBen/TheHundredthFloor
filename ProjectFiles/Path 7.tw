@@ -1,0 +1,136 @@
+:: Path 7 [Path] {"position":"3650,1150","size":"100,100"}
+<<if $event3 is true>>\
+You started going down the path. There seems to be snow that reaches your kneecaps. 
+Theres a new path to the right... You remember that it leads to a cave where you used to go for resources.
+
+1. <<link [[Follow the path|Path 8]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 8">>
+<<SnowPlains1>>
+<</link>>
+2. <<link [[Follow the 2nd path|Path 7.1]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+	<<set $lastVisitedPassage to "Path 7.1">>
+<<SnowPlains1>>
+<</link>>
+3. <<link [[Go back|Path 6]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+<</link>>
+<<else>>
+You are walking down the path as you hear some noises coming from the left, you thinking it's a mob, you crouch down and try to peek to see 2 players beating another player... You stand there watching for a bit until they take out their weapons. The other player seems to have dropped their weapon somewhere.
+<div id="opt4">
+<<link "Stop the PKers">><<replace "#opt4">>
+You look around for the dropped weapon to see that its near you. You grab it and scream out "Catch your sword!" and you throw it to the player getting beaten up. She catched it and you rush out to the PKers while they are still distracted.
+"And who the fuck are you?!" says one of the PKers.
+"It doesn't matter who I am. It's not cool to attack a defendless player. If you wanna fight then go ahead and fight me."
+"Well then. Let's get rid of both" the other PKer says as both of start coming to you. One is going to your right while the other one is going to the girl that got attacked.
+"Defend yourself!" You say to the girl as she gets in a battle stance.
+The player coming at you is charging at you with their rapier.
+<div id="opt5">\
+<<link "Block the attack">><<replace "#opt5">>
+<<if $weaponType is "Heavy sword" or $weaponType is "Short sword">>\
+You decided to block the attack, you get ready to block the incoming charge and you do. The PKer is stumbling so you take the chance and you kick him to the floor and kicking his rapier off his hand. You point the sword to his face and you look over to the girl to see that the PKer is swinging at her and shes barely dodging the attacks.
+You stab the PKer under you in the leg and tell him "Stay down or I will end you." you go to the other PKer from the behind. The girl notices you and she looks a bit more confident. The PKer starts to panic a bit and looks at the 2 of you "Wait wait we can talk about this-" he says. "Leave us and we won't do anything. Find us again and we will kill you AND your friend over there." you say as you point your sword to the PKer that you have defeated.
+He and his friend run away.
+
+"Thank you for helping me." the girl says as she puts her sword in her sheath. "I was trying to find a town to rest at but these two PKers came out of nowhere and started beating me up..."
+"Glad to know you are safe now. You should get better gear... Yours is kinda weak." you tell her.
+"Well I've been focused on gathering materials so I can work on my blacksmithing skill but that seems to be a bit of a bad idea..."
+"Oh you want to be a blacksmith?"
+"Yeah... It looks fun to do."
+"Good luck in that. I'll make sure to check out your shop once you are done with it."
+"Ah thank you! If you have some materials you would want to sell I would gladly take them... Once I open my own shop though."
+<<else>>
+You get yourself ready to block the attack but your sword doesn't seem to be good enough for blocking so you end up getting stabbed in the chest a few times. <<set $CurHP -= 27>>
+"Come here you little fucker!" screams the PKer that is attacking the girl and the person you are fighting gets distracted. You take the opportunity and push the PKer to the ground. You point the sword to his face and you look over to the girl to see that the PKer is swinging at her and shes barely dodging the attacks.
+You stab the PKer under you in the leg and tell him "Stay down or I will end you." you go to the other PKer from the behind. The girl notices you and she looks a bit more confident. The PKer starts to panic a bit and looks at the 2 of you "Wait wait we can talk about this-" he says. "Leave us and we won't do anything. Find us again and we will kill you AND your friend over there." you say as you point your sword to the PKer that you have defeated.
+He and his friend run away.
+
+"Thank you for helping me." the girl says as she puts her sword in her sheath. "I was trying to find a town to rest at but these two PKers came out of nowhere and started beating me up..."
+"Glad to know you are safe now. You should get better gear... Yours is kinda weak." you tell her.
+"Well I've been focused on gathering materials so I can work on my blacksmithing skill but that seems to be a bit of a bad idea..."
+"Oh you want to be a blacksmith?"
+"Yeah... It looks fun to do."
+"Good luck with that. I'll make sure to check out your shop once you are done with it."
+"Ah thank you! If you have some materials you would want to sell I would gladly take them... Once I open my own shop though."
+<</if>>
+<<link [[Continue|Path 8]]>>
+	<<set $AmberEmberAlive to true>>
+	<<set $AmberEmberShop to true>>
+	<<set $PKencounters to true>>
+	<<set $PKGuildIn to false>>
+	<<set $event3 to true>>
+<</link>>
+<</replace>><</link>>
+<<link "Dodge the attack">><<replace "#opt5">>
+<<if $weaponType is "Rapier">>\
+You decided to dodge the incoming attack. As the enemy is charging at you, you jump back and take out your sword to prepare yourself to attack back. The enemy is continuously throwing attacks at you as you keep on dodging. You can see the PKer getting tired. His arm starts to get really tired so you take the chance and strike back hitting his fingers after which he jumps back but he trips and falls. You place your foot on his chest and point your sword to his face, looking over to the girl to see that the PKer is swinging at her and her barely dodging the attacks.
+You stab the PKer under you in the leg and tell him "Stay down or I will end you." you go to the other PKer from the behind. The girl notices you and she looks a bit more confident. The PKer starts to panic a bit and looks at the 2 of you "Wait wait we can talk about this-" he says. "Leave us and we won't do anything. Find us again and we will kill you AND your friend over there." you say as you point your sword to the PKer that you have defeated.
+He and his friend run away.
+
+"Thank you for helping me." the girl says as she puts her sword in her sheath. "I was trying to find a town to rest at but these two PKers came out of nowhere and started beating me up..."
+"Glad to know you are safe now. You should get better gear... Yours is kinda weak." you tell her.
+"Well I've been focused on gathering materials so I can work on my blacksmithing skill but that seems to be a bit of a bad idea..."
+"Oh you want to be a blacksmith?"
+"Yeah... It looks fun to do."
+"Good luck in that. I'll make sure to check out your shop once you are done with it."
+"Ah thank you! If you have some materials you would want to sell I would gladly take them... Once I open my own shop though."
+<<else>>\
+You decided to dodge the incoming attack. As the enemy is charging at you, you jump back but instead you trip and fall on the floor. The PKer takes the chance and stabs you. <<set$CurHP -= 27>>You stand up and take out your sword to prepare yourself to attack back. The enemy is continuously throwing attacks at you as you keep on dodging. You can see the PKer getting tired. His arm starts to get really tired so you take the chance and strike back hitting his fingers after which he jumps back but he trips and falls. You place your foot on his chest and point your sword to his face, looking over to the girl to see that the PKer is swinging at her and her barely dodging the attacks.
+You stab the PKer under you in the leg and tell him "Stay down or I will end you." you go to the other PKer from the behind. The girl notices you and she looks a bit more confident. The PKer starts to panic a bit and looks at the 2 of you "Wait wait we can talk about this-" he says. "Leave us and we won't do anything. Find us again and we will kill you AND your friend over there." you say as you point your sword to the PKer that you have defeated.
+He and his friend run away.
+
+"Thank you for helping me." the girl says as she puts her sword in her sheath. "I was trying to find a town to rest at but these two PKers came out of nowhere and started beating me up..."
+"Glad to know you are safe now. You should get better gear... Yours is kinda weak." you tell her.
+"Well I've been focused on gathering materials so I can work on my blacksmithing skill but that seems to be a bit of a bad idea..."
+"Oh you want to be a blacksmith?"
+"Yeah... It looks fun to do."
+"Good luck in that. I'll make sure to check out your shop once you are done with it."
+"Ah thank you! If you have some materials you would want to sell I would gladly take them... Once I open my own shop though."
+<</if>>
+<<link [[Continue|Path 8]]>>
+	<<set $AmberEmberAlive to true>>
+	<<set $AmberEmberShop to true>>
+	<<set $PKencounters to true>>
+	<<set $PKGuildIn to false>>
+	<<set $event3 to true>>
+	<<dateadd '30m'>>
+<</link>>
+<</replace>><</link>>
+</div>\
+<</replace>><</link>>
+<<link "Walk away">><<replace "#opt4">>
+You decide to do nothing. You walk away not minding whatever is happening there.
+
+<<link [[Continue|Path 8]]>>
+	<<set $AmberEmberAlive to false>>
+	<<set $AmberEmberShop to false>>
+	<<set $PKencounters to true>>
+	<<set $PKGuildIn to false>>
+	<<set $event3 to true>>
+	<<dateadd '5m'>>
+<</link>>
+<</replace>><</link>>
+<<link "Join the PKers">><<replace "#opt4">>
+You walk to the PKers "Mind if I join in the fun?" you ask.
+The girl looks at you in fear. "And who the hell are you?" the PKer asks you as you answer "$gamename. Now can I join yall?" the PKers look at eachother... "Sure go ahead." they say as you come in and kick the person. At some point the innocent player dies. You killed a player.
+
+"If you want to join our group you will find us over one of the towns in this floor." the PKer says as they walk away.
+
+<<link [[Continue|Path 8]]>>
+	<<set $AmberEmberAlive to false>>
+	<<set $AmberEmberShop to false>>
+	<<set $PKencounters to false>>
+	<<set $PKGuildIn to true>>
+	<<dateadd '15m'>>
+	<<set $event3 to true>>
+<</link>>
+<</replace>><</link>>
+</div>
+<</if>>
+
+
+

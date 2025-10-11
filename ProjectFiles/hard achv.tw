@@ -1,0 +1,26 @@
+:: hard achv {"position":"2625,225","size":"100,100"}
+<center>
+<div class="UIButtons">\
+<<button "Go back">>
+<<script>>
+Dialog.setup("Achievements", "achievements");
+Dialog.wiki(Story.get("Achievements").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>\
+<<if $achievement_007 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 007.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/floorboss.png" width="50%" />
+<</if>>
+<<if $achievement_012 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 012.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/floorboss.png" width="50%" />
+<</if>>
+<<if $achievement_010 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 010.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 010 locked.png" width="50%" />
+<</if>>
+</center>
+
+

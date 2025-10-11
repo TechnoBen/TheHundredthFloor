@@ -1,0 +1,9 @@
+:: Armor shop 2 {"position":"3525,1725","size":"100,100"}
+You go inside the armorsmith. There is a skinny NPC looking at you, he looks bored... Really bored.
+He mutters something to himself. You can't make out what he is saying.
+
+1. [[Buy gear|Buy gear 1]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Armor shop 2">> <</link>>
+3. <<link [[Go back|3rd town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

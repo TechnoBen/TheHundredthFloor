@@ -1,0 +1,30 @@
+:: F1BOSSBATTLE 1.2 {"position":"1075,2525","size":"100,100"}
+Deathlord has swung its axe. Blu3 tried to tell her group to go back but most of the people took damage leaving them low health.
+
+The boss is preparing to throw its axe at your group. By the next command you give it should have thrown it.
+
+Floor boss health: $MonsterHP
+
+Your HP: $CurHP/$MaxHP
+Your raid partys HP: $raidHP/1000
+
+You can:
+<<if $raidParty == true>>
+<<link [[Command your people to attack|F1BOSSBATTLE 1.3]]>>
+<<set $mobs.Deathlord.CurHP -= 45>>
+<<set $raidHP -= 243>>
+<<set $CurHP -= 123>>
+<</link>>
+<<link [[Command your people to charge|F1BOSSBATTLE 1.3]]>>
+<<set $mobs.Deathlord.CurHP -= 52>>
+<<set $raidHP -= 283>>
+<<set $CurHP -= 153>>
+<</link>>
+<<link [[Command your people to dodge|F1BOSSBATTLE 1.3]]>>
+<</link>>
+<<elseif $raidParty == false>>
+You don't have a raid party to command.
+<</if>>
+[[Fight it alone|Combat remake]]
+
+

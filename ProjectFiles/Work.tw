@@ -1,0 +1,30 @@
+:: Work {"position":"2100,1650","size":"100,100"}
+You decided to do some work around the Inn.
+Work hours:
+12:00AM - 07:00AM
+
+You can:
+<<if setup.datesystems.default.getDate().h gte 0 and setup.datesystems.default.getDate().h lte 6>>\
+<<link [[Serve drinks (20 col per hour)|Work]]>>
+<<dateadd '1h'>>
+<<set $Coins += 20>>
+<<set $drinksrng to random(27)>>
+<<set $drinkserved += 10 + $drinksrng>>
+<<set $curFatigue += 60>>
+<<set $hoursWorked += 1>>
+<</link>>
+<<if $hoursWorked >= 20>>\
+<<link [[Sweep the floor (35 col per 1 hour)|Work]]>>
+<<dateadd '1h'>>
+<<set $Coins += 35>>
+<<set $curFatigue += 80>>
+<<set $hoursWorked += 1>>
+<</link>>
+<<elseif $hoursWorked <= 19>>\
+You need to work for 20 hours before being able to swipe the floor!<</if>>\
+<<else>>[[You can't work anymore!|Inn 1]]
+<</if>>\
+
+[[Go back|Inn 1]]
+
+

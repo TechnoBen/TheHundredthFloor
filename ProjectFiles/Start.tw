@@ -1,0 +1,28 @@
+:: Start [NoSave no-fainting-or-hunger] {"position":"500,400","size":"100,100"}
+<center><<if $bannerRNG is 1>><img src= "Textures/The Hundredth Floor banner.png" width="65%" /><<elseif $bannerRNG is 2>><img src= "Textures/The Hundredth Floor banner 1.png" width="65%" /><<elseif $bannerRNG is 3>><img src= "Textures/The Hundredth Floor banner 2.png" width="65%" /><<elseif $bannerRNG is 4>><img src= "Textures/The Hundredth Floor banner 3.png" width="65%" /><</if>>
+Hello everyone and welcome to my attempt to make a game
+I will try to make a lot of stuff for this game and hopefully everything goes smoothly and I don't mess it up.
+
+Please note that this is my first actual game that wont suck as much as my 1st VN I have on itch.io and that this is a completely different language to what im used to. I have 0 knowledge of twine 2.
+
+If eyes are not displaying disable animated eyes in the settings!
+Report any bugs in the discord server, itch.io page or reddit. I do not know how to use github at all so dont go there lmao...
+
+Temporary message:
+Yo. Made a feedback form! If youre a returning player please do fill it out so that I can know what parts of the game I should focus on/make better. Link can be found at [[Links]] or the changelogs.
+
+Aight let's begin! Choose an option please :)</center>\
+-------------------------------
+\<center><h3>Beta version: [[0.1.16]]
+UNSTABLE VERSION!
+(subject to change)</h3>\
+-------------------------------
+\1. <<link [[Character creation]]>>
+	<<unset $NoSideBar>>
+	<<unset $bannerRNG>>
+<</link>>
+2. [[Changelogs and game information]]
+3. [[Links]]
+</center>\
+
+

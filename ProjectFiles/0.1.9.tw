@@ -1,0 +1,37 @@
+:: 0.1.9 [NoSave] {"position":"225,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+- People you have 0 affection with will no longer be on your friendlist
+- Radiant will now appear at the starters town from 3pm to 6pm
+- Shadow will appear from 1am to 4am at the starters town
+- Crimson will appear from 12pm to 4pm at the starters town
+- Blu3BellRexs schedule is displayed on a small sign she left at the gathering place
+- Running away says that you need 30 stamina
+- Added a fail message for running away
+- Debuffed party members attack gain after you beat the floor boss... no idea what the fuck i was on when i gave shadow a 15 FUCKING DAMAGE BOOST
+- Made the "Do nothing" button always be checked (thanks to a random person on the twine server. I randomly saw it when they were helping someone out with radio buttons lmaooo)
+- Started work on a new mechanic (might not finish this version)
+- Started work on traits (might not finish this version)
+- Added a new hard achievement
+- Added a new medium achievement
+- Debuffed Marcellus and Zegraths stats by 1
+- Made Zegrath Partyable 
+- Added more ppl to the social menu
+- Replaced the equip buttons to Equip links because it looks better imo
+- Made a new itch.io banner/image/thing
+- Added cave/dungeon lightning
+- Added game customization menu (Doesnt work as of now)
+- Raised max XP to 150. Old was 100
+- Added Shadow, Crimson and Radiant to the floor 2 town. Changed their dialogue too but more changes will come once I do a NPC update. You can already see a example with 1 of the NPCs tho i wont mention which since its spoilers.
+- Added the 2 outfits from the Christmas giveaway
+
+- Fixed typos
+- Fixed a REALLY old bug where buttons wouldnt have a left and right border (the buttons at stats and shit)
+- Fixed Marcellus and Zegrath having 100 max xp even though they start at lvl 4/5. Old players will have them that way though cuz I cant edit that lol
+- Fixed a bug where the black wolfs defence didnt matter and instead it checks for crimsons def.
+- Fixed extra spacing in the wardrobe
+- Fixed background not changing to snow1 when you come out of the floor 2 dungeon
+
+[[Back|Changelogs and game information]]
+
+

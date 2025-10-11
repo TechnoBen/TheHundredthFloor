@@ -1,0 +1,35 @@
+:: Achievements {"position":"2250,225","size":"100,100"}
+<center>Achievements points: $achvPoints
+<div class="UIButtons">\
+<<button "Easy">>
+<<script>>
+Dialog.setup("Easy achievements", "easy");
+Dialog.wiki(Story.get("easy achv").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Medium">>
+<<script>>
+Dialog.setup("Medium achievements", "med");
+Dialog.wiki(Story.get("med achv").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button " Hard ">>
+<<script>>
+Dialog.setup("Hard achievements", "hard");
+Dialog.wiki(Story.get("hard achv").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Secret">>
+<<script>>
+Dialog.setup("Secret achievements", "secret");
+Dialog.wiki(Story.get("secret achv").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>\
+</center>\
+
+

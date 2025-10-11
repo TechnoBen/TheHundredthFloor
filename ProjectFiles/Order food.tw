@@ -1,0 +1,57 @@
+:: Order food [no-fainting-or-hunger no-party-time-loss] {"position":"1475,2050","size":"100,100"}
+<<button "Buy one star cooked boar meat | 58 col">>
+<<if $Coins >= 58>> 
+<<set $oneStarBmeat += 1>>
+<<notify>> You bought cooked boar meat! <</notify>>
+<<set $Coins -= 58>>
+<<dateadd '26m'>>
+<<goto "Order food">>
+<<elseif $Coins <= 57>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy one star cooked ragout meat | 65 col">>
+<<if $Coins >= 65>> 
+<<set $oneStarRmeat += 1>>
+<<set $Coins -= 65>>
+<<dateadd '30m'>>
+<<notify>> You bought cooked ragout meat! <</notify>>
+<<goto "Order food">>
+<<elseif $Coins <= 64>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a one star boar sandwich | 89 col">>
+<<if $Coins >= 89>> 
+<<set $oneStarBsandwich += 1>>
+<<set $Coins -= 89>>
+<<dateadd '45m'>>
+<<notify>> You bought a boar sandwich! <</notify>>
+<<goto "Order food">>
+<<elseif $Coins <= 88>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a one star ragout sandwich | 105 col">>
+<<if $Coins >= 105>> 
+<<set $oneStarRsandwich += 1>>
+<<set $Coins -= 105>>
+<<dateadd '50m'>>
+<<notify>> You bought a ragout sandwich! <</notify>>
+<<goto "Order food">>
+<<elseif $Coins <= 104>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Restaurant 1]]
+
+

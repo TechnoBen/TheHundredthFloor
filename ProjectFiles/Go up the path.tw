@@ -1,0 +1,16 @@
+:: Go up the path {"position":"3850,700","size":"100,100"}
+You decided to go up the path.
+As you walk by you notice a huge tree in that is taking a huge part of the path. You walk around it but you notice that it has a entarance.
+
+You can:
+<<link [[Enter the tree|Library 1]]>>
+	<<dateadd '1m'>>
+<</link>>
+
+Directions:
+1. <<link [[Go back|Floor 2 staircase 1]]>>
+	<<dateadd '30m'>>
+	<<set $curFatigue += 30>>
+<</link>>
+
+

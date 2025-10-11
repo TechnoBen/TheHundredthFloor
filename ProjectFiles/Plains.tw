@@ -1,0 +1,50 @@
+:: Plains {"position":"1350,2275","size":"100,100"}
+You are outside the Starter towns entarance. The entarance is HUGE. The town is also surrounded by a huge wall.
+The plains is a huge area with tall grass. You see bunch of players mostly chilling.
+
+<<nobr>>
+<<if $hasSeen1 == true>>
+There are a lot of boars 6 or 7 trees on which 4 of them there are players resting on them. And a path that leads to somewhere. Players usually fight the boars on this path because of the tall grass. Going to the trees is probably a huge pain in the ass because you can get attacked by a boar...
+You notice players going down the path. You remember that it leads to the 2nd town.
+<</if>>
+<</nobr>>
+Directions:
+1. <<link [[Go back to town|Town entarance]]>>
+<<dateadd '2m'>>
+<<set $location to "town">>
+<</link>>
+<<if $discoveredPath1 == true>>\2. <<link [[Follow the path|Path 1]]>> <<dateadd '4m'>> <</link>> <</if>>
+
+You can:
+1. <<link [[Look for a boar|Combat remake]]>>
+	<<set _mobAmount to random(100)>>
+    <<if _mobAmount lte 2>>
+		<<mob boar1>>
+        <<mob boar1>>
+        <<mob boar1>>
+        <<mob boar1>>
+    <<elseif _mobAmount lte 15>>
+    	<<mob boar1>>
+        <<mob boar1>>
+        <<mob boar1>>
+    <<elseif _mobAmount lte 30>>
+    	<<mob boar1>>
+        <<mob boar1>>
+    <<elseif _mobAmount lte 100>>
+    	<<mob boar1>>
+    <</if>>
+	<<dateadd '10m'>>
+	<<set $curFatigue += 10>>
+	<<set $lastVisitedPassage to "Plains">>
+<</link>>
+2. <<link [[Look around]]>>
+<<dateadd '3m'>>
+<<set $discoveredPath1 to true>>
+<</link>>
+3. <<link [[Waste time|Plains]]>>
+	<<dateadd '10m'>>
+	<<Resting>>
+<</link>>
+
+
+

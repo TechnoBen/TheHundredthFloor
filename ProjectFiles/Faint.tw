@@ -1,0 +1,21 @@
+:: Faint {"position":"1875,350","size":"100,100"}
+<span class="radiant">"$name... $name! Wake up!"</span> you hear someone say... You open your eyes to see that you are laying on a bed in a room. RadiantRose is right next to you sitting on a chair.
+<span class="radiant">"You god damn dumbass what did you do?! How did you manage to faint!"</span> she says worried.
+"Sorry... I just got a bit too tired..." you respond. Still tired.
+A person comes in and you recognize them. It's the receptionist from the hospital.
+"Hey kid. You finally woke up?" she says.
+"Yeah... Thanks for taking care of me? How did I get here anyways?" you asked the receptionist.
+"No worries. This girl says that she randomly found you. She carried you all the way to here. You should rest up by the way. It wont be a problem."
+"I see... Thank you all for helping me.." you respond.
+
+You decided to check your stats and see that you are missing some coins...
+You seem to be messing $coinsloss Coins...
+<<dateadd '10h'>>
+1. <<link [[Sleep|Sleep 1]]>>
+<<set $lastVisitedPassage1 to "Faint">>
+<</link>>
+2. <<link [[Hospital]]>>
+	<<unset $insomniaChance>>
+<</link>>
+
+

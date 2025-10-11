@@ -1,0 +1,347 @@
+:: Stats wolf [no-party-time-loss no-fainting-or-hunger] {"position":"3000,225","size":"100,100"}
+$NPCs.BlackWolf.name's stats:
+HP: $NPCs.BlackWolf.CurHP/$NPCs.BlackWolf.MaxHP
+STM: $NPCs.BlackWolf.CurSTM/$NPCs.BlackWolf.MaxSTM
+
+<<link [[Refresh|Stats wolf]]>><</link>>
+
+STR: S: $NPCs.BlackWolf.SlashSTR P: $NPCs.BlackWolf.PierceSTR | needed <<print $NPCs.BlackWolf.STRgoalMax.toFixed(0) - $NPCs.BlackWolf.STRgoal.toFixed(0)>> meat until stat level up
+Boar: <<link "+1">>
+<<if $boarMeat >= 1>>
+	<<set $boarMeat -= 1>>
+    <<set $NPCs.BlackWolf.STRgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $boarMeat >= 5>>
+	<<set $boarMeat -= 5>>
+    <<set $NPCs.BlackWolf.STRgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $boarMeat >= 10>>
+	<<set $boarMeat -= 10>>
+    <<set $NPCs.BlackWolf.STRgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $boarMeat >= 1>>
+    <<set $NPCs.BlackWolf.STRgoal += $boarMeat>>
+    <<set $boarMeat -= $boarMeat>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+Ragout: <<link "+1">>
+<<if $ragoutMeat >= 1>>
+	<<set $ragoutMeat -= 1>>
+    <<set $NPCs.BlackWolf.STRgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $ragoutMeat >= 5>>
+	<<set $ragoutMeat -= 5>>
+    <<set $NPCs.BlackWolf.STRgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $ragoutMeat >= 10>>
+	<<set $ragoutMeat -= 10>>
+    <<set $NPCs.BlackWolf.STRgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $ragoutMeat >= 1>>
+    <<set $NPCs.BlackWolf.STRgoal += $ragoutMeat>>
+    <<set $ragoutMeat -= $ragoutMeat>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+
+DEF: S: $NPCs.BlackWolf.SlashDEF P: $NPCs.BlackWolf.PierceDEF B: $NPCs.BlackWolf.BluntDEF | needed <<print $NPCs.BlackWolf.DEFgoalMax.toFixed(0) - $NPCs.BlackWolf.DEFgoal.toFixed(0)>> meat until stat level up
+Boar: <<link "+1">>
+<<if $boarMeat >= 1>>
+	<<set $boarMeat -= 1>>
+    <<set $NPCs.BlackWolf.DEFgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $boarMeat >= 5>>
+	<<set $boarMeat -= 5>>
+    <<set $NPCs.BlackWolf.DEFgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $boarMeat >= 10>>
+	<<set $boarMeat -= 10>>
+    <<set $NPCs.BlackWolf.DEFgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $boarMeat >= 1>>
+    <<set $NPCs.BlackWolf.DEFgoal += $boarMeat>>
+    <<set $boarMeat -= $boarMeat>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+Ragout: <<link "+1">>
+<<if $ragoutMeat >= 1>>
+	<<set $ragoutMeat -= 1>>
+    <<set $NPCs.BlackWolf.DEFgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $ragoutMeat >= 5>>
+	<<set $ragoutMeat -= 5>>
+    <<set $NPCs.BlackWolf.DEFgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $ragoutMeat >= 10>>
+	<<set $ragoutMeat -= 10>>
+    <<set $NPCs.BlackWolf.DEFgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $ragoutMeat >= 1>>
+    <<set $NPCs.BlackWolf.DEFgoal += $ragoutMeat>>
+    <<set $ragoutMeat -= $ragoutMeat>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+
+DEX: $NPCs.BlackWolf.DEX | needed <<print $NPCs.BlackWolf.DEXgoalMax.toFixed(0) - $NPCs.BlackWolf.DEXgoal.toFixed(0)>> meat until stat level up
+Boar: <<link "+1">>
+<<if $boarMeat >= 1>>
+	<<set $boarMeat -= 1>>
+    <<set $NPCs.BlackWolf.DEXgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $boarMeat >= 5>>
+	<<set $boarMeat -= 5>>
+    <<set $NPCs.BlackWolf.DEXgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $boarMeat >= 10>>
+	<<set $boarMeat -= 10>>
+    <<set $NPCs.BlackWolf.DEXgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $boarMeat >= 1>>
+    <<set $NPCs.BlackWolf.DEXgoal += $boarMeat>>
+    <<set $boarMeat -= $boarMeat>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+Ragout: <<link "+1">>
+<<if $ragoutMeat >= 1>>
+	<<set $ragoutMeat -= 1>>
+    <<set $NPCs.BlackWolf.DEXgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $ragoutMeat >= 5>>
+	<<set $ragoutMeat -= 5>>
+    <<set $NPCs.BlackWolf.DEXgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $ragoutMeat >= 10>>
+	<<set $ragoutMeat -= 10>>
+    <<set $NPCs.BlackWolf.DEXgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $ragoutMeat >= 1>>
+    <<set $NPCs.BlackWolf.DEXgoal += $ragoutMeat>>
+    <<set $ragoutMeat -= $ragoutMeat>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+
+INT: $NPCs.BlackWolf.INT | needed <<print $NPCs.BlackWolf.INTgoalMax.toFixed(0) - $NPCs.BlackWolf.INTgoal.toFixed(0)>> meat until stat level up
+Boar: <<link "+1">>
+<<if $boarMeat >= 1>>
+	<<set $boarMeat -= 1>>
+    <<set $NPCs.BlackWolf.INTgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $boarMeat >= 5>>
+	<<set $boarMeat -= 5>>
+    <<set $NPCs.BlackWolf.INTgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $boarMeat >= 10>>
+	<<set $boarMeat -= 10>>
+    <<set $NPCs.BlackWolf.INTgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $boarMeat >= 1>>
+    <<set $NPCs.BlackWolf.INTgoal += $boarMeat>>
+    <<set $boarMeat -= $boarMeat>>
+    <<goto "Stats wolf">>
+<<elseif $boarMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+Ragout: <<link "+1">>
+<<if $ragoutMeat >= 1>>
+	<<set $ragoutMeat -= 1>>
+    <<set $NPCs.BlackWolf.INTgoal += 1>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+5">>
+<<if $ragoutMeat >= 5>>
+	<<set $ragoutMeat -= 5>>
+    <<set $NPCs.BlackWolf.INTgoal += 5>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 4>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "+10">>
+<<if $ragoutMeat >= 10>>
+	<<set $ragoutMeat -= 10>>
+    <<set $NPCs.BlackWolf.INTgoal += 10>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 9>>
+	<<script>>
+		UI.alert("You dont have enough meat!");
+	<</script>>
+<</if>>
+<</link>> | <<link "All">>
+<<if $ragoutMeat >= 1>>
+    <<set $NPCs.BlackWolf.INTgoal += $ragoutMeat>>
+    <<set $ragoutMeat -= $ragoutMeat>>
+    <<goto "Stats wolf">>
+<<elseif $ragoutMeat <= 0>>
+	<<script>>
+		UI.alert("You dont have any meat!");
+	<</script>>
+<</if>>
+<</link>>
+
+<<link [[Go back|Cave 2.2]]>>
+<</link>>
+
+

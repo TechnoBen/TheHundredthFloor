@@ -1,0 +1,992 @@
+:: Boss rush hair [no-fainting-or-hunger] {"position":"1000,775","size":"100,100"}
+<<button "Make me bald | 120 coins">>
+<<if $Coins >= 120>> 
+<<set $hairColor to "Bald">>
+<<set $Coins -= 120>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 119>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short brown hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short brown">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short brown hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short brown 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky brown hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short brown spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour brown hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour brown">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium brown hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium brown">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium brown hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium brown 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium brown hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium brown 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium brown over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium brown over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky brown hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky brown">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long brown hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long brown">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long brown hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long brown 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short black hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short black">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short black hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short black 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky black hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short black spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour black hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour black">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium black hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium black">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium black hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium black 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium black hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium black 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium black over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium black over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky black hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky black">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long black hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long black">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long black hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long black 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short blond hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short blond">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short blond hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short blond 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky blond hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short blond spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour blond hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour blond">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blond hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blond">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blond 2 hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blond 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blond 3 hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blond 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blond over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blond over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky blond hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky blond">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long blond hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long blond">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long blond hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long blond 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short red hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short red">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short red hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short red 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky red hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short red spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour red hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour red">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium red hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium red">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium red hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium red 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium red hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium red 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium red over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium red over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky red hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky red">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long red hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long red">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long red hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long red 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short blue hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short blue">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short blue hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short blue 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky blue hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short blue spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour blue hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour blue">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blue hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blue">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blue hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blue 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blue hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blue 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium blue over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium blue over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky blue hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky blue">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long blue hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long blue">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long blue hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long blue 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short pink hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short pink">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short pink hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short pink 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky pink hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short pink spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour pink hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour pink">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium pink hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium pink">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium pink hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium pink 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium pink hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium pink 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium pink over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium pink over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky pink hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky pink">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long pink hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long pink">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long pink hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long pink 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short purple hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short purple">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short purple hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short purple 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky purple hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short purple spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour purple hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour purple">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium purple hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium purple">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium purple hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium purple 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium purple hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium purple 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium purple over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium purple over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky purple hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky purple">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long purple hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long purple">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long purple hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long purple 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Give me short green hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short green">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short green hair 1 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short green 1">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me short spiky green hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Short green spiky">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me pompadour green hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Pompadour green">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium green hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium green">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium green hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium green 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium green hair 3 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium green 3">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me medium green over eye hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Medium green over eye">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me spiky green hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Spiky green">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long green hair | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long green">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Give me long green hair 2 | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $hairColor to "Long green 2">>
+<<set $Coins -= 156>>
+<<goto "Boss rush hair">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Boss rush main room]]
+
+

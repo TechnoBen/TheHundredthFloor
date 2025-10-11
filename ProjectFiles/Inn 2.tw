@@ -1,0 +1,13 @@
+:: Inn 2 {"position":"4025,1275","size":"100,100"}
+You enter the Inn.
+The receptionist seems to be an NPC so speaking to them will be... Fun. You can see a sign saying <span class= Evese>"Welcome to the inn. We don't have a lot of rooms but we aren't always busy." </span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> ... It says that there arent a lot of rooms...? <<elseif $ReadingSkill >= 3>> Welcome to the inn. We don't have a lot of rooms but we aren't always busy. <</if>> <<set $ReadingXP += 25>><</linkreplace>>
+<<if $event5part3 == true>>One of the room doors has been exploded...<</if>>
+1. <<link [[Get a room|Inn room purchase 1]]>>
+<</link>>
+2. <<link [[Order a drink|Buy items 1]]>>
+<</link>>
+3. <<link [[Exit the small bar|Path 8.2]]
+<<dateadd '1m'>>
+<</link>>
+
+

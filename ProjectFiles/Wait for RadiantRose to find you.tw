@@ -1,0 +1,9 @@
+:: Wait for RadiantRose to find you {"position":"300,1450","size":"100,100"}
+You decide to wait for your sister to find you.
+You sat down at one of the benches near the fountain and you started waiting. After 45 minutes you hear someone call you.
+
+<<link [[Next|nothingrn]]>>
+<<dateadd '10m'>>
+<</link>>
+
+

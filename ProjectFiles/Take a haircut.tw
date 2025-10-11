@@ -1,0 +1,2419 @@
+:: Take a haircut [no-fainting-or-hunger no-party-time-loss] {"position":"2100,2775","size":"100,100"}
+<center>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortBrown.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short brown hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short brown">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short brown 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short brown hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short brown 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky brown.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky brown hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky brown">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful brown hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour brown hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour brown">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumBrown.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium brown hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium brown">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium brown 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium brown hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium brown 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium brown 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium brown hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium brown 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium brown over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium brown hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium brown over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky brown.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky brown hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky brown">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongBrown.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long brown hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long brown">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Brown 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long brown:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long brown 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortBlack.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short black hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short black">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short black 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short black hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short black 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky black.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky black hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky black">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful black hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour black hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour black">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumBlack.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium black hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium black">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium black 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium black hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium black 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium black 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium black hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium black 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium black over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium black hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium black over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky black.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky black hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky black">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongBlack.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long black hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long black">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Black 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long black:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long black 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortBlond.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short blond hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short blond">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short blond 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short blond hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short blond 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky blond.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky blond hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky blond">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful blond hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour blond hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour blond">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumBlond.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blond hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blond">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium blond 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blond hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blond 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium blond 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blond hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blond 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium blond over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blond hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blond over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky blond.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky blond hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky blond">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongBlond.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long blond hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long blond">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Blond 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long blond:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long blond 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortRed.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short red hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short red">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short red 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short red hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short red 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky red.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky red hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky red">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful red hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour red hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour red">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumRed.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium red hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium red">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium red 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium red hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium red 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium red 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium red hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium red 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium red over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium red hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium red over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky red.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky red hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky red">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongRed.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long red hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long red">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Red 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long red:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long red 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortBlue.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short blue hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short blue">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short blue 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short blue hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short blue 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky blue.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky blue hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky blue">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful blue hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour blue hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour blue">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumBlue.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blue hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blue">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium blue 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blue hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blue 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium blue 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blue hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blue 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium blue over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium blue hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium blue over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky blue.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky blue hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky blue">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongBlue.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long blue hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long blue">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Blue 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long blue:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long blue 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortPink.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short pink hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short pink">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short pink 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short pink hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short pink 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky pink.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky pink hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky pink">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful pink hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour pink hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour pink">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumPink.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium pink hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium pink">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium pink 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium pink hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium pink 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium pink 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium pink hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium pink 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium pink over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium pink hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium pink over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky pink.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky pink hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky pink">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongPink.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long pink hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long pink">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Pink 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long pink:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long pink 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortPurple.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short purple hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short purple">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short purple 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short purple hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short purple 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky purple.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky purple hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky purple">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful purple hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour purple hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour purple">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumPurple.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium purple hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium purple">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium purple 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium purple hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium purple 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium purple 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium purple hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium purple 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium purple over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium purple hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium purple over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky purple.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky purple hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky purple">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongPurple.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long purple hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long purple">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Purple 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long purple:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long purple 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/ShortGreen.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short green hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short green">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Short green 1.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short green hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short green 1">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky green.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Short spiky green hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Short spiky green">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Beautiful green hair.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pompadour green hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Pompadour green">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/MediumGreen.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium green hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium green">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium green 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium green hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium green 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Medium green 3.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium green hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium green 3">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/Medium green over eye.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Medium green hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Medium green over eye">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Spiky green.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Spiky green hair:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Spiky green">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/Body/Hair/LongGreen.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long green hair:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the haircut | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long green">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/Body/Hair/Long Green 2.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Long green:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 156 col">>
+                <<if $Coins >= 156>> 
+                    <<set $hairColor to "Long green 2">>
+                    <<set $Coins -= 156>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 155>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Bald:
+
+
+        </div>\
+        <div class="border1">\
+            <<link "Become bald | 120 col">>
+                <<if $Coins >= 120>> 
+                    <<set $hairColor to "Bald">>
+                    <<set $Coins -= 120>>
+                    <<goto "Take a haircut">>
+                <<elseif $Coins <= 119>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+
+[[Go back|Hairsalon 1]]
+</center>
+
+
+

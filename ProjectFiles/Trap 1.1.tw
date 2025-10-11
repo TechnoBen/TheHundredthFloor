@@ -1,0 +1,10 @@
+:: Trap 1.1 {"position":"4900,1150","size":"100,100"}
+You touch the wall and it dissapears. You can see a room that has a chest in it.
+
+<<link [[Open the chest|Trap 1.2]]>>
+<</link>>
+<<link "Go away.">>
+<<goto $lastVisitedPassage>>
+<</link>>
+
+

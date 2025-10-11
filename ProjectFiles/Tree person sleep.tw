@@ -1,0 +1,13 @@
+:: Tree person sleep {"position":"1225,2525","size":"100,100"}
+<<set _asteriaRNGTxt to kitsuneRNG(1, 100)>><<if _asteriaRNGTxt lte 25>>You let Asteria sleep. You grab one of the potato sacks and cover her with it... She mumbles <span class="Asteria">"Thanks..."</span> in her sleep.
+She seems to be sleeping well.<<elseif _asteriaRNGTxt lte 50>>You let Asteria sleep. You grab one of the potato sacks and cover her with it. After a while you too fall asleep. When you wake up you realize that she covered you with her cape. She is sitting on the bed she has made. 
+<span class="Asteria">"Oh you're awake! How did you sleep."</span>
+"Thanks for the cape... Slept well."<<elseif _asteriaRNGTxt lte 80>>You let Asteria sleep.<<elseif _asteriaRNGTxt lte 100>>You let Asteria sleep. After a while her head slips from the grave. You manage to grab her before she hits herself somehow.<</if>>
+
+<<link [[Continue|Tree 1]]>>
+	<<dateadd "1h">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 3>>
+<</link>>
+
+

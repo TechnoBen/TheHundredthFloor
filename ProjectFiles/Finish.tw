@@ -1,0 +1,120 @@
+:: Finish [NoSave no-fainting-or-hunger] {"position":"500,675","size":"100,100"}
+Alright so you have finished creating your character? Let's see what we have here...
+Your name is $name, you are $gender, your skin color is $skinToneVal, your eyes are $eyeColor, your hair type is $hairColor and your favorite color is $favColor.
+You are 18 years old.
+
+$gamename's stats:
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>>
+STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
+
+Level: $Level
+XP: <<= $CurXP.toFixed(0)>>/<<= $MaxXP.toFixed(0)>>
+Col: $Coins
+<<if $OneYearTHF == true>>Anniversary coins: $AnniversaryCoins<</if>>\
+<<if $christmasEvent == true>>Candy canes: $candyCanesCur<</if>>\
+
+STR:
+Slash: $SlashSTR
+Pierce: $PierceSTR
+Blunt: $BluntSTR
+DEF:
+Slash: $SlashDEF
+Pierce: $PierceDEF
+Blunt: $BluntDEF
+DEX: $DEX
+INT: $INT
+
+You have $Points points.
+
+Use your points:
+<<link [[Stat points]]>> <<set $lastVisitedPassage1 to "Finish">> <</link>>
+
+Use your achievement points:
+<<link [[Achievements points]]>> <</link>>
+
+(EXPERIMENTAL)
+Customize the game:
+<<link [[Game customization]]>>
+<</link>>
+
+<<link [[Start the game]]>>
+<<set $curHunger -= 100>>
+<<set $curFatigue to 0>>
+<<set $location to "start">>
+ <<if $gamename is "yelyel">>
+    <<set $outfit1 to true>>
+    <<set $isOutfitOn = "Outfit 1">>
+    <<set $armorDEF += 1>>
+    <</if>>
+ <<if $gamename is "ImFatRat">>
+    <<set $outfit3 to true>>
+    <<set $isOutfitOn = "Outfit 3">>
+    <<set $armorDEF += 1>>
+    <</if>>
+ <<if $gamename is "Morgana">>
+    <<set $outfit2 to true>>
+    <<set $isOutfitOn = "Outfit 2">>
+    <<set $maxStamina += 25>>
+    <</if>>
+   <<if $gamename is "Gremlin">>
+    <<set $outfit4 to true>>
+    <<set $isOutfitOn = "Outfit 4">>
+    <<set $Points += 2>>
+    <</if>>
+    <<if $gamename is "TechnoBen">>
+    <<set $outfit5 to true>>
+    <<set $isOutfitOn = "Outfit 5">>
+    <<set $maxStamina += 50>>
+    <<set $armorDEF += 3>>
+    <</if>>
+    <<if $gamename is "Nny">>
+    <<set $outfit6 to true>>
+    <<set $BloodSwordSkin to true>>
+    <<set $isWeaponSkinOn to "Blood sword">>
+    <<set $isOutfitOn = "Outfit 6">>
+    <<set $MaxHP += 100>>
+    <</if>>
+    <<if $gamename is "Shadow_Fang">>
+    <<set $outfit7 to true>>
+    <<set $isOutfitOn = "Outfit 7">>
+    <<set $maxStamina += 25>>
+    <<set $armorDEF += 1>>
+    <</if>>
+    <<if $gamename is "Toru">>
+    <<set $hairColor to "Long brown 2">>
+    <<set $cape3 to true>>
+    <<set $isCapeOn = "Mysteriously vague poncho">>
+    <<set $pants3 to true>>
+    <<set $isPantsOn = "White pants">>
+    <<set $MaxHP += 10>>
+    <<set $maxStamina += 25>> 
+    <</if>>
+    <<if $gamename is "irfanrein">>
+    	<<set $outfit8 to true>>
+    	<<set $isOutfitOn = "Outfit 8">>
+    	<<set $armorDEF += 2.5>>
+    <</if>>
+    <<if $gamename is "GlazingLotl">>
+    	<<set $outfit9 to true>>
+    	<<set $isOutfitOn = "Outfit 9">>
+    	<<set $INT -= 1>>
+    <</if>>
+    <<if $gamename is "Love4Mary" && $name is "Marcellus">>
+    	<<set $cape6 to true>>
+    	<<set $isCapeOn to "Marcellus coat">>
+        <<set $maxStamina += 10>>
+        <<set $MaxHP += 2>>
+        <<set $hairColor to "Short blue 1">>
+    <</if>>
+    <<if $gamename is "BUNNY GIRL">>
+    	<<set $outfit11 to true>>
+    	<<set $isOutfitOn = "Outfit 10">>
+    	<<set $INT += 2>>
+    <</if>>
+    <<if $gamename is "Reverse Christmas">>
+    	<<set $outfit12 to true>>
+    	<<set $isOutfitOn = "Outfit 11">>
+    <</if>>
+<</link>>
+
+

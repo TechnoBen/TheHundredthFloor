@@ -1,0 +1,14 @@
+:: Path 5.1 [Path] {"position":"1850,2275","size":"100,100"}
+You decide to go to the new path you see...
+
+Directions:
+1. <<link [[Go forward|Path 5.2]]>> <<dateadd '30m'>> <<set $curFatigue += 25>>
+    <<set $lastVisitedPassage to "Path 5.2">>
+    <<Plains2>>
+<</link>>
+2. <<link [[Go backwards|Path5]]>> <<dateadd '30m'>> <<set $curFatigue += 25>>
+    <<set $lastVisitedPassage to "Path5">>
+    <<Plains2>>
+<</link>>
+
+

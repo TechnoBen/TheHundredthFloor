@@ -1,0 +1,68 @@
+:: Town centre [Town] {"position":"1350,1775","size":"100,100"}
+You are at The Starter town centre.
+
+You see a fountain at the centre. Its huge.
+There are a lot of buildings around you.
+There is a weaponsmith, a tailor, a Inn, a adventurers guild, a shop and a lot of houses.
+You can also use a magical chest to access your inventory.
+
+People in here:
+<<nobr>>
+<<if $event1 == true>>
+<ol>
+<<if setup.datesystems.default.getDate().h gte 8 and setup.datesystems.default.getDate().h lte 17 && $NPCs.RadiantRose.Dead == false>> <li><<link [[Speak to RadiantRose|RadiantRoseConvo]]>> <<if $hasSpokenWithRadiant == false>> <<goto "Radiant 1">> <</if>><</link>> </li><<else>><</if>>
+<<if setup.datesystems.default.getDate().h gte 1 and setup.datesystems.default.getDate().h lte 8 && $NPCs.ShadowScythe.Dead == false>> <li><<link [[Speak to ShadowScythe|ShadowScytheConvo]]>> <<if $hasSpokenWithShadow == false>> <<goto "Shadow 1">> <</if>><</link>> </li><<else>><</if>>
+<<if setup.datesystems.default.getDate().h gte 12 and setup.datesystems.default.getDate().h lte 20>> <li><<link [[Speak to CrimsonSentinel|CrimsonSentinelConvo]]>> <<if $hasSpokenWithCrimson == false>> <<goto "Crimson 1">> <</if>><</link>> </li><<else>><</if>>
+</ol><</if>><</nobr>>
+You can:
+<<link [[Sit down at one of the benches|Town centre]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5>>
+<</link>>
+<<link [[Wardrobe|Wardrobe]]>>
+<<set $lastVisitedPassage1 to "Town centre">> 
+<</link>>
+<<link [[Sleep on a bench|Sleep 1]]>> 
+<<set $lastVisitedPassage1 to "Town centre">>
+<</link>>
+<<if $Reputation <= 400>>\
+<<link [[Rob a player|Robbing]]>>
+<<set $robbedCoins to random(125, 325)>>
+<<dateadd '25m'>>
+<<set $curFatigue += 75>>
+<<set $Reputation -= 15>>
+<<set $lastVisitedPassage to passage()>>
+<</link>> <</if>>\
+
+Directions:
+<<link [[Go down the street|Town street 1]]>>
+<<dateadd '5m'>>
+<</link>>
+
+Locations:
+1. <<if setup.datesystems.default.getDate().h gte 8 and setup.datesystems.default.getDate().h lte 20>> <<link [[Go to the weaponsmith|Weaponsmith 1]]>>
+<<dateadd '1m'>> <</link>> <<else>>Weaponsmith | Closed<</if>>
+2. <<if setup.datesystems.default.getDate().h gte 6 and setup.datesystems.default.getDate().h lte 16>> <<link [[Go to the tailor|Tailor 1]]>>
+<<dateadd '1m'>> <</link>> <<else>>Tailor | Closed<</if>>
+3. <<link [[Go to the Inn|Inn 1]]>>
+<<set $lastvisitedpassage to "Town centre">>
+<<dateadd '1m'>><</link>>
+4. <<if setup.datesystems.default.getDate().h gte 2 and setup.datesystems.default.getDate().h lte 22>> <<link [[Go to the shop|Shop 1]]>>
+<<dateadd '1m'>><</link>><<else>>Shop | Closed<</if>>
+5.<<nobr>><<if $tppadONE == false>>
+<<link [[Teleportaion pad|Tp pad 1 purchase]]>>
+<</link>>
+<<elseif $tppadONE == true>>
+<<link [[Teleportaion pad|Tp pad]]>>
+<<set $lastVisitedPassage1 to "Town centre">> 
+<</link>>
+<</if>>
+<</nobr>> 
+<<if $OneYearTHF == true>>6. <<link [[The Hundredth Floor anniversary shop|THF shop]]>>
+<<dateadd '2m'>>
+<</link>><</if>>\
+<<if $christmasEvent == true>>6. <<link [[Christmas shop|ChristmasEvent]]>>
+<<dateadd '2m'>>
+<</link>><</if>>\
+
+

@@ -1,0 +1,50 @@
+:: Town street 2 [Town] {"position":"4025,1850","size":"100,100"}
+You are in of the town streets. This place is pretty silent. There aren't a lot of noises. It's so quiet that if someone spoke here you would be able to hear everything... It's kinda creepy actually.
+<<if setup.datesystems.default.getDate().h == 4 && $event5 == true && $event5part1 == false && $event5fail == false>>
+You can hear someone talking in a dark street near you.<</if>>\
+
+People in here:
+<<nobr>>\
+<ol>
+<<if setup.datesystems.default.getDate().h gte 3 and setup.datesystems.default.getDate().h lte 7 && $NPCs.ShadowScythe.Dead == false>> <li><<link [[Speak to ShadowScythe|ShadowScytheConvo1]]>><</link>></li><<else>><</if>>
+<<if setup.datesystems.default.getDate().h gte 7 and setup.datesystems.default.getDate().h lte 12 && $mollyDead == false && $mollyAffection >= 1>> <li><<link [[Speak to Molly|MollyConvo]]>><</link>></li><<else>><</if>>
+</ol>
+<</nobr>>
+You can:
+<<link [[Sit down at one of the benches|Town street 2]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5>>
+<</link>>
+<<link [[Sleep on a bench|Sleep 1]]>> 
+<<set $lastVisitedPassage1 to "Town street 2">>
+<</link>>
+<<if setup.datesystems.default.getDate().h == 4 && $event5 == true && $event5part1 == false && $event5fail == false>> <<link [[Overhear the conversation|Molly 4am event]]>> <<set $event5 to true>> <</link>> <</if>>\
+
+Directions:
+1. <<link [[Go to the entarance|3rd town entarance]]>>
+<<dateadd '5m'>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "3rd town entarance">>
+		<<goto "Encounter F2">>
+    <</if>>
+<</link>>
+2. <<link [[Go to the town center|Town centre 1]]>>
+<<dateadd '5m'>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Town centre 1">>
+		<<goto "Encounter F2">>
+     <</if>>
+<</link>>
+
+Locations:
+1. <<if setup.datesystems.default.getDate().h gte 10 and setup.datesystems.default.getDate().h lte 18>> <<link [[Go to the weaponsmith|Weaponsmith 4]]>>
+<<dateadd '1m'>> <</link>> <<else>>Weaponsmith | Closed<</if>>
+2. <<link [[Go to the Inn|Inn 3]]>>
+<<set $lastvisitedpassage to "Town centre">>
+<<dateadd '1m'>><</link>>
+3. <<if setup.datesystems.default.getDate().h gte 2 and setup.datesystems.default.getDate().h lte 22>> <<link [[Go to the shop|Shop 2]]>>
+<<dateadd '1m'>><</link>><<else>>Shop | Closed<</if>>
+
+

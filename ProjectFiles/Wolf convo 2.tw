@@ -1,0 +1,8 @@
+:: Wolf convo 2 {"position":"4400,2025","size":"100,100"}
+You grab a toy from the floor. $NPCs.BlackWolf.name looks at you excited. She jumps out of her bed and you throw the toy across the room. She rushes to it grabbing it mid air and brings it back to you. You do this for 5 minutes.
+
+<<link [[Continue|Wolf convo]]>>
+	<<set $CurFear -= 3>>
+<</link>>
+
+

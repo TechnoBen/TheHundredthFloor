@@ -1,0 +1,29 @@
+:: invite crimson to your party {"position":"1000,1525","size":"100,100"}
+<<if $NPCs.CrimsonSentinel.Affection <= 9>>\
+"Hey Crimson... wanna join my party?" you ask CrimsonSentinel.
+<span class="crimson">"Sorry but I can't really do that right now."</span> he responds...
+
+Maybe he doesn't trust you enough... You should speak to him more.
+
+<<link "Go back">>
+	<<dateadd '5m'>>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif $NPCs.CrimsonSentinel.Affection >= 10>>\
+"Oi Crimson... Do you want to join my party?" you ask CrimsonSentinel.
+<span class="crimson">"Absolutely! I would love to join your party!"</span> he responds...
+You open your SOCIAL menu, sending him a party request.
+He accepts it.
+
+<<link "Go back">> 
+	<<if $partyMembers.includes("CrimsonSentinel") or $partyMembers.length >= 3>>
+	<<else>>
+		<<run $partyMembers.push("CrimsonSentinel")>>
+		<<dateadd '5m'>>
+        <<set $partyON to true>>
+	<</if>>
+<<goto $lastVisitedPassage>>
+<</link>>
+<</if>>
+
+

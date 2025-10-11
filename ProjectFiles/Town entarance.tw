@@ -1,0 +1,23 @@
+:: Town entarance [Town] {"position":"1350,2075","size":"100,100"}
+You are at the gate of the Starters town. Its a pretty busy place.
+You can see a lot of people going walking around and doing their stuff.
+There is a shop for armor in here. There's been claims that this is the best shop for armor in this floor.
+There is also a hospital in here. You assume its at the entarance so its quicker for players that are almost dead to get in.
+
+Directions:
+1. <<link [[Go down the street|Town street 1]]>>
+<<dateadd '5m'>>
+<</link>>
+2. <<link [[Go to the Plains|Plains]]>>
+<<dateadd '2m'>> <<set $location to "plains">>
+<<set $lastVisitedPassage to "Plains">>
+<</link>>
+
+Locations:
+1. <<if setup.datesystems.default.getDate().h gte 8 and setup.datesystems.default.getDate().h lte 18>> <<link [[Go to the armor shop|Armor shop 1]]>> <<dateadd '1m'>> <</link>> <<else>>Armor shop | Closed<</if>>
+2. <<link [[Go to the hospital|Hospital]]>>
+<<dateadd '2m'>>
+<</link>>
+
+
+

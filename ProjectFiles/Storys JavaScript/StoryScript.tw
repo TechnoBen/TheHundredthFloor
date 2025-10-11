@@ -1,0 +1,1818 @@
+:: StoryScript [script]
+Save.onSave.add(function (save) {
+    save.desc = State.variables.gamename + ":" + " Level: " + State.variables.Level.toFixed(0) + " HP: " + State.variables.CurHP.toFixed(0) + "/" + State.variables.MaxHP.toFixed(0) + " XP: " + State.variables.CurXP.toFixed(0) + "/" + State.variables.MaxXP.toFixed(0);
+});
+
+Config.saves.autosave = function () {
+	if (tags().contains("autosave")) {
+		return true;
+	}
+	return false;
+};
+
+Config.saves.onLoad = function(save) {
+	// Initialize undefined new variables in each moment of  the saved history.
+	for(let i=0; i<save.state.history.length; ++i) {
+		let variables = save.state.history[i].variables
+		// Do something like these three lines for each new variable:
+        
+        // Event related variable setters
+        
+        if(typeof variables.OneYearTHF === 'undefined') {
+			variables.OneYearTHF = false;
+		}
+      	if(typeof variables.OneYearTHF === 'true') {
+			variables.OneYearTHF = false;
+		} 
+      	if(typeof variables.AnniversaryCoins === 'undefined') {
+			variables.AnniversaryCoins = 0;
+		}
+      	if(typeof variables.genderChangingPotion === 'undefined') {
+			variables.genderChangingPotion = 0;
+		} 
+      	if(typeof variables.AnniversaryCakeVanilla === 'undefined') {
+			variables.AnniversaryCakeVanilla = 0;
+		}
+      	if(typeof variables.AnniversaryCakeChocolate === 'undefined') {
+			variables.AnniversaryCakeChocolate = 0;
+		}
+      	if(typeof variables.pumpkinHead === 'undefined') {
+			variables.pumpkinHead = false;
+		}
+      	if(typeof variables.candyCanesCur === 'undefined') {
+			variables.candyCanesCur = 0;
+		}
+      	if(typeof variables.christmasEvent === 'undefined') {
+			variables.christmasEvent = false;
+		}
+      	if(typeof variables.christmasEvent === 'true') {
+			variables.christmasEvent = false;
+		} 
+      
+      	// Everything else goes here
+		if(typeof variables.curFatigue === 'undefined') {
+			variables.curFatigue = 0;
+		} 
+		if(typeof variables.maxFatigue === 'undefined') {
+			variables.maxFatigue = 1250;
+		} 
+     	 if(typeof variables.maxFatigue === 1000) {
+			variables.maxFatigue = 1250;
+		} 
+        if(typeof variables.isHutPurchased === 'undefined') {
+			variables.isHutPurchased = false;
+		}
+        if(typeof variables.isHutFinished === 'undefined') {
+			variables.isHutFinished = false;
+		} 
+        if(typeof variables.hutTask1 === 'undefined') {
+			variables.hutTask1 = false;
+		}
+        if(typeof variables.hutTask2 === 'undefined') {
+			variables.hutTask2 = false;
+		} 
+        if(typeof variables.hutTask3 === 'undefined') {
+			variables.hutTask3 = false;
+		} 
+        if(typeof variables.hutTask4 === 'undefined') {
+			variables.hutTask4 = false;
+		} 
+        if(typeof variables.hutTask5 === 'undefined') {
+			variables.hutTask1 = false;
+		}
+        if(typeof variables.hutCleaned === 'undefined') {
+			variables.hutCleaned = 0;
+		}
+        if(typeof variables.pathDone === 'undefined') {
+			variables.pathDone = false;
+		}
+        if(typeof variables.pathProgress === 'undefined') {
+			variables.pathProgress = 0;
+		}
+        if(typeof variables.hasSpokenWithRadiant === 'undefined') {
+			variables.hasSpokenWithRadiant = false;
+		}
+        if(typeof variables.hasSpokenWithShadow === 'undefined') {
+			variables.hasSpokenWithShadow = false;
+		}
+        if(typeof variables.hasSpokenWithCrimson === 'undefined') {
+			variables.hasSpokenWithCrimson = false;
+		}
+      	if(typeof variables.DEXShadowScythe === 'undefined') {
+			variables.DEXShadowScythe = 1;
+		} 
+      	if(typeof variables.DEFShadowScythe === 'undefined') {
+			variables.DEFShadowScythe = 1;
+		} 
+      	if(typeof variables.STRShadowScythe === 'undefined') {
+			variables.STRShadowScythe = 2;
+		} 
+      	if(typeof variables.MaxHPShadowScythe === 'undefined') {
+			variables.MaxHPShadowScythe = 250;
+		} 
+      	if(typeof variables.CurHPShadowScythe === 'undefined') {
+			variables.CurHPShadowScythe = 250;
+		}
+      	if(typeof variables.maxStaminaShadowScythe === 'undefined') {
+			variables.maxStaminaShadowScythe = 100;
+		}
+      	if(typeof variables.curStaminaShadowScythe === 'undefined') {
+			variables.curStaminaShadowScythe = 100;
+		} 
+      	if(typeof variables.weaponDMGShadowScythe === 'undefined') {
+			variables.weaponDMGShadowScythe = 2;
+		} 
+      	if(typeof variables.DEXCrimsonSentinel === 'undefined') {
+			variables.DEXCrimsonSentinel = 1;
+		} 
+      	if(typeof variables.DEFCrimsonSentinel === 'undefined') {
+			variables.DEFCrimsonSentinel = 3;
+		} 
+      	if(typeof variables.STRCrimsonSentinel === 'undefined') {
+			variables.STRCrimsonSentinel = 1;
+		} 
+      	if(typeof variables.MaxHPCrimsonSentinel === 'undefined') {
+			variables.MaxHPCrimsonSentinel = 250;
+		} 
+      	if(typeof variables.CurHPCrimsonSentinel === 'undefined') {
+			variables.CurHPCrimsonSentinel = 250;
+		}
+      	if(typeof variables.maxStaminaCrimsonSentinel === 'undefined') {
+			variables.maxStaminaCrimsonSentinel = 80;
+		}
+      	if(typeof variables.curStaminaCrimsonSentinel === 'undefined') {
+			variables.curStaminaCrimsonSentinel = 80;
+		} 
+      	if(typeof variables.weaponDMGCrimsonSentinel === 'undefined') {
+			variables.weaponDMGCrimsonSentinel = 2;
+        }
+      	if(typeof variables.axe1 === 'undefined') {
+			variables.axe1 = false;
+		}
+       	if(typeof variables.shovel1 === 'undefined') {
+			variables.shovel1 = false;
+		}
+      	if(typeof variables.fatigueFaint === 'undefined') {
+			variables.fatigueFaint = 0;
+		}
+      	if(typeof variables.isCapeOn === 'undefined') {
+			variables.isCapeOn = "None";
+		}
+        if(typeof variables.skeletonHP === 'undefined') {
+			variables.skeletonHP = 134;
+		}
+        if(typeof variables.killedSK === 'undefined') {
+			variables.killedSK = 0;
+		}
+      	if(typeof variables.crystalFragments === 'undefined') {
+			variables.crystalFragments = 0;
+		}
+      	if(typeof variables.f1key === 'undefined') {
+			variables.f1key = 0;
+		}
+      	if(typeof variables.killedRams === 'undefined') {
+			variables.killedRams = 0;
+		}
+      	if(typeof variables.f1bosskilled === 'undefined') {
+			variables.f1bosskilled = false;
+		}
+      	if(typeof variables.skeletonWHP === 'undefined') {
+			variables.skeletonWHP = 100;
+		}
+      	if(typeof variables.killedSKW === 'undefined') {
+			variables.killedSKW = 0;
+		}
+      	if(typeof variables.F1BossHP === 'undefined') {
+			variables.F1BossHP = 350;
+		}
+      	if(typeof variables.GatheringEvent === 'undefined') {
+			variables.GatheringEvent = false;
+		}
+      	if(typeof variables.hasSpokenWithBlue === 'undefined') {
+			variables.hasSpokenWithBlue = false;
+		}
+      	if(typeof variables.f1DungeonFound === 'undefined') {
+			variables.f1DungeonFound = false;
+		}
+     	 if(typeof variables.raidParty === 'undefined') {
+			variables.raidParty = false;
+		}
+      	 if(typeof variables.raidHP === 'undefined') {
+			variables.raidHP = 1000;
+		}
+      	 if(typeof variables.blueBellAffection === 'undefined') {
+			variables.blueBellAffection = 0;
+		}
+      	 if(typeof variables.curHunger === 'undefined') {
+			variables.curHunger = 1000;
+		}
+      	if(typeof variables.maxHunger === 'undefined') {
+			variables.maxHunger = 1000;
+		}
+      	if(typeof variables.carrot === 'undefined') {
+			variables.carrot = 0;
+		}
+      	if(typeof variables.mushroom === 'undefined') {
+			variables.mushroom = 0;
+		}
+      	if(typeof variables.threeStarRSoup === 'undefined') {
+			variables.threeStarRSoup = 0;
+		}
+      	if(typeof variables.twoStarRSoup === 'undefined') {
+			variables.twoStarRSoup = 0;
+		}
+      	if(typeof variables.oneStarRSoup === 'undefined') {
+			variables.oneStarRSoup = 0;
+		}
+      	if(typeof variables.oneStarRmeat === 'undefined') {
+			variables.oneStarRmeat = 0;
+		}
+      	if(typeof variables.twoStarRmeat === 'undefined') {
+			variables.twoStarRmeat = 0;
+		}
+      	if(typeof variables.threeStarRmeat === 'undefined') {
+			variables.threeStarRmeat = 0;
+		}
+    	  if(typeof variables.oneStarBmeat === 'undefined') {
+			variables.oneStarBmeat = 0;
+		}
+      	if(typeof variables.twoStarBmeat === 'undefined') {
+			variables.twoStarBmeat = 0;
+		}
+      	if(typeof variables.threeStarBmeat === 'undefined') {
+			variables.threeStarBmeat = 0;
+		}
+    	  if(typeof variables.faints === 'undefined') {
+			variables.faints = 0;
+		}
+    	  if(typeof variables.cookedmeals === 'undefined') {
+			variables.cookedmeals = 0;
+		}
+      	 if(typeof variables.bread === 'undefined') {
+			variables.bread = 3;
+		}
+     	 if(typeof variables.mayonnaise === 'undefined') {
+			variables.mayonnaise = 0;
+		}
+      		if(typeof variables.oneStarRsandwich === 'undefined') {
+			variables.oneStarRsandwich = 0;
+		}
+      	if(typeof variables.twoStarRsandwich === 'undefined') {
+			variables.twoStarRsandwich = 0;
+		}
+      	if(typeof variables.threeStarRsandwich === 'undefined') {
+			variables.threeStarRsandwich = 0;
+		}
+    	  if(typeof variables.oneStarBsandwich === 'undefined') {
+			variables.oneStarBsandwich = 0;
+		}
+      	if(typeof variables.twoStarBsandwich === 'undefined') {
+			variables.twoStarBsandwich = 0;
+		}
+      	if(typeof variables.threeStarBsandwich === 'undefined') {
+			variables.threeStarBsandwich = 0;
+		}
+      	if(typeof variables.workone === 'undefined') {
+			variables.workone = false;
+		}
+      	if(typeof variables.drinkserved === 'undefined') {
+			variables.drinkserved = 0;
+		}
+      	if(typeof variables.f1secretbosskilled === 'undefined') {
+			variables.f1secretbosskilled = 0;
+		}
+      	if(typeof variables.CookingSkill === 'undefined') {
+			variables.CookingSkill = 0;
+		}
+     	 if(typeof variables.CookingXP === 'undefined') {
+			variables.CookingXP = 0;
+		}
+      	if(typeof variables.CookingMaxXP === 'undefined') {
+			variables.CookingMaxXP = 1000;
+		}
+      		if(typeof variables.SpeakingSkill === 'undefined') {
+			variables.SpeakingSkill = 1;
+		}
+     	 if(typeof variables.SpeakingXP === 'undefined') {
+			variables.SpeakingXP = 0;
+		}
+      	if(typeof variables.SpeakingMaxXP === 'undefined') {
+			variables.SpeakingMaxXP = 1000;
+		}
+      	if(typeof variables.ReadingSkill === 'undefined') {
+			variables.ReadingSkill = 1;
+		}
+     	 if(typeof variables.ReadingXP === 'undefined') {
+			variables.ReadingXP = 0;
+		}
+      	if(typeof variables.ReadingMaxXP === 'undefined') {
+			variables.ReadingMaxXP = 1000;
+		}
+      	if(typeof variables.RadMaxXP === 'undefined') {
+		variables.RadMaxXP = 100;
+		}
+      	if(typeof variables.RadCurXP === 'undefined') {
+			variables.RadCurXP = 0;
+		}
+      	if(typeof variables.RadLevel === 'undefined') {
+			variables.RadLevel = 0;
+		}
+      	if(typeof variables.ShadMaxXP === 'undefined') {
+		variables.ShadMaxXP = 100;
+		}
+      	if(typeof variables.ShadCurXP === 'undefined') {
+			variables.ShadCurXP = 0;
+		}
+      	if(typeof variables.ShadLevel === 'undefined') {
+			variables.ShadLevel = 0;
+		}
+      	if(typeof variables.CrimMaxXP === 'undefined') {
+		variables.CrimMaxXP = 100;
+		}
+      	if(typeof variables.CrimCurXP === 'undefined') {
+			variables.CrimCurXP = 0;
+		}
+      	if(typeof variables.CrimLevel === 'undefined') {
+			variables.CrimLevel = 0;
+		}
+     	 if(typeof variables.tppadONE === 'undefined') {
+			variables.tppadONE = 0;
+		}
+      	 if(typeof variables.tppadTWO === 'undefined') {
+			variables.tppadTWO = 0;
+		}
+      	 if(typeof variables.hoursWorked === 'undefined') {
+			variables.hoursWorked = 0;
+		}
+      	 if(typeof variables.killedWW === 'undefined') {
+			variables.killedWW = 0;
+		}
+       	if(typeof variables.killedWWP === 'undefined') {
+			variables.killedWWP = 0;
+		}
+      	if(typeof variables.wolfMeat === 'undefined') {
+			variables.wolfMeat = 0;
+		}
+    	  if(typeof variables.wolfFur === 'undefined') {
+			variables.wolfFur = 0;
+		}
+      	if(typeof variables.oneStarWmeat === 'undefined') {
+			variables.oneStarWmeat = 0;
+		}
+      	if(typeof variables.twoStarWmeat === 'undefined') {
+			variables.twoStarWmeat = 0;
+		}
+      	if(typeof variables.threeStarWmeat === 'undefined') {
+			variables.threeStarWmeat = 0;
+		}
+      	if(typeof variables.mobLvl === 'undefined') {
+			variables.mobLvl = 0;
+		}
+      	if(typeof variables.shadPartyTime === 'undefined') {
+			variables.shadPartyTime = 0;
+		}
+      	if(typeof variables.radPartyTime === 'undefined') {
+			variables.radPartyTime = 0;
+		}
+      	if(typeof variables.crimPartyTime === 'undefined') {
+			variables.crimPartyTime = 0;
+		}
+      	if(typeof variables.timeTillBossDies === 'undefined') {
+			variables.timeTillBossDies = 0;
+		}
+      	if(typeof variables.event3 === 'undefined') {
+			variables.event3 = false;
+		}
+       	if(typeof variables.CraftingSkill === 'undefined') {
+			variables.CraftingSkill = 0;
+		}
+     	 if(typeof variables.CraftingXP === 'undefined') {
+			variables.CraftingXP = 0;
+		}
+      	if(typeof variables.CraftingMaxXP === 'undefined') {
+			variables.CraftingMaxXP = 1000;
+        }
+     	if(typeof variables.Reputation === 'undefined') {
+			variables.Reputation = 500;
+		}
+      	if(typeof variables.ReputationMax === 'undefined') {
+			variables.ReputationMax = 1000;
+        }
+      	if(typeof variables.tppadTHREE === 'undefined') {
+			variables.tppadTHREE = 0;
+		}
+      	if(typeof variables.RegenHP === 'undefined') {
+			variables.RegenHP = 0;
+		}
+    	if(typeof variables.RegenAmount === 'undefined') {
+			variables.RegenAmount = 0;
+		}
+      	if(typeof variables.hpPOT1 === 'undefined') {
+          	variables.hpPOT1 = 0;
+        }
+      	if(typeof variables.plantType1 === 'undefined') {
+			variables.plantType1 = "Nothing";
+		}
+      	if(typeof variables.plantType2 === 'undefined') {
+			variables.plantType2 = "Nothing";
+		}
+      	if(typeof variables.plantType3 === 'undefined') {
+			variables.plantType3 = "Nothing";
+		}
+      	if(typeof variables.paralized === 'undefined') {
+			variables.paralized = 0;
+		}
+      	 if(typeof variables.tppadFOUR === 'undefined') {
+			variables.tppadFOUR = 0;
+		}
+      	 if(typeof variables.tppadFIVE === 'undefined') {
+			variables.tppadFIVE = 0;
+		}
+      	 if(typeof variables.tppadSIX === 'undefined') {
+			variables.tppadSIX = 0;
+		}
+        if(typeof variables.shadowScytheDead === 'undefined') {
+			variables.shadowScytheDead = false;
+		}
+        if(typeof variables.radiantRoseDead === 'undefined') {
+			variables.radiantRoseDead = false;
+		}
+      	if(typeof variables.event5 === 'undefined') {
+			variables.event5 = false;
+		}
+      	if(typeof variables.event6 === 'undefined') {
+			variables.event6 = false;
+		}
+      	if(typeof variables.potCooldown === 'undefined') {
+          	variables.potCooldown = 0;
+        }
+    	if(typeof variables.killedOnis === 'undefined') {
+          	variables.killedOnis = 0;
+        }
+      	if(typeof variables.oniLeather === 'undefined') {
+          	variables.oniLeather = 0;
+        }
+      	if(typeof variables.oniTeeth === 'undefined') {
+          	variables.oniTeeth = 0;
+        }
+      	if(typeof variables.iron === 'undefined') {
+          	variables.iron = 0;
+        }
+      	if(typeof variables.campBuild1 === 'undefined') {
+          	variables.campBuild1 = false;
+        }
+      	if(typeof variables.killedOnis === 'undefined') {
+          	variables.killedOnis = 0;
+        }
+      	if(typeof variables.pathDone1 === 'undefined') {
+			variables.pathDone1 = false;
+		}
+        if(typeof variables.pathProgress1 === 'undefined') {
+			variables.pathProgress1 = 0;
+		}
+      	if(typeof variables.onFire === 'undefined') {
+			variables.onFire = 0;
+		}
+    	if(typeof variables.SP === 'undefined') {
+			variables.SP = 1;
+		}
+      	if(typeof variables.combatSkills === 'undefined') {
+			variables.combatSkills = ["Do nothing", "Stab", "Charge"];
+		}
+      	if(typeof variables.partyMembers === 'undefined') {
+			variables.partyMembers = ["You"];
+		}
+    	if(typeof variables.DEXZegrath === 'undefined') {
+			variables.DEXZegrath = 4;
+		} 
+      	if(typeof variables.DEFZegrath === 'undefined') {
+			variables.DEFZegrath = 5;
+		} 
+      	if(typeof variables.STRZegrath === 'undefined') {
+			variables.STRZegrath = 6;
+		} 
+      	if(typeof variables.MaxHPZegrath === 'undefined') {
+			variables.MaxHPZegrath = 500;
+		} 
+      	if(typeof variables.CurHPZegrath === 'undefined') {
+			variables.CurHPZegrath = 500;
+		}
+      	if(typeof variables.maxStaminaZegrath === 'undefined') {
+			variables.maxStaminaZegrath = 200;
+		}
+      	if(typeof variables.curStaminaZegrath === 'undefined') {
+			variables.curStaminaZegrath = 200;
+		} 
+      	if(typeof variables.weaponDMGZegrath === 'undefined') {
+			variables.weaponDMGZegrath = 10;
+		}
+		if(typeof variables.zegMaxXP === 'undefined') {
+			variables.zegMaxXP = 100;
+		}
+		if(typeof variables.zegCurXP === 'undefined') {
+				variables.zegCurXP = 0;
+		}
+		if(typeof variables.zegLevel === 'undefined') {
+				variables.zegLevel = 5;
+		}
+		if(typeof variables.zegPartyTime === 'undefined') {
+				variables.zegPartyTime = 0;
+		}
+		if(typeof variables.zegrathDead === 'undefined') {
+				variables.zegrathDead = false;
+		}
+      	if(typeof variables.DEXMarcellus === 'undefined') {
+			variables.DEXMarcellus = 5;
+		} 
+      	if(typeof variables.DEFMarcellus === 'undefined') {
+			variables.DEFMarcellus = 2;
+		} 
+      	if(typeof variables.STRMarcellus === 'undefined') {
+			variables.STRMarcellus = 8;
+		} 
+      	if(typeof variables.MaxHPMarcellus === 'undefined') {
+			variables.MaxHPMarcellus = 450;
+		} 
+      	if(typeof variables.CurHPMarcellus === 'undefined') {
+			variables.CurHPMarcellus = 450;
+		}
+      	if(typeof variables.maxStaminaMarcellus === 'undefined') {
+			variables.maxStaminaMarcellus = 250;
+		}
+      	if(typeof variables.curStaminaMarcellus === 'undefined') {
+			variables.curStaminaMarcellus = 250;
+		} 
+      	if(typeof variables.weaponDMGMarcellus === 'undefined') {
+			variables.weaponDMGMarcellus = 6;
+		}
+		if(typeof variables.marcyMaxXP === 'undefined') {
+			variables.marcyMaxXP = 100;
+		}
+		if(typeof variables.marcyCurXP === 'undefined') {
+				variables.marcyCurXP = 0;
+		}
+		if(typeof variables.marcyLevel === 'undefined') {
+				variables.marcyLevel = 4;
+		}
+		if(typeof variables.marcyPartyTime === 'undefined') {
+				variables.marcyPartyTime = 0;
+		}
+		if(typeof variables.marcellusDead === 'undefined') {
+				variables.marcellusDead = false;
+		}
+      	if(typeof variables.killedBG === 'undefined') {
+			variables.killedBG = 0;
+		}
+    	if(typeof variables.killedPZ === 'undefined') {
+			variables.killedPZ = 0;
+		}
+      	if(typeof variables.poisoned1 === 'undefined') {
+			variables.poisoned1 = 0;
+		}
+      	if(typeof variables.killedGC === 'undefined') {
+			variables.killedGC = 0;
+		}
+      	if(typeof variables.exportReminder === 'undefined') {
+			variables.exportReminder = 150;
+		}
+      	if(typeof variables.ZegrathFireSword === 'undefined') {
+			variables.ZegrathFireSword = 0;
+		}
+      	if(typeof variables.zegrathAffection === 'undefined') {
+			variables.zegrathAffection = 0;
+		}
+      	if(typeof variables.marcellusAffection === 'undefined') {
+			variables.marcellusAffection = 0;
+		}
+      	if(typeof variables.asteriaAffection === 'undefined') {
+			variables.asteriaAffection = 0;
+		}
+      	if(typeof variables.f2BossKilled === 'undefined') {
+			variables.f2BossKilled = false;
+		}
+      	if(typeof variables.raidMaxHP === 'undefined') {
+			variables.raidMaxHP = 1000;
+		}
+      	if(typeof variables.raidPartyArmorTier === 'undefined') {
+			variables.raidPartyArmorTier = 1;
+		}
+      	if(typeof variables.f2BossTimeKilled === 'undefined') {
+			variables.f2BossTimeKilled = false;
+		}
+      	if(typeof variables.f3BossTimeKilled === 'undefined') {
+			variables.f3BossTimeKilled = false;
+		}
+      	if(typeof variables.f3BossKilled === 'undefined') {
+			variables.f3BossKilled = false;
+		}
+      	if(typeof variables.fireStopperScroll === 'undefined') {
+			variables.fireStopperScroll = 0;
+		}
+      	if(typeof variables.CurFear === 'undefined') {
+			variables.CurFear = 0;
+		}
+      	if(typeof variables.MaxFear === 'undefined') {
+			variables.MaxFear = 100;
+		}
+      	if(typeof variables.fearDebuff === 'undefined') {
+			variables.fearDebuff = 0;
+		}
+      	if(typeof variables.STRPercentDebuff === 'undefined') {
+			variables.STRPercentDebuff = 0;
+		}
+      	if(typeof variables.hungerDebuff === 'undefined') {
+			variables.hungerDebuff = 0;
+		}
+      	if(typeof variables.fatigueDebuff === 'undefined') {
+			variables.fatigueDebuff = 0;
+		}
+      	if(typeof variables.isWeaponSkinOn === 'undefined') {
+			variables.isWeaponSkinOn = "None";
+		}
+      	if(typeof variables.isOutfitSkinOn === 'undefined') {
+			variables.isOutfitSkinOn = "None";
+		}
+      	if(typeof variables.fish === 'undefined') {
+			variables.fish = 0;
+		}
+      	if(typeof variables.threeStarCookedFish === 'undefined') {
+			variables.threeStarCookedFish = 0;
+		}
+      	if(typeof variables.twoStarCookedFish === 'undefined') {
+			variables.twoStarCookedFish = 0;
+		}
+      	if(typeof variables.oneStarCookedFish === 'undefined') {
+			variables.oneStarCookedFish = 0;
+		}
+      	if(typeof variables.STRPercentBuff === 'undefined') {
+			variables.STRPercentBuff = 0;
+		}
+      	if(typeof variables.DEXPercentDebuff === 'undefined') {
+			variables.DEXPercentDebuff = 0;
+		}
+      	if(typeof variables.DEXPercentBuff === 'undefined') {
+			variables.DEXPercentBuff = 0;
+		}
+      	if(typeof variables.Finger1 === 'undefined') {
+			variables.Finger1 = "None";
+		}
+		if(typeof variables.Finger2 === 'undefined') {
+			variables.Finger2 = "None";
+		}
+		if(typeof variables.Finger3 === 'undefined') {
+			variables.Finger3 = "None";
+		}
+		if(typeof variables.Finger4 === 'undefined') {
+			variables.Finger4 = "None";
+		}
+		if(typeof variables.Finger10 === 'undefined') {
+			variables.Finger10 = "None";
+		}
+		if(typeof variables.Finger5 === 'undefined') {
+			variables.Finger5 = "None";
+		}
+		if(typeof variables.Finger6 === 'undefined') {
+			variables.Finger6 = "None";
+		}
+		if(typeof variables.Finger7 === 'undefined') {
+			variables.Finger7 = "None";
+		}
+		if(typeof variables.Finger8 === 'undefined') {
+			variables.Finger8 = "None";
+		}
+		if(typeof variables.Finger9 === 'undefined') {
+			variables.Finger9 = "None";
+		}
+        if(typeof variables.diamondRing === 'undefined') {
+			variables.diamondRing = 0;
+		}
+      	if(typeof variables.goldenRing === 'undefined') {
+			variables.goldenRing = 0;
+		}
+      	if(typeof variables.tearfulTombRing === 'undefined') {
+			variables.tearfulTombRing = 0;
+		}
+      	if(typeof variables.ringOfAchieving === 'undefined') {
+			variables.ringOfAchieving = 0;
+		}
+      	if(typeof variables.AchvRingKeep === 'undefined') {
+			variables.AchvRingKeep = 0;
+		}
+      	if(typeof variables.ringOfTheUndead === 'undefined') {
+			variables.ringOfTheUndead = 0;
+		}
+      	if(typeof variables.ringOfTheLiving === 'undefined') {
+			variables.ringOfTheLiving = 0;
+		}
+      	if(typeof variables.FearPercentBuff === 'undefined') {
+			variables.FearPercentBuff = 0;
+		}
+      	if(typeof variables.FearPercentDebuff === 'undefined') {
+			variables.FearPercentDebuff = 0;
+		}
+      	if(typeof variables.dailyKills === 'undefined') {
+			variables.dailyKills = 0;
+		}
+      	if(typeof variables.killedPKers === 'undefined') {
+			variables.killedPKers = 0;
+		}
+      	if(typeof variables.boarLeather === 'undefined') {
+			variables.boarLeather = 0;
+		}
+      	if(typeof variables.difficultySTRmodifier === 'undefined') {
+			variables.difficultySTRmodifier = 1;
+		} 
+      	if(typeof variables.difficultyHPmodifier === 'undefined') {
+			variables.difficultyHPmodifier = 1;
+		}
+      	if(typeof variables.XPmodifier === 'undefined') {
+			variables.XPmodifier = 1,25;
+		} 
+      	if(typeof variables.ramHorn === 'undefined') {
+			variables.ramHorn = 1;
+		}
+        if(typeof variables.bleedPotency === 'undefined') {
+			variables.bleedPotency = 0;
+		} 
+      	if(typeof variables.bleedCountCur === 'undefined') {
+			variables.bleedCountCur = 0;
+		} 
+      	if(typeof variables.bleedCountMax === 'undefined') {
+			variables.bleedCountMax = 10;
+		}
+      	if(typeof variables.bleedCountDealt === 'undefined') {
+			variables.bleedCountDealt = 0;
+		} 
+       	if(typeof variables.bleedPotencyDealt === 'undefined') {
+			variables.bleedPotencyDealt = 0;
+		}
+      	if(typeof variables.bleedDef === 'undefined') {
+			variables.bleedDef = 1;
+		}
+      	if(typeof variables.turns === 'undefined') {
+			variables.turns = 0;
+		}
+      	if(typeof variables.burnPotency === 'undefined') {
+			variables.burnPotency = 0;
+		}
+      	if(typeof variables.burnCountCur === 'undefined') {
+			variables.burnCountCur = 0;
+		} 
+      	if(typeof variables.burnCountDealt === 'undefined') {
+			variables.burnCountDealt = 0;
+		} 
+      	if(typeof variables.burnPotencyDealt === 'undefined') {
+			variables.burnPotencyDealt = 0;
+		} 
+		if(typeof variables.XPadd === 'undefined') {
+			variables.XPadd = 0.001;
+		} 
+	}
+}
+
+// meters.min.js, for SugarCube 2, by Chapel
+// v1.0.1, 2022-07-21, 3bdbdfbe5ae47a46e4f4e52766d78701939ae9a6
+;!function(){"use strict";var t=!0,e=!1,s=!1,i={full:"#2ECC40",empty:"#FF4136",back:"#DDDDDD",height:"12px",width:"180px",animate:400,easing:"swing",text:"#111111",label:"",align:"center"},n=["center","left","right"],r=["swing","linear"];function a(t,e){return t&&"string"==typeof t&&(t=t.toLowerCase().trim())?t:e||""}function o(t){return t<.5?2*t*t:(4-2*t)*t-1}function l(t,e){if(!(this instanceof l))return new l(t,e);var s=clone(i);this.settings=Object.assign(s,t),this.settings.align=a(this.settings.align),this.settings.easing=a(this.settings.easing),n.includes(this.settings.align)||(this.settings.align="center"),r.includes(this.settings.easing)||(this.settings.easing="swing"),e=Number(e),Number.isNaN(e)&&(e=1),e=Math.clamp(e,0,1),this.value=e;var h=$(document.createElement("div")).addClass("chapel-meter").attr({"data-val":e,"data-label":this.settings.label}).css({position:"relative","background-color":this.settings.back,height:this.settings.height,width:this.settings.width,overflow:"hidden"}),g=$(document.createElement("div")).addClass("meter-label").css({top:0,right:0,"font-size":this.settings.height,"font-weight":"bold","line-height":"100%",width:"100%",height:"100%","vertical-align":"middle","text-align":this.settings.align,color:this.settings.text,"z-index":1,position:"relative",bottom:"100%"}).wiki(this.settings.label).appendTo(h),u=$(document.createElement("div")).addClass("meter-top").css({"background-color":this.settings.full,opacity:o(this.value),width:"100%",height:"100%","z-index":0}),c=$(document.createElement("div")).addClass("meter-bottom").css({position:"absolute",top:0,left:0,"background-color":this.settings.empty,opacity:1,width:100*this.value+"%",height:"100%","z-index":0}).append(u).appendTo(h);this.$element=h,this.$bars={top:u,bottom:c},this.$label=g,g.css("font-size",parseInt(h.css("height"),10)<parseInt($(".passage").css("font-size"),10)?h.css("height"):$(".passage").css("font-size")),g.css("line-height",h.css("height"))}Object.assign(l,{_list:new Map,is:function(t){return t instanceof l},has:function(t){return l._list.has(t)&&l.is(l._list.get(t))},get:function(t){return l.has(t)?l._list.get(t):null},del:function(t){l.has(t)&&l._list.delete(t)},add:function(t,s,i){if(!l.has(t)||e){Object.assign(s,{id:t});var n=new l(s,i);return l._list.set(t,n),n}console.error('Meter "'+t+'" already exists.')},_emit:function(t,e){l.is(t)&&t.$element.trigger({type:":"+e,meter:t})}}),Object.assign(l.prototype,{constructor:l,_label:function(t){var e=this;function s(){e.$label.empty().wiki(e.settings.label),e.$label.css("font-size",parseInt(e.$element.css("height"),10)<parseInt(e.$element.parent().css("font-size"),10)?e.$element.css("height"):e.$element.parent().css("font-size")),e.$label.css("line-height",e.$element.css("height"))}return t?setTimeout(s,Engine.minDomActionDelay):s(),this},_width:function(){var t=this;return this.$bars.bottom.animate({width:100*this.value+"%"},this.settings.animate,this.settings.easing,(function(){l._emit(t,"meter-animation-complete")})),this},_color:function(){return this.$bars.top.animate({opacity:o(this.value)},this.settings.animate,this.settings.easing),this},animate:function(){return l._emit(this,"meter-animation-start"),this._color()._width()._label()},val:function(t){return void 0!==t&&(t=Number(t),Number.isNaN(t)&&(t=1),t=Math.clamp(t,0,1),this.value=t,this.animate()),this.value},options:function(t){return t&&"object"==typeof t&&Object.assign(this.settings,t),this.settings},unwrap:function(){return this.$element[0]},place:function(t,e){var s=$(document.createElement("span"));return t instanceof jQuery||(t=$(t)),t[0]||console.warn("meter#place() -> no valid target"),e&&"object"==typeof e&&(e.classes&&(Array.isArray(e.classes)||"string"==typeof e.classes)&&s.addClass(e.classes),e.attr&&"object"==typeof e.attr&&s.attr(e.attr)),t.append(s.append(this.$element)),this._label(!0),this},on:function(t,e){return"function"!=typeof e?this:t&&"string"==typeof t&&t.trim()?(t=t.split(" ").map((function(t){return(t=t.split(".")[0])+".userland"})).join(" "),this.$element.on(t,e),this):this},one:function(t,e){return"function"!=typeof e?this:t&&"string"==typeof t&&t.trim()?(t=t.split(" ").map((function(t){return(t=t.split(".")[0])+".userland"})).join(" "),this.$element.one(t,e),this):this},off:function(t){return t=t&&"string"==typeof t&&t.trim()?t.split(" ").map((function(t){return(t=t.split(".")[0])+".userland"})).join(" "):".userland",this.$element.off(t),this},click:function(t,e){return this.$element.ariaClick(t,e),this},clone:function(){return new l(this.settings,this.value)},toJSON:function(){return JSON.reviveWrapper("new setup.Meter("+JSON.stringify(this.settings)+", "+this.value+")")}}),setup.Meter=l,t&&(window.Meter=window.Meter||l),Macro.add("newmeter",{tags:["colors","sizing","animation","label"],handler:function(){if(State.length>0&&!s)return this.error("The `<<newmeter>>` macro must be called in your `StoryInit` special passage. Seriously. No excuses. --Love, Chapel");if(this.args.length<1)return this.error("The `<<newmeter>>` macro requires at least one argument: a meter name.");var t=this.args[0],i=null,n=null,r=null,a=null;if("string"!=typeof t)return this.error("Invalid meter name.");if(t=t.trim(),l.has(t)&&!e)return this.error('Cannot clobber the existing meter "'+t+'".');this.payload.length&&(i=this.payload.find((function(t){return"colors"===t.name})),n=this.payload.find((function(t){return"sizing"===t.name})),r=this.payload.find((function(t){return"animation"===t.name})),a=this.payload.find((function(t){return"label"===t.name})));var o={};if(i){if(!i.args.length)return this.error("No arguments passed to the `<<colors>>` tag.");switch(i.args.length){case 1:o.empty=i.args[0],o.full="transparent";break;case 2:o.full=i.args[0],o.empty=i.args[1];break;default:o.full=i.args[0],o.empty=i.args[1],o.back=i.args[2]}}if(n){if(!n.args.length)return this.error("No arguments passed to the `<<sizing>>` tag.");o.width=n.args[0],n.args[1]&&(o.height=n.args[1])}if(r){if(!r.args.length)return this.error("No arguments passed to the `<<animation>>` tag.");if("boolean"!=typeof r.args[0]||r.args[0]){if("string"!=typeof r.args[0])return this.error("The argument to the `<<animation>>` tag should be `true`, `false`, or a valid CSS time value.");o.animate=Util.fromCssTime(r.args[0])}else o.animate=0;r.args[1]&&["swing","linear"].includes(r.args[1])&&(o.easing=r.args[1])}if(a){var h=a.args[0];if(!h||"string"!=typeof h)return this.error("The labelText argument for the `<<label>>` tag is required.");o.label=h.trim(),a.args[1]&&"string"==typeof a.args[1]&&(o.text=a.args[1]),a.args[2]&&"string"==typeof a.args[2]&&(o.align=a.args[2])}l.add(t,o,this.args[1])}}),Macro.add("showmeter",{handler:function(){if(this.args.length<1)return this.error("This macro requires at least one argument: the meter's name.");var t=this.args[0];if("string"!=typeof t)return this.error("Invalid meter name.");t=t.trim();var e=l.get(t);if(!e||!l.is(e))return this.error('The meter "'+t+'" does not exist.');"number"==typeof this.args[1]&&e.val(this.args[1]),e.place(this.output,{classes:"macro-"+this.name,attr:{id:"meter-"+Util.slugify(t)}})}}),Macro.add("updatemeter",{handler:function(){if(this.args.length<2)return this.error("This macro requires two arguments: the meter's name and a value.");var t=this.args[0];if("string"!=typeof t)return this.error("Invalid meter name.");t=t.trim();var e=l.get(t);if(!e||!l.is(e))return this.error('The meter "'+t+'" does not exist.');e.val(this.args[1])}})}();
+// end meters.min.js
+
+
+(function () {
+    // notify.js, by chapel; for sugarcube 2
+    // version 1.1.1
+    // requires notify.css / notify.min.css
+
+    var DEFAULT_TIME = 2000; // default notification time (in MS)
+
+    var isCssTime = /\d+m?s$/;
+
+    $(document.body).append("<div id='notify'></div>");
+    $(document).on(':notify', function (ev) {
+        if (ev.message && typeof ev.message === 'string') {
+            // trim message
+            ev.message.trim();
+            // classes
+            if (ev.class) {
+                if (typeof ev.class === 'string') {
+                    ev.class = 'open macro-notify ' + ev.class;
+                } else if (Array.isArray(ev.class)) {
+                    ev.class = 'open macro-notify ' + ev.class.join(' ');
+                } else {
+                    ev.class = 'open macro-notify';
+                }
+            } else {
+                ev.class = 'open macro-notify';
+            }
+            
+            // delay
+            if (ev.delay) {
+                if (typeof ev.delay !== 'number') {
+                    ev.delay = Number(ev.delay);
+                }
+                if (Number.isNaN(ev.delay)) {
+                    ev.delay = DEFAULT_TIME;
+                }
+            } else {
+                ev.delay = DEFAULT_TIME;
+            }
+            
+            $('#notify')
+                .empty()
+                .wiki(ev.message)
+                .addClass(ev.class);
+                    
+            setTimeout(function () {
+                $('#notify').removeClass();
+            }, ev.delay);
+        }
+    });
+
+    function notify (message, time, classes) {
+        if (typeof message !== 'string') {
+            return;
+        }
+
+        if (typeof time !== 'number') {
+            time = false;
+        }
+
+        $(document).trigger({
+            type    : ':notify',
+            message : message,
+            delay   : time,
+            class   : classes || ''
+        });
+    }
+
+    // <<notify delay 'classes'>> message <</notify>>
+    Macro.add('notify', {
+           tags : null,
+        handler : function () {
+            
+            // set up
+            var msg     = this.payload[0].contents, 
+                time    = false, 
+                classes = false, i;
+            
+            // arguments
+            if (this.args.length > 0) {
+                var cssTime = isCssTime.test(this.args[0]);
+                if (typeof this.args[0] === 'number' || cssTime) {
+                    time    = cssTime ? Util.fromCssTime(this.args[0]) : this.args[0];
+                    classes = (this.args.length > 1) ? this.args.slice(1).flatten() : false;
+                } else {
+                    classes = this.args.flatten().join(' ');
+                }
+            }
+            
+            // fire event
+            notify(msg, time, classes);
+            
+        }
+    });
+
+    setup.notify = notify;
+}());
+
+
+/* hovertip v2.0 - Start */
+window.UpdateHoverTipTxt = function (container) {
+	if (Engine.isIdle()) {
+		clearInterval(HTTIntervalID);
+		if (container === undefined) {
+			container = $(document);
+		} else {
+			container = $(container);
+		}
+		var i, id, top, left, parent, elementList, element, hoverPos, boxPos, zindex;
+		elementList = container.find('span[id^="hoverTipTxt"]');
+		for (i = 0; i < elementList.length; i++) {
+			element = $(elementList[i]);
+			id = elementList[i].id.substring(11);
+			/* Find parent hoverTip item on the page. */
+			parent = $(container).find("#hoverTip" + (id));
+			/* Position bottom of hoverTipTxt just above the parent. */
+			top = Math.round(-element.outerHeight() - 6);
+			/* Center hoverTipTxt horizontally over parent. */
+			left = Math.round((parent.outerWidth() - element.outerWidth()) / 2);
+			/* See if the hoverTip is contained by something with a higher z-index. */
+			zindex = element.css("z-index");
+			if (zindex === "auto") {
+				zindex = 0;
+			} else {
+				zindex = parseInt(zindex, 10);
+			}
+			while (parent.parent()[0] !== document) {
+				if ((parent.parent().css("z-index") !== "auto") && (parseInt(parent.parent().css("z-index"), 10) > zindex)) {
+					/* Get container rect. */
+					boxPos = parent[0].getBoundingClientRect();
+					break;
+				}
+				parent = parent.parent();
+			}
+			/* Update position. */
+			element.css({ top: top, left: left });
+			hoverPos = element[0].getBoundingClientRect();
+			/* Make sure the text isn't outside the bottom of the screen. */
+			if (hoverPos.top > window.innerHeight - hoverPos.height - 10) {
+				top -= hoverPos.top - (window.innerHeight - hoverPos.height - 10);
+			}
+			/* Make sure the text isn't outside the top of the screen. */
+			if (hoverPos.top < 4) {
+				top -= hoverPos.top - 4;
+			}
+			/* Make sure the text isn't outside the right of the screen. */
+			if (hoverPos.left > window.innerWidth - hoverPos.width - 26) {
+				left -= hoverPos.left - (window.innerWidth - hoverPos.width - 26);
+			}
+			/* Make sure the text isn't outside the left of the screen. */
+			if (hoverPos.left < 4) {
+				left -= hoverPos.left - 4;
+			}
+			/* Update position. */
+			element.css({ top: Math.round(top), left: Math.round(left) });
+			hoverPos = element[0].getBoundingClientRect();
+			if (boxPos) {  /* Fit within dialog boxes and the like. */
+				/* Make sure the text isn't outside the bottom of the box. */
+				if (hoverPos.top > boxPos.bottom - hoverPos.height - 10) {
+					top -= hoverPos.top - (boxPos.bottom - hoverPos.height - 10);
+				}
+				/* Make sure the text isn't outside the top of the box. */
+				if (hoverPos.top < boxPos.top + 4) {
+					top -= hoverPos.top - (boxPos.top + 4);
+				}
+				/* Make sure the text isn't outside the right of the box. */
+				if (hoverPos.left > boxPos.right - hoverPos.width - 26) {
+					left -= hoverPos.left - (boxPos.right - hoverPos.width - 26);
+				}
+				/* Make sure the text isn't outside the left of the box. */
+				if (hoverPos.left < boxPos.left + 4) {
+					left -= hoverPos.left - boxPos.left - 4;
+				}
+				/* Update position. */
+				element.css({ top: Math.round(top), left: Math.round(left) });
+			}
+		}
+	} else {
+		clearInterval(HTTIntervalID);
+		HTTIntervalID = setInterval(UpdateHoverTipTxt, 300);
+	}
+};
+/*  Waits for passage to be fully rendered before doing anything.  */
+var HTTIntervalID = 0;
+$(document).on(":passageend", function (ev) {
+	UpdateHoverTipTxt();
+});
+$(window).on("resize scroll", function (ev) {
+	clearInterval(HTTIntervalID);
+	HTTIntervalID = setInterval(UpdateHoverTipTxt, 300);
+});
+$("#ui-bar-toggle").on("click", function (ev) {
+	clearInterval(HTTIntervalID);
+	HTTIntervalID = setInterval(UpdateHoverTipTxt, 300);
+});
+/* <<hovertip>> macro */
+Macro.add("hovertip", {
+	tags	 : null,
+	handler  : function () {
+		if (this.args.length > 0) {
+			var mw = "";
+			if ((this.args.length > 1) && (!isNaN(parseInt(this.args[1], 10)))) {
+				mw = ' style="max-width: ' + parseInt(this.args[1], 10) + 'px;"';
+			}
+			if (State.temporary.HoverTipCount == undefined) {
+				State.temporary.HoverTipCount = 1;
+			} else {
+				State.temporary.HoverTipCount++;
+			}
+			while ($("#hoverTip" + State.temporary.HoverTipCount).length) {
+				/* Found an existing hoverTip. */
+				State.temporary.HoverTipCount++;
+			}
+			var output = '<span id="hoverTip' + State.temporary.HoverTipCount +
+					'" class="hoverTipTxt hoverTip" tabindex="0" ' +
+					'onmouseenter="UpdateHoverTipTxt();">' +
+					this.payload[0].contents + '<span id="hoverTipTxt' +
+					State.temporary.HoverTipCount + '" class="hoverBox hoverTail"' +
+					mw + '>' + this.args[0] + '</span></span>';
+			$(this.output).wiki(output);
+		} else {
+			$(this.output).wiki(this.payload[0].contents);
+		}
+	}
+});
+/* hovertip v2.0 - End */
+
+
+  /* --------------------------- */
+  /* HITURO TIME MACRO           */
+  /* --------------------------- */
+(function() {
+  "use strict";
+  
+  variables()["time"] = 0;
+  
+  window.DATESYSTEM = class DATESYSTEM {
+    constructor(config = {}) {
+      this.version     = "1.2.0";
+      this.systemname  = config.name ?? "default";
+      this.varname     = this.systemname == "default" ? "time" : this.systemname + '-time';
+      this.cache       = { };
+      this.MIN_LENGTH  = config.min_length ?? 60;
+      this.HOUR_LENGTH = config.hour_length ?? 60;
+      this.DAY_LENGTH  = config.day_length ?? 24;
+      this.DAYS        = config.days ?? [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      this.HOURS       = config.hours ?? [ "midnight", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "noon", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven" ];
+      this.DAY_PARTS   = config.day_parts ?? [
+        { name: "night"    , start:  0 },
+        { name: "morning"  , start:  7 },
+        { name: "afternoon", start: 12 },
+        { name: "evening"  , start: 17 },
+        { name: "night"    , start: 21 }
+      ];
+      this.WEEK_START  = config.week_start ?? 5;
+      this.MONTHS      = config.months ?? [
+        { name: "January"  , length: 31, season: "winter" }, 
+        { name: "February" , length: 28, season: "winter", leap_century: [[400,29]], leap: [[4,29]] }, 
+        { name: "March"    , length: 31, season: "spring" }, 
+        { name: "April"    , length: 30, season: "spring" }, 
+        { name: "May"      , length: 31, season: "spring" }, 
+        { name: "June"     , length: 30, season: "summer" }, 
+        { name: "July"     , length: 31, season: "summer" }, 
+        { name: "August"   , length: 31, season: "summer" }, 
+        { name: "September", length: 30, season: "autumn" }, 
+        { name: "October"  , length: 31, season: "autumn" }, 
+        { name: "November" , length: 30, season: "autumn" }, 
+        { name: "December" , length: 31, season: "winter" }
+      ];
+      this.YEAR_STARTS = config.year_starts ?? {
+           1: 3,
+         325: 6,
+        1752: 5
+      };
+      this.YEAR_LENGTH = this.MONTHS.reduce((total,m) => { return total + m.length},0)
+      this.PERIODS    = config.periods ?? { 
+        y: ["year","years"], mo: ["month","months"], d: ["day","days"], h: ["hour","hours"], m: ["minute","minutes"], s: ["second","seconds"]
+      };
+      this.hl = this.MIN_LENGTH * this.HOUR_LENGTH;
+      this.dl = this.hl * this.DAY_LENGTH;
+      this.yl = this.dl * this.YEAR_LENGTH;
+      this.equal_years = this.MONTHS.reduce((total,m) => { return total + (m.leap_century || m.leap) ? 1 : 0; }) == 0;
+      this.BASE_TIME   = variables()[this.varname] = (config.base_time ? this.dateToTime(config.base_time) : 0);
+      this.YEAR_OFFSET = config.year_offset ?? 0;
+    }
+
+    get elapsed() {
+      return variables()[this.varname] - this.BASE_TIME;
+    }
+    
+    setToTime(datestring, base) {
+      return this.dateToTime(datestring, { type: "set", base: base ?? this.getDate(0,"date") });
+    }
+    
+    dateToTime(datestring, options = {}) {
+      // set options
+      options.type      = options.type ?? "set";
+      options.direction = options.direction ?? "forward";
+      
+      //set base values
+      const base   = options.base ? options.base : this.getDate(variables()[this.varname],"date",true);
+      if (datestring == "now") {
+        datestring = this.getRealDate();
+      }
+      
+      const parts  = datestring.toLowerCase().split(" ");
+      let   time   = 0;
+      
+      for (const part of parts) {
+        let [ , num, unit ] = part.match(/^([0-9]+)(s|m|h|d|mo|y)$/) || [];
+        
+        if (!unit || !num) throw new Error("Unrecognised date element in dateToTime(): please use s, m, h, d, mo, or y");
+        
+        if (options.type == "set" && ["mo","d","y"].includes(unit)) {
+          num --;
+        }
+        
+        switch (unit) {
+          case "s" : time += num * 1; break;
+          case "m" : time += num * this.MIN_LENGTH;  break;
+          case "h" : time += num * this.hl; break;
+          case "d" : time += num * this.dl; break;
+          case "y" : 
+            if (this.equal_years) {
+              time += num * this.yl;
+            } else {
+              num *= this.MONTHS.length; unit = 'mo'; 
+            } 
+            break;
+        }
+        if (unit == 'mo') {
+          if (options.direction == "forward") {
+            for (let i = 0; i < num; i++) {
+              const year  = base.y + Math.floor((base.mo + i) / this.MONTHS.length);
+              const month = this.MONTHS[(base.mo - 1 + i) % this.MONTHS.length];
+              const days  = this.getMonthLength(month,year);
+              time += days * (this.dl);
+            }
+          } else {
+            for (let i = num; i > 0; i--) {
+              const year  = base.y+ Math.floor((base.mo + i) / this.MONTHS.length);
+              const month = this.MONTHS[(base.mo - 1 - i) % this.MONTHS.length];
+              const days  = this.getMonthLength(month,year);
+              time += days * (this.dl);
+            }
+          }
+        }
+      }
+      return time;
+    }
+    
+    dateFromPartialDate(datestring) {
+      const base  = this.getDate(variables()[this.varname]);
+      const full  = [["y","y"], ["mo","mo"], ["d","d"], ["h","h"], ["m","m"], ["s","s"]];
+      let   user  = {};
+      
+      //make an object out of what the user has provided
+      if (typeof datestring == "string") {
+        user = DATESYSTEM.dateQueryFromString(datestring);
+      } else { user = datestring }
+      
+      //make a new time string filling in missing elements from base
+      const out   = [];
+      for (const e of full) {
+        out.push((user[e[0]] ?? base[e[1]]) + e[0]);
+      }
+      console.log("new timestring: " + out.join(' '));
+      return this.setToTime(out.join(' '));
+    }
+
+    dateNext(interval,time) {
+      let   r     = time ?? variables()[this.varname];
+      const base  = this.getDate(r);
+      let [ , num, unit ] = interval.match(/^([0-9]+)(s|m|h|d|mo|y)$/) || [];
+
+      if (!unit || !num) throw new Error("Unrecognised date element in dateToTime(): please use s, m, h, d, mo, or y");
+
+      // find out how far to the next unit asked for
+      switch (unit) {
+        case "m" : num -= base.m; break;
+        case "h" : num -= base.h; break;
+        case "mo": num --; break;
+      }
+      // set the new time
+      switch (unit) {
+        case "s" : r += 1; break;
+        case "m" : r = (Math.floor(r / this.MIN_LENGTH)  * this.MIN_LENGTH) + this.MIN_LENGTH; break;
+        case "h" : r = (Math.floor(r / this.hl) * this.hl) + (num * this.hl); break;
+        case "d" : r = (Math.floor(r / this.dl) * this.dl) + (num * this.dl); break;
+        case "y" : r = (Math.floor(r / this.yl) * this.yl) + (num * this.yl); break;
+      }
+      if (unit == 'mo') {
+        const month = this.MONTHS[base.mo -1];
+        const days  = this.getMonthLength(month,base.y);
+        // reset to end of month
+        r = (Math.floor(r / this.dl) * this.dl) ;
+        r += ((days - base.d) + 1) * this.dl;
+        for (let i = base.mo; i <= num; i++) {
+          const year  = base.y + Math.floor((base.mo + i) / this.MONTHS.length);
+          const month = this.MONTHS[(base.mo - 1 + i) % this.MONTHS.length];
+          const days  = this.getMonthLength(month,year);
+          r += (this.dl * days)
+        }
+      }
+      return r;
+    }
+    
+    getDate(date, output = "date", base = false) {
+      let r = (date !== undefined) ? date : variables()[this.varname];
+      const initial = r;
+
+      // caching
+      if (this.cache.time && this.cache.time === r) { 
+        return this.cache.value; 
+      }
+
+      const out   = {
+        y: output == "date" ? 1 : 0,
+        Y: 0,
+        year_short: 0,
+        year_sep: 0,
+        year_mil: 0,
+        mo: output == "date" ? 1 : 0,
+        "0mo": "",
+        M: "",
+        month_long: "",
+        month_short: "",
+        d: output == "date" ? 1 : 0,
+        D: "",
+        "0d": "",
+        day_of_year: 0,
+        day_long: "",
+        day_short: "",
+        day_ordinal: "th",
+        weekday: "",
+        h: 0,
+        h12: 0,
+        h24: 0,
+        "0h": "",
+        "0h12": "",
+        "0h24": "",
+        H: "",
+        day_half: "",
+        day_part: "",
+        m: 0,
+        "0m": "",
+        s: 0,
+        "0s": "",
+        e: r,
+        season: ""
+      };
+      
+      if (base) { return out; }
+      
+      // months & years
+      let months = 0;
+      let total_days = 0;
+      let non_sequential_days = 0;
+
+      if (this.equal_years) {
+        out.y += Math.floor(r / (this.yl)) + this.YEAR_OFFSET;
+        out.year_short  = out.Y = out.y % 100;
+        out.year_sep    = out.y.toLocaleString();
+        out.year_mil    = Math.floor(out.y / 1000);
+        total_days      = out.y * this.YEAR_LENGTH;
+        let year_secs   = (this.yl * (out.y - (output == "date" ? 1 : 0)));
+        r = year_secs ? r % year_secs : r;
+      }
+      
+      let yl = 0;
+      
+      while (true) {
+        const year  = out.y + Math.floor(months / this.MONTHS.length);
+        const moy   = months % this.MONTHS.length;
+        const month = this.MONTHS[moy];
+        const days  = this.getMonthLength(month,year);
+        non_sequential_days += this.MONTHS[moy].skip_day_sequence ? days : 0;
+        
+        if (r >= (days * this.dl)) {
+          r -= (days * this.dl);
+          if (moy == 0) { out.day_of_year = days } else { out.day_of_year += days; }
+          total_days += days;
+        } else {
+          if (!this.equal_years) {
+            out.y           = year + this.YEAR_OFFSET;
+            out.year_short  = out.Y = out.y % 100;
+            out.year_sep    = out.y.toLocaleString();
+            out.year_mil    = Math.floor(out.y / 1000);
+          }
+          out.mo          = moy + 1;
+          out.month_long  = out.M = month.name;
+          out.month_short = month.short ?? month.name.substring(0,3);
+          out.season      = month.season ?? "";
+          if (out.mo == 1 && r <= this.dl) {
+            out.day_of_year = 0;
+          }
+          break;
+        }
+        months ++;
+      }
+      out["0mo"] = out.mo < 10 ? `0${out.mo}` : out.mo;
+      
+      // days
+      out.d += Math.floor(r / (this.dl));
+      out.day_of_year += out.d;
+      out.day_ordinal = this.getOrdinal(out.d);
+      out["0d"] = out.d < 10 ? `0${out.d}` : out.d;
+      total_days += out.d;
+      r = r % (this.dl);
+      
+      // day of week
+      const year_start_day = this.getYearStartDay(out.y);
+      if (this.MONTHS[out.mo -1].special_days) {
+        // override the normal day calculation method
+        out.weekday   = this.MONTHS[out.mo -1].special_days[out.d -1];
+        out.day_long  = out.D = out.weekday;
+      } else {
+        // normal day calculation
+        out.weekday   = ((total_days - non_sequential_days) + year_start_day + 1) % this.DAYS.length;
+        out.day_long  = out.D = this.DAYS[out.weekday];
+      }
+      out.day_short = out.day_long.substring(0,2);
+      
+      // hours
+      out.h = Math.floor(r / (this.hl));
+      out.h12 = out.h % Math.floor(this.DAY_LENGTH / 2);
+      out.h12 = out.h12 ? out.h12 : Math.ceil(this.DAY_LENGTH / 2);
+      out.h24 = out.h;
+      out.day_half = out.h > Math.floor(this.DAY_LENGTH / 2) ? "pm" : "am";
+      out["0h"]   = out["0h24"] = out.h < 10 ? `0${out.h}` : out.h;
+      out["0h12"] = out.h12 < 10 ? `0${out.h12}` : out.h12;
+      out.H = this.HOURS[out.h];
+      r = r % (this.hl);
+      
+      // day part
+      out.day_part = this.DAY_PARTS[0].name;
+      for (let part of this.DAY_PARTS) {
+        if (part.start > out.h) { break; }
+        out.day_part = part.name;
+      }
+      
+      // minutes
+      out.m = Math.floor(r / this.MIN_LENGTH);
+      out["0m"] = out.m < 10 ? `0${out.m}` : out.m;
+      r = r % (this.MIN_LENGTH);
+      
+      // seconds
+      out.s = r;
+      out["0s"] = out.s < 10 ? `0${out.s}` : out.s;
+
+      // caching
+      this.cache.time = initial;
+      this.cache.value = out;
+      
+      return out;
+    }
+    
+    getRealDate() {
+      const date = new Date(); // use whatever timezone the user is in
+      const s    = date.getSeconds();
+      const m    = date.getMinutes();
+      const h    = date.getHours();
+      const d    = date.getDate();
+      const mo   = date.getMonth() + 1;
+      const y    = date.getFullYear();
+      return `${y}y ${mo}mo ${d}d ${h}h ${m}m ${s}s`;
+    }
+    
+    getYearLength(year) {
+      if (this.equal_years) return this.YEAR_LENGTH;
+      let days = 0;
+      for (let month of this.MONTHS) {
+        days += this.getMonthLength(month,year);
+      }
+      return days;
+    }
+    
+    getYearStartDay(year) {
+      let startDay = this.WEEK_START;
+      for (const y in this.YEAR_STARTS) {
+        if (year >= y) { startDay = this.YEAR_STARTS[y]; }
+      }
+      return startDay;
+    }
+    
+    getMonthLength(month,year=0) {
+      if (this.equal_years) return month.length;
+      if (month.leap_century && !(year % 100)) {
+        // it's a century, and month has a leap_century rule
+        for (const leap_cond of month.leap_century) {
+          if (year % leap_cond[0] == 0) {
+            return leap_cond[1];
+          }
+        }
+      }
+      else if (month.leap && ((month.leap_century && year % 100) || !month.leap_century)) {
+        for (const leap_cond of month.leap) {
+          if (year % leap_cond[0] == 0) {
+            return leap_cond[1];
+          }
+        }
+      }
+      return month.length;
+    }
+    
+    dateFormat(format,date) {
+      const d = this.getDate(date);
+      if (!format || format == "short") {
+        return `${d.d}-${d.mo}-${d.y}`;
+      }
+      else if (format == "long") {
+        return `${d.day_long} ${d.d}${d.day_ordinal} ${d.month_long} ${d.y}`;
+      }
+      else if (format == "datetime") {
+        return `${d.day_long} the ${d.d}${d.day_ordinal} of ${d.month_long}, ${d.y} ${d['0h']}:${d['0m']}:${d['0s']}`;
+      }
+      else if (format == "time") {
+        return `${d['0h']}:${d['0m']}:${d['0s']}`;
+      }
+      else {
+        return format.replaceAll(/\[([A-Z0-9a-z_]+)\]/g, (match, capture) => {
+          return d[capture] ?? match;
+        });
+      }
+    }
+    
+    getOrdinal(n) {
+      if (n > 10 && n < 20) { return "th" }
+      let c = n.toString().slice(-1);
+      switch (c) {
+        case "1":
+          return "st";
+        case "2":
+          return "nd";
+        case "3":
+          return "rd";
+        default:
+          return "th";
+      }
+    }
+    
+    datePeriod(span, separator = ' ', last_separator) {
+      // given a timespan, format it
+      const s = this.getDate(span, "period");
+            s.mo = Math.max(0,s.mo - 1);
+      const parts = ["y","mo","d","h","m","s"];
+      let out = [];
+      for (const part of parts) {
+        if (s[part]) {
+          out.push(s[part] + ' ' + (s[part[0]] > 1 ? this.PERIODS[part][1] : this.PERIODS[part][0]));
+        }
+      }
+      if (last_separator && out.length > 1) {
+        let last = out.pop();
+        return out.join(separator) + last_separator + last;
+      }
+      return out.join(separator).trim();
+    }
+    
+    dateCompare(elems,date) {
+      if (typeof elems == "string") {
+        elems = DATESYSTEM.dateQueryFromString(elems);
+      }
+      
+      if (date == undefined) {
+        date = this.getDate();
+      } else if (typeof date == "string") {
+        date = this.getDate(this.dateToTime(date));
+      } else if (typeof date == "number") {
+        date = this.getDate(date);
+      }
+      
+      for (const dp in elems) {
+        console.log(`Comparing ${dp} ${elems[dp]} -> ${date[dp]}`,date);
+        if (DATESYSTEM.isNumeric(date[dp])) {
+          if (date[dp] != elems[dp]) { 
+            return false;
+          }
+        } else {
+          if (date[dp].toLowerCase() != elems[dp]) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    
+    static dateQueryFromString(string) {
+      if (string) {
+        const parts = string.split(" ");
+        const elems = {};
+        for (const part of parts) {
+          const res = part.match(/^(?:(\d+)(s|m|h|d|mo|y)|([A-Za-z]+)\[(\w+)\])$/);
+          if (res) {
+            const [val, unit] = res.slice(1).filter(e => e);
+            elems[unit] = DATESYSTEM.isNumeric(val) ? parseInt(val) : val.toLowerCase();
+          }
+        }
+        return elems;
+      }
+    }
+    
+    static isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    static dateargs = function(args) {
+      if (setup.datesystems[args[args.length - 1]]) {
+        // last arg is a datesystem
+        let ds = args[args.length -1];
+        return { args: args.slice(0,-1), datesystem: setup.datesystems[ds], varname: setup.datesystems[ds].varname };
+      } else {
+        return { args: args, datesystem: setup.datesystems["default"], varname: setup.datesystems["default"].varname }
+      }
+    }
+
+    datetrigger = function(from,to) {
+      $(document).trigger({ type: ":dateupdated", from: from, to: to, system: this.systemname});
+    }
+    
+  }
+  
+  /* --------------------------- */
+  /* MACROS                      */
+  /* --------------------------- */
+  
+  Macro.add('date', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<date>>");
+      this.output.append(dateargs.datesystem.dateFormat(dateargs.args[0],dateargs.args[1]));
+    }
+  });
+  
+  Macro.add('dateset', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<date>>");
+      let new_time = dateargs.datesystem.setToTime(dateargs.args[0]);
+      dateargs.datesystem.datetrigger(variables()[dateargs.datesystem.varname], new_time);
+      variables()[dateargs.datesystem.varname] = new_time;
+    }
+  });
+  
+  Macro.add('dateto', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<dateto>>");
+      let new_time = dateargs.datesystem.dateFromPartialDate(dateargs.args[0]);
+      dateargs.datesystem.datetrigger(variables()[dateargs.datesystem.varname], new_time);
+      variables()[dateargs.datesystem.varname] = new_time;
+    }
+  });
+  
+  Macro.add('dateadd', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<dateadd>>");
+      let new_time = dateargs.datesystem.dateToTime(dateargs.args[0],{ type: "add" });
+      dateargs.datesystem.datetrigger(variables()[dateargs.datesystem.varname], variables()[dateargs.datesystem.varname] + new_time);
+      variables()[dateargs.datesystem.varname] += new_time;
+    }
+  });
+  
+  Macro.add('datesubtract', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<datesubtract>>");
+      let new_time = Math.max(0,variables()[dateargs.datesystem.varname] - new_time);
+      dateargs.datesystem.datetrigger(variables()[dateargs.datesystem.varname], new_time);
+      variables()[dateargs.datesystem.varname] = new_time
+    }
+  });
+  
+  Macro.add('datenext', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<datenext>>");
+      let new_time = dateargs.datesystem.dateNext(dateargs.args[0]);
+      dateargs.datesystem.datetrigger(variables()[dateargs.datesystem.varname], new_time);
+      variables()[dateargs.datesystem.varname] = new_time;
+    }
+  });
+  
+  Macro.add('datereset', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<datereset>>");
+      let old_time = variables()[dateargs.datesystem.varname];
+      variables()[dateargs.datesystem.varname] = 0;
+      let new_time = dateargs.datesystem.setToTime(dateargs.args[0]);
+      dateargs.datesystem.datetrigger(old_time, new_time);
+      variables()[dateargs.datesystem.varname] = this.BASE_TIME = new_time;
+    }
+  });
+  
+  Macro.add('dateperiod', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<dateperiod>>");
+      this.output.append(dateargs.datesystem.datePeriod(dateargs.args[0],dateargs.args[1],dateargs.args[2]));
+    }
+  });
+  
+  Macro.add('dateticker', {
+    handler: function handler() {
+      let dateargs = DATESYSTEM.dateargs(this.args);
+      if (!dateargs.datesystem) throw new Error("Please set up the datesystem with <<datesetup>> before using <<dateticker>>");
+      const $ticker   = $("<div class='macro-dateticker'>");
+      const format    = dateargs.args[0] ?? "[0h]:[0m]:[0s]";
+      const unit      = dateargs.args[1] ?? "1s";
+      const event     = dateargs.args[2] ?? false;
+      const ds        = dateargs.datesystem.systemname; // use the key so we survive passage transitions
+      const incsecs   = dateargs.datesystem.dateToTime(unit);
+      const frequency = parseInt(incsecs) * 1000;
+      $ticker.html(dateargs.datesystem.dateFormat(format));
+      $ticker.appendTo(this.output);
+      
+      const ticker  = setInterval(function() {
+        if (document.contains($ticker[0])) {
+          if (event) dateargs.datesystem.datetrigger(variables()[dateargs.datesystem.varname], variables()[dateargs.datesystem.varname] + incsecs);
+          variables()[setup.datesystems[ds].varname] += incsecs;
+          $ticker.html(setup.datesystems[ds].dateFormat(format));
+        } else {
+          clearInterval(ticker);
+        }
+      },frequency); 
+    }
+  });
+  
+  Macro.add('datesetup', {
+    handler: function handler() {
+      let dateargs = {};
+      if (this.args[0]) {
+        if (typeof this.args[0] == "string") { 
+          dateargs.base_time = this.args[0];
+        } else if (typeof this.args[0] == "object") {
+          dateargs = this.args[0];
+        } else {
+          throw new Error("The first argument to <<datesetup>> must either be a default base_time, or a config object");
+        }
+      }
+      let ds = new DATESYSTEM(dateargs);
+      setup.datesystems = setup.datesystems ?? {};
+      setup.datesystems[ds.systemname] = ds;
+    }
+  });
+  
+  Macro.add('at', {
+    tags: null,
+    handler: function handler() {
+      const dateargs = DATESYSTEM.dateargs(this.args);
+      const payload  = this.payload[0].contents;
+      
+      if (this.args[0] && payload) {
+        const timestamp = dateargs.datesystem.setToTime(this.args[0]);
+        const id        = 'at-'+timestamp;
+        
+        $(document).on(`:dateupdated.${id}`, this.createShadowWrapper(
+          function (e) {
+            if (e.to >= timestamp) {
+              const resFrag = document.createDocumentFragment();
+              new Wikifier(resFrag,payload);
+              $(document).off(`:dateupdated.${id}`);
+            }
+          }
+        ));
+      }
+    }
+  });
+  
+})();
+
+Config.saves.maxSlotSaves = 16; // save slots limit
+
+Config.saves.isAllowed = function () {
+    return !tags().includes("NoSave"); // tag passages with this to prevent saving
+};
+
+!function(){$(document).on("dblclick","#ui-bar",function(){$("#ui-bar").toggleClass("stowed")});}();
+
+//SETTINGS//
+// change font size
+var settingFontSize = ["100%","110%","120%","130%","140%", "150%"];
+var resizeFont = function() {
+	var size = document.getElementById("passages");
+	switch (settings.fontSize) {
+		case "100%":
+			size.style.fontSize = "100%";
+			break;
+	}
+  	switch (settings.fontSize) {
+		case "110%":
+			size.style.fontSize = "110%";
+			break;
+	}
+  	switch (settings.fontSize) {
+		case "120%":
+			size.style.fontSize = "120%";
+			break;
+	}
+	switch (settings.fontSize) {
+		case "130%":
+			size.style.fontSize = "130%";
+			break;
+	}
+	switch (settings.fontSize) {
+		case "140%":
+			size.style.fontSize = "140%";
+			break;
+	}
+	switch (settings.fontSize) {
+		case "150%":
+			size.style.fontSize = "150%";
+			break;
+	}
+};
+Setting.addList("fontSize", {
+	label		: "Change font size",
+	list		: settingFontSize,
+	onInit		: resizeFont,
+	onChange	: resizeFont
+});
+// end change font size
+
+// UI bars (hp stm fatigue hunger)
+var settingUIbars = ["Large","Medium","Small","Extra small"];
+Setting.addList("UIbars", {
+	label		: "Change bars size (only affects HP, STM, Hunger and fatigue)",
+	list		: settingUIbars,
+});
+// UI bars end
+
+// Turn counter on/off
+Setting.addToggle("statuses", {
+	label : "Display statuses under or next to hp (players only)",
+	default  : true,
+}); 
+
+// Turn counter on/off
+Setting.addToggle("turns", {
+	label : "Turn counter",
+	default  : true,
+}); 
+
+// new/old buttons and frame
+Setting.addToggle("buttons", {
+	label : "New button style",
+	default  : true,
+}); 
+
+Setting.addToggle("characterFrame", {
+	label : "Frame on the character",
+	default  : true,
+});
+
+//Export notifs
+Setting.addToggle("exportReminder", {
+	label : "Reminder for export",
+	default  : true,
+});
+
+// Fear eyes
+Setting.addToggle("eyesFear", {
+	label : "Fear visual effects",
+	default  : true,
+}); 
+
+//Player model related settings start
+
+// Visible hair
+Setting.addToggle("hair", {
+	label : "Visible hair",
+	default  : true,
+});
+
+// Animated eyes
+Setting.addToggle("eyes", {
+	label : "Animated eyes",
+	default  : true,
+}); 
+
+
+// Visible capes
+Setting.addToggle("capes", {
+	label : "Visible capes",
+	default  : true,
+});
+
+
+// Visible armor
+Setting.addToggle("armor", {
+	label : "Visible armor",
+	default  : true,
+});
+
+
+// Visible weapons
+Setting.addToggle("weapons", {
+	label : "Visible weapons",
+	default  : true,
+});
+
+// Visible clothes
+Setting.addToggle("clothes", {
+	label : "Visible clothes",
+	default  : true,
+});
+
+// Visible outfits
+Setting.addToggle("outfits", {
+	label : "Visible outfits",
+	default  : true,
+});
+
+//Player model related settings end
+
+//Game settings
+
+//This was meant to be a setting for the max amount of undos u could do... I couldnt figure it out cuz i kept getting a error about the config.history.maxStates having to be a positive integer. Unsure how to fix but i will in the future... hopefully
+
+Config.history.maxStates = 5;
+
+// Game settings end
+
+// SETTINGS END
+
+// Kitsunes RNG code
+window.kitsuneRNG = function (min, max) {
+    return Math.floor(Math.random() * (max-min+1))+min;
+  }
+
+// max history
+
+;(() => {
+  //Your url here!
+  const url = 'Textures/Icons/game icon.png';
+      
+  $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
+})();
+

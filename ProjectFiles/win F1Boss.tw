@@ -1,0 +1,177 @@
+:: win F1Boss [autosave] {"position":"500,2075","size":"100,100"}
+The boss health bar got to red, you go in for your last strike and succesfully hit it.
+It turns into ashes and a screen pops up
+<<set $blueRaid to false>> <<set $raidParty to false>>
+<center><img src = "Textures/Congratulations!!!.png" width="100%"/></center>
+"You have beaten the floor 1 boss
+Everyone who participated in this battle will get a choice to get 1 item!
+Choose wisely.
+You also got 2030 XP and 2942 Coins."
+
+"Well that's a surprise. This wasn't in the beta." you say to yourself as you choose a item.
+
+You can chose:
+<<link [[A coat|F1 BOSS]]>>
+<<set $CurXP += 2030>>
+<<set $Coins += 2942>>
+<<set $floorBossBattle to false>>
+<<set $f1bosskilled to true>>
+<<set $cape2 to true>>
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 2030>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 1015>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 2030>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 1015>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 2030>>
+ <<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 1015>>
+<</if>>
+<</link>>
+<<link [[Heavy armor|F1 BOSS]]>>
+<<set $CurXP += 2030>>
+<<set $Coins += 2942>>
+<<set $f1bosskilled to true>>
+<<set $floorBossBattle to false>>
+<<set $shadowHunterHeavyCP to true>>
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 2030>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 1015>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 2030>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 1015>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 2030>>
+ <<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 1015>>
+<</if>>
+<</link>>
+<<link [[Light armor|F1 BOSS]]>>
+<<set $CurXP += 2030>>
+<<set $Coins += 2942>>
+<<set $floorBossBattle to false>>
+<<set $f1bosskilled to true>>
+<<set $shadowHunterLightCP to true>>
+<</link>>
+Or you can get:
+<<link [[A heavy sword|F1 BOSS]]>>
+<<set $CurXP += 2030>>
+<<set $Coins += 2942>>
+<<set $floorBossBattle to false>>
+<<set $f1bosskilled to true>>
+<<set $heavysword3 to true>> 
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 2030>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 1015>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 2030>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 1015>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 2030>>
+ <<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 1015>>
+<</if>>
+<</link>>
+<<link [[A rapier|F1 BOSS]]>>
+<<set $CurXP += 2030>>
+<<set $floorBossBattle to false>>
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 2030>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 1015>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 2030>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 1015>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 2030>>
+ <<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 1015>>
+<</if>>
+<<set $Coins += 2942>>
+<<set $f1bosskilled to true>>
+<<set $rapier3 to true>> 
+<</link>>
+<<link [[A sword|F1 BOSS]]>>
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 2030>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 1015>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 2030>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 1015>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 2030>>
+ <<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 1015>>
+<</if>>
+<<set $CurXP += 2030>>
+<<set $Coins += 2942>>
+<<set $floorBossBattle to false>>
+<<set $f1bosskilled to true>>
+<<set $sword3 to true>>
+<</link>>
+<<link [[A sword with a shield|F1 BOSS]]>>
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 2030>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 1015>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 2030>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 1015>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 2030>>
+<<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 1015>>
+<</if>>
+<<set $CurXP += 2030>>
+<<set $Coins += 2942>>
+<<set $f1bosskilled to true>>
+<<set $floorBossBattle to false>>
+<<set $swordnshield3 to true>>
+<</link>>
+
+<<set $timeTillBossDies to 0>>
+<<set $DEFCrimsonSentinel += 3>>
+<<set $weaponDMGCrimsonSentinel += 3>>
+<<set $weaponDMGRadiantRose += 2>>
+<<set $weaponDMGShadowScythe += 5>>
+<<set $raidParty to false>>
+<<set $raidMaxHP += 75>>
+ <<set $turnChanceCur to $turnChanceMax>>
+    <<set $NPCs.RadiantRose.turnChanceCur to $NPCs.RadiantRose.turnChanceMax>>
+    <<set $NPCs.ShadowScythe.turnChanceCur to $NPCs.ShadowScythe.turnChanceMax>>
+    <<set $NPCs.CrimsonSentinel.turnChanceCur to $NPCs.CrimsonSentinel.turnChanceMax>>
+    <<set $NPCs.Zegrath.turnChanceCur to $NPCs.Zegrath.turnChanceMax>>
+    <<unset $bonusTurnPlayer>>
+    <<unset $bonusTurnRadiantRose>>
+    <<unset $bonusTurnShadowScythe>>
+    <<unset $bonusTurnCrimsonSentinel>>
+    <<unset $bonusTurnZegrath>>
+    <<set $combat_drops = []>>
+    <<set $combatCol to 0>>
+    <<set $combatXP to 0>>
+    <<set $combat_log = []>>
+
+

@@ -1,0 +1,17 @@
+:: Path 7.5.5 {"position":"4650,950","size":"100,100"}
+You went down the path. There's snow that reaches your kneecaps.
+You are standing infront of the floor dungeon. Its a huge mountain that reaches the top of the floor. In front on you there a huge entarance. It's a cave.
+
+1. <<link [[Go in|FD2]]>>
+<<dateadd '4m'>>
+<<set $curFatigue += 3>>
+<<set $location to "cave1">>
+<</link>>
+2. <<link [[Go back|Path 7.5.4]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.5.4">>
+<<SnowPlains3>>
+<</link>>
+
+

@@ -1,0 +1,23 @@
+:: 3PM event {"position":"1150,2275","size":"100,100"}
+<span class="radiant">"Hey $name... Do you feel like something is off?"</span> says RadiantRose slightly concerned "Huh that's a weird question? Why?" you say, opening your screen to open your inventory... Though you notice something odd in it. "Hey Radiant... Is the log out button grayed out for you too?" you say also concerned. She opens her menu to also check it <span class="radiant">"Shit it is."</span> she says while trying to click it but instead of her getting logged out a slight buzz noise comes out.
+
+"Hey the log out button doesn't work!" you hear someone from the distance saying it. "Huh? It doesn't? That must be a bug right?!" you hear another person after which you see blue polygons coming out of you and everyone else.
+
+[YOUR PARTY HAS BEEN DISBANDED] was what you last saw. You tried to reach out and grab your sister but it was too late for you to do it.
+
+You open your eyes to see find your self once again, seperated from your sister.
+You seem to be located at the Starters town's centre but you aren't so sure because of the huge crowd around you. You can see a big fountain though. That's all yo ucan tell from now.
+"This... This wasn's in the beta. What is going on? A event for the launch? Why 2 hours after the release though. Something doesn't add up." you whisper to your self. There's a huge crowd around you.
+ 
+ After a while we heard someone scream "EVERYONE! LOOK AT THE SKY!" as we all looked up to see a red laser coming down from the sky. at some point it touched the fountain and the water from the fountain started going to the red laser and it started turning into a eye. After which 3 other eyes came out of the water and they combined turning into a person... "What did I just watch? Was that really necessary???" a player said out loud... <span class="Techno">"Yes. Yes it was. I spent a bit too long making this animation which was meant for a boss but I had to scrap it. I wanted to use it somewhere because I SPENT 5 GOD DAMN HOURS ON IT so I decided to show it off with this fancy opening."</span> said the person that just appeared out of the 4 eyes. Everyone around me looked confused... Some weren't sure if they should laugh at this dumb joke or not.
+
+<span class="Techno">"Anyways hello everyone. TechnoBen here. The creator of this game. As you might've noticed the log out button has been disabled. You might be wondering "What is going on?" "Why can't I log off?" "Is this a bug?" so I will be answering those questions.
+The answer to these questions is that you are stuck inside of this game until you reach floor one hundred. No this is not a joke or a bug and yes death in here will result in death in real life. Trying to forcefully remove the VR headset will result in death too. 
+I've changed some stuff around the game as you might have noticed as of now like the inventory and health system. You can no longer regenerate health unless you sleep or use a potion... Or eat food but not every food regens. I've also removed the safe zones from towns so PK can happen inside towns too. Since the beta I have also added a new language to this world that you the players have to learn if you want to speak to NPCs. You can find books in the libraries or inside of Inn rooms... They can be found in a lot of places actually. But you can't find a lot of them on this floor.
+As of now there are 25193 players online and only 27 have died.
+I repeat. Death in here means death in real life. Clear the one hundred floors and you will be released from the game."</span> as he said that he started turning into water and it fell on the fountain... 
+Some people froze up in fear, others were still confused and most started going to their direction while I stood there looking for RadiantRose...
+<<set $event1 to true>> <<set $location to "town">>
+[[Town centre]]
+
+

@@ -1,0 +1,12 @@
+:: FD2 chest {"position":"5475,900","size":"100,100"}
+You opened the chest. It started glowing in light blue. Inside of it there is a tier 2 HP potion.
+You can hear a loud noise in the distance, it creeps the shit out of you.
+
+<<link "Go back">>
+	<<set $hpPOT1 += 1>>
+    <<set $f2door to true>>
+	<<goto $lastVisitedPassage1>>
+<</link>>
+    
+
+

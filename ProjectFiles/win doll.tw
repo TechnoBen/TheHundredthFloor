@@ -1,0 +1,39 @@
+:: win doll [autosave] {"position":"3125,1125","size":"100,100"}
+You went for one more strike and the doll fell to the ground shattering to many peaces.
+A small screen pops out.
+"The secret boss has been defeated! 
+Claim one of the selected items as your reward."
+"Well this was weird... Free item though I can't complain."
+
+You can chose:
+<<link [[A coat|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $cape2 to true>>
+<</link>>
+<<link [[Heavy armor|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $shadowHunterHeavyCP to true>>
+<</link>>
+<<link [[Light armor|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $shadowHunterLightCP to true>>
+<</link>>
+Or you can get:
+<<link [[A heavy sword|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $heavysword3 to true>> 
+<</link>>
+<<link [[A rapier|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $rapier3 to true>> 
+<</link>>
+<<link [[A sword|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $sword3 to true>>
+<</link>>
+<<link [[A sword with a shield|Floor 2 staircase]]>>
+<<set $f1secretbosskilled to true>>
+<<set $swordnshield3 to true>>
+<</link>>
+
+

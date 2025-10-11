@@ -1,0 +1,222 @@
+:: Character creation [NoSave no-fainting-or-hunger] {"position":"500,550","size":"100,100"}
+Alright. Let's start things up with the character creator.
+You will select how you want your character to look. For now let's begin with your name
+
+Your name is: <<textbox "$name" `['Kichi','Joseph','Jonathan','Toya','Josuke','Jotaro','Gary','Derrick','DeezGunz','Sean','TechnoBen','Johnny Bravo','Leo','Lily','Marceline','Hayato.'].random()`>>
+Your in-game name is: <<textbox "$gamename" `['BallsDeep69','Tiffany','MUDA','xVx_K1r1t0_xVx_KillMe','Fluffles','Jeffrey','King of Ashes','Squeaker','Johnny Black','Sinon','Ben','Hamod','T0dd','Leeeeeeroy','Jeeenkins','SmartSquirrel'].random()`>>
+
+<<set _skinColor = ["Pale","Light", "Medium", "Dark","White"]>>''Select your skin tone:'' <<listbox "$skinToneVal">>
+	<<optionsfrom _skinColor>>
+<</listbox>>
+
+<<set _gender = ["Male","Female","Nonbinary"] >>''Select your gender:'' <<listbox "$gender">>
+	<<optionsfrom _gender>>
+<</listbox>>
+
+<<set _eyecolor = ["Dark gray","Light gray","Dark red","Light red","Dark green","Light green","Dark blue","Light blue","Dark brown","Light brown","Dark purple","Light purple","Dark pink","Light pink","Dark orange","Light orange","Dark yellow","Light yellow"] >>''Select your eye color:'' <<listbox "$eyeColor">>
+	<<optionsfrom _eyecolor>>
+<</listbox>>
+
+<<set _haircolor = ["Bald","Long green","Long blue","Long purple","Long pink","Long red","Long blond","Long black","Long brown","Medium green","Medium blue","Medium purple","Medium pink","Medium red","Medium blond","Medium black","Medium brown","Short green","Short blue","Short purple","Short pink","Short red","Short blond","Short black","Short brown"] >>''Select your hair style:'' <<listbox "$hairColor">>
+	<<optionsfrom _haircolor>>
+<</listbox>>
+
+<<set _favColor = ["Blue","Red","Green","Pink","White","Black"] >>''Select your favorite color:'' <<listbox "$favColor">>
+	<<optionsfrom _favColor>>
+<</listbox>>
+
+<<set _pantsOrSkirt = ["Pants","Skirt"] >>''Do you want a skirt or pants:'' <<listbox "_pantsChoice">>
+	<<optionsfrom _pantsOrSkirt>>
+<</listbox>>
+
+Game mode:
+<label><<radiobutton "_gamemode" "Normal" checked>> Normal | The casual The Hundredth Floor experience</label>
+<<if $achievement_007 is true>><label><<radiobutton "_gamemode" "Boss rush">> Boss rush | Unlocked after killing the F1 boss</label><</if>>\
+
+<<link [[Random character|Finish]]>>
+	<<set $boots1 to true>>
+	<<set $isBootsOn = "Starter boots">>
+	<<set $NPCs.ShadowScythe.Affection = 0>>
+	<<set $NPCs.RadiantRose.Affection = 0>>
+	<<set $NPCs.CrimsonSentinel.Affection = 0>>
+	<<set $curStamina to $maxStamina>>
+	<<set $weaponDMG to 0>>
+    
+    <<set $skinToneVal = ["Pale","Light", "Medium", "Dark","White"]>>
+    <<set $skinToneVal = $skinToneVal.random()>>
+    <<set $gender = ["Male","Female","Nonbinary"]>>
+    <<set $gender = $gender.random()>>
+    <<set $eyeColor = ["Dark gray","Light gray","Dark red","Light red","Dark green","Light green","Dark blue","Light blue","Dark brown","Light brown","Dark purple","Light purple","Dark pink","Light pink","Dark orange","Light orange","Dark yellow","Light yellow"]>>
+    <<set $eyeColor = $eyeColor.random()>>
+    <<set $favColor = ["Blue","Red","Green","Pink","White","Black"]>>
+    <<set $favColor = $favColor.random()>>
+    <<set $hairColor = ["Bald","Long green","Long blue","Long purple","Long pink","Long red","Long blond","Long black","Long brown","Medium green","Medium blue","Medium purple","Medium pink","Medium red","Medium blond","Medium black","Medium brown","Short green","Short blue","Short purple","Short pink","Short red","Short blond","Short black","Short brown"]>>
+    <<set $hairColor = $hairColor.random()>>
+    <<set _pantsChoice = ["Pants","Skirt"]>>
+    <<set _pantsChoice = _pantsChoice.random()>>
+    
+<<if $favColor is "Blue">>
+    <<set $shirt1 to true>> <<set $isShirtOn = "Blue shirt">>
+<<elseif $favColor is "Red">>
+    <<set $shirt2 to true>> <<set $isShirtOn = "Red shirt">>
+<<elseif $favColor is "Green">>
+    <<set $shirt3 to true>> <<set $isShirtOn = "Green shirt">>
+<<elseif $favColor is "Pink">>
+    <<set $shirt4 to true>> <<set $isShirtOn = "Pink shirt">>
+<<elseif $favColor is "White">>
+    <<set $shirt5 to true>> <<set $isShirtOn = "White shirt">>
+<<elseif $favColor is "Black">>
+    <<set $shirt6 to true>> <<set $isShirtOn = "Black shirt">>
+<</if>>
+<<if _pantsChoice is "Pants">>
+    <<set $pants1 to true>>
+	<<set $isPantsOn to "Starter pants">>
+<<elseif _pantsChoice is "Skirt">>
+    <<set $skirt1 to true>>
+    <<set $isPantsOn to "Starter skirt">>
+<</if>>
+<<if _gamemode is "Boss rush">>
+	<<goto "Boss rush start">>
+<</if>>
+
+<<set _playerTraitsRNGPos = ["Strong", "Dexterous", "Brave", "Durable"]>>
+<<set _playerTraitsRNGNeg = ["Weak", "Clumsy", "Cowardly"]>> 
+<<set _playerTraitsRNG1 to _playerTraitsRNGPos.random()>>
+<<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+
+<<if  _playerTraitsRNG1 is "Strong">>
+	<<StrongGain>>
+<<elseif _playerTraitsRNG1 is "Dexterous">>
+	<<DexGain>>
+<<elseif _playerTraitsRNG1 is "Brave">>
+	<<BraveGain>>
+<<elseif _playerTraitsRNG1 is "Durable">>
+	<<DurGain>>
+<</if>>
+<<if  _playerTraitsRNG2 is "Weak">>
+    <<if !$traits.Strong>>
+	    <<WeakGain>>
+    <<else>>
+        <<set _playerTraitsRNGNeg = ["Clumsy", "Cowardly"]>> 
+        <<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+        <<if _playerTraitsRNG2 is "Clumsy">>
+	        <<ClumsyGain>>
+        <<elseif _playerTraitsRNG2 is "Cowardly">>
+	        <<CowardlyGain>>
+        <</if>>
+    <</if>>
+<<elseif _playerTraitsRNG2 is "Clumsy">>
+    <<if !$traits.Dexterous>>
+	    <<ClumsyGain>>
+    <<else>>
+        <<set _playerTraitsRNGNeg = ["Weak", "Cowardly"]>> 
+        <<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+        <<if _playerTraitsRNG2 is "Weak">>
+	        <<WeakGain>>
+        <<elseif _playerTraitsRNG2 is "Cowardly">>
+	        <<CowardlyGain>>
+        <</if>>
+    <</if>>
+	    <<ClumsyGain>>
+<<elseif _playerTraitsRNG2 is "Cowardly">>
+    <<if !$traits.Brave>>
+	    <<CowardlyGain>>
+    <<else>>
+        <<set _playerTraitsRNGNeg = ["Clumsy", "Weak"]>> 
+        <<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+        <<if _playerTraitsRNG2 is "Clumsy">>
+	        <<ClumsyGain>>
+        <<elseif _playerTraitsRNG2 is "Weak">>
+	        <<WeakGain>>
+        <</if>>
+    <</if>>
+<</if>>
+
+<</link>>
+<<link [[Finish]]>>
+	<<set $boots1 to true>>
+	<<set $isBootsOn = "Starter boots">>
+	<<set $NPCs.ShadowScythe.Affection = 0>>
+	<<set $NPCs.RadiantRose.Affection = 0>>
+	<<set $NPCs.CrimsonSentinel.Affection = 0>>
+	<<set $curStamina to $maxStamina>>
+	<<set $weaponDMG to 0>>
+<<if $favColor is "Blue">>
+    <<set $shirt1 to true>> <<set $isShirtOn = "Blue shirt">>
+<<elseif $favColor is "Red">>
+    <<set $shirt2 to true>> <<set $isShirtOn = "Red shirt">>
+<<elseif $favColor is "Green">>
+    <<set $shirt3 to true>> <<set $isShirtOn = "Green shirt">>
+<<elseif $favColor is "Pink">>
+    <<set $shirt4 to true>> <<set $isShirtOn = "Pink shirt">>
+<<elseif $favColor is "White">>
+    <<set $shirt5 to true>> <<set $isShirtOn = "White shirt">>
+<<elseif $favColor is "Black">>
+    <<set $shirt6 to true>> <<set $isShirtOn = "Black shirt">>
+<</if>>
+<<if _pantsChoice is "Pants">>
+    <<set $pants1 to true>>
+	<<set $isPantsOn to "Starter pants">>
+<<elseif _pantsChoice is "Skirt">>
+    <<set $skirt1 to true>>
+    <<set $isPantsOn to "Starter skirt">>
+<</if>>
+<<if _gamemode is "Boss rush">>
+	<<goto "Boss rush start">>
+<</if>>
+
+<<set _playerTraitsRNGPos = ["Strong", "Dexterous", "Brave"]>>
+<<set _playerTraitsRNGNeg = ["Weak", "Clumsy", "Cowardly"]>> 
+<<set _playerTraitsRNG1 to _playerTraitsRNGPos.random()>>
+<<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+
+<<if  _playerTraitsRNG1 is "Strong">>
+	<<StrongGain>>
+<<elseif _playerTraitsRNG1 is "Dexterous">>
+	<<DexGain>>
+<<elseif _playerTraitsRNG1 is "Brave">>
+	<<BraveGain>>
+<</if>>
+<<if  _playerTraitsRNG2 is "Weak">>
+    <<if !$traits.Strong>>
+	    <<WeakGain>>
+    <<else>>
+        <<set _playerTraitsRNGNeg = ["Clumsy", "Cowardly"]>> 
+        <<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+        <<if _playerTraitsRNG2 is "Clumsy">>
+	        <<ClumsyGain>>
+        <<elseif _playerTraitsRNG2 is "Cowardly">>
+	        <<CowardlyGain>>
+        <</if>>
+    <</if>>
+<<elseif _playerTraitsRNG2 is "Clumsy">>
+    <<if !$traits.Dexterous>>
+	    <<ClumsyGain>>
+    <<else>>
+        <<set _playerTraitsRNGNeg = ["Weak", "Cowardly"]>> 
+        <<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+        <<if _playerTraitsRNG2 is "Weak">>
+	        <<WeakGain>>
+        <<elseif _playerTraitsRNG2 is "Cowardly">>
+	        <<CowardlyGain>>
+        <</if>>
+    <</if>>
+	    <<ClumsyGain>>
+<<elseif _playerTraitsRNG2 is "Cowardly">>
+    <<if !$traits.Brave>>
+	    <<CowardlyGain>>
+    <<else>>
+        <<set _playerTraitsRNGNeg = ["Clumsy", "Weak"]>> 
+        <<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+        <<if _playerTraitsRNG2 is "Clumsy">>
+	        <<ClumsyGain>>
+        <<elseif _playerTraitsRNG2 is "Weak">>
+	        <<WeakGain>>
+        <</if>>
+    <</if>>
+<</if>>
+
+<</link>>
+
+
+

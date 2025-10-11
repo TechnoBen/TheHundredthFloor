@@ -1,0 +1,12 @@
+:: Forest hut corridor [no-party-time-loss] {"position":"2000,3050","size":"100,100"}
+You entered your house. Inside there are 3 doors. One leads to the kitchen, the other leads to the bedroom and another one leads to the garden.
+
+You can:
+1. [[Go to the kitchen|Hut kitchen]]
+2. [[Go to your bedroom|Hut bedroom]]
+3. <<link [[Go to the backyard]]>>
+<<set $location to "forest1">>
+<</link>>
+4. <<link [[Go outside|Forest fin outside]]>> <<set $location to "forest1">> <</link>>
+
+

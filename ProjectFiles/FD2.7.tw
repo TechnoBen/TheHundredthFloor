@@ -1,0 +1,31 @@
+:: FD2.7 {"position":"5100,900","size":"100,100"}
+You went to the right entarance. It seems to be going forward.
+It's even darker than it was before. There is no outside light anymore.
+
+<<if $FD2chest == 1 && $f2door == false>>
+You can:
+<<link [[Open the chest|FD2 chest]]>>
+	<<set $lastVisitedPassage1 to "FD2.7">>
+<</link>>
+<<elseif $FD2chest !== 1 && $f2door == false>>\
+You can:
+<<link [[Open the chest|FD2 chest trap]]>>
+	<<set $lastVisitedPassage1 to "FD2.7">>
+<</link>>
+<</if>>\
+
+Directions:
+<<link [[Go deeper into the cave|FD2.8]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.8">>
+<<F2Dungeon>>
+<</link>>
+<<link [[Go back|FD2.2]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.2">>
+<<F2Dungeon>>
+<</link>>
+
+

@@ -1,0 +1,171 @@
+:: F2BOSSBATTLE 2.3 [no-party-time-loss] {"position":"6250,650","size":"100,100"}
+You are attacking the body of the boss.
+You are standing at the <<if $position == 1>>at the left side of the body<<elseif $position == 2>>at the middle of the body<<elseif $position == 3>>at the right side of the body<</if>>.
+
+Boldegar is throwing a molten boulder at the middle side.
+
+$attackOutcome
+
+Body health: <<= (150 - $MonsterDMGDealt).toFixed(0)>>
+
+$gamename HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>>
+<<if $raidParty == true>>\
+Raid party hp: $raidHP/1000
+<</if>>\
+<<if $partyMembers.includes("RadiantRose")>>\
+<span class="radiant">RadiantRose</span>'s HP: <<= $CurHPRadiantRose.toFixed(0)>>/<<= $MaxHPRadiantRose.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes("ShadowScythe")>>\
+<span class="shadow">ShadowScythe</span>'s HP: <<= $CurHPShadowScythe.toFixed(0)>>/<<= $MaxHPShadowScythe.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes("CrimsonSentinel")>>\
+<span class="crimson">CrimsonSentinel</span>'s HP: <<= $CurHPCrimsonSentinel.toFixed(0)>>/<<= $MaxHPCrimsonSentinel.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes($NPCs.BlackWolf.name)>>\
+$NPCs.BlackWolf.name's HP: <<= $NPCs.BlackWolf.CurHP.toFixed(0)>>/<<= $NPCs.BlackWolf.MaxHP.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes("Zegrath")>>\
+<span class="zegrath">Zegrath</span>'s HP: <<= $CurHPZegrath.toFixed(0)>>/<<= $MaxHPZegrath.toFixed(0)>>
+<</if>>\
+
+You can:
+<<if $raidParty == true>>\
+<<link "Command your people to attack">>
+    <<if $position == 2>>
+        <<Party2FBossHit>>
+        <<set $onFire to 4>>
+    <</if>>
+	<<set $MonsterHP -= 4>>
+	<<set $attackOutcome to "You landed the hit dealing some damage to it.">>
+    <<Party2FBossAttack>>
+    	<<if $MonsterDMGDealt >= 150>>
+        	<<goto "F2BOSSBATTLE 2.0">>
+        <</if>>
+    <<set _f2bossATKrng to kitsuneRNG(1, 4)>>
+    <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.2">>
+    <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.1">>
+    <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.3">>
+    <<elseif _f2bossATKrng == 4 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.4">>
+    <</if>>
+<</link>>
+<<link "Move left">>
+    <<if $position > 1>>
+        <<set $position -= 1>>
+        <<set $attackOutcome to "You moved to the left.">>
+        <<if $MonsterDMGDealt >= 150>>
+            <<goto "F2BOSSBATTLE 2.0">>
+        <</if>>
+        <<set _f2bossATKrng to kitsuneRNG(1, 4)>>
+        <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.2">>
+        <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.1">>
+        <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.3">>
+        <<elseif _f2bossATKrng == 4 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.4">>
+        <</if>>
+    <<else>>
+        <<script>>
+            UI.alert("You can't move to the left anymore!");
+        <</script>>
+    <</if>>
+<</link>>
+<<link "Move right">>
+    <<if $position < 3>>
+        <<set $position += 1>>
+        <<set $attackOutcome to "You moved to the right.">>
+        <<if $MonsterDMGDealt >= 150>>
+            <<goto "F2BOSSBATTLE 2.0">>
+        <</if>>
+        <<set _f2bossATKrng to kitsuneRNG(1, 4)>>
+        <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.2">>
+        <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.1">>
+        <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.3">>
+            <<elseif _f2bossATKrng == 4 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.4">>
+        <</if>>
+    <<else>>
+        <<script>>
+            UI.alert("You can't move to the right anymore!");
+        <</script>>
+    <</if>>
+<</link>>
+<<elseif $raidParty == false>>\
+<<link "Attack the body">>
+    <<if $position == 2>>
+        <<Party2FBossHit>>
+        <<set $onFire to 4>>
+    <</if>>
+	<<set $attackOutcome to "You landed the hit dealing some damage to it.">>
+    <<Party2FBossAttack>>
+    <<if $MonsterDMGDealt >= 150>>
+    	<<goto "F2BOSSBATTLE 2.0">>
+    <</if>>
+    <<set _f2bossATKrng to kitsuneRNG(1, 4)>>
+    <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.2">>
+    <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.1">>
+    <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.3">>
+    <<elseif _f2bossATKrng == 4 && $MonsterDMGDealt <= 149>>
+        <<goto "F2BOSSBATTLE 2.4">>
+    <</if>>
+<</link>>
+<<link "Move left">>
+    <<if $position > 1>>
+        <<set $position -= 1>>
+        <<set $attackOutcome to "You moved to the left.">>
+        <<if $MonsterDMGDealt >= 150>>
+            <<goto "F2BOSSBATTLE 2.0">>
+        <</if>>
+        <<set _f2bossATKrng to kitsuneRNG(1, 4)>>
+        <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.2">>
+        <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.1">>
+        <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.3">>
+        <<elseif _f2bossATKrng == 4 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.4">>
+        <</if>>
+    <<else>>
+        <<script>>
+            UI.alert("You can't move to the left anymore!");
+        <</script>>
+    <</if>>
+<</link>>
+<<link "Move right">>
+    <<if $position < 3>>
+        <<set $position += 1>>
+        <<set $attackOutcome to "You moved to the right.">>
+        <<if $MonsterDMGDealt >= 150>>
+            <<goto "F2BOSSBATTLE 2.0">>
+        <</if>>
+        <<set _f2bossATKrng to kitsuneRNG(1, 4)>>
+        <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.2">>
+        <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.1">>
+        <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.3">>
+        <<elseif _f2bossATKrng == 4 && $MonsterDMGDealt <= 149>>
+            <<goto "F2BOSSBATTLE 2.4">>
+        <</if>>
+    <<else>>
+        <<script>>
+            UI.alert("You can't move to the right anymore!");
+        <</script>>
+    <</if>>
+<</link>>
+<</if>>
+
+

@@ -1,0 +1,27 @@
+:: Book 4 [no-fainting-or-hunger no-party-time-loss] {"position":"2000,600","size":"100,100"}
+You open the book to see that its in English... It seems that this book has been written by a player.
+--------------------------------
+In this book I will be talking about the monsters oif the game... As the title says. But yeah I will be mostly describing them and say out their stats... I mean what did you expect?
+
+Let's start with the boars.
+Those are small creatures with either blue or brown fur. Their attacks are usually charging at you.
+They usually have 20HP and 5 STR. Their max level is 9 but in areas closer to the floor dungeon.
+
+Rabbits are quick creatures that jump around you scratching you everywhere they get to. They can be super colorfull liek white, brown, black, yellow even pink but thats rarer.
+They usually have 35HP and 12STR. Their max level is 9
+
+Plant monsters seem to always be the same. Annoying things that are sticky and slap you with its leafs. They are around 2 meters tall.
+They have 65HP and 22STR
+
+Skeletons can be found in the dungeon inside of the forest in floor one. They are quick, strong and even more annoying to deal with. They dont have weapons though so thats good.
+They have 75HP and 65STR
+--------------------------------
+Written by: Dark3nedPr1est
+--------------------------------
+So it was written by a player!
+
+<<link "Close the book">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+
+

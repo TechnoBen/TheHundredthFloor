@@ -1,0 +1,27 @@
+:: Forest unfin outside [Town no-party-time-loss] {"position":"1600,3050","size":"100,100"}
+You are at the outside of the hut.
+<<if $hutTask3 == false>>
+The roof is pretty much destroyed. There's a lot of holes on it and it looks like its about to fall over.
+<<elseif $hutTask3 == true>>
+The roof of the house is looking good. There are no holes on it, it looks clean and its an actual roof now.
+<</if>>
+<<nobr>>
+<<if $hutTask3 == false>>
+<<link [[Repair the floor|Forest unfin]]>>
+<<if $planks >= 50>>
+<<dateadd '10h'>>
+<<set $curFatigue += 825>>
+<<set $hutTask3 to true>>
+<<set $planks -= 50>>
+<</if>>
+<</link>>
+ | Planks needed $planks/50
+<<elseif $hutTask3 == true>>
+The roof is now fixed. Well done.
+<</if>>
+<</nobr>>
+
+<<link [[Go to the path|Path 3.4]]>> <<set $location to "forest2">> <</link>>
+<<link [[Go in the hut|Forest unfin]]>> <<set $location to "start">> <</link>>
+
+

@@ -1,0 +1,30 @@
+:: Check out what's going on... {"position":"2100,2525","size":"100,100"}
+You decide to check out what's the gathering about.
+After 5 mins you see a person coming to the meeting. She is wearing a black coat, a blue shirt and green jeans. Her hair color is green and her eyes are blue... What a weird person you think to yourself. You remember her from somewhere too so you think about it more.
+
+<span class="Blu3b3llrex">"Alright so... Where do I begin... Thank you everyone for gathering here. I have something pretty important to discuss. 
+What I want to talk about is getting to floor 2. We should start preparing for a floor raid."</span> she said... She looks slightly nervous but also confident? It's hard to say how exactly she is feeling right now.
+As she continues to speak you are getting even more and more ideas from where you might know her. You feel like she is from the beta so you check the social tab but you haven't friended her.
+<span class="Blu3b3llrex">"We need health potions, stamina potions, and above all else, teamwork. And to ensure that we work effectively, I suggest we divide ourselves into two groups. I will lead one, and I will carefully choose a leader for the other."</span>she says.
+She doesn't seem as nervous now and she is speaking with confidence. You suddenly remember the name Blu3b3llrex... That was her name. We used to strategize the floor raids together during the beta and we always succeeded with going to the next floor. There was this one time where we failed but that was because I was logged off because the electricity decided to go off... After that the team I was leading got unorganized and because of that it all went to hell...
+I remember Shadow and Crimson being part of the teams too. It was really fun. At some point we stopped working together though.
+Sadly at some point our team fell apart and it was me and Crismon left...
+<span class="Blu3b3llrex">"So uh... Whoever wants to join me in this quest to get to the next floor please come behind me."</span>
+No one seemed to stand up... The crowd is silent, not a single word is being said...
+"And why should we risk our lives...?" a person from the crowd said as they stood up. "Death in here is permament... If we do a single slip up we could very well die. This just sounds like a suicide plan." says the person.
+<span class="Blu3b3llrex">"Well that's a good question. Unfortunetly I don't really have a answer to this question but if we work together we could achieve a lot of things. Since you can't really raid a floor dungeon on your own you have to do it in a team."</span>
+"Like hell we will. I bet everyone from here is gonna try to run away as soon as they get hit once."
+<span class="Blu3b3llrex">"That's why we will have healing potions... Even if we get hit once we will heal eachother. There's a quick way to give someone a potion. Unless TechnoBen has removed it, it should still work. In the beta we used to have a healer behind the groups that would transfer healing potions to everyone that was in need of one. The only difficult part is having to look over the health bars of everyone."</span>
+"Speaking of Beta players... Most of us don't have any gear because of them. They have raided all the good spots that have good loot!" the crowd looks at the man like he is the dumbest person to ever exist... which to be honest is true...
+<span class="Blu3b3llrex">"That's not possible... Dungeon loot gets placed back every week or so..."</span>
+"... I call bs..." the crowd still staring him decide to push him away from the place...
+<span class="Blu3b3llrex">"Did I really have this convo?"</span> she says... You are also extremely confused on what happened.
+<span class="Blu3b3llrex">"Anyways so to start with preparation we should first find the first floor dungeon. If anyone does find it please speak to me. I will be here a lot."</span> she says as she starts looking at the crowd. She seems to be looking at your direction... <span class="Blu3b3llrex">"$gamename... Is that you by any chance or am I mistaking you for someone else... Wait is ShadowScythe there too?!"</span> she asks... "Yes I am here Blu3! I saw the crowd and decided to check what's going on..." wait did she say Shadow too?! Where is that guy??? You started looking around. You do not find him...
+<span class="Blu3b3llrex">"Ah well Im glad you are here! I was starting to think that you didn't join the game! Hey Shadow come down here you dumbass!"</span> she yells at that last bit... You turn back to see that Shadow was at the roof of one of the houses... Why there of all places?!
+<span class="shadow">"Yo Blu3! Long time no see! Nice speech-talk or whatever you call this shit by the way!"</span> he yells from the other side of the town... He didn't jump down.
+<span class="Blu3b3llrex">"Let's speak later ok! $gamename you too!"</span> she responds, you nod...
+<<dateadd '55m'>> <<set $GatheringEvent to true>>
+[[Oakheart centre]] 
+
+
+

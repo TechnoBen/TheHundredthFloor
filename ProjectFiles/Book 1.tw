@@ -1,0 +1,45 @@
+:: Book 1 [no-fainting-or-hunger no-party-time-loss] {"position":"1625,600","size":"100,100"}
+You open the language book... Inside you can see the Evese alphabet. The book doesn't seem to have enough information on how to pronounce the words or how you would know to speak the language... You dont seen to find the punctuations too so you don't seem to know what punctation is what but the alphabet is here.  You don't remember seeing a library. Perhaps the other floors have a book on pronounciation.
+
+<center> <span class= Evese> Learn the Evese alphabet. </span>
+Learn the Evese alphabet.
+
+<span class= Evese> Q </span>= Q
+<span class= Evese> W </span>= W
+<span class= Evese> E </span>= E
+<span class= Evese> R </span>= R
+<span class= Evese> T </span>= T
+<span class= Evese> Y </span>= Y
+<span class= Evese> U </span>= U
+<span class= Evese> I </span>= I
+<span class= Evese> O </span>= O
+<span class= Evese> P </span>= P
+<span class= Evese> A </span>= A
+<span class= Evese> S </span>= S
+<span class= Evese> D </span>= D
+<span class= Evese> F </span>= F
+<span class= Evese> G </span>= G
+<span class= Evese> H </span>= H
+<span class= Evese> J </span>= J
+<span class= Evese> K </span>= K
+<span class= Evese> L </span>= L
+<span class= Evese> Z </span>= Z
+<span class= Evese> X </span>= X
+<span class= Evese> C </span>= C
+<span class= Evese> V </span>= V
+<span class= Evese> B </span>= B
+<span class= Evese> N </span>= N
+<span class= Evese> M </span>= M
+</center>
+
+<<if $ReadingSkill <= 1>>\
+You feel like you got a bit better in reading... <<set $ReadingXP += 150>>
+<<elseif $ReadingSkill >= 2>>\
+You seem to understand the alphabet well enough for this book to be of any help...
+<</if>>\
+
+<<link "Close the book">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+
+

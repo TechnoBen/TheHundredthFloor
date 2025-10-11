@@ -1,0 +1,16 @@
+:: Living room {"position":"150,950","size":"100,100"}
+You entered the living room.
+<<if $eventStart is false>>You see a sandwich left on the table. It's probably from your sister for you.<</if>>\
+
+There are plant pots... A LOT of plant pots. Most of them dont even have plants in them. Your mother loves collecting those for some reason.
+There's a chunky TV, a balcony door which you'd prefer not to go through because it gets stuck easily, a microwave because there isn't any space in the kitchen and a table with 8 seats. There's also a sofa.
+
+1. [[Go back |Go out of the room]]
+<<if $eventStart is false>>2. <<link [[Eat the sandwich|Eat the sandwich]]>>
+	<<set $curHunger += 1000>>
+	<<dateadd '57m'>>
+    <<set $eventStart to true>>
+<</link>>
+<</if>>\
+
+

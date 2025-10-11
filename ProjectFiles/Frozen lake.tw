@@ -1,0 +1,61 @@
+:: Frozen lake {"position":"4025,1400","size":"100,100"}
+You are next to the frozen lake. The place is big. At the end of the frozen lake you can see a entarance to a cave.
+There are 3 benches in here and a house across the lake. Someone has made a bridge accross the lake.
+Next to one of the benches is a fishing kit. You could try fishing.
+
+You can:
+<<link [[Sit down at one of the benches|Frozen lake]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5>>
+<</link>>
+<<link [[Sleep on a bench|Sleep 1]]>> 
+<<set $lastVisitedPassage1 to "Frozen lake">>
+<</link>>
+<<link [[Fish|Frozen lake]]>>
+<<set $finditem to random(10)>>
+<<set $curFatigue += 12>>
+<<dateadd '10m'>>
+<<if $finditem <= 7>>
+<<set $fish += 1>>
+<<set $CurFear -= 2>>
+<</if>>
+<</link>>
+<<if $event5part3 == false>><<link [[You can see Molly hiding...|Molly event 4]]>>
+<</link>><</if>>\
+
+Directions:
+1. <<link [[Go back|Path 9.2]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 9.2">>
+<<SnowPlains1>>
+<</link>>
+
+Locations:
+<<link [[Check out the house|House 1]]>>
+	<<dateadd "1m">>
+<</link>>
+<<link [[Go inside the cave|Cave 2.1]]>>
+	<<dateadd "3m">>
+<</link>>
+<<nobr>><<if $pathDone1 == true>><<link [[Path to Whitewall town|Path 10.3]]>>
+<<dateadd '34m'>> <<set $curFatigue += 23>>
+<</link>> <<elseif $pathDone1 is false>>\ You haven't made the path yet. <</if>>
+<<if $shovel1 == true>>
+<<if $pathDone1 == false>>
+<<link [[Make a path|Frozen lake]]>>
+<<set $pathProgress1 += 1>>  <<dateadd '21m'>> <<set $curFatigue += 58>>
+<</link>>
+<</if>>
+<</if>>
+<<if $shovel1 is false>>
+You need a iron shovel to make a path!
+<</if>>
+<<if $pathDone1 == false>>
+<<if $pathProgress1 <= 35>>
+ | $pathProgress1/35
+ <</if>>
+ <</if>>
+<</nobr>>
+
+

@@ -1,0 +1,15 @@
+:: Town street 3 [Town] {"position":"4025,2100","size":"100,100"}
+Directions:
+1. <<link [[Go to the town center|Town centre 1]]>>
+<<dateadd '5m'>>
+<</link>>
+
+Locations:
+1. <<link [[Go to the suspicious building|PKer guild 1]]>>
+<<dateadd '5m'>>
+<</link>>
+
+PK MEETUP SPOT + PKER SHOPS
+ZONE NOT FINISHED
+
+

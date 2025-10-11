@@ -1,0 +1,11 @@
+:: Armor shop 1 {"position":"1225,2075","size":"100,100"}
+You enter the Armor shop to see a woman on the counter.
+She looks pretty happy to see a customer.
+"Hey there! Are you here to buy armor?" she says cheerfully.
+You decided to look around the shop to see all sorts of armor, leather, chainmail, iron armor and other types of armor.
+
+1. [[Buy gear]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Armor shop 1">> <</link>>
+3. <<link [[Go back|Town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

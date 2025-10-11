@@ -1,0 +1,14 @@
+:: Floor 3 staircase 3 {"position":"6900,650","size":"100,100"}
+You start going down the hall. Its endless. After a while it turns into a staircase that you start climbing for a long time.
+You're standing infront of a iron door.
+
+<<link [[Open the door|F3 entarance]]>>
+<</link>>
+<<link [[Go back|F2 BOSS]]>>
+  <<dateadd '1h'>>
+  <<set $location to "cave1">>
+  <<set $curFatigue += 50>>
+<</link>>
+
+
+

@@ -1,0 +1,116 @@
+:: Boss rush start [no-fainting-or-hunger] {"position":"800,1000","size":"100,100"}
+Welcome to the boss rush gamemode. For a start you will get 5 points, 2.5k coins and items of your own choice listed down below.
+Shops will be open at any time. You won't have party members.
+You will fight every floor boss that is added to the game.
+Secret names HIGHLY recommended
+Bosses will also have half their HP so its more fair.
+
+Choose your weapon:
+<label><<radiobutton "_weaponChoice" "Sword">> Copper sword</label>
+<label><<radiobutton "_weaponChoice" "Sword and shield">> Copper sword and shield</label>
+<label><<radiobutton "_weaponChoice" "Rapier">> Copper rapier</label>
+<label><<radiobutton "_weaponChoice" "Heavy sword">> Copper heavy sword</label>
+
+Choose armor type:
+<label><<radiobutton "_armorChoice" "Light">> Light</label>
+<label><<radiobutton "_armorChoice" "Heavy">> Heavy</label>
+
+Choose a bonus item:
+<label><<radiobutton "_bonusChoice" "Cape">> Cape</label>
+<label><<radiobutton "_bonusChoice" "HP">> 3 HP potions</label>
+<label><<radiobutton "_bonusChoice" "STM">> 3 STM potions</label>
+<label><<radiobutton "_bonusChoice" "Bread">> 20 bread</label>
+
+<<link [[Continue|Boss rush main room]]>>
+	<<if _weaponChoice is "Sword">>
+    	<<set $sword1 to true>>
+    <<elseif _weaponChoice is "Sword and shield">>
+    	<<set $swordnshield1 to true>>
+    <<elseif _weaponChoice is "Rapier">>
+    	<<set $rapier1 to true>>
+    <<elseif _weaponChoice is "Heavy sword">>
+    	<<set $heavysword1 to true>>
+	<</if>>
+    <<if _armorChoice is "Light">>
+    	<<set $leatherCP to true>>
+        <<set $leatherP to true>>
+        <<set $leatherB to true>>
+    <<elseif _armorChoice is "Heavy">>
+    	<<set $leatherHCP to true>>
+        <<set $leatherHP to true>>
+        <<set $leatherHB to true>>
+    <</if>>
+    <<if _bonusChoice is "Cape">>
+    	<<set $cape1 to true>>
+    <<elseif _bonusChoice is "STM">>
+    	<<set $stmPOT += 3>>
+    <<elseif _bonusChoice is "HP">>
+    	<<set $hpPOT += 3>>
+    <<elseif _bonusChoice is "Bread">>
+    	<<set $bread += 20>>
+    <</if>>
+<<set $Coins += 2500>>
+<<set $Points += 5>>
+<<set $bossRush to 1>>
+<<dateset "1h 0m 1d 0mo 1y">>
+<<set $location to "dungeon">>
+
+ <<if $gamename is "yelyel">>
+    <<set $outfit1 to true>>
+    <<set $isShirtOn = "Outfit 1">>
+    <<set $armorDEF += 1>>
+    <</if>>
+ <<if $gamename is "ImFatRat">>
+    <<set $outfit3 to true>>
+    <<set $isShirt1On = "Outfit 3">>
+    <<set $armorDEF += 1>>
+    <</if>>
+ <<if $gamename is "Morgana">>
+    <<set $outfit2 to true>>
+    <<set $isShirtOn = "Outfit 2">>
+    <<set $maxStamina += 25>>
+    <</if>>
+   <<if $gamename is "Gremlin">>
+    <<set $outfit4 to true>>
+    <<set $isShirtOn = "Outfit 4">>
+    <<set $Points += 2>>
+    <</if>>
+    <<if $gamename is "TechnoBen">>
+    <<set $outfit5 to true>>
+    <<set $isShirtOn = "Outfit 5">>
+    <<set $maxStamina += 50>>
+    <<set $armorDEF += 3>>
+    <</if>>
+    <<if $gamename is "Nny">>
+    <<set $outfit6 to true>>
+    <<set $isShirt1On = "Outfit 6">>
+    <<set $MaxHP += 100>>
+    <</if>>
+    <<if $gamename is "Shadow_Fang">>
+    <<set $outfit7 to true>>
+    <<set $isShirtOn = "Outfit 7">>
+    <<set $maxStamina += 25>>
+    <<set $armorDEF += 1>>
+    <</if>>
+    <<if $gamename is "Toru">>
+    <<set $hairColor to "Long brown 2">>
+    <<set $cape3 to true>>
+    <<set $isCapeOn = "Mysteriously vague poncho">>
+    <<set $pants3 to true>>
+    <<set $isPantsOn = "White pants">>
+    <<set $MaxHP += 10>>
+    <<set $maxStamina += 25>> 
+    <</if>>
+    <<if $gamename is "irfanrein">>
+    	<<set $outfit8 to true>>
+    	<<set $isShirt1On = "Outfit 8">>
+    	<<set $armorDEF += 2.5>>
+    <</if>>
+    <<if $gamename is "GlazingLotl">>
+    	<<set $outfit9 to true>>
+    	<<set $isShirtOn = "Outfit 9">>
+    	<<set $INT -= 1>>
+    <</if>>
+<</link>>
+
+

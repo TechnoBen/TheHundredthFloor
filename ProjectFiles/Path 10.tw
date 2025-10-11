@@ -1,0 +1,35 @@
+:: Path 10 {"position":"3650,1525","size":"100,100"}
+You started going down the path. There seems to be snow that reaches your kneecaps.
+The path suddenly turns left... There's a sign nearby that says
+<span class= Evese>"Whitewall town at the end of the path."</span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> .... It says something about a town? <<elseif $ReadingSkill >= 3>> Whitewall town at the end of the path. <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+1. <<link [[Follow the path|Path 10.1]]>>
+  	<<dateadd '15m'>>
+ 	 <<set $curFatigue += 15>>
+  	<<set _mobAmount to random(100)>>
+    <<set _mobAttack to random(100)>>
+    <<if _mobAttack lte 25>>
+    <<set $lastVisitedPassage to "Path 10.1">>
+        <<if _mobAmount lte 22 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    	    <<mob wolf1>>
+            <<mob wolf1>>
+	    	<<mob wolf2>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 45 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf2>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</link>>
+2. <<link [[Go back|Path 9]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 9">>
+<<SnowPlains1>>
+<</link>>
+
+

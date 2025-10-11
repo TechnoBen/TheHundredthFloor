@@ -1,0 +1,32 @@
+:: Start the game {"position":"500,800","size":"100,100"}
+<<if $eventStart is false>>\
+<span class="radiant">"Wake up $name. Its almost 1PM you dumbass."</span> You hear someone saying this.
+You open your eyes to see your sister in your room opening the curtains.
+<span class="radiant">"Its about time you woke up."</span> she says in a slightly annoyed tone. <span class="radiant">"Jesus Christ your room is such a mess."</span>
+
+"I know, I know shut up now... Why are you here anyways?" you say.
+
+<span class="radiant">"Did you already forget? The new game you so wanted me to play with you is getting released in 15 or so minutes."</span>
+
+"WAIT ITS TODAY?!" You say out loud.
+
+You've been trying to convince your sister to play this new game for ages and you forgot about it.
+The game that everyone is so impatiently waiting for is called "The Hundredth Floor", a new VRMMO that has 100 floors and your goal is to get to the 100th floor and kill the final boss. Luckily enough you were a beta tester for the game and you got to floor 12. Which was pretty good considuring that only 9 others reached the 12th floor out of a 100 beta testers.
+
+<span class="radiant">"You've been waiting for it for so long and YOU JUST FORGOT ABOUT ITS RELEASE?!" She started screaming at you.</span>
+
+"In my defence I fell asleep at 3am!" you respond.
+
+<span class="radiant">"That's a you problem! You could've set an alarm or some shit."</span> dangit... She's right. <span class="radiant">"Just go grab something to eat and log on... Ill be waiting for you at the VR lobby. After that we will wait for the game to open."</span>
+
+"Alright..." as you responded she walks out of the room.
+<</if>>
+You look around your room seeing the amount of trash there is. Though you have a nice guitar on the ground which you haven't touched in ages for some reason. You have a pc, a VR headset, a wardrobe and a small fridge which is probably the second best thing in the room after your pc and headset.
+
+[[Go out of the room]]
+<<if $eventStart>><<link "Go back in the game">>
+	<<goto $lastVisitedPassageLog>>
+<</link>>
+<</if>>
+
+

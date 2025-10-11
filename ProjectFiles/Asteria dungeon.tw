@@ -1,0 +1,32 @@
+:: Asteria dungeon {"position":"3425,1400","size":"100,100"}
+<<set _asteriaRNGTxt to kitsuneRNG(1, 100)>><<if _asteriaRNGTxt lte 50>>\
+You find Asteria in the corridor of the dungeon. She seems te be taking a break, leaning against the wall. <span class="Asteria">"Man those stairs take so long to go down to..."</span> she mutters to herself. She then notices you and waves at you with a smile on her face.
+You approach her, "Hey, Asteria. Going to the forest?" you ask.
+<span class="Asteria">"Mhm. I'm gonna need some mushrooms for dinner."</span>
+"Don't you get tired from mushrooms? Do you eat anything else, like at all?"
+<span class="Asteria">"Well... I no longer fight and I have no col to buy food. Mushroms is all I go with nowdays."</span>
+"Ah... I see. Wanna go to the forest together?"
+<span class="Asteria">"Sure, id love to!"</span>
+
+<<link [[Continue|Path 3.1]]>>
+    <<dateadd "30m">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 15>>
+    <<set $location to "forest1">>
+<</link>>
+<<elseif _asteriaRNGTxt lte 100>>\
+Asteria is walking down the dungeon corridor. You tap her shoulder from behind, She quickly turns around and slams her basket into your face.
+<span class="Asteria">"O-oh... $gamename... It's you. Don't scare me like that! Next time ill kick you as well!"</span> she says slightly annoyed.
+You hold your cheek, where she hit you with the basket "I'm sorry...".
+<span class="Asteria">"If you're sorry then escort me to the forest."</span>
+"Fine..."
+
+<<link [[Continue|Path 3.1]]>>
+    <<dateadd "30m">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 15>>
+    <<set $location to "forest1">>
+<</link>>
+<</if>>\
+
+

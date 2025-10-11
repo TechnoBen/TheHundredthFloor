@@ -1,0 +1,29 @@
+:: Zegrath convo {"position":"4775,1400","size":"100,100"}
+<<if visited(passage()) is 1>>\
+"Jeez you sure think highly of yourself."
+<span class="zegrath">"Ah, how amusing. You dare to question me? The great Zegrath? How adorable. It's not my fault that I am clearly superior to the likes of you, you insignificant worm. Now scurry along and revel in your pitiful existence."</span> he says in a proud voice.
+"Zegrath was it? I suggest dropping that high and mighty act before you cause yourself trouble with other people." you respond in a snarky way
+<span class="zegrath">"Well, you have proven to me that you have the balls to stand infront of a powerful figure such as myself but your attidute will not excuse your actions. What is it that you want lowly scum of the earth. Speak up before I set you on fire and watch you dance in the flames."</span>
+"I just wanted to see who lives here or who is selling this house. Instead I saw a hardcore roleplayer that thinks of himself as a god."
+<span class="zegrath">"Thou shalt never speaketh in this tone to me, peasant, next time you dare to defy my will, I shall take my swords out of sheath, now, be gone."</span>
+
+<<link [[Walk away|House 1.1]]>>
+<</link>>
+<<link [[Draw your sword out|Combat remake]]>>
+<<set $lastVisitedPassage to "House 1">>
+<<zegrath>><</zegrath>>
+<<goto "Combat remake">>
+<</link>>
+<<else>>
+"Nothing much... Wanna talk?"<<set _zegrathRNGTxt to kitsuneRNG(1, 100)>>
+<span class="zegrath">"<<if _zegrathRNGTxt lte 25>>Speak to me? You dare show your foolish self to such great presence? Fine then. Come in.<<elseif _zegrathRNGTxt lte 50>>What is it that I shall enlighten you about, you miserable worm?<<elseif _zegrathRNGTxt lte 75>>What is it that you shall annoy me today with?<<elseif _zegrathRNGTxt lte 100>>Scram. I must feed my wolf.<</if>>"</span> he responds.
+
+<<link [[Speak to Zegrath|Zegrath convo 1]]>>
+<</link>>
+<<link [[Invite him to your party|Zegrath party]]>>
+<</link>>
+<<link [[Never mind|House 1.1]]>>
+<</link>>
+<</if>>
+
+

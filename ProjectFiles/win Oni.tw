@@ -1,0 +1,26 @@
+:: win Oni [autosave] {"position":"400,2700","size":"100,100"}
+You killed the Oni and won the battle, gaining <<print ($mobLvl*1.8 + $mobXP).toFixed(0)>> XP and $mobCoins Coins<<if $lootchance lte 15>> and Oni leather.<<elseif $lootchance lte 30>> and Oni teeth.<<elseif $lootchance lte 45>>, Oni teeth and Oni leather.<<elseif $lootchance lte 60>> and 3 Oni teeth.<<elseif $lootchance lte 90>> and 3 Oni leather.<<elseif $lootchance lte 100>>, 3 Oni teeth and 3 Oni leather.<</if>>
+<<EventCurrencies>>\
+<<link "Go back">>
+<<set $killedOnis += 1>>
+<<goto $lastVisitedPassage>>
+	<<if $lootchance lte 15>>
+		<<set $oniLeather += 1>>
+	<<elseif $lootchance lte 30>>
+    	<<set $oniTeeth += 1>>
+    <<elseif $lootchance lte 45>>
+    <<set $oniTeeth += 1>>
+    <<set $oniLeather += 1>>
+    <<elseif $lootchance lte 60>>
+    <<set $oniTeeth += 3>>
+    <<elseif $lootchance lte 90>>
+    <<set $oniLeather += 3>>
+    <<elseif $lootchance lte 100>>
+    <<set $oniLeather += 3>>
+    <<set $oniTeeth += 3>>
+	<</if>>
+<<set $killedOni += 1>>
+<<MobRewards>>
+<</link>>
+
+

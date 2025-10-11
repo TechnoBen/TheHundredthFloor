@@ -1,0 +1,9 @@
+:: Wolf convo 1 {"position":"4400,1900","size":"100,100"}
+You decide to pet $NPCs.BlackWolf.name. You pat her on the head and then she turns around demanding belly scratches.
+You give her what she wants. She looks happy.
+
+<<link [[Continue|Wolf convo]]>>
+	<<set $CurFear -= 1>>
+<</link>>
+
+

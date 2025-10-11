@@ -1,0 +1,11 @@
+:: win rabbit [autosave] {"position":"400,2400","size":"100,100"}
+You killed the rabbit and won the battle, gaining <<print ($mobLvl*1.5 + $mobXP).toFixed(0)>> XP and $mobCoins Coins and Raggout meat.
+<<EventCurrencies>>\
+<<link "Go back">>
+<<goto $lastVisitedPassage>>
+<<set $killedRabbits += 1>>
+<<set $ragoutMeat += 1>>
+<<MobRewards>>
+<</link>>
+
+

@@ -1,0 +1,16 @@
+:: Shadow 1 {"position":"875,1650","size":"100,100"}
+You see ShadowScythe sitting on a bench talking to CrimsonSentinel You decide to go to them.
+"Hey yall." you say to them, they turn to you.
+<span class="shadow">"Oh hey there $gamename... What are you up to?"</span>
+"Nothing much, just saw the 2 of you and decided to say hi. Why are the 2 of you up so late anyways?" you ask them.
+<span class="crimson">"This crazy man decided to get me at this late hour to level up!"</span> he says EXTREMELY tired, now that you look at him he looks extremely tired...
+"I see... Mind if I join yall?"
+<span class="shadow">"Yeah sure..."</span>
+<span class="crimson">"Oh look you have $gamename to come with you! I'll go sleep now thanks!"</span> says Crimson as he quickly starts heading back to his inn room... ShadowScythe tries to stop him but he trips on something and fell...
+
+<<link [[Town centre]]>> 
+<<set $hasSpokenWithShadow to true>> <<run $partyMembers.push("ShadowScythe")>> <<set $partyON to true>>
+<</link>>
+
+
+

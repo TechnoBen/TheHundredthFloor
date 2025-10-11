@@ -1,0 +1,96 @@
+:: Tree person convo {"position":"1475,2525","size":"100,100"}
+<<if visited(passage()) is 1>>\
+    "Hello there." you say. You see the person raise their head.
+    <span class="Asteria">"Who are you?"</span> the hooded person asks. They seem to be REALLY tired.
+    "Oh shit did I disturb your sleep? Though my name is $gamename. What about you?" you respond.
+    <span class="Asteria">"Ah yeah... I kinda fell asleep. Been working a lot recently. My name is Asteria."</span> the person removes their hood. You see that under the hood theres a girl. She has red hair that is tied into a bun, gray eyes and bags under her eyes.
+    "I see... So you did all this?" you ask out of curiousity.
+    <span class="Asteria">"The grave? Yeah. I did it. It's for my boyfriend that died recently. He used to come here every day for about a hour and just... Take a break from this death game. I honestly see why he has been doing that. It's such a nice place... Kind of sad I never got to be with him here."</span> she says.
+    "Sorry to hear that. I'm sure he loved you a lot." you say. After that she lays her head back on the grave and falls asleep... She really must be tired.
+    
+    <<link [[Continue|Tree person convo]]>>
+      <<dateadd '5m'>>
+    <</link>>
+    <<else>>\
+    <<if $asteriaAffection == 5 && !$AsteriaEvents.includes("5 points")>>\
+    You look at Asteria. She is sleeping. You sit next to her trying to not wake her up...
+    She wakes up 2 minutes after and looks a bit startled <span class="Asteria">"Oh shit hello $gamename... You scared me."</span>
+    "Ah sorry. Didn't mean to scare you. How are you?" you ask her.
+    <span class="Asteria">"Im really tired. But I've got something for you."</span> she responds, reaching out to her potato sack, taking something from inside. <span class="Asteria">"Close your eyes... Please."</span>
+    "Huh sure, why?"
+    <span class="Asteria">"You'll see."</span> she says as you close your eyes. She slides herself next to you and you feel her putting something on your head. <span class="Asteria">"Open your eyes."</span>
+    "Sure..." you open your eyes. On her head she has a flower crown. You reach for your head to feel a flower crown on your head too.
+    <span class="Asteria">"Thank you for spending time with me. I appreciate it."</span> she says as she sits down next to the grave again.
+  
+    <<link [[Continue|Tree person convo]]>>
+      <<dateadd '5m'>>
+      <<run $AsteriaEvents.push("5 points")>>
+      <<set $asteriaFlowerCrown to true>>
+      <<set $isOutfitOn = "Asterias flower crown">>
+    <</link>>
+    <<elseif $asteriaAffection == 10 && !$AsteriaEvents.includes("10 points")>>\
+    You find Asteria holding a bouquet of flowers. She is awake for the first time too. It takes you by surprise.
+    "Oh? First time I've seem you awake." you say, she puts the flowers on the grave and then turns around facing you.
+    <span class="Asteria">"Hi, $gamename."</span> her eyes are puffy. Seems like was crying a few moments ago. You also notice a ring on her finger. Its a golden ring with flowers around it.
+    "Cute ring."
+    <span class="Asteria">"Thanks. He made it for me. After that he died..."</span> she stays silent for a moment. <<if $isOutfitOn is "Asterias flower crown">><span class="Asteria">"You're wearing the flower crown I made you? I'm glad you liked it."</span> she says with a warm smile on her face.
+    "Yeah... Its cute. Thank you for making it" you watch as Asteria goes to the potato sack and takes her flower crown, putting it on her head.<</if>>
+  
+    <<link [[Continue|Tree person convo]]>>
+      <<dateadd '10m'>>
+      <<run $AsteriaEvents.push("10 points")>>
+    <</link>>
+    <<elseif $asteriaAffection == 15 && !$AsteriaEvents.includes("15 points")>>\
+    Asteria is sitting next to the grave, her head leaning on it. She notices you  <span class="Asteria">"Hey, $gamename."</span>  she says. Her tone is more tired than usual. Now that you're looking at her, the bags under her eyes are more obvious.
+    "Have you been sleeping well, Asteria?" I say, sitting down next to her.
+    <span class="Asteria">"..."</span>
+    "What's wrong?"
+    <span class="Asteria">"I've just been having those... Terrible nightmares. I can't get a wink of sleep because of them at all. They've been really, really bad. I can't even sleep here anymore."</span> she responds, her eyes getting wattery.
+    "Can I help, somehow?" you ask her.
+    <span class="Asteria">"Yes, can you keep me company at my house? I want someone to be there while I rest."</span> she asks, shyly.
+    <div id="opt10">\
+    <<link "Yes.">> <<replace "#opt10">>
+      "Yeah, if it provides you comfort from those nightmares." you say, she looks a bit surprised. You can see a very slight smile on her tired face.
+      <span class="Asteria">"Ah... Thank you $gamename. I think I already told you but I live on floor 2."</span> she says, slowly getting up. You help her get up and she takes her somewhat empty basket and starts leading the way to the floor dungeon.
+      "You weren't kidding about going through the dungeon huh? Why don't you just use the teleportation pads?"
+      <span class="Asteria">"Me and my boyfriend were always saving money to help out friends and players... We never really bought much for ourselves. The house I live in was actually a gift from 6 players that all collected money to buy it for us."</span>
+      "You guys were that liked?"
+      <span class="Asteria">"Yeah... We were."</span> she says as she looks down to the ground, slightly sad.
+      You and Asteria enter the floor dungeon and head for the boss room... Surprisingly there have been no skeletons. At all.
+      After a long thirty minutes of climbing the stairs you reach the gate to floor 2. Asteria opens it.
+      Then she starts walking down the path leading to Whitewall town.
+      Her house is close to the town, but outside of it.
+      You're both standing outside of it <span class="Asteria">"And this is where I live. The view is amazing. I seriously love it. He also used to love it a lot. I remember him waking up early in the day, coming out with a chair and placing it outside and just watch. He especially loved it when snow rained."</span> she says, opening the door of her house. You enter it to notice the big mess, there is trash everywhere. Asteria has clearly not been taking care of herself or the house she lives in. <span class="Asteria">"Sorry for the mess. I haven't bothered cleaning at all."</span>
+      "It's fine. I could help you clean one day."
+      <span class="Asteria">"There's no need to but thanks."</span> she says walking to her living room. There are a bunch of dead flowers, a few boxes on the floor, clothes all over and other stuff. She sits down on the couch and later on lays down on it. <span class="Asteria">"You can take a book if you want to read something. I will just try to sleep."</span> she closes her eyes. Ten seconds after that she falls asleep...
+    <<link [[Continue|Asteria house living room]]>>
+      <<dateadd '120m'>>
+      <<run $AsteriaEvents.push("15 points")>>
+      <<run $AsteriaEvents.push("Asteria house unlocked")>>
+    <</link>>
+    <</replace>>
+    <</link>>
+    <<link "No.">> <<replace "#opt10">>
+  "Sorry, Asteria... But I'd prefer not doing that." you say, she looks at you sad.
+  <span class="Asteria">"Yeah... Thought so, sorry for asking you that."</span>
+  <<link [[Continue|Tree person convo]]>>
+    <<dateadd '15m'>>
+    <<run $AsteriaEvents.push("15 points")>>
+    <<set $asteriaAffection -= 3>>
+  <</link>>
+  <</replace>>
+  <</link>>
+  </div>
+    <<elseif $asteriaAffection >= 0>>\
+    You sit down next to Asteria. She seems to be sleeping
+    
+    1. <<link [[Speak to her|Tree person speak]]>>
+    <</link>>
+    2. <<link [[Let her sleep|Tree person sleep]]>>
+    <</link>>
+    3. <<link [[Leave|Tree 1]]>>
+    <</link>>
+    <</if>>
+    <</if>>
+
+

@@ -1,0 +1,14 @@
+:: win skeleton [autosave] {"position":"400,2600","size":"100,100"}
+You killed the skeleton and won the battle, gaining <<print ($mobLvl*1.5 + $mobXP).toFixed(0)>> XP and $mobXP Coins<<if $lootchance lte 5>> a ring of the undead<</if>> and a crystal fragment.
+<<EventCurrencies>>\
+<<link "Go back">>
+<<if $lootchance lte 5>>
+	<<set $ringOfTheUndead += 1>>
+<</if>>
+<<goto $lastVisitedPassage>>
+<<set $killedSK += 1>>
+<<set $crystalFragments += 1>>
+<<MobRewards>>
+<</link>>
+
+

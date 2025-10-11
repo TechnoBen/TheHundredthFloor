@@ -1,0 +1,25 @@
+:: FD 1.2 {"position":"2350,2025","size":"100,100"}
+You went in deeper into the dungeon to see that the corridor now has a left and right way to go...
+You can't remember which way to go.
+
+Directions:
+<<link [[Go left...|FD 1.3]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.3">>
+    <<F1Dungeon>>
+<</link>>
+<<link [[Go right...|FD 1.4]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.4">>
+     <<F1Dungeon>>
+<</link>>
+<<link [[Go back...|FD 1.1]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.1">>
+    <<F1Dungeon>>
+<</link>>
+
+

@@ -1,0 +1,18 @@
+:: Blue floor raid {"position":"2525,2400","size":"100,100"}
+<span class="Blu3b3llrex">"So have you found the floor dungeon yet?"</span> she asks you as she puts a box to the floor. 
+"Yeah I did find it."
+<span class="Blu3b3llrex">"So are we gonna work together? I feel like it would be way better than you going in alone with probably Crimson and Shadow. The boss could've been buffed or they could've made a new one. After all they did change a lot of stuff like the damned inventory and stat system... We can't even message people now. It's such a pain"</span>
+"Yeah it sure is a pain."
+
+<<link [[Let's work together.|Gathering area]]>>
+	<<set $raidParty to true>>
+	<<set $blueRaid to true>>
+    <<set $raidHP to $raidMaxHP>>
+<</link>>
+<<link [[I think I'll go alone.|Gathering area]]>>
+	<<set $raidParty to false>>
+<</link>>
+<<link [[I don't think I can go right now.|Gathering area]]>>
+<</link>>
+
+

@@ -1,0 +1,19 @@
+:: Path 7.5.1 {"position":"4150,950","size":"100,100"}
+You went down the path. Theres snow that reaches your kneecaps.
+In the distance you can see a mountain that reaches the top of the floor.
+Thats the floor dungeon. A huge mountain that you have to go in.
+
+1. <<link [[Follow the path|Path 7.5.2]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.5.2">>
+<<SnowPlains3>>
+<</link>>
+2. <<link [[Go back|Path 7.4]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.4">>
+<<SnowPlains3>>
+<</link>>
+
+

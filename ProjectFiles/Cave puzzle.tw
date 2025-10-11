@@ -1,0 +1,9 @@
+:: Cave puzzle {"position":"5350,900","size":"100,100"}
+<span class= Evese>"To open the door you must find the correct chest. This chest is what shall open the doors that lead to the stairs. You will know if its the correct one by it glowing in light blue. After reading this the chest will appear somewhere on the dungeon. Good luck adventurer."</span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> .... It says something about a chest? <<elseif $ReadingSkill >= 3>> "To open the door you must find the correct chest. This chest is what shall open the doors that lead to the stairs. You will know if its the correct one by it glowing in light blue. After reading this the chest will appear somewhere on the dungeon. Good luck adventurer."<</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+<<link [[Back|FD2.8]]>>
+	<<set $FD2chest to kitsuneRNG(1, 3)>>
+    <<set $f2door to false>>
+<</link>>
+
+

@@ -1,0 +1,48 @@
+:: 0.1.4 [NoSave] {"position":"100,150","size":"100,100"}
+ [[Back|Changelogs and game information]]
+ 
+ - Started making the small camp at F2
+ 	- A new weaponsmith
+    - A new inn
+    	- It has a better bed :thumbsup:
+ - Started working on the Big boi tree at F2
+ 	- You can read books for coins
+    - You can work there
+ - Started making a pretty important 100% of happening event at F2
+ - Added crafting skill
+ - Added reputation system
+ - Made the bars height smaller 
+ - Added a new Tp pad
+ - Crimson, shadow and radiant get better gear if you participate in the floor boss raid at f1 (old players wont be affected... im sorry)
+ - Remade the achievement menu
+ - Added a debug button 
+ - Tier 2 healing potions can spawn at the f1 forest dungeon
+ - Added work hours at the inn
+ - Lowered the amount of fatigue you get if hungry from 50 to 10
+ - Replaced the time system from a random one to Hituros time macro... Also thank you Hituro for helping me. I am an absolute idiot when it comes to JS and I dont understand it all. He practically saved my ass lmao.
+ - Changed the achievement notifications from plain text to being the achievements cards instead
+ - Added a better bed
+ - Debuffed both skeletons XP and coins reward by A LOT
+ - U can now grow stuff in the backyard. Unlazied myself lmfao. That also means that the forest hut is completely finished!
+ - Added 1 achievement
+ 
+ - Fixed a bug where party members leave too fast if you disbanded your last party instead of them leaving themselves
+ - Making Crimson parry right would freeze the game... now its fixed (thanks to irfanrein for noticing it)
+ - Sleeping for 6 hours in a good bed cause the game to break
+ - Fixed a wrong passage name for combat which would make u unable to continue after a fight
+ - Some weapons/armors when unequiped give stats instead of take away... woops
+ - Mobs deal damage whenyou drink a stamina potion or when you dont have a hp potion.
+ - Auto boss kill wont get reset back to 0 if you are the one who kills the floor boss
+ - Fixed a bug where if you have enough fatigue to faint and 0 hp it would keep on spamming fainting and death screens.
+ - Fixed the Toru event being able to be played twice
+ 
+ NEW ENEMIES:
+  PKers
+  
+ NEW ITEMS:
+ Hp potions tier 2
+ Copper weapons but with crystal fragments (upgrade)
+ 
+ [[Back|Changelogs and game information]]
+
+

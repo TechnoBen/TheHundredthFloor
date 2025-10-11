@@ -1,0 +1,173 @@
+:: Go to the backyard [no-party-time-loss] {"position":"2150,3050","size":"100,100"}
+You are in your backyard. You look around to see 3 clay pots...
+
+1. Clay pot <<if $plantType1 !== "Nothing">>(<<if $waterTime1 <= 50>>The $plantType1 are dry.<<else>>The $plantType1 are not dry.<</if>>)<</if>>
+<<if $plantType1 !== "Nothing">>\
+<<link "Water plants">>
+	<<dateadd "30m">>
+    <<set $curFatigue += 50>>
+    <<set $waterTime1 += 100>>
+    <<goto "Go to the backyard">>
+<</link>>
+<<if $timeTillGrowth1 <= 0>>\
+<<link "Harvest plants">>
+	<<if $plantType1 == "Carrots">>
+    	<<dateadd "30m">>
+        <<set $curFatigue += 50>>
+    	<<set $carrot += 25>>
+		<<set $plantType1 to "Nothing">>
+    	<<set $waterTime1 to 0>>
+    	<<set $timeTillGrowth1 to 0>>
+        <<goto "Go to the backyard">>
+    <<elseif $plantType1 == "Mushrooms">>
+       	<<dateadd "30m">>
+        <<set $curFatigue += 50>>
+    	<<set $mushroom += 25>>
+		<<set $plantType1 to "Nothing">>
+    	<<set $waterTime1 to 0>>
+    	<<set $timeTillGrowth1 to 0>>
+     	<<goto "Go to the backyard">>
+<</if>>
+<</link>>
+<</if>>\
+<</if>>\
+<<if $plantType1 == "Nothing">>\
+<<if $carrot >= 5>>\
+<<link "Plant carrots (5 carrots)">>
+	<<dateadd "15m">>
+    <<set $curFatigue += 20>>
+	<<set $carrot -= 5>>
+	<<set $plantType1 to "Carrots">>
+    <<set $waterTime1 to 0>>
+    <<set $timeTillGrowth1 to 450>>
+    <<goto "Go to the backyard">>
+<</link>>
+<</if>>\
+<<if $mushroom >= 5>>\
+<<link "Plant mushrooms (5 mushrooms)">>
+	<<dateadd "15m">>
+    <<set $curFatigue += 20>>
+	<<set $mushroom -= 5>>
+	<<set $plantType1 to "Mushrooms">>
+    <<set $waterTime1 to 0>>
+    <<set $timeTillGrowth1 to 500>>
+    <<goto "Go to the backyard">>
+<</link>>
+<</if>>\
+<</if>>\
+
+2. Clay pot <<if $plantType2 !== "Nothing">>(<<if $waterTime2 <= 50>>The $plantType2 are dry.<<else>>The $plantType2 are not dry.<</if>>)<</if>>
+<<if $plantType2 !== "Nothing">>\
+<<link "Water plants">>
+	<<dateadd "30m">>
+    <<set $curFatigue += 50>>
+    <<set $waterTime2 += 100>>
+    <<goto "Go to the backyard">>
+<</link>>
+<<if $timeTillGrowth2 <= 0>>\
+<<link "Harvest plants">>
+	<<if $plantType2 == "Carrots">>
+    	<<dateadd "30m">>
+        <<set $curFatigue += 50>>
+    	<<set $carrot += 25>>
+		<<set $plantType2 to "Nothing">>
+    	<<set $waterTime2 to 0>>
+    	<<set $timeTillGrowth2 to 0>>
+        <<goto "Go to the backyard">>
+    <<elseif $plantType2 == "Mushrooms">>
+       	<<dateadd "30m">>
+        <<set $curFatigue += 50>>
+    	<<set $mushroom += 25>>
+		<<set $plantType2 to "Nothing">>
+    	<<set $waterTime2 to 0>>
+    	<<set $timeTillGrowth2 to 0>>
+     	<<goto "Go to the backyard">>
+<</if>>
+<</link>>
+<</if>>\
+<</if>>\
+<<if $plantType2 == "Nothing">>\
+<<if $carrot >= 5>>\
+<<link "Plant carrots (5 carrots)">>
+	<<dateadd "15m">>
+    <<set $curFatigue += 20>>
+	<<set $carrot -= 5>>
+	<<set $plantType2 to "Carrots">>
+    <<set $waterTime2 to 0>>
+    <<set $timeTillGrowth2 to 450>>
+    <<goto "Go to the backyard">>
+<</link>>
+<</if>>\
+<<if $mushroom >= 5>>\
+<<link "Plant mushrooms (5 mushrooms)">>
+	<<dateadd "15m">>
+    <<set $curFatigue += 20>>
+	<<set $mushroom -= 5>>
+	<<set $plantType2 to "Mushrooms">>
+    <<set $waterTime2 to 0>>
+    <<set $timeTillGrowth2 to 500>>
+    <<goto "Go to the backyard">>
+<</link>>
+<</if>>\
+<</if>>\
+
+3. Clay pot <<if $plantType3 !== "Nothing">>(<<if $waterTime3 <= 50>>The $plantType3 are dry.<<else>>The $plantType3 are not dry.<</if>>)<</if>>
+<<if $plantType3 !== "Nothing">>\
+<<link "Water plants">>
+	<<dateadd "30m">>
+    <<set $curFatigue += 50>>
+    <<set $waterTime3 += 100>>
+    <<goto "Go to the backyard">>
+<</link>>
+<<if $timeTillGrowth3 <= 0>>\
+<<link "Harvest plants">>
+	<<if $plantType3 == "Carrots">>
+    	<<dateadd "30m">>
+        <<set $curFatigue += 50>>
+    	<<set $carrot += 25>>
+		<<set $plantType3 to "Nothing">>
+    	<<set $waterTime3 to 0>>
+    	<<set $timeTillGrowth3 to 0>>
+        <<goto "Go to the backyard">>
+    <<elseif $plantType3 == "Mushrooms">>
+       	<<dateadd "30m">>
+        <<set $curFatigue += 50>>
+    	<<set $mushroom += 25>>
+		<<set $plantType3 to "Nothing">>
+    	<<set $waterTime3 to 0>>
+    	<<set $timeTillGrowth3 to 0>>
+     	<<goto "Go to the backyard">>
+<</if>>
+<</link>>
+<</if>>\
+<</if>>\
+<<if $plantType3 == "Nothing">>\
+<<if $carrot >= 5>>\
+<<link "Plant carrots (5 carrots)">>
+	<<dateadd "15m">>
+    <<set $curFatigue += 20>>
+	<<set $carrot -= 5>>
+	<<set $plantType3 to "Carrots">>
+    <<set $waterTime3 to 0>>
+    <<set $timeTillGrowth3 to 450>>
+    <<goto "Go to the backyard">>
+<</link>>
+<</if>>\
+<<if $mushroom >= 5>>\
+<<link "Plant mushrooms (5 mushrooms)">>
+	<<dateadd "15m">>
+    <<set $curFatigue += 20>>
+	<<set $mushroom -= 5>>
+	<<set $plantType3 to "Mushrooms">>
+    <<set $waterTime3 to 0>>
+    <<set $timeTillGrowth3 to 500>>
+    <<goto "Go to the backyard">>
+<</link>>
+<</if>>\
+<</if>>\
+
+<<link [[Go back|Forest hut corridor]]>>
+<<set $location to "start">>
+<</link>>
+
+

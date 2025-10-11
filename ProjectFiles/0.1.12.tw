@@ -1,0 +1,25 @@
+:: 0.1.12 [NoSave] {"position":"300,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+Before the changelog starts I have something to say.
+Sorry for taking so long with this update. Kind of lost motivation for a pretty long time and I just didnt want to work on the game for the time being. I think I am back to updating now though. This might be a small update but I just want to get something out since games been going with no updates for a bit too long.
+
+I don't remember what I changed before taking this 4 months break since I didn't write it down for whatever reason but I do remember *some* changes. Anyways changelog:
+
+- Started work on the PKer guild (As of now you can only open the door and get asked why youre there.)
+- Added a secret achievement for killing a certain someone (Medium)
+- Made secret achievements visible in their difficulty to get menu. Unsure why I didnt do that. If it looks bad lmk.
+- Started working on Floor 3 however you cannot go in there as is nothing.
+- Made fishing possible in the frozen lake
+
+- Fixed Zegrath not regening his HP and Stamina whenever the player sleeps. (Thanks to Crystalize710 for reporting it!)
+- Fixed a bug where buying a red shirt gives you a blue shirt (noticed while i was copy pasting the code for the tank top lmfao)
+
+NEW ITEMS:
+Tank tops of all 6 colors
+Fish
+Cooked fish
+
+[[Back|Changelogs and game information]]
+
+

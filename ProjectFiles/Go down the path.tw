@@ -1,0 +1,32 @@
+:: Go down the path {"position":"3650,900","size":"100,100"}
+You started going down the path. There seems to be snow that reaches your kneecaps. 
+
+You can:
+<<link [[Look for a white wolf|Combat remake]]>>
+<<set $lastVisitedPassage to "Go down the path">>
+<<set _mobAmount to random(100)>>
+    <<if _mobAmount lte 22>>
+        <<mob wolf1>>
+        <<mob wolf1>>
+		<<mob wolf2>>
+    <<elseif _mobAmount lte 45>>
+    	<<mob wolf2>>
+        <<mob wolf1>>
+    <<elseif _mobAmount lte 100>>
+    	<<mob wolf1>>
+    <</if>>
+	<<dateadd '35m'>> 
+	<<set $curFatigue += 15>>
+<</link>>
+
+Locations:
+1. <<link [[Follow the path|Path 6]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<</link>>
+2. <<link [[Go back|Floor 2 staircase 1]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<</link>>
+
+

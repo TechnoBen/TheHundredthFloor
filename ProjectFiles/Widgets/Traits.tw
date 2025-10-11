@@ -1,0 +1,146 @@
+:: Traits [widget] {"position":"2500,725","size":"100,100"}
+<<widget "StrongGain">>
+<<if !$traits.Strong>>
+	<<set $traits.Strong to "Strong: You're stronger than the usual person.">>
+    <<set $STRPercentBuff += 5>>
+<</if>>
+<</widget>>
+
+<<widget "StrongLose">>
+<<if $traits.Strong>>
+	<<run delete $traits.Strong>>
+    <<set $STRPercentBuff -= 5>>
+<</if>>
+<</widget>>
+
+<<widget "DexGain">>
+<<if !$traits.Dexterous>>
+	<<set $traits.Dexterous to "Dexterous: Your reaction time is faster than the usual person.">>
+    <<set $DEXPercentBuff += 5>>
+    <<set $MaxStamina += 10>>
+<</if>>
+<</widget>>
+
+<<widget "DexLose">>
+<<if $traits.Dexterous>>
+	<<run delete $traits.Dexterous>>
+    <<set $DEXPercentBuff -= 5>>
+    <<set $MaxStamina -= 10>>
+<</if>>
+<</widget>>
+
+<<widget "ClumsyGain">>
+<<if !$traits.Clumsy>>
+	<<set $traits.Clumsy to "Clumsy: Your reaction time is slower than the usual person.">>
+    <<set $DEXPercentDebuff += 5>>
+    <<set $MaxStamina -= 10>>
+<</if>>
+<</widget>>
+
+<<widget "ClumsyLose">>
+<<if $traits.Clumsy>>
+	<<run delete $traits.Clumsy>>
+    <<set $DEXPercentDebuff -= 5>>
+    <<set $MaxStamina += 10>>
+<</if>>
+<</widget>>
+
+<<widget "WeakGain">>
+<<if !$traits.Weak>>
+	<<set $traits.Weak to "Weak: You're weaker than the usual person.">>
+    <<set $STRPercentDebuff += 5>>
+<</if>>
+<</widget>>
+
+<<widget "WeakLose">>
+<<if $traits.Weak>>
+	<<run delete $traits.Weak>>
+    <<set $STRPercentDebuff -= 5>>
+<</if>>
+<</widget>>
+
+<<widget "BraveGain">>
+<<if !$traits.Brave>>
+	<<set $traits.Brave to "Brave: You don't get scared easily unlike most people.">>
+    <<set $FearPercentBuff += 5>>
+<</if>>
+<</widget>>
+
+<<widget "BraveLose">>
+<<if $traits.Brave>>
+	<<run delete $traits.Brave>>
+    <<set $FearPercentBuff -= 5>>
+<</if>>
+<</widget>>
+
+<<widget "CowardlyGain">>
+<<if !$traits.Cowardly>>
+	<<set $traits.Cowardly to "Cowardly: You're easily spooked.">>
+    <<set $FearPercentDebuff += 5>>
+<</if>>
+<</widget>>
+
+<<widget "CowardlyLose">>
+<<if $traits.Cowardly>>
+	<<run delete $traits.Cowardly>>
+    <<set $FearPercentDebuff -= 5>>
+<</if>>
+<</widget>>
+
+<<widget "InsomniacGain">>
+<<if !$traits.Insomniac>>
+	<<set $traits.Insomniac to "Insomniac: You're always tired.">>
+    <<set $maxFatigue -= 350>>
+<</if>>
+<</widget>>
+
+<<widget "InsomniacLose">>
+<<if $traits.Insomniac>>
+	<<run delete $traits.Insomniac>>
+    <<set $maxFatigue += 350>>
+<</if>>
+<</widget>>
+
+<<widget "PsychoticGain">>
+<<if !$traits.Psychotic>>
+	<<set $traits.Psychotic to "Psychotic: You're stronger than the usual person.">>
+    <<set $STRPercentBuff += 35>>
+    <<set $HungerPercentDebuff += 50>>
+<</if>>
+<</widget>>
+
+<<widget "PsychoticLose">>
+<<if $traits.Psychotic>>
+	<<run delete $traits.Psychotic>>
+    <<set $STRPercentBuff -= 35>>
+    <<set $HungerPercentDebuff -= 50>>
+<</if>>
+<</widget>>
+
+<<widget "BloodlustGain">>
+<<if !$traits.Bloodlust>>
+	<<set $traits.Bloodlust to "Bloodlust: You get slightly stronger with every kill. Your insatiable bloodlust is only calmed by dawn.">>
+<</if>>
+<</widget>>
+
+<<widget "BloodlustLose">>
+<<if $traits.Bloodlust>>
+	<<run delete $traits.Bloodlust>>
+<</if>>
+<</widget>>
+
+<<widget "DurGain">>
+<<if !$traits.Durable>>
+	<<set $traits.Durable to "Durable: You can withstand more pain the usual person.">>
+    <<set $DEF += 1>>
+<</if>>
+<</widget>>
+
+<<widget "DurLose">>
+<<if $traits.Durable>>
+	<<run delete $traits.Durable>>
+    <<set $DEF -= 1>>
+<</if>>
+<</widget>>
+
+

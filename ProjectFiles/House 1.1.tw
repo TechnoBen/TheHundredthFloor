@@ -1,0 +1,49 @@
+:: House 1.1 {"position":"4650,1400","size":"100,100"}
+You knock on the door.
+<<if $zegrathDead == false>>
+The door opens, you see a tall, angry, white man with medium brown hair and a long beard.
+He is wearing light armor and has 2 swords on his back.
+<span class="zegrath">"What do you want from me, mortal."</span> he responds.
+<div id="opt5">\
+<<link [[Speak to him|Zegrath convo]]>>
+<</link>>
+<<link "Stay silent">><<replace "#opt5">>
+<span class="zegrath">"Speak up and tell me who sent you, peasant!"</span> he responds.
+<div id="opt6">
+<<link "Stay silent">><<replace "#opt6">>
+<span class="zegrath">"Say something, worm."</span> he responds, slightly annoyed.
+<div id="opt7">
+<<link "Stay silent">><<replace "#opt7">>
+<span class="zegrath">"Don't keep me waiting, idiot!"</span> he sounds pissed off. You are starting to think that this is a bad idea.
+<div id="opt8">
+<<link "Stay silent">><<replace "#opt8">>
+<span class="zegrath">"You dare mock me?! Who sent you! Tell me now! I'll destroy the source of this insolence!"</span> he looks mad. He is reaching for his swords. This will go terribly.
+<div id="opt9">
+<<link "Stay silent">><<replace "#opt9">>
+<span class="zegrath">"Very well then. You wish to test the patience of the great Zegrath?!"</span> he is beyond mad. He took both his swords out. He mutters something to himself and his swords sets in fire. You feel fear.
+<<link [[Stay silent|Combat remake]]>>
+<<set $CurFear += 50>>
+<<set $lastVisitedPassage to "House 1">>
+<<zegrath>><</zegrath>>
+<<goto "Combat remake">>
+<</link>>
+<</replace>><</link>>
+</div>\
+<</replace>><</link>>
+</div>\
+<</replace>><</link>>
+</div>\
+<</replace>><</link>>
+</div>\
+<</replace>><</link>>
+</div>\
+<<link [[Never mind|Frozen lake]]>>
+<</link>>
+<<else>>\
+No one responds.
+
+<<link [[Go back|Frozen lake]]>>
+<</link>>
+<</if>>
+
+

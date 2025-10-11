@@ -1,0 +1,17 @@
+:: Path 7.3 [Path] {"position":"4025,1150","size":"100,100"}
+You went down the path. Theres snow that reaches your kneecaps.
+
+1. <<link [[Follow the path|Path 7.4]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.4">>
+<<SnowPlains2>>
+<</link>>
+2. <<link [[Go back|Path 7.2]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.2">>
+<<SnowPlains2>>
+<</link>>
+
+

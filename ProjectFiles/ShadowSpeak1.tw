@@ -1,0 +1,14 @@
+:: ShadowSpeak1 {"position":"2900,1850","size":"100,100"}
+"So... What are you up to?"
+<span class="shadow">"Thinking about the first floor boss. That fucker sure was strong!"</span>
+"Ah I see."
+
+The two of you talk about the floor boss. Eventually you bring up the other floor bosses too.
+
+<<link [[Go back|Town street 2]]>> 
+	<<set $CurFear -= 1>>
+	<<dateadd '1h'>>
+	<<set $NPCs.ShadowScythe.Affection += 1>> 
+<</link>>
+
+

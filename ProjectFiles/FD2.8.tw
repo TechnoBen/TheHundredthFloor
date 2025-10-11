@@ -1,0 +1,16 @@
+:: FD2.8 {"position":"5225,900","size":"100,100"}
+You are walking down the path. After a bit of walking you get to the end of the cave. Infront of you there is a plate with something written on it.
+
+You can:
+<<link [[Read the plate|Cave puzzle]]>>
+<</link>>
+
+Directions:
+<<link [[Go back|FD2.7]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.7">>
+<<F2Dungeon>>
+<</link>>
+
+

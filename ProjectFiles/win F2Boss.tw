@@ -1,0 +1,56 @@
+:: win F2Boss [autosave] {"position":"600,2075","size":"100,100"}
+The boss health bar got to red, you go in for your last strike and succesfully hit it.
+It turns into ashes and a screen pops up
+<<set $floorBossBattle to false>> <<set $blueRaid to false>> <<set $raidParty to false>>
+<center><img src = "Textures/Congratulations!!!.png" width="100%"/></center>
+"You have beaten the floor 2 boss
+Everyone who participated in this battle will get a choice to get 1 item!
+Choose wisely.
+You also got 2280 XP and 3138 Coins."
+
+You can chose:
+<<link [[Light armor|F2 BOSS]]>>
+  <<set $f2BossKilled to true>>
+  <<MobRewards>>
+  <<set $StoneCP to true>>
+<</link>>
+<<link [[Heavy armor|F2 BOSS]]>>
+  <<set $f2BossKilled to true>>
+  <<MobRewards>>
+  <<set $hStoneCP to true>>
+<</link>>
+Or you can get:
+<<link [[A heavy sword|F2 BOSS]]>>
+  <<set $f2BossKilled to true>>
+  <<MobRewards>>
+  <<set $heavyswordStone to true>> 
+<</link>>
+<<link [[Fire stopper scroll|F2 BOSS]]>>
+  <<set $fireStopperScroll += 1>>
+  <<MobRewards>>
+  <<set $f2BossKilled to true>>
+<</link>>
+
+<<set $timeTillBossDies to 0>>
+<<set $DEFCrimsonSentinel += 3>>
+<<set $weaponDMGCrimsonSentinel += 2>>
+<<set $weaponDMGRadiantRose += 1>>
+<<set $weaponDMGShadowScythe += 3>>
+<<set $raidParty to false>>
+<<set $raidMaxHP += 100>>
+ <<set $turnChanceCur to $turnChanceMax>>
+    <<set $NPCs.RadiantRose.turnChanceCur to $NPCs.RadiantRose.turnChanceMax>>
+    <<set $NPCs.ShadowScythe.turnChanceCur to $NPCs.ShadowScythe.turnChanceMax>>
+    <<set $NPCs.CrimsonSentinel.turnChanceCur to $NPCs.CrimsonSentinel.turnChanceMax>>
+    <<set $NPCs.Zegrath.turnChanceCur to $NPCs.Zegrath.turnChanceMax>>
+    <<unset $bonusTurnPlayer>>
+    <<unset $bonusTurnRadiantRose>>
+    <<unset $bonusTurnShadowScythe>>
+    <<unset $bonusTurnCrimsonSentinel>>
+    <<unset $bonusTurnZegrath>>
+    <<set $combat_drops = []>>
+    <<set $combatCol to 0>>
+    <<set $combatXP to 0>>
+    <<set $combat_log = []>>
+
+

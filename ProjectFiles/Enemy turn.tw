@@ -1,0 +1,1211 @@
+:: Enemy turn [enemy-turn Town NoSave] {"position":"100,2075","size":"100,100"}
+You have encountered:
+<<for _i = 0; _i lte 99; _i++>>\
+  	<<if $mobs[_i]>>\
+ 	<<if $mobs[_i].bonusTurn === 1>>EXTRA TURN! <</if>>Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+ 	<</if>>\
+<</for>>\
+<<run $combat_log.splice(0, $combat_log.length - 10)>>
+<<if $combat_log.length>>\
+	<div id='combat_log'><<= $combat_log.join('<br>')>></div>\
+	<br>\
+<</if>>\
+$gamename stats:
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>><<if $bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= $burnCountCur.toFixed(2)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
+<<if $bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= $burnCountCur.toFixed(2)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+<ol>\
+<<if $hpPOT >= 1>><li>HP pots: $hpPOT</li><</if>>
+<<if $hpPOT1 >= 1>><li>HP pots T2: $hpPOT1</li><</if>>
+<<if $stmPOT >= 1>><li>STM potions: $stmPOT</li><</if>>
+</ol>\
+<<if $floorBossBattle == true && $raidParty == true>>\
+Raid party hp: $raidHP/1000
+<</if>>\
+<<for _i range $partyMembers>>
+<<set _npc = $NPCs[_i]>>\
+    <<= _npc.name>>'s stats:
+    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+    STM: <<= _npc.CurSTM.toFixed(0)>>/<<= _npc.MaxSTM.toFixed(0)>>
+	<<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+<</for>>\
+
+Select your move:<<nobr>>
+<label>
+    <<radiobutton "$attack" "Do nothing" checked>> Do nothing
+</label>
+<label>
+     | <<radiobutton "$attack" "Block">> Block
+</label>
+<label>
+     | <<radiobutton "$attack" "Dodge">> Dodge
+</label>
+<<if $hpPOT >= 1>> 
+    <label>
+         | <<radiobutton "$attack" "Drink a HP potion">> Drink a tier 1 health potion</label>
+<</if>>
+<<if $hpPOT1 >= 1>>
+    <label>
+        | <<radiobutton "$attack" "Drink a HP potion tier 2">> Drink a tier 2 health potion
+    </label>
+<</if>>
+<<if $stmPOT >= 1>>
+    <label>
+         | <<radiobutton "$attack" "Drink a STM potion">> Drink a tier 1 stamina potion
+    </label>
+<</if>>
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+    <<if _mob[_i].name is "Black wolf" && $ragoutMeat >= 1>>
+        <label>
+             | <<radiobutton "$attack" "Feed dog">> Give the Black wolf ragout meat
+        </label>
+    <</if>>
+<</for>>
+<</nobr>>
+<<nobr>>
+Select a party member: 
+<label>
+    <<radiobutton "$enemyHitPlayer" "Player" checked>> Myself
+</label>
+<<for _i range $partyMembers.length>>
+    <<capture _i>>
+        <<if $partyMembers[_i]>>
+            <label>
+                 | <<radiobutton "$enemyHitPlayer" _i>> <<= $partyMembers[_i]>>
+            </label>
+     	<</if>>
+    <</capture>>
+<</for>>
+<</nobr>>
+<<for _i = 0; _i lte 4; _i++>>\
+<<capture _i>>\
+<<if $partyMembers[_i] === "RadiantRose">>\
+Select <span class="radiant">RadiantRose</span>'s move: <label><<radiobutton "$attackRadiantRose" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackRadiantRose" "Block">> Block </label> | <label><<radiobutton "$attackRadiantRose" "Dodge">> Dodge</label>
+<</if>>\
+<<if $partyMembers[_i] === "ShadowScythe">>\
+Select <span class="shadow">ShadowScythe</span>'s move: <label><<radiobutton "$attackShadowScythe" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackShadowScythe" "Block">> Block </label> | <label><<radiobutton "$attackShadowScythe" "Dodge">> Dodge</label>
+<</if>>\
+<<if $partyMembers[_i] === "CrimsonSentinel">>\
+Select <span class="crimson">CrimsonSentinel</span>'s move: <label><<radiobutton "$attackCrimsonSentinel" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackCrimsonSentinel" "Block">> Block </label> | <label><<radiobutton "$attackCrimsonSentinel" "Dodge">> Dodge</label>
+<</if>>\
+<<if $partyMembers[_i] === "Zegrath">>\
+Select <span class="zegrath">Zegrath</span>'s move: <label><<radiobutton "$attackZegrath" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackZegrath" "Block">> Block </label> | <label><<radiobutton "$attackZegrath" "Dodge">> Dodge</label>
+<</if>>\
+<</capture>>\
+<</for>>\
+<<if $partyMembers.includes($NPCs.BlackWolf.name)>>\
+Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackWolf" "Block">> Block </label> | <label><<radiobutton "$attackWolf" "Dodge">> Dodge</label>
+<</if>>\
+
+<<link [[Next|Combat remake]]>>
+/* Player moves */
+/* Doing nothing */
+<<if $attack == "Do nothing">>
+    <<run $combat_log.push('You do nothing.')>>
+<</if>>
+/* Blocking */
+<<if $attack === "Block">>
+    <<set $attackText to "Block">>
+    <<if $curStamina >= 6>>
+        <<set $curStamina -= 6>>
+        <<set $blockingModifier to 0.5>>
+        <<run $combat_log.push('You get yourself in a blocking stance.')>>
+    <<else>>
+        <<run $combat_log.push('You are too tired to block.')>>
+    <</if>>
+<</if>>
+/* Dodging */
+<<if $attack === "Dodge">>
+    <<set $attackText to "Dodge">>
+    <<if $curStamina >= 10>>
+        <<set $curStamina -= 10>>
+        <<set $evadeModifier to 75>>
+        <<run $combat_log.push('You get yourself ready to dodge')>>
+    <<else>>
+        <<run $combat_log.push('You are too tired to dodge.')>>
+    <</if>>
+<</if>>
+/* HP pot tier 1 */
+<<if $attack is "Drink a HP potion">>
+    <<if $enemyHitPlayer === "Player">>
+        <<set $attackText to "Drink HP potion">>
+        <<if $hpPOT >= 1 && $potCooldown <= 0>>  
+            <<set $CurHP += 50>>
+            <<set $hpPOT -= 1>>
+            <<set $potCooldown += 2>>
+            <<run $combat_log.push('You drink a tier 1 health potion')>>
+        <<elseif $hpPOT <= 0>> 
+            <<set $attack to "Do nothing">>
+            <<run $combat_log.push('You dont have any tier 1 health potions')>>
+        <</if>>
+    <<else>>
+        <<for _i range $partyMembers.length>>
+        <<if $enemyHitPlayer === _i>>
+            <<if $hpPOT >= 1>>
+                <<set _npc.CurHP += 50>>
+                <<set $hpPOT -= 1>>
+                <<run $combat_log.push('You give a tier 1 health potion to ' + _npc.name)>>
+            <<elseif $hpPOT <= 0>>
+                <<set $attack to "Do nothing">>
+                <<run $combat_log.push('You dont have any tier 1 health potions to give to your teammates.')>>
+            <</if>>
+        <</if>>
+        <</for>>
+    <</if>>
+<</if>>
+/* HP pot tier 2 */
+<<if $attack is "Drink a HP potion tier 2">>
+    <<if $enemyHitPlayer === "Player">>
+        <<set $attackText to "Drink HP potion">>
+        <<if $hpPOT1 >= 1 && $potCooldown <= 0>>  
+            <<set $RegenHP += 2>>
+            <<set $RegenAmount to 60>>
+            <<set $hpPOT1 -= 1>>
+            <<set $potCooldown += 4>>
+            <<run $combat_log.push('You drink a tier 2 potion.')>>
+        <<elseif $hpPOT1 <= 0>> 
+            <<set $attack to "Do nothing">>
+            <<run $combat_log.push('You dont have any tier 2 health potions.')>>
+        <</if>>
+    <<else>>
+        <<for _i range $partyMembers.length>>
+        <<if $enemyHitPlayer === _i>>
+            <<if $hpPOT1 >= 1>>
+                <<set _npc.CurHP += 120>>
+                <<set $hpPOT1 -= 1>>
+                <<run $combat_log.push('You give a tier 2 health potion to ' + _name.npc)>>
+            <<elseif $hpPOT1 <= 0>>
+                <<set $attack to "Do nothing">>
+                <<run $combat_log.push('You dont have any tier 2 health potions to give to your teammates.')>>
+            <</if>>
+        <</if>>
+        <</for>>
+    <</if>>
+<</if>>
+/* STM pot tier 1 */
+<<if $attack is "Drink a STM potion">>
+    <<if $enemyHitPlayer === "Player">>
+        <<set $attackText to "Drink STM potion">>
+        <<if $stmPOT >= 1 && $potCooldown <= 0>>  
+            <<set $curStamina += 50>>
+            <<set $curFatigue -= 100>>
+            <<set $potCooldown += 2>>
+            <<set $stmPOT -= 1>>
+            <<run $combat_log.push('You drink a stamina potion.')>>
+        <<elseif $stmPOT <= 0>> 
+        <<run $combat_log.push('You dont have any stamina potions.')>>
+            <<set $attack to "Do nothing">>
+        <</if>>
+    <<else>>
+        <<for _i range $partyMembers.length>>
+        <<if $enemyHitPlayer === _i>>
+            <<if $stmPOT >= 1>>
+                <<set _npc.CurSTM += 50>>
+                <<set $stmPOT -= 1>>
+                <<run $combat_log.push('You gave a stamina potion to ' + _npc.name)>>
+            <<elseif $stmPOT <= 0>>
+                <<run $combat_log.push('You dont have any stamina potions to give to your teammates.')>>
+                <<set $attack to "Do nothing">>
+            <</if>>
+        <</if>>
+        <</for>>
+    <</if>>
+<</if>>
+
+/* Party moves */
+
+/* RadiantRose */
+<<if $partyMembers.includes("RadiantRose")>>
+/* Doing nothing */
+
+<<if $attackRadiantRose === "Do nothing">>
+    <<run $combat_log.push('RadiantRose does nothing.')>>
+<</if>>
+/* Blocking */
+<<if $attackRadiantRose === "Block">>
+    <<if $NPCs.RadiantRose.CurSTM >= 8>>
+        <<run $combat_log.push('RadiantRose gets into a blocking stance.')>>
+        <<set $NPCs.RadiantRose.CurSTM -= 8>>
+        <<set $NPCs.RadiantRose.blockingModifier to 0.5>>
+    <<else>>
+        <<run $combat_log.push('RadiantRose is too tired to block.')>>
+    <</if>>
+<</if>>
+/* Dodging */
+<<if $attackRadiantRose === "Dodge">>
+    <<if $NPCs.RadiantRose.CurSTM >= 15>>
+        <<run $combat_log.push('RadiantRose gets ready to dodge')>>
+        <<set $NPCs.RadiantRose.CurSTM -= 15>>
+        <<set $NPCs.RadiantRose.evadeModifier to 75>>
+    <<else>>
+        <<run $combat_log.push('RadiantRose is too tired to dodge.')>>
+    <</if>>
+<</if>>
+<</if>>
+
+/* ShadowScythe */
+<<if $partyMembers.includes("ShadowScythe")>>
+/* Doing nothing */
+
+<<if $attackShadowScythe === "Do nothing">>
+<</if>>
+/* Blocking */
+<<if $attackShadowScythe === "Block">>
+    <<if $NPCs.ShadowScythe.CurSTM >= 8>>
+        <<run $combat_log.push('ShadowScythe gets into a blocking stance.')>>
+        <<set $NPCs.ShadowScythe.CurSTM -= 8>>
+        <<set $NPCs.ShadowScythe.blockingModifier to 0.5>>
+    <<else>>
+        <<run $combat_log.push('ShadowScythe is too tired to block.')>>
+    <</if>>
+<</if>>
+/* Dodging */
+<<if $attackShadowScythe === "Dodge">>
+    <<if $NPCs.ShadowScythe.CurSTM >= 15>>
+        <<run $combat_log.push('ShadowScythe gets ready to dodge.')>>
+        <<set $NPCs.ShadowScythe.CurSTM -= 15>>
+        <<set $NPCs.ShadowScythe.evadeModifier to 75>>
+    <<else>>
+        <<run $combat_log.push('ShadowScythe is too tired to dodge.')>>
+    <</if>>
+<</if>>
+<</if>>
+
+/* CrimsonSentinel */
+<<if $partyMembers.includes("CrimsonSentinel")>>
+/* Doing nothing */
+
+<<if $attackCrimsonSentinel === "Do nothing">>
+<<run $combat_log.push('CrimsonSentinel does nothing.')>>
+<</if>>
+/* Blocking */
+<<if $attackCrimsonSentinel === "Block">>
+    <<if $NPCs.CrimsonSentinel.CurSTM >= 8>>
+        <<run $combat_log.push('CrimsonSentinel gets into a blocking stance.')>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 8>>
+        <<set $NPCs.CrimsonSentinel.blockingModifier to 0.5>>
+    <<else>>
+        <<run $combat_log.push('CrimsonSentinel is too tired to block.')>>
+    <</if>>
+<</if>>
+/* Dodging */
+<<if $attackCrimsonSentinel === "Dodge">>
+    <<if $NPCs.CrimsonSentinel.CurSTM >= 15>>
+        <<run $combat_log.push('CrimsonSentinel gets ready to dodge.')>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 15>>
+        <<set $NPCs.CrimsonSentinel.evadeModifier to 75>>
+    <<else>>
+        <<run $combat_log.push('CrimsonSentinel is too tired to dodge.')>>
+    <</if>>
+<</if>>
+<</if>>
+
+/* Zegrath */
+
+<<if $partyMembers.includes("Zegrath")>>
+/* Doing nothing */
+<<if $attackZegrath === "Do nothing">>
+<<run $combat_log.push('Zegrath does nothing.')>>
+<</if>>
+/* Blocking */
+<<if $attackZegrath === "Block">>
+    <<if $NPCs.Zegrath.CurSTM >= 8>>
+        <<run $combat_log.push('Zegrath gets into a blocking stance.')>>
+        <<set $NPCs.Zegrath.CurSTM -= 8>>
+        <<set $NPCs.Zegrath.blockingModifier to 0.5>>
+    <<else>>
+        <<run $combat_log.push('Zegrath doesnt feel like blocking.')>>
+    <</if>>
+<</if>>
+/* Dodging */
+<<if $attackZegrath === "Dodge">>
+    <<if $NPCs.Zegrath.CurSTM >= 15>>
+        <<run $combat_log.push('Zegrath gets ready to dodge.')>>
+        <<set $NPCs.Zegrath.CurSTM -= 15>>
+        <<set $NPCs.Zegrath.evadeModifier to 75>>
+    <<else>>
+        <<run $combat_log.push('Zegrath does not feel like dodging.')>>
+    <</if>>
+<</if>>
+<</if>>
+
+/* Mobs attacking */
+<<set _npc = $NPCs[_i]>>
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+    /* BOARS */
+    <<if _mob[_i].name is "Wild Boar" or _mob[_i].name is "Ram"  && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        <<if _randomHit <= $partyMembers.length - 1>>
+            <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+            <<if _npc.evadeModifier <= _mobHit>>
+                <<if _mob[_i].CritChance <= _critChanceRNG>>
+                    <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _npc.blockingModifier>>
+                    <<set _npc.CurHP -= _mob[_i].baseDMG>>
+					<<set _npc.burnPotency += _mob[_i].burnPotencyDealt>>
+					<<set _npc.burnCountCur += _mob[_i].burnCountDealt>>
+                    <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                <<else>>
+                    <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                    <<set _npc.CurHP -= _mob[_i].baseDMG>>
+					<<set _npc.burnPotency += _mob[_i].burnPotencyDealt*2>>
+					<<set _npc.burnCountCur += _mob[_i].burnCountDealt*2>>
+                    <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                <</if>>
+            <<else>>
+              <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+            <</if>>
+            <<set _npc.blockingModifier to 1>>
+            <<set _npc.evadeModifier to 0>>
+        <<else>>
+            <<if $evadeModifier <= _mobHit>>
+                <<if _mob[_i].CritChance <= _critChanceRNG>>
+                    <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * $blockingModifier>>
+                    <<set $CurHP -= _mob[_i].baseDMG>>
+					<<set $burnPotency += _mob[_i].burnPotencyDealt>>
+					<<set $burnCountCur += _mob[_i].burnCountDealt>>
+                    <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                <<else>>
+                    <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                    <<set $CurHP -= _mob[_i].baseDMG>>
+					<<set $burnPotency += _mob[_i].burnPotencyDealt>>
+					<<set $burnCountCur += _mob[_i].burnCountDealt>>
+                    <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                <</if>>
+            <<else>>
+              <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+            <</if>>
+            <<set $blockingModifier to 1>>
+            <<set $evadeModifier to 0>>
+        <</if>>
+    <</if>>
+    /* RABBITS, WOLVES, MIMICS */
+    <<if _mob[_i].name is "Rabbit" or _mob[_i].name is "White wolf" or _mob[_i].name is "Glowing chest">>
+	<<if _mob[_i].turnChanceCur >= 0.01>>>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Slashing */
+        <<if _mobSkill >= 35>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' sank their claws into ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt * 1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' sank their claws into ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' sank their claws into ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' sank their claws into ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* Biting */
+        <<elseif _mobSkill <= 34>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].PierceSTR - (_npc.PierceDEF + _npc.armorPierceDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' bites ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - (_npc.PierceDEF + _npc.armorPierceDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' bites ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].PierceSTR - ($PierceDEF + $armorPierceDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' bites ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - ($PierceDEF + $armorPierceDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += ( _mob[_i].bleedPotencyDealt * 1.5 ) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' bites ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+	<</if>>
+    /* Plant monsters */
+    <<if _mob[_i].name is "Plant monster" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Slashing */
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' with its vines and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt * 1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' with its vines and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' with its vines and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' with its vines and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    /* Skeleton, Boulder guardian */
+    <<if _mob[_i].name is "Skeleton" or _mob[_i].name is "Oni" or _mob[_i].name is "Boulder guardian" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Mace strike */
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    /* Skulltron */
+    <<if _mob[_i].name is "Skulltron" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Slashing */
+        <<if _mobSkill >= 26>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* shield strike */
+        <<elseif _mobSkill <= 25>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+    /* Skeleton warrior */
+    <<if _mob[_i].name is "Skeleton warrior" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Slashing */
+        <<if _mobSkill >= 13>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* Charge */
+        <<elseif _mobSkill <= 12>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (_npc.PierceDEF + _npc.armorPierceDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt/2) * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (_npc.PierceDEF + _npc.armorPierceDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - ($PierceDEF + $armorPierceDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt/2) * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - ($PierceDEF + $armorPierceDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+    /* Deathlord */
+    <<if _mob[_i].name is "Deathlord" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Slashing */
+        <<if _mobSkill >= 7>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at you with his axe ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at you with his axe ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at you with his axe ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at you with his axe ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* Dual slash */
+        <<elseif _mobSkill <= 6>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.blockingModifier to _npc.blockingModifier / 2>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt*2>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*2) * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' comes in for a second attack and slashes at ' + _npc.name + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.blockingModifier to _npc.blockingModifier / 2>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt*2>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*3.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' comes in for a second attack and slashes at ' + _npc.name + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                        <<set $blockingModifier to $blockingModifier / 2>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt*2>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*2) * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' comes in for a second attack and slashes at ' + $gamename + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                        <<set $blockingModifier to $blockingModifier / 2>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt*2>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*3.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' comes in for a second attack and slashes at ' + $gamename + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+    /* Poisonous lizard */
+    <<if _mob[_i].name is "Poisonous lizard" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Tail whip */
+        <<if _mobSkill >= 7>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' whips its tail at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' whips its tail at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' whips its tail at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' whips its tail at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* Poisonous tongue */
+        <<elseif _mobSkill <= 6>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].PierceSTR - (_npc.PierceDEF + _npc.armorPierceDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' pierces ' + _npc.name + ' with its tongue and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, poisoning them.')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - (_npc.PierceDEF + _npc.armorPierceDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' pierces ' + _npc.name + ' with its tongue and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, poisoning them.')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].PierceSTR - ($PierceDEF + $armorPierceDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' pierces ' + $gamename + ' with its tongue and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, poisoning them.')>>
+                        <<set $poisoned1 to 12>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - ($PierceDEF + $armorPierceDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' pierces ' + $gamename + ' with its tongue and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, poisoning them.')>>
+                        <<set $poisoned1 to 15>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+    /* Boldegar */
+    <<if _mob[_i].name is "Boldegar" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Molten rock */
+        <<if _mobSkill >= 90>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].PierceSTR - (_npc.PierceDEF + _npc.armorPierceDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' throws a molten rock at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, setting them on fire.')>>
+						<<set _npc.burnPotency += _mob[_i].burnPotencyDealt>>
+						<<set _npc.burnCountCur += _mob[_i].burnCountDealt>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - (_npc.PierceDEF + _npc.armorPierceDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' throws a molten rock at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, setting them on fire.')>>
+						<<set _npc.burnPotency += _mob[_i].burnPotencyDealt*2>>
+						<<set _npc.burnCountCur += _mob[_i].burnCountDealt*2>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].PierceSTR - ($PierceDEF + $armorPierceDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' throws a molten rock at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, setting them on fire.')>>
+                        <<set $burnPotency += _mob[_i].burnPotencyDealt>>
+						<<set $burnCountCur += _mob[_i].burnCountDealt>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - ($PierceDEF + $armorPierceDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' throws a molten rock at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG, setting them on fire.')>>
+                        <<set $burnPotency += _mob[_i].burnPotencyDealt*2>>
+						<<set $burnCountCur += _mob[_i].burnCountDealt*2>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* Slam */
+        <<if _mobSkill >= 7>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (_npc.BluntDEF + _npc.armorBluntDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ($BluntDEF + $armorBluntDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Player killers */
+    <<if _mob[_i].name is "Player killer" && _mob[_i].turnChanceCur >= 0.01>>
+        <<set _mobSkill to random(0, 100)>>
+        <<set _randomHit to random(0, $partyMembers.length)>>
+        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+        <<set _mobHit to kitsuneRNG(0, 100)>>
+        /* Slashing */
+        <<if _mobSkill >= 13>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += _mob[_i].bleedPotencyDealt * _npc.bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (_npc.SlashDEF + _npc.armorSlashDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+						<<set _npc.bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set _npc.bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * _npc.bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - ($SlashDEF + $armorSlashDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
+						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        /* Paralize */
+        <<elseif _mobSkill <= 20>>
+            <<if _randomHit <= $partyMembers.length - 1>>
+                <<set _npc = $NPCs[$partyMembers[_randomHit]]>>
+                <<if _npc.evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (_npc.PierceDEF + _npc.armorPierceDEF)) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' stabs ' + _npc.name + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (_npc.PierceDEF + _npc.armorPierceDEF)) * _mob[_i].CritDMG) * _npc.blockingModifier>>
+                        <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' stabs ' + _npc.name + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set _npc.blockingModifier to 1>>
+                <<set _npc.evadeModifier to 0>>
+            <<else>>
+                <<if $evadeModifier <= _mobHit>>
+                    <<if _mob[_i].CritChance <= _critChanceRNG>>
+                        <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - ($PierceDEF + $armorPierceDEF)) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' stabs ' + $gamename + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                        <<if $paralized <= 0>>
+                            <<set $paralized to 8>>
+                        <</if>>
+                    <<else>>
+                        <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - ($PierceDEF + $armorPierceDEF)) * _mob[_i].CritDMG) * $blockingModifier>>
+                        <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' and stabs ' + $gamename + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + ' DMG')>>
+                        <<if $paralized <= 0>>
+                            <<set $paralized to 8>>
+                        <</if>>
+                    <</if>>
+                <<else>>
+                    <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
+                <</if>>
+                <<set $blockingModifier to 1>>
+                <<set $evadeModifier to 0>>
+            <</if>>
+        <</if>>
+    <</if>>
+    /* Other mobs? */
+<</for>>
+
+<<bleedTrigger>>
+<<burnEnemy>>
+
+/* Mobs dying */
+<<for _i = 0; _i lt $mobs.length; _i++>>
+  <<if _mob[_i].CurHP <= 0.01>>
+    <<MobRewards>>
+    <<run $combat_log.push('Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' has been slain.')>>
+  	<<run $mobs.deleteAt(_i)>>
+  <</if>>
+<</for>>
+
+/* FEED THE WOLFIE!!!!! */
+<<if $attack == "Feed dog">>
+<<set $attackText to "Feed dog">>
+	<<set $wolfTame += 1>>
+    <<set $ragoutMeat -= 1>>
+<</if>>
+
+/* WOLF TAMED */
+<<if $wolfTame >= 3 && $monstername === "Black wolf">>
+	<<goto "Wolf tame 1">>
+<</if>>
+
+<<dateadd '1m'>>
+
+/* DMG DEALT MSG + LIFE STEAL RING FIX */
+<<set $dmgDealt.Combat to 0>>
+
+/* Turns getting fixed for player turn */
+<<set $turnChanceCur to $turnChanceMax>>
+<<set $NPCs.RadiantRose.turnChanceCur to $NPCs.RadiantRose.turnChanceMax>>
+<<set $NPCs.ShadowScythe.turnChanceCur to $NPCs.ShadowScythe.turnChanceMax>>
+<<set $NPCs.CrimsonSentinel.turnChanceCur to $NPCs.CrimsonSentinel.turnChanceMax>>
+<<set $NPCs.Zegrath.turnChanceCur to $NPCs.Zegrath.turnChanceMax>>
+<<unset $bonusTurnPlayer>>
+<<unset $bonusTurnRadiantRose>>
+<<unset $bonusTurnShadowScythe>>
+<<unset $bonusTurnCrimsonSentinel>>
+<<unset $bonusTurnZegrath>>
+
+/* Bonus turn mob */
+<<for _i = 0; _i lt $mobs.length; _i++>>
+<<set _mob[_i].turnChanceCur -= 100>>
+<<set _bonusTurnRNG to random(100)>>
+<<if _mob[_i].turnChanceCur > _bonusTurnRNG>>
+  <<set _bonusTurn to true>>
+  <<set _mob[_i].bonusTurn to 1>>
+<</if>>
+<</for>>
+
+<<if _bonusTurn === true>>
+	/* Bonus turn activate for mob this time */
+    <<goto "Enemy turn">>
+<<elseif not $mobs.length && $floorBossBattle !== true>>
+	/* Combat end here */
+	<<goto "Combat win">>
+<</if>>
+
+<<if settings.turns === true>>
+    <<set $turns += 1>>
+	<<run $combat_log.push('<span class="turnCount">--| TURN ' + $turns + ' |--</span>')>>
+<</if>>
+
+<</link>>
+
+

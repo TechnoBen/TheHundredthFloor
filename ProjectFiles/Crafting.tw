@@ -1,0 +1,588 @@
+:: Crafting [no-party-time-loss] {"position":"1625,475","size":"100,100"}
+Craftable weapons:
+<<if $sword1 >= 1>>\
+<<if $crystalFragments >= 25>>\
+Copper sword with fragment pieces <<button "Upgrade cost: Copper sword and 25 fragment pieces">>
+<<if $CraftingSkill >= 0>>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $sword1 to false>>
+    <<set $crystalFragments -= 25>>
+	<<set $sword2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<<if $heavysword1 >= 1>>\
+<<if $crystalFragments >= 29>>\
+Copper heavy sword with fragment pieces <<button "Upgrade cost: Copper heavy sword and 29 fragment pieces">>
+<<if $CraftingSkill >= 0>>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $heavysword1 to false>>
+    <<set $crystalFragments -= 29>>
+	<<set $heavysword2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<<if $rapier1 >= 1>>\
+<<if $crystalFragments >= 29>>\
+Copper rapier with fragment pieces <<button "Upgrade cost: Copper rapier and 22 fragment pieces">>
+<<if $CraftingSkill >= 0>>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $rapier1 to false>>
+    <<set $crystalFragments -= 22>>
+	<<set $rapier2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<<if $swordnshield1 >= 1>>\
+<<if $crystalFragments >= 27>>\
+Copper sword and a shield with fragment pieces <<button "Upgrade cost: Copper sword and shield and 27 fragment pieces">>
+<<if $CraftingSkill >= 0>>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $swordnshield1 to false>>
+    <<set $crystalFragments -= 27>>
+	<<set $swordnshield2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<<if $dagger1 >= 1 && $crystalFragments >= 19 && $CraftingSkill >= 0>>\
+Copper dagger with fragment pieces <<button "Upgrade cost: Copper dagger and 19 fragment pieces">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $dagger1 to false>>
+    <<set $crystalFragments -= 19>>
+	<<set $dagger2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $mace1 >= 1 && $crystalFragments >= 23 && $CraftingSkill >= 0>>\
+Copper mace with fragment pieces <<button "Upgrade cost: Copper mace and 23 fragment pieces">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $mace1 to false>>
+    <<set $crystalFragments -= 23>>
+	<<set $mace2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $gauntlets1 >= 1 && $crystalFragments >= 27 && $CraftingSkill >= 0>>\
+Copper mace with fragment pieces <<button "Upgrade cost: Copper gauntlets and 27 fragment pieces">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $gauntlets1 to false>>
+    <<set $crystalFragments -= 27>>
+	<<set $gauntlets2 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 32>>\
+Iron sword <<button "Crafting cost: 32 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 32>>
+    <<set $sword4 to true>>
+    <<set $CraftingXP += 50 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 35>>\
+Iron sword and shield <<button "Crafting cost: 35 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 35>>
+    <<set $swordnshield4 to true>>
+    <<set $CraftingXP += 56 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 27>>\
+Iron rapier <<button "Crafting cost: 27 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 27>>
+    <<set $rapier4 to true>>
+    <<set $CraftingXP += 41 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 40>>\
+Iron heavy sword <<button "Crafting cost: 40 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 40>>
+    <<set $heavysword4 to true>>
+    <<set $CraftingXP += 60 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 28>>\
+Iron dagger <<button "Crafting cost: 28 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 28>>
+    <<set $dagger4 to true>>
+    <<set $CraftingXP += 50 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 31>>\
+Iron mace <<button "Crafting cost: 31 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 31>>
+    <<set $mace4 to true>>
+    <<set $CraftingXP += 50 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 32>>\
+Iron gauntlets <<button "Crafting cost: 32 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 32>>
+    <<set $gauntlets4 to true>>
+    <<set $CraftingXP += 50 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $sword4 >= 1 && $planks > 4>>\
+Iron sword with a wooden handle <<button "Upgrade cost: Iron sword and 4 planks">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $sword4 to false>>
+    <<set $planks -= 4>>
+	<<set $sword5 to true>>
+    <<set $CraftingXP += 10 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $heavysword4 >= 1 && $planks > 6>>\
+Iron heavy sword with a wooden handle <<button "Upgrade cost: Iron heavy sword and 6 planks">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $heavysword4 to false>>
+    <<set $planks -= 6>>
+	<<set $heavysword5 to true>>
+    <<set $CraftingXP += 12 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $rapier4 >= 1 && $planks > 2>>\
+Iron rapier with a wooden handle <<button "Upgrade cost: Iron rapier and 2 planks">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $rapier4 to false>>
+    <<set $planks -= 2>>
+	<<set $rapier5 to true>>
+    <<set $CraftingXP += 6 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $swordnshield4 >= 1 && $planks > 5>>\
+Iron sword and a shield with a wooden handle <<button "Upgrade cost: Iron sword and shield and 5 planks">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $swordnshield4 to false>>
+    <<set $planks -= 5>>
+	<<set $swordnshield5 to true>>
+    <<set $CraftingXP += 11 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $dagger4 >= 1 && $planks > 3>>\
+Iron dagger with a wooden handle <<button "Upgrade cost: Iron dagger and 3 planks">>
+	<<dateadd '13m'>>
+  <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $dagger4 to false>>
+  <<set $planks -= 3>>
+	<<set $dagger5 to true>>
+  <<set $CraftingXP += 10 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $mace4 >= 1 && $planks > 4>>\
+Iron mace with a wooden handle <<button "Upgrade cost: Iron mace and 4 planks">>
+	<<dateadd '13m'>>
+  <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $mace4 to false>>
+  <<set $planks -= 4>>
+	<<set $mace5 to true>>
+  <<set $CraftingXP += 10 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $gauntlets4 >= 1 && $crystalFragments > 5>>\
+Iron gauntlets with crystal fragments <<button "Upgrade cost: Iron dagger and 5 crystal fragments">>
+	<<dateadd '13m'>>
+  <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $gauntlets4 to false>>
+  <<set $crystalFragments -= 5>>
+	<<set $gauntlets5 to true>>
+  <<set $CraftingXP += 10 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 40>>\
+Iron breastplate <<button "Crafting cost: 40 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 40>>
+    <<set $ironBP to true>>
+    <<set $CraftingXP += 30 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 35>>\
+Iron leg guards <<button "Crafting cost: 35 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 35>>
+    <<set $ironGuards to true>>
+    <<set $CraftingXP += 25 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 29>>\
+Iron feet guards <<button "Crafting cost: 29 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 29>>
+    <<set $ironFG to true>>
+    <<set $CraftingXP += 20 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 45>>\
+Iron chestplate <<button "Crafting cost: 45 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 45>>
+    <<set $ironCP to true>>
+    <<set $CraftingXP += 45 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 37>>\
+Iron pants <<button "Crafting cost: 37 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 37>>
+    <<set $ironP to true>>
+    <<set $CraftingXP += 41 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $iron >= 32>>\
+Iron boots <<button "Crafting cost: 32 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $iron -= 32>>
+    <<set $ironB to true>>
+    <<set $CraftingXP += 37 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 0>>
+<<if $wolfFur >= 15>>\
+<<if $crystalFragments >= 3>>\
+Wolf fur cape <<button "Crafting cost: 15 wolf fur and 3 fragment pieces">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 35>>
+	<<set $wolfFur -= 15>>
+    <<set $crystalFragments -= 3>>
+	<<set $cape5 to true>>
+    <<set $CraftingXP += 50 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<</if>>\
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 20 && $planks >= 3>>\
+Oni teeth sword <<button "Crafting cost: 20 oni teeth and 3 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 20>>
+    <<set $planks -= 3>>
+    <<set $sword6 to true>>
+    <<set $CraftingXP += 112 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 27 && $planks >= 5>>\
+Oni teeth sword and shield <<button "Crafting cost: 27 oni teeth and 5 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 27>>
+    <<set $planks -= 5>>
+    <<set $swordnshield6 to true>>
+    <<set $CraftingXP += 127 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 17 && $planks >= 3>>\
+Oni teeth rapier <<button "Crafting cost: 17 oni teeth and 3 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 17>>
+    <<set $planks -= 3>>
+    <<set $rapier6 to true>>
+    <<set $CraftingXP += 100 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 32 && $planks >= 5>>\
+Oni teeth heavy sword <<button "Crafting cost: 32 oni teeth and 5 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 32>>
+    <<set $planks -= 5>>
+    <<set $heavysword6 to true>>
+    <<set $CraftingXP += 141 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 18 && $planks >= 3>>\
+Oni teeth dagger <<button "Crafting cost: 18 oni teeth and 3 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 18>>
+    <<set $planks -= 3>>
+    <<set $dagger6 to true>>
+    <<set $CraftingXP += 102 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 22 && $planks >= 3>>\
+Oni teeth mace <<button "Crafting cost: 22 oni teeth and 3 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 22>>
+    <<set $planks -= 3>>
+    <<set $mace6 to true>>
+    <<set $CraftingXP += 124 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniTeeth >= 22 && $planks >= 3>>\
+Oni teeth gauntlets <<button "Crafting cost: 22 oni teeth and 3 planks">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniTeeth -= 22>>
+    <<set $planks -= 3>>
+    <<set $gauntlets6 to true>>
+    <<set $CraftingXP += 134 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $sword6 >= 1 && $oniLeather > 10>>\
+Oni teeth sword with oni leather <<button "Upgrade cost: Oni teeth sword and 10 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $sword6 to false>>
+    <<set $oniLeather -= 10>>
+	<<set $sword7 to true>>
+    <<set $CraftingXP += 32 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $heavysword6 >= 1 && $oniLeather > 11>>\
+Oni teeth heavy sword with oni leather <<button "Upgrade cost: Oni teeth heavy sword and 11 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $heavysword6 to false>>
+    <<set $oniLeather -= 11>>
+	<<set $heavysword7 to true>>
+    <<set $CraftingXP += 36 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $rapier6 >= 1 && $oniLeather > 8>>\
+Oni teeth rapier with oni leather <<button "Upgrade cost: Oni teeth rapier and 8 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $rapier6 to false>>
+    <<set $oniLeather -= 8>>
+	<<set $rapier7 to true>>
+    <<set $CraftingXP += 27 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $swordnshield6 >= 1 && $oniLeather > 15>>\
+Oni teeth sword and a shield with oni leather <<button "Upgrade cost: Oni teeth sword and shield and 15 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $swordnshield6 to false>>
+    <<set $oniLeather -= 15>>
+	<<set $swordnshield7 to true>>
+    <<set $CraftingXP += 44 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $dagger6 >= 1 && $oniLeather > 8>>\
+Oni teeth dagger with oni leather <<button "Upgrade cost: Oni teeth dagger and 8 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $dagger6 to false>>
+    <<set $oniLeather -= 8>>
+	<<set $dagger7 to true>>
+    <<set $CraftingXP += 32 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $mace6 >= 1 && $oniLeather > 10>>\
+Oni teeth mace with oni leather <<button "Upgrade cost: Oni teeth mace and 10 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $mace6 to false>>
+    <<set $oniLeather -= 10>>
+	<<set $mace7 to true>>
+    <<set $CraftingXP += 32 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $gauntlets6 >= 1 && $oniLeather > 10>>\
+Oni teeth gauntlets with oni leather <<button "Upgrade cost: Oni teeth gauntlets and 10 oni leather">>
+	<<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+	<<set $curFatigue += 15>>
+	<<set $sword6 to false>>
+    <<set $oniLeather -= 10>>
+	<<set $gauntlets7 to true>>
+    <<set $CraftingXP += 32 + $INT*2>>
+	<<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniLeather >= 20>>\
+Light Oni leather chestplate <<button "Crafting cost: 20 oni leather">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniLeather -= 20>>
+    <<set $lOniCP to true>>
+    <<set $CraftingXP += 39 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniLeather >= 16>>\
+Light Oni leather pants <<button "Crafting cost: 16 oni leather">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniLeather -= 16>>
+    <<set $lOniP to true>>
+    <<set $CraftingXP += 37 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniLeather >= 10>>\
+Light Oni leather boots <<button "Crafting cost: 10 oni leather">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniLeather -= 10>>
+    <<set $lOniB to true>>
+    <<set $CraftingXP += 33 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniLeather >= 21 && $iron >=13>>\
+Heavy Oni leather and iron chestplate <<button "Crafting cost: 21 oni leather and 13 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniLeather -= 21>>
+    <<set $iron -= 13>>
+    <<set $hOniCP to true>>
+    <<set $CraftingXP += 55 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniLeather >= 17 && $iron >= 8>>\
+Heavy Oni leather and iron pants <<button "Crafting cost: 17 oni leather and 8 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniLeather -= 17>>
+    <<set $iron -= 8>>
+    <<set $hOniP to true>>
+    <<set $CraftingXP += 50 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+<<if $CraftingSkill >= 1 && $oniLeather >= 13 && $iron >= 5>>\
+Heavy Oni leather and iron boots <<button "Crafting cost: 13 oni leather and 5 iron">>
+    <<dateadd '13m'>>
+    <<set $craftedMats += 1>>
+    <<set $curFatigue += 15>>
+    <<set $oniLeather -= 13>>
+    <<set $iron -= 5>>
+    <<set $hOniB to true>>
+    <<set $CraftingXP += 46 + $INT*2>>
+    <<goto "Crafting">>
+<</button>>
+<</if>>\
+
+<<link "Go back">>
+<<goto $lastvisitedpassage1>>
+<</link>>
+
+

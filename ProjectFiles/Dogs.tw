@@ -1,0 +1,13 @@
+:: Dogs {"position":"750,1450","size":"100,100"}
+<span class="crimson">"I completely agree with you $gamename Dogs are cleary better than cats because they are friendly and absolutely love you while cats don't love you and aren't that freidnly."</span>
+<span class= "shadow">"$gamename you have ended this world..."</span>
+<span class= "crimson"> "Anyways do you want to join my party? I'll be farming for some boar meat..."</span>
+"Yeah sure..."
+
+<<link [[Town centre]]>>
+<<run $partyMembers.push("CrimsonSentinel")>>
+<<set $hasSpokenWithCrimson to true>>  
+<<set $partyON to true>>
+<</link>>
+
+

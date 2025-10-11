@@ -1,0 +1,31 @@
+:: 0.1.8 [NoSave] {"position":"200,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+- Added some text to the start
+- CHRISTMAS EVENT!!! (itch.io only, lasts till the end of the year)
+- Added stamina regeneration outside of combat (suggested by _optimystic.)
+- Changed the maximum undos from 100 (or so) to 5. This will make the game less laggy for some + it makes the save file size smaller.
+- Moved the option to use your achievement points to after character customization as it was restarting the character whenever u go back
+- Added the Marcellus coat
+- Added a setting to make the sidebar bars (hp, fatigue, hunger and stamina) bigger (suggested by _optimystic.)
+- Added Zegraths introduction and interactions (thanks to kitsune and mrhugs_prv for helping)
+- Added a new small location (thanks to Nny for helping me with naming, reading and suggesting stuff)
+- Added a icon the tab of the page (thanks to the twince discord server)
+- Finished the Marcellus event
+- Added more random interactions (F2)
+- Remade and completed a sidestory that can be found on F2. It will continue on the next floor.
+- Started working on the floor dungeon
+- Made kills appear if you have more than 1 in the kill list
+- Poison effect which deals 5% of your current hp
+
+- Fixed combat text and added a bit more text to it.
+- Fixed a bug where you could get stuff from the achievement points even if u didnt haven enough points
+- Fixed a typo in the F1 boss room
+
+NEW ENEMIES:
+Boulder guardian
+Poisonous lizard
+ 
+[[Back|Changelogs and game information]]
+
+

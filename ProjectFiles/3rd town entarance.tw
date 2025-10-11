@@ -1,0 +1,46 @@
+:: 3rd town entarance [Town] {"position":"4025,1725","size":"100,100"}
+You are inside the town, there seems to be a lot of benches and a few people sitting on them.
+There is a huge garden with light blue and dark blue flowers. Snow seems to be under the flowers.
+Looking around you see that the houses are mostly made out of stone bricks and dark wood.
+
+
+You can:
+<<link [[Rob a player|Robbing]]>>
+<<set $robbedCoins to random(125, 500)>>
+<<dateadd '25m'>>
+<<set $curFatigue += 75>>
+<<set $Reputation -= 15>>
+<<set $lastVisitedPassage to passage()>>
+<</link>>
+<<if $event5part2 <= 2>><<link [[Look for JustifiedBlade12|Molly event 3]]>> <<set $event5part2 += 1>> <</link>><</if>>\
+
+Directions:
+1. <<link [[Go down the street|Town street 2]]>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Town street 2">>
+		<<goto "Encounter F2">>
+    <</if>>
+<<dateadd '5m'>>
+<</link>>
+2. <<link [[Go outside the town|Path 10.3]]>>
+<<dateadd '2m'>> <<set $location to "snowy1">>
+<<set $lastVisitedPassage to "Path 10.3">>
+<</link>>
+
+Locations:
+1. <<if setup.datesystems.default.getDate().h gte 8 and setup.datesystems.default.getDate().h lte 18>> <<link [[Go to the armor shop|Armor shop 2]]>> <<dateadd '1m'>> <</link>> <<else>>Armor shop | Closed<</if>>
+2. <<link [[Go to the hospital|Hospital 1]]>>
+<<dateadd '2m'>>
+<</link>>
+3.<<nobr>><<if $tppadFOUR == false>>
+<<link [[Teleportaion pad|Tp pad 4 purchase]]>>
+<</link>>
+<<elseif $tppadFOUR == true>>
+<<link [[Teleportaion pad|Tp pad]]>>
+<<set $lastVisitedPassage1 to "3rd town entarance">> 
+<</link>>
+<</if>>
+<</nobr>>
+
+

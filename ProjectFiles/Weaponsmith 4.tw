@@ -1,0 +1,11 @@
+:: Weaponsmith 4 {"position":"3900,1850","size":"100,100"}
+You enter the weaponsmith to see a buff man hitting a sword on a anvil...
+There are a lot of sword displayed on the counter and some attached on the walls.
+
+"Ya here for a weapon kid?" he says still hitting the sword on the anvil. "Get whatever sword you want and leave the money on the counter. Im too busy to sell you a sword right now." he says.
+
+1. [[Buy weapons|Buy weapons 3]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Weaponsmith 4">> <</link>>
+3. <<link [[Go back|Town street 2]]>> <<dateadd '1m'>> <</link>>
+
+

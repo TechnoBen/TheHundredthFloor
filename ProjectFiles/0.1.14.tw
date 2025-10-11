@@ -1,0 +1,19 @@
+:: 0.1.14 [NoSave] {"position":"350,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+<span class="death">The update is small but there are a few items and stuff kept out of the changelog due to the christmas event.</span>
+
+- Updated SugarCubes version to prevent issues when someone opens the game in twine lol
+- Made the maximum save files to 16... SC wouldnt let me do more otherwise game crashes :(
+- Removed the tree person link in the debug menu, I forgot to do that after testing lol
+- Added a random character button at the character creation UI
+- Added a christmas event currency
+- Added a christmas event shop
+
+- (hopefully) fixed all places where theres a blank space in menus that have lines. No idea why that got fucked over after the SC update but it is what it is.
+- Fixed the new achievement button not being in the style of other buttons. My bad.
+- Fixed some places taking hunger/fatigue/party time whenever you buy stuff.
+
+[[Back|Changelogs and game information]]
+
+

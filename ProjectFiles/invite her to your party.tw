@@ -1,0 +1,17 @@
+:: invite her to your party {"position":"1000,1775","size":"100,100"}
+"Hey Radiant." you say
+<span class="radiant">"What is it $gamename"</span> she responds...
+"Wanna join my party?"
+<span class="radiant">"Yeah sure."</span> she says as you send her a party request. She accepts it.
+
+<<link "Go back">> 
+	<<if $partyMembers.includes("RadiantRose") or $partyMembers.length >= 3>>
+	<<else>>
+		<<run $partyMembers.push("RadiantRose")>>
+		<<set $partyON to true>>
+		<<dateadd '5m'>>
+	<</if>>
+    <<goto $lastVisitedPassage>>
+<</link>>
+
+

@@ -1,0 +1,12 @@
+:: nothingrn {"position":"456.6666679382324,1449.333251953125","size":"100,100"}
+<span class="radiant">"Hey $name! I finally found you."</span> you hear your sister screaming.
+"DON'T SAY MY REAL NAME YOU DUMBASS!"
+<span class="radiant">"Sorry... Anyways what do we do now?"</span>
+"I'll send you a party request." you say as you open the [SOCIAL], scrolling through your friends list and clicking on RadiantRose. A screen appeared infront of her saying "Party request from $gamename! Do you accept it? [YES] [NO]". She clicks yes.
+"Now we will go kill some boars so we can get our level higer." you say. She nods and you guys head to the plains
+
+<<link [[Next|Plains]]>>
+<<dateadd '10m'>> <<set $partyON to true>> <<set $lastVisitedPassage to "Plains">> <<set $location to "plains">> <<run $partyMembers.push("RadiantRose")>>
+<</link>>
+
+

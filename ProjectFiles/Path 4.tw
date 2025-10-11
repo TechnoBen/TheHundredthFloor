@@ -1,0 +1,27 @@
+:: Path 4 [Path] {"position":"1725,2400","size":"100,100"}
+You noticed that there is a forest nearby. There's another path to the right. You suddenly remember that it leads to a small hut in the forest that had a npc in it.
+There are also stronger mobs... So you better be careful...
+
+Directions:
+1. <<link [[Go forward|Path5]]>> <<dateadd '10m'>> <<set $curFatigue += 25>>
+ <<set $lastVisitedPassage to "Path5">>
+<<Plains1>>
+<</link>>
+2. <<link [[Follow the 2nd path|Path 3.1]]>>
+	<<set $curFatigue += 15>>
+	<<dateadd '15m'>>
+	<<set $location to "forest1">>
+<</link>>
+3. <<link [[Go backward|Path 3]]>>
+    <<dateadd '30m'>>
+    <<set $curFatigue += 25>>
+    <<set $lastVisitedPassage to "Path 3">>
+   <<Plains1>>
+<</link>>
+<<nobr>>
+<<if $pathDone == true>>4. <<link [[Path to your house|Forest fin outside]]>>
+<<dateadd '25m'>> <<set $curFatigue += 23>> <<set $location to "forest1">>
+<</link>> <</if>>
+<</nobr>> 
+
+

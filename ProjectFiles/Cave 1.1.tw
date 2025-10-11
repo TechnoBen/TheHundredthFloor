@@ -1,0 +1,16 @@
+:: Cave 1.1 [Town] {"position":"4400,1150","size":"100,100"}
+You entered the cave. Its pretty dark and you can't see well.
+
+1. <<link [[Continue|Cave 1.2]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Cave 1.2">>
+<<F2Cave>>
+<</link>>
+2. <<link [[Go back|Path 7.6]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<<set $location to "snowy1">>
+<</link>>
+
+

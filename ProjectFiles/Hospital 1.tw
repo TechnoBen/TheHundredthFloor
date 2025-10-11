@@ -1,0 +1,8 @@
+:: Hospital 1 {"position":"3775,1725","size":"100,100"}
+You enter the hospital.
+Infront of you there's a doctor. He seems to be a player.
+
+1. <<link [[Ask for healing|Doc heal 1]]>> <</link>>
+2. <<link [[Go back|3rd town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

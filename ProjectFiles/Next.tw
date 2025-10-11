@@ -1,0 +1,15 @@
+:: Next {"position":"150,1825","size":"100,100"}
+You finally found your sister. She is looking at a necklace from a window of a store.
+"Oi sis! I finally found you." You shout at your sister. She looks at you <span class="radiant">"Oh we finally found eachother!"</span> she replies 
+
+"What do you mean 'we' I found YOU. I bet you stared at that necklace since we got here."
+<span class="radiant">"Hey that's not true!... Anyways what are we going to do now that we found each other?"</span>
+You open your menu and clicked on the [SOCIAL] tab. After that you scrolled through It and found RadiantRose then you sent her a party request. "Accept my party request and let's go to the plains." you said as a screen appeared in front of her that said "Party request from $gamename! Do you accept it? [YES] [NO]" and she clicked on yes.
+
+You and your sister left the town going to the plains.
+
+<<link [[Next|Plains]]>>
+<<dateadd '10m'>> <<set $partyON to true>> <<set $lastVisitedPassage to "Plains">> <<set $location to "plains">> <<run $partyMembers.push("RadiantRose")>>
+<</link>>
+
+

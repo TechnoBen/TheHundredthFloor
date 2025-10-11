@@ -1,0 +1,208 @@
+:: Mob rewards [widget] {"position":"2250,725","size":"100,100"}
+<<widget "MobRewards">>
+    <<set $CurXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+    <<set $combatXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+    <<set $Coins += _mob[_i].Coins>>
+    <<set $combatCol += _mob[_i].Coins>>
+    <<set $attack to "Empty">>
+    <<if $partyMembers.includes("RadiantRose")>>
+        <<set $NPCs.RadiantRose.CurXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+     <<else>>
+    <<set $NPCs.RadiantRose.CurXP += _mob[_i].XP/2 + (_mob[_i].lvl*1.5)>>
+    <</if>>
+    <<if $partyMembers.includes("ShadowScythe")>>
+        <<set $NPCs.ShadowScythe.CurXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+     <<else>>
+    <<set $NPCs.ShadowScythe.CurXP += _mob[_i].XP/2 + (_mob[_i].lvl*1.5)>>
+    <</if>>
+    <<if $partyMembers.includes("CrimsonSentinel")>>
+        <<set $NPCs.CrimsonSentinel.CurXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+     <<else>>
+    <<set $NPCs.CrimsonSentinel.CurXP += _mob[_i].XP/2 + (_mob[_i].lvl*1.5)>>
+    <</if>>
+    <<if $partyMembers.includes("Zegrath")>>
+        <<set $NPCs.Zegrath.CurXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+     <<else>>
+    <<set $NPCs.Zegrath.CurXP += _mob[_i].XP/2 + (_mob[_i].lvl*1.5)>>
+    <</if>>
+    <<if $partyMembers.includes("Love4Mary")>>
+        <<set $NPCs.Marcellus.CurXP += _mob[_i].XP + (_mob[_i].lvl*1.5)>>
+     <<else>>
+    <<set $NPCs.Marcellus.CurXP += _mob[_i].XP/2 + (_mob[_i].lvl*1.5)>>
+    <</if>>
+    
+    /* Events */
+    /* Anniversary */
+           <<if $OneYearTHF === true>>
+            <<set $AnniversaryCoinDrop to Math.round(kitsuneRNG(1, 20) + kitsuneRNG(1, 20)*(_mob[_i].lvl/6))>>
+        <</if>>
+    /* Christmas */
+           <<if $christmasEvent === true>>
+            <<set $candyCanesCurDrop to Math.round(kitsuneRNG(1, 20) + kitsuneRNG(1, 20)*(_mob[_i].lvl/6))>>
+        <</if>>
+    
+    /* Anniversary coin drops get set in Combat remake when the mob gets to 0 hp */
+    <<if $OneYearTHF === true>>
+        <<set $AnniversaryCoins += $AnniversaryCoinDrop>>
+    <</if>>
+    
+    /* Candy cane drops get set in Combat remake when the mob gets to 0 hp */
+    <<if $christmasEvent === true>>
+        <<set $candyCanesCur += $candyCanesCurDrop>>
+    <</if>>
+    
+    <<set $dailyKills += 1>>
+    
+    <<if $traits.Bloodlust>>
+        <<set $STRPercentBuff += 0.5>> 
+    <</if>>
+    
+    <<if _mob[_i].name is "Wild Boar">>
+        <<set $killedBoars += 1>>
+        <<set $boarMeat += 1>>
+        <<run $combat_drops.push("Boar meat")>>
+        <<set $lootchance to random(100)>>
+        <<if $lootchance lte 27>>
+            <<set $boarLeather += 1>>
+            <<run $combat_drops.push("Boar leather")>>
+        <</if>>
+    <<elseif _mob[_i].name is "Ram">>
+        <<set $killedRams += 1>>
+        <<set $lootchance to random(100)>>
+        <<if $lootchance lte 35>>
+            <<set $ramHorn += 1>>
+            <<run $combat_drops.push("Ram horn")>>
+        <</if>>
+    <<elseif _mob[_i].name is "Rabbit">>
+        <<set $killedRabbits += 1>>
+        <<set $ragoutMeat += 1>>
+        <<run $combat_drops.push("Ragout meat")>>
+    <<elseif _mob[_i].name is "Plant monster">>
+        <<set $killedPM += 1>>
+    <<elseif _mob[_i].name is "Skeleton">>
+        <<set $lootchance to random(1000)>>
+        <<set $killedSK += 1>>
+        <<set $crystalFragments += 1>>
+        <<run $combat_drops.push("Crystal fragment")>>
+        <<if $lootchance lte 5>>
+            <<set $ringOfTheUndead += 1>>
+            <<run $combat_drops.push("Ring of the Undead")>>
+        <</if>>
+    <<elseif _mob[_i].name is "Skeleton warrior">>
+        <<set $lootchance to random(1000)>>
+        <<set $killedSWK += 1>>
+        <<set $crystalFragments += 1>>
+        <<run $combat_drops.push("Crystal fragment")>>
+        <<if $lootchance lte 5>>
+            <<set $ringOfTheUndead += 1>>
+            <<run $combat_drops.push("Ring of the Undead")>>
+        <</if>>
+    <<elseif _mob[_i].name is "White wolf">>
+        <<set $lootchance to random(100)>>
+        <<if $lootchance lte 45>>
+            <<set $wolfMeat += 1>>
+            <<run $combat_drops.push("Wolf meat")>>
+        <<elseif $lootchance lte 75>>
+            <<set $wolfFur += 1>>
+            <<run $combat_drops.push("Wolf fur")>>
+        <</if>>
+        <<set $killedWW += 1>>
+    <<elseif _mob[_i].name is "White wolf pup">>
+        <<set $lootchance to random(100)>>
+        <<if $lootchance lte 45>>
+            <<set $wolfMeat += 1>>
+            <<run $combat_drops.push("Wolf meat")>>
+        <<elseif $lootchance lte 75>>
+            <<set $wolfFur += 1>>
+            <<run $combat_drops.push("Wolf fur")>>
+        <</if>>
+        <<set $killedWWP += 1>>
+    <<elseif _mob[_i].name is "Skulltron">>
+        <<set $cape4 to true>>
+        <<run $combat_drops.push("Otherworldly Remnant")>>
+    <<elseif _mob[_i].name is "PKer">>
+        <<set $lootchance to random(100)>>
+        <<goto "win PKer">>
+    <<elseif _mob[_i].name is "ShadowScythe">>
+        <<goto "win SC">>
+    <<elseif _mob[_i].name is "Oni">>
+        <<set $lootchance to random(100)>>
+        <<set $killedOnis += 1>>
+        <<if $lootchance lte 15>>
+            <<set $oniLeather += 1>>
+            <<run $combat_drops.push("Oni leather")>>
+        <<elseif $lootchance lte 30>>
+            <<set $oniTeeth += 1>>
+            <<run $combat_drops.push("Oni tooth")>>
+        <<elseif $lootchance lte 45>>
+            <<set $oniTeeth += 1>>
+            <<run $combat_drops.push("Oni leather")>>
+            <<run $combat_drops.push("Oni tooth")>>
+            <<set $oniLeather += 1>>
+        <<elseif $lootchance lte 60>>
+            <<set $oniTeeth += 3>>
+            <<run $combat_drops.push("3 oni teeth")>>
+        <<elseif $lootchance lte 90>>
+            <<set $oniLeather += 3>>
+            <<run $combat_drops.push("3 oni leather")>>
+        <<elseif $lootchance lte 100>>
+            <<set $oniLeather += 3>>
+            <<run $combat_drops.push("3 oni teeth")>>
+            <<run $combat_drops.push("3 oni leather")>>
+            <<set $oniTeeth += 3>>
+        <</if>>
+    <<elseif _mob[_i].name is "Black wolf">>
+        <<goto "win Black wolf">>
+    <<elseif _mob[_i].name is "Zegrath">>
+        <<goto "win Zegrath">>
+    <<elseif _mob[_i].name is "Love4Mary">>
+        <<goto "win Marcellus">>
+    <<elseif _mob[_i].name is "Poisonous lizard">>
+        <<set $killedPZ += 1>>
+    <<elseif _mob[_i].name is "Glowing chest">>
+        <<set $killedGC += 1>>
+    <<elseif _mob[_i].name is "Boulder guardian">>
+        <<set $lootchance to random(100)>>
+        <<set $killedBG += 1>>
+        <<if $lootchance lte 25>>
+            <<set $iron += 1>>
+            <<run $combat_drops.push("Iron")>>
+        <<elseif $lootchance lte 35>>
+            <<set $iron += 2>>
+            <<run $combat_drops.push("2 iron")>>
+        <<elseif $lootchance lte 40>>
+            <<run $combat_drops.push("4 iron")>>
+            <<set $iron += 4>>
+        <</if>>
+    <</if>>
+    
+    
+    /*Floor bosses*/
+    <<if $floorBossBattle == true>>
+        <<if _mob[_i].CurHP lte 0 && _mob[_i].name is "Deathlord">>
+            <<if $blueRaid == true>>
+                <<goto "Blue f1boss">>
+            <<else>>
+                <<goto "win F1Boss">>
+            <</if>>
+        <<elseif _mob[_i].CurHP lte 0 && _mob[_i].name is "Boldegar">>
+              <<if $blueRaid == true>>
+                <<goto "Blue f2boss">>
+            <<else>>
+                <<goto "win F2Boss">>
+            <</if>>
+        <</if>>
+    <</if>>
+    
+    /* Trait related stuff in here */
+    
+    /*Boss rush mode*/
+    <<if _mob[_i].name is "Deathlord" && $bossRush >= 1 && _mob[_i].CurHP lte 0>>
+        <<goto "bossrush f1 win">>
+    <</if>>
+    <<if _mob[_i].name is "Boldegar" && $bossRush >= 1 && _mob[_i].CurHP lte 0>>
+        <<goto "bossrush f2 win">>
+    <</if>>
+    <</widget>>
+
+

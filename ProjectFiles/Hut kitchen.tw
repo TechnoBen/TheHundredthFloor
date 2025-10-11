@@ -1,0 +1,12 @@
+:: Hut kitchen [no-party-time-loss] {"position":"2100,2925","size":"100,100"}
+You enter the kitchen.
+Inside there's a fridge and a oven.
+
+You can:
+1. <<link [[Cook|Cooking]]>>
+<<set $lastvisitedpassage1 to "Hut kitchen">>
+<</link>>
+2. [[Go back|Forest hut corridor]] 
+
+
+

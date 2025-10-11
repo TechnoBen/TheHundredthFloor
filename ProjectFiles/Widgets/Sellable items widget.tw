@@ -1,0 +1,139 @@
+:: Sellable items widget [widget] {"position":"2000,725","size":"100,100"}
+/*Make sure to put this shit in a <ol>*/
+
+/*Mob loot*/
+<<widget "SellMobLoot">>
+<<if $boarLeather > 0>>
+    <li>Sell boar leather for 7 coins (You have $boarLeather) <<link "Sell 1">>
+        <<set $boarLeather -= 1>> 
+        <<set $Coins += 7>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $boarLeather >= 5>>| <<link "Sell 5">>    
+        <<set $boarLeather -= 5>> 
+        <<set $Coins += 35>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $boarLeather >= 10>>| <<link "Sell 10">> 
+        <<set $boarLeather -= 10>>
+        <<set $Coins += 70>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<<if $ramHorn > 0>>
+    <li>Sell ram horn for 5 coins (You have $ramHorn) <<link "Sell 1">>
+        <<set $ramHorn -= 1>> 
+        <<set $Coins += 5>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $ramHorn >= 5>>| <<link "Sell 5">>    
+        <<set $ramHorn -= 5>> 
+        <<set $Coins += 25>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $ramHorn >= 10>>| <<link "Sell 10">> 
+        <<set $ramHorn -= 10>>
+        <<set $Coins += 50>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<<if $crystalFragments > 0>>
+    <li>Sell Crystalf fragments for 11 coins (You have $crystalFragments) <<link "Sell 1">>
+        <<set $crystalFragments -= 1>> 
+        <<set $Coins += 11>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $crystalFragments >= 5>>| <<link "Sell 5">>    
+        <<set $crystalFragments -= 5>> 
+        <<set $Coins += 55>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $crystalFragments >= 10>>| <<link "Sell 10">> 
+        <<set $crystalFragments -= 10>>
+        <<set $Coins += 110>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<<if $wolfFur > 0>>
+    <li>Sell wolf fur for 20 coins (You have $wolfFur) <<link "Sell 1">>
+        <<set $wolfFur -= 1>> 
+        <<set $Coins += 20>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $wolfFur >= 5>>| <<link "Sell 5">>    
+        <<set $wolfFur -= 5>> 
+        <<set $Coins += 100>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $wolfFur >= 10>>| <<link "Sell 10">> 
+        <<set $wolfFur -= 10>>
+        <<set $Coins += 200>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<<if $oniLeather > 0>>
+    <li>Sell Oni leather for 32 coins (You have $oniLeather) <<link "Sell 1">>
+        <<set $oniLeather -= 1>> 
+        <<set $Coins += 32>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $oniLeather >= 5>>| <<link "Sell 5">>    
+        <<set $oniLeather -= 5>> 
+        <<set $Coins += 160>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $oniLeather >= 10>>| <<link "Sell 10">> 
+        <<set $oniLeather -= 10>>
+        <<set $Coins += 320>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<<if $oniTeeth > 0>>
+    <li>Sell Oni teeth for 20 coins (You have $oniTeeth) <<link "Sell 1">>
+        <<set $oniTeeth -= 1>> 
+        <<set $Coins += 32>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $oniTeeth >= 5>>| <<link "Sell 5">>    
+        <<set $oniTeeth -= 5>> 
+        <<set $Coins += 160>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $oniTeeth >= 10>>| <<link "Sell 10">> 
+        <<set $oniTeeth -= 10>>
+        <<set $Coins += 320>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<</widget>>
+
+/*Materials (ores, mineables, etc etc)*/
+<<widget "SellMats">>
+<<if $planks > 0>>
+    <li>Sell planks for 3 coins (You have $planks) <<link "Sell 1">>
+        <<set $planks -= 1>> 
+        <<set $Coins += 3>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $planks >= 5>>| <<link "Sell 5">>    
+        <<set $planks -= 5>> 
+        <<set $Coins += 15>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $planks >= 10>>| <<link "Sell 10">> 
+        <<set $planks -= 10>>
+        <<set $Coins += 30>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<<if $iron > 0>>
+    <li>Sell iron for 5 coins (You have $iron) <<link "Sell 1">>
+        <<set $iron -= 1>> 
+        <<set $Coins += 5>>
+        <<goto $lastVisitedPassage1>>
+    <</link>> <<if $iron >= 5>>| <<link "Sell 5">>    
+        <<set $iron -= 5>> 
+        <<set $Coins += 25>> 
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>> <<if $iron >= 10>>| <<link "Sell 10">> 
+        <<set $iron -= 10>>
+        <<set $Coins += 50>>
+        <<goto $lastVisitedPassage1>>
+    <</link>><</if>></li>
+<</if>>
+<</widget>>
+/*Armor*/
+
+/*Weapons*/
+
+/*Food (cooked)*/
+
+/*Food (everything that aint cooked)*/
+
+

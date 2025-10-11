@@ -1,0 +1,28 @@
+:: Boss rush main room [no-fainting-or-hunger] {"position":"1000,1000","size":"100,100"}
+You are standing inside of the main lobby of the Boss rush gamemode.
+
+You can:
+<<link [[Check out the shop|Boss rush shop]]>>
+<</link>>
+<<link [[Check out the weapon shop|Boss rush weapon shop]]>>
+<</link>>
+<<link [[Check out the armor shop|Boss rush armor shop]]>>
+<</link>>
+<<link [[Check out the tailor|Boss rush tailor]]>>
+<</link>>
+<<link [[Check out the hair stylist|Boss rush hair]]>>
+<</link>>
+<<link [[Sleep on the floor|Sleep 2]]>>
+	<<set $lastVisitedPassage1 to "Boss rush main room">>
+<</link>>
+<<link [[Wardrobe|Wardrobe]]>>
+	<<set $lastVisitedPassage1 to "Boss rush main room">> 
+<</link>>
+<<link [[Open the stats menu|Stat points]]>> 
+	<<set $lastVisitedPassage1 to "Boss rush main room">> 
+<</link>>
+
+<<link [[ENTER THE BOSS ROOM|Boss rush boss room]]>>
+<</link>>
+
+

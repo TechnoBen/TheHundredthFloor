@@ -1,0 +1,25 @@
+:: Forest hut [Town no-party-time-loss] {"position":"1725,3050","size":"100,100"}
+You get closer to the NPC and he says
+"Hey there, im looking to sell this house. It's barely worth anything and Its pretty destroyed."
+
+<div class="UIButtons">
+<<button "Buy the hut | 1200 coins">>
+<<if $Coins >= 1200>>
+<<set $Coins -= 1200>>
+<<set $isHutPurchased to true>>
+<<goto "Path 3.4">>
+<<elseif $isHutPurchased == true>>
+<<script>>
+UI.alert("You already bought the house!");
+<</script>>
+<<elseif $Coins <= 1119>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+</div>
+
+[[Go back|Path 3.4]]
+
+

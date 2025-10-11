@@ -1,0 +1,184 @@
+:: Buy gear 1 {"position":"3400,1725","size":"100,100"}
+<center>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/armor/Iron breastplate.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron breastplate:
+            Slash DEF + 4.7
+            Pierce DEF + 2.1
+            Blunt DEF + 0.6
+        </div>\
+        <div class="border1">\
+            <<link "Buy the chestplate | 1050 col">>
+                <<if $Coins >= 1050>> 
+                    <<set $Coins -= 1050>>
+                    <<notify>> You bought an iron breastplate! <</notify>>
+                    <<set $ironBP to true>>
+                    <<goto "Buy gear 1">>
+                <<elseif $Coins <= 1049>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/armor/Iron leg guards.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron guards:
+            Slash DEF + 3.2
+            Pierce DEF + 1.7
+            Blunt DEF + 0.35
+        </div>\
+        <div class="border1">\
+            <<link "Buy the leggings | 998 col">>
+                <<if $Coins >= 998>> 
+                    <<set $ironGuards to true>>
+                    <<notify>> You bought iron guards! <</notify>>
+                    <<set $Coins -= 998>>
+                    <<goto "Buy gear 1">>
+                <<elseif $Coins <= 997>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/armor/Iron feet guards.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron feet guards:
+            Slash DEF + 1.8
+            Pierce DEF + 0.95
+            Blunt DEF + 0.2
+        </div>\
+        <div class="border1">\
+            <<link "Buy the boots | 957 col">>
+                <<if $Coins >= 957>> 
+                    <<set $ironFG to true>>
+                    <<notify>> You bought iron feet guards! <</notify>>
+                    <<set $Coins -= 957>>
+                    <<goto "Buy gear 1">>
+                <<elseif $Coins <= 956>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/armor/Iron armor.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron chestplate:
+            Slash DEF + 8.1
+            Pierce DEF + 4
+            Blunt DEF + 0.95
+            Max stamina - 30
+        </div>\
+        <div class="border1">\
+            <<link "Buy the chestplate | 1115 col">>
+                <<if $Coins >= 1115>> 
+                    <<set $ironCP to true>>
+                    <<set $Coins -= 1115>>
+                    <<notify>> You bought an iron chestplate! <</notify>>
+                    <<goto "Buy gear 1">>
+                <<elseif $Coins <= 1114>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/armor/Iron pants.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron leggings:
+            Slash DEF + 5.5
+            Pierce DEF + 2.75
+            Blunt DEF + 0.67
+            Max stamina - 27
+        </div>\
+        <div class="border1">\
+            <<link "Buy the pants | 1126 col">>
+                <<if $Coins >= 1126>> 
+                    <<set $ironP to true>>
+                    <<notify>> You bought iron leggings! <</notify>>
+                    <<set $Coins -= 1226>>
+                    <<goto "Buy gear 1">>
+                <<elseif $Coins <= 1125>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/armor/Iron feet armor.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron boots:
+            Slash DEF + 4.2
+            Pierce DEF + 1.62
+            Blunt DEF + 0.34
+            Max stamina - 20
+        </div>\
+        <div class="border1">\
+            <<link "Buy the boots | 1113 col">>
+                <<if $Coins >= 1113>> 
+                    <<set $ironB to true>>
+                    <<notify>> You bought iron boots! <</notify>>
+                    <<set $Coins -= 1113>>
+                    <<goto "Buy gear 1">>
+                <<elseif $Coins <= 1112>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+
+[[Go back|Armor shop 2]] 
+</center>
+
+

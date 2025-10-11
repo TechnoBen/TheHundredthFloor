@@ -1,0 +1,15 @@
+:: The countdown ends {"position":"150,1450","size":"100,100"}
+Both of you turn to blue crystals and get teleported to a city. You look at yourself to see that you now have a breastplate. You immediately recognize the city as The Starters town. You look around to see that they haven't changed the first city a lot but you don't see RadiantRose around.
+
+You see a fountain at the centre. It's huge.
+There are a lot of buildings around you.
+There is a weaponsmith, a tailor, a Inn, a shop and a lot of houses.
+
+1. <<link [[Look for RadiantRose]]>>
+<<dateadd '10m'>>
+<</link>>
+2. <<link [[Wait for RadiantRose to find you]]>>
+<<dateadd '45m'>>
+<</link>>
+
+

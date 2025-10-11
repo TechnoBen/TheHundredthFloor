@@ -1,0 +1,13 @@
+:: Radiant 1 {"position":"875,1775","size":"100,100"}
+You manage to find your sister. She has sat down on the floor and is saying something...
+<span class="radiant">"What the... What the fuck happened?! Did he actually mean it?! That we are stuck until we beat the game... and if we die... we die for real?! Is that some messed up joke?" </span> she says. You get close to her and sat next to her. "I don't know what's going on here or why he decided to do this but we will get out of here alive." you tell her, she looks at you with tears in her eyes. <span class="radiant"> "This is messed up..." </span> 
+"Yeah it is... We should get going though. We need to get stronger so we get out of here alive." you say opening your menu and sending her a party invite. She accepts it.
+<span class="radiant"> "Alright... Let's get going." </span> she says in a shaky voice.
+
+<<link [[Town centre]]>> 
+<<set $hasSpokenWithRadiant to true>> 
+<<set $partyON to true>>
+<<run $partyMembers.push("RadiantRose")>>
+<</link>>
+
+

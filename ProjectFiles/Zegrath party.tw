@@ -1,0 +1,27 @@
+:: Zegrath party {"position":"4900,1400","size":"100,100"}
+<<if $NPCs.Zegrath.Affection <= 15>>\
+"Hey Zegrath, wanna party up?" you ask.
+<span class="zegrath">"Piss off you pathetic worm!"</span> he schreeches.
+
+Maybe he doesn't trust you enough... You should speak to him more.
+
+<<link [[Go back|House 1.1]]>>
+	<<dateadd '5m'>> 
+<</link>>
+<<elseif $NPCs.Zegrath.Affection >= 16>>\
+"Hey Zegrath, wanna party up?" you ask.
+<span class="zegrath">"You wish for my godly presence to help you destroy those meseley worms? Sure. Let's go ahead and show them who's the REAL danger. Those pitiful fucks stand no chance against me!"</span> he responds...
+You open your SOCIAL menu, sending him a party request.
+He accepts it. 
+
+<<link [[Go back|House 1.1]]>> 
+	<<if $partyMembers.includes("Zegrath") or $partyMembers.length >= 4>>
+	<<else>>
+		<<run $partyMembers.push("Zegrath")>>
+		<<dateadd '5m'>>
+        <<set $partyON to true>>
+	<</if>>
+<</link>>
+<</if>>
+
+

@@ -1,0 +1,139 @@
+:: Stat points [no-fainting-or-hunger no-party-time-loss] {"position":"2125,225","size":"100,100"}
+$gamename:
+Level: $Level
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>>
+STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
+
+XP: <<= $CurXP.toFixed(0)>>/<<= $MaxXP.toFixed(0)>>
+Col: $Coins
+
+You have $Points points.
+
+STR: | <<link "Add a 0.33 to all STRs">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $SlashSTR += 0.34>>
+<<set $BluntSTR += 0.33>>
+<<set $PierceSTR += 0.33>>
+<<set $critChance += 0.1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+Slash: $SlashSTR | <<link "Add a point to Slash">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $SlashSTR += 1>>
+<<set $critChance += 0.1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+Pierce: $PierceSTR | <<link "Add a point to Pierce">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $PierceSTR += 1>>
+<<set $critChance += 0.1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+Blunt: $BluntSTR | <<link "Add a point to Blunt">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $BluntSTR += 1>>
+<<set $critChance += 0.1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+DEF: | <<link "Add 0.33 to all 3 DEFs">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $BluntDEF += 0.33>>
+<<set $PierceDEF += 0.33>>
+<<set $SlashDEF += 0.34>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+Slash: $SlashDEF | <<link "Add a point to Slash">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $SlashDEF += 1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+Pierce: $PierceDEF | <<link "Add a point to Pierce">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $PierceDEF += 1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+Blunt: $BluntDEF | <<link "Add a point to Blunt">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $BluntDEF += 1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+DEX: $DEX | <<link "Add a point to DEX">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $DEX += 1>>
+<<set $maxStamina += 25>>
+<<set $turnChanceMax += 0.5>>
+<<set $turnChanceCur to $turnChanceMax>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+INT: $INT | <<link "Add a point to INT">>
+<<if $Points >= 1>>
+<<set $Points -= 1>>
+<<set $INT += 1>>
+<<goto "Stat points">>
+<<elseif $Points < 1>>
+<<script>>
+UI.alert("You dont have enough points!");
+<</script>>
+<</if>>
+<</link>>
+
+<<link "Go back">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+
+
+

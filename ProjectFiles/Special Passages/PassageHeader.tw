@@ -1,0 +1,306 @@
+:: PassageHeader {"position":"2000,100","size":"100,100"}
+<<nobr>>
+<ol>
+<<if $partyON == true>>
+Party members | <<link "Disband party">>
+	<<set $partyON to false>>
+	<<set $radPartyTime to 0>>
+	<<set $crimPartyTime to 0>>
+	<<set $shadPartyTime to 0>>
+    <<set $zegrathTime to 0>>
+	<<set $partyMembers to []>>
+<</link>>
+<li> $gamename ★ </li>
+<<if $partyMembers[0]>>
+<li>$partyMembers[0]</li>
+<</if>>
+<<if $partyMembers[1]>>
+<li>$partyMembers[1]</li>
+<</if>>
+<<if $partyMembers[2]>>
+<li>$partyMembers[2]</li>
+<</if>>
+<<if $partyMembers[3]>>
+<li>$partyMembers[3]</li>
+<</if>>
+<</if>>
+</ol>
+
+<<if $curStamina >= 6 + $INT>>
+		<<set $staminaTaken to $curStamina>>
+<</if>>
+
+<ol>
+<<if $CurXP >= $MaxXP>>
+	<<set $Level += 1>>
+	<<set $Points += 1>>
+	<<set $CurXP -= $MaxXP>>
+	<<set $MaxHP += 50>>
+	<<set $maxFatigue += 10>>
+	<<set $CurHP = $MaxHP>>
+	<<set $MaxXP *= $XPmodifier>>
+    <<set $XPmodifier += $XPadd>>
+    <<set $lvlUpNotif to 3>>
+<</if>>
+</ol>
+
+<ol>
+<<if $lvlUpNotif > 0>>
+	<img src = "Textures/You leveled up.png" width="100%"/>
+	<<set $lvlUpNotif -= 1>>
+<</if>>
+</ol>
+
+<ol>
+<<if !tags().includesAny('player-turn', 'enemy-turn','no-party-time-loss')>>
+<<if $partyMembers.includes("RadiantRose")>>
+    <<set _timeRad to random(1, 13)>>
+    <<set $radPartyTime += _timeRad>>
+    <<if $radPartyTime >= 1000>>
+    <span class="radiant">"Hey $gamename I'll be leaving the party. See you later."</span>
+        <<run $partyMembers.delete("RadiantRose")>>
+        <<set $radPartyTime to 0>>
+    <</if>>
+<</if>>
+<<if $partyMembers.includes("ShadowScythe")>>
+	<<set _timeShad to random(1, 13)>>
+	<<set $shadPartyTime += _timeShad>>
+    <<if $shadPartyTime >= 1000>>
+        <<run $partyMembers.delete("ShadowScythe")>>
+        <<set $shadPartyTime to 0>>
+        <span class="shadow">"Hey $gamename I'll be leaving the party. See you later."</span>
+    <</if>>
+<</if>>
+<<if $partyMembers.includes("CrimsonSentinel")>>
+	<<set _timeCrim to random(1, 13)>>
+	<<set $crimPartyTime += _timeCrim>>
+    <<if $crimPartyTime >= 1000>>
+        <<run $partyMembers.delete("CrimsonSentinel")>>
+        <<set $crimPartyTime to 0>>
+        <span class="crimson">"Hey $gamename I'll be leaving the party. See you later."</span>
+    <</if>>
+<</if>>
+<<if $zegrathParty is true>>
+	<<set _timeZeg to random(1, 13)>>
+	<<set $zegrathPartyTime += _timeZeg>>
+    <<if $zegrathPartyTime >= 850>>
+        <<run $partyMembers.delete("Zegrath")>>
+        <<set $zegrathTime to 0>>
+        <span class="zegrath">"Hey you fucking piss stain. I'm leaving. Don't call me again!"</span>
+    <</if>>
+<</if>>
+ <<if $marcellusParty is true>>
+	<<set _timeMarcy to random(1, 13)>>
+	<<set $marcellusPartyTime += _timeMarcy>>
+    <<if $marcellusPartyTime >= 1100>>
+        <<run $partyMembers.delete("Love4Mary")>>
+        <<set $zegrathTime to 0>>
+        <span class="Marcellus">"Yo <<if $gender == "Male" or $gender == "Nonbinary">>muscly boy<<else>>dollface<</if>>, I'll be leaving the party to check up on my wife."</span>
+    <</if>>
+<</if>>
+
+<<if $f1bosskilled == false>>
+	<<set _timeBoss to random(1, 4)>>
+    <<set $timeTillBossDies += _timeBoss>>
+    <<set $percentFboss to (($timeTillBossDies / 10000) * 100)>>
+    <<if $timeTillBossDies >= 10000>>
+    	<<set $percentFboss to 0>>
+    	<<set $timeTillBossDies to 0>>
+        <<set $f1bosskilled to true>>
+        <<set $raidParty to false>>
+        <<set $blueRaid to false>>
+There are some rumors that players have defeated the first floor boss... Perhaps the way to the new floor is now open.
+	<</if>>
+<<elseif $f2BossTimeKilled == false && $f2BossKilled == false>>
+	<<set _timeBoss to random(0, 3)>>
+    <<set $timeTillBossDies += _timeBoss>>
+    <<set $percentFboss to (($timeTillBossDies / 10000) * 100)>>
+    <<if $timeTillBossDies >= 10000>>
+    	<<set $percentFboss to 0>>
+    	<<set $timeTillBossDies to 0>>
+        <<set $f2BossTimeKilled to true>>
+        <<set $raidParty to false>>
+        <<set $blueRaid to false>>
+There are some rumors that players have defeated the second floor boss... Perhaps the way to the new floor is now open.
+	<</if>>
+<<elseif $f3BossTimeKilled == true && $f3BossKilled == true>>
+	<<set _timeBoss to random(0, 0)>>
+    <<set $timeTillBossDies += _timeBoss>>
+    <<set $percentFboss to (($timeTillBossDies / 10000) * 100)>>
+    <<if $timeTillBossDies >= 10000>>
+    	<<set $percentFboss to 0>>
+    	<<set $timeTillBossDies to 0>>
+        <<set $f3BossTimeKilled to true>>
+        <<set $raidParty to false>>
+        <<set $blueRaid to false>>
+There are some rumors that players have defeated the third floor boss... Perhaps the way to the new floor is now open.
+	<</if>>
+<</if>>
+
+<</if>>
+</ol>
+
+<ol>
+<<if $overkill == 1>>
+    <<set $overkill to 0>>
+    <<set $STRPercentBuff -= 100>>
+    <<set $DEXPercentBuff -= 100>>
+<<elseif $overkill >= 2>>
+    <li>Your enemy is scared.</li>
+    <<set $overkill -= 1>>
+<</if>>
+<<if $hungerDebuff == 1>>
+    <<set $hungerDebuff += 1>>
+    <<set $STRPercentDebuff += 10>>
+<<elseif $hungerDebuff == 2>>
+    <li>You are feeling peckish.</li>
+<<elseif $hungerDebuff == 3>>
+    <<set $hungerDebuff += 1>>
+    <<set $STRPercentDebuff += 5>>
+<<elseif $hungerDebuff == 4>>
+    <li>You are feeling hungry.</li>
+<<elseif $hungerDebuff == 5>>
+    <<set $hungerDebuff += 1>>
+    <<set $STRPercentDebuff += 15>>
+<<elseif $hungerDebuff == 6>>
+    <li>You are starving.</li>
+<</if>>
+<<if $fatigueDebuff == 1>>
+    <<set $fatigueDebuff += 1>>
+    <<set $STRPercentDebuff += 2>>
+<<elseif $fatigueDebuff == 2>>
+    <li>You are drowsy.</li>
+<<elseif $fatigueDebuff == 3>>
+    <<set $fatigueDebuff += 1>>
+    <<set $STRPercentDebuff += 3>>
+<<elseif $fatigueDebuff == 4>>
+    <li>You are tired.</li>
+<<elseif $fatigueDebuff == 5>>
+    <<set $fatigueDebuff += 1>>
+    <<set $STRPercentDebuff += 5>>
+<<elseif $fatigueDebuff == 6>>
+    <li>You are very tired.</li>
+<</if>>
+<<if $fearDebuff == 1>>
+    <<set $fearDebuff += 1>>
+    <<set $STRPercentDebuff += 10>>
+<<elseif $fearDebuff == 2>>
+    <li>You are feeling anxious.</li>
+<<elseif $fearDebuff == 3>>
+    <<set $fearDebuff += 1>>
+    <<set $STRPercentDebuff += 10>>
+<<elseif $fearDebuff == 4>>
+    <li>You are feeling fearful.</li>
+<<elseif $fearDebuff == 5>>
+    <<set $fearDebuff += 1>>
+    <<set $STRPercentDebuff += 30>>
+<<elseif $fearDebuff == 6>>
+    <li>You are feeling paranoid.</li>
+<</if>>
+<<if $RegenHP >= 1>>
+	<<set $CurHP += $RegenAmount>>
+    <<set $RegenHP -= 1>>
+    <li> A potion is regenerating your HP! </li>
+<</if>>
+<<if $paralized >= 2>>
+	<li> You are paralized! </li>
+    <<set $paralized -= 1>>
+   	<<set $curStamina to 0>>
+<<elseif $paralized == 1>>
+	<<set $paralized to 0>>
+	<<set $curStamina to $staminaTaken>>
+    <<set $staminaTaken to 0>>
+<</if>>
+<<if $potCooldown >= 1>>
+	<li> You have potion sickness! </li>
+    <<set $potCooldown -= 1>>
+<</if>>
+<<if $onFire >= 1>>
+	<li> IT BURNS! <<if $combatSkills.includes("Fire stop")>><<link "Use Fire stopper skill">>
+    	<<if $curStamina >= 25>>
+        	<<set $onFire to 0>>
+            <<set $curStamina -= 25>>
+            <<script>>
+				UI.alert("You stopped the fire! (changes will be seen once you do a action");
+			<</script>>
+        <<else>>
+        	<<script>>
+				UI.alert("You are too tired to use this skill!");
+			<</script>>
+        <</if>>
+    <</link>> | 25 stamina<</if>></li>
+    <<set $onFire -= 1>>
+    <<set $CurHP -= Math.round($MaxHP / 20)>>
+<</if>>
+<<if $poisoned1 >= 1>>
+	<li> You've been poisoned! </li>
+    <<set $poisoned1 -= 1>>
+    <<set $CurHP -= Math.round($CurHP / 20)>>
+<</if>>
+<<if $ZegrathFireSword >= 1>>
+	<li> <span class="zegrath">Zegrath</span>'s swords are on fire! </li>
+    <<set $ZegrathFireSword -= 1>>
+<</if>>
+</ol>
+
+<<if tags().includes('Path') && $event3 is true>>
+	<<if $beingFollowedPK <= 0 && $PKGuildIn == false>>
+    	<<set $followedChancePK to random(100)>>
+        <<if $followedChancePK lte 10>>
+            <<set $beingFollowedPK to 4>>
+        <</if>>
+    <<elseif $beingFollowedSC <= 0 && $PKGuildIn == true>>
+    	<<set $followedChanceSC to random(100)>>
+        <<if $followedChanceSC lte 15>>
+            <<set $beingFollowedSC to 6>>
+        <</if>>
+    <</if>>
+<</if>>
+
+<<if $beingFollowedPK >= 2>>
+<ol>You feel like you are being followed...</ol>
+    <<set $beingFollowedPK -= 1>>
+    <<if $beingFollowedPK == 1>>
+    	<<set $lastVisitedPassage to passage()>>
+    	<<goto "PK Encounter">>
+    <</if>>
+<</if>>
+<<if $beingFollowedSC >= 2 && $shadowScytheDead == false>>
+<ol><span class="shadow">You feel a terrible presence following you...</span></ol>
+    <<set $beingFollowedSC -= 1>>
+    <<if $beingFollowedSC == 1>>
+    	<<set $lastVisitedPassage to passage()>>
+    	<<goto "SC Encounter">>
+    <</if>>
+<</if>>
+
+<<if $exportReminder >= 1 && settings.exportReminder == true>>
+	<<set $exportReminder -= 1>>
+<<elseif $exportReminder <= 0 && settings.exportReminder == true>>
+	<ol><span class= "death">Exporting the game as a file is a good way to prevent save loses. Make sure to do it regularly!</span> | <<link "Export">><<script>>UI.saves()<</script>> <<set $exportReminder to 150>><</link>> | <<link "OK">> <<set $exportReminder to 150>> <</link>> </ol>
+<</if>>
+
+<<if $OneYearTHF == true && $TwoYearsTHFmsg !== true>>
+<ol><span class="Techno">Hello again, $gamename. I am here again to thank you for being here for the 2nd year anniversary! This year was absolutely crazy. There were so many updated to THF that added a lot of new features that Ive been wanting to add. Infact this update there is an entire combat rework! Thats crazy aint it? Honestly I still can't believe It's been 2 years since the first release of the game. I still feel like I made the game last year which is like... Wild. Same as last year, I have re-enabled the anniversary shop. There are not a lot of new items though which I am sorry for but I just didn't realize that I dont have much time left then I also noticed that I have 3 exams (pretty sure I failed the math exam lmao). One of them being quite important. The next week there may or may not be a change or two to a certain shop item though. No promises since Its a brand new feature that I wanted to tease with one of the anniversary items but I just didn't have enough time to code it haha.
+
+I hope you enjoy the event and the new combat system :)
+I am sorry for not making old save files compatible with the new update though. Ill try to finish that soon enough. But after I do that I will deffo extend the time for the anniversary event so that everyone can get what they want. | <<link "Close message">>
+<<set $TwoYearsTHFmsg to true>> 
+<<set $lootchance to kitsuneRNG(1, 100)>>
+	<<if $lootchance lte 50>>
+    	<<set $AnniversaryCakeVanilla += 1>>
+    <<elseif $lootchance lte 100>>
+ 		<<set $AnniversaryCakeChocolate += 1>>
+    <</if>>
+<</link>>
+</span></ol>
+<</if>>
+
+<<if tags().includes('Town')>>
+	<<set $beingFollowedSC to 0>>
+    <<set $beingFollowedPK to 0>>
+<</if>>
+
+<</nobr>>\
+
+

@@ -1,0 +1,73 @@
+:: Molly event 4 {"position":"3325,1000","size":"100,100"}
+You rush as fast as you could to the Frozen lake. Once you get there you stay low looking around yourself. You can see Molly moving around the bushes. You can't see JustifiedBlade12 anywhere so you try to sneak to Molly.
+"Where is he?" you say. She looks behind and draws her weapon in a panic.
+<span class="Molly">"WH-"</span> she almost screams out realizng its you... She sheaths her weapon back and points to the lake... You finally see him. She then asks <span class="Molly">"How the fuck did you find me though?"</span>
+"The friend list ratted you out."
+<span class="Molly">"I see... Anyways he has been staying there for a good while. Not sure what hes up to."</span>
+"Let's wait till he goes back to where ever he stays at... Does that sounds good to you?"
+<span class="Molly">"Fuck id love to go in and kill him now but he might be waiting for someone... He was messaging someone which is how I figured out I could send you messages."</span>
+"Good thing you didnt rush him if that case."
+<span class="Molly">"Yeah."</span> you sit there and wait for anything to happen. After a while you can see 3 people show up. They start discussing something but you can't tell what it is as they are too far away. One of the players laughs out of nowhere, the other hands a item to Justice and the 4th player seems to be looking slightly annoyed. After that Justice sits down on a bench near them and the others sit down too. 
+After 20 minutes the 3rd player leaves the location. The others remain for 30 or so minutes before leaving, leaving JusticeBlade alone.
+<span class="Molly">"Finally... Theyve been sitting there for so long."</span>
+10 minutes later Justice stands up and starts walking down the path leading to the small establishment. Both of you follow him. He walks in the small establishment and then to the small bar. At some point you lose him but when you get in the corridor you can see a room close. Molly starts running down the corridor, drawing her weapon.
+
+Something feels off.
+
+She opens the door... You hear a weird clicking noise. "WAIT MOLLY LOOK OUT"
+
+<div id="opt1">\
+<<link "Push her out of the way">><<replace "#opt1">>
+<<if $isWeaponOn?.includes('shield') or $weaponType == "Heavy sword">>
+You run to Molly, taking out your weapon and shielding yourself with it and pushing her out of the way. The explosion deals no damage to you but you get knocked back hitting the wall of the bar. You cried out in pain after which you slowly stand up.
+<span class="Molly">"Holy fuck $gamename are you alright?!"</span> she screams. You look at her. She looks terrified.
+"Yeah... Im fine. What about you?" you say quietly.
+<span class="Molly">"I'm good. Thanks for that."</span>
+You look at the room the explosion came from and went inside of it, with your weapon still out and getting in a battle stance. The room isnt super damaged but the door is fucked. You quickly open the wardrobe. There is no one there. Where the hell did he go?! The room looks like the other Inn rooms. There is nothing... You have so many questions going on in your head as of now...
+What was the explosion?! How did he make a booby trap in the game?! There isnt anything that should cause a explosion in floor 2?! Did he knew that someone was after him?! There are so many unanswered questions. Now that he knows you are after him theres no way you will catch him anytime soon...
+<span class="Molly">"... Im sorry about this."</span> she says.
+"Don't be... No one could've expected a god damn bomb. The question is how are we gonna find this bastard."
+
+<<link [[Continue|Inn 2]]>>
+	<<set $event5part3 to true>>
+	<<set $event5part4 to false>>
+	<<set $mollyDead to false>>
+    <<dateadd '3h'>>
+    <<dateadd '22m'>>
+<</link>>
+<<else>>
+You rush out to Molly and push her out of the way, taking the hit instead of her. You get hit back and hit the wall letting out a pained scream... Your hp bar drops to red. <<set $CurHP to 10>>
+<span class="Molly">"$gamename! $gamename!! Are you alive?!"</span> she runs up to you and shakes you a little... She looks terrified and on the verge of tears.
+"Im alive... But I feel like shit..." you say still in pain. Molly helps you stand up. "Let's go in the room." you say as Molly rushes in the room and yoy slowly going in.
+<span class="Molly">"... he is not here"</span> she says as you look around the room which isnt super damaged but the door is fucked. You slowly open the wardrobe. There is no one there. Where the hell did he go?! The room looks like the other Inn rooms. There is nothing... You have so many questions going on in your head as of now...
+What was the explosion?! How did he make a booby trap in the game?! There isnt anything that should cause a explosion in floor 2?! Did he knew that someone was after him?! There are so many unanswered questions. Now that he knows you are after him theres no way you will catch him anytime soon...
+<span class="Molly">"Hey, $gamename... Thanks for pushing me out of the way. I probably wouldve died there. Im really low leveled so thanks for saving my butt."</span> she says.
+"You're welcome... Next time we should be more careful though."
+<span class="Molly"> "Let's get you to the hospital... You are very badly injured."</span>
+
+<<link [[Continue|Hospital 1]]>>
+	<<set $event5part3 to true>>
+	<<set $event5part4 to false>>
+	<<set $mollyDead to false>>
+    <<dateadd '3h'>>
+    <<dateadd '22m'>>
+<</link>>
+<</if>>
+<</replace>><</link>>
+<<link "Do nothing">><<replace "#opt1">>
+You did nothing and watched Molly get hit with the explosion... You run to her to check how shes doing... 
+She is dead.
+You look at the room the explosion came from and run inside of it, drawing your weapon out and getting in a battle stance. The room isnt super damaged but the door is fucked. You quickly open the wardrobe. There is no one there. Where the hell did he go?! The room looks like the other Inn rooms. There is nothing... You have so many questions going on in your head as of now...
+What was the explosion?! How did he make a booby trap in the game?! There isnt anything that should cause a explosion in floor 2?! Did he knew that someone was after him?! Whatever the answer to these questions dont matter right now. What matters is that Molly is dead...
+
+<<link [[Continue|Inn 2]]>>
+	<<set $event5part3 to true>>
+	<<set $event5part4 to false>>
+	<<set $mollyDead to true>>
+    <<dateadd '3h'>>
+    <<dateadd '22m'>>
+<</link>>
+<</replace>><</link>>
+</div>\
+
+

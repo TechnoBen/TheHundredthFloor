@@ -1,0 +1,93 @@
+:: F2BOSSBATTLE 3.1 [no-party-time-loss] {"position":"6000,850","size":"100,100"}
+You're at the right arm of the boss. It's standing still.
+
+$attackOutcome
+
+Arm health: <<= (75 - $MonsterDMGDealt).toFixed(0)>>
+
+$gamename HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>>
+<<if $raidParty == true>>\
+Raid party hp: $raidHP/1000
+<</if>>\
+<<if $partyMembers.includes("RadiantRose")>>\
+<span class="radiant">RadiantRose</span>'s HP: <<= $CurHPRadiantRose.toFixed(0)>>/<<= $MaxHPRadiantRose.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes("ShadowScythe")>>\
+<span class="shadow">ShadowScythe</span>'s HP: <<= $CurHPShadowScythe.toFixed(0)>>/<<= $MaxHPShadowScythe.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes("CrimsonSentinel")>>\
+<span class="crimson">CrimsonSentinel</span>'s HP: <<= $CurHPCrimsonSentinel.toFixed(0)>>/<<= $MaxHPCrimsonSentinel.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes($NPCs.BlackWolf.name)>>\
+$NPCs.BlackWolf.name's HP: <<= $NPCs.BlackWolf.CurHP.toFixed(0)>>/<<= $NPCs.BlackWolf.MaxHP.toFixed(0)>>
+<</if>>\
+<<if $partyMembers.includes("Zegrath")>>\
+<span class="zegrath">Zegrath</span>'s HP: <<= $CurHPZegrath.toFixed(0)>>/<<= $MaxHPZegrath.toFixed(0)>>
+<</if>>\
+
+You can:
+<<if $raidParty == true>>\
+<<link "Command your people to attack">>
+	<<set $MonsterHP -= 4>>
+	<<set $attackOutcome to "You landed the hit dealing some damage to it.">>
+    <<Party2FBossAttack>>
+    	<<if $MonsterDMGDealt >= 75>>
+        	<<goto "F2BOSSBATTLE 3.0">>
+        <</if>>
+    <<set _f2bossATKrng to kitsuneRNG(1, 3)>>
+    <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.2">>
+    <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.1">>
+    <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.3">>
+    <</if>>
+<</link>>
+<<link "Command your people to dodge">>
+	<<set $attackOutcome to "What are you all dodging for? The boss hasnt even attacked yet! You hear someone say.">>
+    <<Party2FBossAttack>>
+    <<if $MonsterDMGDealt >= 75>>
+        <<goto "F2BOSSBATTLE 3.0">>
+    <</if>>
+    <<set _f2bossATKrng to kitsuneRNG(1, 3)>>
+    <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.2">>
+    <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.1">>
+    <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.3">>
+    <</if>>
+<</link>>
+<<elseif $raidParty == false>>\
+<<link "Attack the arm">>
+	<<set $attackOutcome to "You landed the hit dealing some damage to it.">>
+    <<Party2FBossAttack>>
+    <<if $MonsterDMGDealt >= 75>>
+    	<<goto "F2BOSSBATTLE 3.0">>
+    <</if>>
+    <<set _f2bossATKrng to kitsuneRNG(1, 3)>>
+    <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.2">>
+    <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.1">>
+    <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.3">>
+    <</if>>
+<</link>>
+<<link "Dodge the attack">>
+	<<set $attackOutcome to "There is no attack to dodge...">>
+    <<if $MonsterDMGDealt >= 75>>
+        <<goto "F2BOSSBATTLE 3.0">>
+    <</if>>
+    <<set _f2bossATKrng to kitsuneRNG(1, 3)>>
+    <<if _f2bossATKrng == 1 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.2">>
+    <<elseif _f2bossATKrng == 2 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.1">>
+    <<elseif _f2bossATKrng == 3 && $MonsterDMGDealt <= 74>>
+        <<goto "F2BOSSBATTLE 3.3">>
+    <</if>>
+<</link>>
+<</if>>
+
+

@@ -1,0 +1,10 @@
+:: Selling mats [no-party-time-loss no-fainting-or-hunger] {"position":"3650,1975","size":"100,100"}
+<span class="amber">"Let's see what you have here!"</span>
+<ol>
+<<SellMobLoot>>
+<<SellMats>>
+</ol>\
+<<link [[Go back|Amber shop 1]]>>
+<</link>>
+
+

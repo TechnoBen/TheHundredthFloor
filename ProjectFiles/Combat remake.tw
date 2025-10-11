@@ -1,0 +1,1182 @@
+:: Combat remake [player-turn Town NoSave] {"position":"0,2075","size":"100,100"}
+You have encountered:
+<<for _i = 0; _i lte 99; _i++>>\
+  	<<if $mobs[_i]>>\
+ 	Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+ 	<</if>>\
+<</for>>\
+<<run $combat_log.splice(0, $combat_log.length - 10)>>\
+<<if $combat_log.length>>\
+	<div id='combat_log'><<= $combat_log.join('<br>')>></div>\
+	<br>\
+<</if>>\
+$gamename stats:
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>><<if $bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= $burnCountCur.toFixed(2)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
+<<if $bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= $burnCountCur.toFixed(2)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+<ol>\
+<<if $hpPOT >= 1>><li>HP pots: $hpPOT</li><</if>>
+<<if $hpPOT1 >= 1>><li>HP pots T2: $hpPOT1</li><</if>>
+<<if $stmPOT >= 1>><li>STM potions: $stmPOT</li><</if>>
+</ol>\
+<<if $floorBossBattle == true && $raidParty == true>>\
+Raid party hp: $raidHP/1000
+<</if>>\
+<<for _i range $partyMembers>>
+<<set _npc = $NPCs[_i]>>\
+    <<= _npc.name>>'s stats:
+    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+    STM: <<= _npc.CurSTM.toFixed(0)>>/<<= _npc.MaxSTM.toFixed(0)>>
+	<<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+<</for>>\
+
+<<if $turnChanceCur >= 0.01>><<if $bonusTurnPlayer === true>>EXTRA TURN! <</if>>Select your attack:<<nobr>>
+<label>
+    <<radiobutton "$attack" "Do nothing" checked>> Do nothing
+</label>
+<<if $weaponType is "None">>
+    <label>
+         | <<radiobutton "$attack" "Punch">> Punch
+    </label>
+<</if>>
+<<if $weaponType is "Short sword">>
+    <label>
+         | <<radiobutton "$attack" "Slash">> Slash
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Stab">> Stab
+    </label>
+<</if>>
+<<if $weaponType is "Shield and sword">>
+    <label>
+         | <<radiobutton "$attack" "Slash">> Slash
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Shield bash">> Shield bash
+    </label>
+<</if>>
+<<if $weaponType is "Rapier">>
+    <label>
+         | <<radiobutton "$attack" "Stab">> Stab
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Charge">> Charge
+    </label>
+<</if>>
+<<if $weaponType is "Heavy sword">>
+    <label>
+         | <<radiobutton "$attack" "Slash">> Slash
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Blunt strike">> Blunt strike
+    </label>
+<</if>>
+<<if $weaponType is "Gauntlets">>
+    <label>
+         | <<radiobutton "$attack" "Punch">> Punch
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Heavy punch">> Heavy punch
+    </label>
+<</if>>
+<<if $weaponType is "Mace">>
+    <label>
+         | <<radiobutton "$attack" "Strike">> Strike
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Head smash">> Head smash
+    </label>
+<</if>>
+<<if $weaponType is "Dagger">>
+    <label>
+         | <<radiobutton "$attack" "Stab">> Stab
+    </label>
+    <label>
+         | <<radiobutton "$attack" "Mutilate">> Mutilate
+    </label>
+<</if>>
+<</nobr>>
+<<nobr>>
+Choose who to attack: <<for _i = 0; _i lte 99; _i++>>
+    <<capture _i>>
+      <<if _i != 0 && $mobs[_i]>>|<</if>>
+        <<if $mobs[_i]>>
+            <label>
+                <<radiobutton "$enemyHitPlayer" _i checked>> $mobs[_i].name
+            </label>
+     	<</if>>
+    <</capture>>
+<</for>>
+<</nobr>>
+<</if>>\
+<<for _i = 0; _i lte 99; _i++>>\
+<<capture _i>>\
+<<if $partyMembers[_i] == "RadiantRose">>\
+<<if $NPCs.RadiantRose.turnChanceCur >= 0.01>><<if $bonusTurnRadiantRose === true>>EXTRA TURN! <</if>>Select <span class="radiant">RadiantRose</span>'s attack: <label><<radiobutton "$attackRadiantRose" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackRadiantRose" "Stab">> Stab</label> | <label><<radiobutton "$attackRadiantRose" "Charge">> Charge</label>
+<<nobr>>
+Choose who <span class="radiant">RadiantRose</span> attacks: <<for _i = 0; _i lte 99; _i++>>
+    <<capture _i>>
+      <<if _i != 0 && $mobs[_i]>>|<</if>>
+        <<if $mobs[_i]>>
+            <label>
+                <<radiobutton "$enemyHitRadiantRose" _i checked>> $mobs[_i].name
+            </label>
+     	<</if>>
+    <</capture>>
+<</for>>
+<</nobr>>
+<</if>>\
+<</if>>\
+<<if $partyMembers[_i] === "ShadowScythe">>\
+<<if $NPCs.ShadowScythe.turnChanceCur >= 0.01>><<if $bonusTurnRadiantRose === true>>EXTRA TURN! <</if>>Select <span class="shadow">ShadowScythe</span>'s attack: <label><<radiobutton "$attackShadowScythe" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackShadowScythe" "Slash">> Slash</label> | <label><<radiobutton "$attackShadowScythe" "Charge & sweep">> Charge & sweep</label>
+<<nobr>>
+Choose who <span class="shadow">ShadowScythe</span> attacks: <<for _i = 0; _i lte 99; _i++>>
+    <<capture _i>>
+      <<if _i != 0 && $mobs[_i]>>|<</if>>
+        <<if $mobs[_i]>>
+            <label>
+                <<radiobutton "$enemyHitShadow" _i checked>> $mobs[_i].name
+            </label>
+     	<</if>>
+    <</capture>>
+<</for>>
+<</nobr>>
+<</if>>\
+<</if>>\
+<<if $partyMembers[_i] === "CrimsonSentinel">>\
+<<if $NPCs.CrimsonSentinel.turnChanceCur >= 0.01>><<if $bonusTurnRadiantRose === true>>EXTRA TURN! <</if>>Select <span class="crimson">CrimsonSentinel</span>'s attack: <label><<radiobutton "$attackCrimsonSentinel" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackCrimsonSentinel" "Slash">> Slash</label> | <label><<radiobutton "$attackCrimsonSentinel" "Shield bash">> Shield bash</label>
+<<nobr>>
+Choose who <span class="crimson">CrimsonSentinel</span> attacks: <<for _i = 0; _i lte 99; _i++>>
+    <<capture _i>>
+      <<if _i != 0 && $mobs[_i]>>|<</if>>
+        <<if $mobs[_i]>>
+            <label>
+                <<radiobutton "$enemyHitCrimson" _i checked>> $mobs[_i].name
+            </label>
+     	<</if>>
+    <</capture>>
+<</for>>
+<</nobr>>
+<</if>>\
+<</if>>\
+<<if $partyMembers[_i] === "Zegrath">>\
+<<if $NPCs.Zegrath.turnChanceCur >= 0.01>><<if $bonusTurnRadiantRose === true>>EXTRA TURN! <</if>>Select <span class="zegrath">Zegrath</span>'s attack: <label><<radiobutton "$attackZegrath" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackZegrath" "Stab">> Stab</label> | <label><<radiobutton "$attackZegrath" "Slash">> Slash</label> | <label><<radiobutton "$attackZegrath" "FireSword">> Set swords on fire</label>
+<<nobr>>
+Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99; _i++>>
+    <<capture _i>>
+      <<if _i != 0 && $mobs[_i]>>|<</if>>
+        <<if $mobs[_i]>>
+            <label>
+                <<radiobutton "$enemyHitZegrath" _i checked>> $mobs[_i].name
+            </label>
+     	<</if>>
+    <</capture>>
+<</for>>
+<</nobr>>
+<</if>>\
+<</if>>\
+  <</capture>>\
+<</for>>\
+
+<<link "Next">>
+/* Player attacks */
+/* Doing nothing */
+<<if $attack == "Do nothing">>
+    <<set _funsies to random(0, 100)>>
+    <<if _funsies === 1>>
+        <<run $combat_log.push('Exhausted? Tired. Want rest? Hungry. Want out?')>> 
+    <<else>>
+	    <<run $combat_log.push($gamename + ' does nothing.')>>
+    <</if>>
+  <<if $curStamina <= $maxStamina >>
+    <<set $curStamina += 5 + $INT>>
+  <<elseif $curStamina >= $maxStamina>>
+    <<set $curStamina -= 5 + $INT>>
+  <</if>>
+<</if>>
+/* Punch */
+<<if $attack === "Punch">>
+    <<if $curStamina >= 5>>  
+        <<set $curStamina -= 5>>
+        <<set $curHunger -= 2>>
+        <<set $curFatigue += 1>>
+            <<for _i = 0; _i lte 99; _i++>>
+                    <<if $enemyHitPlayer === _i>>
+                        <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                        <<if $critChance <= _critChanceRNG>>
+                            <<set $baseDMG to ($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * $mobs[_i].BluntDEF>>
+                            <<set $mobs[_i].CurHP -= $baseDMG>>
+                            <<set $dmgDealt.Combat to $baseDMG>>
+                            <<set $dmgDealt.Total += $baseDMG>>
+                            <<run $combat_log.push($gamename + ' punches ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                        <<else>>
+                            <<set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * $critDMG) * $mobs[_i].BluntDEF>>
+                            <<set $mobs[_i].CurHP -= $baseDMG>>
+                            <<set $dmgDealt.Combat to $baseDMG>>                            
+                            <<set $dmgDealt.Total += $baseDMG>>
+                            <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' punches ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                        <</if>>
+                    <</if>>
+            <</for>>
+    <<elseif $curStamina <= 4>>
+        <<set $attack to "Nothing">>
+        <<set $curStamina += 5 + $INT>>
+        <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+    <</if>>
+<</if>>
+/* Heavy Punch */
+<<if $attack === "Heavy punch">>
+    <<if $curStamina >= 12>>  
+        <<set $curStamina -= 12>>
+        <<set $curHunger -= 4>>
+        <<set $curFatigue += 1>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to ($weaponBluntDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $mobs[_i].BluntDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+                        <<run $combat_log.push($gamename + ' throws a heavy punch at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to (($weaponBluntDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * $mobs[_i].BluntDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' throws a heavy punch at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+    <<elseif $curStamina <= 11>>
+        <<set $attack to "Nothing">>
+        <<set $curStamina += 5 + $INT>>
+        <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+    <</if>>
+<</if>>
+/* Stab */
+<<if $attack === "Stab">>
+    <<if $weaponType === "Short sword" or $weaponType === "Shield and sword">>
+        <<if $curStamina >= 9>>  
+            <<set $curStamina -= 9>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 3>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.8) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						            <<set $mobs[_i].bleedCountCur += $bleedCountDealt/1.5>>
+						            <<set $mobs[_i].bleedPotency += $bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.8) * $critDMG) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						            <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
+						            <<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <<elseif $curStamina <= 8>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <<elseif $weaponType === "Rapier">>
+        <<if $curStamina >= 6>>  
+            <<set $attackText to "Stab">>
+            <<set $curStamina -= 6>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 2>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to ($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						            <<set $mobs[_i].bleedCountCur += $bleedCountDealt/1.5>>
+						            <<set $mobs[_i].bleedPotency += $bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * $critDMG) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						            <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
+						            <<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <<elseif $curStamina <= 5>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+	<<elseif $weaponType === "Dagger">>
+        <<if $curStamina >= 5>>  
+            <<set $attackText to "Stab">>
+            <<set $curStamina -= 5>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 2>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.75) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						            <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
+						            <<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.75) * $critDMG) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						            <<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
+						            <<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <<elseif $curStamina <= 4>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Slash */
+<<if $attack === "Slash">>
+    <<set $attackText to "Slash">>
+    <<if $weaponType === "Short sword" or $weaponType === "Shield and sword">>
+        <<if $curStamina >= 12>>  
+            <<set $attackText to "Slash">>
+            <<set $curStamina -= 12>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 2>>
+                <<for _i = 0; _i lte 99; _i++>>
+                        <<if $enemyHitPlayer === _i>>
+                            <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                            <<if $critChance <= _critChanceRNG>>
+                                <<set $baseDMG to ($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $mobs[_i].SlashDEF>>
+                                <<set $mobs[_i].CurHP -= $baseDMG>>
+                                <<set $dmgDealt.Combat to $baseDMG>>
+                                <<set $dmgDealt.Total += $baseDMG>>
+								                <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
+						                    <<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                                <<run $combat_log.push($gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                            <<else>>
+                                <<set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * $mobs[_i].SlashDEF>>
+                                <<set $mobs[_i].CurHP -= $baseDMG>>
+                                <<set $dmgDealt.Combat to $baseDMG>>
+                                <<set $dmgDealt.Total += $baseDMG>>
+								                <<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
+								                <<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                                <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                            <</if>>
+                        <</if>>
+                <</for>>
+        <<elseif $curStamina <= 11>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <<elseif $weaponType === "Heavy sword">>
+        <<if $curStamina >= 25>>  
+            <<set $attackText to "Slash">>
+            <<set $curStamina -= 25>>
+            <<set $curHunger -= 4>>
+            <<set $curFatigue += 5>>
+                <<for _i = 0; _i lte 99; _i++>>
+                        <<if $enemyHitPlayer === _i>>
+                            <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                            <<if $critChance <= _critChanceRNG>>
+                                <<set $baseDMG to ($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $mobs[_i].SlashDEF>>
+                                <<set $mobs[_i].CurHP -= $baseDMG>>
+                                <<set $dmgDealt.Combat to $baseDMG>>
+                                <<set $dmgDealt.Total += $baseDMG>>
+								<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
+								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                                <<run $combat_log.push($gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                            <<else>>
+                                <<set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * $mobs[_i].SlashDEF>>
+                                <<set $mobs[_i].CurHP -= $baseDMG>>
+                                <<set $dmgDealt.Combat to $baseDMG>>
+                                <<set $dmgDealt.Total += $baseDMG>>
+								<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
+								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                                <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                            <</if>>
+                        <</if>>
+                <</for>>
+        <<elseif $curStamina <= 24>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Charge */
+<<if $attack === "Charge">>
+    <<set $attackText to "Charge">>
+    <<if $weaponType === "Rapier">>
+        <<if $curStamina >= 10>>  
+            <<set $attackText to "Charge">>
+            <<set $curStamina -= 10>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 2>>
+                <<for _i = 0; _i lte 99; _i++>>
+                        <<if $enemyHitPlayer === _i>>
+                            <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                            <<if $critChance <= _critChanceRNG>>
+                                <<set $baseDMG to ($weaponPierceDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $PierceSTR - ($STRPercentDebuff*($PierceSTR + $weaponDMG)/100) + ($STRPercentBuff*( $PierceSTR + $weaponDMG)/100)) * $mobs[_i].PierceDEF>>
+                                <<set $mobs[_i].CurHP -= $baseDMG>>
+                                <<set $dmgDealt.Combat to $baseDMG>>
+                                <<set $dmgDealt.Total += $baseDMG>>
+								<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
+								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                                <<run $combat_log.push($gamename + ' charges at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                            <<else>>
+                                <<set $baseDMG to (($weaponPierceDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $PierceSTR - ($STRPercentDebuff*($PierceSTR + $weaponDMG)/100) + ($STRPercentBuff*( $PierceSTR + $weaponDMG)/100)) * $critDMG) * $mobs[_i].PierceDEF>>
+                                <<set $mobs[_i].CurHP -= $baseDMG>>
+                                <<set $dmgDealt.Combat to $baseDMG>>
+                                <<set $dmgDealt.Total += $baseDMG>>
+								<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
+								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                                <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' charges at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                            <</if>>
+                        <</if>>
+                <</for>>
+        <<elseif $curStamina <= 9>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Shield bash */
+<<if $attack === "Shield bash">>
+    <<if $curStamina >= 15>>  
+        <<set $attackText to "Shield bash">>
+        <<set $curStamina -= 15>>
+        <<set $curHunger -= 2>>
+        <<set $curFatigue += 3>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+            <<if $critChance <= _critChanceRNG>>
+                <<set $baseDMG to ($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $mobs[_i].BluntDEF>>
+                <<set $mobs[_i].CurHP -= $baseDMG>>
+                <<set $dmgDealt.Combat to $baseDMG>>
+                <<set $dmgDealt.Total += $baseDMG>>
+                <<run $combat_log.push($gamename + ' bashes their shield at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+            <<else>>
+                <<set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * $mobs[_i].BluntDEF>>
+                <<set $mobs[_i].CurHP -= $baseDMG>>
+                <<set $dmgDealt.Combat to $baseDMG>>
+                <<set $dmgDealt.Total += $baseDMG>>
+                <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' bashes their shield at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+            <</if>>
+        <</if>>
+        <</for>>
+    <<elseif $curStamina <= 14>>
+        <<set $attack to "Nothing">>
+        <<set $attackText to "Do nothing">>
+        <<set $curStamina += 5 + $INT>>
+        <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+    <</if>>
+<</if>>
+/* Blunt strike */
+<<if $attack === "Blunt strike">>
+    <<if $curStamina >= 30>>  
+        <<set $attackText to "Blunt strike">>
+        <<set $curStamina -= 30>>
+        <<set $curHunger -= 5>>
+        <<set $curFatigue += 6>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+            <<if $critChance <= _critChanceRNG>>
+                <<set $baseDMG to ($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $mobs[_i].BluntDEF>>
+                <<set $mobs[_i].CurHP -= $baseDMG>>
+                <<set $dmgDealt.Combat to $baseDMG>>
+                <<set $dmgDealt.Total += $baseDMG>>
+                <<run $combat_log.push($gamename + ' strikes ' + $mobs[_i].name + ' with the blunt side of their heavy sword dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+            <<else>>
+                <<set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * $mobs[_i].BluntDEF>>
+                <<set $mobs[_i].CurHP -= $baseDMG>>
+                <<set $dmgDealt.Combat to $baseDMG>>
+                <<set $dmgDealt.Total += $baseDMG>>
+                <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' strikes ' + $mobs[_i].name + ' with the blunt side of their heavy sword dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+            <</if>>
+        <</if>>
+        <</for>>
+    <<elseif $curStamina <= 30>>
+        <<set $attack to "Nothing">>
+        <<set $attackText to "Do nothing">>
+        <<set $curStamina += 5 + $INT>>
+        <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+    <</if>>
+<</if>>
+/* Strike */
+<<if $attack === "Strike">>
+    <<if $weaponType === "Mace">>
+        <<if $curStamina >= 9>>  
+            <<set $curStamina -= 9>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 3>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1) * $mobs[_i].BluntDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+                        <<run $combat_log.push($gamename + ' strikes ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1) * $critDMG) * $mobs[_i].BluntDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' strikes ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <<elseif $curStamina <= 8>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Head smash */
+<<if $attack === "Head smash">>
+    <<if $weaponType === "Mace">>
+        <<if $curStamina >= 20>>  
+            <<set $curStamina -= 20>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 3>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.5) * $mobs[_i].BluntDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+                        <<run $combat_log.push($gamename + ' smashes ' + $mobs[_i].name + 's head dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.5) * $critDMG) * $mobs[_i].BluntDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' smashes ' + $mobs[_i].name + 's head dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <<elseif $curStamina <= 19>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Mutilate */
+<<if $attack === "Mutilate">>
+    <<if $weaponType === "Dagger">>
+        <<if $curStamina >= 12>>  
+            <<set $curStamina -= 12>>
+            <<set $curHunger -= 1>>
+            <<set $curFatigue += 3>>
+            <<for _i = 0; _i lte 99; _i++>>
+                <<if $enemyHitPlayer === _i>>
+                <<set _critChanceRNG to kitsuneRNG(0, 100)>>
+                    <<if $critChance <= _critChanceRNG>>
+                        <<set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 1) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.2>>
+						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.2 * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push($gamename + ' mutilates ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <<else>>
+                        <<set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 1) * $critDMG) * $mobs[_i].PierceDEF>>
+                        <<set $mobs[_i].CurHP -= $baseDMG>>
+                        <<set $dmgDealt.Combat to $baseDMG>>
+                        <<set $dmgDealt.Total += $baseDMG>>
+						<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.7>>
+						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.7 * $mobs[_i].bleedDef>>
+                        <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' mutilates ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + ' damage')>>
+                    <</if>>
+                <</if>>
+            <</for>>
+        <<elseif $curStamina <= 11>>
+            <<set $attack to "Nothing">>
+            <<set $attackText to "Do nothing">>
+            <<set $curStamina += 5 + $INT>>
+            <<run $combat_log.push($gamename + ' is too tired to fight so they do nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+
+/* Party combat */
+/* RadiantRose */
+<<if $partyMembers.includes("RadiantRose")>>
+    <<if $attackRadiantRose is "Do nothing">>
+    <<run $combat_log.push('RadiantRose does nothing.')>>
+        <<if $NPCs.RadiantRose.CurSTM <= $NPCs.RadiantRose.MaxSTM>>
+            <<set $NPCs.RadiantRose.CurSTM += 5 + $NPCs.RadiantRose.INT>>
+        <<elseif $NPCs.RadiantRose.CurSTM >= $NPCs.RadiantRose.MaxSTM>>
+            <<set $NPCs.RadiantRose.CurSTM -= 5 + $NPCs.RadiantRose.INT>>
+        <</if>>
+    <</if>>
+    <<set _critChanceRNGRadiant to kitsuneRNG(0, 100)>>
+    <<if $attackRadiantRose is "Stab">>
+        <<if $NPCs.RadiantRose.CurSTM >= 6>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitRadiantRose === _i>>
+            <<if $NPCs.RadiantRose.CritChance <= _critChanceRNG>>
+                <<set $NPCs.RadiantRose.baseDMG to ($NPCs.RadiantRose.PierceSTR + $NPCs.RadiantRose.weaponPierceDMG) * $mobs[_i].PierceDEF>>
+                <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt/1.5>>
+				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.RadiantRose.CurSTM -= 6>>
+            <<else>>
+                <<set $NPCs.RadiantRose.baseDMG to (($NPCs.RadiantRose.PierceSTR + $NPCs.RadiantRose.weaponPierceDMG) * $NPCs.RadiantRose.CritDMG) * $mobs[_i].PierceDEF>>
+                <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt>>
+				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('CRITICAL HIT! RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.RadiantRose.CurSTM -= 6>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.RadiantRose.CurSTM<= 5>>
+            <<set $NPCs.RadiantRose.CurSTM += 5 + $NPCs.RadiantRose.INT>>
+            <<run $combat_log.push('RadiantRose is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+    <<if $attackRadiantRose is "Charge">>
+        <<if $NPCs.RadiantRose.CurSTM >= 10>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitRadiantRose === _i>>
+            <<if $NPCs.RadiantRose.CritChance <= _critChanceRNG>>
+                <<set $NPCs.RadiantRose.baseDMG to ($NPCs.RadiantRose.weaponPierceDMG + $NPCs.RadiantRose.DEX/2 + $NPCs.RadiantRose.PierceSTR) * $mobs[_i].PierceDEF>>
+                <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>> 
+				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt>>
+				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.RadiantRose.CurSTM -= 10>>
+            <<else>>
+                <<set $NPCs.RadiantRose.baseDMG to (($NPCs.RadiantRose.weaponPierceDMG + $NPCs.RadiantRose.DEX/2 + $NPCs.RadiantRose.PierceSTR) * $NPCs.RadiantRose.CritDMG) * $mobs[_i].PierceDEF>> 
+                <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5>>
+				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('CRITICAL HIT! RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.RadiantRose.CurSTM -= 10>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.RadiantRose.CurSTM<= 9>>
+            <<set $NPCs.RadiantRose.CurSTM += 5 + $NPCs.RadiantRose.INT>>
+            <<run $combat_log.push('RadiantRose is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* ShadowScythe */
+<<if $partyMembers.includes("ShadowScythe")>>
+    <<if $attackShadowScythe is "Do nothing">>
+    <<run $combat_log.push('ShadowScythe does nothing.')>>
+        <<if $NPCs.ShadowScythe.CurSTM <= $NPCs.ShadowScythe.MaxSTM>>
+            <<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
+        <<elseif $NPCs.ShadowScythe.CurSTM >= $NPCs.ShadowScythe.MaxSTM>>
+            <<set $NPCs.ShadowScythe.CurSTM -= 5 + $NPCs.ShadowScythe.INT>>
+        <</if>>
+    <</if>>
+    <<set _critChanceRNGShadow to kitsuneRNG(0, 100)>>
+    <<if $attackShadowScythe is "Slash">>
+        <<if $NPCs.ShadowScythe.CurSTM >= 25>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitShadow === _i>>
+            <<if $NPCs.ShadowScythe.CritChance <= _critChanceRNG>>
+                <<set $NPCs.ShadowScythe.baseDMG to ($NPCs.ShadowScythe.SlashSTR + $NPCs.ShadowScythe.weaponSlashDMG) * $mobs[_i].SlashDEF>>
+                <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt>>
+				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('ShadowScythe slashes at ' + $mobs[_i].name + ' with his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.ShadowScythe.CurSTM -= 25>>
+            <<else>>
+                <<set $NPCs.ShadowScythe.baseDMG to (($NPCs.ShadowScythe.SlashSTR + $NPCs.ShadowScythe.weaponSlashDMG) * $NPCs.ShadowScythe.CritDMG) * $mobs[_i].SlashDEF>>
+                <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>> 
+				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5>>
+				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('CRITICAL HIT! ShadowScythe slashes at ' + $mobs[_i].name + ' with his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.ShadowScythe.CurSTM -= 25>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.ShadowScythe.CurSTM<= 5>>
+            <<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
+            <<run $combat_log.push('ShadowScythe is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+    <<if $attackShadowScythe is "Charge & sweep">>
+        <<if $NPCs.ShadowScythe.CurSTM >= 31>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitShadow === _i>>
+            <<if $NPCs.ShadowScythe.CritChance <= _critChanceRNG>>
+                <<set $NPCs.ShadowScythe.baseDMG to ($NPCs.ShadowScythe.weaponSlashDMG + $NPCs.ShadowScythe.DEX/2 + $NPCs.ShadowScythe.SlashSTR) * $mobs[_i].SlashDEF>>
+                <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt/1.1>>
+				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt/1.2 * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('ShadowScythe charges at ' + $mobs[_i].name + ' and sweeps his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.ShadowScythe.CurSTM -= 31>>
+            <<else>>
+                <<set $NPCs.ShadowScythe.baseDMG to (($NPCs.ShadowScythe.weaponSlashDMG + $NPCs.ShadowScythe.DEX/2 + $NPCs.ShadowScythe.SlashSTR) * $NPCs.ShadowScythe.CritDMG) * $mobs[_i].SlashDEF>>
+                <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.4>>
+				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('CRITICAL HIT! ShadowScythe charges at ' + $mobs[_i].name + ' and sweeps his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.ShadowScythe.CurSTM -= 31>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.ShadowScythe.CurSTM <= 30>>
+            <<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
+            <<run $combat_log.push('ShadowScythe is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* CrimsonSentinel */
+<<if $partyMembers.includes("CrimsonSentinel")>>
+    <<if $attackCrimsonSentinel is "Do nothing">>
+    <<run $combat_log.push('CrimsonSentinel does nothing.')>>
+        <<if $NPCs.CrimsonSentinel.CurSTM <= $NPCs.CrimsonSentinel.MaxSTM>>
+            <<set $NPCs.CrimsonSentinel.CurSTM += 5 + $NPCs.CrimsonSentinel.INT>>
+        <<elseif $NPCs.CrimsonSentinel.CurSTM >= $NPCs.CrimsonSentinel.MaxSTM>>
+            <<set $NPCs.CrimsonSentinel.CurSTM -= 5 + $NPCs.CrimsonSentinel.INT>>
+        <</if>>
+    <</if>>
+    <<set _critChanceRNGCrimson to kitsuneRNG(0, 100)>>
+    <<if $attackCrimsonSentinel is "Slash">>
+        <<if $NPCs.CrimsonSentinel.CurSTM >= 12>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitCrimson === _i>>
+            <<if $NPCs.CrimsonSentinel.CritChance <= _critChanceRNG>>
+                <<set $NPCs.CrimsonSentinel.baseDMG to ($NPCs.CrimsonSentinel.SlashSTR + $NPCs.CrimsonSentinel.weaponSlashDMG) * $mobs[_i].SlashDEF>>
+                <<set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.CrimsonSentinel.bleedCountDealt>>
+				<<set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('CrimsonSentinel slashes at ' + $mobs[_i].name + ' dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + ' damage')>>  
+                <<set $NPCs.CrimsonSentinel.CurSTM -= 12>>
+            <<else>>
+                <<set $NPCs.CrimsonSentinel.baseDMG to (($NPCs.CrimsonSentinel.SlashSTR + $NPCs.CrimsonSentinel.weaponSlashDMG) * $NPCs.CrimsonSentinel.CritDMG) * $mobs[_i].SlashDEF>>
+                <<set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.CrimsonSentinel.bleedCountDealt*1.5>>
+				<<set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<run $combat_log.push('CRITICAL HIT! CrimsonSentinel slashes at ' + $mobs[_i].name + ' dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + ' damage')>> 
+                <<set $NPCs.CrimsonSentinel.CurSTM -= 12>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.CrimsonSentinel.CurSTM<= 11>>
+            <<set $NPCs.CrimsonSentinel.CurSTM += 5 + $NPCs.CrimsonSentinel.INT>>
+            <<run $combat_log.push('CrimsonSentinel is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+    <<if $attackCrimsonSentinel is "Shield bash">>
+        <<if $NPCs.CrimsonSentinel.CurSTM >= 15>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitCrimson === _i>>
+            <<if $NPCs.CrimsonSentinel.CritChance <= _critChanceRNG>>
+                <<set $NPCs.CrimsonSentinel.baseDMG to ($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $mobs[_i].BluntDEF>>
+                <<set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
+                <<run $combat_log.push('CrimsonSentinel bashes ' + $mobs[_i].name + ' with his shield dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + ' damage')>> 
+                <<set $NPCs.CrimsonSentinel.CurSTM -= 15>>
+            <<else>>
+                <<set $NPCs.CrimsonSentinel.baseDMG to (($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $NPCs.CrimsonSentinel.CritDMG) * $mobs[_i].BluntDEF>>
+                <<set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG>>
+                <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
+                <<run $combat_log.push('CRITICAL HIT! CrimsonSentinel bashes ' + $mobs[_i].name + ' with his shield dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + ' damage')>>
+                <<set $NPCs.CrimsonSentinel.CurSTM -= 15>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.CrimsonSentinel.CurSTM<= 14>>
+            <<set $NPCs.CrimsonSentinel.CurSTM += 5 + $NPCs.CrimsonSentinel.INT>>
+            <<run $combat_log.push('CrimsonSentinel is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+<</if>>
+/* Zegrath */
+<<if $partyMembers.includes("Zegrath")>>
+    <<if $attackZegrath is "Do nothing">>
+    <<run $combat_log.push('Zegrath does nothing.')>>
+        <<if $NPCs.Zegrath.CurSTM <= $NPCs.Zegrath.MaxSTM>>
+            <<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
+        <<elseif $NPCs.Zegrath.CurSTM >= $NPCs.Zegrath.MaxSTM>>
+            <<set $NPCs.Zegrath.CurSTM -= 5 + $NPCs.Zegrath.INT>>
+        <</if>>
+    <</if>>
+    <<set _critChanceRNGZegrath to kitsuneRNG(0, 100)>>
+    <<if $attackZegrath is "Stab">>
+        <<if $NPCs.Zegrath.CurSTM >= 12>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitZegrath === _i>>
+            <<if $NPCs.Zegrath.CritChance <= _critChanceRNG>>
+                <<if $ZegrathFireSword >= 1>>
+                    <<set $NPCs.Zegrath.baseDMG to kitsuneRNG(($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG), (125*($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG)/100)) * $mobs[_i].PierceDEF>>
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>>
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+                    <<set $mobs[_i].burnCountCur += $NPCs.Zegrath.burnCountDealt>>
+					<<set $mobs[_i].burnPotency += $NPCs.Zegrath.burnPotencyDealt>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt/4>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt/6 * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('Zegrath stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <<else>>
+                    <<set $NPCs.Zegrath.baseDMG to kitsuneRNG((50*($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG))/100, (75*($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG)/100)) * $mobs[_i].PierceDEF>> 
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>>
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+					<<set $mobs[_i].burnCountCur += $NPCs.Zegrath.burnCountDealt>>
+					<<set $mobs[_i].burnPotency += $NPCs.Zegrath.burnPotencyDealt>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt/1.5>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt/3 * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('Zegrath stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <</if>>
+            <<else>>
+                <<if $ZegrathFireSword >= 1>>
+                    <<set $NPCs.Zegrath.baseDMG to (kitsuneRNG(($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG), (125*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $NPCs.Zegrath.CritDMG) * $mobs[_i].SlashDEF>>
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>>
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+                    <<set $mobs[_i].burnCountCur += $NPCs.Zegrath.burnCountDealt*2>>
+					<<set $mobs[_i].burnPotency += $NPCs.Zegrath.burnPotencyDealt*2>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt/2>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt/3 * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('CRITICAL HIT! Zegrath stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <<else>>
+                    <<set $NPCs.Zegrath.baseDMG to (kitsuneRNG((50*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG))/100, (75*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $NPCs.Zegrath.CritDMG) * $mobs[_i].SlashDEF>>
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>> 
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+					<<set $mobs[_i].burnCountCur += $NPCs.Zegrath.burnCountDealt*2>>
+					<<set $mobs[_i].burnPotency += $NPCs.Zegrath.burnPotencyDealt*2>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('CRITICAL HIT! Zegrath stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <</if>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.Zegrath.CurSTM<= 11>>
+            <<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
+            <<run $combat_log.push('Zegrath is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+    <<if $attackZegrath is "Slash">>
+        <<if $NPCs.Zegrath.CurSTM >= 15>>
+        <<for _i = 0; _i lte 99; _i++>>
+        <<if $enemyHitZegrath === _i>>
+            <<if $NPCs.Zegrath.CritChance <= _critChanceRNG>>
+                <<if $ZegrathFireSword >= 1>>
+                    <<set $NPCs.Zegrath.baseDMG to kitsuneRNG(($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG), (125*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $mobs[_i].SlashDEF>>
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>>
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+                    <<set $mobs[_i].burnCountCur += $NPCs.Zegrath.burnCountDealt>>
+					<<set $mobs[_i].burnPotency += $NPCs.Zegrath.burnPotencyDealt>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt/2>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt/4 * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('Zegrath slashes ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <<else>>
+                    <<set $NPCs.Zegrath.baseDMG to kitsuneRNG((50*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG))/100, (75*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $mobs[_i].SlashDEF>> 
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>>
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('Zegrath slashes ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <</if>>
+            <<else>>
+                <<if $ZegrathFireSword >= 1>>
+                    <<set $NPCs.Zegrath.baseDMG to (kitsuneRNG(($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG), (125*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $NPCs.Zegrath.CritDMG) * $mobs[_i].SlashDEF>>
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>>
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+                    <<set $mobs[_i].burnCountCur += $NPCs.Zegrath.burnCountDealt*2>>
+					<<set $mobs[_i].burnPotency += $NPCs.Zegrath.burnPotencyDealt*2>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('CRITICAL HIT! Zegrath slashes ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <<else>>
+                    <<set $NPCs.Zegrath.baseDMG to (kitsuneRNG((50*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG))/100, (75*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $NPCs.Zegrath.CritDMG) * $mobs[_i].SlashDEF>> 
+                    <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
+                    <<set $mobs[_i].CurHP -= $NPCs.Zegrath.baseDMG>> 
+                    <<set $NPCs.Zegrath.CurSTM -= 12>>
+					<<set $mobs[_i].bleedCountCur += $NPCs.Zegrath.bleedCountDealt*1.5>>
+					<<set $mobs[_i].bleedPotency += $NPCs.Zegrath.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                    <<run $combat_log.push('CRITICAL HIT! Zegrath slashes ' + $mobs[_i].name + ' dealing ' + $NPCs.Zegrath.baseDMG.toFixed(2) + ' damage')>>
+                <</if>>
+            <</if>>
+        <</if>>
+        <</for>>
+        <<elseif $NPCs.Zegrath.CurSTM<= 14>>
+            <<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
+            <<run $combat_log.push('Zegrath is too tired to fight so she does nothing.')>>
+        <</if>>
+    <</if>>
+    <<if $attackZegrath is "FireSword">>
+        <<if $NPCs.Zegrath.CurSTM >= 40>>
+            <<set $NPCs.Zegrath.CurSTM -= 40>>
+            <<set $ZegrathFireSword += 10>>
+            <<run $combat_log.push('Zegrath sets his swords on fire!')>>
+        <<elseif $NPCs.Zegrath.CurSTM <= 39>>
+            <<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
+        <</if>>
+    <</if>>
+<</if>>
+
+/* Black wolf attacks */
+<<if $partyMembers.includes($NPCs.BlackWolf.name)>>
+	<<if $NPCs.BlackWolf.CurSTM >= 10 && $NPCs.BlackWolf.timeOut <= 0>>
+    	<<set _randomHitBlackWolf to random(0, $mobs.length - 1)>>
+      	<<set $NPCs.BlackWolf.baseDMG to ($NPCs.BlackWolf.SlashSTR) * $mobs[_randomHitBlackWolf].BluntDEF>>
+    	<<set $mobs[_randomHitBlackWolf].CurHP -= $NPCs.BlackWolf.baseDMG>>
+      	<<set $NPCs.BlackWolf.dmgDealtTotal += $NPCs.BlackWolf.baseDMG>>
+      	<<set $NPCs.BlackWolf.CurSTM -= 10>>
+		<<set $mobs[_i].bleedCountCur += $NPCs.BlackWolf.bleedCountDealt>>
+		<<set $mobs[_i].bleedPotency += $NPCs.BlackWolf.bleedPotencyDealt * $mobs[_i].bleedDef>>
+    	<<run $combat_log.push($NPCs.BlackWolf.name + ' slashes at the '+ $mobs[_randomHitBlackWolf].name + ' with her nails, dealing ' + $NPCs.BlackWolf.baseDMG.toFixed(2) + ' damage!')>>
+    <<elseif $NPCs.BlackWolf.CurSTM >= 0 && $NPCs.BlackWolf.timeOut >= 1>>
+    	<<set $NPCs.BlackWolf.CurSTM += $NPCs.BlackWolf.INT>>
+      	<<set $NPCs.BlackWolf.timeOut -= 1>>
+    <<elseif $NPCs.BlackWolf.timeOut <= 0 && $NPCs.BlackWolf.CurSTM <= 10>>
+    	<<run $combat_log.push($NPCs.BlackWolf.name + ' needs to rest for a bit.')>>
+		<<set $NPCs.BlackWolf.timeOut to kitsuneRNG(5, 12)>>
+    	<<set $NPCs.BlackWolf.CurSTM += $NPCs.BlackWolf.INT>>
+    <</if>>
+<</if>>
+
+<<burnPlayer>>
+
+/* Player death */
+<<if $CurHP lte 0>>
+    <<goto "lose">>
+<</if>>
+
+/* Party death*/
+<<if $NPCs.RadiantRose.CurHP lte 0 && $partyMembers.includes("RadiantRose")>>
+    <<set $NPCs.RadiantRose.Affection to 0>>
+    <<run $partyMembers.delete("RadiantRose")>>
+    <<run $combat_log.push('RadiantRose escapes and leaves your party.')>>
+    <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
+<</if>>
+<<if $NPCs.ShadowScythe.CurHP lte 0 && $partyMembers.includes("ShadowScythe")>>
+    <<set $NPCs.ShadowScythe.Affection to 0>>
+    <<run $partyMembers.delete("ShadowScythe")>>
+    <<run $combat_log.push('ShadowScythe escapes and leaves your party.')>>
+    <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
+<</if>>
+<<if $NPCs.CrimsonSentinel.CurHP lte 0 && $partyMembers.includes("CrimsonSentinel")>> 
+    <<set $NPCs.CrimsonSentinel.Affection to 0>>
+    <<run $partyMembers.delete("CrimsonSentinel")>>
+    <<run $combat_log.push('CrimsonSentinel escapes and leaves your party.')>>
+    <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
+<</if>>
+<<if $NPCs.BlackWolf.CurHP lte 0 && $partyMembers.includes($NPCs.BlackWolf.name)>>
+	<<set $NPCs.BlackWolf.Dead to true>> 
+	<<run $partyMembers.delete($NPCs.BlackWolf.name)>>
+    <<run $combat_log.push($NPCs.BlackWolf.name + ' died.')>>
+    <<set $NPCs.Zegrath.Affection -= 100>>
+    <<set $CurFear += (50 - ($FearPercentBuff*50/100) + ($FearPercentDebuff*50/100))>>
+<</if>>
+<<if $NPCs.Zegrath.CurHP lte 0 && $partyMembers.includes("Zegrath")>> 
+    <<set $NPCs.Zegrath.Dead to true>>
+    <<run $partyMembers.delete("Zegrath")>>
+    <<run $combat_log.push('Zegrath died.')>>
+    <<set $CurFear += (50 - ($FearPercentBuff*50/100) + ($FearPercentDebuff*50/100))>>
+<</if>>
+
+/* Ring effects */
+<<for _i = 1; _i lte 10; _i++>>
+    <<if State.variables["Finger" + _i] is "Ring of the living">>
+      <<set $CurHP += $dmgDealt.Combat / 3>>
+    <</if>>
+<</for>>
+
+/* Attack text */
+<<set $attacktxt to random(100)>>
+
+<<bleedTrigger>>
+
+/* Mobs dying */
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+  <<if _mob[_i].CurHP <= 0.01>>
+    <<MobRewards>>
+    <<run $combat_log.push('Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' has been slain.')>>
+  	<<run $mobs.deleteAt(_i)>>
+  <</if>>
+<</for>>
+
+/* Bonus turn */
+<<set $turnChanceCur -= 100>>
+<<set _bonusTurnRNG to random(100)>>
+<<if $turnChanceCur > _bonusTurnRNG>>
+    <<set _bonusTurn to true>>
+    <<set $bonusTurnPlayer to true>>
+<</if>>
+
+<<if $partyMembers.includes("RadiantRose")>>
+    <<set $NPCs.RadiantRose.turnChanceCur -= 100>>
+    <<set _bonusTurnRNG to random(100)>>
+    <<if $NPCs.RadiantRose.turnChanceCur > _bonusTurnRNG>>
+        <<set _bonusTurn to true>>
+        <<set $bonusTurnRadiantRose to true>>
+    <</if>>
+<</if>>
+
+<<if $partyMembers.includes("ShadowScythe")>>
+    <<set $NPCs.ShadowScythe.turnChanceCur -= 100>>
+    <<set _bonusTurnRNG to random(100)>>
+    <<if $NPCs.ShadowScythe.turnChanceCur > _bonusTurnRNG>>
+        <<set _bonusTurn to true>>
+        <<set $bonusTurnShadowScythe to true>>
+    <</if>>
+<</if>>
+
+<<if $partyMembers.includes("CrimsonSentinel")>>
+    <<set $NPCs.CrimsonSentinel.turnChanceCur -= 100>>
+    <<set _bonusTurnRNG to random(100)>>
+    <<if $NPCs.CrimsonSentinel.turnChanceCur > _bonusTurnRNG>>
+        <<set _bonusTurn to true>>
+        <<set $bonusTurnCrimsonSentinel to true>>
+    <</if>>
+<</if>>
+
+<<if $partyMembers.includes("Zegrath")>>
+    <<set $NPCs.Zegrath.turnChanceCur -= 100>>
+    <<set _bonusTurnRNG to random(100)>>
+    <<if $NPCs.Zegrath.turnChanceCur > _bonusTurnRNG>>
+        <<set _bonusTurn to true>>
+        <<set $bonusTurnZegrath to true>>
+    <</if>>
+<</if>>
+
+/* Bonus turn mob reset */
+
+<<for _i = 0; _i lt $mobs.length; _i++>>
+    <<set _mob[_i].turnChanceCur to _mob[_i].turnChanceMax>>
+    <<set _mob[_i].bonusTurn to 0>>
+<</for>>
+
+/* Mob selects player/party so it can also announce who is targetting who. Wont do rn. Too many issues. */
+
+/*<<set _npc = $NPCs[_i]>> */
+/*<<set _mob = $mobs>> */
+/*<<for _i = 0; _i lt $mobs.length; _i++>> */
+/*    <<set $randomHit to random(0, $partyMembers.length)>> */
+/*    <<set $mobHit to kitsuneRNG(0, 100)>> */
+/*    <<if $randomHit <= $partyMembers.length - 1>> */
+/*        <<set _npc = $NPCs[$partyMembers[_randomHit]]>> */
+/*        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' is targetting ' + _npc.name)>> */
+/*    <<else>> */
+/*        <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' is targetting ' + $gamename)>> */
+/*    <</if>> */
+/*<</for>> */
+
+<<if _bonusTurn === true>>
+	/* Bonus turn activate (obviously) */
+    <<goto "Combat remake">>
+<<elseif not $mobs.length && $floorBossBattle !== true>>
+	/* Combat end here */
+	<<goto "Combat win">>
+<<elseif $mobs.length >= 1 && $floorBossBattle !== true>>
+    <<goto 'Enemy turn'>>
+<</if>>
+
+<</link>>
+<<link "Run away">>
+
+<<set _escape to kitsuneRNG(1, 100) + $DEX>>
+<<set $attackText to "Run fail">>
+
+/* Attack text */
+<<set $attacktxt to random(100)>>
+
+<<set _mobsDEX to 0>>
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+    <<set _mobsDEX += $mobs[_i].DEX>>
+<</for>>
+
+<<if $curStamina >= 30>>
+  <<if _escape >= _mobsDEX>>
+        <<set $curStamina -= 30>>
+        <<set $curFatigue += 25>>
+        /* Turns getting fixed for player turn */
+        <<set $turnChanceCur to $turnChanceMax>>
+        <<set $NPCs.RadiantRose.turnChanceCur to $NPCs.RadiantRose.turnChanceMax>>
+        <<set $NPCs.ShadowScythe.turnChanceCur to $NPCs.ShadowScythe.turnChanceMax>>
+        <<set $NPCs.CrimsonSentinel.turnChanceCur to $NPCs.CrimsonSentinel.turnChanceMax>>
+        <<set $NPCs.Zegrath.turnChanceCur to $NPCs.Zegrath.turnChanceMax>>
+        <<unset $bonusTurnPlayer>>
+        <<unset $bonusTurnRadiantRose>>
+        <<unset $bonusTurnShadowScythe>>
+        <<unset $bonusTurnCrimsonSentinel>>
+        <<unset $bonusTurnZegrath>>
+        <<set $mobs to []>>
+        <<set $combat_log to []>>
+        <<set $combat_drops = []>>
+        <<set $combatCol to 0>>
+        <<set $combatXP to 0>>
+        /* Bonus turn mob reset */
+        <<for _i = 0; _i lt $mobs.length; _i++>>
+            <<set _mob[_i].turnChanceCur to _mob[_i].turnChanceMax>>
+            <<set _mob[_i].bonusTurn to 0>>
+        <</for>>
+        <<goto "Run away...">>
+	  <<else>>
+		<<set $curStamina -= 15>>
+    	<<set $curFatigue += 12>>
+      <<run $combat_log.push('You tried escaping... You failed.')>>
+    	<<goto "Enemy turn">>
+	<</if>>
+<</if>>
+<</link>> | 30 stamina
+
+

@@ -1,0 +1,31 @@
+:: FD2.1 {"position":"4850,775","size":"100,100"}
+The echoes of your footsteps reverberate through the cave.
+You can hear every step you make. You can also hear water drops hitting the ground.
+
+<<if $FD2chest == 3 && $f2door == false>>
+You can:
+<<link [[Open the chest|FD2 chest]]>>
+	<<set $lastVisitedPassage1 to "FD2.1">>
+<</link>>
+<<elseif $FD2chest !== 3 && $f2door == false>>\
+You can:
+<<link [[Open the chest|FD2 chest trap]]>>
+	<<set $lastVisitedPassage1 to "FD2.1">>
+<</link>>
+<</if>>\
+
+Directions:
+<<link [[Go deeper into the cave|FD2.2]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.2">>
+<<F2Dungeon>>
+<</link>>
+<<link [[Go back|FD2]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2">>
+<<F2Dungeon>>
+<</link>>
+
+

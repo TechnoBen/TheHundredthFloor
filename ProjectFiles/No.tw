@@ -1,0 +1,21 @@
+:: No {"position":"225,1325","size":"100,100"}
+You decide to wait at the title screen
+
+<<link [[The countdown ends]]>>
+<<set $NPCs.RadiantRose.Affection  += 1>>
+<<set $breastPlate to true>>
+<<set $isChestplateOn to "Starter breastplate">>
+<<set $starterSword to true>>
+<<set $isWeaponOn to "Starter sword">>
+<<dateadd '3m'>>
+<<set $weaponSlashDMG += 1>>
+<<set $weaponPierceDMG += 0.25>>
+<<set $bleedCountDealt to 1.25>>
+<<set $bleedPotencyDealt to 0.43>>
+<<set $armorBluntDEF += 1>>
+<<set $armorPierceDEF += 1>>
+<<set $location to "town">>
+<<set $weaponType to "Short sword">>
+<</link>>
+
+

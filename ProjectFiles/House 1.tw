@@ -1,0 +1,9 @@
+:: House 1 [Town] {"position":"4525,1400","size":"100,100"}
+You go accross the lake using the bridge and then went to the house.
+
+1. <<link [[Knock on the door|House 1.1]]>>
+<</link>>
+2. <<link [[Go back|Frozen lake]]>>
+<</link>>
+
+

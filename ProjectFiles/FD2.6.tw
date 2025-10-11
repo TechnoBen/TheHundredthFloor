@@ -1,0 +1,27 @@
+:: FD2.6 {"position":"5475,650","size":"100,100"}
+After a while of walking you are standing infront of a giant double door. This is the boss room.
+
+You can:
+<<nobr>>
+<<if $f2door >= true>>
+<<link [[Go in the boss room|F2 BOSS]]>>
+<<dateadd '10m'>>
+<</link>>
+<<elseif $f2door <= false or !$f2door>>
+You touch the door, it glows in light blue but it does not open.
+<</if>>
+<</nobr>>
+<<link [[Sit down|FD2.6]]>>
+<<dateadd '10m'>>
+<<Resting>>
+<</link>>
+
+Directions:
+<<link [[Go back|FD2.3]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.3">>
+<<F2Dungeon>>
+<</link>>
+
+

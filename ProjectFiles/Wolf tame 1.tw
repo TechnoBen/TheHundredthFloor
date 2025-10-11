@@ -1,0 +1,12 @@
+:: Wolf tame 1 {"position":"4400,1525","size":"100,100"}
+The Black wolf stops. It seems to be wagging its tail and it looks happy. Did it really take 3 ragout meat to tame that wolf? It comes to you and lays on the floor. It looks like it wants a pat.
+You pat the dog and it rolls over. You see that its a girl and that its a bit bigger than you are... You wonder if you can ride her.
+
+So what will the name of your wolf be?
+<<textbox "$NPCs.BlackWolf.name" "Black wolf">>
+
+<<link [[Continue|Wolf tame 2]]>>
+<<set $wolfTamed to true>>
+<</link>>
+
+

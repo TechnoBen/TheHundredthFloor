@@ -1,0 +1,38 @@
+:: Path 7.5.4 [Path] {"position":"4525,950","size":"100,100"}
+You went down the path. There's snow that reaches your kneecaps.
+You can see the floor dungeon in the distance.
+You get the idea to build a camp in here. It would be pretty useful
+
+1. <<link [[Follow the path|Path 7.5.5]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.5.5">>
+ <<SnowPlains3>>
+<</link>>
+2. <<link [[Go back|Path 7.5.3]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7.5.3">>
+<<SnowPlains3>>
+<</link>>
+
+You can:
+<<nobr>>
+1. <<if $campBuild1 == false>>
+<<link [[Build a camp|Path 7.5.4]]>>
+<<if $planks >= 25 && $iron >= 10>>
+<<dateadd '12m'>>
+<<set $curFatigue += 58>>
+<<set $campBuild1 to true>>
+<<set $planks -= 25>>
+<<set $iron -= 10>>
+<</if>>
+<</link>>
+ | Wood needed $planks/25, Iron needed $iron/10
+<<elseif $campBuild1 == true>>
+<<link [[Camp]]>>
+<</link>>
+<</if>>
+<</nobr>>
+
+

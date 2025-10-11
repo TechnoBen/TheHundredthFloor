@@ -1,0 +1,28 @@
+:: Town street 1 [Town] {"position":"1350,1925","size":"100,100"}
+You are in of the town streets. This one leads to the entarance and the centre so it gets the most attraction.
+There's a jewelry shop, a restaurant and some houses that are currently being sold. You can probably buy one if you have the money to.
+
+Directions:
+1. <<link [[Go to the town centre|Town centre]]>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Town centre">>
+		<<goto "Encounter F1">>
+    <</if>>
+<<dateadd '5m'>>
+<</link>>
+2. <<link [[Go to the town entarance|Town entarance]]>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Town entarance">>
+		<<goto "Encounter F1">>
+    <</if>>
+<<dateadd '5m'>>
+<</link>>
+
+Locations:
+1. <<if setup.datesystems.default.getDate().h gte 12 and setup.datesystems.default.getDate().h lte 22>> <<link [[Go to the restaurant|Restaurant 1]]>> <<dateadd '1m'>> <</link>> <<else>>Restaurant | Closed<</if>>
+2. <<if setup.datesystems.default.getDate().h gte 8 and setup.datesystems.default.getDate().h lte 18>> <<link [[Go to the jewelry shop|Jewelry shop 1]]>> <<dateadd '1m'>> <</link>> <<else>>Jewelry shop | Closed<</if>>
+
+
+

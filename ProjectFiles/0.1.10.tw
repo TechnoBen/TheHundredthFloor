@@ -1,0 +1,46 @@
+:: 0.1.10 [NoSave] {"position":"250,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+- Made the floor 2 boss battle
+- Added a random interaction to F2.
+- Made raid parties upgradeable
+- Added Molly to the map, youll be able to meet her only if you have any friendship points with her.
+- Made it possible to wait out the boss raid (and pasted the code for f3 but it wont work till i code the 3rd boss in dw)
+- Made a achievement for killing the f2 boss. Unlike the F1 boss you wont unlock the achievement if you wait it out.
+- Added the first ever skill (fire stopper)
+- Added the F2 boss to the boss rush
+- Boulder guardians now have a chance to drop iron.
+- Started perparation for a event. Its gonna be kinda big.
+- Added fear
+- Disabled saving during fights
+- Added a option to disable visual effects for fear
+- Added a secret achievement
+- Added a STR debuff modifier for %
+- Added hunger debuffs
+- Added fatigue debuffs
+- Added pink eyes
+- Added orange eyes
+- Added yellow eyes
+- Added bob (random encounter)
+
+- Fixed a bug where the game will still think youre in a floor boss battle even after you kill the boss (not noticable)
+- Fixed a bug where you will still be in a raid with blue if you win the fight
+- Fixed a bug where you will still have your raid party after winning the boss battle.
+- Typos. Fixed typos.
+- Fixed a bug where you could see Zegraths colors when Crimson is in the party and its the enemy turn
+- Fixed NPCs starting max xp not being 150
+- Fixed Stamina inside of the stat points menu being allowed to display decimals
+- Fixed decimals displaying in your save files (only applies on new save files, old ones will still display)
+- Fixed losing fatigue when escaping a fight instead of gaining fatigue. Im a genius.
+- Fixed the stamina cost of running away not being displayed. I did a oopsie lol
+- Fixed dark blue eyes going gray when blinking
+
+NEW ITEMS:
+Heavy stone armor
+Boulder slayer
+Light stone armor
+Fire stopper skill (its a scroll you can read)
+
+[[Back|Changelogs and game information]]
+
+

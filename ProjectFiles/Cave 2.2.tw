@@ -1,0 +1,28 @@
+:: Cave 2.2 {"position":"4400,1400","size":"100,100"}
+You walk down the cave and open the door.
+<<if $NPCs.BlackWolf.Dead == false>>\
+$NPCs.BlackWolf.name looks at you excited. She goes inside the room and lays on the center of it. There seems to be a huge dark blue bed. It looks clean. Around you theres a big plate, a fountain coming from the wall in which water flows. Below you theres a carpet covering the entire floor. Its REALLY comfortable and its white. You assume its from white wolves. There is also a lot of toys made out of wood and Oni skin.
+
+You can:
+<<link [[Check her stats|Stats wolf]]>>
+<</link>>
+<<link [[Add her to your party|Cave 2.2]]>>
+	<<run $partyMembers.push($NPCs.BlackWolf.name)>>
+<</link>>
+<<link "Spend time with $NPCs.BlackWolf.name">>
+	<<goto "Wolf convo">>
+<</link>>
+
+Directions:
+1. <<link [[Go back|Cave 2.1]]>>
+	<<dateadd "2m">>
+<</link>>
+<<elseif $NPCs.BlackWolf.Dead == true>>\
+You enter the room, there seems to be a huge dark blue bed. It looks clean. Around you theres a big plate, a fountain coming from the wall in which water flows. Below you theres a carpet covering the entire floor. Its REALLY comfortable and its white. You assume its from white wolfes. There is also a lot of toys made out of wood and Oni skin.
+
+1. <<link [[Go back|Cave 2.1]]>>
+	<<dateadd "2m">>
+<</link>>
+<</if>>
+
+

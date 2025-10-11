@@ -1,0 +1,181 @@
+:: Sleep 1 [autosave no-party-time-loss] {"position":"2125,350","size":"100,100"}
+You lay down, closing your eyes... Its super uncomfortable.
+
+You sleep for:
+<<link [[Sleep for 1 hour|Sleep 1]]>>
+	<<set $fatigueFaint to 0>>
+	<<dateadd '1h'>>
+	<<set $curStamina += 10>>
+    <<set $CurHP += 10>>
+    <<set $curFatigue -= 100>>
+    <<set $curHunger -= 10>>
+    <<set $NPCs.ShadowScythe.CurHP += 20>>
+	<<set $NPCs.ShadowScythe.CurSTM += 20>>
+	<<set $NPCs.RadiantRose.CurHP += 20>>
+	<<set $NPCs.RadiantRose.CurSTM += 20>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 20>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 20>>
+    <<set $NPCs.Zegrath.CurSTM += 20>>
+    <<set $NPCs.Zegrath.CurHP += 20>>
+    <<set $NPCs.BlackWolf.CurSTM += 20>>
+    <<set $NPCs.BlackWolf.CurHP += 20>>
+    <<set $CurFear -= 10>>
+<</link>>
+<<link [[Sleep for 2 hour|Sleep 1]]>>
+	<<dateadd '2h'>> 
+    <<set $fatigueFaint to 0>> 
+    <<set $curStamina += 20>>
+    <<set $CurHP += 20>>
+    <<set $curFatigue -= 200>>
+    <<set $curHunger -= 20>>
+    <<set $NPCs.ShadowScythe.CurHP += 40>>
+	<<set $NPCs.ShadowScythe.CurSTM += 40>>
+	<<set $NPCs.RadiantRose.CurHP += 40>>
+	<<set $NPCs.RadiantRose.CurSTM += 40>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 40>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 40>>
+    <<set $NPCs.Zegrath.CurSTM += 40>>
+    <<set $NPCs.Zegrath.CurHP += 40>>
+    <<set $NPCs.BlackWolf.CurSTM += 40>>
+    <<set $NPCs.BlackWolf.CurHP += 40>>
+    <<set $CurFear -= 20>>
+<</link>>
+<<link [[Sleep for 3 hour|Sleep 1]]>> 
+	<<set $fatigueFaint to 0>>
+    <<dateadd '3h'>> 
+    <<set $curStamina += 30>>
+    <<set $CurHP += 30>>
+    <<set $curFatigue -= 350>>
+    <<set $curHunger -= 30>>
+    <<set $NPCs.ShadowScythe.CurHP += 60>>
+	<<set $NPCs.ShadowScythe.CurSTM += 60>>
+	<<set $NPCs.RadiantRose.CurHP += 60>>
+    <<set $NPCs.RadiantRose.CurSTM += 60>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 60>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 60>>
+    <<set $NPCs.BlackWolf.CurSTM += 60>>
+    <<set $NPCs.BlackWolf.CurHP += 60>>
+    <<set $NPCs.Zegrath.CurSTM += 60>>
+    <<set $NPCs.Zegrath.CurHP += 60>>
+    <<set $CurFear -= 30>>
+<</link>>
+<<link [[Sleep for 4 hour|Sleep 1]]>> 
+	<<set $fatigueFaint to 0>> 
+    <<dateadd '4h'>> 
+    <<set $curStamina += 40>> 
+    <<set $CurHP += 40>>
+    <<set $curFatigue -= 450>>
+    <<set $curHunger -= 40>>
+    <<set $NPCs.ShadowScythe.CurHP += 80>>
+	<<set $NPCs.ShadowScythe.CurSTM += 80>>
+	<<set $NPCs.RadiantRose.CurHP += 80>>
+	<<set $NPCs.RadiantRose.CurSTM += 80>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 80>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 80>>
+    <<set $NPCs.BlackWolf.CurSTM += 80>>
+    <<set $NPCs.BlackWolf.CurHP += 80>>
+    <<set $NPCs.Zegrath.CurSTM += 80>>
+    <<set $NPCs.Zegrath.CurHP += 80>>
+    <<set $CurFear -= 40>>
+<</link>>
+<<link [[Sleep for 5 hour|Sleep 1]]>> 
+	<<set $fatigueFaint to 0>> 
+    <<dateadd '5h'>> 
+    <<set $curStamina += 50>> 
+    <<set $CurHP += 50>>
+    <<set $curFatigue -= 600>>
+    <<set $curHunger -= 50>>
+    <<set $NPCs.ShadowScythe.CurHP += 100>>
+	<<set $NPCs.ShadowScythe.CurSTM += 100>>
+	<<set $NPCs.RadiantRose.CurHP += 100>>
+	<<set $NPCs.RadiantRose.CurSTM += 100>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 100>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 100>>
+    <<set $NPCs.Zegrath.CurSTM += 100>>
+    <<set $NPCs.Zegrath.CurHP += 100>>
+    <<set $NPCs.BlackWolf.CurSTM += 100>>
+    <<set $NPCs.BlackWolf.CurHP += 100>>
+    <<set $CurFear -= 50>>
+<</link>>
+<<link [[Sleep for 6 hour|Sleep 1]]>>
+	<<set $fatigueFaint to 0>>
+    <<dateadd '6h'>> 
+    <<set $curStamina += 60>>
+    <<set $CurHP += 60>>
+    <<set $curFatigue -= 700>>
+    <<set $curHunger -= 60>>
+    <<set $NPCs.ShadowScythe.CurHP += 120>>
+	<<set $NPCs.ShadowScythe.CurSTM += 120>>
+	<<set $NPCs.RadiantRose.CurHP += 120>>
+	<<set $NPCs.RadiantRose.CurSTM += 120>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 120>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 120>>
+    <<set $NPCs.Zegrath.CurSTM += 120>>
+    <<set $NPCs.Zegrath.CurHP += 120>>
+    <<set $NPCs.BlackWolf.CurSTM += 120>>
+    <<set $NPCs.BlackWolf.CurHP += 120>>
+    <<set $CurFear -= 60>>
+<</link>>
+<<link [[Sleep for 7 hour|Sleep 1]]>> 
+	<<set $fatigueFaint to 0>> 
+    <<dateadd '7h'>>
+    <<set $curFatigue -= 800>>
+    <<set $curStamina += 70>>
+    <<set $CurHP += 70>> 
+    <<set $curHunger -= 70>>
+    <<set $NPCs.ShadowScythe.CurHP += 140>>
+	<<set $NPCs.ShadowScythe.CurSTM += 140>>
+	<<set $NPCs.RadiantRose.CurHP += 140>>
+	<<set $NPCs.RadiantRose.CurSTM += 140>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 140>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 140>>
+    <<set $NPCs.Zegrath.CurSTM += 140>>
+    <<set $NPCs.Zegrath.CurHP += 140>>
+    <<set $NPCs.BlackWolf.CurSTM += 140>>
+    <<set $NPCs.BlackWolf.CurHP += 140>>
+    <<set $CurFear -= 70>>
+<</link>>
+<<link [[Sleep for 8 hour|Sleep 1]]>> 
+	<<set $fatigueFaint to 0>> 
+    <<dateadd '8h'>> 
+    <<set $curStamina += 80>>
+    <<set $curFatigue -= 900>> 
+    <<set $CurHP += 80>>
+    <<set $curHunger -= 80>>
+    <<set $NPCs.ShadowScythe.CurHP += 160>>
+	<<set $NPCs.ShadowScythe.CurSTM += 160>>
+	<<set $NPCs.RadiantRose.CurHP += 160>>
+	<<set $NPCs.RadiantRose.CurSTM += 160>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 160>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 160>>
+    <<set $NPCs.Zegrath.CurSTM += 160>>
+    <<set $NPCs.Zegrath.CurHP += 160>>
+    <<set $NPCs.BlackWolf.CurSTM += 160>>
+    <<set $NPCs.BlackWolf.CurHP += 160>>
+    <<set $CurFear -= 80>>
+<</link>>
+<<link [[Sleep for 9 hour|Sleep 1]]>>
+	<<set $fatigueFaint to 0>> 
+    <<dateadd '9h'>> 
+    <<set $curStamina += 90>>
+    <<set $CurHP += 90>>
+    <<set $curFatigue -= 1000>>
+    <<set $curHunger -= 90>>
+    <<set $NPCs.ShadowScythe.CurHP += 180>>
+	<<set $NPCs.ShadowScythe.CurSTM += 180>>
+	<<set $NPCs.RadiantRose.CurHP += 180>>
+	<<set $NPCs.RadiantRose.CurSTM += 180>>
+	<<set $NPCs.CrimsonSentinel.CurHP += 180>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 180>>
+    <<set $NPCs.Zegrath.CurSTM += 180>>
+    <<set $NPCs.Zegrath.CurHP += 180>>
+    <<set $NPCs.BlackWolf.CurSTM += 180>>
+    <<set $NPCs.BlackWolf.CurHP += 180>>
+    <<set $CurFear -= 90>>
+<</link>>
+
+<<link "Go back">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+
+

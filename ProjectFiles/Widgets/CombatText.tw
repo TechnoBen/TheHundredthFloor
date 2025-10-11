@@ -1,0 +1,86 @@
+:: CombatText [widget] {"position":"1625,725","size":"100,100"}
+<<widget "CombatText" container>>
+    <<if $attackText == "Do nothing">>\
+    <<if $attacktxt lte 10>>
+    You stand there doing nothing.
+    
+    The $monstername comes at you from the <<if $Mobattack <= 50>>left side. <<elseif $Mobattack >= 51>>right side.<</if>>
+    <<elseif $attacktxt lte 20>>
+    You decide to do nothing.
+    
+    While doing absolutely nothing the $monstername charges at you <<if $Mobattack <= 50>> to the left side. <<elseif $Mobattack >= 51>>to the right side.<</if>>
+    <<elseif $attacktxt lte 30>>
+    You do nothing.
+    
+    The $monstername comes to the <<if $Mobattack <= 50>>left side. <<elseif $Mobattack >= 51>>right side.<</if>>
+    <<elseif $attacktxt lte 40>>
+    You take a break and do nothing.
+    
+    The $monstername comes to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <<elseif $attacktxt lte 100>>
+    You do nothing.
+    
+    The $monstername is coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <</if>>\
+    <<elseif $attackText == "Stab">>\
+    <<if $attacktxt lte 20>>
+    You stab the $monstername, dealing <<= $dmgDealt.Combat.toFixed(2)>> damage!
+    
+    The $monstername is coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <<elseif $attacktxt lte 40>>
+    You plunge your weapon into the enemy, dealing <<= $dmgDealt.Combat.toFixed(2)>> damage!
+    
+    The $monstername is coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <<elseif $attacktxt lte 70>>
+    You bury your weapon deep into the $monstername, dealing <<= $dmgDealt.Combat.toFixed(2)>> damage!
+    
+    It's coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <<elseif $attacktxt lte 100>>
+    You prepeare yourself to stab the $monstername and you end up stabbing it, dealing <<= $dmgDealt.Combat.toFixed(2)>> damage.
+    
+    The $monstername is coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <</if>>\
+    <<elseif $attackText == "Charge">>\
+    <<if $attacktxt lte 35>>
+    You charge at the $monstername, dealing <<= $dmgDealt.Combat.toFixed(2)>> damage!
+    
+    The $monstername is coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <<elseif $attacktxt lte 70>>
+    You rush forward with your weapon at the ready, striking the $monstername, dealing <<= $dmgDealt.Combat.toFixed(2)>> damage!
+    
+    It's coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <<elseif $attacktxt lte 100>>
+    You prepeare yourself to charge at the $monstername. After a bit you finally do it and deal <<= $dmgDealt.Combat.toFixed(2)>> damage. 
+    
+    The $monstername is coming to the <<if $Mobattack <= 50>>left side<<elseif $Mobattack >= 51>>right side<</if>> for an attack.
+    <</if>>\
+    <<elseif $attackText == "Drink a HP potion">>\
+    <<if $attacktxt lte 100>>
+    You drank a HP potion, gaining 50 HP. You have $hpPOT HP potions left
+    <</if>>\
+    <<elseif $attackText == "Drink a HP potion tier 2">>\
+    <<if $attacktxt lte 100>>
+    You drank a HP potion, gaining 60 HP back this turn. You have $hpPOT HP potions left
+    <</if>>\
+    <<elseif $attackText == "Drink a STM potion">>\
+    <<if $attacktxt lte 100>>
+    You drank a STM potion, gaining 50 Stamina and you feel less tired. You have $stmPOT STM potions left
+    <</if>>\
+    <<elseif $attackText == "Feed dog">>\
+    <<if $attacktxt lte 100>>
+    You gave the Black wolf meat. It looks pretty happy...
+    <</if>>\
+    <<elseif $attackText == "Run fail">>\
+    <<if $attacktxt lte 50>>
+    You tried running away but you trip and fall.
+    
+    The $monstername comes at you from the <<if $Mobattack <= 50>>left side. <<elseif $Mobattack >= 51>>right side.<</if>>
+    <<elseif $attacktxt lte 100>>
+    You tried running away but the $monstername catches up to you.
+    
+    The $monstername comes at you from the <<if $Mobattack <= 50>>left side. <<elseif $Mobattack >= 51>>right side.<</if>>
+    <</if>>\
+    <</if>>\
+    <</widget>>
+
+

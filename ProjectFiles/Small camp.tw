@@ -1,0 +1,19 @@
+:: Small camp {"position":"1850,1900","size":"100,100"}
+You go to the small camp.
+There's a fire pit, a cauldron and 3 tents...
+There's also a wardrobe. You wonder how it got here and if someone dragged it to here or just built it... Or it was placed by the game makers. Who knows.
+
+Directions:
+1. [[Go back|Path 5.3]]
+
+You can:
+1. <<link [[Sleep in the tent|Sleep 1]]>>
+	<<set $lastVisitedPassage1 to "Small camp">><</link>>
+2. <<link [[Cook on the fire|Cooking]]>> 
+	<<set $lastvisitedpassage1 to "Small camp">>
+<</link>>
+3. <<link [[Open the wardrobe|Wardrobe]]>>
+	<<set $lastVisitedPassage1 to "Small camp">>
+<</link>>
+
+

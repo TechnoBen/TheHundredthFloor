@@ -1,0 +1,87 @@
+:: Random widgets [widget] {"position":"2375,725","size":"100,100"}
+<<widget "Party2FBossAttack">>
+	<<if $partyMembers.includes("RadiantRose")>>\
+    	<<set $MonsertHP -= $DEXRadiantRose/7 + $STRRadiantRose/5 + $weaponDMGRadiantRose>>
+        <<set $MonsterDMGDealt += $DEXRadiantRose/7 + $STRRadiantRose/5 + $weaponDMGRadiantRose>>
+	<</if>>
+	<<if $partyMembers.includes("ShadowScythe")>>\
+	    <<set $MonsertHP -= $DEXShadowScythe/7 + $STRShadowScythe/5 + $weaponDMGShadowScythe>>
+        <<set $MonsterDMGDealt += $DEXShadowScythe/7 + $STRShadowScythe/5 + $weaponDMGShadowScythe>>
+	<</if>>
+	<<if $partyMembers.includes("CrimsonSentinel")>>\
+	    <<set $MonsertHP -= $STRCrimsonSentinel/4 + $weaponDMGCrimsonSentinel>>
+        <<set $MonsterDMGDealt += $STRCrimsonSentinel/4 + $weaponDMGCrimsonSentinel>>
+	<</if>>
+	<<if $partyMembers.includes("Zegrath")>>\
+	    <<set $MonsertHP -= $STRZegrath/5 + $weaponDMGZegrath>>
+        <<set $MonsterDMGDealt += $STRZegrath/5 + $weaponDMGZegrath>>
+	<</if>>
+	<<if $partyMembers.includes($NPCs.BlackWolf.name)>>\
+	    <<set $MonsertHP -= $wolfSTR/3>>
+        <<set $MonsterDMGDealt += $wolfSTR/3>>
+	<</if>>
+	<<set $MonsterHP -= $STR/5 + $weaponDMG/5>>
+	<<set $MonsterDMGDealt += $STR/5 + $weaponDMG/5>>
+<</widget>>
+
+<<widget "Party2FBossHit">>
+	<<if $partyMembers.includes("RadiantRose")>>
+		<<set $CurHPRadiantRose -= $monsterSTR - $DEFRadiantRose>>
+	<</if>>
+	<<if $partyMembers.includes("ShadowScythe")>>
+	    <<set $CurHPShadowScythe -= $monsterSTR - $DEFShadowScythe>>
+	<</if>>
+	<<if $partyMembers.includes("CrimsonSentinel")>>
+		<<set $CurHPCrimsonSentinel -= $monsterSTR - $DEFCrimsonSentinel>>
+	<</if>>
+	<<if $partyMembers.includes("Zegrath")>>
+		<<set $CurHPZegrath -= $monsterSTR - $DEFZegrath>>
+	<</if>>
+	<<if $partyMembers.includes($NPCs.BlackWolf.name)>>
+		<<set $NPCs.BlackWolf.CurHP -= $monsterSTR - $wolfDEF>>
+	<</if>>
+	<<if $CurHPRadiantRose lte 0>>
+    	<<set $NPCs.RadiantRose.Affection to 0>>
+    	<<run $partyMembers.delete("RadiantRose")>>
+	<</if>>
+	<<if $CurHPShadowScythe lte 0>>
+   		<<set $NPCs.ShadowScythe.Affection to 0>>
+    	<<run $partyMembers.delete("ShadowScythe")>>
+	<</if>>
+	<<if $CurHPCrimsonSentinel lte 0>> 
+	    <<set $NPCs.CrimsonSentinel.Affection to 0>>
+	    <<run $partyMembers.delete("CrimsonSentinel")>>
+	<</if>>
+	<<if $NPCs.BlackWolf.CurHP lte 0>>
+		<<set $NPCs.BlackWolf.Dead to true>> 
+		<<run $partyMembers.delete($NPCs.BlackWolf.name)>>
+	<</if>>
+	<<if $CurHPZegrath lte 0>> 
+    	<<set $NPCs.Zegrath.Dead to true>>
+    	<<run $partyMembers.delete("Zegrath")>>
+	<</if>>
+	<<if $raidParty == true>>
+		<<set $raidHP -= $monsterSTR>>
+	<</if>>
+	<<set $CurHP -= $monsterSTR - $DEF - $armorDEF>>
+<</widget>>
+
+<<widget "EventCurrencies">>\
+	<<if $OneYearTHF == true>>\
+You gained $AnniversaryCoinDrop Anniversary coins.
+	<</if>>
+    <<if $christmasEvent == true>>\
+You obtained $candyCanesCurDrop candy canes.
+	<</if>>
+<</widget>>
+
+<<widget "Resting">>
+	<<set $curStamina += 5 + $INT>>
+	<<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
+	<<set $NPCs.RadiantRose.CurSTM += 5 + $NPCs.RadiantRose.INT>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 5 + $NPCs.CrimsonSentinel.INT>>
+	<<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
+	<<set $NPCs.Marcellus.CurSTM += 5 + $NPCs.Marcellus.INT>>
+<</widget>>
+
+

@@ -1,0 +1,30 @@
+:: F1BOSSBATTLE 1.1 {"position":"950,2525","size":"100,100"}
+The boss has came closer to you and your raid party.
+As it basically gets next to you all it takes out 2 axes out of nowhere and it swings at you all.
+Blu3B3llrex seems to have her group under control. They managed to dodge it.
+
+Floor boss health: $MonsterHP
+
+Your HP: $CurHP/$MaxHP
+Your raid partys HP: $raidHP/1000
+
+You can:
+<<if $raidParty == true>>
+<<link [[Command your people to attack|F1BOSSBATTLE 1.2]]>>
+<<set $mobs.Deathlord.CurHP -= 45>>
+<<set $raidHP -= 243>>
+<<set $CurHP -= 123>>
+<</link>>
+<<link [[Command your people to charge|F1BOSSBATTLE 1.2]]>>
+<<set $mobs.Deathlord.CurHP -= 52>>
+<<set $raidHP -= 283>>
+<<set $CurHP -= 153>>
+<</link>>
+<<link [[Command your people to dodge|F1BOSSBATTLE 1.2]]>>
+<</link>>
+<<elseif $raidParty == false>>
+You don't have a raid party to command.
+<</if>>
+[[Fight it alone|Combat remake]]
+
+

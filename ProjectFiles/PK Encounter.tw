@@ -1,0 +1,14 @@
+:: PK Encounter {"position":"100,2175","size":"100,100"}
+You hear the footsteps getting louder and louder. You turn back drawing your weapon to see a player coming at you.
+
+<<link [[Continue|Combat remake]]>>
+<<set _pkChoice to random(100)>>
+<<if _pkChoice lte 50>>
+	<<mob pker1>>
+<<elseif _pkChoice lte 100>>
+	<<mob pker2>>
+<</if>>
+<</link>>
+        
+
+

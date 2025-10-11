@@ -1,0 +1,29 @@
+:: invite shadow to your party {"position":"1000,1650","size":"100,100"}
+<<if $NPCs.ShadowScythe.Affection <= 9>>\
+"Oi Shadow... wanna join my party?" you ask ShadowScythe.
+<span class="shadow">"Nah I can't do that right now."</span> he responds...
+
+Maybe he doesn't trust you enough... You should speak to him more.
+
+<<link "Go back">>
+	<<dateadd '5m'>> 
+    <<goto $lastVisitedPassage>>
+<</link>>
+<<elseif $NPCs.ShadowScythe.Affection >= 10>>\
+"Oi Shadow... wanna join my party?" you ask ShadowScythe.
+<span class="shadow">"I mean... sure?"</span> he responds...
+You open your SOCIAL menu, sending him a party request.
+He accepts it. 
+
+<<link "Go back">> 
+	<<if $partyMembers.includes("ShadowScythe") or $partyMembers.length >= 3>>
+	<<else>>
+		<<run $partyMembers.push("ShadowScythe")>>
+		<<dateadd '5m'>>
+        <<set $partyON to true>>
+	<</if>>
+    <<goto $lastVisitedPassage>>
+<</link>>
+<</if>>
+
+

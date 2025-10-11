@@ -1,0 +1,39 @@
+:: Forest fin outside [Town no-party-time-loss] {"position":"1850,3050","size":"100,100"}
+You are standing outside your house.
+You took a lot of time fixing your house and you are happy with what you did.
+
+You can:
+1. <<link [[Go inside your house|Forest hut corridor]]>> 
+	<<set $location to "start">> 
+<</link>>
+2. <<link [[Sit down on a chair|Forest fin outside]]>>
+	<<dateadd '5m'>> 
+	<<set $curFatigue -=10>>
+	<<Resting>>
+<</link>>
+
+Directions:
+1. <<link [[Go to the forest|Path 3.4]]>> <<set $location to "forest1">> <</link>> 
+2. <<if $pathDone == true>><<link [[Path to the plains|Path 4]]>>
+<<dateadd '25m'>> <<set $curFatigue += 23>> <<set $location to "plains">>
+<</link>> <<elseif $pathDone is false>> You haven't made the path yet. <</if>>
+<<nobr>>
+<<if $shovel1 == true>>
+<<if $pathDone == false>>
+<<link [[Make a path|Forest fin outside]]>>
+<<set $pathProgress += 1>>  <<dateadd '34m'>> <<set $curFatigue += 58>>
+<</link>>
+<</if>>
+<</if>>
+<<if $shovel1 is false>>
+You need a iron shovel to make a path!
+<</if>>
+<<if $pathDone == false>>
+<<if $pathProgress <= 20>>
+ | $pathProgress/20
+ <</if>>
+ <</if>>
+<</nobr>>
+
+
+

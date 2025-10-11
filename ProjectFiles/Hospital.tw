@@ -1,0 +1,10 @@
+:: Hospital [no-fainting-or-hunger no-party-time-loss] {"position":"1100,2075","size":"100,100"}
+You enter the hospital. It is not the same hospital as the beta so you are confused...
+
+Infront of you there's a receptionist. There's a small sign saying: "If you need healing ask the receptionish for meds. Doc is away."
+You stare at it confused, "Doesn't this place need a doctor to heal people? What if its something a potion cant do..." is what you think...
+
+1. <<link [[Ask for healing|Doc heal]]>> <</link>>
+2. <<link [[Go back|Town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

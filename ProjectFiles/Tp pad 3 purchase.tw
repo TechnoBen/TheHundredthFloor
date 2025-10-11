@@ -1,0 +1,26 @@
+:: Tp pad 3 purchase {"position":"4100,550","size":"100,100"}
+You get closer to the Teleportation pad to see a screen popup infront of you...
+
+"You need to buy access to the Teleportation pad to use it."
+
+<div class="UIButtons">
+<<button "Buy access to the teleportation pad. | 5000 col">>
+<<if $Coins >= 5000>>
+<<set $Coins -= 5000>>
+<<set $tppadTHREE to true>>
+<<goto "Library 1">>
+<<elseif $tppadTHREE == true>>
+<<script>>
+UI.alert("You already bought the house!");
+<</script>>
+<<elseif $Coins <= 4999>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+</div>
+
+[[Go back|Library 1]]
+
+

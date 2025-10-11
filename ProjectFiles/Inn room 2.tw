@@ -1,0 +1,18 @@
+:: Inn room 2 {"position":"3150,1850","size":"100,100"}
+You go in your room.
+There's a comfy bed to the right and a desk with a book and a flower pot with a beautiful blue flower on it, next to your bed.
+There's a wardrobe right next to it.
+
+You can:
+1. <<link [[Sleep|Sleep 2]]>> <<set $lastVisitedPassage1 to "Inn room 2">> <</link>>
+2. <<link [[Open the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Inn room 2">> <</link>>
+3. <<link [[Open the stats menu|Stat points]]>> <<set $lastVisitedPassage1 to "Inn room 2">> <</link>>
+4. <<link [[Read a book|Book 2]]>>
+<<set $lastVisitedPassage1 to "Inn room 2">>
+<<set $curFatigue += 12>>
+<<dateadd '30m'>>
+<<dateadd '1h'>>
+<</link>>
+5. [[Go out of your room|Inn room purchase 2]]
+
+

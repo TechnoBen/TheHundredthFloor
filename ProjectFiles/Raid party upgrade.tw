@@ -1,0 +1,69 @@
+:: Raid party upgrade {"position":"2650,2400","size":"100,100"}
+Your raid party max hp: $raidMaxHP
+Your raid party gear: <<if $raidPartyArmorTier == 1>>Starter gear<<elseif $raidPartyArmorTier == 2>>Leather armor<<elseif $raidPartyArmorTier == 3>>Iron armor<<elseif $raidPartyArmorTier == 4>>Oni leather armor<</if>>
+
+<<link [[Go back|Blu3B3llrexConvo]]>>
+<</link>>
+
+Upgrade their armor:
+Tier <<if $raidPartyArmorTier == 1>>1 | Upgrade: <<link "2500 col">>
+    <<if $Coins >= 2500>>
+        <<set $Coins -= 2500>>
+        <<set $raidMaxHP += 150>>
+        <<set $raidPartyArmorTier += 1>>
+        <<goto "Raid party upgrade">>
+    <<elseif $Coins <= 2449>>
+        <<script>>
+            UI.alert("You dont have enough col!");
+        <</script>>
+    <</if>>
+    <</link>><<elseif $raidPartyArmorTier == 2>>2 | Upgrade: <<link "4700 col">>
+    <<if $Coins >= 4700>>
+        <<set $Coins -= 4700>>
+        <<set $raidMaxHP += 190>>
+        <<set $raidPartyArmorTier += 1>>
+        <<goto "Raid party upgrade">>
+    <<elseif $Coins <= 4699>>
+        <<script>>
+            UI.alert("You dont have enough col!");
+        <</script>>
+    <</if>>
+    <</link>> or <<link "312 iron">>
+    <<if $iron >= 312>>
+        <<set $iron -= 312>>
+        <<set $raidMaxHP += 190>>
+        <<set $raidPartyArmorTier += 1>>
+        <<goto "Raid party upgrade">>
+    <<elseif $iron <= 312>>
+        <<script>>
+            UI.alert("You dont have enough items!");
+        <</script>>
+    <</if>>
+    <</link>><<elseif $raidPartyArmorTier == 3>>3 | Upgrade: <<link "7800 col">>
+    <<if $Coins >= 7800>>
+        <<set $Coins -= 7800>>
+        <<set $raidMaxHP += 225>>
+        <<set $raidPartyArmorTier += 1>>
+        <<goto "Raid party upgrade">>
+    <<elseif $Coins <= 7799>>
+        <<script>>
+            UI.alert("You dont have enough col!");
+        <</script>>
+    <</if>>
+    <</link>> or <<link "138 Oni leather">>
+    <<if $oniLeather >= 138>>
+        <<set $oniLeather -= 138>>
+        <<set $raidMaxHP += 225>>
+        <<set $raidPartyArmorTier += 1>>
+        <<goto "Raid party upgrade">>
+    <<elseif $oniLeather <= 138>>
+        <<script>>
+            UI.alert("You dont have enough items!");
+        <</script>>
+    <</if>>
+    <</link>><<elseif $raidPartyArmorTier == 4>>4<</if>>
+
+<<link [[Go back|Blu3B3llrexConvo]]>>
+<</link>>
+
+

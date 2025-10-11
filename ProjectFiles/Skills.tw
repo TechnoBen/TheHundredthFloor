@@ -1,0 +1,36 @@
+:: Skills {"position":"2000,225","size":"100,100"}
+-------------------------------
+\<center>Your skills:
+<center>Cooking: <<if $CookingSkill == 0>> F <<elseif $CookingSkill == 3>> D <<elseif $CookingSkill == 6>> C <<elseif $CookingSkill == 9>> B <<elseif $CookingSkill == 12>> A <<elseif $CookingSkill == 15>> S <</if>> <<showmeter 'cooking' `$CookingXP /$CookingMaxXP`>>
+Crafting: <<if $CraftingSkill == 0>> F <<elseif $CraftingSkill == 1>> D <<elseif $CraftingSkill == 2>> C <<elseif $CraftingSkill == 3>> B <<elseif $CraftingSkill == 4>> A <<elseif $CookingSkill == 5>> S <</if>> <<showmeter 'crafting' `$CraftingXP /$CraftingMaxXP`>></center>\ 
+-------------------------------
+\Language skills:
+<center>Speaking: <<if $SpeakingSkill == 1>> F <<elseif $SpeakingSkill == 2>> D <<elseif $SpeakingSkill == 3>> C <<elseif $SpeakingSkill == 4>> B <<elseif $SpeakingSkill == 5>> A <<elseif $SpeakingSkill == 6>> S <</if>> <<showmeter 'EveseSpeaking' `$SpeakingXP /$SpeakingMaxXP`>></center>\
+<center>Reading: <<if $ReadingSkill == 1>> F <<elseif $ReadingSkill == 2>> D <<elseif $ReadingSkill == 3>> C <<elseif $ReadingSkill == 4>> B <<elseif $ReadingSkill == 5>> A <<elseif $ReadingSkill == 6>> S <</if>> <<showmeter 'EveseRead' `$ReadingXP /$ReadingMaxXP`>></center>\ 
+</center>\
+-------------------------------
+\<div class="UIButtons">\
+<<button "Traits">>
+<<script>>
+Dialog.setup("Traits", "traits");
+Dialog.wiki(Story.get("TraitsUI").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Stats">>
+<<script>>
+Dialog.setup("Stats", "stats");
+Dialog.wiki(Story.get("Stats").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Game stats">>
+<<script>>
+Dialog.setup("Game stats", "gmstat");
+Dialog.wiki(Story.get("Game stats").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>
+
+

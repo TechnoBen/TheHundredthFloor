@@ -1,0 +1,44 @@
+:: F1 BOSS {"position":"2475,2150","size":"100,100"}
+You go inside the room.
+The floor boss room is just as you remember it. There hasn't been a single change to it.
+The room is big, it would take you a good 5 minutes to walk from the entarance to the bosses throne. On the sides there are pillars.
+You hear rumbling behind you. You turn back to see the door close. You don't remember that being in the beta.
+
+You can:
+<<nobr>>
+<<if $f1bosskilled == false>>
+<<link [[Fight the floor boss|F1BOSSBATTLE]]>>
+<<set $floorBossBattle to true>>
+<<set $lastVisitedPassage to "F1 BOSS">>
+<<mob deathlord>>
+<</link>>
+<<elseif $f1bosskilled == true>>
+You have already killed the floor boss... You can't kill it twice.
+<</if>>
+<</nobr>>
+<<set $secretboss1 to random(100)>>
+Directions:
+<<nobr>>
+<<if $f1bosskilled == false>>
+You need to kill the First floor boss to proceed to floor 2.
+<<elseif $f1bosskilled == true>>
+<<link [[Staircase to floor 2|Floor 2 staircase 1]]>>
+<<if $secretboss1 lte 25>>
+<<dateadd '2h'>>
+<<set $curFatigue += 250>>
+<<goto "Floor 2 staircase">>
+<<else>>
+<<dateadd '1h'>>
+<<set $location to "snowy1">>
+<<set $curFatigue += 150>>
+<</if>>
+<</link>>
+<</if>>
+<</nobr>>
+<<if $f1bosskilled == false>>\
+You can't go back unless you kill the floor boss.
+<<elseif $f1bosskilled == true>>\
+[[Go back|FD 1.4]]
+<</if>>
+
+

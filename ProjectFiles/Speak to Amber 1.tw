@@ -1,0 +1,11 @@
+:: Speak to Amber 1 {"position":"3525,1975","size":"100,100"}
+"Nice to see you too, Amy. What are you doing right now?"<<set _amberRNGTxt to kitsuneRNG(1, 100)>>
+<span class="amber">"<<if _amberRNGTxt lte 25>>Nothing much. Just looking at some weapons to craft. What about you?<<elseif _amberRNGTxt lte 50>>Just looking at my stats... What about you?<<elseif _amberRNGTxt lte 75>>Waiting for customers. What about you?<<elseif _amberRNGTxt lte 100>>Thinking of going out for a bit. But since you're here I won't have to do that.<</if>>"</span> she responds.
+
+Speak to her
+Invite her to your party
+Ask if she has any job to give you
+<<link [[Never mind|Amber shop 1]]>>
+<</link>>
+
+

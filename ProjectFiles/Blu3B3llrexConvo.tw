@@ -1,0 +1,20 @@
+:: Blu3B3llrexConvo {"position":"2400,2400","size":"100,100"}
+You see Blu3B3llrex moving some boxes from one place to another. It seems like they are potions.
+<<nobr>>
+<<if $f1DungeonFound == false>>
+1. You need to find the floor dungeon before you can talk about the raid.
+<<elseif $f1DungeonFound == true>>
+1. <<link [[Speak to her about the floor raid|Blue floor raid]]>>
+<</link>>
+<</if>>
+<</nobr>>
+2. <<link [[Speak to her|Speak to blue]]>>
+<</link>>
+3. <<link [[Help her with moving the boxes|Help blue]]>>
+<</link>>
+4. <<link [[Raid party ideas|Raid party upgrade]]>>
+<</link>>
+5. <<link [[Go back|Oakheart centre]]>>
+<</link>>
+
+

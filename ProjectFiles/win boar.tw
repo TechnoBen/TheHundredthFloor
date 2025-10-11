@@ -1,0 +1,11 @@
+:: win boar [autosave] {"position":"400,2300","size":"100,100"}
+You killed the boar and won the battle, gaining <<print ($mobLvl * 1.5 + $mobXP).toFixed(0)>> XP and $mobCoins Coins and Boar meat.
+<<EventCurrencies>>\
+<<link "Go back">>
+<<goto $lastVisitedPassage>>
+<<set $killedBoars += 1>>
+<<set $boarMeat += 1>>
+<<MobRewards>>
+<</link>>
+
+

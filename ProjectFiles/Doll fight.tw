@@ -1,0 +1,102 @@
+:: Doll fight {"position":"3125,1000","size":"100,100"}
+The doll is staring at you with its own red eyes... You feel creeped out having to fight yourself.
+It has $dollHP HP left...
+\<<CombatText>>\<</CombatText>>\
+
+Your stats:
+HP: $CurHP/$MaxHP
+STM: $curStamina/$maxStamina
+
+HP pots: $hpPOT
+STM potions: $stmPOT
+
+<<set _attacks = ["Do nothing","Stab","Charge","Drink a HP potion", "Drink a STM potion"] >>''Select your attack:'' <<listbox "$attack">>
+	<<optionsfrom _attacks>>
+
+    <</listbox>>
+
+<<link "Continue...">>
+
+<<if $armorDEF + $DEF < $dollSTR>>
+<<set $CurHP -= $dollSTR - $DEF - $armorDEF>>
+<<elseif $armorDEF + $DEF >= $dollSTR>>
+<<set $CurHP -= 1>>
+<</if>>
+<<dateadd '1m'>>
+
+<<if $attack is "Do nothing">>
+<<if $curStamina <= $maxStamina >>
+<<set $curStamina += 5 + $INT>>
+<<elseif $curStamina >= $maxStamina>>
+<<set $curStamina -= 5 + $INT>>
+<</if>>
+<</if>>
+<<if $attack is "Stab">>
+<<if $curStamina >= 9>>  
+ <<set $dollHP -= ($STR + $weaponDMG - $dollDEF)>> 
+<<set $curStamina -= 10>> <<set $curFatigue += 3>>
+<<elseif $curStamina<=9>>
+<<set $curStamina += 5>>
+<</if>>
+<</if>>
+<<if $attack is "Charge">>
+<<if $curStamina >= 16>>  <<set $curFatigue += 7>>
+<<set $dollHP -= ($weaponDMG + $DEX/2 + $STR - $dollDEF)>> 
+<<set $curStamina -= 16>>
+<<elseif $curStamina<=16>>
+<<set $curStamina += 5>>
+<</if>>
+<</if>>
+<<if $attack is "Drink a HP potion">>
+<<if $hpPOT >= 1>>  
+<<set $CurHP += 50 + $dollSTR>>
+<<set $hpPOT -= 1>>
+<</if>>
+<</if>>
+<<if $attack is "Drink a STM potion">>
+<<if $stmPOT >= 1>>  
+<<set $curStamina += 50>>
+<<set $curFatigue -= 100>>
+<<set $stmPOT -= 1>>
+<</if>>
+<</if>>
+
+<<if $attack is "Stab">>
+<<if $weaponType is "Heavy Sword">>
+ <<set $curStamina -= 15>>
+  <<set $curHunger -= 4>>
+<</if>> <</if>>
+<<if $attack is "Charge">>
+<<if $weaponType is "Heavy Sword">>
+ <<set $curStamina -= 15>>
+   <<set $curHunger -= 5>>
+<</if>> <</if>>
+<<if $attack is "Stab">>
+ <<if $weaponType is "Rapier">>
+ <<set $curStamina += 4>>
+   <<set $curHunger += 1>>
+<</if>> <</if>>
+<<if $attack is "Charge">>
+ <<if $weaponType is "Rapier">>
+ <<set $curStamina += 4>>
+   <<set $curHunger += 1>>
+<</if>> <</if>>
+
+<<set $curHunger -= 1>>
+
+<<set $attack to "Do nothing">>
+<<set $attackRadiantRose to "Do nothing">>
+
+<<if $dollHP lte 0>> <<goto "win doll">>
+<<else>>
+<<set _currentp to passage()>>
+<<goto _currentp>>
+<</if>>
+
+<<if $CurHP lte 0>> <<goto "lose">>
+<</if>>
+
+<</link>>
+The doll is blocking the door... Even if you tried to run away it seems to have the same DEX stats as you so you wouldn't be able to run away...
+
+

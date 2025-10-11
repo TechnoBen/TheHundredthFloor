@@ -1,0 +1,13 @@
+:: Cats {"position":"750,1600","size":"100,100"}
+<span class= "shadow">"HAH I WIIIIIIIIIIIIIIIIIIIIIIIIIIIIN!!! THE WORLD IS NOW A BETTER PLACE AND IT WILL STAY SAFE FOREVER!!!!"
+<span class= "crimson">"I disagree with your opinion but It's 2 against 1..."</span>
+<span class= "crimson"> "Anyways $gamename do you want to join my party? I'll be farming for some boar meat..."</span>
+"Yeah sure..."
+
+<<link [[Town centre]]>>
+<<run $partyMembers.push("CrimsonSentinel")>>
+<<set $hasSpokenWithCrimson to true>>  
+<<set $partyON to true>>
+<</link>>
+
+

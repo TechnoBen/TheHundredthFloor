@@ -1,0 +1,16 @@
+:: FD 1.3 {"position":"2350,1900","size":"100,100"}
+You went left and started walking down the corridor, you see a small door infront of you.
+
+You can:
+<<link [[Go in the room...|FD 1.5]]>> <<dateadd '15m'>> <</link>>
+
+Directions:
+<<link [[Go back...|FD 1.2]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.2">>
+<<F1Dungeon>>
+<</link>>
+
+
+

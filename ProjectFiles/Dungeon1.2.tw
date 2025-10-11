@@ -1,0 +1,16 @@
+:: Dungeon1.2 {"position":"1275,2650","size":"100,100"}
+You went deeper into the dungeon. 
+You can walk left from here but there are a lot of skeletons infront of you.
+
+Directions:
+<<link [[Go left|Dungeon1.3]]>>
+<<set $lastVisitedPassage to "Dungeon1.3">>
+<<set $curFatigue += 20>>
+<<dateadd '12m'>>
+<<F1Forest>>
+<</link>>
+<<link [[Go back|Dungeon1.1]]>>
+<<set $lastVisitedPassage to "Dungeon1.1">>
+<</link>>
+
+

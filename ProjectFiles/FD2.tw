@@ -1,0 +1,19 @@
+:: FD2 {"position":"4600,725","size":"200,200"}
+You are inside of the cave. The enterance is behind you.
+Stalactites hang from the ceiling like icicles. The air is cool and damp.
+It's really dark even though its the enterance of the cave.
+
+Directions:
+<<link [[Go deeper into the cave|FD2.1]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.1">>
+<<F2Dungeon>>
+<</link>>
+<<link [[Go back|Path 7.5.5]]>>
+	<<dateadd '4m'>>
+	<<set $curFatigue += 3>>
+    <<set $location to "snowy1">>
+<</link>>
+
+

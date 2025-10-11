@@ -1,0 +1,12 @@
+:: Look for RadiantRose {"position":"150,1575","size":"100,100"}
+You decide to look for your sister. You aren't really sure where to start from but you go down the alley, there are a lot of people here. Most people are just walking around but there are some that are running around probably searching for their friends too.
+You recognize a player as they are a beta tester too.
+
+1. <<link [[Speak to him]]>>
+<<dateadd '10m'>>
+<</link>>
+2. <<link [[Don't speak with him]]>>
+<<dateadd '5m'>>
+<</link>>
+
+

@@ -1,0 +1,60 @@
+:: Library 1 [Town] {"position":"3850,550","size":"100,100"}
+You enter the big tree. Inside you can see a HUGE library with a bunch of NPCs and a few players reading some books. You can see a man next to the entarance. You assume thats the Librarian.
+
+The inside of the tree is so big that more than 50 people could enter. There seems to be a second floor to the place so maybe around 80...
+<<if $event5part1 == true && $event5part2 == undefined>><span class="Molly">You see the girl in blue and green standing next to some bookshelves.</span><</if>>\
+
+You can:
+<<link [[Read "How to speak Evese" 250 col to read|Book 2]]>>
+<<if $Coins >= 250>> 
+<<set $Coins -= 250>>
+<<set $lastVisitedPassage1 to "Library 1">>
+<<set $curFatigue += 55>>
+<<dateadd '30m'>>
+<<dateadd '1h'>>
+<<elseif $Coins <= 249>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</link>>
+<<link [[Read "The monsters of Floor 1 & 2" 50 col to read|Book 4]]>>
+<<if $Coins >= 50>> 
+<<set $Coins -= 50>>
+<<set $lastVisitedPassage1 to "Library 1">>
+<<set $curFatigue += 25>>
+<<dateadd '30m'>>
+<<dateadd '1h'>>
+<<elseif $Coins <= 49>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</link>>
+<<link [[Read "Learn the skills of the world" free to read|Translate]]>>
+	<<set $translateRNG to kitsuneRNG(1, 100)>>
+<</link>>
+<<link [[Check your skills|Skill points]]>>
+<<if $combatSkills == undefined>>
+	<<set $combatSkills to ["Do nothing", "Stab", "Charge"]>>
+<</if>>
+<</link>> (SKILL POINTS SERVE NO PURPOSE AS OF NOW)
+<<link [[Work|Work 1]]>>
+<</link>>
+<<if $event5part1 == true && $event5part2 == undefined>><<link [[Speak to her|Molly library event]]>> <<set $event5part2>> <</link>><</if>>\
+
+Directions:
+1. <<link [[Go back|Go up the path]]>>
+	<<dateadd '30m'>>
+<</link>>
+2.<<nobr>><<if $tppadTHREE == false>>
+<<link [[Teleportation pad|Tp pad 3 purchase]]>>
+<</link>>
+<<elseif $tppadTHREE == true>>
+<<link [[Teleportation pad|Tp pad]]>>
+	<<set $lastVisitedPassage1 to "Library 1">> 
+<</link>>
+<</if>>
+<</nobr>> 
+
+

@@ -1,0 +1,14 @@
+:: PKer guild sign up {"position":"3775,2100","size":"100,100"}
+"We kill and rob players. That's what we do. Criminal shit." the deep voice says.
+
+"Shouldnt you keep this a secret? What if im a bounty hunter or whatever." you respond.
+
+"PKing cant happen inside of towns nor can you just break this door."
+
+"Sure..."
+
+<<link [[I want to sign up|PKer guild sign up 1]]>> <</link>>
+<<link [[Goodbye|PKer guild 1]]>> <</link>>
+
+
+

@@ -1,0 +1,52 @@
+:: Oakheart centre [Town] {"position":"2100,2400","size":"100,100"}
+You reached the towns centre... There Isn't much in here but you see a what seems to be a gathering area. There seems to be a lot of people in there waiting for someone.
+
+You can:
+<<link [[Sit down at one of the benches|Oakheart centre]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5>>
+<</link>>
+<<link [[Wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Oakheart centre">> <</link>>
+<<link [[Sleep on a bench|Sleep 1]]>> <<set $lastVisitedPassage1 to "Oakheart centre">> <</link>>
+<<nobr>>
+<<if $GatheringEvent == false>>
+<<link [[Check out what's going on...]]>> <</link>>
+<<elseif $GatheringEvent == true>>
+<<link [[Gathering area]]>> <</link>>
+<</if>> 
+<</nobr>>
+
+Locations:
+1. <<if setup.datesystems.default.getDate().h gte 6 and setup.datesystems.default.getDate().h lte 18>> <<link [[Go to the hair salon|Hairsalon 1]]>> <<dateadd '1m'>> <</link>> <<else>>Hair salon | Closed<</if>>
+2. <<link [[Cooking spot|Cooking spot 1]]>>
+<<dateadd '1m'>>
+<</link>> 
+3.<<nobr>><<if $tppadTWO == false>>
+<<link [[Teleportation pad|Tp pad 2 purchase]]>>
+<</link>>
+<<elseif $tppadTWO == true>>
+<<link [[Teleportation pad|Tp pad]]>>
+<<set $lastVisitedPassage1 to "Oakheart centre">> 
+<</link>>
+<</if>>
+<</nobr>> 
+<<if $Reputation <= 400>>\
+<<link [[Rob a player|Robbing]]>>
+<<set $robbedCoins to random(105, 312)>>
+<<dateadd '25m'>>
+<<set $curFatigue += 75>>
+<<set $Reputation -= 15>>
+<<set $lastVisitedPassage to passage()>>
+<</link>> <</if>>\
+
+Directions:
+1. <<link [[Go back|2nd town entarance]]>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "2nd town entarance">>
+		<<goto "Encounter F1">>
+    <</if>>
+<<dateadd '2m'>>
+<</link>>
+
+

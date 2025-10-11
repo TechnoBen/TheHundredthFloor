@@ -1,0 +1,15 @@
+:: win WW [autosave] {"position":"300,2400","size":"100,100"}
+You killed the white wolf and won the battle, gaining <<print ($mobLvl*2 + $mobXP).toFixed(0)>> XP and $mobCoins Coins<<if $lootchance lte 45>> and Wolf meat.<<elseif $lootchance lte 75>> and Wolf fur.<<elseif $lootchance lte 100>>.<</if>>
+<<EventCurrencies>>\
+<<link "Go back">>
+<<goto $lastVisitedPassage>>
+	<<if $lootchance lte 45>>
+		<<set $wolfMeat += 1>>
+	<<elseif $lootchance lte 75>>
+    	<<set $wolfFur += 1>>
+	<</if>>
+<<set $killedWW += 1>>
+<<MobRewards>>
+<</link>>
+
+

@@ -1,0 +1,39 @@
+:: Path 2 {"position":"1475,2400","size":"100,100"}
+You started walking down the path.
+<<set $lastVisitedPassage to "Path 2">>
+You can go forward or backward... or you can fight a boar!
+In the distance you can see a campfire. Perhaps you can cook in there?
+
+Directions:
+1. <<link [[Go forward|Path 3]]>> <<dateadd '30m'>> <<set $curFatigue += 25>> <</link>>
+2. <<link [[Go backward|Path 1]]>> <<set $curFatigue += 25>> <<dateadd '30m'>> <</link>>
+
+You can:
+1. <<link [[Look for a boar|Combat remake]]>>
+<<set _mobAmount to random(100)>>
+    <<set $lastVisitedPassage to "Path 2">>
+        <<if _mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob boar1>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <</if>>
+<<dateadd '10m'>>
+<<set $curFatigue += 10>>
+<</link>>
+2. [[Go to the campfire]]
+
+

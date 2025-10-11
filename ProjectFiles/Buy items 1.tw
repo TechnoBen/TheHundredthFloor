@@ -1,0 +1,47 @@
+:: Buy items 1 [no-fainting-or-hunger no-party-time-loss] {"position":"4400,1275","size":"100,100"}
+You decided that you want to buy something...
+"Henz-aie-lai-oumf!
+Ikz-mau sou-oumf-rie-ai benz-ourt-hirt vai-aie zet-oumf-negt-hirt henz-an-vau-aie an-negt-ai zet-rie-ikz-negt-kinz-sou..." <<linkreplace "Translate">> <<if $SpeakingSkill == 1>> You don't understand what they are saying at all says. <<elseif $SpeakingSkill == 2>> Heru. Drin has nun <<elseif $SpeakingSkill >= 3>> Hello! I'm sorry but we don't have any drinks. <</if>> <<set $SpeakingXP += 5>><</linkreplace>>
+
+<<button "Buy tier 2 health potion | 87 col">>
+<<if $Coins >= 87>> 
+<<set $hpPOT1 += 1>>
+<<notify>> You bought a tier 2 health potion! <</notify>>
+<<goto "Buy items 1">>
+<<set $Coins -= 87>>
+<<elseif $Coins <= 86>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy stamina potion | 56 col">>
+<<if $Coins >= 56>> 
+<<set $stmPOT += 1>>
+<<notify>> You bought a stamina potion! <</notify>>
+<<goto "Buy items 1">>
+<<set $Coins -= 56>>
+<<elseif $Coins <= 55>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy one star cooked wolf meat | 128 col">>
+<<if $Coins >= 128>> 
+<<set $oneStarWmeat += 1>>
+<<notify>> You bought cooked wolf meat! <</notify>>
+<<set $Coins -= 128>>
+<<dateadd '26m'>>
+<<goto "Buy items 1">>
+<<elseif $Coins <= 57>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+
+<<link [[Go back|Inn 2]]>>
+<</link>>
+
+

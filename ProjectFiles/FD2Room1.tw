@@ -1,0 +1,17 @@
+:: FD2Room1 [Town] {"position":"5225,525","size":"100,100"}
+You went inside of the room. There's a wardrobe, a torch that lights up the room and a bedroll.
+The room itself is still in the cave... You dont understand why theres a need for a door.
+
+You can:
+<<link [[Sleep on the bedroll|Sleep]]>>
+	<<set $lastVisitedPassage1 to "FD2Room1">>
+<</link>>
+<<link [[Open the wardrobe|Wardrobe]]>>
+	<<set $lastVisitedPassage1 to "FD2Room1">>
+<</link>>
+<<link [[Go back|FD2.4]]>>
+	<<dateadd '3m'>>
+	<<set $curFatigue += 5>>
+<</link>>
+
+

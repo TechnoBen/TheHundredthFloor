@@ -1,0 +1,33 @@
+:: Path 8.2 [Town] {"position":"3900,1275","size":"100,100"}
+You entered the small establishment. There are a few people there that have sat down on the floor. One of them is looking at their shield.
+There's a campfire, a few tents, a spot that looks like a small bar and a anvil...
+One person has putted a display of their weapons and seems to be selling them. They are a player.
+
+You can:
+<<link [[Cook on the fire|Cooking]]>> 
+<<set $lastvisitedpassage1 to "Path 8.2">>
+<</link>>
+<<link [[Sleep in the tent|Sleep 1]]>>
+<<set $lastVisitedPassage1 to "Path 8.2">>
+<</link>>
+<<link [[Wardrobe|Wardrobe]]>>
+<<set $lastVisitedPassage1 to "Path 8.2">> 
+<</link>>
+<<link [[Use the anvil|Crafting]]>>
+<<set $lastvisitedpassage1 to "Path 8.2">>
+<</link>>
+<<link [[Check out what the person is selling|Weaponsmith 3]]
+<<dateadd '1m'>>
+<</link>>
+
+Locations:
+1. <<link [[Exit the small establishment|Path 8.1]]>>
+<<dateadd '15m'>>
+<<set $location to "snowy1">>
+<<set $curFatigue += 15>>
+<</link>>
+2. <<link [[Small bar|Inn 2]]>>
+<<dateadd '1m'>>
+<</link>>
+
+

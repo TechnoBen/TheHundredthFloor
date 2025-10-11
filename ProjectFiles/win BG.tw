@@ -1,0 +1,17 @@
+:: win BG [autosave] {"position":"400,3000","size":"100,100"}
+You killed the boulder guardian and won the battle, gaining <<print ($mobLvl * 1.5 + $mobXP).toFixed(0)>> XP and $mobCoins Coins<<if $lootchance lte 25>> and iron.<<elseif $lootchance lte 35>> and 2 iron.<<elseif $lootchance lte 40>>and 4 iron.<<elseif $lootchance lte 100>>.<</if>>
+<<EventCurrencies>>\
+<<link "Go back">>
+	<<goto $lastVisitedPassage>>
+	<<set $killedBG += 1>>
+	<<MobRewards>>
+    <<if $lootchance lte 25>>
+		<<set $iron += 1>>
+	<<elseif $lootchance lte 35>>
+    	<<set $iron += 2>>
+    <<elseif $lootchance lte 40>>
+    	<<set $iron += 4>>
+	<</if>>
+<</link>>
+
+

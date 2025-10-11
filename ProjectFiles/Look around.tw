@@ -1,0 +1,10 @@
+:: Look around {"position":"1150,2375","size":"100,100"}
+You decide to look around.
+
+In the Plains you can see pretty tall grass, a lot of boars 6 or 7 trees on which 4 of them there are players resting on them. And a path that leads to somewhere. Players usually fight the boars on this path because of the tall grass. Going to the trees is probably a huge pain in the ass because you can get attacked by a boar...
+<<set $hasSeen1 to true>>
+You notice players going down the path. You remember that it leads to the 2nd town.
+
+[[Go back|Plains]]
+
+

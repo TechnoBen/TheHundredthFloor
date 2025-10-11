@@ -1,0 +1,102 @@
+:: InviteSelect1 {"position":"2100,3300","size":"100,100"}
+Players currently invited: $hutInvites
+
+This feature does nothing as of now. Its just here for me to finish later on.
+
+<<if $NPCs.RadiantRose.Affection >= 0>>\
+<<link [[Invite RadiantRose|InviteSelect1]]>>
+    <<if $hutInvites.includes("RadiantRose")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("RadiantRose")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $NPCs.ShadowScythe.Affection >= 0>>\
+<<link [[Invite ShadowScythe|InviteSelect1]]>>
+    <<if $hutInvites.includes("ShadowScythe")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("ShadowScythe")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $NPCs.CrimsonSentinel.Affection >= 0>>\
+<<link [[Invite CrimsonSentinel|InviteSelect1]]>>
+    <<if $hutInvites.includes("CrimsonSentinel")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("CrimsonSentinel")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $blueBellAffection >= 0>>\
+<<link [[Invite Blu3B3llrex|InviteSelect1]]>>
+    <<if $hutInvites.includes("Blu3B3llrex")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("Blu3B3llrex")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $mollyAffection >= 0>>\
+<<link [[Invite XxWryEdwinxX|InviteSelect1]]>>
+    <<if $hutInvites.includes("XxWryEdwinxX")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("XxWryEdwinxX")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $NPCs.Zegrath.Affection >= 0>>\
+<<link [[Invite Zegrath|InviteSelect1]]>>
+    <<if $hutInvites.includes("Zegrath")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+        <<run $hutInvites.push("Zegrath")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $marcellusAffection >= 0>>\
+<<link [[Invite Love4Mary|InviteSelect1]]>>
+    <<if $hutInvites.includes("Love4Mary")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("Love4Mary")>>
+    <</if>>
+<</link>>
+<</if>>\
+<<if $asteriaAffection >= 0>>\
+<<link [[Invite Asteria|InviteSelect1]]>>
+    <<if $hutInvites.includes("Asteria")>>
+        <<script>>
+            UI.alert("This player was already invited!");
+        <</script>>
+    <<else>>
+	    <<run $hutInvites.push("Asteria")>>
+    <</if>>
+<</link>>
+<</if>>\
+
+<<link [[Continue|FriendHangoutHut]]>>
+
+<</link>>
+<<link [[Nevermind|Hut bedroom]]>>
+
+<</link>>
+
+

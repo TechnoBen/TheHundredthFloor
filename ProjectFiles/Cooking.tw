@@ -1,0 +1,212 @@
+:: Cooking [no-party-time-loss] {"position":"1750,475","size":"100,100"}
+You decided to do some cooking.
+Snacks:
+<<if $mushroom >= 5>>\
+Cook mushroom kebab <<button "Cook | 5 mushrooms">>
+	<<dateadd '4m'>>
+    <<set $cookedmeals += 1>>
+	<<set $curFatigue += 15>>
+	<<set $mushroom -= 5>>
+	<<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+	<<set $oneStarMushkebab += 1>>
+    <<set $CookingXP += 6>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+	<<set $twoStarMushkebab += 1>>
+     <<set $CookingXP += 15>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+ 	<<set $CookingXP += 25>>
+	<<set $threeStarMushkebab += 1>>
+	<<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+
+Meals:
+<<if $boarMeat >= 1>>\
+Cook boar meat <<button "Cook | 1 boar meat">>
+	<<dateadd '13m'>>
+    <<set $cookedmeals += 1>>
+	<<set $curFatigue += 15>>
+	<<set $boarMeat -= 1>>
+	<<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+	<<set $oneStarBmeat += 1>>
+    <<set $CookingXP += 12>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+	<<set $twoStarBmeat += 1>>
+     <<set $CookingXP += 18>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+ 	<<set $CookingXP += 25>>
+	<<set $threeStarBmeat += 1>>
+	<<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+<<if $ragoutMeat >= 1>>\
+Cook ragout meat <<button "Cook | 1 ragout meat">>
+	<<set $cookedmeals += 1>>
+	<<dateadd '13m'>>
+	<<set $curFatigue += 15>>
+	<<set $ragoutMeat -= 1>>
+	<<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+	<<set $oneStarRmeat += 1>>
+     <<set $CookingXP += 15>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+	<<set $twoStarRmeat += 1>>
+     <<set $CookingXP += 19>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+	<<set $threeStarRmeat += 1>>
+     <<set $CookingXP += 26>>
+	<<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+<<if $wolfMeat >= 1>>\
+Cook wolf meat <<button "Cook | 1 wolf meat">>
+    <<set $cookedmeals += 1>>
+    <<dateadd '14m'>>
+    <<set $curFatigue += 16>>
+    <<set $wolfMeat -= 1>>
+    <<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+    <<set $oneStarWmeat += 1>>
+     <<set $CookingXP += 19>>
+    <<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+    <<set $twoStarWmeat += 1>>
+     <<set $CookingXP += 23>>
+    <<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+    <<set $threeStarWmeat += 1>>
+     <<set $CookingXP += 39>>
+    <<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+<<if $fish >= 1>>\
+  Cook fish <<button "Cook | 1 fish">>
+    <<dateadd '5m'>>
+      <<set $cookedmeals += 1>>
+    <<set $curFatigue += 7>>
+    <<set $fish -= 1>>
+    <<set $foodrarity to random(100)>>
+  <<if $foodrarity + $INT + $CookingSkill lte 76>>
+    <<set $oneStarCookedFish += 1>>
+      <<set $CookingXP += 7>>
+    <<goto "Cooking">>
+  <<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+    <<set $twoStarCookedFish += 1>>
+       <<set $CookingXP += 12>>
+    <<goto "Cooking">>
+  <<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+     <<set $CookingXP += 18>>
+    <<set $threeStarCookedFish += 1>>
+    <<goto "Cooking">>
+  <</if>>
+  <</button>>
+  <</if>>\
+<<if $boarMeat >= 1>>\
+<<if $bread >= 1>>\
+<<if $mayonnaise >= 1>>\
+<<if $mushroom >= 2>>\
+Boar sandwich <<button "Cook | 1 boar meat, 1 bread, 1 mayonnaise, 2 mushrooms">>
+    <<dateadd '13m'>>
+    <<set $cookedmeals += 1>>
+    <<set $curFatigue += 15>>
+    <<set $boarMeat -= 1>>
+    <<set $bread -= 1>>
+    <<set $mayonnaise -= 1>>
+    <<set $mushroom -= 2>>
+    <<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+    <<set $oneStarBsandwich += 1>>
+     <<set $CookingXP += 19>>
+    <<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+    <<set $twoStarBsandwich += 1>>
+     <<set $CookingXP += 26>>
+    <<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+    <<set $threeStarBsandwich += 1>>
+     <<set $CookingXP += 35>>
+    <<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<</if>>\
+<</if>>\
+<<if $ragoutMeat >= 1>>\
+<<if $bread >= 1>>\
+<<if $mayonnaise >= 1>>\
+<<if $mushroom >= 2>>\
+Ragout sandwich <<button "Cook | 1 ragout meat, 1 bread, 1 mayonnaise, 2 mushrooms">>
+    <<dateadd '13m'>>
+    <<set $cookedmeals += 1>>
+    <<set $curFatigue += 15>>
+    <<set $ragoutMeat -= 1>>
+    <<set $bread -= 1>>
+    <<set $mayonnaise -= 1>>
+    <<set $mushroom -= 2>>
+    <<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+    <<set $oneStarRsandwich += 1>>
+     <<set $CookingXP += 19>>
+    <<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+    <<set $twoStarRsandwich += 1>>
+     <<set $CookingXP += 26>>
+    <<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+    <<set $threeStarRsandwich += 1>>
+     <<set $CookingXP += 35>>
+    <<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<</if>>\
+<</if>>\
+<<if $ragoutMeat >= 2>>\
+<<if $carrot >= 5>>\
+<<if $mushroom >= 3>>\
+Ragout soup <<button "Cook | 5 carrots, 3 mushrooms and 2 ragout meat">>
+	<<dateadd '30m'>>
+	<<set $curFatigue += 35>>
+    <<set $cookedmeals += 1>>
+	<<set $mushroom -= 3>>
+	<<set $carrot -= 5>>
+	<<set $ragoutMeat -= 2>>
+	<<set $foodrarity to random(100)>>
+<<if $foodrarity + $INT + $CookingSkill lte 76>>
+	<<set $oneStarRSoup += 1>>
+     <<set $CookingXP += 36>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 89>>
+	<<set $twoStarRSoup += 1>>
+     <<set $CookingXP += 48>>
+	<<goto "Cooking">>
+<<elseif $foodrarity + $INT + $CookingSkill lte 100>>
+	<<set $threeStarRSoup += 1>>
+     <<set $CookingXP += 56>>
+	<<goto "Cooking">>
+<</if>>
+<</button>>
+<</if>>\
+<</if>>\
+<</if>>\
+
+<<link "Go back">>
+<<goto $lastvisitedpassage1>>
+<</link>>
+
+
+

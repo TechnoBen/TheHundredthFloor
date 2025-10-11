@@ -1,0 +1,13 @@
+:: Cave 2.1.0 {"position":"4275,1400","size":"100,100"}
+You can see a black wolf in the distance. It seems to have noticed you too.
+The wolf starts running to you.
+
+1. <<link [[Fight it|Combat remake]]>>
+	<<mob blackWolf>>
+    <<set $wolfTame to 0>>
+    <<set $lastVisitedPassage to "Cave 2.1">>
+<</link>>
+2. <<link [[Run away|Cave 2.1]]>>
+<</link>>
+
+

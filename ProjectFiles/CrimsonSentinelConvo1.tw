@@ -1,0 +1,13 @@
+:: CrimsonSentinelConvo1 {"position":"3400,1975","size":"100,100"}
+You see Crimson sitting on a bench
+You went to see him.
+"What's up Crimson." you say.
+<span class="crimson">"Oh hey there $gamename. Do you need anything?"</span>
+
+1. <<link [[Speak to him|CrimsonSpeak1]]>> <</link>>
+2. <<link [[Invite him to your party|invite crimson to your party]]>>
+	<<set $lastVisitedPassage to "Town centre 1">>
+<</link>>
+3. [[Nevermind|Town centre]]
+
+

@@ -1,0 +1,17 @@
+:: Trap 1.5 {"position":"5400,1150","size":"100,100"}
+You killed the last oni.
+The chest opens and inside there are 3 tier 2 healing potions, <<if $lootchance lte 50>>10 Oni teeth<<else>>10 Oni leather<</if>> and 740 col.
+The rooms wall dissapears leading to the outside.
+
+<<link [[Continue|Path 7.6]]>>
+	<<set $Coins += 740>>
+	<<set $location to "snowy1">>
+		<<if $lootchance lte 50>>
+			<<set $oniTeeth += 10>>
+		<<else>>
+			<<set $oniLeather += 10>>
+		<</if>>
+	<<set $hpPOT1 += 3>>
+<</link>>
+
+

@@ -1,0 +1,12 @@
+:: ShadowScytheConvo1 {"position":"3025,1850","size":"100,100"}
+You see Shadow in the distance, sitting on a bench. You decide to approach him.
+"What's up." you say.
+<span class="shadow">"Man this place is so quiet. I love it. Why are you here by the way?"</span>
+
+1. <<link [[Speak to him|ShadowSpeak1]]>> <</link>>
+2. <<link [[Invite him to your party|invite shadow to your party]]>>
+	<<set $lastVisitedPassage to "Town street 2">>
+<</link>>
+3. [[Nevermind|Town street 2]]
+
+

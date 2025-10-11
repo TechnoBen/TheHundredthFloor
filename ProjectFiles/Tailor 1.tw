@@ -1,0 +1,9 @@
+:: Tailor 1 {"position":"1600,1775","size":"100,100"}
+You go inside the tailor to see a old man on the counter. He looks too old to be working here.
+Around you there are a lot of clothes. They look really well made. 
+
+1. [[Buy clothes]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Tailor 1">> <</link>>
+3. <<link [[Go back|Town centre]]>> <<dateadd '1m'>> <</link>>
+
+

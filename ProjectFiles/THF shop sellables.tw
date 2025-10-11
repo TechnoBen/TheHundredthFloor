@@ -1,0 +1,212 @@
+:: THF shop sellables [no-fainting-or-hunger no-party-time-loss] {"position":"1600,1500","size":"100,100"}
+You check out whats for sale
+<span class="Techno">"Make sure to take everything! This is not here forever!"</span>
+
+Items:
+<<button "Buy a gender changing potion | 200 anniversary coins">>
+	<<if $AnniversaryCoins >= 200>> 
+		<<set $genderChangingPotion += 1>>
+		<<set $AnniversaryCoins -= 200>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 199>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy 1 coin | 50 anniversary coins">>
+	<<if $AnniversaryCoins >= 50>> 
+		<<set $Coins += 1>>
+		<<set $AnniversaryCoins -= 50>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 49>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy 1 vanilla cake | 100 anniversary coins">>
+	<<if $AnniversaryCoins >= 100>> 
+		<<set $AnniversaryCakeVanilla += 1>>
+		<<set $AnniversaryCoins -= 100>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 99>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy 1 chocolate cake | 100 anniversary coins">>
+	<<if $AnniversaryCoins >= 100>> 
+		<<set $AnniversaryCakeChocolate += 1>>
+		<<set $AnniversaryCoins -= 50>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 99>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+
+Outfits:
+<<button "Buy RadiantRoses outfit | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $RadiantRoseOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy ShadowScythes outfit | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $ShadowScytheOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy CrimsonSentinels outfit | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $CrimsonSentinelOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Familiar gambit outfit | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $ToruOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Fallen grace outfit | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $KirinOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy the armor of a nameless man | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $namelessManOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Bobs armor | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $bobsArmorOutfit to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Bobs eyes | 650 anniversary coins">>
+	<<if $AnniversaryCoins >= 650>> 
+		<<set $bobsEyes to true>>
+		<<set $AnniversaryCoins -= 650>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 649>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+
+Weapon skins:
+<<button "Buy Flower rapier skin | 325 anniversary coins">>
+	<<if $AnniversaryCoins >= 325>> 
+		<<set $flowerRapierSkin to true>>
+		<<set $AnniversaryCoins -= 325>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 324>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Shadow taker skin | 325 anniversary coins">>
+	<<if $AnniversaryCoins >= 325>> 
+		<<set $shadowTakerSkin to true>>
+		<<set $AnniversaryCoins -= 325>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 324>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Blood drainer skin | 325 anniversary coins">>
+	<<if $AnniversaryCoins >= 325>> 
+		<<set $bloodDrainerSkin to true>>
+		<<set $AnniversaryCoins -= 325>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 324>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Dusters resort skin | 325 anniversary coins">>
+	<<if $AnniversaryCoins >= 325>> 
+		<<set $ToruGauntletSkin to true>>
+		<<set $AnniversaryCoins -= 325>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 324>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Tarnished imprint skin | 325 anniversary coins">>
+	<<if $AnniversaryCoins >= 325>> 
+		<<set $KirinSwordSkin to true>>
+		<<set $AnniversaryCoins -= 325>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 324>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy Asterias potato sack | 325 anniversary coins">>
+	<<if $AnniversaryCoins >= 325>> 
+		<<set $AsteriasPotatoSack to true>>
+		<<set $AnniversaryCoins -= 325>>
+		<<goto "THF shop sellables">>
+	<<elseif $AnniversaryCoins <= 324>>
+		<<script>>
+			UI.alert("You dont have enough Anniversary coins!");
+		<</script>>
+	<</if>>
+<</button>>
+
+<<link [[Go back|THF shop]]>>
+<</link>>
+
+

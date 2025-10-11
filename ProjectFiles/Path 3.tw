@@ -1,0 +1,21 @@
+:: Path 3 {"position":"1600,2400","size":"100,100"}
+You started walking down the path. You don't see boars anymore...
+They could probably attack you at some point though. Don't drop your guard down.
+
+You can go forward or backward...
+<<nobr>>
+<<if $time >= setup.datesystems.default.dateToTime("20d 1mo 2023y 18h")>>
+A tree in the distance seems to have decorations now. You wonder what that's about.
+<</if>>
+<</nobr>>
+Directions:
+1. <<link [[Go forward|Path 4]]>>
+<<dateadd '30m'>>
+<<set $curFatigue += 25>>
+<<set $lastVisitedPassage to "Path 4">>
+<<Plains1>>
+<</link>>
+2. <<link [[Go backward|Path 2]]>> <<dateadd '30m'>> <<set $curFatigue += 25>> <</link>>
+<<if $time >= setup.datesystems.default.dateToTime("20d 1mo 2023y 18h")>>\3. <<link [[Check out the tree|Tree 1]]>> <<dateadd '2m'>> <</link>> <</if>>
+
+

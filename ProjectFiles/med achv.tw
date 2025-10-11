@@ -1,0 +1,30 @@
+:: med achv {"position":"2500,225","size":"100,100"}
+<center>
+<div class="UIButtons">\
+<<button "Go back">>
+<<script>>
+Dialog.setup("Achievements", "achievements");
+Dialog.wiki(Story.get("Achievements").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>\
+<<if $achievement_008 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 008.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 008 locked.png" width="50%" />
+<</if>>
+<<if $achievement_011 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 011.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 011 locked.png" width="50%" />
+<</if>>
+<<if $achievement_013 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 013.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/Secret medium.png" width="50%" />
+<</if>>
+<<if $achievement_014 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 014.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/Secret medium.png" width="50%" />
+<</if>>
+</center>
+
+

@@ -1,0 +1,13 @@
+:: Crimson 1 {"position":"875,1525","size":"100,100"}
+You are walking down the street going looking for the Inn.
+<span class="crimson">"HEY $gamename COME HERE!"</span> you hear someone screaming to you. You turned back to see CrimsonSentinel and ShadowScythe.
+"YO WHAT IS IT!" you scream back, going to them.
+<span class="crimson">"Me and Shadow were arguing on what is better... Cats or dogs and we wanted to get your opinion on it..."</span> he says...
+<span class="shadow">"$gamename listen this is a REALLY serious, life changing question that could end the ENTIRE world if you give the wrong anser."</span>
+"W H A T"
+
+<<link [[Dogs|Dogs]]>> <<set $NPCs.CrimsonSentinel.Affection += 1>> <</link>>
+<<link [[Cats|Cats]]>> <<set $NPCs.ShadowScythe.Affection += 1>> <</link>>
+
+
+

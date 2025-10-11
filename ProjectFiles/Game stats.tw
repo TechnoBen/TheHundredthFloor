@@ -1,0 +1,98 @@
+:: Game stats {"position":"1875,225","size":"100,100"}
+-------------------------------
+\<center>Kills:
+<<nobr>>\
+<ol>
+<<if $killedBoars>>
+<li>Killed boars: $killedBoars</li>
+<</if>>
+<<if $killedRams>>
+<li>Killed rams: $killedRams</li>
+<</if>>
+<<if $killedRabbits>>
+<li>KIlled rabbits: $killedRabbits</li>
+<</if>>
+<<if $killedPM>>
+<li>Killed plant monsters: $killedPM</li>
+<</if>>
+<<if $killedSK>>
+<li>Killed skeletons: $killedSK</li>
+<</if>>
+<<if $killedSWK>>
+<li>Killed skeleton warriors: $killedSWK</li>
+<</if>>
+<<if $killedPKers>>
+<li>Killed Player killers: $killedPKers</li>
+<</if>>
+<<if $killedWW>>
+<li>Killed white wolves: $killedWW</li>
+<</if>>
+<<if $killedWWP>>
+<li>Killed white wolf pups: $killedWWP</li>
+<</if>>
+<<if $killedOnis>>
+<li>Killed onis: $killedOnis</li>
+<</if>>
+<<if $killedPZ>>
+<li>Killed poisonous lizards: $killedPZ</li>
+<</if>>
+<<if $killedBG>>
+<li>Killed guardian boulders: $killedBG</li>
+<</if>>
+<<if $killedGC>>
+<li>Killed glowing chests: $killedGC</li>
+<</if>>
+</ol>
+<</nobr>>\
+Total kills: $kills
+Total kills today: $dailyKills</center>\
+-------------------------------
+\<center>Time until the floor boss dies:
+<<= $percentFboss.toFixed(2)>>%</center>\
+-------------------------------
+\<center>Player state:
+Hunger: $curHunger/$maxHunger
+Fatigue: $curFatigue/$maxFatigue
+Fainting: $fatigueFaint/5 </center>\
+-------------------------------
+\<center> Misc:
+Total damage dealt: <<= $dmgDealt.Total.toFixed(2)>>
+Amount of times fainted: $faints
+Amount of cooked meals made: $cookedmeals
+Drinks served: $drinkserved
+Hours worked: $hoursWorked
+Cooking stats:
+XP: $CookingXP/$CookingMaxXP
+Cooking boost: $CookingSkill + $INT INT
+Crafting stats:
+XP: $CraftingXP/$CraftingMaxXP
+Cooking boost: $CraftingSkill + $INT INT
+Language:
+Reading XP: <<= $ReadingXP.toFixed(0)>>/<<= $ReadingMaxXP.toFixed(0)>>
+Speaking XP: <<= $SpeakingXP.toFixed(0)>>/<<= $SpeakingMaxXP.toFixed(0)>></center>\
+-------------------------------
+\<div class="UIButtons">\
+<<button "Stats">>
+<<script>>
+Dialog.setup("Stats", "stats");
+Dialog.wiki(Story.get("Stats").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Traits">>
+<<script>>
+Dialog.setup("Traits", "traits");
+Dialog.wiki(Story.get("TraitsUI").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Skills">>
+<<script>>
+Dialog.setup("skills", "Skills");
+Dialog.wiki(Story.get("Skills").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>
+
+

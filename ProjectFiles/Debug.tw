@@ -1,0 +1,342 @@
+:: Debug {"position":"2875,225","size":"100,100"}
+Did Ben make a REALLY stupid mistake with armor and weapons that gives you less/more stats than it should?
+Did Ben not figure out how to make a new feature work for old save files because he is a lil stupid?
+Well you can fix it in here! :)
+
+General fixes:
+<<link "Set weapon damage to 0">>
+	<<set $weaponSlashDMG to 0>>
+	<<set $weaponPierceDMG to 0>>
+	<<set $weaponBluntDMG to 0>>
+	<<set $weaponMagicDMG to 0>>
+<</link>>
+<<link "Set armor defence to 0">>
+	<<set $armorSlashDEF to 0>>
+	<<set $armorPierceDEF to 0>>
+	<<set $armorBluntDEF to 0>>
+	<<set $armorMagicDEF to 0>>
+<</link>>
+<<link "Fix stamina">>
+	<<set $maxStamina to 100 + 25*$DEX>>
+<</link>>
+<<link "Delete all creatures">>
+        <<set $mobs to []>>
+        <<set $combat_log to []>>
+        <<set $combat_drops = []>>
+<</link>>
+
+Update fixes:
+<<link "Total & combat dmg">>
+<<set $dmgDealt = {
+"Total" : 0,
+"Combat" : 0,
+}>>
+<</link>>
+<<link "Traits not working">>
+<<set $traits = {
+}>>
+<<set _playerTraitsRNGPos = ["Strong", "Dexterous", "Brave"]>>
+<<set _playerTraitsRNGNeg = ["Weak", "Clumsy", "Cowardly"]>> 
+<<set _playerTraitsRNG1 to _playerTraitsRNGPos.random()>>
+<<set _playerTraitsRNG2 to _playerTraitsRNGNeg.random()>>
+<<if  _playerTraitsRNG1 is "Strong">>
+	<<StrongGain>>
+<<elseif _playerTraitsRNG1 is "Dexterous">>
+	<<DexGain>>
+<<elseif _playerTraitsRNG1 is "Brave">>
+	<<BraveGain>>
+<</if>>
+<<if  _playerTraitsRNG2 is "Weak">>
+	<<WeakGain>>
+<<elseif _playerTraitsRNG2 is "Clumsy">>
+	<<ClumsyGain>>
+<<elseif _playerTraitsRNG2 is "Cowardly">>
+	<<CowardlyGain>>
+<</if>>
+<</link>>
+<<link "Inns and other stuff not working">>
+<<set $timeRemember = {
+}>>
+<</link>>
+<<link "Fix the combat update.">>
+	<<script>>
+		UI.alert("Dont click more than once! Im pretty sure shit will break if you do. Anyways. Once youre done with this, move to a new passage for the errors to dissapear. Once youre done head to any nearby wardrobes and unequip your weapon and armor, after which you need to open the debug menu and press fix armor def and weapon dmg. Once thats done re-equip your gear and go back to playing like normally :). If you get any errors let me know in the itch.io comments, the discord server, subreddit or wherever you can so I can get to fixing it as soon as possible!");
+	<</script>>
+	<<set $partyON to false>>
+	<<set $radPartyTime to 0>>
+	<<set $crimPartyTime to 0>>
+	<<set $shadPartyTime to 0>>
+	<<set $zegrathTime to 0>>
+	<<set $partyMembers to []>>
+	<<set $combat_log = []>>
+	<<set $combat_drops = []>>
+	<<set $combatCol to 0>>
+	<<set $combatXP to 0>>
+	<<set $mobs = []>>
+	<<set $turnChanceMax to 100>>
+	<<set $turnChanceCur to 100>>
+	<<set $blockingModifier to 1>>
+	<<set $evadeModifier to 0>>
+	<<set $SlashDEF = 0>>
+	<<set $PierceDEF = 0>>	
+	<<set $BluntDEF = 0>>
+	<<set $MagicDEF = 0>>
+	<<set $critChance to 5>>
+	<<set $critDMG to 1.5>>
+	<<set $Points += $STR>>
+	<<set $Points += $DEF>>
+	<<set $SlashSTR = 0>>
+	<<set $PierceSTR = 0>>
+	<<set $BluntSTR = 0>>
+	<<set $MagicSTR = 0>>
+	<<set $armorSlashDEF to 0>>
+	<<set $armorPierceDEF to 0>>
+	<<set $armorBluntDEF to 0>>
+	<<set $armorMagicDEF to 0>>
+	<<set $weaponSlashDMG to 0>>
+	<<set $weaponPierceDMG to 0>>
+	<<set $weaponBluntDMG to 0>>
+	<<set $weaponMagicDMG to 0>>
+<<set $NPCs = {
+  RadiantRose: {
+    name: "RadiantRose",
+    Level: $RadLevel,
+    CurXP: $RadCurXP,
+    MaxXP: $RadMaxXP,
+    MaxHP: $MaxHPRadiantRose,
+    CurHP: $CurHPRadiantRose,
+    MaxSTM: $maxStaminaRadiantRose,
+    CurSTM: $curStaminaRadiantRose,
+    SlashSTR: 0,
+    PierceSTR: $STRRadiantRose,
+    BluntSTR: 0,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: $weaponDMGRadiantRose,
+    weaponBluntDMG: 0,
+    SlashDEF: $DEFRadiantRose,
+    PierceDEF: $DEFRadiantRose,
+    BluntDEF: $DEFRadiantRose,
+    armorSlashDEF: 1,
+    armorPierceDEF: 1,
+    armorBluntDEF: 0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: $DEXRadiantRose,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: $radiantRoseAffection,
+    Dead: false
+  },
+  ShadowScythe: {
+    name: "ShadowScythe",
+    Level: $ShadLevel,
+    CurXP: $ShadCurXP,
+    MaxXP: $ShadMaxXP,
+    MaxHP: $MaxHPShadowScythe,
+    CurHP: $CurHPShadowScythe,
+    MaxSTM: $maxStaminaShadowScythe,
+    CurSTM: $curStaminaShadowScythe,
+    SlashSTR: $STRShadowScythe,
+    PierceSTR: $STRShadowScythe,
+    BluntSTR: $STRShadowScythe,
+    weaponSlashDMG: $weaponDMGShadowScythe,
+    weaponPierceDMG: $weaponDMGShadowScythe,
+    weaponBluntDMG: $weaponDMGShadowScythe,
+    SlashDEF: $DEFShadowScythe,
+    PierceDEF: $DEFShadowScythe,
+    BluntDEF: $DEFShadowScythe,
+    armorSlashDEF: 1,
+    armorPierceDEF: 1,
+    armorBluntDEF: 0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: $DEXShadowScythe,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: $shadowScytheAffection,
+    Dead: $shadowScytheDead
+  },
+  CrimsonSentinel: {
+    name: "CrimsonSentinel",
+    Level: $CrimLevel,
+    CurXP: $CrimCurXP,
+    MaxXP: $CrimMaxXP,
+    MaxHP: $MaxHPCrimsonSentinel,
+    CurHP: $CurHPCrimsonSentinel,
+    MaxSTM: $maxStaminaCrimsonSentinel,
+    CurSTM: $curStaminaCrimsonSentinel,
+    SlashSTR: $STRCrimsonSentinel,
+    PierceSTR: $STRCrimsonSentinel,
+    BluntSTR: $STRCrimsonSentinel,
+    weaponSlashDMG: $weaponDMGCrimsonSentinel,
+    weaponPierceDMG: $weaponDMGCrimsonSentinel,
+    weaponBluntDMG: $weaponDMGCrimsonSentinel,
+    SlashDEF: $DEFCrimsonSentinel,
+    PierceDEF: $DEFCrimsonSentinel,
+    BluntDEF: $DEFCrimsonSentinel,
+    armorSlashDEF: 2,
+    armorPierceDEF: 2,
+    armorBluntDEF: 2,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: $DEXCrimsonSentinel,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: $crimsonSentinelAffection,
+    Dead: false
+  },
+  Zegrath: {
+    name: "Zegrath",
+    Level: $zegLevel,
+    CurXP: $zegCurXP,
+    MaxXP: $zegMaxXP,
+    MaxHP: $MaxHPZegrath,
+    CurHP: $CurHPZegrath,
+    MaxSTM: $maxStaminaZegrath,
+    CurSTM: $curStaminaZegrath,
+    SlashSTR: $STRZegrath,
+    PierceSTR: $STRZegrath,
+    BluntSTR: $STRZegrath,
+    weaponSlashDMG: $weaponDMGZegrath,
+    weaponPierceDMG: $weaponDMGZegrath,
+    weaponBluntDMG: $weaponDMGZegrath,
+    SlashDEF: $DEFZegrath,
+    PierceDEF: $DEFZegrath,
+    BluntDEF: $DEFZegrath,
+    armorSlashDEF: 4,
+    armorPierceDEF: 4,
+    armorBluntDEF: 4,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: $DEXZegrath,
+    INT: 0,
+    turnChanceMax: 101,
+    turnChanceCur: 101,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: $zegrathAffection,
+    Dead: $zegrathDead
+  },
+  Marcellus: {
+    name: "Love4Mary",
+    Level: $marcyLevel,
+    CurXP: $marcyCurXP,
+    MaxXP: $marcyMaxXP,
+    MaxHP: $MaxHPMarcellus,
+    CurHP: $CurHPMarcellus,
+    MaxSTM: $maxStaminaMarcellus,
+    CurSTM: $curStaminaMarcellus,
+    SlashSTR: $STRMarcellus,
+    PierceSTR: $STRMarcellus,
+    BluntSTR: $STRMarcellus,
+    weaponSlashDMG: $weaponDMGMarcellus,
+    weaponPierceDMG: $weaponDMGMarcellus,
+    weaponBluntDMG: $weaponDMGMarcellus,
+    SlashDEF: $DEFMarcellus,
+    PierceDEF: $DEFMarcellus,
+    BluntDEF: $DEFMarcellus,
+    armorSlashDEF: 2,
+    armorPierceDEF: 0,
+    armorBluntDEF: 1,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: $DEXMarcellus,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: $marcellusAffection,
+    Dead: false
+  },
+  BlackWolf: {
+    name: $wolfName,
+    Level: 0,
+    MaxHP: $wolfMaxHP,
+    CurHP: $wolfCurHP,
+    MaxSTM: $wolfMaxSTM,
+    CurSTM: $wolfCurSTM,
+    SlashSTR: $wolfSTR,
+    PierceSTR: $wolfSTR,
+    BluntSTR: 0,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 0,
+    weaponBluntDMG: 0,
+    SlashDEF: $wolfDEF,
+    PierceDEF: $wolfDEF,
+    BluntDEF: $wolfDEF,
+    armorSlashDEF: 0,
+    armorPierceDEF: 0,
+    armorBluntDEF: 0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: $wolfDEX,
+    INT: $wolfINT,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: 0,
+    timeOut: 0,
+    STRgoal: $wolfSTRgoal,
+    DEFgoal: $wolfDEFgoal,
+    INTgoal: $wolfINTgoal,
+    DEXgoal: $wolfDEXgoal,
+    STRgoalMax: $wolfSTRgoalMax,
+    DEFgoalMax: $wolfDEFgoalMax,
+    INTgoalMax: $wolfINTgoalMax,
+    DEXgoalMax: $wolfDEXgoalMax,
+    Dead: $blackWolfDead
+  }
+}>>
+<</link>>
+
+Testing related:
+<<link "Testing dummy">>
+	<<set $monstername to "Testing dummy">>
+	<<set $MonsterHP to 9999999999999>>
+	<<set $mobLvl to random(0)>>
+	<<set $monsterSTR to 0>>
+	<<set $monsterDEX to 999>>
+	<<goto "Combat remake">>
+<</link>>
+<<link "Slash STR 1000">>
+	<<set $SlashSTR to 1000>>
+<</link>>
+
+<<link "coins">>
+	<<set $Coins to 1000>>
+<</link>>
+
+<<link "Zeg">>
+	<<run $partyMembers.push("Zegrath")>>
+<</link>>
+
+<<link "Restart the game.">>
+	<<script>>
+			Engine.restart();
+	<</script>>
+<</link>>
+
+

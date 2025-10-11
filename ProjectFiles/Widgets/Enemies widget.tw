@@ -1,0 +1,302 @@
+:: Enemies widget [widget] {"position":"2125,725","size":"100,100"}
+<<widget mob>>
+  <<set _type to _args[0]>>
+  <<set _mob to clone(setup.mobs[_type])>>
+  <<if def _mob.lvl_range>>
+  <<set _mob.lvl to random(_mob.lvl_range.min,_mob.lvl_range.max)>>
+  <</if>>
+  <<set _mob.MaxHP to (_mob.MaxHP + (_mob.lvl / _mob.HPModifier)) * $difficultyHPmodifier>>
+  <<set _mob.CurHP to _mob.MaxHP>>
+  <<set _mob.SlashSTR to (_mob.SlashSTR + (_mob.lvl / _mob.STRModifier)) * $difficultySTRmodifier>>
+  <<set _mob.PierceSTR to ( _mob.PierceSTR + (_mob.lvl / _mob.STRModifier)) * $difficultySTRmodifier>>
+  <<set _mob.BluntSTR to (_mob.BluntSTR + (_mob.lvl / _mob.STRModifier)) * $difficultySTRmodifier>>
+  <<run $mobs.push(_mob)>>
+<</widget>>
+
+<<widget "Boar1" container>>\
+<<set $monstername to "wild Boar">>
+<<set $mobXP to 10>>
+<<set $mobCoins to 12>>
+<<set $mobLvl to random(0, 7)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 4>>
+<<set $MonsterHP to 20 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 5 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 2>>
+<</widget>>
+
+<<widget "Boar2" container>>\
+<<set $monstername to "wild Boar">>
+<<set $mobXP to 10>>
+<<set $mobCoins to 14>>
+<<set $mobLvl to random(3, 9)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 3.8>>
+<<set $MonsterHP to 20 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 5 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 2>>
+<</widget>>
+
+<<widget "Rabbit" container>>\
+<<set $monstername to "Rabbit">>
+<<set $mobXP to 30>>
+<<set $mobCoins to 26>>
+<<set $mobLvl to random(2, 9)>>
+<<set $STRMobModifier to 1.6>>
+<<set $HPMobModifier to 2.4>>
+<<set $MonsterHP to 35 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 12 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 6>>
+<</widget>>
+
+<<widget "PlantMonster" container>>\
+<<set $monstername to "Plant monster">>
+<<set $mobXP to 90>>
+<<set $mobCoins to 98>>
+<<set $mobLvl to random(0, 12)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 3>>
+<<set $MonsterHP to 65 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 22 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 12>>
+<</widget>>
+
+<<widget "SkeletonWarrior" container>>\
+<<set $monstername to "Skeleton warrior">>
+<<set $mobXP to 150>>
+<<set $mobCoins to 110>>
+<<set $mobLvl to random(0, 15)>>
+<<set $STRMobModifier to 2.2>>
+<<set $HPMobModifier to 3.4>>
+<<set $MonsterHP to 90 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 23 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 23>>
+<</widget>>
+
+<<widget "Skeleton" container>>\
+<<set $monstername to "Skeleton">>
+<<set $mobXP to 120>>
+<<set $mobCoins to 90>>
+<<set $mobLvl to random(4, 8)>>
+<<set $STRMobModifier to 2.5>>
+<<set $HPMobModifier to 1.3>>
+<<set $MonsterHP to 75 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 56 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 55>>
+<</widget>>
+
+<<widget "Wolf1" container>>\
+<<set $monstername to "White wolf">>
+<<set $mobXP to 102>>
+<<set $mobCoins to 92>>
+<<set $mobLvl to random(0, 12)>>
+<<set $STRMobModifier to 1.3>>
+<<set $HPMobModifier to 3>>
+<<set $MonsterHP to 100 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 73 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 27>>
+<</widget>>
+
+<<widget "Wolf2" container>>\
+<<set $monstername to "White Wolf Pup">>
+<<set $mobXP to 73>>
+<<set $mobCoins to 78>>
+<<set $mobLvl to random(0, 9)>>
+<<set $STRMobModifier to 3>>
+<<set $HPMobModifier to 4>>
+<<set $MonsterHP to 72 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 38 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 6>>
+<</widget>>
+
+<<widget "Wolf3" container>>\
+<<set $monstername to "White wolf">>
+<<set $mobXP to 102>>
+<<set $mobCoins to 92>>
+<<set $mobLvl to random(5, 16)>>
+<<set $STRMobModifier to 1.2>>
+<<set $HPMobModifier to 2.9>>
+<<set $MonsterHP to 100 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 73 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 27>>
+<</widget>>
+
+<<widget "Wolf4" container>>\
+<<set $monstername to "White Wolf Pup">>
+<<set $mobXP to 73>>
+<<set $mobCoins to 78>>
+<<set $mobLvl to random(3, 13)>>
+<<set $STRMobModifier to 2.5>>
+<<set $HPMobModifier to 3.5>>
+<<set $MonsterHP to 72 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 38 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 6>>
+<</widget>>
+
+<<widget "Oni" container>>\
+<<set $monstername to "Oni">>
+<<set $mobXP to 220>>
+<<set $mobCoins to 360>>
+<<set $mobLvl to random(5, 20)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 999>>
+<<set $MonsterHP to 200 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 120 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 16>>
+<</widget>>
+
+<<widget "Oni1" container>>\
+<<set $monstername to "Oni">>
+<<set $mobXP to 220>>
+<<set $mobCoins to 360>>
+<<set $mobLvl to random(5, 20)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 999>>
+<<set $MonsterHP to 200 + $mobLvl / $HPMobModifier>>
+<<set $monsterSTR to 120 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 999>>
+<</widget>>
+
+<<widget "BlackWolf" container>>\
+<<set $monstername to "Black wolf">>
+<<set $mobXP to 500>>
+<<set $mobCoins to 721>>
+<<set $mobLvl to random(10, 20)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 3>>
+<<set $MonsterHP to 300 + $mobLvl / $HPMobModifier>>>>
+<<set $monsterSTR to 165 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 35>>
+<</widget>>
+
+<<widget "pk1" container>>\
+<<set $randomEncounter4 to random(100)>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 999>>
+<<if $randomEncounter4 lte 15>>
+    <<set $monstername to "PKer">>
+        <<set $mobLvl to random(20)>>
+        <<set $MonsterHP to 400 + $mobLvl / $HPMobModifier>>
+		<<set $monsterSTR to 13 + $mobLvl / $STRMobModifier>>
+        <<set $monsterDEX to 3>>
+<<elseif $randomEncounter4 lte 30>>
+    <<set $monstername to "PKer">>
+        <<set $mobLvl to random(25)>>
+        <<set $MonsterHP to 45 + $mobLvl / $HPMobModifier>>
+		<<set $monsterSTR to 35 + $mobLvl / $STRMobModifier>>
+        <<set $monsterDEX to 0>>
+<<elseif $randomEncounter4 lte 45>>
+    <<set $monstername to "PKer">>
+        <<set $mobLvl to random(15)>>
+        <<set $MonsterHP to 250 + $mobLvl / $HPMobModifier>>
+		<<set $monsterSTR to 10 + $mobLvl / $STRMobModifier>>
+        <<set $monsterDEX to 10>>
+<<elseif $randomEncounter4 lte 60>>
+    <<set $monstername to "PKer">>
+        <<set $mobLvl to random(35)>>
+        <<set $MonsterHP to 500 + $mobLvl / $HPMobModifier>>
+		<<set $monsterSTR to 58 + $mobLvl / $STRMobModifier>>
+        <<set $monsterDEX to 12>>
+<<elseif $randomEncounter4 lte 100>>
+    <<set $monstername to "PKer">>
+        <<set $mobLvl to random(30)>>
+        <<set $MonsterHP to 350 + $mobLvl / $HPMobModifier>>>>
+		<<set $monsterSTR to 60 + $mobLvl / $STRMobModifier>>
+        <<set $monsterDEX to 0>>
+<</if>>
+<</widget>>
+
+<<widget "shadowScythe" container>>\
+	<<set $monstername to "ShadowScythe">>
+    <<set $mobLvl to $ShadLevel>>
+    <<set $STRMobModifier to 2>>
+	<<set $HPMobModifier to 999>>
+    <<set $MonsterHP to $MaxHPShadowScythe/1.3>>
+    <<set $monsterSTR to ($weaponDMGShadowScythe + $STRShadowScythe + $DEF + $armorDEF) + $mobLvl / $STRMobModifier>>
+    <<set $monsterDEX to $DEXShadowScythe>>
+<</widget>>
+
+<<widget "zegrath" container>>\
+	<<set $monstername to "Zegrath">>
+	<<set $mobLvl to $zegLevel>>
+    <<set $STRMobModifier to 2>>
+	<<set $HPMobModifier to 999>>
+	<<set $MonsterHP to $MaxHPZegrath/2>>
+	<<set $monsterSTR to $STRZegrath*2.5 +$weaponDMGZegrath + $mobLvl / $STRMobModifier>>
+	<<set $monsterDEX to $DEFZegrath*3>>
+<</widget>>
+
+<<widget "marcellus" container>>\
+<<set $monstername to "Love4Mary">>
+<<set $mobLvl to $marcyLevel>>
+<<set $STRMobModifier to 2>>
+<<set $HPMobModifier to 999>>
+<<set $MonsterHP to $MaxHPMarcellus/2>>
+<<set $monsterSTR to $STRMarcellus + $weaponDMGMarcellus + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to $DEXMarcellus*2>>
+<</widget>>
+
+<<widget "BoulderGuardian" container>>\
+	<<set $monstername to "Boulder guardian">>
+	<<set $mobXP to 280>>
+	<<set $mobCoins to 421>>
+	<<set $mobLvl to random(8, 25)>>
+	<<set $STRMobModifier to 1.4>>
+	<<set $HPMobModifier to 3.2>>
+	<<set $MonsterHP to 120 + $mobLvl / $HPMobModifier>>
+	<<set $monsterSTR to 190 + $mobLvl / $STRMobModifier>>
+	<<set $monsterDEX to 5>>
+<</widget>>
+
+<<widget "PoisonousLizard" container>>\
+	<<set $monstername to "Poisonous lizard">>
+	<<set $mobXP to 330>>
+	<<set $mobCoins to 284>>
+	<<set $mobLvl to random(5, 21)>>
+	<<set $STRMobModifier to 1.7>>
+	<<set $HPMobModifier to 5.2>>
+	<<set $MonsterHP to 220 + $mobLvl / $HPMobModifier>>
+	<<set $monsterSTR to 100 + $mobLvl / $STRMobModifier>>
+	<<set $monsterDEX to 26>>
+<</widget>>
+
+<<widget "Mimic1" container>>\
+	<<set $monstername to "Glowing chest">>
+	<<set $mobXP to 1>>
+	<<set $mobCoins to 1>>
+	<<set $mobLvl to random(0, 1)>>
+	<<set $STRMobModifier to 3>>
+	<<set $HPMobModifier to 2>>
+	<<set $MonsterHP to 300 + $mobLvl / $HPMobModifier>>
+	<<set $monsterSTR to 180 + $mobLvl / $STRMobModifier>>
+	<<set $monsterDEX to 35>>
+<</widget>>
+
+/*FLOOR BOSSES*/
+<<widget "deathlord" container>>\
+<<set $mobLvl to random(15, 25)>>
+<<set $STRMobModifier to 2>>
+<<set $MonsterHP to 350>>
+<<if $bossRush == 1>>
+	<<set $MonsterHP to 350/2>>
+<</if>>
+<<set $monsterSTR to 133 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 999>>
+<<set $monstername to "Deathlord">>
+<</widget>>
+
+<<widget "boldegar" container>>\
+<<set $mobXP to 2280>>
+<<set $mobCoins to 3138>>
+<<set $mobLvl to random(18, 29)>>
+<<set $STRMobModifier to 2>>
+<<set $MonsterHP to 750>>
+<<if $bossRush == 2>>
+	<<set $MonsterHP to 750/2>>
+<</if>>
+<<set $monsterSTR to 254 + $mobLvl / $STRMobModifier>>
+<<set $monsterDEX to 999>>
+<<set $monstername to "Boldegar">>
+<</widget>>
+
+

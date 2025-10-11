@@ -1,0 +1,78 @@
+:: Asterias house corridor1 {"position":"3100,1400","size":"100,100"}
+<<if setup.datesystems.default.getDate().h gte 13 and setup.datesystems.default.getDate().h lte 16 or setup.datesystems.default.getDate().h gte 21 and setup.datesystems.default.getDate().h lte 24>>\
+<<if $AsteriaResponse <= 100 && $asteriaAffection >= 50>>
+<span class="Asteria">"Oh, hey $gamename! Glad to see you here!"</span> says Asteria in her usual tired voice, with a warm smile on her face.
+
+<<link [[Continue|Asterias house corridor1]]>>
+	<<unset $asteriaDoorAnnoy>>
+    <<unset $AsteriaResponse>>
+    <<dateadd '1m'>>
+<</link>>
+<<elseif $asteriaDoorAnnoy <= 3 && $AsteriaResponse == 1>>\
+<span class="Asteria">"Thank you. Now you can come in."</span> Asteria walks to wherever she was before.
+
+<<link [[Continue|Asterias house corridor1]]>>
+	<<unset $asteriaDoorAnnoy>>
+    <<unset $AsteriaResponse>>
+    <<dateadd '1m'>>
+<</link>>
+<<elseif $asteriaDoorAnnoy == 3>>\
+<span class="Asteria">"... Fine. Just come in. I am done with this."</span> she sighs, defeated.
+
+<<link [[Continue|Asterias house corridor1]]>>
+	<<unset $asteriaDoorAnnoy>>
+    <<unset $AsteriaResponse>>
+    <<set $asteriaAffection -= 10>>
+    <<dateadd '1m'>>
+<</link>>
+<<elseif $AsteriaResponse == 1 && $asteriaAffection <= 49>>\
+/* if statement for her time here.*/
+<span class="Asteria">"Come in, $gamename."</span> you hear Asterias tired voice, she comes to the front door to greet you.
+You walk in.
+
+<<link [[Continue|Asterias house corridor1]]>>
+	<<unset $asteriaDoorAnnoy>>
+    <<unset $AsteriaResponse>>
+    <<dateadd '1m'>>
+<</link>>
+<<elseif $AsteriaResponse lte 9 && $asteriaAffection <= 49>>\
+/* if statement for her time here.*/
+Asteria looks at you, dissapointed.
+<span class="Asteria">"Please knock next time, guests out of nowhere scares me especially due to my messy house."</span> she says.
+
+<<link [[Continue|Asterias house corridor1]]>>
+	<<unset $asteriaDoorAnnoy>>
+    <<unset $AsteriaResponse>>
+	<<set $asteriaAffection -= 1>>
+    <<dateadd '1m'>>
+<</link>>
+<<elseif $AsteriaResponse lte 11 && $asteriaAffection <= 49>>\
+/* if statement for her time here.*/
+Asteria looks at you, dissapointed.
+<span class="Asteria">"Go back out and knock. I'm not letting you in until you do so."</span> she says.
+
+<<link [[Continue|Asteria house outside]]>>
+	<<if !$asteriaDoorAnnoy>>
+		<<set $asteriaDoorAnnoy to 1>>
+        <<set $asteriaAffection -= 1>>
+        <<dateadd '1m'>>
+    <<else>>
+    	<<set $asteriaDoorAnnoy += 1>>
+        <<set $asteriaAffection -= 2>>
+        <<dateadd '1m'>>
+	<</if>>
+<</link>>
+<</if>>\
+<<elseif setup.datesystems.default.getDate().h gte 0 and setup.datesystems.default.getDate().h lte 12>>\
+There is no response.
+Should you walk in anyways?
+
+<<link [[Yes|Asteria house living room]]>>
+<<dateadd '1m'>>
+<</link>>
+<<link [[No|Asteria house outside]]>>
+<<dateadd '1m'>>
+<</link>>
+<</if>>
+
+

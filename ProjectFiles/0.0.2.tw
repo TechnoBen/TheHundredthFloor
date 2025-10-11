@@ -1,0 +1,70 @@
+:: 0.0.2 [NoSave] {"position":"100,275","size":"100,100"}
+ [[Back|Changelogs and game information]]
+ 
+ - You can now speak to Radiant at the town centre.
+ - You can now invite Radiant to your party.
+  - You can now speak to Crismon and Shadow at their specific time
+ - You can now buy stuff from the First towns shop
+ - You can use potions in the inventory and during combat
+ - Charge not working on Plant monster
+ - Changed Planet monsters HP from 90 to 75
+ - RadiantRose's health also gets filled when you go to the hospital
+ - Secret names. Some have their own outfits that are unobtainable.
+ - You start with 1 points now
+ - Fixed a type in the finish char creation screen
+ - Updated the finish char creation screen to now include stat editing
+ - STR no longer gets counted when using Charge
+ - Added fatigue
+ - Added Fainting
+ - Added meters (thanks to ChapelRs custom macro!)
+ - Most places close at a specific time
+ - Raised the Max XP multiplier from 1.1 to 1.25
+ - Made the max HP gained from leveling up from 125 to 50
+ - Added colored text for important characters
+ - The tailor shop has been finished
+ - The weaponsmith was finished. 
+ - Some weapons take more stamina than other weapons
+ - Running away from combat has been added
+ - Added convo with Radiant after the 3pm event
+ - Added a materials tab in the wardrobe inventory
+ - The forest hut has been finished. This one was extremely annoying to make. AND I MEAN IT THIS FUCKING PEACE OF SHIT TOOK ME 10 GOD DAMN HOURS FOR A GOD DAMN HOUSE IM NEVER DOING THIS SHIT AGAIN
+ - Finally made the Inn a daily purchase thing. It resets around 12am to 9am doe so watch out not to leave ur room at those hours...
+ - Added a day/nigh cycle
+ - Added locations to the paperdoll (im sorry about how bad it looks)
+ - Radiant has 125 max Stamina and a 1 DEX point
+ - Int was finally given a purpose
+
+
+ - Fixed looking for a rabbit and killing it would send you a passage behind
+ - Fixed some punctuation mistakes in the text
+ - Fixed some typos in link places cuz im dumb
+ - Fixed a bug where the player could have more than the allowed HP
+ - Fixed winning against a rabbit or a plant monster saying that you gained boar meat
+ - Fixed the 2 meats not appearing on the sidescreen INV
+ - Fixed DEX not giving max stamina, it was giving just stamina
+ - Fixed Player damage bug if you have higher DEF than the hp taken away when hit
+ - Fixed the time not getting changed with 10 minutes when looking for a boar in some places
+ - Fixed Stat point screen saying add to STR only.
+ - Fixed not being able to use potions when fighting boars if you are not in a party.
+ - Fixed starting with 1 DEX and 1 STR??? Idk how I let that one slip through???
+ - Sleeping for 1 hour on a good bed not giving hp
+ - Fixed Radiants stab depending on your STR stat
+ - Fixed a bug where the player wont be able to get some of the new features if they are on a older version of the game
+
+
+ NEW ITEMS:
+ HP potions Tier 1
+ Stamina potions
+ Leather chestplate
+ Leather leggings
+ Leather boots
+ Axe
+ Shovel
+ Wood
+ Copper sword
+ Copper rapier
+ Copper heavy sword
+ 
+  [[Back|Changelogs and game information]]
+
+

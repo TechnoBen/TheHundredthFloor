@@ -1,0 +1,24 @@
+:: FD2.4 {"position":"5225,650","size":"100,100"}
+You walk up the cave. In the middle of the path you see a door.
+
+You can:
+<<link [[Open the door|FD2Room1]]>>
+	<<dateadd '3m'>>
+	<<set $curFatigue += 5>>
+<</link>>
+
+Directions:
+<<link [[Go deeper into the cave|FD2.5]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.5">>
+<<F2Dungeon>>
+<</link>>
+<<link [[Go back|FD2.3]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.3">>
+<<F2Dungeon>>
+<</link>>
+
+

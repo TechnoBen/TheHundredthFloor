@@ -1,0 +1,36 @@
+:: Combat win {"position":"200,2075","size":"100,100"}
+You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col and <<= $combatXP.toFixed(0)>> XP.
+<<EventCurrencies>>\
+<<link "Continue">>
+    <<set $turnChanceCur to $turnChanceMax>>
+    <<set $NPCs.RadiantRose.turnChanceCur to $NPCs.RadiantRose.turnChanceMax>>
+    <<set $NPCs.ShadowScythe.turnChanceCur to $NPCs.ShadowScythe.turnChanceMax>>
+    <<set $NPCs.CrimsonSentinel.turnChanceCur to $NPCs.CrimsonSentinel.turnChanceMax>>
+    <<set $NPCs.Zegrath.turnChanceCur to $NPCs.Zegrath.turnChanceMax>>
+    <<unset $bonusTurnPlayer>>
+    <<unset $bonusTurnRadiantRose>>
+    <<unset $bonusTurnShadowScythe>>
+    <<unset $bonusTurnCrimsonSentinel>>
+    <<unset $bonusTurnZegrath>>
+    <<set $combat_drops = []>>
+    <<set $combatCol to 0>>
+    <<set $combatXP to 0>>
+    <<set $combat_log = []>>
+	<<set $bleedPotency to 0>>
+	<<set $bleedCountCur to 0>>
+	<<set $NPCs.RadiantRose.bleedPotency to 0>>
+	<<set $NPCs.RadiantRose.bleedCountCur to 0>>
+	<<set $NPCs.ShadowScythe.bleedPotency to 0>>
+	<<set $NPCs.ShadowScythe.bleedCountCur to 0>>
+	<<set $NPCs.CrimsonSentinel.bleedPotency to 0>>
+	<<set $NPCs.CrimsonSentinel.bleedCountCur to 0>>
+	<<set $NPCs.Zegrath.bleedPotency to 0>>
+	<<set $NPCs.Zegrath.bleedCountCur to 0>>
+    <<if settings.turns == true>>
+    	<<set $turns to 1>>
+        <<run $combat_log.push('<span class="turnCount">--| TURN ' + $turns + ' |--</span>')>>
+    <</if>>
+    <<goto $lastVisitedPassage>>
+<</link>>
+
+

@@ -1,0 +1,63 @@
+:: FD2.2 {"position":"5000,775","size":"100,100"}
+You go down the cave. The place became bigger and you can see 2 enterances.
+One goes left and the other goes right.
+
+Direction:
+<<link [[Go left|FD2.3]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set _mobAmount to random(100)>>
+    <<set _mobAttack to random(100)>>
+    <<if _mobAttack lte 42>>
+    <<set $lastVisitedPassage to "FD2.3">>
+        <<if _mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob poisonousLizard>>
+            <<mob boulderGuardian>>
+            <<mob poisonousLizard>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 40 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob poisonousLizard>>
+            <<mob boulderGuardian>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 70 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boulderGuardian>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob poisonousLizard>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</link>>
+<<link [[Go right|FD2.7]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set _mobAmount to random(100)>>
+    <<set _mobAttack to random(100)>>
+    <<if _mobAttack lte 42>>
+    <<set $lastVisitedPassage to "FD2.7">>
+        <<if _mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob poisonousLizard>>
+            <<mob boulderGuardian>>
+            <<mob poisonousLizard>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 40 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob poisonousLizard>>
+            <<mob boulderGuardian>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 70 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boulderGuardian>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob poisonousLizard>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</link>>
+<<link [[Go back|FD2.1]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+    <<set $lastVisitedPassage to "FD2.1">>
+<<F2Dungeon>>
+<</link>>
+
+

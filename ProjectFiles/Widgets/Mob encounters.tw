@@ -1,0 +1,277 @@
+:: Mob encounters [widget] {"position":"2625,725","size":"100,100"}
+
+<<widget "Plains1">>
+	<<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+<<if $mobAttack lte 25>>
+    <<if $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    	<<mob boar1>>
+        <<mob boar1>>
+        <<mob boar1>>
+        <<mob boar1>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar1>>
+        <<mob boar1>>
+        <<mob boar1>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar1>>
+        <<mob boar1>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar1>>
+        <<goto "Combat remake">>
+    <</if>>
+<</if>>
+<</widget>>
+
+<<widget "Plains2">>
+<<set $mobAmount to random(100)>>
+<<set $mobAttack to random(100)>>
+<<if $mobAttack lte 25>>
+    <<if $mobAmount lte 1 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    <<elseif $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar2>>
+        <<mob boar2>>
+        <<mob ram>>
+        <<mob ram>>
+        <<mob boar2>>
+        <<mob boar2>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar2>>
+        <<mob boar2>>
+        <<mob boar2>>
+        <<mob ram>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar2>>
+        <<mob ram>>
+        <<mob boar2>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob boar2>>
+        <<mob ram>>
+        <<goto "Combat remake">>
+    <</if>>
+<</if>>
+<</widget>>
+
+<<widget "ForestRun">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 55>>
+        <<if $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob plantMonster>>
+            <<mob rabbit>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<goto "Dungeon1">>
+        <<elseif $mobAmount lte 60 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob plantMonster>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob rabbit>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "ForestWalk">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 25>>
+        <<if $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob plantMonster>>
+            <<mob rabbit>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<goto "Dungeon1">>
+        <<elseif $mobAmount lte 60 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob plantMonster>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob rabbit>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "F1Dungeon">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 67>>
+        <<if $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob skeletonWarrior>>
+            <<mob skeletonWarrior>>
+            <<mob skeleton>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob skeletonWarrior>>
+            <<mob skeletonWarrior>>
+            <<mob skeletonWarrior>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob skeletonWarrior>>
+            <<mob skeletonWarrior>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob skeletonWarrior>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+ <</widget>>
+
+<<widget "F1Forest">>
+<<set $mobAmount to random(100)>>
+    <<if $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob skeleton>>
+        <<mob skeleton>>
+        <<mob skeleton>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob skeleton>>
+        <<mob skeleton>>
+        <<goto "Combat remake">>
+    <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob skeleton>>
+        <<goto "Combat remake">>
+    <</if>>
+<</widget>>
+
+<<widget "F1Forest1">>
+<<set _randomEncounterDungeon to random(100)>>
+<<if _randomEncounterDungeon lte 15>>
+    <<goto "Dungeon 1.5">>
+<<elseif _randomEncounterDungeon lte 100>>
+	<<set $lastVisitedPassage to "Dungeon1.4">>
+	<<set $mobAmount to random(100)>>
+    <<if $mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+       	<<mob skeleton>>
+		<<mob skeleton>>
+   		<<mob skeleton>>
+    	<<goto "Combat remake">>
+   	<<elseif $mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        <<mob skeleton>>
+    	<<mob skeleton>>
+		<<goto "Combat remake">>
+    <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+       	<<mob skeleton>>
+		<<goto "Combat remake">>
+	<</if>>
+<</if>>
+<</widget>>
+
+<<widget "SnowPlains1">>
+    <<set $mobAmount to random(100)>>
+    <<if $mobAmount lte 22>>
+        <<mob wolf1>>
+        <<mob wolf1>>
+		<<mob wolf2>>
+    <<elseif $mobAmount lte 45>>
+    	<<mob wolf2>>
+        <<mob wolf1>>
+    <<elseif $mobAmount lte 100>>
+    	<<mob wolf1>>
+    <</if>>
+<</widget>>
+
+<<widget "SnowPlains2">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 25>>
+        <<if $mobAmount lte 11 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    	    <<mob wolf3>>
+            <<mob wolf3>>
+	    	<<mob wolf4>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 22 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf3>>
+            <<mob wolf4>>
+            <<mob wolf2>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 45 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<mob wolf3>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "SnowPlains3">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 25>>
+        <<if $mobAmount lte 3 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    	    <<mob wolf1>>
+            <<mob wolf2>>
+            <<mob wolf3>>
+	    	<<mob wolf1>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 11 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf3>>
+            <<mob wolf3>>
+	    	<<mob wolf4>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 22 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf3>>
+            <<mob wolf4>>
+            <<mob wolf2>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 45 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<mob wolf3>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "F2Cave">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 25>>
+        <<if $mobAmount lte 7 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<goto "Trap 1">>
+        <<elseif $mobAmount lte 22 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob oni>>
+            <<mob oni>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob oni>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "F2Dungeon">>
+    <<set $mobAmount to random(100)>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 52>>
+        <<if $mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob poisonousLizard>>
+            <<mob boulderGuardian>>
+            <<mob poisonousLizard>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 40 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob poisonousLizard>>
+            <<mob boulderGuardian>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 70 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boulderGuardian>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob poisonousLizard>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<</widget>>
+
+

@@ -1,0 +1,140 @@
+:: Boss rush armor shop [no-fainting-or-hunger] {"position":"1050,875","size":"100,100"}
+<<button "Buy leather chesplate | 120 coins">>
+<<if $Coins >= 120>> 
+<<set $leatherCP to true>>
+<<set $Coins -= 120>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 119>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy leather pants | 112 coins">>
+<<if $Coins >= 112>> 
+<<set $leatherP to true>>
+<<set $Coins -= 112>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 111>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy leather boots | 98 coins">>
+<<if $Coins >= 98>> 
+<<set $leatherB to true>>
+<<set $Coins -= 98>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 97>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Buy hardened leather chestplate | 175 coins">>
+<<if $Coins >= 175>> 
+<<set $leatherHCP to true>>
+<<set $Coins -= 175>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 174>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy hardened leather pants | 157 coins">>
+<<if $Coins >= 157>> 
+<<set $leatherHP to true>>
+<<set $Coins -= 157>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 156>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy hardened leather boots | 123 coins">>
+<<if $Coins >= 123>> 
+<<set $leatherHB to true>>
+<<set $Coins -= 123>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 122>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Buy a iron breastplate | 1050 coins">>
+<<if $Coins >= 1050>> 
+<<set $ironBP to true>>
+<<set $Coins -= 1050>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 1049>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy iron guards | 998 coins">>
+<<if $Coins >= 998>> 
+<<set $ironGuards to true>>
+<<set $Coins -= 998>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 997>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy iron feet guards | 957 coins">>
+<<if $Coins >= 957>> 
+<<set $ironFG to true>>
+<<set $Coins -= 957>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 956>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Buy iron armor | 1115 coins">>
+<<if $Coins >= 1115>> 
+<<set $ironCP to true>>
+<<set $Coins -= 1115>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 1114>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy iron pants | 1127 coins">>
+<<if $Coins >= 1127>> 
+<<set $ironP to true>>
+<<set $Coins -= 1127>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 1126>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy iron boots | 1113 coins">>
+<<if $Coins >= 1113>> 
+<<set $ironB to true>>
+<<set $Coins -= 1113>>
+<<goto "Boss rush armor shop">>
+<<elseif $Coins <= 1112>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Boss rush main room]]
+
+

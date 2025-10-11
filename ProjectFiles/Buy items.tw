@@ -1,0 +1,79 @@
+:: Buy items [no-fainting-or-hunger no-party-time-loss] {"position":"1725,1625","size":"100,100"}
+<<nobr>><h2>Potions:</h2><</nobr>>\
+<<button "Buy health potion | 48 col">>
+<<if $Coins >= 48>> 
+<<set $hpPOT += 1>>
+<<notify>> You bought a tier 1 health potion! <</notify>>
+<<goto "Buy items">>
+<<set $Coins -= 48>>
+<<elseif $Coins <= 47>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy stamina potion | 56 col">>
+<<if $Coins >= 56>> 
+<<set $stmPOT += 1>>
+<<notify>> You bought a tier 1 stamina potion!<</notify>>
+<<goto "Buy items">>
+<<set $Coins -= 56>>
+<<elseif $Coins <= 55>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<nobr>><h2>Food/Ingredients:</h2><</nobr>>\
+<<button "Buy bread | 21 col">>
+<<if $Coins >= 21>> 
+<<set $bread += 1>>
+<<notify>> You bought bread! <</notify>>
+<<goto "Buy items">>
+<<set $Coins -= 21>>
+<<elseif $Coins <= 20>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a carrot | 6 col">>
+<<if $Coins >= 6>> 
+<<set $carrot += 1>>
+<<notify>> You bought a carrot! <</notify>>
+<<goto "Buy items">>
+<<set $Coins -= 6>>
+<<elseif $Coins <= 5>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a mushroom | 9 col">>
+<<if $Coins >= 9>> 
+<<set $mushroom += 1>>
+<<notify>> You bought a mushroom! <</notify>>
+<<goto "Buy items">>
+<<set $Coins -= 9>>
+<<elseif $Coins <= 8>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy mayonnaise | 23 col">>
+<<if $Coins >= 23>> 
+<<set $mayonnaise += 1>>
+<<notify>> You bought mayonnaoise! <</notify>>
+<<goto "Buy items">>
+<<set $Coins -= 23>>
+<<elseif $Coins <= 22>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Shop 1]]
+
+

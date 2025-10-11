@@ -1,0 +1,14 @@
+:: MollySpeak1 {"position":"2650,1850","size":"100,100"}
+"What are you up to?"
+<span class="Molly">"Thinking about my brother and how ill destroy the living shit out of that mother fucker!"</span>
+"I see."
+
+The two of you talk about the person youre chasing.
+
+<<link [[Go back|Town street 2]]>>
+	<<set $CurFear -= 1>>
+	<<dateadd '1h'>>
+	<<set $$mollyAffection += 1>>
+<</link>>
+
+

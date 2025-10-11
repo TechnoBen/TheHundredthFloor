@@ -1,0 +1,23 @@
+:: Path 10.2 [Path] {"position":"3900,1525","size":"100,100"}
+You started going down the path. There seems to be snow that reaches your kneecaps. 
+
+1. <<link [[Follow the path|Path 10.3]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 10.3">>
+<<SnowPlains1>>
+<</link>>
+2. <<link [[Go back|Path 10.1]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 10.1">>
+<<SnowPlains1>>
+<</link>>
+<<if $AsteriaEvents.includes("Asteria house unlocked") or $asteriaAffection == 30>>\
+<<link [[Go to Asterias house|Asteria house outside]]>>
+<<dateadd '5m'>>
+<<set $curFatigue += 5>>
+<</link>>
+<</if>>
+
+

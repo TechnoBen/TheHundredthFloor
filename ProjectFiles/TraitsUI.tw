@@ -1,0 +1,34 @@
+:: TraitsUI {"position":"2375,350","size":"100,100"}
+--------------------------------------------
+\Traits:
+<<nobr>>
+<ol><<for _i, _traitName range $traits>>
+ <li>_traitName</li>
+<</for>></ol>
+<</nobr>>\
+-------------------------------
+\<div class="UIButtons">\
+<<button "Stats">>
+<<script>>
+Dialog.setup("Stats", "stats");
+Dialog.wiki(Story.get("Stats").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Skills">>
+<<script>>
+Dialog.setup("skills", "Skills");
+Dialog.wiki(Story.get("Skills").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Game stats">>
+<<script>>
+Dialog.setup("Game stats", "gmstat");
+Dialog.wiki(Story.get("Game stats").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>
+
+

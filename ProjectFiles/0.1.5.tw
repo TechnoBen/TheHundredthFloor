@@ -1,0 +1,59 @@
+:: 0.1.5 [NoSave] {"position":"125,150","size":"100,100"}
+ [[Back|Changelogs and game information]]
+ 
+ - Changed the combats annoying fucking drop lists to radio buttons (thanks to a cool dude from the Twine server for helping me)
+ - Made the potions appear and dissapear instead of staying there watching at you waiting for a refill lol
+ - Added jobs to the library 
+ - Added a paralized effect
+ 	- Floor bosses will have a 10% chance to giving it
+    - PKers will have a 8% chance of giving it
+ - Raised the chance of wolf fur drops from 15% to 30%
+ - Added a option to look for white wolves
+ - Started working on one of the paths in f2
+ - Remade the PK encounter system
+ - Added medium hair 3
+ - Added short hair 1 (I really need names for hair lol)
+ - PKers are buffed
+    - STR: 13 > 15
+    - Max level: 4 > 20
+ - Started work on the whitewall town!
+    - Added a new tp pad
+    - New armorsmith 
+    - Another hospital
+    - The ability to pick pocket players passing
+    	- Also works in f1 towns if your rep is low enough
+    - A new side story event (not finished do i dont reccomend playing it. It will be obvious it is the new event once you see it, undo if you stumble upon it by dumb luck lol)
+    - A new shop
+    - A new weaponsmith
+    - A new inn
+ - Added a new event for when you get to floor 2 (players that have been to floor 2 can expirience it too but will prolly be confused lol)
+ - <span class="shadow">You feel a terrible presence following you.</span>
+ - Raised T1 potion prices by 20 coins
+ - Added potion sickness
+ - Effects get displayed (HP regen/Pot sickness/Paralized)
+ - Made it so that the game has 20 save slots instead of 8.
+ - Made it so double clicking the sidebar
+ - Added a sick frame to the player screen that can be enabled through the debug menu
+ - Disabled saving in the starting screen or any place thats not related to the game itself
+ - Raised the prices of bread, carrots and mushrooms
+ 
+ - Fixed the fucking inn work menu FOR THE 3RD TIME! (or 2nd)
+ - Fixed a bug where 1 enemy would send you to the f1 dungeon if killed
+ - Fixed another bug where you get sent to the f1 floor dungeon after a fight
+ - Fixed the go back button being over the cook button in the forest hut kitchen
+ - Plants wont dry out/grow during combat from now on
+ - Party members wont leave in the middle of a fight nor will the timer run (pog)
+ - The time till floor boss dies will no longer run while in combat
+ - T2 healing potions now work on Party members
+ - Food being shitty. That's been fixed now bois
+
+ NEW ITEMS:
+ Wolf fur cape
+ Light iron armor
+ Heavy iron armor
+ Iron weapons
+ Iron weapons with a wooden handle (upgrade that gives +1 stat boost lmao)
+ 
+ [[Back|Changelogs and game information]]
+
+

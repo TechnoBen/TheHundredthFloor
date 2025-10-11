@@ -1,0 +1,11 @@
+:: Weaponsmith 3 {"position":"4525,1275","size":"100,100"}
+You decide to check out what the player is selling.
+"Ah hello there! Nice to see a player in this part of the floor." he says with a smile on his face.
+"Hey there. What are you selling here?" you ask.
+"Well im selling upgraded copper weapons. Not everyone joined the floor raid and got the reward from the floor boss and I am planning to be a blacksmith so I decided to sell some upgraded weapons."
+
+1. [[Buy weapons |Buy weapons 2]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Weaponsmith 3">> <</link>>
+3. <<link [[Go back|Path 8.2]]>> <<dateadd '1m'>> <</link>>
+
+

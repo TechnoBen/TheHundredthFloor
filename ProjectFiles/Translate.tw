@@ -1,0 +1,32 @@
+:: Translate [no-party-time-loss no-fainting-or-hunger] {"position":"4225,550","size":"100,100"}
+You pick up the book and start reading it.
+
+To learn skills you need to have a really good understanding of Evese. For that you have to have to translate and memorize whatever you must translate from this book.
+Good luck adventurer.
+
+You see the text changing to some thing else...
+<<if $translate lte 10>>
+Text 1 text 2
+<<elseif $translateRNG lte 20>>
+test wtes
+<<elseif $translateRNG lte 30>>
+wiafkaf
+<<elseif $translateRNG lte 40>>
+3ifaf
+<<elseif $translateRNG lte 50>>
+a
+<<elseif $translateRNG lte 60>>
+va
+<<elseif $translateRNG lte 70>>
+bal
+<<elseif $translateRNG lte 80>>
+basa
+<<elseif $translateRNG lte 90>>
+basad
+<<elseif $translateRNG lte 100>>
+aaaa
+<</if>>
+<<link [[Library 1]]>>
+<</link>>
+
+

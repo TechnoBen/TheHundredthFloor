@@ -1,0 +1,52 @@
+:: Asteria forest {"position":"3475,1400","size":"100,100"}
+<<set _asteriaRNGTxt to kitsuneRNG(1, 100)>><<if _asteriaRNGTxt lte 33>>\
+You walk up to Asteria. She is crouching down, looking at some mushroom she just picked.
+"Hello, Asteria." you say, she turns back to you, smiling.
+<span class="Asteria">"Oh, hello $gamename, didn't expect to see you in the forest."</span> she responds, yawning.
+"Tired?"
+<span class="Asteria">"Super tired."</span>
+"Wanna collect mushrooms together?"
+<span class="Asteria">"Sure, I'd love to."</span>
+You spend half an hour foraging with Asteria.
+You and Asteria gathered a few mushrooms. You and Asteria share them.
+
+<<link [[Continue|Path 3.1]]>>
+    <<dateadd "30m">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 2>>
+    <<set $mushroom += 8>>
+<</link>>
+<<elseif _asteriaRNGTxt lte 66>>\
+Asteria is walking around in the forest, carrying her basket with mushrooms. She sees you and waves.
+<span class="Asteria">"Hello, $gamename! How are you doing?"</span> she smiles.
+"I'm fine. You?"
+<span class="Asteria">"I'm fine too, I guess. Do you want some mushrooms? I just found some."</span>
+"Poisonous or not?"
+<span class="Asteria">"Pfft, maybe."</span> she says as she gives you some mushrooms. You put them into your inventory.
+<span class="Asteria">"I will get going then. See you later, $gamename"</span> she says as she leaves.
+
+<<link [[Continue|Path 3.1]]>>
+    <<dateadd "10m">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 4>>
+    <<set $mushroom += 5>>
+<</link>>
+<<elseif _asteriaRNGTxt lte 100>>\
+Asteria is sitting down next to a tree, holding a bunny in her lap.
+"How did you tame a rabbit...? Those are hostile, nothing you do should let you tame it." You ask, completely taken by surprised by the friendly bunny that she is petting.
+Asteria shrugs, <span class="Asteria">"I honestly do not know. This bunny always just comes up to me and demands pets."</span>
+"This is interesting for sure."
+<span class="Asteria">"Sure is. Would you like to have some mushrooms? I don't think I can eat that many."</span> she reaches out for her basket, trying to move as less as possible to not disturb the bunny. She then hands you a few mushrooms and you take them.
+"Thanks. Could I try petting the bunny?"
+<span class="Asteria">"Yeah! What could go wro-"</span> you get closer to pet the bunny. As soon as you reach to pet it, it growls and scratches your arm.
+
+<<link [[Continue|Path 3.1]]>>
+    <<dateadd "12m">>
+    <<set $asteriaAffection += 1>>
+    <<set $CurFear -= 12>>
+    <<set $mushroom += 14>>
+    <<set $CurHP -= 10>>
+<</link>>
+<</if>>\
+
+

@@ -1,0 +1,49 @@
+:: Path 3.4 {"position":"1725,2900","size":"100,100"}
+<<if $isHutFinished == false>>
+You found a small hut in the forest. It looks pretty destroyed and you can see a person next to it. By memory from the beta its an NPC.
+<<elseif $isHutFinished == true>>
+You are outside your hut. You have spent a long time building it and now you can happily live in it. You feel proud of your work.
+<</if>>
+<<nobr>>
+<<if $isHutFinished == false>>
+<<if $isHutPurchased == false>>
+<<link [[Speak to the NPC|Forest hut]]>>
+<</link>>
+<<elseif $isHutPurchased == true>>
+<<link [[Go to the hut|Forest unfin outside]]>>
+<</link>>
+<</if>>
+<<elseif $isHutFinished == true>>
+<<link [[Go to the hut|Forest fin outside]]>>
+<</link>>
+<</if>>
+<</nobr>>
+
+Go back:
+<<link [[Go back running|Path 3.3]]>>
+<<dateadd '5m'>>
+<<set $curFatigue += 55>>
+        <<set $lastVisitedPassage to "Path 3.3">>
+<<ForestRun>>
+<</link>>
+<<link [[Go back carefully|Path 3.3]]>>
+<<dateadd '30m'>>
+<<set $curFatigue += 15>>
+<<set $lastVisitedPassage to "Path 3.3">>
+<<ForestWalk>>
+<</link>>
+
+You can:
+<<link [[Waste time|Path 3.4]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5 + $INT>>
+<</link>>
+<<if $axe1 == true>>\
+<<link [[Chop down wood|Path 3.4]]>>
+<<set $planks += 1>> <<set $curFatigue += 20>> <<dateadd '15m'>>
+<</link>>
+<<elseif $axe1 == false>>\
+You need a iron axe to chop down wood!
+<</if>>\
+
+

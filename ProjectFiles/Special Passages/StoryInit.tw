@@ -1,0 +1,1433 @@
+:: StoryInit [StoryInit] {"position":"1625,100","size":"100,100"}
+<<datesetup>>
+<<dateset "12h 0m 6d 11mo 2022y">>
+<<set $newUI to true>>
+<<set $bannerRNG to kitsuneRNG(1, 4)>>
+
+
+<<set setup.mobs = {
+  boar1: {
+    id: "boar1",
+    name: "Wild Boar",
+    lvl_range: { min: 0, max: 7 },
+    MaxHP: 15,
+    CurHP: 15,
+    SlashSTR: 10,
+    PierceSTR: 10,
+    BluntSTR: 15,
+    HPModifier: 0.75,
+    STRModifier: 1.0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.2,
+    PierceDEF: 1,
+    BluntDEF: 0.8,
+    DEX: 2,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+  	bleedCountMax: 5,
+  	bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.8,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 7,
+    Coins: 7
+  },
+  boar2: {
+    id: "boar2",
+    name: "Wild Boar",
+    lvl_range: { min: 0, max: 9 },
+    MaxHP: 18,
+    CurHP: 18,
+    SlashSTR: 10,
+    PierceSTR: 10,
+    BluntSTR: 18,
+    HPModifier: 0.65,
+    STRModifier: 1.0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.2,
+    PierceDEF: 1,
+    BluntDEF: 0.8,
+    DEX: 2,
+    turnChanceMax: 101,
+    turnChanceCur: 101,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 7,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.8,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 8,
+    Coins: 9
+  },
+  ram: {
+    id: "ram",
+    name: "Ram",
+    lvl_range: { min: 3, max: 11 },
+    MaxHP: 49,
+    CurHP: 49,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 43,
+    HPModifier: 0.25,
+    STRModifier: 0.58,
+    CritChance: 8,
+    CritDMG: 2.5,
+    SlashDEF: 0.8,
+    PierceDEF: 0.8,
+    BluntDEF: 1.4,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 7,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 1,
+    bleedCountDealt: 0.1,
+    bleedDef: 0.9,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 31,
+    Coins: 12
+  },
+  rabbit: {
+    id: "rabbit",
+    name: "Rabbit",
+    lvl_range: { min: 4, max: 12 },
+    MaxHP: 31,
+    CurHP: 31,
+    SlashSTR: 25,
+    PierceSTR: 20,
+    BluntSTR: 0,
+    HPModifier: 0.5,
+    STRModifier: 0.9,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.4,
+    PierceDEF: 0.8,
+    BluntDEF: 0.8,
+    DEX: 6,
+    turnChanceMax: 125,
+    turnChanceCur: 125,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 7,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2.1,
+    bleedCountDealt: 1,
+    bleedDef: 1.1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 26,
+    Coins: 11
+  },
+  plantMonster: {
+    id: "plantMonster",
+    name: "Plant monster",
+    lvl_range: { min: 0, max: 12 },
+    MaxHP: 51,
+    CurHP: 51,
+    SlashSTR: 45,
+    PierceSTR: 0,
+    BluntSTR: 0,
+    HPModifier: 0.89,
+    STRModifier: 0.68,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.7,
+    PierceDEF: 0.8,
+    BluntDEF: 0.5,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 1,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 38,
+    Coins: 17
+  },
+  skeletonWarrior: {
+    id: "skeletonWarrior",
+    name: "Skeleton warrior",
+    lvl_range: { min: 0, max: 15 },
+    MaxHP: 55,
+    CurHP: 55,
+    SlashSTR: 36,
+    PierceSTR: 18,
+    BluntSTR: 0,
+    HPModifier: 0.54,
+    STRModifier: 1.1,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.4,
+    PierceDEF: 0.7,
+    BluntDEF: 0.9,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 3,
+    bleedCountDealt: 3,
+    bleedDef: 0.1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 49,
+    Coins: 18
+  },
+  skeleton: {
+    id: "skeleton",
+    name: "Skeleton",
+    lvl_range: { min: 4, max: 8 },
+    MaxHP: 55,
+    CurHP: 55,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 67,
+    HPModifier: 1.4,
+    STRModifier: 0.47,
+    CritChance: 12,
+    CritDMG: 1.7,
+    SlashDEF: 1.6,
+    PierceDEF: 0.7,
+    BluntDEF: 0.4,
+    DEX: 7,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 43,
+    Coins: 12
+  },
+  wolf1: {
+    id: "wolf1",
+    name: "White wolf",
+    lvl_range: { min: 3, max: 12 },
+    MaxHP: 85,
+    CurHP: 85,
+    SlashSTR: 65,
+    PierceSTR: 53,
+    BluntSTR: 0,
+    HPModifier: 3,
+    STRModifier: 0.3,
+    CritChance: 10,
+    CritDMG: 1.3,
+    SlashDEF: 1.0,
+    PierceDEF: 0.8,
+    BluntDEF: 1.2,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 8,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 3.2,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 48,
+    Coins: 22
+  },
+  wolf2: {
+    id: "wolf2",
+    name: "White wolf pup",
+    lvl_range: { min: 6, max: 13 },
+    MaxHP: 67,
+    CurHP: 67,
+    SlashSTR: 52,
+    PierceSTR: 34,
+    BluntSTR: 0,
+    HPModifier: 0.5,
+    STRModifier: 0.5,
+    CritChance: 35,
+    CritDMG: 2.0,
+    SlashDEF: 1.1,
+    PierceDEF: 1.1,
+    BluntDEF: 1.6,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 4,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 1,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 36,
+    Coins: 10
+  },
+  wolf3: {
+    id: "wolf3",
+    name: "White wolf",
+    lvl_range: { min: 5, max: 16 },
+    MaxHP: 85,
+    CurHP: 85,
+    SlashSTR: 78,
+    PierceSTR: 62,
+    BluntSTR: 0,
+    HPModifier: 1.5,
+    STRModifier: 0.35,
+    CritChance: 10,
+    CritDMG: 1.3,
+    SlashDEF: 1.0,
+    PierceDEF: 0.8,
+    BluntDEF: 1.2,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 7,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 3.2,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 67,
+    Coins: 15
+  },
+  wolf4: {
+    id: "wolf4",
+    name: "White wolf",
+    lvl_range: { min: 7, max: 17 },
+    MaxHP: 89,
+    CurHP: 89,
+    SlashSTR: 82,
+    PierceSTR: 67,
+    BluntSTR: 0,
+    HPModifier: 1.2,
+    STRModifier: 0.23,
+    CritChance: 10,
+    CritDMG: 1.3,
+    SlashDEF: 1.0,
+    PierceDEF: 0.8,
+    BluntDEF: 1.2,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 7,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 3.3,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 53,
+    Coins: 15
+  },
+  traponi: {
+    id: "traponi",
+    name: "Oni",
+    lvl_range: { min: 5, max: 20 },
+    MaxHP: 165,
+    CurHP: 165,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 120,
+    HPModifier: 0.8,
+    STRModifier: 1.5,
+    CritChance: 5,
+    CritDMG: 1.8,
+    SlashDEF: 1.0,
+    PierceDEF: 0.8,
+    BluntDEF: 1.2,
+    DEX: 999,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 20,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.8,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 73,
+    Coins: 34
+  },
+  oni: {
+    id: "oni",
+    name: "Oni",
+    lvl_range: { min: 5, max: 20 },
+    MaxHP: 165,
+    CurHP: 165,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 120,
+    HPModifier: 0.8,
+    STRModifier: 1.2,
+    CritChance: 5,
+    CritDMG: 1.8,
+    SlashDEF: 1.0,
+    PierceDEF: 0.8,
+    BluntDEF: 1.2,
+    DEX: 16,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 20,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.8,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 73,
+    Coins: 34
+  },
+  skulltron: {
+    id: "skulltron",
+    name: "Skulltron",
+    lvl_range: { min: 4, max: 12 },
+    MaxHP: 300,
+    CurHP: 300,
+    SlashSTR: 95,
+    PierceSTR: 0,
+    BluntSTR: 65,
+    HPModifier: 0.4,
+    STRModifier: 0.35,
+    CritChance: 10,
+    CritDMG: 1.85,
+    SlashDEF: 1.3,
+    PierceDEF: 1.5,
+    BluntDEF: 1.1,
+    DEX: 24,
+    turnChanceMax: 135,
+    turnChanceCur: 135,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 3,
+    bleedCountDealt: 4,
+    bleedDef: 0,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 345,
+    Coins: 126
+  },
+  deathlord: {
+    id: "deathlord",
+    name: "Deathlord",
+    lvl_range: { min: 15, max: 25 },
+    MaxHP: 450,
+    CurHP: 450,
+    SlashSTR: 133,
+    PierceSTR: 0,
+    BluntSTR: 0,
+    HPModifier: 2,
+    STRModifier: 1.23,
+    CritChance: 7,
+    CritDMG: 2,
+    SlashDEF: 1.2,
+    PierceDEF: 1.1,
+    BluntDEF: 0.95,
+    DEX: 999,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 1,
+    bleedCountDealt: 5,
+    bleedDef: 0,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 0,
+    Coins: 0
+  },
+  boulderGuardiant: {
+    id: "boulderGuardian",
+    name: "Boulder guardian",
+    lvl_range: { min: 8, max: 25 },
+    MaxHP: 150,
+    CurHP: 150,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 250,
+    HPModifier: 0.95,
+    STRModifier: 0.95,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.0,
+    PierceDEF: 1.5,
+    BluntDEF: 0.5,
+    DEX: 5,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.8,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 134,
+    Coins: 67
+  },
+  poisonousLizard: {
+    id: "poisonousLizard",
+    name: "Poisonous lizard",
+    lvl_range: { min: 5, max: 20 },
+    MaxHP: 286,
+    CurHP: 286,
+    SlashSTR: 102,
+    PierceSTR: 59,
+    BluntSTR: 0,
+    HPModifier: 0.87,
+    STRModifier: 0.7,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 0.95,
+    PierceDEF: 1.2,
+    BluntDEF: 0.85,
+    DEX: 12,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 12,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 1.1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 102,
+    Coins: 32
+  },
+  mimic1: {
+    id: "mimic1",
+    name: "Glowing chest",
+    lvl_range: { min: 0, max: 1 },
+    MaxHP: 300,
+    CurHP: 300,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 180,
+    HPModifier: 1,
+    STRModifier: 1,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 0.8,
+    PierceDEF: 0.8,
+    BluntDEF: 1.4,
+    DEX: 15,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 6,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 3,
+    bleedCountDealt: 4,
+    bleedDef: 0.1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 1,
+    Coins: 1
+  },
+  boldegar: {
+    id: "boldegar",
+    name: "Boldegar",
+    lvl_range: { min: 18, max: 29 },
+    MaxHP: 850,
+    CurHP: 850,
+    SlashSTR: 0,
+    PierceSTR: 300,
+    BluntSTR: 254,
+    HPModifier: 1,
+    STRModifier: 1.2,
+    CritChance: 5,
+    CritDMG: 1.5,
+    SlashDEF: 1.0,
+    PierceDEF: 1.5,
+    BluntDEF: 0.5,
+    DEX: 999,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0,
+    bleedCountDealt: 0,
+    bleedDef: 0.8,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 34,
+    burnPotencyDealt: 3,
+    XP: 2280,
+    Coins: 3138
+  },
+  pker1: {
+    id: "pker1",
+    name: "Player killer",
+    lvl_range: { min: 5, max: 10 },
+    MaxHP: 250,
+    CurHP: 250,
+    SlashSTR: 35,
+    PierceSTR: 67,
+    BluntSTR: 0,
+    HPModifier: 0.2,
+    STRModifier: 0.5,
+    CritChance: 10,
+    CritDMG: 3,
+    SlashDEF: 0.7,
+    PierceDEF: 1.3,
+    BluntDEF: 0.9,
+    DEX: 9,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 12,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 2,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 0,
+    Coins: 0
+  },
+  pker2: {
+    id: "pker2",
+    name: "Player killer",
+    lvl_range: { min: 11, max: 20 },
+    MaxHP: 400,
+    CurHP: 400,
+    SlashSTR: 45,
+    PierceSTR: 97,
+    BluntSTR: 0,
+    HPModifier: 0.2,
+    STRModifier: 0.5,
+    CritChance: 10,
+    CritDMG: 3,
+    SlashDEF: 0.7,
+    PierceDEF: 1.3,
+    BluntDEF: 0.9,
+    DEX: 16,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    bonusTurn: 0,
+    baseDMG: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 12,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 1,
+    bleedCountDealt: 3,
+    bleedDef: 1.2,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    XP: 0,
+    Coins: 0
+  },
+}>>
+<<set $mobs = []>>
+
+<<set $NPCs = {
+  RadiantRose: {
+    name: "RadiantRose",
+    Level: 0,
+    CurXP: 0,
+    MaxXP: 150,
+    MaxHP: 250,
+    CurHP: 250,
+    MaxSTM: 125,
+    CurSTM: 125,
+    SlashSTR: 0,
+    PierceSTR: 0,
+    BluntSTR: 0,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    SlashDEF: 0,
+    PierceDEF: 0,
+    BluntDEF: 0,
+    armorSlashDEF: 1,
+    armorPierceDEF: 1,
+    armorBluntDEF: 0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: 1,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 0,
+    bleedPotencyDealt: 0.25,
+    bleedCountDealt: 0.75,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    Affection: 0,
+    Dead: false
+  },
+  ShadowScythe: {
+    name: "ShadowScythe",
+    Level: 0,
+    CurXP: 0,
+    MaxXP: 150,
+    MaxHP: 250,
+    CurHP: 250,
+    MaxSTM: 100,
+    CurSTM: 100,
+    SlashSTR: 1,
+    PierceSTR: 1,
+    BluntSTR: 1,
+    weaponSlashDMG: 2,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    SlashDEF: 0,
+    PierceDEF: 0,
+    BluntDEF: 0,
+    armorSlashDEF: 1,
+    armorPierceDEF: 1,
+    armorBluntDEF: 0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: 0,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+	  bleedCountCur: 3.2,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 3,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    Affection: 0,
+    Dead: false
+  },
+  CrimsonSentinel: {
+    name: "CrimsonSentinel",
+    Level: 0,
+    CurXP: 0,
+    MaxXP: 150,
+    MaxHP: 250,
+    CurHP: 250,
+    MaxSTM: 80,
+    CurSTM: 80,
+    SlashSTR: 1,
+    PierceSTR: 0,
+    BluntSTR: 0,
+    weaponSlashDMG: 1,
+    weaponPierceDMG: 0,
+    weaponBluntDMG: 0.8,
+    SlashDEF: 0,
+    PierceDEF: 0,
+    BluntDEF: 0,
+    armorSlashDEF: 2,
+    armorPierceDEF: 2,
+    armorBluntDEF: 2,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: 0,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+  	bleedCountCur: 0,
+    bleedPotencyDealt: 1,
+    bleedCountDealt: 2,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    Affection: 0,
+    Dead: false
+  },
+  Zegrath: {
+    name: "Zegrath",
+    Level: 5,
+    CurXP: 0,
+    MaxXP: 937,
+    MaxHP: 500,
+    CurHP: 500,
+    MaxSTM: 200,
+    CurSTM: 200,
+    SlashSTR: 5,
+    PierceSTR: 3,
+    BluntSTR: 1,
+    weaponSlashDMG: 9,
+    weaponPierceDMG: 3,
+    weaponBluntDMG: 0,
+    SlashDEF: 1,
+    PierceDEF: 0,
+    BluntDEF: 0,
+    armorSlashDEF: 4,
+    armorPierceDEF: 4,
+    armorBluntDEF: 4,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: 3,
+    INT: 0,
+    turnChanceMax: 101,
+    turnChanceCur: 101,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+	  bleedPotency: 0,
+	  bleedCountMax: 10,
+  	bleedCountCur: 0,
+    bleedPotencyDealt: 1,
+    bleedCountDealt: 3,
+    bleedDef: 1.04,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 1,
+    burnPotencyDealt: 1,
+    Affection: 0,
+    Dead: false
+  },
+  Marcellus: {
+    name: "Love4Mary",
+    Level: 4,
+    CurXP: 0,
+    MaxXP: 750,
+    MaxHP: 450,
+    CurHP: 450,
+    MaxSTM: 250,
+    CurSTM: 250,
+    SlashSTR: 5,
+    PierceSTR: 2,
+    BluntSTR: 1,
+    weaponSlashDMG: 4,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    SlashDEF: 0,
+    PierceDEF: 0,
+    BluntDEF: 0,
+    armorSlashDEF: 2,
+    armorPierceDEF: 0,
+    armorBluntDEF: 1,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: 4,
+    INT: 0,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+  	bleedPotency: 0,
+	  bleedCountMax: 10,
+  	bleedCountCur: 0,
+    bleedPotencyDealt: 3.5,
+    bleedCountDealt: 2,
+    bleedDef: 1.02,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    Affection: 0,
+    Dead: false
+  },
+  BlackWolf: {
+    name: "Black wolf",
+    Level: 0,
+    MaxHP: 750,
+    CurHP: 750,
+    MaxSTM: 200,
+    CurSTM: 200,
+    SlashSTR: 20,
+    PierceSTR: 20,
+    BluntSTR: 0,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 0,
+    weaponBluntDMG: 0,
+    SlashDEF: 7,
+    PierceDEF: 4,
+    BluntDEF: 3,
+    armorSlashDEF: 0,
+    armorPierceDEF: 0,
+    armorBluntDEF: 0,
+    CritChance: 5,
+    CritDMG: 1.5,
+    DEX: 4,
+    INT: 5,
+    turnChanceMax: 100,
+    turnChanceCur: 100,
+    blockingModifier: 1,
+    evadeModifier: 0,
+    baseDMG: 0,
+    dmgDealtTotal: 0,
+    Affection: 0,
+    timeOut: 0,
+    STRgoal: 0,
+    DEFgoal: 0,
+    INTgoal: 0,
+    DEXgoal: 0,
+    STRgoalMax: 10,
+    DEFgoalMax: 10,
+    INTgoalMax: 10,
+    DEXgoalMax: 10,
+  	bleedPotency: 0,
+	  bleedCountMax: 10,
+  	bleedCountCur: 0,
+    bleedPotencyDealt: 2,
+    bleedCountDealt: 2,
+    bleedDef: 1,
+    burnPotency: 0,
+    burnCountCur: 0,
+    burnCountDealt: 0,
+    burnPotencyDealt: 0,
+    Dead: false
+  }
+}>>
+
+<<set $killedSWK to 0>>
+<<set $killedWW to 0>>
+<<set $killedWWP to 0>>
+<<set $killedSK to 0>>
+<<set $killedPM to 0>>
+<<set $killedPZ to 0>>
+<<set $killedBG to 0>>
+<<set $killedGC to 0>>
+<<set $killedRabbits = 0>>
+<<set $killedPKers to 0>> 
+<<set $killedBoars = 0>>
+<<set $killedOnis = 0>>
+<<set $killedRams = 0>>
+<<set $boarMeat = 0>>
+<<set $ragoutMeat = 0>>
+<<set $wolfMeat = 0>>
+<<set $wolfFur = 0>>
+<<set $mobLvl to 0>>
+<<set $oniLeather = 0>>
+<<set $oniTeeth = 0>>
+
+<<set $timeTillBossDies to 0>>
+<<set $event2 to false>>
+<<set $event3 to false>>
+<<set $event4 to false>>
+<<set $event5 to false>>
+<<set $event6 to false>>
+
+<<set $achvPoints to 0>>
+<<set $achievement_001 to recall('achievement_001')>>
+<<set $achievement_002 to recall('achievement_002')>>
+<<set $achievement_003 to recall('achievement_003')>>
+<<set $achievement_004 to recall('achievement_004')>>
+<<set $achievement_005 to recall('achievement_005')>>
+<<set $achievement_006 to recall('achievement_006')>>
+<<set $achievement_007 to recall('achievement_007')>>
+<<set $achievement_008 to recall('achievement_008')>>
+<<set $achievement_009 to recall('achievement_009')>>
+<<set $achievement_010 to recall('achievement_010')>>
+<<set $achievement_011 to recall('achievement_011')>>
+<<set $achievement_012 to recall('achievement_012')>>
+<<set $achievement_013 to recall('achievement_013')>>
+<<set $achievement_014 to recall('achievement_014')>>
+
+<<if $achievement_001 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_002 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_003 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_004 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_005 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_006 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_007 == true>>
+	<<set $achvPoints += 2>>
+<</if>>
+<<if $achievement_008 == true>>
+	<<set $achvPoints += 2>>
+<</if>>
+<<if $achievement_009 == true>>
+	<<set $achvPoints += 1>>
+<</if>>
+<<if $achievement_010 == true>>
+	<<set $achvPoints += 3>>
+<</if>>
+<<if $achievement_011 == true>>
+	<<set $achvPoints += 2>>
+<</if>>
+<<if $achievement_012 == true>>
+	<<set $achvPoints += 2>>
+<</if>>
+<<if $achievement_013 == true>>
+	<<set $achvPoints += 2>>
+<</if>>
+<<if $achievement_014 == true>>
+	<<set $achvPoints += 2>>
+<</if>>
+
+<<set $F1BossHP to 350>>
+<<set $f1bosskilled to false>>
+
+<<set $tppadONE to false>>
+<<set $tppadTWO to false>>
+<<set $tppadTHREE to false>>
+<<set $tppadFOUR to false>>
+<<set $tppadFIVE to false>>
+<<set $tppadSIX to false>>
+
+<<set $battleEvent1 = [ "None", "None2", "Boar"]>>
+<<set $battleEvent2 = [ "None","Rabbit","Plant monster","Dungeon"]>>
+<<set $battleEvent3 = [ "None","SkeletonWarrior"]>>
+
+<<set $workone to false>>
+<<set $drinkserved to 0>>
+
+<<set $location to "house">>
+<<set $eventStart to false>>
+
+// LARGE
+<<newmeter 'fatigue3' 17>>
+	 <<sizing '220px' '15px'>>
+    <<colors 'purple' 'blue'>>
+<</newmeter>>
+<<newmeter 'health3' 18>>
+<<colors 'red' 'orange'>>
+    <<sizing '220px' '15px'>>
+<</newmeter>>
+<<newmeter 'hunger3' 19>>
+<<colors 'yellow' 'orange'>>
+    <<sizing '220px' '15px'>>
+<</newmeter>>
+<<newmeter 'stamina3' 20>>
+    <<sizing '220px' '15px'>>
+<</newmeter>>
+// MEDIUM
+<<newmeter 'fatigue2' 13>>
+	 <<sizing '220px' '10px'>>
+    <<colors 'purple' 'blue'>>
+<</newmeter>>
+<<newmeter 'health2' 14>>
+<<colors 'red' 'orange'>>
+    <<sizing '220px' '10px'>>
+<</newmeter>>
+<<newmeter 'hunger2' 15>>
+<<colors 'yellow' 'orange'>>
+    <<sizing '220px' '10px'>>
+<</newmeter>>
+<<newmeter 'stamina2' 16>>
+    <<sizing '220px' '10px'>>
+<</newmeter>>
+// SMALL
+<<newmeter 'fatigue' 0>>
+	 <<sizing '220px' '5px'>>
+    <<colors 'purple' 'blue'>>
+<</newmeter>>
+<<newmeter 'health' 1>>
+<<colors 'red' 'orange'>>
+    <<sizing '220px' '5px'>>
+<</newmeter>>
+<<newmeter 'hunger' 2>>
+<<colors 'yellow' 'orange'>>
+    <<sizing '220px' '5px'>>
+<</newmeter>>
+<<newmeter 'stamina' 3>>
+    <<sizing '220px' '5px'>>
+<</newmeter>>
+<<newmeter 'cooking' 4>>
+    <<sizing '220px'>>
+<</newmeter>>
+<<newmeter 'EveseRead' 5>>
+    <<sizing '220px'>>
+<</newmeter>>
+<<newmeter 'EveseSpeaking' 6>>
+    <<sizing '220px'>>
+<</newmeter>>
+<<newmeter 'crafting' 7>>
+    <<sizing '220px'>>
+<</newmeter>>
+<<newmeter 'reputation' 8>>
+<<colors 'red' 'green'>>
+    <<sizing '220px'>>
+<</newmeter>>
+// EXTRA SMALL
+<<newmeter 'fatigue1' 9>>
+	 <<sizing '220px' '3px'>>
+    <<colors 'purple' 'blue'>>
+<</newmeter>>
+<<newmeter 'health1' 10>>
+<<colors 'red' 'orange'>>
+    <<sizing '220px' '3px'>>
+<</newmeter>>
+<<newmeter 'hunger1' 11>>
+<<colors 'yellow' 'orange'>>
+    <<sizing '220px' '3px'>>
+<</newmeter>>
+<<newmeter 'stamina1' 12>>
+    <<sizing '220px' '3px'>>
+<</newmeter>>
+
+<<set $boarLeather to 0>>
+<<set $ramHorn to 0>>
+<<set $bread to 3>>
+<<set $carrot to 0>>
+<<set $mushroom to 0>>
+<<set $mayonnaise to 0>>
+<<set $fish to 0>>
+<<set $oneStarRSoup to 0>>
+<<set $twoStarRSoup to 0>>
+<<set $threeStarRSoup to 0>>
+<<set $oneStarMushkebab to 0>>
+<<set $twoStarMushkebab to 0>>
+<<set $threeStarMushkebab to 0>>
+<<set $oneStarRmeat to 0>>
+<<set $twoStarRmeat to 0>>
+<<set $threeStarRmeat to 0>>
+<<set $oneStarWmeat to 0>>
+<<set $twoStarWmeat to 0>>
+<<set $threeStarWmeat to 0>>
+<<set $oneStarBmeat to 0>>
+<<set $twoStarBmeat to 0>>
+<<set $threeStarBmeat to 0>>
+<<set $oneStarRsandwich to 0>>
+<<set $twoStarRsandwich to 0>>
+<<set $threeStarRsandwich to 0>>
+<<set $oneStarBsandwich to 0>>
+<<set $twoStarBsandwich to 0>>
+<<set $threeStarBsandwich to 0>>
+<<set $oneStarCookedFish to 0>>
+<<set $twoStarCookedFish to 0>>
+<<set $threeStarCookedFish to 0>>
+
+<<set $SpeakingSkill to 1>>
+<<set $SpeakingXP to 0>>
+<<set $SpeakingMaxXP to 1000>>
+<<set $ReadingSkill to 1>>
+<<set $ReadingXP to 0>>
+<<set $ReadingMaxXP to 1000>>
+<<set $CookingSkill to 0>>
+<<set $CookingXP to 0>>
+<<set $CookingMaxXP to 1000>>
+<<set $CraftingSkill to 0>>
+<<set $CraftingXP to 0>>
+<<set $CraftingMaxXP to 1000>>
+<<set $Reputation to 500>>
+<<set $ReputationMax to 1000>>
+<<set $difficultySTRmodifier to 1>>
+<<set $difficultyHPmodifier to 1>>
+<<set $XPmodifier to 1.25>>
+<<set $XPadd to 0.001>>
+
+<<set $turnChanceMax to 100>>
+<<set $turnChanceCur to 100>>
+<<set $axe1 to false>>
+<<set $shovel1 to false>>
+<<set $planks = 0>>
+<<set $iron = 0>>
+<<set $goldenRing = 0>>
+<<set $diamondRing = 0>>
+<<set $silverRing = 0>>
+<<set $ringOfTheUndead = 0>>
+<<set $ringOfTheLiving = 0>>
+<<set $tearfulTombRing = 0>>
+<<set $ringOfAchieving to 0>>
+<<set $AchvRingKeep to 0>>
+<<set $fireStopperScroll to 0>>
+<<set $MaxHP = 250>>
+<<set $fatigueFaint = 0>>
+<<set $maxHunger = 1000>>
+<<set $curHunger = 1000>>
+<<set $CurHP = 250>>
+<<set $SlashSTR = 0>>
+<<set $PierceSTR = 0>>
+<<set $BluntSTR = 0>>
+<<set $MagicSTR = 0>>
+<<set $DEX = 0>>
+<<set $INT = 0>> 
+<<set $SlashDEF = 0>>
+<<set $PierceDEF = 0>>
+<<set $BluntDEF = 0>>
+<<set $MagicDEF = 0>>
+<<set $critChance to 5>>
+<<set $critDMG to 1.5>>
+<<set $Points = 1>> 
+<<set $MaxXP = 150>>
+<<set $CurXP = 0>> 
+<<set $Coins = 0>>
+<<set $curStamina to 100>>
+<<set $maxStamina to 100>>
+<<set $weaponDMG to 0>>
+<<set $Level to 0>> 
+<<set $stmPOT to 3>> 
+<<set $hpPOT to 3>> 
+<<set $curFatigue to 0>> 
+<<set $maxFatigue to 1250>>
+<<set $armorSlashDEF to 0>>
+<<set $armorPierceDEF to 0>>
+<<set $armorBluntDEF to 0>>
+<<set $armorMagicDEF to 0>>
+<<set $weaponSlashDMG to 0>>
+<<set $weaponPierceDMG to 0>>
+<<set $weaponBluntDMG to 0>>
+<<set $weaponMagicDMG to 0>>
+<<set $isArmorPantsOn to "None">> 
+<<set $isArmorBootsOn to "None">>
+<<set $isWeaponSkinOn to "None">>
+<<set $isBootsOn to "None">> 
+<<set $isPantsOn to "None">>
+<<set $isOutfitOn to "None">>
+<<set $isChestplateOn to "None">> 
+<<set $isWeaponOn to "None">> 
+<<set $isShirtOn to "None">>
+<<set $isCapeOn = "None">>
+<<set $Finger1 to "None">>
+<<set $Finger2 to "None">>
+<<set $Finger3 to "None">>
+<<set $Finger4 to "None">>
+<<set $Finger5 to "None">>
+<<set $Finger6 to "None">>
+<<set $Finger7 to "None">>
+<<set $Finger8 to "None">>
+<<set $Finger9 to "None">>
+<<set $Finger10 to "None">>
+<<set $RegenHP to 0>>
+<<set $RegenAmount to 0>>
+<<set $hpPOT1 to 0>>
+<<set $paralized to 0>>
+<<set $potCooldown to 0>>
+<<set $CurFear to 0>>
+<<set $MaxFear to 100>>
+<<set $fearDebuff to 0>>
+<<set $STRPercentDebuff to 0>>
+<<set $STRPercentBuff to 0>>
+<<set $DEXPercentDebuff to 0>>
+<<set $DEXPercentBuff to 0>>
+<<set $hungerDebuff to 0>>
+<<set $fatigueDebuff to 0>>
+<<set $FearPercentBuff to 0>>
+<<set $FearPercentDebuff to 0>>
+<<set $weaponType to "None">>
+<<set $totalColWon to 0>>
+<<set $totalXPWon to 0>>
+<<set $blockingModifier to 1>>
+<<set $evadeModifier to 0>>
+<<set $bleedDMG to 0>>
+<<set $bleedPotency to 0>>
+<<set $bleedCountMax to 10>>
+<<set $bleedCountCur to 0>>
+<<set $bleedCountDealt to 0>>
+<<set $bleedPotencyDealt to 0>>
+<<set $bleedDef to 1>>
+<<set $bleedDefGain to 0.005>>
+<<set $burnPotency to 0>>
+<<set $burnCountCur to 0>>
+<<set $burnCountDealt to 0>>
+burnPotency: 0,
+burnCountCur: 0,
+burnCountDealt: 0,
+burnPotencyDealt: 0,
+<<set $burnPotencyDealt to 0>>
+
+<<set $gameStarted to false>>
+<<set $paidForInn1 to false>> 
+<<set $paidForInn2 to false>> 
+
+<<set $raidHP to 1000>>
+<<set $raidMaxHP to 1000>>
+<<set $raidPartyArmorTier to 1>>
+<<set $raidParty to false>>
+<<set $f1DungeonFound = false>>
+<<set $GatheringEvent = false>> 
+<<set $f1key to 0>>
+<<set $f1bosskilled to false>>
+<<set $f1secretbosskilled to false>>
+<<set $f2BossKilled to false>>
+<<set $f2BossTimeKilled to false>>
+<<set $f3BossKilled to false>>
+<<set $f3BossTimeKilled to false>>
+
+<<set $pathDone to false>>
+<<set $pathProgress to 0>>
+<<set $hutEvent to false>>
+<<set $hutTask5 to false>>
+<<set $hutTask4 to false>>
+<<set $hutTask3 to false>>
+<<set $hutTask2 to false>>
+<<set $hutTask1 to false>>
+<<set $hutCleaned = 0>>
+<<set $isHutFinished to false>>
+<<set $isHutPurchased to false>>
+<<set $campBuild1 to false>>
+<<set $pathDone1 to false>>
+<<set $pathProgress1 to 0>>
+
+<<set $asteriaAffection = 0>>
+<<set $blueBellAffection = 0>>
+<<set $hasSpokenWithRadiant to false>>
+<<set $hasSpokenWithShadow to false>>
+<<set $hasSpokenWithBlue to false>>
+<<set $hasSpokenWithCrimson to false>>
+<<set $radiantRoseParty to false>>
+<<set $shadowScytheParty to false>>
+<<set $crimsonSentinelParty to false>>
+
+<<set $shadPartyTime to 0>>
+<<set $radPartyTime to 0>>
+<<set $crimPartyTime to 0>>
+<<set $zegrathPartyTime to 0>>
+<<set $ZegrathFireSword to 0>>
+<<set $marcellusPartyTime to 0>>
+
+<<set $partyMembers to []>>
+<<set $combatSkills to ["Do nothing", "Stab", "Charge"]>>
+<<set $playerTraits to []>>
+
+<<set $faints to 0>>
+<<set $cookedmeals to 0>>
+<<set $hoursWorked to 0>>
+<<set $hairColor to "None">>
+<<set $onFire to 0>>
+<<set $SP to 1>>
+<<set $poisoned1 to 0>>
+
+<<set $NoSideBar to true>>
+<<set $exportReminder to 150>>
+
+<<set $dmgDealt = {
+"Total" : 0,
+"Combat" : 0,
+}>>
+
+<<set $traits = {
+}>>
+<<set $timeRemember = {
+}>>
+<<set $weaponInventory = {
+}>>
+
+<<set $dailyKills to 0>>
+<<set $combat_log = []>>
+<<set $combat_drops = []>>
+<<set $combatCol to 0>>
+<<set $combatXP to 0>>
+<<set $turns to 1>>
+
+

@@ -1,0 +1,32 @@
+:: Inn room purchase 2 {"position":"3275,1850","size":"100,100"}
+You went upstairs. There are at least 10 rooms with 6 of them being free.
+<div class="UIButtons">
+<<button "Rent a room">>
+<<if $Coins >= 500>>
+<<set $Coins -= 500>>
+<<set $paidForInn3 to true>>
+    <<set $timeRemember.Inn3H to setup.datesystems.default.getDate().h>> 
+    <<set $timeRemember.Inn3D to setup.datesystems.default.getDate().d + 1>> 
+<<goto "Inn room purchase 2">>
+<<elseif $paidForInn3 == true>>
+<<script>>
+UI.alert("You already rented a room!");
+<</script>>
+<<elseif $Coins <= 499>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+</div>
+<<if $paidForInn3 == true>>
+You can:
+1. <<link [[Go to your Inn room.|Inn room 2]]>>
+<<set $lastVisitedPassage1 to "Inn room 2">>
+<</link>>
+<<elseif $paidForInn3 == false>>
+1. Renting a room costs: 500 col per day.
+<</if>>\
+2. <<link [[Go back|Inn 3]]>> <<dateadd '1m'>> <</link>>
+
+

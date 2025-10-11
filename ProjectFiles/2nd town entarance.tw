@@ -1,0 +1,18 @@
+:: 2nd town entarance [Town] {"position":"1975,2400","size":"100,100"}
+You enter Oakheart to see a not so great looking place. It seems to have a inn, a shop and a weaponsmith in this part of the town though 
+
+The buildings are made out of wood just like the wall. There is barely any stone used actually... 
+
+Locations:
+1. <<link [[Go to the Inn|Inn 1]]>>
+<<set $lastvisitedpassage to "2nd town entarance">>
+<<dateadd '1m'>>
+<</link>>
+2. <<if setup.datesystems.default.getDate().h gte 10 and setup.datesystems.default.getDate().h lte 22>> <<link [[Go to the weaponsmith|Weaponsmith 2]]>> <<dateadd '1m'>> <</link>> <<else>>Weaponsmith | Closed<</if>>
+
+Directions:
+1. <<link [[Walk forward|Oakheart centre]]>> <<dateadd '2m'>> <</link>>
+2. <<link [[Go back|Path5]]>> <<dateadd '2m'>> <<set $location to "plains">> <</link>>
+
+
+

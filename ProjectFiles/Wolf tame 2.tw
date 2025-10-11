@@ -1,0 +1,10 @@
+:: Wolf tame 2 {"position":"4400,1650","size":"100,100"}
+  You call $NPCs.BlackWolf.name. She looks confused but then seems to realize that you named her. She is happy.
+
+<<link "Continue">>
+	<<run $partyMembers.push($NPCs.BlackWolf.name)>>
+	<<set $partyON to true>>
+	<<goto $lastVisitedPassage>>
+<</link>>
+
+

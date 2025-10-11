@@ -1,0 +1,12 @@
+:: win SC [autosave] {"position":"300,2800","size":"100,100"}
+As ShadowScythe takes the last hit, he falls on the floor dead.
+You killed ShadowScythe...
+Was it really worth becoming a PKer...?
+
+<<link "Continue">>
+<<set $Reputation -= 100>>
+<<set $shadowScytheDead to true>>
+<<goto $lastVisitedPassage>>
+<</link>>
+
+

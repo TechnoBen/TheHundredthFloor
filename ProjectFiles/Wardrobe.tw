@@ -1,0 +1,2183 @@
+:: Wardrobe [no-fainting-or-hunger no-party-time-loss] {"position":"1625,350","size":"100,100"}
+<h1><b>Your equipment</b></h1>\
+Body: <<if $isShirtOn is "None">> None <<else>> <<link "$isShirtOn">> <<if $isShirtOn?.includes('shirt')>> <<set $isShirtOn to "None">> <</if>> <<set $isShirtOn = "None">> <<goto "Wardrobe">> <</link>> <</if>> + <<if $isChestplateOn is "None">> None <<else>> <<link "$isChestplateOn">> 
+  <<if $isChestplateOn is "Starter breastplate">> 
+    <<set $armorBluntDEF -= 1>> 
+    <<set $armorPierceDEF -= 1>> 
+  <<elseif $isChestplateOn is "Leather chestplate">> 
+    <<set $armorSlashDEF -= 1.8>> 
+    <<set $armorPierceDEF -= 0.8>> 
+    <<set $armorBluntDEF -= 1.5>> 
+  <<elseif $isChestplateOn is "Hardened leather chestplate">> 
+    <<set $armorSlashDEF -= 3.5>> 
+    <<set $armorPierceDEF -= 1.9>> 
+    <<set $armorBluntDEF -= 3.1>> 
+    <<set $maxStamina += 24>> 
+  <<elseif $isChestplateOn is "Iron breastplate">> 
+    <<set $armorSlashDEF -= 4.7>> 
+    <<set $armorPierceDEF -= 2.1>> 
+    <<set $armorBluntDEF -= 0.6>> 
+  <<elseif $isChestplateOn is "Iron armor">> 
+    <<set $armorSlashDEF -= 8.1>> 
+    <<set $armorPierceDEF -= 4>> 
+    <<set $armorBluntDEF -= 0.95>> 
+    <<set $maxStamina += 30>> 
+  <<elseif $isChestplateOn is "Heavy shadow hunter chestplate">> 
+    <<set $armorSlashDEF -= 11>> 
+    <<set $armorPierceDEF -= 7.5>> 
+    <<set $armorBluntDEF -= 1>> 
+    <<set $maxStamina += 39>> 
+  <<elseif $isChestplateOn is "Light shadow hunter chestplate">> 
+    <<set $armorSlashDEF -= 7>> 
+    <<set $armorPierceDEF -= 4.5>> 
+    <<set $armorBluntDEF -= 0.3>> 
+  <<elseif $isChestplateOn is "Heavy Oni leather chestplate">> 
+    <<set $armorSlashDEF -= 11.34>> 
+    <<set $armorPierceDEF -= 2.5>> 
+    <<set $armorBluntDEF -= 8.51>> 
+    <<set $maxStamina += 45>> 
+  <<elseif $isChestplateOn is "Light Oni leather chestplate">> 
+    <<set $armorSlashDEF -= 8.2>> 
+    <<set $armorPierceDEF -= 1.65>> 
+    <<set $armorBluntDEF -= 5.9>> 
+  <<elseif $isChestplateOn is "Heavy stone chestplate">> 
+    <<set $armorSlashDEF -= 21>> 
+    <<set $armorPierceDEF += 7>> 
+    <<set $armorBluntDEF -= 21>> 
+    <<set $maxStamina += 97>> 
+  <<elseif $isChestplateOn is "Light stone chestplate">> 
+    <<set $armorSlashDEF -= 16>> 
+    <<set $armorPierceDEF += 5.5>> 
+    <<set $armorBluntDEF -= 16>> 
+    <<set $maxStamina += 20>> 
+  <</if>> 
+  <<set $isChestplateOn = "None">> 
+  <<goto "Wardrobe">> 
+<</link>> <</if>> + <<if $isCapeOn is "None">> None <<else>><<link "$isCapeOn">> 
+  <<if $isCapeOn is "Red cape">> 
+    <<set $maxStamina -= 20>> 
+  <<elseif $isCapeOn is "Marcellus coat">> 
+    <<set $maxStamina -= 10>> 
+    <<set $MaxHP -= 2>> 
+  <<elseif $isCapeOn is "Shadow hunters coat">> 
+    <<set $MaxHP -= 97>> 
+    <<set $maxStamina -= 85>> 
+  <<elseif $isCapeOn is "Wolf fur cape">> 
+    <<set $MaxHP -= 112>> 
+    <<set $maxStamina -= 95>> 
+  <<elseif $isCapeOn is "Mysteriously vague poncho">> 
+    <<set $MaxHP -= 10>> 
+    <<set $maxStamina -= 25>> 
+  <<elseif $isCapeOn is "Otherworldly remnant">> 
+    <<set $MaxHP -= 34>> 
+    <<set $maxStamina -= 33>> 
+  <</if>> 
+  <<goto "Wardrobe">> 
+  <<set $isCapeOn = "None">> 
+<</link>> <</if>> + <<if $isOutfitOn is "None">> None <<else>> <<link "$isOutfitOn">> 
+  <<if $isShirtOn is "Outfit 5">> 
+    <<set $maxStamina -= 50>> 
+    <<set $armorDEF += 3>> 
+    <<set $isShirtOn to "None">> 
+  <<elseif $isShirtOn is "Outfit 1">> 
+    <<set $isShirtOn to "None">> 
+    <<set $armorDEF += 1>> 
+  <<elseif $isShirtOn is "Outfit 2">> 
+    <<set $isShirtOn to "None">> 
+    <<set $maxStamina -= 25>> 
+  <<elseif $isShirtOn is "Outfit 4">> 
+    <<set $isShirtOn to "None">> 
+  <<elseif $isShirtOn is "Outfit 7">> 
+    <<set $isShirtOn = "None">>
+    <<set $maxStamina -= 25>> 
+    <<set $armorDEF += 1>> 
+  <<elseif $isShirtOn is "Outfit 9">> 
+    <<set $isShirtOn = "None">>
+    <<set $INT -= 1>> 
+  <<elseif $isShirtOn is "Outfit 10">> 
+    <<set $isShirtOn = "None">>
+    <<set $INT += 2>> 
+  <</if>> 
+  <<set $isOutfitOn to "None">> 
+  <<goto "Wardrobe">> 
+<</link>> <</if>>
+Legs: <<if $isPantsOn is "None">> None <<else>> <<link "$isPantsOn">>
+    <<goto "Wardrobe">>
+    <<set $isPantsOn to "None">> 
+<</link>> <</if>> + <<if $isArmorPantsOn is "None">> None <<else>> <<link "$isArmorPantsOn">> 
+  <<if $isArmorPantsOn is "Leather pants">> 
+    <<set $armorSlashDEF -= 1.6>> 
+    <<set $armorPierceDEF -= 0.9>> 
+    <<set $armorBluntDEF -= 1.4>> 
+  <<elseif $isArmorPantsOn is "Hardened leather pants">> 
+    <<set $armorSlashDEF -= 3.2>> 
+    <<set $armorPierceDEF -= 1.5>> 
+    <<set $armorBluntDEF -= 2.8>> 
+    <<set $maxStamina += 17>> 
+  <<elseif $isArmorPantsOn is "Iron leg guards">> 
+    <<set $armorSlashDEF -= 3.2>> 
+    <<set $armorPierceDEF -= 1.7>> 
+    <<set $armorBluntDEF -= 0.35>> 
+  <<elseif $isArmorPantsOn is "Iron pants">> 
+    <<set $armorSlashDEF -= 5.5>> 
+    <<set $armorPierceDEF -= 2.75>> 
+    <<set $armorBluntDEF -= 0.67>> 
+    <<set $maxStamina += 27>> 
+  <<elseif $isArmorPantsOn is "Light Oni leather pants">> 
+    <<set $armorSlashDEF -= 6.56>> 
+    <<set $armorPierceDEF -= 0.9>> 
+    <<set $armorBluntDEF -= 3.78>> 
+  <<elseif $isArmorPantsOn is "Heavy Oni leather pants">> 
+    <<set $armorSlashDEF -= 9.45>> 
+    <<set $armorPierceDEF -= 1.68>> 
+    <<set $armorBluntDEF -= 7.57>> 
+    <<set $maxStamina += 39>> 
+  <</if>> 
+  <<goto "Wardrobe">> 
+  <<set $isArmorPantsOn to "None">> 
+<</link>> <</if>>
+Feet: <<if $isBootsOn is "None">> None <<else>> <<link "$isBootsOn">>
+    <<goto "Wardrobe">>
+    <<set $isBootsOn to "None">>
+<</link>> <</if>> + <<if $isArmorBootsOn is "None">> None <<else>> <<link "$isArmorBootsOn">> 
+  <<if $isArmorBootsOn is "Leather boots">> 
+    <<set $armorSlashDEF -= 0.8>> 
+    <<set $armorPierceDEF -= 0.3>> 
+    <<set $armorBluntDEF -= 0.5>> 
+  <<elseif $isArmorBootsOn is "Hardened leather boots">> 
+    <<set $armorSlashDEF -= 2.5>> 
+    <<set $armorPierceDEF -= 1.1>> 
+    <<set $armorBluntDEF -= 1.8>> 
+    <<set $maxStamina += 17>> 
+  <<elseif $isArmorBootsOn is "Iron feet guards">> 
+    <<set $armorSlashDEF -= 1.8>> 
+    <<set $armorPierceDEF -= 0.95>> 
+    <<set $armorBluntDEF -= 0.2>> 
+  <<elseif $isArmorBootsOn is "Iron boots">> 
+    <<set $armorSlashDEF -= 4.2>> 
+    <<set $armorPierceDEF -= 1.62>> 
+    <<set $armorBluntDEF -= 0.34>> 
+    <<set $maxStamina += 20>> 
+  <<elseif $isArmorBootsOn is "Light Oni leather boots">> 
+    <<set $armorSlashDEF -= 4.78>> 
+    <<set $armorPierceDEF -= 0.68>> 
+    <<set $armorBluntDEF -= 1.92>> 
+  <<elseif $isArmorBootsOn is "Heavy Oni leather boots">> 
+    <<set $armorSlashDEF -= 8>> 
+    <<set $armorPierceDEF -= 1.12>> 
+    <<set $armorBluntDEF -= 5.92>> 
+    <<set $maxStamina += 33>> 
+  <</if>> 
+  <<goto "Wardrobe">> 
+  <<set $isArmorBootsOn to "None">> 
+<</link>> <</if>>
+Weapon: <<if $isWeaponOn is "None">> None <<else>> <<link "$isWeaponOn">> 
+  <<if $isWeaponOn is "Starter sword">> 
+    <<set $weaponSlashDMG -= 1>> 
+    <<set $weaponPierceDMG -= 0.25>> 
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 0.43>>
+  <<elseif $isWeaponOn is "Copper sword">> 
+    <<set $weaponSlashDMG -= 2>> 
+    <<set $weaponPierceDMG -= 0.5>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Iron sword">> 
+    <<set $weaponSlashDMG -= 6>> 
+    <<set $weaponPierceDMG -= 2.25>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Iron sword with a wooden handle">> 
+    <<set $weaponSlashDMG -= 7>> 
+    <<set $weaponPierceDMG -= 4>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Copper sword with crystal fragments">> 
+    <<set $weaponSlashDMG -= 5>> 
+    <<set $weaponPierceDMG -= 1.75>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Copper short sword and a shield">> 
+    <<set $weaponSlashDMG -= 1>> 
+    <<set $weaponBluntDMG -= 1>> 
+    <<set $armorSlashDEF -= 1>> 
+    <<set $armorPierceDEF -= 0.5>> 
+    <<set $armorBluntDEF -= 1>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Copper rapier">> 
+    <<set $weaponPierceDMG -= 1>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Copper heavy sword">> 
+    <<set $weaponSlashDMG -= 4>> 
+    <<set $weaponBluntDMG -= 2.75>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Copper dagger">> 
+    <<set $weaponPierceDMG -= 1>> 
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 3>>
+  <<elseif $isWeaponOn is "Copper mace">> 
+    <<set $weaponBluntDMG -= 2>>
+  <<elseif $isWeaponOn is "Copper gauntlets">> 
+    <<set $weaponBluntDMG -= 1.5>> 
+  <<elseif $isWeaponOn is "Iron gauntlets">> 
+    <<set $weaponBluntDMG -= 5.2>>
+  <<elseif $isWeaponOn is "Iron dagger">> 
+    <<set $weaponPierceDMG -= 3.8>>
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 3>>
+  <<elseif $isWeaponOn is "Iron mace">> 
+    <<set $weaponBluntDMG -= 6.5>>
+  <<elseif $isWeaponOn is "Iron gauntlets with crystal fragments">> 
+    <<set $weaponBluntDMG -= 7>>
+  <<elseif $isWeaponOn is "Iron dagger with a wooden handle">> 
+    <<set $weaponPierceDMG -= 5>>
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 3>>
+  <<elseif $isWeaponOn is "Iron mace with a wooden handle">> 
+    <<set $weaponBluntDMG -= 6>> 
+  <<elseif $isWeaponOn is "Oni teeth gauntlets">> 
+    <<set $weaponBluntDMG -= 10.5>>
+  <<elseif $isWeaponOn is "Oni teeth dagger">> 
+    <<set $weaponPierceDMG -= 9.1>>
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 3>>
+  <<elseif $isWeaponOn is "Oni teeth mace">> 
+    <<set $weaponBluntDMG -= 11>>
+  <<elseif $isWeaponOn is "Oni teeth and leather gauntlets">> 
+    <<set $weaponBluntDMG -= 12.6>>
+  <<elseif $isWeaponOn is "Oni teeth and leather dagger">> 
+    <<set $weaponPierceDMG -= 11.1>>
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 3>>
+  <<elseif $isWeaponOn is "Oni teeth and leather mace">> 
+    <<set $weaponBluntDMG -= 13>>
+  <<elseif $isWeaponOn is "Copper heavy sword with crystal fragments">> 
+    <<set $weaponSlashDMG -= 10>> 
+    <<set $weaponBluntDMG -= 6.72>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Copper gauntlets with crystal fragments">> 
+    <<set $weaponBluntDMG -= 3.75>>
+  <<elseif $isWeaponOn is "Copper mace with crystal fragments">> 
+    <<set $weaponBluntDMG -= 5>>
+  <<elseif $isWeaponOn is "Copper dagger with crystal fragments">> 
+    <<set $weaponBluntDMG -= 2.75>>
+    <<set $bleedCountDealt -= 1.25>>
+    <<set $bleedPotencyDealt -= 3>>
+  <<elseif $isWeaponOn is "Copper short sword and a shield with crystal fragments">> 
+    <<set $weaponSlashDMG -= 3>> 
+    <<set $weaponBluntDMG -= 2.25>> 
+    <<set $armorSlashDEF -= 2>> 
+    <<set $armorPierceDEF -= 1.24>> 
+    <<set $armorBluntDEF -= 2>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Copper rapier with crystal fragments">> 
+    <<set $weaponPierceDMG -= 3>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Copper katana">> 
+    <<set $weaponPierceDMG -= 1>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Bone sword">> 
+    <<set $weaponSlashDMG -= 8>> 
+    <<set $weaponPierceDMG -= 3.56>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Bone short sword and a shield">> 
+    <<set $weaponSlashDMG -= 5>> 
+    <<set $weaponBluntDMG -= 3.45>> 
+    <<set $armorSlashDEF -= 4>> 
+    <<set $armorPierceDEF -= 2.15>> 
+    <<set $armorBluntDEF -= 4>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Iron short sword and a shield">> 
+    <<set $weaponSlashDMG -= 4>> 
+    <<set $weaponBluntDMG -= 2.45>> 
+    <<set $armorSlashDEF -= 3>> 
+    <<set $armorPierceDEF -= 1.5>> 
+    <<set $armorBluntDEF -= 3>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Iron short sword and a shield with a wooden handle">> 
+    <<set $weaponSlashDMG -= 4.5>> 
+    <<set $weaponBluntDMG -= 2.78>> 
+    <<set $armorSlashDEF -= 3.5>> 
+    <<set $armorPierceDEF -= 1.25>> 
+    <<set $armorBluntDEF -= 3.5>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Bone rapier">> 
+    <<set $weaponPierceDMG -= 5>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Bone heavy sword">> 
+    <<set $weaponSlashDMG -= 15>> 
+    <<set $weaponBluntDMG -= 7>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Iron Axe">> 
+    <<set $weaponSlashDMG -= 2>> 
+    <<set $weaponBluntDMG -= 0.75>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Iron Shovel">> 
+    <<set $weaponPierceDMG -= 1>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Iron pickaxe">> 
+    <<set $weaponSlashDMG -= 1>> 
+    <<set $weaponPierceDMG -= 0.5>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Iron rapier">> 
+    <<set $weaponPierceDMG -= 4>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Iron rapier with a wooden handle">> 
+    <<set $weaponPierceDMG -= 4.5>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Iron heavy sword">> 
+    <<set $weaponSlashDMG -= 12>> 
+    <<set $weaponBluntDMG -= 6.78>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Iron heavy sword with a wooden handle">> 
+    <<set $weaponSlashDMG -= 13>> 
+    <<set $weaponBluntDMG -= 7.9>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Oni teeth rapier">> 
+    <<set $weaponPierceDMG -= 8>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Oni teeth heavy sword">> 
+    <<set $weaponSlashDMG -= 19>> 
+    <<set $weaponBluntDMG -= 12>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Oni teeth sword">> 
+    <<set $weaponSlashDMG -= 11>> 
+    <<set $weaponPierceDMG -= 4.7>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Oni teeth short sword and a shield">> 
+    <<set $weaponSlashDMG -= 8>> 
+    <<set $weaponBluntDMG -= 5.66>> 
+    <<set $armorSlashDEF -= 7>> 
+    <<set $armorPierceDEF -= 3.89>> 
+    <<set $armorBluntDEF -= 7>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Oni teeth and leather rapier">> 
+    <<set $weaponPierceDMG -= 9>> 
+    <<set $bleedCountDealt -= 0.75>>
+    <<set $bleedPotencyDealt -= 0.25>>
+  <<elseif $isWeaponOn is "Oni teeth and leather heavy sword">> 
+    <<set $weaponSlashDMG -= 21>> 
+    <<set $weaponBluntDMG -= 15>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <<elseif $isWeaponOn is "Oni teeth and leather sword">> 
+    <<set $weaponSlashDMG -= 13>> 
+    <<set $weaponPierceDMG -= 5.6>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 1>>
+  <<elseif $isWeaponOn is "Oni teeth and leather short sword and a shield">> 
+    <<set $weaponSlashDMG -= 9>> 
+    <<set $weaponBluntDMG -= 5.6>> 
+    <<set $armorSlashDEF -= 8>> 
+    <<set $armorPierceDEF -= 5.6>> 
+    <<set $armorBluntDEF -= 8>> 
+    <<set $bleedCountDealt -= 2>>
+    <<set $bleedPotencyDealt -= 0.78>>
+  <<elseif $isWeaponOn is "Boulder slayer">> 
+    <<set $weaponSlashDMG -= 29>> 
+    <<set $weaponBluntDMG -= 18>> 
+    <<set $bleedCountDealt -= 4>>
+    <<set $bleedPotencyDealt -= 2>>
+  <</if>> 
+  <<goto "Wardrobe">> 
+  <<set $isWeaponOn to "None">> 
+  <<set $weaponType = "None">> 
+<</link>> <</if>><<if $isWeaponSkinOn !== "None">> + <<link "$isWeaponSkinOn">> 
+    <<set $isWeaponSkinOn to "None">> 
+    <<goto "Wardrobe">> 
+    <</link>> 
+<</if>>
+<<nobr>>Left hand: <<for _i = 1; _i lte 5; _i++>>
+  <<capture _i>>
+      <<if _i != 1>>+<</if>> 
+      <<if State.variables["Finger" + _i] is "None">>
+      None
+      <<else>>
+      <<link `State.variables["Finger" + _i]`>>
+      <<if State.variables["Finger" + _i] is "Tearful tomb ring">>
+          <<set $tearfulTombRing += 1>>
+          <<set $STRPercentBuff -= 5>>
+      <<elseif State.variables["Finger" + _i] is "Diamond ring">>
+          <<set $diamondRing += 1>>
+      <<elseif State.variables["Finger" + _i] is "Golden ring">>
+          <<set $goldenRing += 1>>
+      <<elseif State.variables["Finger" + _i] is "Silver ring">>
+          <<set $silverRing += 1>>
+      <<elseif State.variables["Finger" + _i] is "Ring of achieving">>
+          <<set $ringOfAchieving += 1>>
+          <<set $STRPercentBuff -= $AchvRingKeep>>
+      <<elseif State.variables["Finger" + _i] is "Ring of the undead">>
+          <<set $ringOfTheUndead += 1>>
+          <<set $maxStamina -= 20>>
+          <<set $STRPercentBuff -= 2>>
+          <<set $DEXPercentBuff -= 7>>
+      <<elseif State.variables["Finger" + _i] is "Ring of the living">>
+          <<set $ringOfTheLiving += 1>>
+      <</if>>
+      <<set State.variables["Finger" + _i] to "None">>
+      <<goto "Wardrobe">>
+    <</link>>
+    <</if>>
+  <</capture>>
+<</for>><</nobr>>
+<<nobr>>Right hand: <<for _i = 6; _i lte 10; _i++>>
+  <<capture _i>>
+      <<if _i != 6>>+<</if>> 
+      <<if State.variables["Finger" + _i] is "None">>
+      None
+      <<else>>
+      <<link `State.variables["Finger" + _i]`>>
+      <<if State.variables["Finger" + _i] is "Tearful tomb ring">>
+          <<set $tearfulTombRing += 1>>
+          <<set $STRPercentBuff -= 5>>
+      <<elseif State.variables["Finger" + _i] is "Diamond ring">>
+          <<set $diamondRing += 1>>
+      <<elseif State.variables["Finger" + _i] is "Golden ring">>
+          <<set $goldenRing += 1>>
+      <<elseif State.variables["Finger" + _i] is "Silver ring">>
+          <<set $silverRing += 1>>
+      <<elseif State.variables["Finger" + _i] is "Ring of achieving">>
+          <<set $ringOfAchieving += 1>>
+          <<set $STRPercentBuff -= $AchvRingKeep>>
+      <<elseif State.variables["Finger" + _i] is "Ring of the undead">>
+          <<set $ringOfTheUndead += 1>>
+          <<set $maxStamina -= 20>>
+          <<set $STRPercentBuff -= 2>>
+          <<set $DEXPercentBuff -= 7>>
+      <<elseif State.variables["Finger" + _i] is "Ring of the living">>
+          <<set $ringOfTheLiving += 1>>
+      <</if>>
+      <<set State.variables["Finger" + _i] to "None">>
+      <<goto "Wardrobe">>
+    <</link>>
+    <</if>>
+  <</capture>>
+<</for>><</nobr>>
+Weapon damage:
+Slash: <<= $weaponSlashDMG.toFixed(2)>>
+Pierce: <<= $weaponPierceDMG.toFixed(2)>>
+Blunt: <<= $weaponBluntDMG.toFixed(2)>>
+Armor defence:
+Slash: <<= $armorSlashDEF.toFixed(2)>>
+Pierce: <<= $armorPierceDEF.toFixed(2)>>
+Blunt: <<= $armorBluntDEF.toFixed(2)>>
+<h1><b>CLOTHES</b></h1>\
+<<nobr>>\
+<ol>
+<<if $outfit5>>
+  <li><<hovertip "The outfit of the creator of this game. Max stamina + 50, DEF +3">>TechnoBen's outfit<</hovertip>> | <<link "Equip">> <<if $isOutfitOn is "None">> <<set $isOutfitOn to "Outfit 5">> <<set $armorDEF += 3>> <<set $maxStamina += 50>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $outfit1>>
+  <li><<hovertip "A beta tester outfit. DEF +1">>yelyel's outfit <</hovertip>> | <<link "Equip">> <<if $isOutfitOn is "None">> <<set $isOutfitOn to "Outfit 1">> <<set $armorDEF += 1>> <<goto "Wardrobe">> <</if>> <</link>></li>
+  <</if>>
+  <<if $outfit3>>
+  <li><<hovertip "A beta tester outfit. DEF +1">>ImFatRat's outfit <</hovertip>> | <<link "Equip">> <<if $isOutfitOn is "None">> <<set $isOutfitOn to "Outfit 3">> <<set $armorDEF += 1>> <<goto "Wardrobe">> <</if>> <</link>></li>
+  <</if>>
+<<if $outfit2>>
+  <li><<hovertip "A beta tester outfit. Max stamina +25">>Morgana's outfit <</hovertip>> <<link "Equip">> <<if $isOutfitOn is "None">> <<set $isOutfitOn to "Outfit 2">> <<set $maxStamina += 25>> <<goto "Wardrobe">> <</if>> <</link>></li>
+  <</if>>
+<<if $outfit4>>
+  <li><<hovertip "A beta tester outfit.">>Gremlin's outfit<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Outfit 4">><<goto "Wardrobe">><</link>></li> 
+<</if>>
+  <<if $outfit6>>
+  <li><<hovertip "A beta tester outfit. Max HP +100">>Nny's outfit <</hovertip>> | <<link "Equip">> <<if $isOutfitOn is "None">> <<set $isOutfitOn to "Outfit 6">> <<set $MaxHP += 100>> <<goto "Wardrobe">> <</if>> <</link>></li>
+  <</if>>
+<<if $outfit7>>
+  <li><<hovertip "A beta tester outfit. Max stamina +25, DEF +1">>Shadow_Fang's outfit <</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Outfit 7">> <<set $armorDEF += 1>> <<set $maxStamina += 25>> <<goto "Wardrobe">><</link>></li> 
+<</if>>
+<<if $outfit8>>
+  <li><<hovertip "This person won a outfit giveaway. DEF + 2.5 (other feature in progress)">>irfanrein's cape <</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Outfit 8">> <<set $armorDEF += 2.5>> <<goto "Wardrobe">><</link>>
+  </li>
+<</if>>
+<<if $outfit9>>
+  <li><<hovertip "This person won a outfit giveaway. INT - 1">>GlazingLotl's outfit <</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Outfit 9">> <<set $INT -= 1>> <<goto "Wardrobe">><</link>></li> 
+<</if>>
+<<if $outfit10>>
+  <li><<hovertip "Merry Christmas everyone! I hope you have an amazing holiday. This goes on the shirt slot for now though because there isnt a head slot... -2023 present">>Christmas hat<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Christmas hat">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $outfit11>>
+  <li><<hovertip "This person won a outfit giveaway. INT + 2">>BUNNY GIRL's outfit<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Outfit 10">> <<set $INT += 2>> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $outfit12>>
+  <li><<hovertip "This person won a outfit giveaway.">>Reverse Christmas outfit<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Outfit 11">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $pumpkinHead>>
+  <li><li><<hovertip "Trick or treat!">>Pumpkin head<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Pumpkin head">> <<goto "Wardrobe">><</link>></li></li>
+<</if>>
+<<if $ShadowScytheOutfit>>
+  <li><<hovertip "First year anniversary event item.">>ShadowScythes outfit<</hovertip>> | <<link "Hood down">> <<set $isOutfitOn = "ShadowScythe outfit 1">> <<goto "Wardrobe">><</link>> | <<link "Hood up">> <<set $isOutfitOn = "ShadowScythe outfit">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $RadiantRoseOutfit>>
+  <li><<hovertip "First year anniversary event item.">>RadiantRoses outfit<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "RadiantRose outfit">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $CrimsonSentinelOutfit>>
+  <li><<hovertip "First year anniversary event item.">>CrimsonSentinels outfit<</hovertip>> | <<link "Without cape">> <<set $isOutfitOn = "CrimsonSentinel outfit">> <<goto "Wardrobe">><</link>> | <<link "With cape">> <<set $isOutfitOn = "CrimsonSentinel outfit 1">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $ToruOutfit>>
+  <li><<hovertip "First year anniversary event item, Torus outfit.">>Familiar gambit outfit<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Familiar gambit outfit">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $KirinOutfit>>
+  <li><<hovertip "First year anniversary event item, Kirins outfit.">>Fallen grace outfit<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Fallen grace outfit">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $asteriaFlowerCrown>>
+  <li><<hovertip "A flower crown made by Asteria. You feel comfortable with it near you.">>Asterias flower crown<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Asterias flower crown">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $namelessManOutfit>>
+  <li><<hovertip "Second year anniversary event item, Unnamed mans outfit. (Souls of Guilt, Its a new game that Im working on.)">>Armor of a nameless man<</hovertip>> | <<link "Armor">> <<set $isOutfitOn = "Armor of a nameless man">> <<goto "Wardrobe">><</link>> | <<link "Mask and armor">> <<set $isOutfitOn = "Armor of a nameless man (masked)">> <<goto "Wardrobe">><</link>> | <<link "Mask">> <<set $isOutfitOn = "Mask of a nameless man">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $bobsArmorOutfit>>
+  <li><<hovertip "Second year anniversary event item, Bobs outfit. (BoBserk the ReBob of Bob the game, a meme game I made for Bob since he became somewhat of a meme in the discord server.)">>Bobs armor<</hovertip>> | <<link "Equip">> <<set $isOutfitOn = "Bobs armor">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $bobsEyes>>
+  <li><<hovertip "Second year anniversary event item, Bobs eyes. (BoBserk the ReBob of Bob the game, a meme game I made for Bob since he became somewhat of a meme in the discord server.)">>Bobs eyes<</hovertip>> | <<link "Equip">> <<set $eyeColor = "Bob">> <<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt1>>
+  <li>Blue starter shirt | <<link "Equip">> <<set $isShirtOn = "Blue shirt">><<goto "Wardrobe">><</link>></li> 
+<</if>>
+<<if $shirt2>>
+  <li>Red starter shirt | <<link "Equip">> <<set $isShirtOn = "Red shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt3>>
+  <li>Green starter shirt | <<link "Equip">> <<set $isShirtOn = "Green shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt4>>
+  <li>Pink starter shirt | <<link "Equip">> <<set $isShirtOn = "Pink shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt5>>
+  <li>White starter shirt | <<link "Equip">> <<set $isShirtOn = "White shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt6>>
+  <li>Black starter shirt | <<link "Equip">> <<set $isShirtOn = "Black shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt7>>
+  <li>Blue open shoulder shirt | <<link "Equip">> <<set $isShirtOn = "Blue open shoulder shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt8>>
+  <li>Red open shoulder shirt | <<link "Equip">> <<set $isShirtOn = "Red open shoulder shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt9>>
+  <li>Green open shoulder shirt | <<link "Equip">> <<set $isShirtOn = "Green open shoulder shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt10>>
+  <li>Pink open shoulder shirt | <<link "Equip">> <<set $isShirtOn = "Pink open shoulder shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt11>>
+  <li>White open shoulder shirt | <<link "Equip">> <<set $isShirtOn = "White open shoulder shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt12>>
+  <li>Black open shoulder shirt | <<link "Equip">> <<set $isShirtOn = "Black open shoulder shirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt13>>
+  <li>Blue tank top | <<link "Equip">> <<set $isShirtOn = "Blue tank top">><<goto "Wardrobe">><</link>></li> 
+<</if>>
+<<if $shirt14>>
+  <li>Red tank top | <<link "Equip">> <<set $isShirtOn = "Red tank top">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt15>>
+  <li>Green tank top | <<link "Equip">> <<set $isShirtOn = "Green tank top">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt16>>
+  <li>Pink tank top | <<link "Equip">> <<set $isShirtOn = "Pink tank top">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt17>>
+  <li>White tank top | <<link "Equip">> <<set $isShirtOn = "White tank top">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $shirt18>>
+  <li>Black tank top | <<link "Equip">> <<set $isShirtOn = "Black tank top">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $pants1>>
+  <li>Starter pants | <<link "Equip">> <<set $isPantsOn = "Starter pants">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $pants2>>
+  <li>Gray pants | <<link "Equip">> <<set $isPantsOn = "Gray pants">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $pants3>>
+  <li>White pants | <<link "Equip">> <<set $isPantsOn = "White pants">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $skirt1>>
+  <li>Starter skirt | <<link "Equip">> <<set $isPantsOn = "Starter skirt">><<goto "Wardrobe">><</link>></li>
+<</if>>
+<<if $boots1>>
+  <li>Starter boots | <<link "Equip">> <<set $isBootsOn = "Starter boots">><<goto "Wardrobe">><</link>></li>
+<</if>>
+</ol>
+<</nobr>>\
+<h1><b>ARMOR</b></h1>\
+<<nobr>>\
+<ol>
+<<if $cape1>>
+  <li><<hovertip "Max stamina +20">>Red cape <</hovertip>> | <<link "Equip">> <<if $isCapeOn is "None">> <<set $isCapeOn to "Red cape">> <<set $maxStamina += 20>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $cape2>>
+  <li><<hovertip "Max stamina +85, Max HP +97">>Shadow hunters coat <</hovertip>> | <<link "Equip">> <<if $isCapeOn is "None">> <<set $isCapeOn to "Shadow hunters coat">> <<set $MaxHP += 97>> <<set $maxStamina += 85>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $cape3>>
+  <li><<hovertip "A poncho that came from a mysterious but oddly familiar girl. You can't pin your finger on it but it feels like you've seen this poncho somewhere. Max stamina +25, Max HP +10">>Mysteriously vague poncho <</hovertip>> | <<link "Equip">> <<if $isCapeOn is "None">> <<set $isCapeOn to "Mysteriously vague poncho">> <<set $MaxHP += 10>> <<set $maxStamina += 25>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $cape4>>
+  <li><<hovertip "A navy blue jacket with an arm guard and a belt. This jacket is unlike anything you've seen before. But somehow you feel like you have seen someone wear this before into battle. Ominous in nature but Mysterious to be curious at. Max stamina +33, Max HP +34">>Otherworldly remnant <</hovertip>> | <<link "Equip">> <<if $isCapeOn is "None">> <<set $isCapeOn to "Otherworldly remnant">> <<set $MaxHP += 34>> <<set $maxStamina += 33>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $cape5>>
+  <li><<hovertip "A really comfortable cape made out of wolf fur. Max stamina +95, Max HP +112">>Wolf fur cape <</hovertip>> | <<link "Equip">> <<if $isCapeOn is "None">> <<set $isCapeOn to "Wolf fur cape">> <<set $maxStamina += 95>> <<set $MaxHP += 112>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $cape6>>
+  <li><<hovertip "A coat made out of boar skin... There are 2 yellow tridents on it and on each of the sleeves is one diagonal yellow stripe across the upper arm that look like they've been drawn with spray paint. It looks really old and beaten up. Max stamina +10, Max HP +2">>Marcellus's coat <</hovertip>> | <<link "Equip">> <<if $isCapeOn is "None">> <<set $isCapeOn to "Marcellus coat">> <<set $maxStamina += 10>> <<set $MaxHP += 2>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $breastPlate>>
+  <li><<hovertip "The first ever armor you get... Slash and Pierce DEF +1">>Starter breastplate<</hovertip>> | <<link "Equip">> <<if $isChestplateOn is "None">>
+  <<set $isChestplateOn to "Starter breastplate">>
+  <<set $armorPierceDEF += 1>>
+  <<set $armorBluntDEF += 1>>
+  <<goto "Wardrobe">>
+  <</if>>
+  <</link>> </li>
+  <<if $leatherCP>> 
+  <li><<hovertip "A light piece of armor. Slash DEF + 1.8, Pierce DEF + 0.8, Blunt DEF + 1.5">>Leather chestplate <</hovertip>> | <<link "Equip">>
+  <<if $isChestplateOn is "None">>
+  <<set $isChestplateOn to "Leather chestplate">>
+  <<set $armorSlashDEF += 1.8>>
+  <<set $armorPierceDEF += 0.8>>
+  <<set $armorBluntDEF += 1.5>>
+  <<goto "Wardrobe">>
+  <</if>> <</link>></li> <</if>>
+    <<if $leatherP>>
+  <li><<hovertip "A light piece of armor. Slash DEF + 1.6, Pierce DEF + 0.9, Blunt DEF + 1.4">>Leather pants <</hovertip>> | <<link "Equip">>
+  <<if $isArmorPantsOn is "None">>
+  <<set $isArmorPantsOn to "Leather pants">>
+  <<set $armorSlashDEF += 1.6>>
+  <<set $armorPierceDEF += 0.9>>
+  <<set $armorBluntDEF += 1.4>>
+  <<goto "Wardrobe">>
+  <</if>>
+  <</link>> </li> <</if>>
+     <<if $leatherB>> 
+  <li><<hovertip "A light piece of armor. Slash DEF + 0.8, Pierce DEF + 0.3, Blunt DEF + 0.5">>Leather boots <</hovertip>> | <<link "Equip">>
+  <<if $isArmorBootsOn is "None">>
+  <<set $isArmorBootsOn to "Leather boots">>
+  <<set $armorSlashDEF += 0.8>>
+  <<set $armorPierceDEF += 0.3>>
+  <<set $armorBluntDEF += 0.5>>
+  <<goto "Wardrobe">>
+  <</if>> <</link>></li> <</if>>
+<</if>>
+ <<if $leatherHCP>>
+  <li><<hovertip "A pretty heavy peace of armor. Max stamina -24, Slash DEF + 3.5, Pierce DEF + 1.9, Blunt DEF + 3.1">>Hardened leather chestplate <</hovertip>> | <<link "Equip">>
+  <<if $isChestplateOn is "None">>
+  <<set $isChestplateOn to "Hardened leather chestplate">>
+  <<set $armorSlashDEF += 3.5>>
+  <<set $armorPierceDEF += 1.9>>
+  <<set $armorBluntDEF += 3.1>>
+  <<set $maxStamina -= 24>>
+  <<goto "Wardrobe">>
+  <</if>> <</link>></li> <</if>>
+ <<if $leatherHP>>
+  <li><<hovertip "A pretty heavy peace of armor. Max stamina -17, Slash DEF + 3.2, Pierce DEF + 1.5, Blunt DEF + 2.8">>Hardened leather pants <</hovertip>> | <<link "Equip">>
+  <<if $isArmorPantsOn is "None">> 
+  <<set $isArmorPantsOn to "Hardened leather pants">> 
+  <<set $armorSlashDEF += 3.2>>
+  <<set $armorPierceDEF += 1.5>>
+  <<set $armorBluntDEF += 2.8>>
+  <<set $maxStamina -= 17>> 
+  <<goto "Wardrobe">> 
+  <</if>> <</link>></li> <</if>>
+<<if $leatherHB>>
+  <li><<hovertip "A pretty heavy peace of armor. Max stamina -17, Slash DEF + 2.5, Pierce DEF + 1.1, Blunt DEF + 1.8">>Hardened leather boots <</hovertip>> | <<link "Equip">>
+  <<if $isArmorBootsOn is "None">> 
+  <<set $isArmorBootsOn to "Hardened leather boots">> 
+  <<set $armorSlashDEF += 2.5>>
+  <<set $armorPierceDEF += 1.1>>
+  <<set $armorBluntDEF += 1.8>>
+  <<set $maxStamina -= 17>> 
+  <<goto "Wardrobe">> 
+  <</if>> <</link>></li> <</if>>
+<<if $shadowHunterHeavyCP>>
+  <li><<hovertip "A pretty boneish and heavy peace of armor. Max stamina -39, Slash DEF + 11, Pierce DEF + 7.5, Blunt DEF + 1">>Hardened shadow hunter chestplate <</hovertip>> | <<link "Equip">> 
+  <<if $isChestplateOn is "None">>
+   <<set $isChestplateOn to "Heavy shadow hunter chestplate">> 
+   <<set $armorSlashDEF += 11>>
+  <<set $armorPierceDEF += 7.5>>
+  <<set $armorBluntDEF += 1.0>>
+    <<set $maxStamina -= 39>> 
+    <<goto "Wardrobe">> 
+    <</if>> <</link>></li> <</if>>
+<<if $shadowHunterLightCP>>
+  <li><<hovertip "A boneish and light peace of armor. Slash DEF + 7, Pierce DEF + 4.5, Blunt DEF + 0.3">>Light shadow hunters chestplate <</hovertip>> | <<link "Equip">>
+  <<if $isChestplateOn is "None">> 
+  <<set $isChestplateOn to "Light shadow hunter chestplate">>
+  <<set $armorSlashDEF += 7>>
+  <<set $armorPierceDEF += 4.5>>
+  <<set $armorBluntDEF += 0.3>>
+  <<goto "Wardrobe">> 
+  <</if>> <</link>> </li> <</if>>
+   <<if $ironBP>>
+  <li><<hovertip "A breastplate made out of iron. Its surprisingly light. Slash DEF + 4.7, Pierce DEF + 2.1, Blunt DEF + 0.6">>Iron breastplate<</hovertip>> | <<link "Equip">> 
+  <<if $isChestplateOn is "None">> 
+  <<set $isChestplateOn to "Iron breastplate">> 
+  <<set $armorSlashDEF += 4.7>>
+  <<set $armorPierceDEF += 2.1>>
+  <<set $armorBluntDEF += 0.6>>
+  <<goto "Wardrobe">>
+  <</if>><</link>> </li>
+ <</if>>
+ <<if $ironGuards>>
+  <li><<hovertip "Leg guards made out of iron. Its surprisingly light. Slash DEF + 3.2, Pierce DEF + 1.7, Blunt DEF + 0.35">>Iron leg guards<</hovertip>> | <<link "Equip">>
+  <<if $isArmorPantsOn is "None">>
+  <<set $isArmorPantsOn to "Iron leg guards">>
+  <<set $armorSlashDEF += 3.2>>
+  <<set $armorPierceDEF += 1.7>>
+  <<set $armorBluntDEF += 0.35>>
+  <<goto "Wardrobe">>
+  <</if>> <</link>> </li>
+ <</if>>
+<<if $ironFG>>
+  <li><<hovertip "Feet guards made out of iron. Its surprisingly light. Slash DEF + 1.8, Pierce DEF + 0.95, Blunt DEF + 0.2">>Iron feet guards<</hovertip>> | <<link "Equip">>
+  <<if $isArmorBootsOn is "None">>
+  <<set $isArmorBootsOn to "Iron feet guards">>
+  <<set $armorSlashDEF += 1.8>>
+  <<set $armorPierceDEF += 0.95>>
+  <<set $armorBluntDEF += 0.2>>
+  <<goto "Wardrobe">>
+  <</if>> <</link>> </li>
+<</if>>
+ <<if $ironCP>>
+ <li><<hovertip "A pretty heavy peace of iron armor. Max stamina -30, Slash DEF + 8.1, Pierce DEF + 4, Blunt DEF + 0.95">>Iron armor <</hovertip>> | <<link "Equip">> 
+ <<if $isChestplateOn is "None">> 
+ <<set $isChestplateOn to "Iron armor">> 
+ <<set $armorSlashDEF += 8.1>>
+ <<set $armorPierceDEF += 4>>
+ <<set $armorBluntDEF += 0.95>>
+ <<set $maxStamina -= 30>> 
+ <<goto "Wardrobe">> 
+ <</if>> <</link>></li>
+ <</if>>
+ <<if $ironP>>
+ <li><<hovertip "A pretty heavy peace of iron armor. Max stamina -27, Slash DEF + 5.5, Pierce DEF + 2.75, Blunt DEF + 0.67">>Iron pants <</hovertip>> | <<link "Equip">>
+  <<if $isArmorPantsOn is "None">>
+   <<set $isArmorPantsOn to "Iron pants">> 
+   <<set $armorSlashDEF += 5.5>>
+    <<set $armorPierceDEF += 2.75>>
+    <<set $armorBluntDEF += 0.67>> 
+   <<set $maxStamina -= 27>> 
+   <<goto "Wardrobe">> 
+   <</if>> 
+   <</link>></li>
+ <</if>>
+<<if $ironB>>
+  <li><<hovertip "A pretty heavy peace of iron armor. Max stamina -20, Slash DEF + 4.2, Pierce DEF + 1.62, Blunt DEF + 0.34">>Iron boots <</hovertip>> | <<link "Equip">>
+  <<if $isArmorBootsOn is "None">> 
+  <<set $isArmorBootsOn to "Iron boots">> 
+  <<set $armorSlashDEF += 4.2>>
+  <<set $armorPierceDEF += 1.62>>
+  <<set $armorBluntDEF += 0.34>> 
+  <<set $maxStamina -= 20>> 
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>> </li>
+<</if>>
+<<if $lOniCP>>
+  <li><<hovertip "A chestplate made out of Oni leather. Slash DEF + 8.2, Pierce DEF + 1.65, Blunt DEF + 5.9">>Light Oni leather chestplate<</hovertip>> | <<link "Equip">> 
+  <<if $isChestplateOn is "None">> 
+  <<set $isChestplateOn to "Light Oni leather chestplate">>
+  <<set $armorSlashDEF += 8.2>>
+  <<set $armorPierceDEF += 1.65>>
+  <<set $armorBluntDEF += 5.9>>
+  <<goto "Wardrobe">>
+  <</if>>
+  <</link>> </li>
+ <</if>>
+ <<if $lOniP>>
+  <li><<hovertip "Pants made out of Oni leather. Slash DEF + 6.56, Pierce DEF + 0.9, Blunt DEF + 3.78">>Light Oni leather pants<</hovertip>> | <<link "Equip">>
+  <<if $isArmorPantsOn is "None">> 
+  <<set $isArmorPantsOn to "Light Oni leather pants">> 
+  <<set $armorSlashDEF += 6.56>>
+  <<set $armorPierceDEF += 0.9>>
+  <<set $armorBluntDEF += 3.78>>
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>> </li>
+ <</if>>
+<<if $lOniB>>
+  <li><<hovertip "Boots made out of Oni leather... Its kinda hard to make light boots out of this but its good. Slash DEF + 4.78, Pierce DEF + 0.68, Blunt DEF + 1.92">>Light Oni leather boots<</hovertip>> | <<link "Equip">> 
+  <<if $isArmorBootsOn is "None">> 
+  <<set $isArmorBootsOn to "Light Oni leather boots">> 
+  <<set $armorSlashDEF += 4.78>>
+  <<set $armorPierceDEF += 0.68>>
+  <<set $armorBluntDEF += 1.92>> 
+  <<goto "Wardrobe">> 
+  <</if>> <</link>> </li>
+<</if>> 
+<<if $hOniCP>>
+ <li><<hovertip "A chestplate made out of Oni leather and iron. Its really heavy. Max stamina -45, Slash DEF + 11.34, Pierce DEF + 2.5, Blunt DEF + 8.51">>Heavy Oni leather chestplate <</hovertip>> | <<link "Equip">> 
+ <<if $isChestplateOn is "None">> 
+ <<set $isChestplateOn to "Heavy Oni leather chestplate">> 
+ <<set $armorSlashDEF += 11.34>>
+  <<set $armorPierceDEF += 2.5>>
+  <<set $armorBluntDEF += 8.51>>  
+ <<set $maxStamina -= 45>> 
+ <<goto "Wardrobe">> 
+ <</if>> <</link>></li>
+ <</if>>
+ <<if $hOniP>>
+ <li><<hovertip "Pants made out of Oni leather and iron. Its really heavy. Max stamina -39, Slash DEF + 9.45, Pierce DEF + 1.68, Blunt DEF + 7.57">>Heavy Oni leather pants <</hovertip>> | <<link "Equip">> 
+ <<if $isArmorPantsOn is "None">> 
+ <<set $isArmorPantsOn to "Heavy Oni leather pants">> 
+ <<set $armorSlashDEF += 9.45>>
+  <<set $armorPierceDEF += 1.68>>
+  <<set $armorBluntDEF += 7.57>>  
+ <<set $maxStamina -= 39>> 
+ <<goto "Wardrobe">> 
+ <</if>> 
+ <</link>></li>
+ <</if>>
+<<if $hOniB>>
+  <li><<hovertip "Boots made out of Oni leather and iron. Its really heavy. Max stamina -33, Slash DEF + 8, Pierce DEF + 1.12, Blunt DEF + 5.92">>Heavy Oni leather boots <</hovertip>> | <<link "Equip">> 
+  <<if $isArmorBootsOn is "None">> 
+  <<set $isArmorBootsOn to "Heavy Oni leather boots">> 
+  <<set $armorSlashDEF += 8>>
+  <<set $armorPierceDEF += 1.12>>
+  <<set $armorBluntDEF += 5.92>> 
+  <<set $maxStamina -= 33>> 
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>> </li>
+<</if>>
+<<if $hStoneCP>>
+ <li><<hovertip "Chestplate made out of stone. Its a bit too heavy. You are unsure how you are gonna be able to wear it. Max stamina -97, Slash DEF + 21, Pierce DEF - 7, Blunt DEF + 21">>Heavy stone chestplate<</hovertip>> | <<link "Equip">> 
+ <<if $isChestplateOn is "None">> 
+ <<set $isChestplateOn to "Heavy stone chestplate">> 
+ <<set $armorSlashDEF += 21>>
+  <<set $armorPierceDEF -= 7>>
+  <<set $armorBluntDEF += 21>> 
+ <<set $maxStamina -= 97>> 
+ <<goto "Wardrobe">> 
+ <</if>> 
+ <</link>></li>
+ <</if>>
+ <<if $StoneCP>>
+ <li><<hovertip "Chestplate made out of stone. Its a bit heavy. Max stamina -20, Slash DEF + 16, Pierce DEF - 5.5, Blunt DEF + 16">>Light stone chestplate<</hovertip>> | <<link "Equip">> 
+ <<if $isChestplateOn is "None">> 
+ <<set $isChestplateOn to "Light stone chestplate">> 
+ <<set $armorSlashDEF += 16>>
+  <<set $armorPierceDEF -= 5.5>>
+  <<set $armorBluntDEF += 16>> 
+ <<set $maxStamina -= 20>> 
+ <<goto "Wardrobe">> 
+ <</if>> 
+ <</link>></li>
+ <</if>>
+</ol>
+<</nobr>>\
+<h1><b>WEAPONS</b></h1>\
+<<nobr>>\
+<ol>
+ <<if $flowerRapierSkin>>
+  <li><<hovertip "First year anniversary event item.">>Flower rapier skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Flower rapier">> <<goto "Wardrobe">> <</link>> </li>
+<</if>>
+<<if $bloodDrainerSkin>>
+  <li><<hovertip "First year anniversary event item.">>Blood drainer skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Blood drainer">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+ <<if $shadowTakerSkin>>
+  <li><<hovertip "First year anniversary event item.">>Shadow taker skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Shadow taker">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+ <<if $ToruGauntletSkin>>
+  <li><<hovertip "First year anniversary event item.">>Dusters resort skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Dusters resort">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+ <<if $KirinSwordSkin>>
+  <li><<hovertip "First year anniversary event item.">>Tarnished imprint skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Tarnished imprint">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+ <<if $BloodSwordSkin>>
+  <li><<hovertip "Legend says it gives blood to an old god and that's what gives it power. Blood for the blood god! - giveaway sword">>Blood sword skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Blood sword">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+ <<if $CandyCaneSwordSkin>>
+  <li><<hovertip "Christmas event item.">>Candy cane sword skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Candy cane sword">> <<goto "Wardrobe">> <</link>> </li>
+<</if>>
+ <<if $CandyCaneHeavySwordSkin>>
+  <li><<hovertip "Christmas event item.">>Candy cane heavy sword skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Candy cane heavy sword">> <<goto "Wardrobe">> <</link>> </li>
+<</if>>
+ <<if $CandyCaneRapierSkin>>
+  <li><<hovertip "Christmas event item.">>Candy cane rapier skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Candy cane rapier">> <<goto "Wardrobe">> <</link>> </li>
+<</if>>
+ <<if $CandyCaneShieldAndSwordSkin>>
+  <li><<hovertip "Christmas event item.">>Candy cane shield and sword skin<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Candy cane shield and sword">> <<goto "Wardrobe">> <</link>> </li>
+<</if>>
+<<if $AsteriasPotatoSack>>
+  <li><<hovertip "Second year anniversary event item.">>Asterias potato sack<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Asterias potato sack">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+<<if $starterSword>>
+  <li>Starter sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Starter sword">> 
+  <<set $weaponType = "Short sword">> 
+  <<set $weaponSlashDMG += 1>>
+  <<set $weaponPierceDMG += 0.25>>
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 0.43>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword1>>
+  <li>Copper sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper sword">> 
+  <<set $weaponType = "Short sword">>
+  <<set $weaponSlashDMG += 2>>
+  <<set $weaponPierceDMG += 0.5>>
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>></li>
+<</if>>
+<<if $swordnshield1>>
+  <li>Copper short sword with a shield | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper short sword and a shield">> 
+  <<set $weaponType = "Shield and sword">>
+  <<set $weaponSlashDMG += 1>>
+  <<set $weaponBluntDMG += 1>> 
+  <<set $armorSlashDEF += 1>>
+  <<set $armorPierceDEF += 0.5>> 
+  <<set $armorBluntDEF += 1>>
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier1>>
+  <li>Copper rapier | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper rapier">> 
+  <<set $weaponType = "Rapier">> 
+  <<set $weaponPierceDMG += 1>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavysword1>>
+  <li>Copper heavy sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper heavy sword">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 4>>
+  <<set $weaponBluntDMG += 2.75>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $gauntlets1>>
+  <li>Copper gauntlets | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper gauntlets">> 
+  <<set $weaponType = "Gauntlets">> 
+  <<set $weaponBluntDMG += 1.5>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $mace1>>
+  <li>Copper mace | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper mace">> 
+  <<set $weaponType = "Mace">> 
+  <<set $weaponBluntDMG += 2>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $dagger1>>
+  <li>Copper dagger | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper dagger">> 
+  <<set $weaponType = "Dagger">> 
+  <<set $weaponPierceDMG += 1>> 
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 3>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $katana1>>
+  <li>Copper katana | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper katana">> 
+  <<set $weaponType = "Rapier">>
+  <<set $weaponPierceDMG += 1>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword2>>
+  <li>Copper sword with crystal fragment pieces | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper sword with crystal fragments">> 
+  <<set $weaponType = "Short sword">>
+  <<set $weaponSlashDMG += 5>>
+  <<set $weaponPierceDMG += 1.75>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>></li>
+<</if>>
+<<if $heavysword2>>
+  <li>Copper heavy sword with crystal fragments | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper heavy sword with crystal fragments">> 
+  <<set $weaponType = "Heavy sword">>
+  <<set $weaponSlashDMG += 10>>
+  <<set $weaponBluntDMG += 6.72>> 
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $swordnshield2>>
+  <li>Copper short sword and a shield with crystal fragments | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper short sword and a shield with crystal fragments">> 
+  <<set $weaponType = "Shield and sword">>
+  <<set $weaponSlashDMG += 3>>
+  <<set $weaponBluntDMG += 2.25>> 
+  <<set $armorSlashDEF += 2>>
+  <<set $armorPierceDEF += 1.24>> 
+  <<set $armorBluntDEF += 2>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier2>>
+  <li>Copper rapier with crystal fragments | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper rapier with crystal fragments">> 
+  <<set $weaponType = "Rapier">> 
+  <<set $weaponPierceDMG += 3>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $gauntlets2>>
+  <li>Copper gauntlets with crystal fragments | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper gauntlets with crystal fragments">> 
+  <<set $weaponType = "Gauntlets">> 
+  <<set $weaponBluntDMG += 3.75>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $mace2>>
+  <li>Copper mace with crystal fragments | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper mace with crystal fragments">> 
+  <<set $weaponType = "Mace">> 
+  <<set $weaponBluntDMG += 5>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $dagger2>>
+  <li>Copper dagger with crystal fragments | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Copper dagger with crystal fragments">> 
+  <<set $weaponType = "Dagger">> 
+  <<set $weaponPierceDMG += 2.75>> 
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 3>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword3>>
+  <li>Bone sword | <<link "Equip">> <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Bone sword">> 
+  <<set $weaponType = "Short sword">> 
+  <<set $weaponSlashDMG += 8>>
+  <<set $weaponPierceDMG += 3.56>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $swordnshield3>>
+  <li>Bone short sword with a shield | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Bone short sword and a shield">> 
+  <<set $weaponType = "Shield and sword">> 
+  <<set $weaponSlashDMG += 5>>
+  <<set $weaponBluntDMG += 3.45>>
+  <<set $armorSlashDEF += 4>>
+  <<set $armorPierceDEF += 2.15>> 
+  <<set $armorBluntDEF += 4>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier3>>
+  <li>Bone rapier | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Bone rapier">> 
+  <<set $weaponType = "Rapier">> 
+  <<set $weaponPierceDMG += 5>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavysword3>>
+  <li>Bone heavy sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Bone heavy sword">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 15>>
+  <<set $weaponBluntDMG += 7>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword4>>
+  <li>Iron sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron sword">> 
+  <<set $weaponType = "Short sword">> 
+  <<set $weaponSlashDMG += 6>>
+  <<set $weaponPierceDMG += 2.25>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>></li>
+<</if>>
+<<if $swordnshield4>>
+  <li>Iron short sword with a shield | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron short sword and a shield">> 
+  <<set $weaponType = "Shield and sword">> 
+  <<set $weaponSlashDMG += 4>>
+  <<set $weaponBluntDMG += 2.45>>
+  <<set $armorSlashDEF += 3>>
+  <<set $armorPierceDEF += 1.5>> 
+  <<set $armorBluntDEF += 3>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier4>>
+  <li>Iron rapier | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron rapier">> 
+  <<set $weaponType = "Rapier">>
+  <<set $weaponPierceDMG += 4>>  
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavysword4>>
+  <li>Iron heavy sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron heavy sword">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 12>>
+  <<set $weaponBluntDMG += 6.78>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $gauntlets4>>
+  <li>Iron gauntlets | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron gauntlets">> 
+  <<set $weaponType = "Gauntlets">> 
+  <<set $weaponBluntDMG += 5.2>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $mace4>>
+  <li>Iron mace | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron mace">> 
+  <<set $weaponType = "Mace">> 
+  <<set $weaponBluntDMG += 6>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $dagger4>>
+  <li>Iron dagger | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron dagger">> 
+  <<set $weaponType = "Dagger">> 
+  <<set $weaponPierceDMG += 3.8>> 
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 3>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword5>>
+  <li>Iron sword with a wooden handle | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron sword with a wooden handle">> 
+  <<set $weaponType = "Short sword">>  
+  <<set $weaponSlashDMG += 7>>
+  <<set $weaponPierceDMG += 4>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>> 
+  <</link>></li>
+<</if>>
+<<if $swordnshield5>>
+  <li>Iron short sword and a shield with a wooden handle | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron short sword and a shield with a wooden handle">> 
+  <<set $weaponType = "Shield and sword">> 
+  <<set $armorSlashDEF += 3.5>>
+  <<set $armorPierceDEF += 1.25>> 
+  <<set $armorBluntDEF += 3.5>> 
+  <<set $weaponSlashDMG += 4.5>> 
+  <<set $weaponBluntDMG += 2.78>>
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier5>>
+  <li>Iron rapier with a wooden handle | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron rapier with a wooden handle">> 
+  <<set $weaponType = "Rapier">> 
+  <<set $weaponPierceDMG += 4.5>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavysword5>>
+  <li>Iron heavy sword with a wooden handle | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron heavy sword with a wooden handle">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 13>>
+  <<set $weaponBluntDMG += 7.9>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $gauntlets5>>
+  <li>Iron gauntlets with crystal fragmnets | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron gauntlets with crystal fragments">> 
+  <<set $weaponType = "Gauntlets">> 
+  <<set $weaponBluntDMG += 6.5>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $mace5>>
+  <li>Iron mace with a wooden handle | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron mace with a wooden handle">> 
+  <<set $weaponType = "Mace">> 
+  <<set $weaponBluntDMG += 7>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $dagger5>>
+  <li>Iron dagger with a wooden handle | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Iron dagger with a wooden handle">> 
+  <<set $weaponType = "Dagger">> 
+  <<set $weaponPierceDMG += 5>> 
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 3>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword6>>
+  <li>Oni teeth sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth sword">> 
+  <<set $weaponType = "Short sword">> 
+  <<set $weaponSlashDMG += 11>>
+  <<set $weaponPierceDMG += 4.7>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $swordnshield6>>
+  <li>Oni teeth short sword with a shield | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth short sword and a shield">> 
+  <<set $weaponType = "Shield and sword">> 
+  <<set $armorSlashDEF += 7>>
+  <<set $armorPierceDEF += 3.89>> 
+  <<set $armorBluntDEF += 7>> 
+  <<set $weaponSlashDMG += 8>>
+  <<set $weaponBluntDMG += 5.66>>
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier6>>
+  <li>Oni teeth rapier | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth rapier">> 
+  <<set $weaponType = "Rapier">> 
+  <<set $weaponPierceDMG += 8>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavysword6>>
+  <li>Oni teeth heavy sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth heavy sword">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 19>>
+  <<set $weaponBluntDMG += 12>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $gauntlets6>>
+  <li>Oni teeth gauntlets | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth gauntlets">> 
+  <<set $weaponType = "Gauntlets">> 
+  <<set $weaponBluntDMG += 10.5>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $mace6>>
+  <li>Oni teeth mace | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth mace">> 
+  <<set $weaponType = "Mace">> 
+  <<set $weaponBluntDMG += 11>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $dagger6>>
+  <li>Oni teeth dagger | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth dagger">> 
+  <<set $weaponType = "Dagger">> 
+  <<set $weaponPierceDMG += 9.1>> 
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 3>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $sword7>>
+  <li>Oni teeth and leather sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather sword">> 
+  <<set $weaponType = "Short sword">> 
+  <<set $weaponSlashDMG += 13>>
+  <<set $weaponPierceDMG += 5.6>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $swordnshield7>>
+  <li>Oni teeth and leather short sword with a shield | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather short sword and a shield">> 
+  <<set $weaponType = "Shield and sword">> 
+  <<set $weaponSlashDMG += 9>>
+  <<set $weaponBluntDMG += 5.6>>
+  <<set $armorSlashDEF += 8>>
+  <<set $armorPierceDEF += 5.6>> 
+  <<set $armorBluntDEF += 8>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 0.78>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $rapier7>>
+  <li>Oni teeth and leather rapier | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather rapier">> 
+  <<set $weaponType = "Rapier">>
+  <<set $weaponPierceDMG += 9>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavysword7>>
+  <li>Oni teeth and leather heavy sword | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather heavy sword">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 21>>
+  <<set $weaponBluntDMG += 15>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $gauntlets7>>
+  <li>Oni teeth and leather gauntlets | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather gauntlets">> 
+  <<set $weaponType = "Gauntlets">> 
+  <<set $weaponBluntDMG += 12.6>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $mace7>>
+  <li>Oni teeth and leather mace | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather mace">> 
+  <<set $weaponType = "Mace">> 
+  <<set $weaponBluntDMG += 13>> 
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $dagger7>>
+  <li>Oni teeth and leather dagger | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Oni teeth and leather dagger">> 
+  <<set $weaponType = "Dagger">> 
+  <<set $weaponPierceDMG += 11.1>> 
+  <<set $bleedCountDealt += 1.25>>
+  <<set $bleedPotencyDealt += 3>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $heavyswordStone>>
+  <li>Boulder slayer | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $isWeaponOn to "Boulder slayer">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $weaponSlashDMG += 29>> 
+  <<set $weaponBluntDMG += 18>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $axe1>>
+  <li>Iron Axe | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $weaponType = "Heavy sword">> 
+  <<set $isWeaponOn to "Iron Axe">> 
+  <<set $weaponSlashDMG += 2>> 
+  <<set $weaponBluntDMG += 0.75>>
+  <<set $bleedCountDealt += 4>>
+  <<set $bleedPotencyDealt += 2>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $shovel1>>
+  <li>Iron Shovel | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $weaponType = "Rapier">> 
+  <<set $isWeaponOn to "Iron Shovel">> 
+  <<set $weaponPierceDMG += 1>> 
+  <<set $bleedCountDealt += 0.75>>
+  <<set $bleedPotencyDealt += 0.25>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+<<if $pickaxe1>>
+  <li>Iron pickaxe | <<link "Equip">> 
+  <<if $isWeaponOn is "None">> 
+  <<set $weaponType = "Short sword">> 
+  <<set $isWeaponOn to "Iron pickaxe">>  
+  <<set $weaponSlashDMG += 1>>
+  <<set $weaponPierceDMG += 0.5>> 
+  <<set $bleedCountDealt += 2>>
+  <<set $bleedPotencyDealt += 1>>
+  <<goto "Wardrobe">> 
+  <</if>>  
+  <</link>></li>
+<</if>>
+</ol>
+<</nobr>>\
+<h1><b>Rings</b></h1>\
+<<nobr>>\
+<ol>
+<<if $diamondRing>>
+    <li>
+      <<hovertip "A ring with a diamond on top.">>Diamond ring: $diamondRing<</hovertip>>
+      <<for _i = 1; _i lte 10; _i++>>
+        <<capture _i>>
+           | 
+          <<link `_i`>>
+            <<if State.variables["Finger" + _i] is "None">>
+              <<set State.variables["Finger" + _i] to "Diamond ring">>
+              <<set $diamondRing -= 1>>
+              <<goto "Wardrobe">>
+            <</if>>
+          <</link>>
+        <</capture>>
+      <</for>>
+    </li>
+<</if>>
+<<if $goldenRing>>
+      <li>
+        <<hovertip "A ring made out of gold.">>Golden ring: $goldenRing<</hovertip>>
+        <<for _i = 1; _i lte 10; _i++>>
+          <<capture _i>>
+             | 
+            <<link `_i`>>
+              <<if State.variables["Finger" + _i] is "None">>
+                <<set State.variables["Finger" + _i] to "Golden ring">>
+                <<set $goldenRing -= 1>>
+                <<goto "Wardrobe">>
+              <</if>>
+            <</link>>
+          <</capture>>
+        <</for>>
+      </li>
+<</if>>
+<<if $silverRing>>
+  <li>
+    <<hovertip "A ring made out of silver.">>Silver ring: $silverRing<</hovertip>>
+    <<for _i = 1; _i lte 10; _i++>>
+      <<capture _i>>
+         | 
+        <<link `_i`>>
+          <<if State.variables["Finger" + _i] is "None">>
+            <<set State.variables["Finger" + _i] to "Silver ring">>
+            <<set $silverRing -= 1>>
+            <<goto "Wardrobe">>
+          <</if>>
+        <</link>>
+      <</capture>>
+    <</for>>
+  </li>
+<</if>>
+<<if $tearfulTombRing>>
+  <li>
+    <<hovertip "A ring that proves youre part of the Tearful tomb guild. +5% STR">>Tearful tomb ring: $tearfulTombRing<</hovertip>>
+    <<for _i = 1; _i lte 10; _i++>>
+      <<capture _i>>
+         | 
+        <<link `_i`>>
+          <<if State.variables["Finger" + _i] is "None">>
+            <<set State.variables["Finger" + _i] to "Tearful tomb ring">>
+            <<set $tearfulTombRing -= 1>>
+            <<set $STRPercentBuff += 5>>
+            <<goto "Wardrobe">>
+          <</if>>
+        <</link>>
+      <</capture>>
+    <</for>>
+  </li>
+<</if>>
+<<if $ringOfAchieving>>
+      <li>
+        <<hovertip "A ring that boosts your STR by 0.5% per every achievement unlocked. Make sure to re-equip whenever you unlock a achievement!">>Ring of achieving: $ringOfAchieving<</hovertip>>
+        <<for _i = 1; _i lte 10; _i++>>
+          <<capture _i>>
+             | 
+            <<link `_i`>>
+              <<if State.variables["Finger" + _i] is "None">>
+                <<set State.variables["Finger" + _i] to "Ring of achieving">>
+                  <<if $achievement_001 == true>>
+                    <<set $STRPercentBuff += 0.5>>
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_002 == true>>
+                    <<set $STRPercentBuff += 0.5>>
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_003 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_004 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_005 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_006 == true>>
+                    <<set $STRPercentBuff += 0.5>>
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_007 == true>>
+                    <<set $STRPercentBuff += 0.5>>
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_008 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_009 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_010 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_011 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_012 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_013 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                  <<if $achievement_014 == true>>
+                    <<set $STRPercentBuff += 0.5>> 
+                    <<set $AchvRingKeep += 0.5>>
+                  <</if>>
+                <<set $ringOfAchieving -= 1>>
+                <<goto "Wardrobe">>
+              <</if>>
+            <</link>>
+          <</capture>>
+        <</for>>
+      </li>
+<</if>>
+<<if $ringOfTheUndead>>
+  <li>
+    <<hovertip "A ring made out of bones. +2% STR, +7% DEX, +20 stamina">>Ring of the undead: $ringOfTheUndead<</hovertip>>
+    <<for _i = 1; _i lte 10; _i++>>
+      <<capture _i>>
+         | 
+        <<link `_i`>>
+          <<if State.variables["Finger" + _i] is "None">>
+            <<set State.variables["Finger" + _i] to "Ring of the undead">>
+            <<set $ringOfTheUndead -= 1>>
+            <<set $STRPercentBuff += 2>>
+            <<set $STRPercentBuff += 7>>
+            <<set $maxStamina += 20>>
+            <<goto "Wardrobe">>
+          <</if>>
+        <</link>>
+      <</capture>>
+    <</for>>
+  </li>
+<</if>>
+<<if $ringOfTheLiving>>
+  <li>
+    <<hovertip "A ring made out of blood. Regenerates 1/3rd of the damage dealt to your enemy.">>Ring of the living: $ringOfTheLiving<</hovertip>>
+    <<for _i = 1; _i lte 10; _i++>>
+      <<capture _i>>
+         | 
+        <<link `_i`>>
+          <<if State.variables["Finger" + _i] is "None">>
+            <<set State.variables["Finger" + _i] to "Ring of the living">>
+            <<set $ringOfTheLiving -= 1>>
+            <<goto "Wardrobe">>
+          <</if>>
+        <</link>>
+      <</capture>>
+    <</for>>
+  </li>
+<</if>>
+</ol>
+<</nobr>>\
+<h1><b>CONSUMABLES</b></h1>\
+<<nobr>>\
+<ol>
+<<if $hpPOT > 0>> 
+  <li>Health potion T1: $hpPOT | <<link "Use potion">>
+  <<if $potCooldown <= 0>>
+  <<set $CurHP += 50>> <<set $potCooldown += 2>> <<set $hpPOT -= 1>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $hpPOT1 > 0>> 
+  <li>Health potion T2: $hpPOT1 | <<link "Use potion">>
+  <<if $potCooldown <= 0>>
+  <<set $RegenHP += 2>> <<set $RegenAmount to 60>> <<set $potCooldown += 4>> <<set $hpPOT1 -= 1>> <<goto "Wardrobe">> <</if>> <</link>></li>
+<</if>>
+<<if $stmPOT > 0>>
+  <li>Stamina potion: $stmPOT | <<link "Use potion">> 
+  <<if $potCooldown <= 0>>
+  <<set $curStamina += 50>> <<set $stmPOT -= 1>> <<set $potCooldown += 2>> <<set $curFatigue -= 100>> <<goto "Wardrobe">>
+  <</if>>
+  <</link>></li>
+<</if>>
+<<if $boarMeat > 0>>
+  <li>Boar meat: $boarMeat | <<link "Eat">>
+  <<set $boarMeat -= 1>>
+  <<set $curHunger += 10>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $ragoutMeat > 0>>
+  <li>Ragout meat: $ragoutMeat | <<link "Eat">>
+  <<set $ragoutMeat -= 1>>
+  <<set $curHunger += 20>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $wolfMeat > 0>>
+  <li>Wolf meat: $wolfMeat | <<link "Eat">>
+  <<set $wolfMeat -= 1>>
+  <<set $curHunger += 30>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $bread > 0>>
+<li>
+Bread: $bread | <<link "Eat">>
+  <<set $bread -= 1>>
+  <<set $curHunger += 56>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $carrot > 0>>
+<li>
+Carrots: $carrot | <<link "Eat">>
+  <<set $carrot -= 1>>
+  <<set $curHunger += 12>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $mushroom > 0>>
+<li>
+Mushrooms: $mushroom | <<link "Eat">>
+  <<set $mushroom -= 1>>
+  <<set $curHunger += 12>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarMushkebab > 0>>
+<li>
+☆ Mushroom kebab: $oneStarMushkebab | <<link "Eat">>
+ <<set $oneStarMushkebab -= 1>>
+ <<set $curHunger += 55>>
+<<set $curFatigue -= 2>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarMushkebab > 0>>
+<li>
+☆☆ Mushroom kebab: $twoStarMushkebab | <<link "Eat">>
+  <<set $twoStarMushkebab -= 1>>
+  <<set $curHunger += 67>>
+  <<set $curFatigue -= 5>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarMushkebab > 0>>
+<li>
+☆☆☆ Mushroom kebab: $threeStarMushkebab | <<link "Eat">>
+  <<set $threeStarMushkebab -= 1>>
+  <<set $curHunger += 104>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarBsandwich > 0>>
+<li>
+☆ Boar sandwich: $oneStarBsandwich | <<link "Eat">>
+ <<set $oneStarBsandwich -= 1>>
+ <<set $curHunger += 89>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarBsandwich > 0>>
+<li>
+☆☆ Boar sandwich: $twoStarBsandwich | <<link "Eat">>
+  <<set $twoStarBsandwich -= 1>>
+  <<set $curHunger += 139>>
+  <<set $CurHP += 7>>
+  <<set $curStamina += 14>>
+  <<set $curFatigue -= 9>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarBsandwich > 0>>
+<li>
+☆☆☆ Boar sandwich: $threeStarBsandwich | <<link "Eat">>
+  <<set $threeStarBsandwich -= 1>>
+  <<set $curHunger += 227>>
+  <<set $CurHP += 15>>
+  <<set $curStamina += 19>>
+  <<set $curFatigue -= 15>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarRsandwich > 0>>
+<li>
+☆ Ragout sandwich: $oneStarRsandwich | <<link "Eat">>
+ <<set $oneStarRsandwich -= 1>>
+ <<set $curHunger += 101>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarRsandwich > 0>>
+<li>
+☆☆ Ragout sandwich: $twoStarRsandwich | <<link "Eat">>
+  <<set $twoStarRsandwich -= 1>>
+  <<set $curHunger += 186>>
+  <<set $CurHP += 9>>
+  <<set $curStamina += 15>>
+  <<set $curFatigue -= 10>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarRsandwich > 0>>
+<li>
+☆☆☆ Ragout sandwich: $threeStarRsandwich | <<link "Eat">>
+  <<set $threeStarRsandwich -= 1>>
+  <<set $curHunger += 247>>
+  <<set $CurHP += 18>>
+  <<set $curStamina += 21>>
+  <<set $curFatigue -= 19>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarBmeat > 0>>
+<li>
+☆ Cooked boar meat: $oneStarBmeat | <<link "Eat">>
+ <<set $oneStarBmeat -= 1>>
+ <<set $curHunger += 65>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarBmeat > 0>>
+<li>
+☆☆ Cooked boar meat: $twoStarBmeat | <<link "Eat">>
+  <<set $twoStarBmeat -= 1>>
+  <<set $curHunger += 98>>
+  <<set $CurHP += 2>>
+  <<set $curStamina += 4>>
+  <<set $curFatigue -= 2>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarBmeat > 0>>
+<li>
+☆☆☆ Cooked boar meat: $threeStarBmeat | <<link "Eat">>
+  <<set $threeStarBmeat -= 1>>
+  <<set $curHunger += 120>>
+  <<set $CurHP += 5>>
+  <<set $curStamina += 9>>
+  <<set $curFatigue -= 5>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarRmeat > 0>>
+<li>
+☆ Cooked ragout meat: $oneStarRmeat | <<link "Eat">>
+ <<set $oneStarRmeat -= 1>>
+ <<set $curHunger += 73>>
+ <<set $CurHP += 2>>
+ <<set $curStamina += 5>>
+ <<set $curFatigue -= 2>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarRmeat > 0>>
+<li>
+☆☆ Cooked ragout meat: $twoStarRmeat | <<link "Eat">>
+  <<set $twoStarRmeat -= 1>>
+  <<set $curHunger += 118>>
+  <<set $CurHP += 5>>
+  <<set $curStamina += 9>>
+  <<set $curFatigue -= 9>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarRmeat > 0>>
+<li>
+☆☆☆ Cooked ragout meat: $threeStarRmeat | <<link "Eat">>
+  <<set $threeStarRmeat -= 1>>
+  <<set $curHunger += 174>>
+  <<set $CurHP += 12>>
+  <<set $curStamina += 14>>
+  <<set $curFatigue -= 15>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarWmeat > 0>>
+<li>
+☆ Cooked wolf meat: $oneStarWmeat | <<link "Eat">>
+ <<set $oneStarWmeat -= 1>>
+ <<set $curHunger += 76>>
+ <<set $CurHP += 3>>
+ <<set $curStamina += 5>>
+ <<set $curFatigue -= 2>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarWmeat > 0>>
+<li>
+☆☆ Cooked wolf meat: $twoStarWmeat | <<link "Eat">>
+  <<set $twoStarWmeat -= 1>>
+  <<set $curHunger += 138>>
+  <<set $CurHP += 6>>
+  <<set $curStamina += 9>>
+  <<set $curFatigue -= 9>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarWmeat > 0>>
+<li>
+☆☆☆ Cooked wolf meat: $threeStarWmeat | <<link "Eat">>
+  <<set $threeStarWmeat -= 1>>
+  <<set $curHunger += 204>>
+  <<set $CurHP += 13>>
+  <<set $curStamina += 15>>
+  <<set $curFatigue -= 15>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+  <<if $oneStarCookedFish > 0>>
+    <li>
+    ☆ Cooked fish: $oneStarCookedFish | <<link "Eat">>
+     <<set $oneStarCookedFish -= 1>>
+     <<set $curHunger += 42>>
+     <<goto "Wardrobe">>
+    <</link>>
+    </li>
+    <</if>>
+    <<if $twoStarCookedFish > 0>>
+    <li>
+    ☆☆ Cooked fish: $twoStarCookedFish | <<link "Eat">>
+      <<set $twoStarCookedFish -= 1>>
+      <<set $curHunger += 62>>
+     <<goto "Wardrobe">>
+    <</link>>
+    </li>
+    <</if>>
+ <<if $threeStarCookedFish > 0>>
+    <li>
+    ☆☆☆ Cooked fish: $threeStarCookedFish | <<link "Eat">>
+      <<set $threeStarCookedFish -= 1>>
+      <<set $curHunger += 85>>
+      <<set $CurHP += 1>>
+      <<set $curStamina += 3>>
+      <<set $curFatigue -= 2>>
+     <<goto "Wardrobe">>
+    <</link>>
+    </li>
+<</if>>
+<<if $oneStarRSoup > 0>>
+<li>
+☆ Ragout soup: $oneStarRSoup | <<link "Eat">>
+ <<set $oneStarRSoup -= 1>>
+ <<set $curHunger += 258>>
+ <<set $CurHP += 22>>
+ <<set $curStamina += 15>>
+ <<set $curFatigue -= 10>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarRSoup > 0>>
+<li>
+☆☆ Ragout soup: $twoStarRSoup | <<link "Eat">>
+  <<set $twoStarRSoup -= 1>>
+  <<set $curHunger += 308>>
+  <<set $CurHP += 36>>
+  <<set $curStamina += 27>>
+  <<set $curFatigue -= 19>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarRSoup > 0>>
+<li>
+☆☆☆ Ragout soup: $threeStarRSoup | <<link "Eat">>
+  <<set $threeStarRSoup -= 1>>
+  <<set $curHunger += 373>>
+  <<set $CurHP += 34>>
+  <<set $curStamina += 34>>
+  <<set $curFatigue -= 25>>
+ <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $AnniversaryCakeVanilla > 0>>
+<li>
+First year anniversary cake (Vanilla): $AnniversaryCakeVanilla | <<link "Eat">>
+  <<set $AnniversaryCakeVanilla -= 1>>
+  <<set $curHunger += 50>>
+  <<set $curFatigue -= 10>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $AnniversaryCakeChocolate > 0>>
+<li>
+First year anniversary cake (Chocolate): $AnniversaryCakeChocolate | <<link "Eat">>
+  <<set $AnniversaryCakeChocolate -= 1>>
+  <<set $curHunger += 50>>
+  <<set $CurHP += 10>>
+  <<set $curStamina += 10>>
+  <<goto "Wardrobe">>
+<</link>>
+</li>
+<</if>>
+<<if $fireStopperScroll > 0>>
+<li>
+Fire stopper scroll: $fireStopperScroll | <<link "Read it">>
+<<script>>
+	UI.alert("You learn the fire stop skill. Whenever you get set on fire you will have the option to set it off but it will cost stamina.");
+<</script>>
+<<run $combatSkills.push("Fire stop")>>
+ <<goto "Wardrobe">>
+ <<set $fireStopperScroll -= 1>>
+<</link>>
+</li>
+<</if>>
+<<if $genderChangingPotion > 0>>
+<li>
+Gender changing potion:  $genderChangingPotion | <<link "Male">> <<set $gender to "Male">> <<set $genderChangingPotion -= 1>> <<goto "Wardrobe">> <</link>> | <<link "Female">> <<set $genderChangingPotion -= 1>> <<set $gender to "Female">> <<goto "Wardrobe">> <</link>> | <<link "Nonbinary">> <<set $genderChangingPotion -= 1>> <<set $gender to "Nonbinary">> <<goto "Wardrobe">> <</link>>
+</li>
+<</if>>
+</ol>
+<</nobr>>\
+<h1><b>MATERIALS</b></h1>\
+<<nobr>>\
+<ol>
+<<if $boarLeather > 0>>
+  <li>Boar leather: $boarLeather</li>
+<</if>>
+<<if $ramHorn > 0>>
+  <li>Ram horns: $ramHorn</li>
+<</if>>
+<<if $planks > 0>>
+  <li>Wood: $planks</li>
+<</if>>
+<<if $crystalFragments > 0>>
+  <li>Crystal fragments: $crystalFragments</li>
+<</if>>
+<<if $mayonnaise > 0>>
+  <li>Mayonnaise: $mayonnaise</li>
+<</if>>
+<<if $wolfFur > 0>>
+  <li>Wolf fur: $wolfFur</li>
+<</if>>
+<<if $oniLeather > 0>>
+  <li>Oni leather: $oniLeather</li>
+<</if>>
+<<if $oniTeeth > 0>>
+  <li>Oni teeth: $oniTeeth</li>
+<</if>>
+<<if $iron > 0>>
+  <li>Iron: $iron</li>
+<</if>>
+</ol>
+<</nobr>>\
+<h1><b>KEYS</b></h1>\
+<<nobr>>\
+<ol>
+<<if $f1key > 0>>
+  <li>Floor 1 dungeon key: $f1key</li>
+<</if>>
+</ol>
+<</nobr>>\
+
+<<link "Go back">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+
+

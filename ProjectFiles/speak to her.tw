@@ -1,0 +1,15 @@
+:: speak to her {"position":"1125,1775","size":"100,100"}
+"Hey, Radiant what are you doing right now?" you ask.
+<span class="radiant">"Nothing much. Just looking around the city. The jewelry here is amazing though."</span>
+"Oh yeah the jewlry here is amazing."
+
+The two of you talk about jewelry.
+
+<<link [[Go back|Town centre]]>>
+	<<dateadd '1h'>>
+    <<set $NPCs.RadiantRose.Affection += 1>>
+    <<set $CurFear -= 1>>
+<</link>>
+
+
+

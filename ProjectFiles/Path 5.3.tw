@@ -1,0 +1,22 @@
+:: Path 5.3 {"position":"1850,2025","size":"100,100"}
+You get closer to the said structure.
+Its the floor dungeon.
+There is a small camp next to you... There doesn't seem to be any players or NPCs
+
+Directions:
+1. <<link [[Go backwards|Path 5.2]]>> 
+	<<dateadd '30m'>>
+	<<set $curFatigue += 25>>
+    <<set $lastVisitedPassage to "Path 5.2">>
+    <<Plains2>>
+<</link>>
+
+Locations:
+1. <<link [[Go inside the floor dungeon|FD1]]>>
+<<dateadd '2m'>>
+<<set $location to "dungeon">>
+<<set $curFatigue += 25>>
+<</link>>
+2. <<link [[Small camp]]>> <<dateadd '2m'>> <</link>>
+
+

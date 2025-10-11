@@ -1,0 +1,84 @@
+:: Boss rush shop [no-fainting-or-hunger] {"position":"850,875","size":"100,100"}
+<<nobr>><h2>Potions:</h2><</nobr>>
+<<button "Buy health potion | 48 coins">>
+<<if $Coins >= 48>> 
+<<set $hpPOT += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 48>>
+<<elseif $Coins <= 47>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a tier 2 health potion | 87 coins">>
+<<if $Coins >= 87>> 
+<<set $hpPOT1 += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 87>>
+<<elseif $Coins <= 86>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy stamina potion | 56 coins">>
+<<if $Coins >= 56>> 
+<<set $stmPOT += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 56>>
+<<elseif $Coins <= 55>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<nobr>><h2>Food/Ingredients:</h2><</nobr>>
+<<button "Buy bread | 21 coins">>
+<<if $Coins >= 21>> 
+<<set $bread += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 21>>
+<<elseif $Coins <= 20>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a carrot | 6 coins">>
+<<if $Coins >= 6>> 
+<<set $carrot += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 6>>
+<<elseif $Coins <= 5>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a mushroom | 9 coins">>
+<<if $Coins >= 9>> 
+<<set $mushroom += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 9>>
+<<elseif $Coins <= 8>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy mayonnaise | 23 coins">>
+<<if $Coins >= 23>> 
+<<set $mayonnaise += 1>>
+<<goto "Boss rush shop">>
+<<set $Coins -= 23>>
+<<elseif $Coins <= 22>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Boss rush main room]]
+
+

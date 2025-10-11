@@ -1,0 +1,22 @@
+:: F1BOSSBATTLE 1.5 {"position":"950,2775","size":"100,100"}
+The boss manages to go through the attack of the raid party and manages to hit you back. You get thrown to the gate of the room hitting your back to the wall. You scream in pain but your HP is still mostly fine.
+
+<span class="Blu3b3llrex">"$gamename! SOMEONE GET TO HIM!" </span>you hear Blu3 scream but the boss is coming to you for a 2nd attack. It took back its 2nd weapon and is going for a swing from the right side... You would need to be pretty fast to dodge this while also in a lot of pain...
+
+Floor boss health: $MonsterHP
+
+Your HP: $CurHP/$MaxHP
+Your raid partys HP: $raidHP/1000
+
+You can:
+<<link [[Dodge|F1BOSSBATTLE 1.6]]>>
+<<if $DEX <= 5>>
+<<set $CurHP -= 340>>
+<<set $curStamina -= 80>>
+<<elseif $DEX >= 6>>
+<<set $curStamina -= 60>>
+<</if>>
+<</link>>
+[[Fight it alone|Combat remake]]
+
+

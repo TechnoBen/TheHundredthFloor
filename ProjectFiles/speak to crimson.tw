@@ -1,0 +1,15 @@
+:: speak to crimson {"position":"1125,1525","size":"100,100"}
+"So what are you looking for anyways?"
+<span class="crimson">"I can't decide which sword to get for myself..."</span>
+"Mmmm wouldn't a heavy sword be good for you?"
+<span class="crimson">"I can't really swing heavy swords with this armor... Its kinda hard to do so." </span>
+
+The 2 of you talk about what sword he should take... You don't come with an answer.
+
+<<link [[Go back|Town centre]]>>
+	<<dateadd '1h'>>
+	<<set $NPCs.CrimsonSentinel.Affection += 1>>
+	<<set $CurFear -= 1>>
+<</link>>
+
+

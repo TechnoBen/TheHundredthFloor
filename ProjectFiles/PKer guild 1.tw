@@ -1,0 +1,14 @@
+:: PKer guild 1 {"position":"3900,2100","size":"100,100"}
+You get closer to the suspicious building. Theres a metal door. You knock on it and it opens slightly.
+
+"State your business." A deep voice says behind the door.
+
+<<if $PKGuildIn == true>>\
+<<link [[I want to enter|PKer guild inside]]>> <</link>>
+<</if>>
+<<if $PKGuildIn == false>>\
+<<link [[Ask what they are doing|PKer guild sign up]]>> <</link>>
+<</if>>
+<<link [[It's nothing|Town street 3]]>> <</link>>
+
+

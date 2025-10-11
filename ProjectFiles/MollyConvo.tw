@@ -1,0 +1,9 @@
+:: MollyConvo {"position":"2775,1850","size":"100,100"}
+You see Molly leaning on the wall. You decide to approach her.
+"Helly Molly!." you say.
+<span class="Molly">"Hey $gamename, what are you doing?"</span>
+
+1. <<link [[Speak to her|MollySpeak1]]>> <</link>>
+2. [[Nevermind|Town street 2]]
+
+

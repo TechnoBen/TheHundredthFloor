@@ -1,0 +1,431 @@
+:: StoryStylesheet [stylesheet]
+.paperdoll {
+  position: relative;
+  top: 100;
+  left: 100;
+}
+.time {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 500:
+}
+.location {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 500:
+}
+.skin {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.armor1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.sword {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.eyes {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.expression {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.shirt {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.pants {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.hair {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.status {
+  display: inline;
+  vertical-align: middle;
+  height : 1.5em;
+}
+.boots {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.outfit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+}
+.ring 1 {
+  position: absolute;
+  top: 0;
+  right: 118;
+}
+.ring 2 {
+  position: absolute;
+  top: 0;
+  right: 119;
+}
+.ring 3 {
+  position: absolute;
+  top: 0;
+  right: 120;
+}
+.ring 4 {
+  position: absolute;
+  top: 0;
+  right: 121;
+}
+.ring 5 {
+  position: absolute;
+  top: 0;
+  right: 122;
+}
+.ring 9 {
+  position: absolute;
+  top: 0;
+  right: 141;
+}
+.ring 10 {
+  position: absolute;
+  top: 0;
+  right: 142;
+}
+.ring 11 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.heavy-sword {
+ transform: rotate(35deg);
+}
+
+
+li#menu-item-restart {
+	display: none;
+}
+
+#story-title {
+    display: none;
+}
+
+#story-author {
+    display: none;
+}
+
+.UIButtons button {
+    margin: auto;
+    width: 100%;
+      text-align: center;
+  background-color: #222222;
+  font-family: 'Nunito Sans', sans-serif;
+color: white;
+    letter-spacing: 1px;
+text-decoration: none;
+    text-transform:uppercase;
+  border: 1px solid #444444;
+  padding: 3px 23px;
+      font-size:90%;
+}
+:root {  /* Palette */
+	--button-colorONE		: #c3c3c3;
+	--button-borderONE		: #444444;
+	--border-highlightONE	: #c3c3c3;
+}
+.UIButtons button:hover {
+	background-color: var(--button-borderONE);
+	border-top: 1.7px solid var(--border-highlightONE);
+	border-bottom: 1.7px solid var(--border-highlightONE);
+  	border-right: 1.7px solid var(--border-highlightONE);
+  	border-left: 1.7px solid var(--border-highlightONE);
+}
+
+
+.death {
+	color: red;
+}
+
+.bleedTrigger {
+	color: #A62300;
+}
+
+.burnTrigger {
+	color: #E6E856;
+}
+
+.turnCount {
+	color: #C7CF63;
+}
+
+.radiant {
+	color: #dc6262;
+}
+.shadow {
+	color: #8031a2;
+}
+.crimson {
+	color: #942c2c;
+}
+.zegrath {
+	color: #795600;
+}
+.Blu3b3llrex {
+  	color: #86D4E4;
+}
+.Techno {
+  	color: #0E4608;
+}
+.Molly {
+  	color: #bcf595;
+}
+.Marcellus {
+  	color: #6e7b85;
+}
+.amber {
+  	color: #FFBF00;
+}
+.Asteria {
+  	color: #eadaa0;
+}
+
+@font-face {
+  font-family: "Evese-Regular";
+  src: url("Evese-Regular.woff") format('woff');
+}
+
+.Evese {
+    font-family: Evese-Regular, Evese-Regular;
+}
+
+/* Pointy Buttons - Start */
+:root {  /* Palette */
+	--button-color		: #ff0000;
+	--button-border		: #800000;
+	--border-highlight	: #900000;
+}
+.pointybtn {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	top: 4px;
+	height: 34px;
+	padding: 1px 0 0 0;
+}
+.pointybtn::before {
+	content: "";
+	display: inline-block;
+	position: relative;
+	left: 0;
+	top: -1.3px;
+	border-top: 17.6px solid transparent;
+	border-right: 20.6px solid var(--button-border);
+	border-bottom: 17.6px solid transparent;
+}
+.pointybtn:hover::before {
+	border-right-color: var(--border-highlight);
+}
+.pointybtn button {
+	position: relative;
+	top: -13px;
+	padding: .4em;
+	background-color: var(--button-color);
+	border-top: 1.7px solid var(--button-border);
+	border-bottom: 1.7px solid var(--button-border);
+	border-left: transparent;
+	border-right: transparent;
+	line-height: 1.12;
+	z-index: 20;
+}
+.pointybtn button:hover {
+	background-color: var(--button-border);
+	border-top: 1.7px solid var(--border-highlight);
+	border-bottom: 1.7px solid var(--border-highlight);
+}
+.pointybtn button::before {
+	content: "";
+	position: absolute;
+	right: 100%;
+	top: -0.9px;
+	border-top: 15.6px solid transparent;
+	border-right: 16.9px solid var(--button-color);
+	border-bottom: 15.6px solid transparent;
+	-webkit-transition-duration: 0.2s;
+	   -moz-transition-duration: 0.2s;
+		 -o-transition-duration: 0.2s;
+			transition-duration: 0.2s;
+}
+.pointybtn button:hover::before {
+	border-right-color: var(--button-border);
+}
+.pointybtn button::after {
+	content: "";
+	position: absolute;
+	left: 100%;
+	top: -0.9px;
+	border-top: 15.6px solid transparent;
+	border-left: 16.9px solid var(--button-color);
+	border-bottom: 15.6px solid transparent;
+	z-index: 10;
+	-webkit-transition-duration: 0.2s;
+	   -moz-transition-duration: 0.2s;
+		 -o-transition-duration: 0.2s;
+			transition-duration: 0.2s;
+}
+.pointybtn button:hover::after {
+	border-left-color: var(--button-border);
+}
+.pointybtn::after {
+	content: "";
+	display: inline-block;
+	position: relative;
+	left: 0;
+	top: -1.3px;
+	border-top: 17.6px solid transparent;
+	border-left: 20.6px solid var(--button-border);
+	border-bottom: 17.6px solid transparent;
+	z-index: 0;
+}
+.pointybtn:hover::after {
+	border-left-color: var(--border-highlight);
+}
+.pointybtn button:focus {
+	outline: none;
+}
+.pointybtn:focus-within {
+	outline: thin dotted;
+}
+@supports (-moz-appearance:none) {
+	/* Firefox only */
+	.pointybtn {
+		padding: 3px 0 0 0;
+	}
+	.pointybtn button::before {
+		top: 0.2px;
+	}
+	.pointybtn button::after {
+		top: 0.2px;
+	}
+}
+/* Pointy Buttons - End */
+
+/*
+    notify.min.css, by chapel; for use with notify.js
+    version 1.0.0
+ */
+#notify {
+    position : fixed;
+    display : block;
+    width : 16em;
+    right : -20em; top : 2em;
+    padding : 0.5em;
+    background-color : #4d4a4a;
+    color : #ffffff;
+    -webkit-transition : right 0.3s;
+    -moz-transition : right 0.3s;
+    -o-transition : right 0.3s;
+    transition : right 0.3s;
+}
+#notify.open { right : 0; }
+
+/* hovertip v2.0 - Start */
+.hoverTip {
+	display: inline-block;
+	top: 4px;
+	border-width: 0px;
+    border-bottom: 2px dotted white;  /* If you want dots under the hoverable text */
+}
+.hoverTipTxt {
+	position: relative;
+	vertical-align: text-bottom;
+	line-height: initial;
+}
+.hoverTipTxt .hoverBox {
+	position: absolute;
+	visibility: hidden;
+}
+.hoverTipTxt:hover .hoverBox, .hoverTipTxt:focus .hoverBox {
+	visibility: visible;
+}
+.hoverBox {
+	padding: 3px 10px;
+	width: intrinsic;  /* Safari/WebKit uses a non-standard name */
+	width: -webkit-max-content;  /* Chrome */
+	width: -moz-max-content;  /* Firefox/Gecko */
+	width: max-content;
+	max-width: 330px;
+	line-height: initial;
+	text-align: left;
+	color: white;
+	background-color: black;
+	border: #7f7f7f solid 2px;
+	-webkit-border-radius: 6px;
+	   -moz-border-radius: 6px;
+	        border-radius: 6px;
+	-webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.75);
+	   -moz-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.75);
+	        box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.75);
+	z-index: 100;
+}
+.hoverTail::after {
+	content: "";
+	position: absolute;
+	top: 100%;  /* At the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 8px;
+	border-style: solid;
+	border-color: #7f7f7f transparent transparent transparent;
+	z-index: 100;
+}
+.hoverBox a {
+	-webkit-transition-duration: unset;
+	   -moz-transition-duration: unset;
+	     -o-transition-duration: unset;
+	        transition-duration: unset;
+}
+#ui-bar .hoverBox {
+	max-width: 230px;
+}
+/* hovertip v2.0 - End */
+
+
+/* Dont mind me. I am testing code for shop rework. I do not work well. Ben is a fucking idiot. He does not know how I work nor does he know the language that I am written in. Please tell Ben to never cook again. (I am used in [[testing passage]]) */
+
+/* Forget everything ive said there. I managed to finish this in 0.1.15, was meant to be left for 0.1.16.
+Also big thanks to Hituro for helping me! He made this look sm better. */
+.cols { 
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 0.5em; 
+}
+
+.border1 {
+  border: 5px solid #ffffff;
+}
+
+.border2 {
+	border-right: 5px solid #ffffff;
+	border-left: 5px solid #ffffff;
+}
+
+#combat_log {
+	padding: 1em;
+	border: 1px solid #fff;
+}

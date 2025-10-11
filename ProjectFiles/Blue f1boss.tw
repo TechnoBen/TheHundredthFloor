@@ -1,0 +1,13 @@
+:: Blue f1boss {"position":"825,2775","size":"100,100"}
+The bosses HP gets to 0. You can hear your team screaming in happiness that they managed to do it.
+<span class="Blu3b3llrex">"$gamename are you alright?! You got pretty beat up! Do you need a healing potion!?"</span>
+"Don't worry Im fine... Can't believe we managed to do it though."
+<span class="Blu3b3llrex">"Yeah it sure was! I can't tell if the devs made the boss harder or if it's because we are all scared of dying..."</span>
+"It could've gone worse though. Im glad we somehow did it."
+<span class="Blu3b3llrex">"Also good job out there. You guys did well."</span>
+"You guys did well too."
+
+[[Next|win F1Boss]]
+
+
+

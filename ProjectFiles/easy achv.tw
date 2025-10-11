@@ -1,0 +1,42 @@
+:: easy achv {"position":"2375,225","size":"100,100"}
+<center>
+<div class="UIButtons">\
+<<button "Go back">>
+<<script>>
+Dialog.setup("Achievements", "achievements");
+Dialog.wiki(Story.get("Achievements").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>\
+<<if $achievement_001 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 001.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/Secret easy.png" width="50%" />
+<</if>>
+<<if $achievement_002 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 002.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 002 locked.png" width="50%" />
+<</if>>
+<<if $achievement_003 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 003.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 003 locked.png" width="50%" />
+<</if>>
+<<if $achievement_004 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 004.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 004 locked.png" width="50%" />
+<</if>>
+<<if $achievement_005 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 005.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 005 locked.png" width="50%" />
+<</if>>
+<<if $achievement_006 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 006.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 006 locked.png" width="50%" />
+<</if>>
+<<if $achievement_009 is true>>\
+<img src = "Textures/achievements/achievements cards/achv 009.png" width="50%" />
+<<else>>\ <img src = "Textures/achievements/achievements cards/achv 009 locked.png" width="50%" />
+<</if>>
+</center>
+
+

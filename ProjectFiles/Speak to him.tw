@@ -1,0 +1,20 @@
+:: Speak to him {"position":"75,1700","size":"100,100"}
+"Hey there." you say to the person you recognize. You don't exactly remember his name so you are trying to remember it... He is wearing a dark purple cloak and has a scythe instead of a sword. You remember that his name had scythe in it but you seriously can't remember it.
+
+<span class="shadow">"Oh hello $gamename. It's been a while since we spoke. What floor did you get to in the beta by the way? I never found out..."</span>
+
+"Yeah It sure has been a while. I managed to get to floor 12. What about you?"
+
+<span class="shadow">"God damn that's high! I got myself to floor 10... Tell me your secrets!"</span> he said excitedly.
+
+<span class="crimson">"Hey ShadowScythe! We finally found everyone from the party you can come now!"</span> someone said. You look at where the speaking come from to see 4 people behind you walking to you and ShadowScythe. You also recognize the person that talked to ShadowScythe. His name was CrimsonSentinel and he's a tank. He is wearing a red and white robe but he doesn't have armor expect the beginner breastplate. He can be a bit shy from time to times but he is a great player that helped a lot during the beta. We both got to floor 12. You don't recognize the other 3 people.
+
+<span class="crimson">"Oh hey there $gamename! Glad to see you are here with all of us. Do you want to join us?"</span> he said. His eyes became sparkly as soon as he saw you. You two are pretty good friends.
+
+"Maybe I will sometime later. Right now im looking for my sister. I've been trying to convince my sister to play this game so I'll have to find her. Speaking of that Has anyone seen her? Her IGN is RadientRose. Not sure what she has." you ask the 5 people. They think for a bit but respond with a no. "Ah alright. Let's speak later alright?" you say as you leave them.
+
+<<link [[Next]]>>
+<<set $NPCs.ShadowScythe.Affection += 1>> <<set $NPCs.CrimsonSentinel.Affection += 1>>
+<</link>>
+
+

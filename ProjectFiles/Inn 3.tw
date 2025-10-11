@@ -1,0 +1,11 @@
+:: Inn 3 {"position":"3400,1850","size":"100,100"}
+You enter the Inn.
+There is no receptionist... You can see a sign saying <span class= Evese>"Welcome to the inn. The receptionist is on vacation but feel free to purchase a room." </span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. Inn casted confusion. It was very effective <<elseif $ReadingSkill == 2>> ... It says that there isnt a receptionist...? You wonder how the fuck does this inn work. <<elseif $ReadingSkill >= 3>> Welcome to the inn. The receptionist is on vacation but feel free to purchase a room. <</if>> <<set $ReadingXP += 25>><</linkreplace>>
+
+1. <<link [[Get a room|Inn room purchase 2]]>>
+<</link>>
+2. <<link [[Exit the inn|Town street 2]]
+<<dateadd '1m'>>
+<</link>>
+
+

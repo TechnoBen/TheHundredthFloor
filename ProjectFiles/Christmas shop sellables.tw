@@ -1,0 +1,67 @@
+:: Christmas shop sellables [no-fainting-or-hunger no-party-time-loss] {"position":"1600,1375","size":"100,100"}
+You check out whats for sale
+<span class="Techno">"Make sure to take everything that we've got! This aint staying here forever after all!"</span>
+
+<h1><b>2023 Christmas event items:</b></h1>\
+<<button "Buy a christmas hat | 450 candy canes">>
+	<<if $candyCanesCur >= 450>> 
+		<<set $outfit10 to true>>
+		<<set $candyCanesCur -= 450>>
+		<<goto "Christmas shop sellables">>
+	<<elseif $candyCanesCur <= 449>>
+		<<script>>
+			UI.alert("You dont have enough candy canes!");
+		<</script>>
+	<</if>>
+<</button>>
+
+<h1><b>2024 Christmas event items:</b></h1>\
+<<button "Buy a candy cane sword skin | 350 candy canes">>
+	<<if $candyCanesCur >= 350>> 
+		<<set $CandyCaneSwordSkin to true>>
+		<<set $candyCanesCur -= 350>>
+		<<goto "Christmas shop sellables">>
+	<<elseif $candyCanesCur <= 349>>
+		<<script>>
+			UI.alert("You dont have enough candy canes!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy a candy cane heavy sword skin | 350 candy canes">>
+	<<if $candyCanesCur >= 350>> 
+		<<set $CandyCaneHeavySwordSkin to true>>
+		<<set $candyCanesCur -= 350>>
+		<<goto "Christmas shop sellables">>
+	<<elseif $candyCanesCur <= 349>>
+		<<script>>
+			UI.alert("You dont have enough candy canes!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy a candy cane rapier skin | 350 candy canes">>
+	<<if $candyCanesCur >= 350>> 
+		<<set $CandyCaneRapierSkin to true>>
+		<<set $candyCanesCur -= 350>>
+		<<goto "Christmas shop sellables">>
+	<<elseif $candyCanesCur <= 349>>
+		<<script>>
+			UI.alert("You dont have enough candy canes!");
+		<</script>>
+	<</if>>
+<</button>>
+<<button "Buy a candy cane shield and sword skin | 350 candy canes">>
+	<<if $candyCanesCur >= 350>> 
+		<<set $CandyCaneShieldAndSwordSkin to true>>
+		<<set $candyCanesCur -= 350>>
+		<<goto "Christmas shop sellables">>
+	<<elseif $candyCanesCur <= 349>>
+		<<script>>
+			UI.alert("You dont have enough candy canes!");
+		<</script>>
+	<</if>>
+<</button>>
+
+<<link [[Go back|THF shop]]>>
+<</link>>
+
+

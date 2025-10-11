@@ -1,0 +1,20 @@
+:: Floor 2 staircase {"position":"3125,625","size":"100,100"}
+You started walking up the stairs. It's been a long time since you started walking.
+"Why would the dev make the staircase longer..." you ask yourself. "This has been taking a while... A bit too long actually." you say as you see a door... 
+"Well that wasn't here in the beta... I wonder what it is."
+
+You can:
+1. <<link [[Continue climbing the stairs|Floor 2 staircase 1]]>>
+<<dateadd '1h'>>
+<<set $location to "snowy1">>
+<<set $curFatigue += 150>>
+<</link>>
+<<if $f1secretbosskilled == false>>\
+2. <<link [[Open the door|Secret room]]>>
+<</link>>
+<<else>>
+2. You tried opening the door but a screen pops out saying "Immortal object"... You are not even trying to hit it? <</if>>\
+3. <<link [[Go back|F1 BOSS]]>>
+<</link>>
+
+

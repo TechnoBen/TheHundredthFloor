@@ -1,0 +1,19 @@
+:: Cooking spot 1 {"position":"2100,2275","size":"100,100"}
+You went to the cooking spot to see a few people doing their stuff. A person in there seems to be making a REALLY good looking meal.
+The place looks pretty quickly put together by players so they can cook their meals.
+The whole place is 4 logs and some cloth on top... On the center there's a few cooking pots.
+
+You can:
+1. <<link [[Cook|Cooking]]>> 
+<<set $lastvisitedpassage1 to "Cooking spot 1">>
+<</link>>
+2. <<link [[Cook book|Book 3]]>>
+<<set $lastVisitedPassage1 to "Cooking spot 1">>
+<<set $curFatigue += 12>>
+<<dateadd '20m'>>
+<</link>>
+3. <<link [[Go back|Oakheart centre]]>>
+<<dateadd '1m'>>
+<</link>>
+
+

@@ -1,0 +1,23 @@
+:: Path5 {"position":"1850,2400","size":"100,100"}
+You are standing infront of the 2nd towns entrance. Theres a wooden wall surrounding it but there isn't a gate for the town. There's also a big sign saying "Oakhearts entarance"
+On the left you can see a path leading to somewhere... You don't remember where it leads to.
+
+You can go inside the town or you can go backwards...
+
+Directions:
+1. <<link [[Go backwards|Path 4]]>> <<dateadd '30m'>> <<set $curFatigue += 25>>
+    <<set $lastVisitedPassage to "Path 4">>
+    <<Plains1>>
+<</link>>
+2. <<link [[Go to the other path|Path 5.1]]>> <<dateadd '30m'>> <<set $curFatigue += 25>>
+    <<set $lastVisitedPassage to "Path 5.1">>
+    <<Plains1>>
+<</link>>
+
+Locations:
+1. <<link [[Go to Oakhearts|2nd town entarance]]>>
+<<dateadd '2m'>>
+<<set $location to "town">>
+<</link>>
+
+

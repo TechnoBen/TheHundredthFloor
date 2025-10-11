@@ -1,0 +1,653 @@
+:: Buy clothes [no-fainting-or-hunger no-party-time-loss] {"position":"1600,1625","size":"100,100"}
+<center>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/capes/red cape.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Red cape:
+            Max stamina + 20
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the cape | 150 col">>
+                <<if $Coins >= 150>> 
+                    <<set $cape1 to true>>
+                    <<set $Coins -= 150>>
+                    <<notify>> You bought a red cape!<</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 149>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/BlueShirt.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Blue shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt1 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a blue shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/RedShirt.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Red shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt2 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a red shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/GreenShirt.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Green shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt3 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a green shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/PinkShirt.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pink shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt4 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a pink shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/WhiteShirt.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            White shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt5 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a white shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 25>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/BlackShirt.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Black shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt5 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a black shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/BlueShirtOpenSholder.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Blue open shoulder shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt7 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a blue open shoulder shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 25>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/RedShirtOpenSholder.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Red open shoulder shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt8 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a red open shoulder shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/GreenShirtOpenSholder.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Green open shoulder shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt9 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a green open shoulder shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 25>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/PinkShirtOpenSholder.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pink open shoulder shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt10 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a pink open shoulder shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/WhiteShirtOpenSholder.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            White open shoulder shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt11 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a white open shoulder shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 25>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/BlackShirtOpenSholder.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Black open shoulder shirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $shirt12 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a black open shoulder shirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/Clothes/Blue tank top.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Blue tank top:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the tank top | 16 col">>
+                <<if $Coins >= 16>> 
+                    <<set $shirt13 to true>>
+                    <<set $Coins -= 16>>
+                    <<notify>> You bought a blue tank top! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 15>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/Clothes/Red tank top.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Red tank top:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the tank top | 16 col">>
+                <<if $Coins >= 16>> 
+                    <<set $shirt14 to true>>
+                    <<set $Coins -= 16>>
+                    <<notify>> You bought a red tank top! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 15>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/Clothes/Green tank top.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Green tank top:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the tank top | 16 col">>
+                <<if $Coins >= 16>> 
+                    <<set $shirt15 to true>>
+                    <<set $Coins -= 16>>
+                    <<notify>> You bought a grass tank top! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 15>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/Clothes/Pink tank top.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Pink tank top:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the tank top | 16 col">>
+                <<if $Coins >= 16>> 
+                    <<set $shirt16 to true>>
+                    <<set $Coins -= 16>>
+                    <<notify>> You bought a pink tank top! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 15>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/Clothes/White tank top.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            White tank top:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the tank top | 16 col">>
+                <<if $Coins >= 16>> 
+                    <<set $shirt17 to true>>
+                    <<set $Coins -= 16>>
+                    <<notify>> You bought a white tank top! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 15>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/Clothes/Black tank top.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Black tank top:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the tank top | 16 col">>
+                <<if $Coins >= 16>> 
+                    <<set $shirt18 to true>>
+                    <<set $Coins -= 16>>
+                    <<notify>> You bought a black tank top! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 15>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/Pants.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Blue pants:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the pants | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $pants1 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought blue pants! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/Gray pants.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Gray pants:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the pants | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $pants2 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought gray pants! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/armor/StarterGear/White pants.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            White pants:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the pants | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $pants3 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought white pants! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin1.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/armor/StarterGear/StarterSkirt.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Skirt:
+            
+
+        </div>\
+        <div class="border1">\
+            <<link "Buy the skirt | 25 col">>
+                <<if $Coins >= 25>> 
+                    <<set $skirt1 to true>>
+                    <<set $Coins -= 25>>
+                    <<notify>> You bought a skirt! <</notify>>
+                    <<goto "Buy clothes">>
+                <<elseif $Coins <= 24>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+</div>\
+
+[[Go back|Tailor 1]]
+</center>
+
+
+

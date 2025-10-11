@@ -1,0 +1,575 @@
+:: PassageFooter {"position":"1875,100","size":"100,100"}
+<<nobr>>
+<<if !tags().includesAny('player-turn', 'enemy-turn')>>
+<<if $waterTime1 >= 1>>
+<<if $plantType1 !== "Nothing">>
+	<<set _rngWater to random(1,3)>>
+    <<set _rngGrowth to random(1,8)>>
+	<<set $waterTime1 -= _rngWater>>
+    <<set $timeTillGrowth1 -= _rngGrowth>>
+<</if>>
+<</if>>
+<<if $waterTime2 >= 1>>
+<<if $plantType2 !== "Nothing">>
+	<<set _rngWater to random(1,3)>>
+    <<set _rngGrowth to random(1,8)>>
+	<<set $waterTime2 -= _rngWater>>
+    <<set $timeTillGrowth2 -= _rngGrowth>>
+<</if>>
+<</if>>
+<<if $waterTime3 >= 1>>
+<<if $plantType3 !== "Nothing">>
+	<<set _rngWater to random(1,3)>>
+    <<set _rngGrowth to random(1,8)>>
+	<<set $waterTime3 -= _rngWater>>
+    <<set $timeTillGrowth3 -= _rngGrowth>>
+<</if>>
+<</if>>
+<</if>>
+
+<<if !tags().includesAny('player-turn' , 'enemy-turn' , 'no-fainting-or-hunger') && $curFatigue >= (99*$maxFatigue)/100>>
+	<<set $curStamina -= 1 + $INT*1.5>>
+	<<set $NPCs.ShadowScythe.CurSTM += 1 + $NPCs.ShadowScythe.INT*1.5>>
+	<<set $NPCs.RadiantRose.CurSTM += 1 + $NPCs.RadiantRose.INT*1.5>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 1 + $NPCs.CrimsonSentinel.INT*1.5>>
+	<<set $NPCs.Zegrath.CurSTM += 1 + $NPCs.Zegrath.INT*1.5>>
+	<<set $NPCs.Marcellus.CurSTM += 1 + $NPCs.Marcellus.INT*1.5>>
+<<elseif !tags().includesAny('player-turn' , 'enemy-turn' , 'no-fainting-or-hunger') && $curFatigue >= (75*$maxFatigue)/100>>
+	<<set $curStamina += 4/4 + $INT/3>>
+	<<set $NPCs.ShadowScythe.CurSTM += 4 + $NPCs.ShadowScythe.INT/3>>
+	<<set $NPCs.RadiantRose.CurSTM += 4 + $NPCs.RadiantRose.INT/3>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 4 + $NPCs.CrimsonSentinel.INT/3>>
+	<<set $NPCs.Zegrath.CurSTM += 4 + $NPCs.Zegrath.INT/3>>
+	<<set $NPCs.Marcellus.CurSTM += 4 + $NPCs.Marcellus.INT/3>>
+<<elseif !tags().includesAny('player-turn' , 'enemy-turn' , 'no-fainting-or-hunger') && $curFatigue >= (50*$maxFatigue)/100>>
+	<<set $curStamina += 4/3 + $INT/2>>
+	<<set $NPCs.ShadowScythe.CurSTM += 4 + $NPCs.ShadowScythe.INT/2>>
+	<<set $NPCs.RadiantRose.CurSTM += 4 + $NPCs.RadiantRose.INT/2>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 4 + $NPCs.CrimsonSentinel.INT/2>>
+	<<set $NPCs.Zegrath.CurSTM += 4 + $NPCs.Zegrath.INT/2>>
+	<<set $NPCs.Marcellus.CurSTM += 4 + $NPCs.Marcellus.INT/2>>
+<<elseif !tags().includesAny('player-turn' , 'enemy-turn' , 'no-fainting-or-hunger') && $curFatigue >= (25*$maxFatigue)/100>>
+	<<set $curStamina += 4/2 + $INT>>
+	<<set $NPCs.ShadowScythe.CurSTM += 4 + $NPCs.ShadowScythe.INT>>
+	<<set $NPCs.RadiantRose.CurSTM += 4 + $NPCs.RadiantRose.INT>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 4 + $NPCs.CrimsonSentinel.INT>>
+	<<set $NPCs.Zegrath.CurSTM += 4 + $NPCs.Zegrath.INT>>
+	<<set $NPCs.Marcellus.CurSTM += 4 + $NPCs.Marcellus.INT>>
+<<elseif !tags().includesAny('player-turn' , 'enemy-turn' , 'no-fainting-or-hunger') && $curFatigue >= (0*$maxFatigue)/100>>
+	<<set $curStamina += 4 + $INT*1.5*1.5>>
+	<<set $NPCs.ShadowScythe.CurSTM += 4 + $NPCs.ShadowScythe.INT*1.5>>
+	<<set $NPCs.RadiantRose.CurSTM += 4 + $NPCs.RadiantRose.INT*1.5>>
+	<<set $NPCs.CrimsonSentinel.CurSTM += 4 + $NPCs.CrimsonSentinel.INT*1.5>>
+	<<set $NPCs.Zegrath.CurSTM += 4 + $NPCs.Zegrath.INT*1.5>>
+	<<set $NPCs.Marcellus.CurSTM += 4 + $NPCs.Marcellus.INT*1.5>>
+<</if>>
+
+<<if setup.datesystems.default.getDate().d >= $timeRemember.Inn1D && setup.datesystems.default.getDate().h >= $timeRemember.Inn1H>>
+	<<set $paidForInn1 to false>>
+<</if>>
+<<if setup.datesystems.default.getDate().d >= $timeRemember.Inn2D && setup.datesystems.default.getDate().h >= $timeRemember.Inn2H>>
+	<<set $paidForInn2 to false>>
+<</if>>
+<<if setup.datesystems.default.getDate().d >= $timeRemember.Inn3D && setup.datesystems.default.getDate().h >= $timeRemember.Inn3H>>
+	<<set $paidForInn3 to false>>
+<</if>>
+
+/* Daily related stuff */
+<<if setup.datesystems.default.getDate().d >= $timeRemember.Daily>>
+	<<if $traits.Bloodlust>>
+    	<<set $STRPercentBuff -= $dailyKills/2>> 
+    <</if>>
+    <<set $dailyKills to 0>> 
+<</if>>
+<<set $timeRemember.Daily to setup.datesystems.default.getDate().d + 1>>
+
+/* NPC lvl ups */ 
+
+<<if $NPCs.RadiantRose.CurXP >= $NPCs.RadiantRose.MaxXP>>
+  <<set _statsNPC to random(1,100)>>
+  <<if _statsNPC lte 10>>
+    <<set $NPCs.RadiantRose.INT += 1>>
+  <<elseif _statsNPC lte 25>>
+    <<set $NPCs.RadiantRose.PierceSTR += 1>>
+    <<set $NPCs.RadiantRose.CritChance += 0.1>>
+  <<elseif _statsNPC lte 45>>
+    <<set $NPCs.RadiantRose.PierceDEF += 0.34>>
+    <<set $NPCs.RadiantRose.BluntDEF += 0.33>>
+    <<set $NPCs.RadiantRose.SlashDEF += 0.33>>
+    <<set $NPCs.RadiantRose.bleedDef += $bleedDefGain>>
+  <<elseif _statsNPC lte 100>>
+    <<set $NPCs.RadiantRose.DEX += 1>>
+    <<set $NPCs.RadiantRose.MaxSTM += 25>>
+    <<set $NPCs.RadiantRose.turnChanceMax += 0.5>>
+    <<set $NPCs.RadiantRose.turnChanceCur += 0.5>>
+  <</if>>
+  <<set $NPCs.RadiantRose.Level += 1>>
+  <<set $NPCs.RadiantRose.CurXP -= $NPCs.RadiantRose.MaxXP>>
+  <<set $NPCs.RadiantRose.MaxHP += 50>>
+  <<set $NPCs.RadiantRose.CurHP = $NPCs.RadiantRose.MaxHP>>
+  <<set $NPCs.RadiantRose.MaxXP *= $XPmodifier>>
+<</if>>
+
+<<if $NPCs.ShadowScythe.CurXP >= $NPCs.ShadowScythe.MaxXP>>
+  <<set _statsNPC to random(1,100)>>
+  <<if _statsNPC lte 10>>
+    <<set $NPCs.ShadowScythe.PierceDEF += 0.50>>
+    <<set $NPCs.ShadowScythe.SlashDEF += 0.50>>
+    <<set $NPCs.ShadowScythe.bleedDef += $bleedDefGain>>
+  <<elseif _statsNPC lte 25>>
+    <<set $NPCs.ShadowScythe.INT += 1>>
+  <<elseif _statsNPC lte 45>>
+    <<set $NPCs.ShadowScythe.DEX += 1>>
+    <<set $NPCs.ShadowScythe.MaxSTM += 25>>
+    <<set $NPCs.ShadowScythe.turnChanceMax += 0.5>>
+    <<set $NPCs.ShadowScythe.turnChanceCur += 0.5>>
+  <<elseif _statsNPC lte 100>>
+    <<set $NPCs.ShadowScythe.SlashSTR += 1>>
+    <<set $NPCs.ShadowScythe.CritChance += 0.1>>
+  <</if>>
+  <<set $NPCs.ShadowScythe.Level += 1>>
+  <<set $NPCs.ShadowScythe.CurXP -= $NPCs.ShadowScythe.MaxXP>>
+  <<set $NPCs.ShadowScythe.MaxHP += 50>>
+  <<set $NPCs.ShadowScythe.CurHP = $NPCs.ShadowScythe.MaxHP>>
+  <<set $NPCs.ShadowScythe.MaxXP *= $XPmodifier>>
+<</if>>
+
+<<if $NPCs.CrimsonSentinel.CurXP >= $NPCs.CrimsonSentinel.MaxXP>>
+  <<set _statsNPC to random(1,100)>>
+  <<if _statsNPC lte 10>>
+    <<set $NPCs.CrimsonSentinel.DEX += 1>>
+    <<set $NPCs.CrimsonSentinel.MaxSTM += 25>>
+    <<set $NPCs.CrimsonSentinel.turnChanceMax += 0.5>>
+    <<set $NPCs.CrimsonSentinel.turnChanceCur += 0.5>>
+  <<elseif _statsNPC lte 25>>
+    <<set $NPCs.CrimsonSentinel.INT += 1>>
+  <<elseif _statsNPC lte 45>>
+    <<set $NPCs.CrimsonSentinel.SlashSTR += 1>>
+    <<set $NPCs.CrimsonSentinel.CritChance += 0.1>>
+  <<elseif _statsNPC lte 100>>
+    <<set $NPCs.CrimsonSentinel.PierceDEF += 0.33>>
+    <<set $NPCs.CrimsonSentinel.SlashDEF += 0.34>>
+    <<set $NPCs.CrimsonSentinel.BluntDEF += 0.33>>
+    <<set $NPCs.CrimsonSentinel.bleedDef += $bleedDefGain>>
+  <</if>>
+  <<set $NPCs.CrimsonSentinel.Level += 1>>
+  <<set $NPCs.CrimsonSentinel.CurXP -= $NPCs.CrimsonSentinel.MaxXP>>
+  <<set $NPCs.CrimsonSentinel.MaxHP += 50>>
+  <<set $NPCs.CrimsonSentinel.CurHP = $NPCs.CrimsonSentinel.MaxHP>>
+  <<set $NPCs.CrimsonSentinel.MaxXP *= $XPmodifier>>
+<</if>>
+
+<<if $NPCs.Marcellus.CurXP >= $NPCs.Marcellus.MaxXP>>
+  <<set _statsNPC to random(1,100)>>
+  <<if _statsNPC lte 10>>
+    <<set $NPCs.Marcellus.SlashDEF += 0.50>>
+    <<set $NPCs.Marcellus.BluntDEF += 0.50>>
+    <<set $NPCs.Marcellus.bleedDef += $bleedDefGain>>
+  <<elseif _statsNPC lte 25>>
+    <<set $NPCs.Marcellus.INT += 1>>
+  <<elseif _statsNPC lte 45>>
+    <<set $NPCs.Marcellus.DEX += 1>>
+    <<set $NPCs.Marcellus.MaxSTM += 25>>
+    <<set $NPCs.Marcellus.turnChanceMax += 0.5>>
+    <<set $NPCs.Marcellus.turnChanceCur += 0.5>>
+  <<elseif _statsNPC lte 100>>
+    <<set $NPCs.Marcellus.SlashSTR += 1>>
+    <<set $NPCs.Marcellus.CritChance += 0.1>>
+  <</if>>
+  <<set $NPCs.Marcellus.Level += 1>>
+  <<set $NPCs.Marcellus.CurXP -= $NPCs.Marcellus.MaxXP>>
+  <<set $NPCs.Marcellus.MaxHP += 50>>
+  <<set $NPCs.Marcellus.CurHP = $NPCs.Marcellus.MaxHP>>
+  <<set $NPCs.Marcellus.MaxXP *= $XPmodifier>>
+<</if>>
+
+<<if $NPCs.Zegrath.CurXP >= $NPCs.Zegrath.MaxXP>>
+  <<set _statsNPC to random(1,100)>>
+  <<if _statsNPC lte 10>>
+    <<set $NPCs.Zegrath.INT += 1>>
+  <<elseif _statsNPC lte 25>>
+    <<set $NPCs.Zegrath.SlashDEF += 0.50>>
+    <<set $NPCs.Zegrath.BluntDEF += 0.50>>
+    <<set $NPCs.Zegrath.bleedDef += $bleedDefGain>>
+  <<elseif _statsNPC lte 45>>
+    <<set $NPCs.Zegrath.DEX += 1>>
+    <<set $NPCs.Zegrath.MaxSTM += 25>>
+    <<set $NPCs.Zegrath.turnChanceMax += 0.5>>
+    <<set $NPCs.Zegrath.turnChanceCur += 0.5>>
+  <<elseif _statsNPC lte 100>>
+    <<set $NPCs.Zegrath.SlashSTR += 1>>
+    <<set $NPCs.Zegrath.CritChance += 0.1>>
+  <</if>>
+  <<set $NPCs.Zegrath.Level += 1>>
+  <<set $NPCs.Zegrath.CurXP -= $NPCs.Zegrath.MaxXP>>
+  <<set $NPCs.Zegrath.MaxHP += 50>>
+  <<set $NPCs.Zegrath.CurHP = $NPCs.Zegrath.MaxHP>>
+  <<set $NPCs.Zegrath.MaxXP *= $XPmodifier>>
+<</if>>
+
+<<if $CurHP <= 0>>
+	<<set $CurHP to 1>>
+	<<goto "lose">>
+<</if>>
+
+<<if $ReadingXP >= $ReadingMaxXP>>
+<<set $ReadingSkill += 1>>
+<<set $ReadingXP -= $ReadingMaxXP>>
+<<set $ReadingMaxXP *= 1.65>>
+<</if>>
+<<if $SpeakingXP >= $SpeakingMaxXP>>
+<<set $SpeakingSkill += 1>>
+<<set $SpeakingXP -= $SpeakingMaxXP>>
+<<set $SpeakingMaxXP *= 1.65>>
+<</if>>
+<<if $CookingXP >= $CookingMaxXP>>
+<<set $CookingSkill += 3>>
+<<set $CookingXP -= $CookingMaxXP>>
+<<set $CookingMaxXP *= 1.65>>
+<</if>>
+<<if $CraftingXP >= $CraftingMaxXP>>
+<<set $CraftingSkill += 1>>
+<<set $CraftingXP -= $CraftingMaxXP>>
+<<set $CraftingMaxXP *= 1.65>>
+<</if>>
+
+<<set $kills to $killedBoars + $killedRabbits + $killedPM + $killedSK + $killedSWK + $killedWW + $killedWWP + $killedOnis + $killedBG + $killedPZ + $killedGC + $killedPKers + $killedRams>>
+
+<<if $pathProgress >= 20>>
+<<set $pathDone to true>> <<set $pathProgress to 0>>
+<</if>>
+<<if $pathProgress1 >= 35>>
+<<set $pathDone1 to true>> <<set $pathProgress1 to 0>>
+<</if>>
+<<if $hutEvent is false>>
+<<if $hutTask1 == true>>
+<<if $hutTask2 == true>>
+<<if $hutTask3 == true>>
+<<if $hutTask4 == true>>
+<<if $hutTask5 == true>>
+<<set $isHutFinished to true>> <<set $hutEvent to true>> <<goto "hut event">> 
+<</if>> <</if>> <</if>> <</if>> <</if>> <</if>>
+
+<<if !tags().includesAny('no-fainting-or-hunger')>>
+	<<set $curHunger -= 1>>
+	<<set $curFatigue += 2>>
+	<<if $curHunger <= 0>>
+	<<set $curHunger to -1>>
+	<<set $curFatigue += 10>>
+	<<set $CurHP -= 25>>
+<</if>>
+
+<<if $curFatigue <= -1>>
+	<<set $curFatigue = 0>>
+<</if>>
+<<if $curFatigue >= $maxFatigue>>
+	<<set $curFatigue to $maxFatigue + 1>>
+	<<set $fatigueFaint += 1>>
+<<if $CurHP >= 1>>
+	<<if $fatigueFaint >= 5 && $CurHP >= 1>>
+		<<set $curFatigue -= 100>>
+		<<set $fatigueFaint to 0>>
+		<<set $faints += 1>>
+		<<set $coinsloss to random(5000)>>
+		<<set $Coins -= $coinsloss>>
+        <<set $insomniaChance to random(100)>>
+        	<<if $insomniaChance >= 80>>
+            	<<InsomniacGain>>
+            <</if>>
+	<<if $Coins < 0>>
+		<<set $Coins to 0>>
+	<</if>>
+	<<goto "Faint">>
+<</if>>
+<</if>>
+<</if>>
+<</if>>
+
+<<if $raidHP lte 0>>
+	<<set $raidParty to false>>
+<</if>>
+
+<<if $curHunger >= $maxHunger>>
+<<set $curHunger to $maxHunger>>
+<</if>>
+<<if $curStamina >= $maxStamina>>
+<<set $curStamina to $maxStamina>>
+<</if>>
+<<if $CurHP >= $MaxHP>>
+<<set $CurHP to $MaxHP>>
+<</if>>
+<<if $NPCs.ShadowScythe.CurSTM >= $NPCs.ShadowScythe.MaxSTM>>
+<<set $NPCs.ShadowScythe.CurSTM to $NPCs.ShadowScythe.MaxSTM>>
+<</if>>
+<<if $NPCs.ShadowScythe.CurHP >= $NPCs.ShadowScythe.MaxHP>>
+<<set $NPCs.ShadowScythe.CurHP to $NPCs.ShadowScythe.MaxHP>>
+<</if>>
+<<if $NPCs.RadiantRose.CurSTM >= $NPCs.RadiantRose.MaxSTM>>
+<<set $NPCs.RadiantRose.CurSTM to $NPCs.RadiantRose.MaxSTM>>
+<</if>>
+<<if $NPCs.RadiantRose.CurHP >= $NPCs.RadiantRose.MaxHP>>
+<<set $NPCs.RadiantRose.CurHP to $NPCs.RadiantRose.MaxHP>>
+<</if>>
+<<if $NPCs.CrimsonSentinel.CurSTM >= $NPCs.CrimsonSentinel.MaxSTM>>
+<<set $NPCs.CrimsonSentinel.CurSTM to $NPCs.CrimsonSentinel.MaxSTM>>
+<</if>>
+<<if $NPCs.CrimsonSentinel.CurHP >= $NPCs.CrimsonSentinel.MaxHP>>
+<<set $NPCs.CrimsonSentinel.CurHP to $NPCs.CrimsonSentinel.MaxHP>>
+<</if>>
+<<if $NPCs.BlackWolf.CurSTM >= $NPCs.BlackWolf.MaxSTM>>
+<<set $NPCs.BlackWolf.CurSTM to $NPCs.BlackWolf.MaxSTM>>
+<</if>>
+<<if $NPCs.BlackWolf.CurHP >= $NPCs.BlackWolf.MaxHP>>
+<<set $NPCs.BlackWolf.CurHP to $NPCs.BlackWolf.MaxHP>>
+<</if>>
+<<if $NPCs.Zegrath.CurSTM >= $NPCs.Zegrath.MaxSTM>>
+<<set $NPCs.Zegrath.CurSTM to $NPCs.Zegrath.MaxSTM>>
+<</if>>
+<<if $NPCs.Zegrath.CurHP >= $NPCs.Zegrath.MaxHP>>
+<<set $NPCs.Zegrath.CurHP to $NPCs.Zegrath.MaxHP>>
+<</if>>
+
+<<if $hairColor?.includes('Pompadour') && $achievement_001 === undefined>>
+  <<run memorize('achievement_001', true), $achievement_001 to true>>
+  <<notify>> <img src = "Textures/achievements/achievements cards/Secret easy.png" width="50%" /><</notify>>
+<</if>>
+<<if $killedBoars >= 10 && $achievement_002 === undefined>>
+  <<run memorize('achievement_002', true), $achievement_002 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 002.png" width="50%" /><</notify>>
+<</if>>
+<<if $killedRabbits >= 10 && $achievement_003 === undefined>>
+  <<run memorize('achievement_003', true), $achievement_003 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 003.png" width="50%" /><</notify>>
+<</if>>
+<<if $killedPM >= 10 && $achievement_004 === undefined>>
+  <<run memorize('achievement_004', true), $achievement_004 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 004.png" width="50%" /><</notify>>
+<</if>>
+<<if $killedSK >= 10 && $achievement_005 === undefined>>
+  <<run memorize('achievement_005', true), $achievement_005 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 005.png" width="50%" /><</notify>>
+<</if>>
+<<if $killedSWK >= 10 && $achievement_006 === undefined>>
+  <<run memorize('achievement_006', true), $achievement_006 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 006.png" width="50%" /><</notify>>
+<</if>>
+<<if $f1bosskilled == true && $achievement_007 === undefined>>
+  <<run memorize('achievement_007', true), $achievement_007 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 007.png" width="50%" /><</notify>>
+<</if>>
+<<if $hoursWorked >= 500 && $achievement_008 === undefined>>
+  <<run memorize('achievement_008', true), $achievement_008 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 008.png" width="50%" /><</notify>>
+<</if>>
+<<if $killedWWP >= 10 && $killedWW >= 10 && $achievement_009 === undefined>>
+  <<run memorize('achievement_009', true), $achievement_009 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 009.png" width="50%" /><</notify>>
+<</if>>
+<<if $kills >= 1000 && $achievement_010 === undefined>>
+  <<run memorize('achievement_010', true), $achievement_010 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 010.png" width="50%" /><</notify>>
+<</if>>
+<<if $Coins >= 1000000 && $achievement_011 === undefined>>
+  <<run memorize('achievement_011', true), $achievement_011 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 011.png" width="50%" /><</notify>>
+<</if>>
+<<if $f2BossKilled == true && $achievement_012 === undefined>>
+  <<run memorize('achievement_012', true), $achievement_012 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 012.png" width="50%" /><</notify>>
+<</if>>
+<<if $CurFear >= 99 && $curHunger <= 10 && $achievement_013 === undefined>>
+  <<run memorize('achievement_013', true), $achievement_013 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 013.png" width="50%" /><</notify>>
+<</if>>
+<<if $NPCs.ShadowScythe.Dead === true && $achievement_014 === undefined>>
+  <<run memorize('achievement_014', true), $achievement_014 to true>>
+  <<notify>><img src = "Textures/achievements/achievements cards/achv 014.png" width="50%" /><</notify>>
+<</if>>
+
+<<if $gameStarted is false>>
+    <<if $time >= setup.datesystems.default.dateToTime("6d 11mo 2022y 15h")>>
+        <<set $gameStarted to true>>
+        <<set $radiantRoseParty to false>>
+        <<set $partyON to false>>
+        <<set $partyMembers to []>>
+        <<set $combat_log to []>>
+        <<set $mobs to []>>
+        <<unset $eventStart>>
+        <<unset $lastVisitedPassageLog>>
+        <<goto "3PM event">>
+    <</if>>
+<</if>>
+
+<<if $NPCs.BlackWolf.STRgoal >= $NPCs.BlackWolf.STRgoalMax>>
+    <<set $NPCs.BlackWolf.STRgoal -= $NPCs.BlackWolf.STRgoalMax>>
+    <<set $NPCs.BlackWolf.SlashSTR += 1>>
+    <<set $NPCs.BlackWolf.PierceSTR += 1>>
+    <<set $NPCs.BlackWolf.STRgoalMax *= 1.2>>
+<</if>>
+<<if $NPCs.BlackWolf.DEFgoal >= $NPCs.BlackWolf.DEFgoalMax>>
+    <<set $NPCs.BlackWolf.DEFgoal -= $NPCs.BlackWolf.DEFgoalMax>>
+    <<set $NPCs.BlackWolf.SlashDEF += 1>>
+    <<set $NPCs.BlackWolf.PierceDEF += 1>>
+    <<set $NPCs.BlackWolf.BluntDEF += 1>>
+    <<set $NPCs.BlackWolf.MaxHP += 50>>
+    <<set $NPCs.BlackWolf.CurHP += 50>>
+    <<set $NPCs.BlackWolf.DEFgoalMax *= 1.2>>
+<</if>>
+<<if $NPCs.BlackWolf.DEXgoal >= $NPCs.BlackWolf.DEXgoalMax>>
+    <<set $NPCs.BlackWolf.DEXgoal -= $NPCs.BlackWolf.DEXgoalMax>>
+    <<set $NPCs.BlackWolf.DEX += 1>>
+    <<set $NPCs.BlackWolf.MaxSTM += 25>>
+    <<set $NPCs.BlackWolf.CurSTM += 25>>
+    <<set $NPCs.BlackWolf.DEXgoalMax *= 1.2>>
+<</if>>
+<<if $NPCs.BlackWolf.INTgoal >= $NPCs.BlackWolf.INTgoalMax>>
+    <<set $NPCs.BlackWolf.INTgoal -= $NPCs.BlackWolf.INTgoalMax>>
+    <<set $NPCs.BlackWolf.INT += 1>>
+    <<set $NPCs.BlackWolf.INTgoalMax *= 1.2>>
+<</if>>
+
+/* Fear gain*/
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+<<if tags().includesAny('player-turn', 'enemy-turn') && $Level*4 < _mob[_i].lvl>>
+	<<set _fearGainChance to kitsuneRNG(0, 100)>>
+    <<if _fearGainChance lte 50>>
+		<<set $CurFear += (3 - ($FearPercentBuff*3/100) + ($FearPercentDebuff*3/100))>>
+    <</if>>
+<<elseif tags().includesAny('player-turn', 'enemy-turn') && $Level*3 < _mob[_i].lvl>>
+	<<set _fearGainChance to kitsuneRNG(0, 100)>>
+    <<if _fearGainChance lte 50>>
+		<<set $CurFear += (2 - ($FearPercentBuff*2/100) + ($FearPercentDebuff*2/100))>>
+    <</if>>
+<<elseif tags().includesAny('player-turn', 'enemy-turn') && $Level*2 < _mob[_i].lvl>>
+	<<set _fearGainChance to kitsuneRNG(0, 100)>>
+    <<if _fearGainChance lte 50>>
+		<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+    <</if>>
+<</if>>
+<</for>>
+
+<<if $floorBossBattle == true>>
+	<<set _fearGainChance to kitsuneRNG(0, 100)>>
+    <<if _fearGainChance lte 25>>
+		<<set $CurFear += (3 - ($FearPercentBuff*3/100) + ($FearPercentDebuff*3/100))>>
+    <</if>>
+<</if>>
+
+<<if $CurHP <= (10*$MaxHP)/100>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+
+<<if $NPCs.CrimsonSentinel.CurHP <= (10*$NPCs.CrimsonSentinel.MaxHP)/100 && $partyMembers.includes("CrimsonSentinel")>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+<<if $NPCs.Marcellus.CurHP <= (10*$NPCs.Marcellus.MaxHP)/100 && $partyMembers.includes("Love4Mary")>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+<<if $NPCs.RadiantRose.CurHP <= (10*$NPCs.RadiantRose.MaxHP)/100 && $partyMembers.includes("RadiantRose")>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+<<if $NPCs.ShadowScythe.CurHP <= (10*$NPCs.ShadowScythe.MaxHP)/100 && $partyMembers.includes("ShadowScythe")>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+<<if $NPCs.Zegrath.CurHP <= (10*$NPCs.Zegrath.MaxHP)/100 && $partyMembers.includes("Zegrath")>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+<<if $NPCs.BlackWolf.CurHP <= (10*$NPCs.BlackWolf.MaxHP)/100 && $partyMembers.includes($NPCs.BlackWolf.name)>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+
+<<if setup.datesystems.default.getDate().h gte 2 and setup.datesystems.default.getDate().h lte 5>>
+	<<set _fearGainChance1 to kitsuneRNG(0, 100)>>
+    <<if _fearGainChance1 lte 25>>
+		<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+    <</if>>
+<</if>>
+
+<<if $beingFollowedPK >= 2>>
+	<<set $CurFear += (1 - ($FearPercentBuff*1/100) + ($FearPercentDebuff*1/100))>>
+<</if>>
+<<if $beingFollowedSK >= 2>>
+	<<set $CurFear += (3 - ($FearPercentBuff*3/100) + ($FearPercentDebuff*3/100))>>
+<</if>>
+
+/* Fear effects */
+
+<<if $CurFear >= 40 && $fearDebuff == 0>>
+    <<set $fearDebuff to 1>>
+<</if>>
+<<if $CurFear >= 70 && $fearDebuff == 2>>
+    <<set $fearDebuff to 3>>
+<</if>>
+<<if $CurFear >= 99 && $fearDebuff == 4>>
+    <<set $fearDebuff to 5>>
+<</if>>
+
+<<if $CurFear <= 39 && $fearDebuff == 2>>
+    <<set $STRPercentDebuff -= 10>>
+    <<set $fearDebuff to 0>>
+<<elseif $CurFear <= 69 && $fearDebuff == 4>>
+    <<set $STRPercentDebuff -= 20>>
+    <<set $fearDebuff to 0>>
+<<elseif $CurFear <= 98 && $fearDebuff == 6>>
+    <<set $STRPercentDebuff -= 50>>
+    <<set $fearDebuff to 0>>
+<</if>>
+
+/* Other fear stuff */
+
+<<if $CurFear >= $MaxFear>>
+	<<set $CurFear to $MaxFear>>
+<</if>>
+<<if $CurFear <= -1>>
+	<<set $CurFear to 0>>
+<</if>>
+
+/* Hunger effects */
+
+<<if $curHunger <= 700 && $hungerDebuff == 0>>
+    <<set $hungerDebuff to 1>>
+<</if>>
+<<if $curHunger <= 500 && $hungerDebuff == 2>>
+    <<set $hungerDebuff to 3>>
+<</if>>
+<<if $curHunger <= 200 && $hungerDebuff == 4>>
+    <<set $hungerDebuff to 5>>
+<</if>>
+
+<<if $curHunger >= 701 && $hungerDebuff == 2>>
+    <<set $STRPercentDebuff -= 10>>
+    <<set $hungerDebuff to 0>>
+<<elseif $curHunger >= 501 && $hungerDebuff == 4>>
+    <<set $STRPercentDebuff -= 15>>
+    <<set $hungerDebuff to 0>>
+<<elseif $curHunger >= 201 && $hungerDebuff == 6>>
+    <<set $STRPercentDebuff -= 30>>
+    <<set $hungerDebuff to 0>>
+<</if>>
+
+/* Fatigue effects */
+<<if $curFatigue >= (25*$maxFatigue)/100 && $fatigueDebuff == 0>>
+    <<set $fatigueDebuff to 1>>
+<</if>>
+<<if $curFatigue >= (50*$maxFatigue)/100 && $fatigueDebuff == 2>>
+    <<set $fatigueDebuff to 3>>
+<</if>>
+<<if $curFatigue >= (75*$maxFatigue)/100 && $fatigueDebuff == 4>>
+    <<set $fatigueDebuff to 5>>
+<</if>>
+
+<<if $curFatigue <= (25*$maxFatigue)/100 && $fatigueDebuff == 2>>
+    <<set $STRPercentDebuff -= 2>>
+    <<set $fatigueDebuff to 0>>
+<<elseif $curFatigue <= (50*$maxFatigue)/100 && $fatigueDebuff == 4>>
+    <<set $STRPercentDebuff -= 5>>
+    <<set $fatigueDebuff to 0>>
+<<elseif $curFatigue <= (75*$maxFatigue)/100 && $fatigueDebuff == 6>>
+    <<set $STRPercentDebuff -= 10>>
+    <<set $fatigueDebuff to 0>>
+<</if>>
+
+<</nobr>>
+
+

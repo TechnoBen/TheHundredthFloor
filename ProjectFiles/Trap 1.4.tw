@@ -1,0 +1,10 @@
+:: Trap 1.4 {"position":"5275,1150","size":"100,100"}
+You killed a oni.
+1 more left.
+
+<<link [[Continue|Combat remake]]>>
+<<set $lastVisitedPassage to "Trap 1.5">>
+<<mob traponi>>
+<</link>>
+
+

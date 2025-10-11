@@ -1,0 +1,50 @@
+:: Stats {"position":"1625,225","size":"100,100"}
+-------------------------------
+\<center>$gamename's stats:
+Level: $Level
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>>
+STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
+
+XP: <<= $CurXP.toFixed(0)>>/<<= $MaxXP.toFixed(0)>>
+Col: $Coins
+<<if $OneYearTHF == true>>Anniversary coins: $AnniversaryCoins<</if>>\
+<<if $christmasEvent == true>>Candy canes: $candyCanesCur<</if>>\
+
+STR:
+Slash: <<= $SlashSTR.toFixed(0)>> + (<<= $weaponSlashDMG.toFixed(2)>>)
+Pierce: <<= $PierceSTR.toFixed(0)>> + (<<= $weaponPierceDMG.toFixed(2)>>)
+Blunt: <<= $BluntSTR.toFixed(0)>> + (<<= $weaponBluntDMG.toFixed(2)>>)
+DEF:
+Slash: <<= $SlashDEF.toFixed(0)>> + (<<= $armorSlashDEF.toFixed(2)>>)
+Pierce: <<= $PierceDEF.toFixed(0)>> + (<<= $armorPierceDEF.toFixed(2)>>)
+Blunt: <<= $BluntDEF.toFixed(0)>> + (<<= $armorBluntDEF.toFixed(2)>>)
+DEX: $DEX
+INT: $INT
+
+You have $Points points.</center>\
+-------------------------------
+\<div class="UIButtons">\
+<<button "Traits">>
+<<script>>
+Dialog.setup("Traits", "traits");
+Dialog.wiki(Story.get("TraitsUI").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Skills">>
+<<script>>
+Dialog.setup("skills", "Skills");
+Dialog.wiki(Story.get("Skills").processText());
+Dialog.open();
+<</script>>
+<</button>>
+<<button "Game stats">>
+<<script>>
+Dialog.setup("Game stats", "gmstat");
+Dialog.wiki(Story.get("Game stats").processText());
+Dialog.open();
+<</script>>
+<</button>>
+</div>
+
+

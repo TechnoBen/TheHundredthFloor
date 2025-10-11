@@ -1,0 +1,29 @@
+:: F1BOSSBATTLE 1.4 {"position":"1075,2650","size":"100,100"}
+The boss is charging towards you. You can either fight it or order your raid party to charge at it which would cause A LOT of damage to everyone.
+On the other hand if you do fight it alone the others wouldn't be able to help because it would be moving too much...
+
+Floor boss health: $MonsterHP
+
+Your HP: $CurHP/$MaxHP
+Your raid partys HP: $raidHP/1000
+
+You can:
+<<if $raidParty == true>>
+<<link [[Command your people to attack|F1BOSSBATTLE 1.5]]>>
+<<set $raidHP -= 379>>
+<<set $CurHP -= 373>>
+<</link>>
+<<link [[Command your people to charge|F1BOSSBATTLE 1.5]]>>
+<<set $MonsterHP -= 52>>
+<<set $raidHP -= 379>>
+<<set $CurHP -= 100>>
+<</link>>
+<<link [[Command your people to dodge|F1BOSSBATTLE 1.5]]>>
+<<set $CurHP -= 100>>
+<</link>>
+<<elseif $raidParty == false>>
+You don't have a raid party to command.
+<</if>>
+[[Fight it alone|Combat remake]]
+
+

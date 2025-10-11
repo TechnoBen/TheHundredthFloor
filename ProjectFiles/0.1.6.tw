@@ -1,0 +1,50 @@
+:: 0.1.6 [NoSave] {"position":"150,150","size":"100,100"}
+ [[Back|Changelogs and game information]]
+ 
+ - Added settings (font size, button style and character frame, animated eyes, visible hair/armor/clothes/weapon/capes)
+ - Brown eyes (finally)
+ - Purple eyes
+ - added a Snowy background 
+ - Added new locations
+ 		- Floor dungeon
+        - Cave
+        - A camp you can build
+ - Mining for iron
+ - You can chop down wood in every part of the F1 forest now
+ - You can now upgrade your iron swords (I forgot to code it in last version my bad)
+ - Iron swords are now craftable since Iron is a item
+ - Iron armor is now craftable
+ - Updated the games story passage. It now has kinda the full story of the game lol
+ - Made it so that PKers can be stronger, weaker and have less or more hp.
+ - Lowered the chance of a PKer following you
+ - Made the frame on by default 
+ - Made new buttons for the sidebar
+ - Added JS rng (Thanks to Kitsune for writing it)
+ - Changed the potion cooldowns (HP T1: from 4 to 2, HP T2: from 7 to 4, STM T1: 5 to 2)
+ - Added the Frozen lake (it has a house with a new player whos still being made and a cave with a new enemy.)
+ - Added 2 new outfits. Funilly enough 1 of the outfits caused me a shit ton of pain drawing it AND coding it. It literally broke the inventory for a bit
+ 
+ - Fixed not being able to exit the inn after the Toru event (you now get sent outside of the inn lol)
+ - PKers no longer follow you inside of your house
+ - Having both 0 health and max fatigue would spam fainting and death screen
+ - Actually fixed the running away from a enemy...
+ 
+ - Removed the option to go up the path after the big tree
+ 
+  
+ NEW ENEMIES:
+ Onis
+ 
+ NEW ITEMS:
+ Oni leather
+ Oni teeth
+ Oni teeth weapons + Oni leather upgrades
+ Oni leather armor (Light version of the armor)
+ Oni leather and iron armor (Heavy version of the armor)
+ Iron pickaxe
+ Iron
+ 
+ [[Back|Changelogs and game information]]
+  
+
+

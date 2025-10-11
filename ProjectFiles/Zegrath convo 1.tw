@@ -1,0 +1,15 @@
+:: Zegrath convo 1 {"position":"5025,1400","size":"100,100"}
+"Hey, Zegrath what are you doing right now?" you ask.
+<span class="zegrath">"Nothing much. Just admiring my great achievements!"</span>
+"I see."
+
+The two of you talk about how godly he is... Well at least he does. You're just sitting there and nodding. At some point he brings up a black wolf. He seems to love it a lot.
+
+<<link [[Go back|House 1.1]]>>
+	<<dateadd '1h'>>
+	<<set $NPCs.Zegrath.Affection += 1>>
+    <<set $CurFear -= 1>>
+<</link>>
+
+
+

@@ -1,0 +1,38 @@
+:: Town centre 1 [Town] {"position":"4025,1975","size":"100,100"}
+People in here:
+<<nobr>>\
+<ol>
+<<if setup.datesystems.default.getDate().h gte 13 and setup.datesystems.default.getDate().h lte 18 && $NPCs.RadiantRose.Dead == false>> <li><<link [[Speak to RadiantRose|RadiantRoseConvo1]]>><</link>></li><<else>><</if>>
+<<if setup.datesystems.default.getDate().h gte 16 and setup.datesystems.default.getDate().h lte 21>> <li><<link [[Speak to CrimsonSentinel|CrimsonSentinelConvo1]]>><</link>> </li><<else>><</if>>
+</ol>
+<</nobr>>
+Directions:
+1. <<link [[Go to the entarance|Town street 2]]>>
+<<dateadd '5m'>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Town street 2">>
+		<<goto "Encounter F2">>
+    <</if>>
+<</link>>
+2. <<link [[Go down the dark street|Town street 3]]>>
+<<dateadd '5m'>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Town street 3">>
+		<<goto "Encounter F2">>
+    <</if>>
+<</link>>
+
+Locations:
+1. <<if $AmberEmberShop is true && setup.datesystems.default.getDate().h gte 12 and setup.datesystems.default.getDate().h lte 18>><<link [[Go to the blacksmith|Amber shop 1]]>>
+<<dateadd '1m'>>
+<<if ndef $amberPayingBack>>
+	<<set $amberPayingBack to 2500>>
+<</if>>
+<</link>><<else>>Shop | Closed<</if>>
+
+
+ZONE NOT FINISHED
+
+

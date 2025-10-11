@@ -1,0 +1,14 @@
+:: Cave 2.1 [Town] {"position":"4150,1400","size":"100,100"}
+You enter the cave. It seems to be pretty quiet, it is also suprisingly warm inside of here.
+The cave seems to have torches that are light up. In the distance you can see a door.
+
+1. <<link [[Go forward|Cave 2.2]]>>
+	<<dateadd "3m">>
+<<if $wolfTamed !== true>>
+	<<goto "Cave 2.1.0">>
+<</if>>
+<</link>>
+2. <<link [[Go back|Frozen lake]]>>
+<</link>>
+
+

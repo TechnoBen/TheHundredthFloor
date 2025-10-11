@@ -1,0 +1,20 @@
+:: win Marcellus [autosave] {"position":"300,3000","size":"100,100"}
+You hit Love4Marcy one last time...
+He seems to be bleeding heavily.
+<span class= "Marcellus">"Fuck, this sucks... Can't believe im gonna die here"</span> he says, trying to catch his breath.
+"Shouldn't have robbed me. It's all your fault."
+<span class= "Marcellus">"It's not like I have any other choice. My wife is waiting for me and we are desperate for money."</span>
+"What, you both can't run a store or something?"
+<span class= "Marcellus">"Making a store costs money and resources. We don't have either. She is pregnant so we can't afford for her to come out until this shit hole ends. This will sound weird but... Can you go and tell her that I died to some monster or something like that? Shes at the first floor at Oakheart... Tell her "Marcellus died." and that I loved her."</span> as he says that he falls to the ground dead.
+You take his coat and leave.
+
+<<link "Continue">>
+<<set $cape6 to true>>
+<<set $Reputation -= 25>>
+<<set $marcellusDead to true>>
+<<set $marcellusDeadPlayer to true>>
+<<goto $lastVisitedPassage>>
+<</link>>
+
+
+

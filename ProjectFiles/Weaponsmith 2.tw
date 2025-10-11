@@ -1,0 +1,12 @@
+:: Weaponsmith 2 {"position":"1975,2525","size":"100,100"}
+You enter the shop to see a girl talking to her self...
+"Ugh I can't believe I spent all my money and resources for the god damn Katana to be a damned reskin of the rapier! "That's so stupid... No one is going to buy this dumb ass weapon which costs a lot more than a casual rapier!" she seems to have noticed you...
+"Do I... get out?" you ask...
+"Ah nono! Please come ahah! Im sorry about that welcome to my weapon smith! Please look around and get a katana because im gonna go bankrupt!"
+"I'll... think about it thanks..." you decided to look around the store.
+
+1. [[Buy weapons |Buy weapons 1]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Weaponsmith 2">> <</link>>
+3. <<link [[Go back|2nd town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

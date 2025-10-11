@@ -1,0 +1,50 @@
+:: Social {"position":"1750,225","size":"100,100"}
+-------------------------------
+\<center><h3>Reputation:
+<<showmeter 'reputation' `$Reputation/$ReputationMax`>>
+Social:</h3></center>\
+<<if $NPCs.RadiantRose.Affection >= 1>>\
+RadiantRose:
+Level: $NPCs.RadiantRose.Level
+XP: <<= $NPCs.RadiantRose.CurXP.toFixed(0)>>/<<= $NPCs.RadiantRose.MaxXP.toFixed(0)>>
+Affection: $NPCs.RadiantRose.Affection/100
+<</if>>\
+<<if $NPCs.ShadowScythe.Affection >= 1>>\
+ShadowScythe:
+Level: $NPCs.ShadowScythe.Level
+XP: <<= $NPCs.ShadowScythe.CurXP.toFixed(0)>>/<<= $NPCs.ShadowScythe.MaxXP.toFixed(0)>>
+Affection: $NPCs.ShadowScythe.Affection/100
+<</if>>\
+<<if $NPCs.CrimsonSentinel.Affection >= 1>>\
+CrimsonSentinel:
+Level: $NPCs.CrimsonSentinel.Level
+XP: <<= $NPCs.CrimsonSentinel.CurXP.toFixed(0)>>/<<= $NPCs.CrimsonSentinel.MaxXP.toFixed(0)>>
+Affection: $NPCs.CrimsonSentinel.Affection/100
+<</if>>\
+<<if $blueBellAffection >= 1>>
+Blu3B3llrex: 
+Affection: $blueBellAffection/100
+<</if>>\
+<<if $mollyAffection >= 1>>
+XxWryEdwinx: <<if $event5part2 == 3 && $event5part3 is false>>Location: Frozen lake<</if>>
+Affection: $mollyAffection/100
+<</if>>\
+<<if $NPCs.Zegrath.Affection >= 1>>\
+Zegrath:
+Level: $NPCs.Zegrath.Level
+XP: <<= $NPCs.Zegrath.CurXP.toFixed(0)>>/<<= $NPCs.Zegrath.MaxXP.toFixed(0)>>
+Affection: $NPCs.Zegrath.Affection/100
+<</if>>\
+<<if $NPCs.Marcellus.Affection >= 1>>
+Love4Mary:
+Level: $NPCs.Marcellus.Level
+XP: <<= $NPCs.Marcellus.CurXP.toFixed(0)>>/<<= $NPCs.Marcellus.MaxXP.toFixed(0)>>
+Affection: $NPCs.Marcellus.Affection/100
+<</if>>\
+<<if $asteriaAffection >= 1>>
+Asteria: 
+Affection: $asteriaAffection/100
+<</if>>\
+-------------------------------
+
+

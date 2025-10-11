@@ -1,0 +1,110 @@
+:: Floor 2 staircase 1 {"position":"3650,700","size":"100,100"}
+<<if $event4 is true>>\
+You climbed up the stairs to see a gate.
+You stand next to the gate and it opened by itself to see that you are on top of a really high mountain. There is snow everywhere.
+There's a path next to you which goes down the mountain and another that goes up the mountain. Theres also a bench next to you.
+<<set $secretboss1 to random(100)>>
+You can:
+<<link [[Sit down at one of the benches|Floor 2 staircase 1]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5>>
+<</link>>
+<<link [[Sleep on a bench|Sleep 1]]>>
+<<set $lastVisitedPassage1 to "Floor 2 staircase 1">>
+<</link>>
+<<link [[Look for a white wolf|Combat remake]]>>
+<<set _mobAmount to random(100)>>
+    <<set _mobAttack to random(100)>>
+    <<if _mobAttack lte 25>>
+    <<set $lastVisitedPassage to "Floor 2 staircase 1">>
+        <<if _mobAmount lte 22 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    	    <<mob wolf1>>
+            <<mob wolf1>>
+	    	<<mob wolf2>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 45 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf2>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <</if>>
+    <</if>>
+<<dateadd '10m'>>
+<<set $curFatigue += 10>>
+<<dateadd '35m'>> <<set $curFatigue += 15>>
+<</link>>
+
+Directions:
+1. <<link [[Staircase to floor 1|F1 BOSS]]>>
+<<set $location to "dungeon">>
+<<if $secretboss1 lte 25>>
+<<dateadd '2h'>>
+<<set $curFatigue += 250>>
+<<goto "Floor 2 staircase">>
+<<else>>
+<<dateadd '1h'>>
+<<set $curFatigue += 150>>
+<</if>>
+<</link>>
+2. <<link [[Go down the path]]>>
+<<dateadd '30m'>>
+<<set $curFatigue += 30>>
+<</link>>
+3. <<link [[Go up the path]]>>
+<<dateadd '30m'>>
+<<set $curFatigue += 30>>
+<</link>>
+<<else>>
+You climbed up the stairs to see a gate. Opening it you see that you are on top of a mountain and that hte whole place is full of snow. The view is amazing but it's cold. Really cold.
+<<if $blueRaid == true>>\
+Behind you is Blu3B3llrex.
+<span class="Blu3b3llrex">"Woaaah this view is amazing!"</span> she says amazed by the view. <span class="Blu3b3llrex">"They sure have changed the floor to look better than the beta!"</span>
+"Yeah it looks good." you say.
+<span class="Blu3b3llrex">"Well... I guess ill start heading to the new towns and unlock the tp pads. Don't really feel like walking all the way to floor 1. Ill check if we can make guilds here too."</span>
+"Alright. See you then."
+<</if>>\
+
+<<if $radiantRoseParty is true>>\
+<<linkreplace "Speak to RadiantRose">>\
+You go to speak to Radiant. She seems to be admiring the view.
+"Hey Radiant! We finally got here huh..." you say.
+<span class="radiant">"Woah this place is beautiful!" she says not hearing anything you said.</span> <span class="radiant">"Ah sorry what did you say?"</span>
+"I said that im glad that we finally got here."
+<span class="radiant">"Im glad that we are here too."</span>
+<<set $NPCs.RadiantRose.Affection += 2>>\
+<</linkreplace>>
+<</if>>\
+<<if $shadowScytheParty is true>>\
+<<linkreplace "Speak to ShadowScythe">>\
+You decided to speak with Shadow.
+"Thanks for the help during the fight."
+<span class="shadow">"Nah don't thank me. I did what friends do."</span> he responds with.
+"If you say so. Anyways now that you are here what will you do?" you ask.
+<span class="shadow">"Well im probably gonna start doing what I was best at during the beta. Hunt down PKers."</span>
+"Ah I see."
+<span class="shadow">"Hey $gamename. If you become a PKer I will come for your head too. Don't think that I wont. Im just warning you."</span> he looks at you with a serious look in his eyes.
+"Don't worry. I don't plan to become one." you say as he starts heading up the path.
+<<set $NPCs.ShadowScythe.Affection += 1>>\
+<</linkreplace>>
+<</if>>\
+<<if $crimsonSentinelParty is true>>\
+<<linkreplace "Speak to CrimsonSentinel">>\
+You go to Crimson. He looks tired.
+"Hey Crimson! You good?"
+<span class="crimson">"Just a little tired... Thanks for asking. How about you?"</span>
+"Im pretty good myself. You should go to the first floor and rest. Do you want me to take you there just in case something happens?" you ask.
+<span class="crimson">"No ill be fine on my own. Thanks for the offer though. Ill head out now."</span>
+<<set $crimsonSentinelParty to false>>\
+<<set $crimPartyTime to 0>>\
+<<set $NPCs.CrimsonSentinel.Affection += 2>>\
+<</linkreplace>>
+<</if>>\
+
+<<link [[Continue|Floor 2 staircase 1]]>>
+<<set $event4 to true>>
+<</link>>
+<</if>>
+
+

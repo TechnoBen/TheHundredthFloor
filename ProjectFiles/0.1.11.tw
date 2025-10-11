@@ -1,0 +1,28 @@
+:: 0.1.11 [NoSave] {"position":"275,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+<span class="death">Dont forget that this changelog is empty because of the amount of outfits/skins I had to keep in secret because of the anniversary event! There are *a lot* of new skins and shit.</span>
+
+- Continued work on the anniversary event
+- Added a weapon skin slot (only event items as of now, ill add every other weapon too dw)
+- Added the option to waste time in every passage of the forest
+- Failing to run away costs stamina and fatigue now
+- Raised the DEX of Skeletons
+- Added a bench you can sleep on at Whitewall & the frozen lake
+- Made the random RNG time for the f2 boss slower
+- Added a outfit slot
+
+- Fixed a bug where you would get sent back to Oakheart if you try to buy access to the Library tp pad
+- Fixed typos again
+- Fixed a bug where fighting boars in the plains would send you to the last location you were to instead of sending you back to the plains
+- Fixed a bug where you could meet Molly at the library before you did the first part
+- Fixed a bug where the time till boss gets auto killed wont reset. I used the wrong variable lmfao
+- Fixed being unable to leave Zegraths convo
+- Fixed another bug with Mollys event where the first part wouldnt appear and that the part where you look for someone would last a bit longer.
+- Fixed a bug where you would get sent to f2 when clicking nevermind on radiants talking menu (thanks sapp for the report)
+- Fixed a bug where combat messages would show for the chosen attack even if you dont have enough STM
+- Fixed the fire stopper scroll not appearing in the inventory (not wardrobe)
+
+[[Back|Changelogs and game information]]
+
+

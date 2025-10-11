@@ -1,0 +1,28 @@
+:: win Skulltron [autosave] {"position":"300,2600","size":"100,100"}
+You defeated Skullron and he started falling appart.
+You gained <<print ($mobLvl*2 + 345).toFixed(0)>> XP, 126 Coins and it's jacket drops. You look at the name of the jacket "Otherworldly Remnant"
+<<EventCurrencies>>\
+<<link "Leave the dungeon">>
+<<goto $lastVisitedPassage1>>
+<<set $CurXP += 345 + ($mobLvl*2)>>
+<<set $Coins += 234>>
+<<set $cape4 to true>>
+<<set $attack to "Empty">>
+<<if $radiantRoseParty is true>>
+	<<set $RadCurXP += 345 + ($mobLvl*2)>>
+ <<elseif $radiantRoseParty is false>>
+<<set $RadCurXP += 172 + ($mobLvl*2)>>
+<</if>>
+<<if $shadowScytheParty is true>>
+	<<set $ShadCurXP += 345 + ($mobLvl*2)>>
+ <<elseif $shadowScytheParty is false>>
+<<set $ShadCurXP += 172 + ($mobLvl*2)>>
+<</if>>
+<<if $crimsonSentinelParty is true>>
+	<<set $CrimCurXP += 345 + ($mobLvl*2)>>
+ <<elseif $crimsonSentinelParty is false>>
+<<set $CrimCurXP += 172 + ($mobLvl*2)>>
+<</if>>
+<</link>>
+
+

@@ -1,0 +1,19 @@
+:: Inn 1 {"position":"1975,1775","size":"100,100"}
+You entered the Inn.
+There's a woman on the counter. She looks tired.
+
+Its super lively in here. Music goes off in the background, people are drinking and eating food, and others are just having fun.
+
+There are some people playing with cards.
+(?FUTURE FEATURE?)
+
+You can:
+1. <<link [[Work]]>>
+<<if $workone == false>>
+<<goto "Ask for work">>
+<</if>>
+<</link>>
+2. <<link [[Go upstairs]]>> <<dateadd '1m'>> <</link>>
+3. <<link "Exit the Inn">> <<dateadd '1m'>> <<goto $lastvisitedpassage>> <</link>>
+
+

@@ -1,0 +1,19 @@
+:: Dungeon 1.5 {"position":"1275,3025","size":"100,100"}
+<<set _randomencounter1 to random(100)>>\
+<<if _randomencounter1 lte 50>>
+You stumble upon a room you haven't seen berfore... Instead of the chest room you usually see you can see a huge door. You are confused as of why it's here.
+
+You look at the door as you hear in the distance someone screaming and steps getting closer and closer "LIIIIIIIIIIIIIIIIIIIGHT YUUGEEEEENNN!" someone screams as they run past you and straight into the mysterious room...
+
+You stand there dumbfounded that this has happened...
+<<elseif _randomencounter1 lte 100>>
+You stumble upon a room you haven't seen before... Instead of the chest room you usually see you can see a huge door. You are confused as of why it's here.
+<</if>>\
+
+<<link [[Go in|Dungeon 1.6]]>>
+<</link>>
+<<link "Leave the dungeon">>
+	<<goto "Path 3.1">>
+<</link>>
+
+

@@ -1,0 +1,192 @@
+:: Boss rush tailor [no-fainting-or-hunger] {"position":"1150,875","size":"100,100"}
+<<button "Buy a red cape | 150 coins">>
+<<if $Coins >= 150>> 
+<<set $cape1 to true>>
+<<set $Coins -= 150>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 149>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a blue shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt1 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a red shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt1 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a green shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt3 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a pink shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt4 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a white shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt5 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a black shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt6 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a blue open shoulder shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt7 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a red open shoulder shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt8 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a green open shoulder shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt9 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a pink open shoulder shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt10 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a white open shoulder shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt11 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a black open shoulder shirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $shirt12 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy pants | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $pants1 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy gray pants | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $pants2 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy white pants | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $pants3 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a skirt | 25 coins">>
+<<if $Coins >= 25>> 
+<<set $skirt1 to true>>
+<<set $Coins -= 25>>
+<<goto "Boss rush tailor">>
+<<elseif $Coins <= 24>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Boss rush main room]]
+
+

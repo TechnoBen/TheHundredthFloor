@@ -1,0 +1,15 @@
+:: Dungeon1.3 {"position":"1275,2775","size":"100,100"}
+You went deeper into the dungeon. 
+You can walk forward from here but there are a lot of skeletons infront of you.
+<<set $lootchance to random(100)>>
+Directions:
+<<link [[Go forward|Dungeon1.4]]>>
+<<set $curFatigue += 20>>
+<<dateadd '12m'>>
+<<F1Forest1>>
+<</link>>
+<<link [[Go back|Dungeon1.2]]>>
+<<set $lastVisitedPassage to "Dungeon1.1">>
+<</link>>
+
+

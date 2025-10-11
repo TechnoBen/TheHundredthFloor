@@ -1,0 +1,30 @@
+:: Amber shop 1 {"position":"3900,1975","size":"100,100"}
+<<if visited(passage()) is 1>>\
+You enter the blacksmith. You see the girl you saved earlier from the PKers.
+<span class="amber">"Oh! Welcome to my blacksmith! Thank you for saving me earlier by the way! I'll make sure to make it up to you once im more stable on col... Or ill think of some other way!"</span> she says cheerfully. You look at her to realize that she has gotten new armor. <<if $oniLeather <= 0>>It's made out of blue skin. You are not sure what material she used for it...<<else>>It seems to be the light Oni leather armor.<</if>>
+"Congrats on your new armor. Seems like you took my advice."
+<span class="amber">"Yeah I'm not really looking to die right now. Anyways I am selling armor, weapons and their upgrades, and capes or coats. I would also buy any material you won't need as long as it isnt too damaged."</span>
+"Oh nice."
+<span class="amber">"I'm also free like... Most of the time. So feel free to come and chat if you have nothing to do."</span>
+"Ah thanks."
+<span class="amber">"Oh! I forgot to introduce myself earlier! My name is AmberEmber but you can call me Amy for short."</span>
+"My name is $gamename. Sorry for not introducing myself earlier."
+
+<<link [[Continue|Amber shop 1]]>>
+<</link>>
+<<else>>\
+You enter AmberEmbers blacksmith. She gives you a warm smile.
+<span class="amber">"Hello, $gamename! Nice to see you here!"</span>
+
+1. <<link [[Check out what she sells|Amber sell 1]]>>
+<</link>>
+2. <<link [[Sell your materials|Selling mats]]>>
+	<<set $lastVisitedPassage1 to "Selling mats">> 
+<</link>>
+3. <<link [[Speak to Amber|Speak to Amber 1]]>>
+<</link>>
+4. <<link [[Leave the shop|Town centre 1]]>>
+<</link>>
+<</if>>
+
+

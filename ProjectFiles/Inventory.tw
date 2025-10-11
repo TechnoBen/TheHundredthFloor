@@ -1,0 +1,845 @@
+:: Inventory {"position":"1750,350","size":"100,100"}
+--------------------------------------------
+\Inventory:
+<<nobr>>
+<ol>
+<<if $outfit5>>
+  <li>TechnoBen's outfit</li>
+<</if>>
+<<if $outfit1>>
+  <li>yelyel's outfit</li>
+<</if>>
+<<if $outfit2>>
+  <li>Morgana's outfit</li>
+<</if>>
+<<if $outfit3>>
+  <li>Fatrat's outfit</li>
+<</if>>
+<<if $outfit4>>
+  <li>Gremlin's outfit</li>
+<</if>>
+<<if $outfit6>>
+  <li>Nny's outfit</li>
+<</if>>
+<<if $outfit7>>
+  <li>Shadow_Fang's outfit</li>
+<</if>>
+<<if $outfit8>>
+  <li>irfanrein's cape</li>
+<</if>>
+<<if $outfit9>>
+  <li>GlazingLotl's maid dress</li>
+<</if>>
+<<if $outfit10>>
+  <li>Christmas hat</li>
+<</if>>
+<<if $pumpkinHead>>
+  <li>Pumpkin head</li>
+<</if>>
+<<if $outfit11>>
+  <li>BUNNY GIRL's outfit</li>
+<</if>>
+<<if $outfit12>>
+  <li>Reverse Christmas outfit</li>
+<</if>>
+<<if $ShadowScytheOutfit>>
+  <li>ShadowScythes outfit</li>
+<</if>>
+<<if $RadiantRoseOutfit>>
+  <li>RadiantRoses outfit</li>
+<</if>>
+<<if $CrimsonSentinelOutfit>>
+  <li>CrimsonSentinels outfit</li>
+<</if>>
+<<if $ToruOutfit>>
+  <li>Familiar gambit outfit</li>
+<</if>>
+<<if $KirinOutfit>>
+  <li>Fallen grace outfit</li>
+<</if>>
+<<if $asteriaFlowerCrown>>
+  <li>Asterias flower crown</li>
+<</if>>
+<<if $namelessManOutfit>>
+  <li>Armor of a nameless man</li>
+<</if>>
+<<if $bobsArmorOutfit>>
+  <li>Bobs armor</li>
+<</if>>
+<<if $bobsEyes>>
+  <li>Bobs eyes</li>
+<</if>>
+<<if $shirt1>>
+  <li>Blue starter shirt</li>
+<</if>>
+<<if $shirt2>>
+  <li>Red starter shirt</li>
+<</if>>
+<<if $shirt3>>
+  <li>Green starter shirt</li>
+<</if>>
+<<if $shirt4>>
+  <li>Pink starter shirt</li>
+<</if>>
+<<if $shirt5>>
+  <li>White starter shirt</li>
+<</if>>
+<<if $shirt6>>
+  <li>Black starter shirt</li>
+<</if>>
+<<if $shirt7>>
+  <li>Blue open shoulder shirt</li>
+<</if>>
+<<if $shirt8>>
+  <li>Red open shoulder shirt</li>
+<</if>>
+<<if $shirt9>>
+  <li>Green open shoulder shirt</li>
+<</if>>
+<<if $shirt10>>
+  <li>Pink open shoulder shirt</li>
+<</if>>
+<<if $shirt11>>
+  <li>White open shoulder shirt</li>
+<</if>>
+<<if $shirt12>>
+  <li>Black open shoulder shirt</li>
+<</if>>
+<<if $shirt13>>
+  <li>Blue tank top</li>
+<</if>>
+<<if $shirt14>>
+  <li>Red tank top</li>
+<</if>>
+<<if $shirt15>>
+  <li>Green tank top</li>
+<</if>>
+<<if $shirt16>>
+  <li>Pink tank top</li>
+<</if>>
+<<if $shirt17>>
+  <li>White tank top</li>
+<</if>>
+<<if $shirt18>>
+  <li>Black tank top</li>
+<</if>>
+<<if $pants1>>
+  <li>Starter pants</li>
+<</if>>
+<<if $pants2>>
+  <li>Gray pants</li>
+<</if>>
+<<if $pants3>>
+  <li>White pants</li>
+<</if>>
+<<if $skirt1>>
+  <li>Starter skirt</li>
+<</if>>
+<<if $boots1>>
+  <li>Starter boots</li>
+<</if>>
+<<if $cape1>>
+  <li>Red cape</li>
+<</if>>
+<<if $cape2>>
+  <li>Shadow hunters coat</li>
+<</if>>
+<<if $cape3>>
+  <li>Mysteriously vague poncho</li>
+<</if>>
+<<if $cape4>>
+  <li>Otherworldly remnant</li>
+<</if>>
+<<if $cape5>>
+  <li>Wolf fur cape</li>
+<</if>>
+<<if $cape6>>
+  <li>Marcellus's coat</li>
+<</if>>
+<<if $breastPlate>>
+  <li>Starter breastplate</li> 
+ <</if>>
+ <<if $leatherCP>>
+  <li> Leather chestplate </li>
+ <</if>>
+ <<if $leatherP>>
+  <li> Leather pants </li>
+ <</if>>
+<<if $leatherB>>
+  <li>Leather boots</li>
+<</if>>
+ <<if $leatherHCP>>
+  <li>Hardened leather chestplate </li>
+ <</if>>
+ <<if $leatherHP>>
+  <li>Hardened leather pants </li>
+ <</if>>
+<<if $leatherHB>>
+  <li>Hardened leather boots</li>
+<</if>>
+ <<if $ironBP>>
+  <li> Iron breastplate </li>
+ <</if>>
+ <<if $ironGuards>>
+  <li> Iron guards </li>
+ <</if>>
+<<if $ironFG>>
+  <li>Iron feet guards</li>
+<</if>>
+ <<if $ironCP>>
+  <li>Iron armor </li>
+ <</if>>
+ <<if $ironP>>
+  <li>Iron pants </li>
+ <</if>>
+<<if $ironB>>
+  <li>Iron boots</li>
+<</if>>
+<<if $shadowHunterHeavyCP>>
+  <li>Heavy shadow hunters chestplate</li>
+<</if>>
+<<if $shadowHunterLightCP>>
+  <li>Light shadow hunters chestplate</li>
+<</if>>
+<<if $lOniCP>>
+  <li>Light Oni leather chestplate</li>
+ <</if>>
+ <<if $lOniP>>
+  <li>Light Oni leather pants </li>
+ <</if>>
+<<if $lOniB>>
+  <li>Light Oni leather boots</li>
+<</if>> 
+<<if $hOniCP>>
+ <li>Heavy Oni leather chestplate</li>
+ <</if>>
+ <<if $hOniP>>
+ <li>Heavy Oni leather pants</li>
+ <</if>>
+<<if $hOniB>>
+  <li>Heavy Oni leather boots</li>
+<</if>>
+<<if $hStoneCP>>
+ <li>Heavy stone chestplate</li>
+ <</if>>
+ <<if $StoneCP>>
+ <li>Light stone chestplate</li>
+ <</if>>
+ <<if $flowerRapierSkin>>
+  <li>Flower rapier skin</li>
+<</if>>
+ <<if $shadowTakerSkin>>
+  <li>Shadow taker skin</li>
+<</if>>
+ <<if $bloodDrainerSkin>>
+  <li>Blood drainer skin</li>
+<</if>>
+ <<if $ToruGauntletSkin>>
+  <li>Dusters resort skin</li>
+<</if>>
+ <<if $KirinSwordSkin>>
+  <li>Tarnished imprint skin</li>
+<</if>>
+ <<if $BloodSwordSkin>>
+  <li>Blood sword skin</li>
+<</if>>
+ <<if $CandyCaneSwordSkin>>
+  <li>Candy cane sword skin</li>
+<</if>>
+ <<if $CandyCaneHeavySwordSkin>>
+  <li>Candy cane heavy sword skin</li>
+<</if>>
+ <<if $CandyCaneRapierSkin>>
+  <li>Candy cane rapier skin</li>
+<</if>>
+ <<if $CandyCaneShieldAndSwordSkin>>
+  <li>Candy cane shield and sword skin</li>
+<</if>>
+<<if $AsteriasPotatoSack>>
+  <li>Asterias potato sack</li>
+<</if>>
+<<if $starterSword>>
+  <li>Starter sword</li>
+<</if>>
+<<if $sword1>>
+  <li>Copper sword</li>
+<</if>>
+<<if $swordnshield1>>
+  <li>Copper short sword with a shield</li>
+<</if>>
+<<if $rapier1>>
+  <li>Copper rapier</li>
+<</if>>
+<<if $heavysword1>>
+  <li>Copper heavy sword</li>
+<</if>>
+<<if $gauntlets1>>
+  <li>Copper gauntlets</li>
+<</if>>
+<<if $mace1>>
+  <li>Copper mace</li>
+<</if>>
+<<if $dagger1>>
+  <li>Copper dagger</li>
+<</if>>
+<<if $katana1>>
+  <li>Copper katana</li>
+<</if>>
+<<if $sword2>>
+  <li>Copper sword with crystal fragment pieces</li>
+<</if>>
+<<if $rapier2>>
+  <li>Copper rapier with crystal fragments</li>
+<</if>>
+<<if $heavysword2>>
+  <li>Copper heavy sword with crystal fragments</li>
+<</if>>
+<<if $swordnshield2>>
+  <li>Copper short sword and a shield with crystal fragments</li>
+<</if>>
+<<if $gauntlets2>>
+  <li>Copper gauntlets with crystal fragments</li>
+<</if>>
+<<if $mace2>>
+  <li>Copper mace with crystal fragments</li>
+<</if>>
+<<if $dagger2>>
+  <li>Copper dagger with crystal fragments</li>
+<</if>>
+<<if $sword3>>
+  <li>Bone sword</li>
+<</if>>
+<<if $swordnshield3>>
+  <li>Bone short sword with a shield</li>
+<</if>>
+<<if $rapier3>>
+  <li>Bone rapier</li>
+<</if>>
+<<if $heavysword3>>
+  <li>Bone heavy sword</li>
+<</if>>
+<<if $sword4>>
+  <li>Iron sword</li>
+<</if>>
+<<if $swordnshield4>>
+  <li>Iron short sword with a shield</li>
+<</if>>
+<<if $rapier4>>
+  <li>Iron rapier</li>
+<</if>>
+<<if $heavysword4>>
+  <li>Iron heavy sword</li>
+<</if>>
+<<if $gauntlets4>>
+  <li>Iron gauntlets</li>
+<</if>>
+<<if $mace4>>
+  <li>Iron mace</li>
+<</if>>
+<<if $dagger4>>
+  <li>Iron dagger</li>
+<</if>>
+<<if $sword5>>
+  <li>Iron sword with a wooden handle</li>
+<</if>>
+<<if $swordnshield5>>
+  <li>Iron short sword and a shield with a wooden handle</li>
+<</if>>
+<<if $rapier5>>
+  <li>Iron rapier with a wooden handle</li>
+<</if>>
+<<if $heavysword5>>
+  <li>Iron heavy sword with a wooden handle</li>
+<</if>>
+<<if $gauntlets5>>
+  <li>Iron gauntlets with crystal fragmnets</li>
+<</if>>
+<<if $mace5>>
+  <li>Iron mace with a wooden handle</li>
+<</if>>
+<<if $dagger5>>
+  <li>Iron dagger with a wooden handle</li>
+<</if>>
+<<if $sword6>>
+  <li>Oni teeth sword</li>
+<</if>>
+<<if $swordnshield6>>
+  <li>Oni teeth short sword with a shield</li>
+<</if>>
+<<if $rapier6>>
+  <li>Oni teeth rapier</li>
+<</if>>
+<<if $heavysword6>>
+  <li>Oni teeth heavy sword</li>
+<</if>>
+<<if $gauntlets6>>
+  <li>Oni teeth gauntlets</li>
+<</if>>
+<<if $mace6>>
+  <li>Oni teeth mace</li>
+<</if>>
+<<if $dagger6>>
+  <li>Oni teeth dagger</li>
+<</if>>
+<<if $sword7>>
+  <li>Oni teeth and leather sword</li>
+<</if>>
+<<if $swordnshield7>>
+  <li>Oni teeth and leather short sword with a shield</li>
+<</if>>
+<<if $rapier7>>
+  <li>Oni teeth and leather rapier</li>
+<</if>>
+<<if $heavysword7>>
+  <li>Oni teeth and leather heavy sword</li>
+<</if>>
+<<if $gauntlets7>>
+  <li>Oni teeth and leather gauntlets</li>
+<</if>>
+<<if $mace7>>
+  <li>Oni teeth and leather mace</li>
+<</if>>
+<<if $dagger7>>
+  <li>Oni teeth and leather dagger</li>
+<</if>>
+<<if $heavyswordStone>>
+  <li>Boulder slayer</li>
+<</if>>
+<<if $axe1>>
+  <li>Iron Axe</li>
+<</if>>
+<<if $shovel1>>
+  <li>Iron Shovel</li>
+<</if>>
+<<if $pickaxe1>>
+  <li>Iron pickaxe</li>
+<</if>>
+<<if $diamondRing>>
+  <li>Diamond ring: $diamondRing</li>
+<</if>>
+<<if $goldenRing>>
+  <li>Golden ring: $goldenRing</li>
+<</if>>
+<<if $silverRing>>
+  <li>Silver ring: $silverRing</li>
+<</if>>
+<<if $tearfulTombRing>>
+  <li>Tearful tomb ring: $tearfulTombRing</li>
+<</if>>
+<<if $ringOfAchieving>>
+  <li>Ring of achieving: $ringOfAchieving</li>
+<</if>>
+<<if $ringOfTheUndead>>
+  <li>Ring of the undead: $ringOfTheUndead</li>
+<</if>>
+<<if $ringOfTheLiving>>
+	<li>Ring of the living: $ringOfTheLiving</li>
+<</if>>
+<<if $hpPOT > 0>>
+<li>
+Health potion T1: $hpPOT
+</li>
+<</if>>
+<<if $hpPOT1 > 0>>
+<li>
+Health potion T2: $hpPOT1
+</li>
+<</if>>
+<<if $stmPOT > 0>>
+ <li>
+Stamina potion: $stmPOT
+</li> 
+<</if>>
+<<if $boarMeat > 0>>
+<li><<link 'Boar meat: $boarMeat'>>
+  <<set $boarMeat -= 1>>
+  <<set $curHunger += 10>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $ragoutMeat > 0>>
+<li>
+ <<link 'Ragout meat: $ragoutMeat'>>
+  <<set $ragoutMeat -= 1>>
+  <<set $curHunger += 20>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $wolfMeat > 0>>
+<li>
+ <<link 'Wolf meat: $wolfMeat'>>
+  <<set $wolfMeat -= 1>>
+  <<set $curHunger += 30>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $fish > 0>>
+<li>
+ <<link 'Fish: $fish'>>
+  <<set $fish -= 1>>
+  <<set $curHunger += 15>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $bread > 0>>
+<li>
+ <<link 'Bread: $bread'>>
+  <<set $bread -= 1>>
+  <<set $curHunger += 56>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $carrot > 0>>
+<li>
+ <<link 'Carrots: $carrot'>>
+  <<set $carrot -= 1>>
+  <<set $curHunger += 12>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $mushroom > 0>>
+<li>
+ <<link 'Mushrooms: $mushroom'>>
+  <<set $mushroom -= 1>>
+  <<set $curHunger += 12>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarMushkebab > 0>>
+<li>
+ <<link '☆ Mushroom kebab: $oneStarMushkebab'>>
+  <<set $oneStarMushkebab -= 1>>
+  <<set $curHunger += 55>>
+  <<set $curFatigue -= 2>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarMushkebab > 0>>
+<li>
+ <<link '☆☆ Mushroom kebab: $twoStarMushkebab'>>
+  <<set $twoStarMushkebab -= 1>>
+  <<set $curHunger += 67>>
+  <<set $curFatigue -= 5>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarMushkebab > 0>>
+<li>
+ <<link '☆☆☆  Mushroom kebab: $threeStarMushkebab'>>
+  <<set $threeStarMushkebab -= 1>>
+  <<set $curHunger += 104>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarBmeat > 0>>
+<li>
+ <<link '☆ Cooked boar meat: $oneStarBmeat'>>
+ <<set $oneStarBmeat -= 1>>
+ <<set $curHunger += 65>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarBmeat > 0>>
+<li>
+ <<link '☆☆ Cooked boar meat: $twoStarBmeat'>>
+  <<set $twoStarBmeat -= 1>>
+  <<set $curHunger += 98>>
+  <<set $CurHP += 2>>
+  <<set $curStamina += 4>>
+  <<set $curFatigue -= 2>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarBmeat > 0>>
+<li>
+ <<link '☆☆☆  Cooked boar meat: $threeStarBmeat'>>
+  <<set $threeStarBmeat -= 1>>
+  <<set $curHunger += 120>>
+  <<set $CurHP += 5>>
+  <<set $curStamina += 9>>
+  <<set $curFatigue -= 5>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarRmeat > 0>>
+<li>
+ <<link '☆ Cooked ragout meat: $oneStarRmeat'>>
+  <<set $oneStarRmeat -= 1>>
+  <<set $curHunger += 73>>
+  <<set $CurHP += 2>>
+  <<set $curStamina += 5>>
+  <<set $curFatigue -= 2>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarRmeat > 0>>
+<li>
+ <<link '☆☆ Cooked ragout meat: $twoStarRmeat'>>
+  <<set $twoStarRmeat -= 1>>
+  <<set $curHunger += 118>>
+  <<set $CurHP += 5>>
+  <<set $curStamina += 9>>
+  <<set $curFatigue -= 9>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarRmeat > 0>>
+<li>
+ <<link '☆☆☆  Cooked ragout meat: $threeStarRmeat'>>
+  <<set $threeStarRmeat -= 1>>
+  <<set $curHunger += 174>>
+  <<set $CurHP += 12>>
+  <<set $curStamina += 14>>
+  <<set $curFatigue -= 15>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarWmeat > 0>>
+<li>
+ <<link '☆ Cooked wolf meat: $oneStarWmeat'>>
+  <<set $oneStarWmeat -= 1>>
+  <<set $curHunger += 76>>
+  <<set $CurHP += 3>>
+  <<set $curStamina += 5>>
+  <<set $curFatigue -= 2>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarWmeat > 0>>
+<li>
+ <<link '☆☆ Cooked wolf meat: $twoStarWmeat'>>
+  <<set $twoStarWmeat -= 1>>
+  <<set $curHunger += 138>>
+  <<set $CurHP += 6>>
+  <<set $curStamina += 9>>
+  <<set $curFatigue -= 9>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarWmeat > 0>>
+<li>
+ <<link '☆☆☆  Cooked wolf meat: $threeStarWmeat'>>
+  <<set $threeStarWmeat -= 1>>
+  <<set $curHunger += 204>>
+  <<set $CurHP += 13>>
+  <<set $curStamina += 15>>
+  <<set $curFatigue -= 15>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarCookedFish > 0>>
+      <li>
+       <<link '☆ Cooked fish: $oneStarCookedFish'>>
+       <<set $oneStarCookedFish -= 1>>
+       <<set $curHunger += 42>>
+        <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+      <</link>>
+      </li>
+ <</if>>
+<<if $twoStarCookedFish > 0>>
+      <li>
+       <<link '☆☆ Cooked fish: $twoStarCookedFish'>>
+        <<set $twoStarCookedFish -= 1>>
+        <<set $curHunger += 62>>
+        <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+      <</link>>
+      </li>
+<</if>>
+      <<if $threeStarCookedFish > 0>>
+      <li>
+       <<link '☆☆☆ Cooked fish: $threeStarCookedFish'>>
+        <<set $threeStarCookedFish -= 1>>
+        <<set $curHunger += 85>>
+        <<set $CurHP += 1>>
+        <<set $curStamina += 3>>
+        <<set $curFatigue -= 2>>
+        <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+      <</link>>
+      </li>
+<</if>>
+<<if $oneStarBsandwich > 0>>
+<li>
+ <<link '☆ Boar sandwich: $oneStarBsandwich'>>
+ <<set $oneStarBsandwich -= 1>>
+ <<set $curHunger += 89>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarBsandwich > 0>>
+<li>
+ <<link '☆☆ Boar sandwich: $twoStarBsandwich'>>
+  <<set $twoStarBsandwich -= 1>>
+  <<set $curHunger += 139>>
+  <<set $CurHP += 7>>
+  <<set $curStamina += 14>>
+  <<set $curFatigue -= 9>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarBsandwich > 0>>
+<li>
+ <<link '☆☆☆ Boar sandwich: $threeStarBsandwich'>>
+  <<set $threeStarBsandwich -= 1>>
+  <<set $curHunger += 227>>
+  <<set $CurHP += 15>>
+  <<set $curStamina += 19>>
+  <<set $curFatigue -= 15>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarRsandwich > 0>>
+<li>
+ <<link '☆ Ragout sandwich: $oneStarRsandwich'>>
+ <<set $oneStarRsandwich -= 1>>
+ <<set $curHunger += 101>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarRsandwich > 0>>
+<li>
+ <<link '☆☆ Ragout sandwich: $twoStarRsandwich'>>
+  <<set $twoStarRsandwich -= 1>>
+  <<set $curHunger += 186>>
+  <<set $CurHP += 9>>
+  <<set $curStamina += 15>>
+  <<set $curFatigue -= 10>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarRsandwich > 0>>
+<li>
+ <<link '☆☆☆ Ragout sandwich: $threeStarRsandwich'>>
+  <<set $threeStarRsandwich -= 1>>
+  <<set $curHunger += 247>>
+  <<set $CurHP += 18>>
+  <<set $curStamina += 21>>
+  <<set $curFatigue -= 19>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $oneStarRSoup > 0>>
+<li>
+ <<link '☆ Ragout soup: $oneStarRSoup'>>
+  <<set $oneStarRSoup -= 1>>
+  <<set $curHunger += 258>>
+  <<set $CurHP += 22>>
+  <<set $curStamina += 15>>
+  <<set $curFatigue -= 10>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $twoStarRSoup > 0>>
+<li>
+ <<link '☆☆ Ragout soup: $twoStarRSoup'>>
+  <<set $twoStarRSoup -= 1>>
+  <<set $curHunger += 308>>
+  <<set $CurHP += 36>>
+  <<set $curStamina += 27>>
+  <<set $curFatigue -= 19>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $threeStarRSoup > 0>>
+<li>
+ <<link '☆☆☆ Ragout soup: $threeStarRSoup'>>
+  <<set $threeStarRSoup -= 1>>
+  <<set $curHunger += 373>>
+  <<set $CurHP += 34>>
+  <<set $curStamina += 34>>
+  <<set $curFatigue -= 25>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $AnniversaryCakeVanilla > 0>>
+<li>
+ <<link 'First year anniversary cake (Vanilla): $AnniversaryCakeVanilla'>>
+  <<set $AnniversaryCakeVanilla -= 1>>
+  <<set $curHunger += 50>>
+  <<set $curFatigue -= 10>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $AnniversaryCakeChocolate > 0>>
+<li>
+ <<link 'First year anniversary cake (Chocolate): $AnniversaryCakeChocolate'>>
+  <<set $AnniversaryCakeChocolate -= 1>>
+  <<set $curHunger += 50>>
+  <<set $CurHP += 10>>
+  <<set $curStamina += 10>>
+  <<run $('#ui-dialog-body').empty().wiki(Story.get("Inventory").processText())>>
+<</link>>
+</li>
+<</if>>
+<<if $fireStopperScroll > 0>>
+<li>
+Fire stopper scroll: $fireStopperScroll
+</li>
+<</if>>
+<<if $genderChangingPotion > 0>>
+  <li>Gender changing potion: $genderChangingPotion</li>
+<</if>>
+<<if $boarLeather > 0>>
+  <li>Boar leather: $boarLeather</li>
+<</if>>
+<<if $ramHorn > 0>>
+  <li>Ram horns: $ramHorn</li>
+<</if>>
+<<if $planks > 0>>
+  <li>Wood: $planks</li>
+<</if>>
+<<if $crystalFragments > 0>>
+  <li>Crystal fragments: $crystalFragments</li>
+<</if>>
+<<if $mayonnaise > 0>>
+  <li>Mayonnaise: $mayonnaise</li>
+<</if>>
+<<if $wolfFur > 0>>
+  <li>Wolf fur: $wolfFur</li>
+<</if>>
+<<if $oniLeather > 0>>
+  <li>Oni leather: $oniLeather</li>
+<</if>>
+<<if $oniTeeth > 0>>
+  <li>Oni teeth: $oniTeeth</li>
+<</if>>
+<<if $iron > 0>>
+  <li>Iron: $iron</li>
+<</if>>
+<<if $f1key > 0>>
+  <li>Floor 1 dungeon key: $f1key</li>
+<</if>>
+</ol>
+<</nobr>>\
+Changes won't be seen until you move!
+--------------------------------------------
+
+

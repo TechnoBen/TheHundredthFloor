@@ -1,0 +1,53 @@
+:: 0.0.4 [NoSave] {"position":"300,275","size":"100,100"}
+ [[Back|Changelogs and game information]]
+
+- Changed a lot of the textures
+- Centerized the banner at the start of the game
+- Added cooking (finally)
+- Made it possible for some stuff to be useable in the sidebar inventory
+- Added hunger:
+	- If your hunger is at 0 you get:
+    	- 25 HP taken away every passage you go through
+        - 50 Fatgiue taken away every passage you go through
+- Removed the extra link that I forgot to remove when you kill the floor boss 
+- Centerized the text at the stats and game stats UI's because it was seriously annoying
+- Added player state to the game stats
+- You can find mushrooms in the forest
+- You can now lose coins. Its a rng between 0 and 5000
+- Added more info to game stats like amount of faint, amount of cooked meals and total kills
+- You start the game with 3 bread
+- Remade the 3pm event
+- Added color to TechnoBen whenever he speaks
+- Added long black and brown hair
+- A hair salon has finally opened its doors at Oakheart
+- You can now visit the Inn at Oakheart (its the same place as in the First town... I just linked it there because I didnt see the point of making a new inn as of now lol)
+- You can now visit the weaponsmith in Oakheart
+- You can sit down, sleep on a bench and open a wardrobe in Oakheart
+- Sitting down on a bench or wasting time gives you back a bit of stamina
+- You can now blink. I dont want to hear anything about that because it took me 2 HOURS because i couldnt find a program to make gifs... Im not even joking
+- The restaurant has food that you can now order
+- The jewelry is now open but you cannot buy anything from it
+- You can now work in the Inn
+
+- NPCs finally regen HP and STM when you sleep
+- Fixed the Starters town being called the First town... That was going to be the name originally but it doesnt sound as good as Starters town lol
+- Fixed the inside of the forest hut not having numbers on the links
+- Fixed Radiant using your STR when she stabs during combat (expect for the boar battle lol)
+
+- Removed the adventurers guild from the first town as it will be used in later floors (maybe)
+
+NEW ITEMS:
+ C a r r o t s
+ Mushrooms
+ Bread
+ Mayonnaise
+ 3 tiers of ragout soup
+ 3 tiers of cooked ragout meat
+ 3 tiers of cooked boar meat
+ 3 tiers of boar sandwiches
+ 3 tiers of ragout sandwiches
+ Copper katana
+
+[[Back|Changelogs and game information]]
+
+

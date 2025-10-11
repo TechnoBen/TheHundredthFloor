@@ -1,0 +1,11 @@
+:: FD2 chest trap {"position":"5600,900","size":"100,100"}
+You opened the chest. It starts glowing red, inside of it there are 2 Tier 2 HP potions and 350 coins.
+You take them and the chest grows legs.
+
+<<link [[Continue|Combat remake]]>>
+	<<mob mimic1>>
+    <<set $hpPOT1 += 2>>
+    <<set $Coins += 350>>
+<</link>>
+
+

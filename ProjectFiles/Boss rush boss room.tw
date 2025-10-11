@@ -1,0 +1,19 @@
+:: Boss rush boss room [no-fainting-or-hunger] {"position":"1200,1000","size":"100,100"}
+You enter the boss room. Inside of it you can see the <<if $bossRush == 1>>F1 boss, Deathlord.<<elseif $bossRush == 2>>F2 boss, Boldegar.<<elseif $bossRush == 3>>This was the last boss for this version. F3 boss will come out whenever its done.<</if>>
+
+<<link [[Fight the boss|Combat remake]]>>
+<<if $bossRush == 1>>
+	<<deathlord>><</deathlord>>
+<<elseif $bossRush == 2>>
+	<<boldegar>><</boldegar>>
+<<elseif $bossRush == 3>>
+<<script>>
+UI.alert("There are no more bosses in this version of the game!");
+<</script>>
+<</if>>
+<<set $lastVisitedPassage to "Boss rush boss room">>
+<</link>>
+<<link [[Wait! I'm not ready yet!|Boss rush main room]]>>
+<</link>>
+
+

@@ -1,0 +1,54 @@
+:: Path 1 {"position":"1350,2400","size":"100,100"}
+You looked at the path leading to the 2nd town.
+From the beta you remember that it leads there but you also remember that it leads to another place but you cannot remember where...
+You also dont remember how long It would take to get to the 2nd town...
+<<set $lastVisitedPassage to "Path 1">>
+You can go forward or backward... or you can fight a boar!
+
+Directions:
+1. <<link [[Go forward|Path 2]]>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Path 2">>
+		<<goto "Encounter F1">>
+    <</if>>
+<<dateadd '30m'>>
+<<set $curFatigue += 25>>
+<</link>>
+2. <<link [[Go backward|Plains]]>>
+<<dateadd '4m'>>
+<<set _randomencounter to random(100)>>
+	<<if _randomencounter lte 15>>
+    	<<set $lastVisitedPassage to "Plains">>
+		<<goto "Encounter F1">>
+    <</if>>
+<</link>>
+
+You can:
+1. <<link [[Look for a boar|Combat remake]]>>
+<<set $lastVisitedPassage to "Path 1">>
+<<set _mobAmount to random(100)>>
+        <<if _mobAmount lte 5 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+        	<<mob boar1>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 15 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 30 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boar1>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <<elseif _mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob boar1>>
+            <<goto "Combat remake">>
+        <</if>>
+<<dateadd '10m'>>
+<<set $curFatigue += 10>>
+<</link>>
+
+

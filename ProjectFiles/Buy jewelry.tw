@@ -1,0 +1,41 @@
+:: Buy jewelry [no-fainting-or-hunger no-party-time-loss] {"position":"1725,1925","size":"100,100"}
+<<button "Buy a diamond ring | 2250 col">>
+<<if $Coins >= 2250>> 
+<<set $diamondRing to true>>
+<<set $Coins -= 2250>>
+<<notify>> You bought a diamond ring! <</notify>>
+<<goto "Buy jewelry">>
+<<elseif $Coins <= 2249>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a golden ring | 1750 col">>
+<<if $Coins >= 1750>> 
+<<set $goldenRing to true>>
+<<set $Coins -= 1750>>
+<<notify>> You bought a golden ring! <</notify>>
+<<goto "Buy jewelry">>
+<<elseif $Coins <= 1749>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a silver ring | 1220 col">>
+<<if $Coins >= 1220>> 
+<<set $silverRing to true>>
+<<set $Coins -= 1220>>
+<<notify>> You bought a silver ring! <</notify>>
+<<goto "Buy jewelry">>
+<<elseif $Coins <= 1219>>
+<<script>>
+UI.alert("You dont have enough col!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Jewelry shop 1]]
+
+

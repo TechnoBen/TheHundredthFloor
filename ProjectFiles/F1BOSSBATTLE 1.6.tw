@@ -1,0 +1,14 @@
+:: F1BOSSBATTLE 1.6 {"position":"1075,2775","size":"100,100"}
+<span class="Blu3b3llrex">"HOLY SHIT ARE YOU ALRIGHT?!"</span> she screams as she and her raid party gets closer and closer to you. You party tried to attack it too but they can't get close because it has went berserk. They did deal some damage to it though. <<set $mobs.Deathlord.CurHP -= 25>>
+It's swinging its arms around like a madman... 
+It's getting closer and closer you as It's basically slashing everywhere, destroying the floor and pillars around you all.
+
+Floor boss health: $mobs.Deathlord.CurHP
+
+Your HP: $CurHP/$MaxHP
+Your raid partys HP: $raidHP/1000
+
+You can:
+[[Fight it alone|Combat remake]]
+
+

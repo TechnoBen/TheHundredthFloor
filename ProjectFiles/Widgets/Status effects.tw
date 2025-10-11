@@ -1,0 +1,143 @@
+:: Status effects [widget] {"position":"2750,725","size":"100,100"}
+<<widget "bleedTrigger">>
+
+/* Player bleed */
+<<if $bleedCountCur >= $bleedCountMax>>
+    <<run $combat_log.push('<span class="bleedTrigger">' + $gamename + ' took ' + $bleedPotency + ' bleed damage.</span>')>>
+	<<set $CurHP -= $bleedPotency>>
+	<<set $bleedPotency to 0>>
+	<<set $bleedCountCur to 0>>
+<</if>>
+
+/* RadiantRose bleed */
+<<if $NPCs.RadiantRose.bleedCountCur >= $NPCs.RadiantRose.bleedCountMax>>
+    <<run $combat_log.push('<span class="bleedTrigger">RadiantRose took ' + $NPCs.RadiantRose.bleedPotency + ' bleed damage.</span>')>>
+	<<set $NPCs.RadiantRose.CurHP -= $NPCs.RadiantRose.bleedPotency>>
+	<<set $NPCs.RadiantRose.bleedPotency to 0>>
+	<<set $NPCs.RadiantRose.bleedCountCur to 0>>
+<</if>>
+
+/* ShadowScythe bleed */
+<<if $NPCs.ShadowScythe.bleedCountCur >= $NPCs.ShadowScythe.bleedCountMax>>
+    <<run $combat_log.push('<span class="bleedTrigger">ShadowScythe took ' + $NPCs.ShadowScythe.bleedPotency + ' bleed damage.</span>')>>
+	<<set $NPCs.ShadowScythe.CurHP -= $NPCs.ShadowScythe.bleedPotency>>
+	<<set $NPCs.ShadowScythe.bleedPotency to 0>>
+	<<set $NPCs.ShadowScythe.bleedCountCur to 0>>
+<</if>>
+
+/* CrimsonSentinel bleed */
+<<if $NPCs.CrimsonSentinel.bleedCountCur >= $NPCs.CrimsonSentinel.bleedCountMax>>
+    <<run $combat_log.push('<span class="bleedTrigger">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.bleedPotency + ' bleed damage.</span>')>>
+	<<set $NPCs.CrimsonSentinel.CurHP -= $NPCs.CrimsonSentinel.bleedPotency>>
+	<<set $NPCs.CrimsonSentinel.bleedPotency to 0>>
+	<<set $NPCs.CrimsonSentinel.bleedCountCur to 0>>
+<</if>>
+
+/* Zegrath bleed */
+<<if $NPCs.Zegrath.bleedCountCur >= $NPCs.Zegrath.bleedCountMax>>
+    <<run $combat_log.push('<span class="bleedTrigger">Zegrath took ' + $NPCs.Zegrath.bleedPotency + ' bleed damage.</span>')>>
+	<<set $NPCs.Zegrath.CurHP -= $NPCs.Zegrath.bleedPotency>>
+	<<set $NPCs.Zegrath.bleedPotency to 0>>
+	<<set $NPCs.Zegrath.bleedCountCur to 0>>
+<</if>>
+
+/* Mobs bleed */
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+  <<if _mob[_i].bleedCountCur >= _mob[_i].bleedCountMax>>
+    <<run $combat_log.push('<span class="bleedTrigger">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].bleedPotency + ' bleed damage.</span>')>>
+	<<set $mobs[_i].CurHP -= $mobs[_i].bleedPotency>>
+	<<set $mobs[_i].bleedPotency to 0>>
+	<<set $mobs[_i].bleedCountCur to 0>>
+  <</if>>
+<</for>>
+
+<</widget>>
+
+<<widget "burnPlayer">>
+/* Enemy turn passage */
+
+/* Player burn */
+<<if $burnCountCur >= 0.01>>
+    <<run $combat_log.push('<span class="burnTrigger">' + $gamename + ' took ' + $burnPotency + ' burn damage.</span>')>>
+	<<set $CurHP -= $burnPotency>>
+	<<set $burnPotency /= 2>>
+	<<set $burnCountCur -= 1>>
+<</if>>
+
+/* RadiantRose burn */
+<<if $NPCs.RadiantRose.burnCountCur >= 0.01>>
+    <<run $combat_log.push('<span class="burnTrigger">RadiantRose took ' + $NPCs.RadiantRose.burnPotency + ' burn damage.</span>')>>
+	<<set $NPCs.RadiantRose.CurHP -= $NPCs.RadiantRose.burnPotency>>
+	<<set $NPCs.RadiantRose.burnPotency /= 2>>
+	<<set $NPCs.RadiantRose.burnCountCur -= 1>>
+<</if>>
+
+/* ShadowScythe burn */
+<<if $NPCs.ShadowScythe.burnCountCur >= 0.01>>
+    <<run $combat_log.push('<span class="burnTrigger">ShadowScythe took ' + $NPCs.ShadowScythe.burnPotency + ' burn damage.</span>')>>
+	<<set $NPCs.ShadowScythe.CurHP -= $NPCs.ShadowScythe.burnPotency>>
+	<<set $NPCs.ShadowScythe.burnPotency /= 2>>
+	<<set $NPCs.ShadowScythe.burnCountCur -= 1>>
+<</if>>
+
+/* CrimsonSentinel burn */
+<<if $NPCs.CrimsonSentinel.burnCountCur >= 0.01>>
+    <<run $combat_log.push('<span class="burnTrigger">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.burnPotency + ' burn damage.</span>')>>
+	<<set $NPCs.CrimsonSentinel.CurHP -= $NPCs.CrimsonSentinel.burnPotency>>
+	<<set $NPCs.CrimsonSentinel.burnPotency /= 2>>
+	<<set $NPCs.CrimsonSentinel.burnCountCur -= 1>>
+<</if>>
+
+/* Zegrath burn */
+<<if $NPCs.Zegrath.burnCountCur >= 0.01>>
+    <<run $combat_log.push('<span class="burnTrigger">Zegrath took ' + $NPCs.Zegrath.burnPotency + ' burn damage.</span>')>>
+	<<set $NPCs.Zegrath.CurHP -= $NPCs.Zegrath.burnPotency>>
+	<<set $NPCs.Zegrath.burnPotency /= 2>>
+	<<set $NPCs.Zegrath.burnCountCur -= 1>>
+<</if>>
+
+<<if $burnCountCur <= 0 && $burnPotency >= 0.01>>
+    <<set $burnPotency to 0>>
+<</if>>
+
+<<if $NPCs.RadiantRose.burnCountCur <= 0 && $NPCs.RadiantRose.burnPotency >= 0.01>>
+    <<set $NPCs.RadiantRose.burnPotency to 0>>
+<</if>>
+
+<<if $NPCs.ShadowScythe.burnCountCur <= 0 && $NPCs.ShadowScythe.burnPotency >= 0.01>>
+    <<set $NPCs.ShadowScythe.burnPotency to 0>>
+<</if>>
+
+<<if $NPCs.CrimsonSentinel.burnCountCur <= 0 && $NPCs.CrimsonSentinel.burnPotency >= 0.01>>
+    <<set $NPCs.CrimsonSentinel.burnPotency to 0>>
+<</if>>
+
+<<if $NPCs.Zegrath.burnCountCur <= 0 && $NPCs.Zegrath.burnPotency >= 0.01>>
+    <<set $NPCs.Zegrath.burnPotency to 0>>
+<</if>>
+
+<</widget>>
+
+<<widget "burnEnemy">>
+
+/* Player turn passage */
+<<set _mob = $mobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+  <<if _mob[_i].burnCountCur >= 0.01>>
+    <<run $combat_log.push('<span class="burnTrigger">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].burnPotency + ' burn damage.</span>')>>
+	<<set $mobs[_i].CurHP -= $mobs[_i].burnPotency>>
+	<<set $mobs[_i].burnPotency /= 2>>
+	<<set $mobs[_i].burnCountCur -= 1>>
+  <</if>>
+<</for>>
+
+<<for _i = 0; _i lt $mobs.length; _i++>>
+  <<if _mob[_i].burnCountCur <= 0 && _mob[_i].burnPotency >= 0.01>>
+	<<set $mobs[_i].burnPotency to 0>>
+  <</if>>
+<</for>>
+
+<</widget>>
+
+

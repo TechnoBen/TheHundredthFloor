@@ -1,0 +1,16 @@
+:: Camp [Town] {"position":"4475,775","size":"100,100"}
+You go inside of the camp you built,
+in it you can find a cauldron that you spent a lot of iron for, a small bed out of wood and a wardrobe.
+
+Directions:
+1. [[Go back|Path 7.5.4]]
+
+You can:
+1. <<link [[Sleep in the tent|Sleep]]>>
+<<set $lastVisitedPassage1 to "Camp">><</link>>
+2. <<link [[Cook on the cauldron|Cooking]]>> 
+<<set $lastvisitedpassage1 to "Camp">>
+<</link>>
+3. <<link [[Open the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Camp">> <</link>>
+
+

@@ -1,0 +1,10 @@
+:: Ask for work {"position":"1975,1650","size":"100,100"}
+You decided to go to the counter.
+"Hey can I work in here?" you ask the tired woman.
+"Huh? Are you sure?"
+"Yeah I'm sure. Do I need to fill out documents or something?"
+"No you don't... Actually I'm so tired you can start working now. Is that alright with you? After that you will work from 12 AM to 7 AM though. You can come in at any time..."
+<<set $workone to true>>
+[[Alright|Work]]
+
+

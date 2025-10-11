@@ -1,0 +1,160 @@
+:: Encounter F2 {"position":"0,2575","size":"100,100"}
+<<set _randomencounter1 to random(90)>>
+<<if _randomencounter1 lte 10 && $lastVisitedPassage == "Town street 2" && $marcellusDead == false>>\
+You walk down the quiet street and see a tall, white man with blue hair, an iron sword, a brown coat with 2 tridents on each side and yellow stripes on his arm.
+He is barely walking. Is he drunk...?
+As you walk past him you push into each other.
+<span class= "Marcellus">"Ah sorry <<if $gender == "Male" or $gender == "Nonbinary">>muscly boy<<else>>dollface<</if>>... Didn't mean to hit you there ahaha..."</span> he says in a drunkish tone...
+<div id="opt5">\
+<<if $INT >= 1>>\
+<<link "Check yourself">><<replace "#opt5">>
+You check yourself. Before you can check what you are missing the man looks at you <span class= "Marcellus">"Ah so you realized I was bullshitting...? That's awkward."</span> he says completely fixing his posture and his tone is more serious now. <span class= "Marcellus">"So are we gonna fight or will you let me go..."</span>
+<div id="opt6">
+<<link "Let him go">><<replace "#opt6">>
+<div id="opt7">
+"Nah just go ahead and leave."
+
+<span class= "Marcellus">"Oh shit? For real? And you won't stab my back? That sounds too good to be true but thanks I guess...?"</span> he walks away. You finally got to check yourself seeing that 20 bottles of ale and 1000 coins...
+
+<<link [[Continue on your way|Town street 2]]>><<replace "#opt7">>
+	<<set $marcellusEvent1 to true>>
+<</replace>><</link>>
+<<link "Attack him">><<replace "#opt7">>
+You decide to backstab him. He turns around and starts walking. You grab your sword and go at him. He quickly turns around and parries your hit.
+<span class= "Marcellus">"Back in the real world I might've been an office worker but here I am a mercenary. If you think you can beat me then go ahead <<if $gender == "Male" or $gender == "Nonbinary">>muscly boy<<else>>dollface<</if>>."</span>
+
+<<link "Continue">>
+	<<marcellus>><</marcellus>>
+	<<goto "Combat remake">>
+<</link>>
+<</replace>><</link>>
+</div>
+<</replace>><</link>>
+<<link "Attack him">><<replace "#opt6">>
+You reach for your sword, swinging at him. He parries your hit.
+<span class= "Marcellus">"Back in the real world I might've been an office worker but here I am a mercenary. If you think you can beat me then go ahead <<if $gender == "Male" or $gender == "Nonbinary">>muscly boy<<else>>dollface<</if>>."</span>
+
+<<link "Continue">>
+	<<marcellus>><</marcellus>>
+	<<goto "Combat remake">>
+<</link>>
+<</replace>><</link>>
+<<link "Threaten him">><<replace "#opt6">>
+"Give me my items back before I bash your skull on the concrete, you scum." you respond.
+<span class= "Marcellus">"You think threatening me will work?"</span>
+
+<<link "Continue">>
+	<<marcellus>><</marcellus>>
+	<<goto "Combat remake">>
+<</link>>
+<</replace>><</link>>
+</div>\
+<</replace>><</link>>
+<</if>>\
+<<link "Attack him">><<replace "#opt5">>
+You draw your sword out. He fixes his posture. You realize that he was not drunk. He was faking it.
+<span class= "Marcellus">"Back in the real world I might've been an office worker but here I am a mercenary. If you think you can beat me then go ahead <<if $gender == "Male" or $gender == "Nonbinary">>muscly boy<<else>>dollface<</if>>."</span> he responds snarkily.
+
+<<link "Continue">>
+	<<marcellus>><</marcellus>>
+	<<goto "Combat remake">>
+<</link>>
+<</replace>><</link>>
+<<link [[Continue on your way|Town street 2]]>><<replace "#opt5">>
+<<set $marcellusEvent1 to true>>
+<</replace>><</link>>
+</div>\
+<<elseif _randomencounter1 lte 10>>\
+You can hear people talking in the distance...
+"Have you heard of this PK hunter? He was so cool!" says a tall man.
+"You mean ShadowScythe? Yeah I've heard of him! He actually saved me once!" says a person. His gear looks kind of weak...
+"That's so cool!"
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 20>>\
+You can hear people in the distance talking...
+"Man this floor is amazing! There is snow everywhere! It's so fun!" says a girl.
+"Couldnt agree more. I keep on shooting random people with snowballs all of the time." says a boy.
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 30>>\
+You can hear 2 people speaking in the distance...
+A man says "Fuuuuuck I hate this floor, its freezing cold. I can't feel my arms." says a man
+"Stop complaining it isnt THAT bad!" says another man after which hitting him lightly on the back
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 40>>\
+A person approaches you.
+"Hey Im kinda lost... Can you tell me the directions to the inn? My friend is waiting for me but I cant find it."
+You tell them the directions to the inn.
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 50>>\
+You see a person bump into another person. When they continue on their way you can see that they have a pouch that you're sure they didnt have before.
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 60>>\
+Some dude walks past you and hits you by the shoulder...
+
+"Sorry this was an accident..." he says as he continues on his way...
+<<set $coinsloss to random(450)>>\
+<<set $Coins -= $coinsloss>>\
+<<if $Coins < 0>>\
+<<set $Coins to 0>>\
+<</if>>\
+Later on you realize that $coinsloss coins are missing from you...
+
+<<if $INT >= 2>>\
+<<linkreplace "Check youself">> You decided to check if something is missing from you. You realize that you are $coinsloss short so you run back.
+"Hey there. Seems like you stole something from me." You say as you draw your weapon...
+"WAIT WAIT NO! TAKE IT BACK!" The thief says back, throwing your coins back. <<set $Coins += $coinsloss>><</linkreplace>>
+<</if>>\
+<<link "Continue">>
+<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 70>>\
+You see a snowball flying at you mach 10 speed, it hits you right in the head throwing you across the entire street.
+A buff giant man comes to you. His nametag appears and you see a worried "Bob", he is shivering in fear. "Are you ok!? Im so sorry! This was meant to hit my friend!" he asks in a panicked voice. You stand up... Your whole body hurts. How the fuck did he throw that snowball that fast? "Please take this as a sorry." he says, pulling out a rose out of his inventory and handing it to you and runs away awkwardly...
+
+You are extremely confused.
+
+<<link "Continue">>
+<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 80>>\
+A man lays on the floor, staring into the endless sky. He notices you looking at him.
+"What's up? Am I in your way or something?" he asks, his voice deep and tired.
+"My bad, you're not in my way. Why are you laying on the floor though?" you respond.
+"Fell down, don't feel like standing up." He goes back to staring in the sky. "I'm just tired y'know? First life happened now this entire... death game. I lived through the first boss raid but... what about the second? Or the Third?"
+You don't say anything back for a good while. "I'm sure you'll manage. If not you can always just stay here and wait, y'know?"
+"There's already a player killing guild being organized. They will get stronger. Staying here is an option until they start killing every weak player."
+"There are also players hunting said player killers."
+"I see... Then i'll put my trust into them, huh."
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<<elseif _randomencounter1 lte 90>>\
+You hear 2 men speaking.
+"Man, that dungeon raid didn't go so well... I'm not gonna be able to recover from that loss for a while. Fuckers took out my entire potions stash." said the first man, he has red hair and hard leather amor.
+"For real man... My fucking sword broke! I knew that bastard gave me a shitty sword but I didn't know it was gonna be THAT bad." says the second man, holding out his broken iron heavy sword, his blue hair looked wet. What the hell did they go through?
+"Maybe we should head back to the first floor. The mobs down ere are too tough." says the red haired man.
+"Gahh this sucks. Here I was thinking that we will make a fortune by going into the dungeon before anyone else. This is not ideal-" suddenly a black haired man with bags under his eyes and a black coat came out of nowhere.
+"You called?" he says with a smile on his face.
+
+<<link "Continue">>
+	<<goto $lastVisitedPassage>>
+<</link>>
+<</if>>
+
+

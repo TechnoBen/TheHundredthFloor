@@ -1,0 +1,91 @@
+:: Book 2 [no-fainting-or-hunger no-party-time-loss] {"position":"1750,600","size":"100,100"}
+You open the book. It seems to have a lot of information about the language but you are not sure what its about. Perhaps giving it a read would help you understand it. <<set $ReadingSkill to 3>>
+<center> <span class= Evese> Learn how to speak Evese for advanced readers. </span>
+<<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> Learn speak Evese. Advanced <<elseif $ReadingSkill >= 3>> Learn how to speak Evese for advanced readers. <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+<span class= Evese>Hello to whoever is reading this book. I assume that if you are reading this book then you probably don't know how to read or write well so I will try to make this as simple as possible </span>
+<<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> Hello whoever book reading. If reading this assume probably don't know read well. I make simple possible. <<elseif $ReadingSkill >= 3>> Hello to whoever is reading this book. I assume that if you are reading this book then you probably don't know how to read or write well so I will try to make this as simple as possible <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+<span class= Evese>Let's start with the basics. In Evese we don't say the punctuations like the dots ( . ), the exclamation mark ( ! ) or the question mark ( ? ) at the end of our sentences like in the other lost languages around the world.</span>
+<<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> Basics. Evese don't say punctations dots, exclamation mark or question mark like other languages in world <<elseif $ReadingSkill >= 3>>Let's start with the basics. In Evese we don't say the punctuations like the dots ( . ), the exclamation mark ( ! ) or the question mark ( ? ) at the end of our sentences like in the other lost languages around the world. <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+<span class= Evese>While speaking there are a bit of rules. Like when you are saying hello would be pronounced without one of the L's so that you won't have to repeat yourself a bunch of time.
+Example:
+Hello would be pronounced "henz-ale-lai-oumf" AND NOT "henz-ale-lai-lai-oumf".
+Food would be pronounced "rohf-oumf-zet" AND NOT "rohf-oumf-oumf-zet".</span>
+<<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> While speak rules. If say hello no use two L's so no repeat yourself.
+Example:
+Hello pronounced: "henz-ale-lai-oumf" NOT "henz-ale-lai-lai-oumf".
+You can't read the other example...
+<<elseif $ReadingSkill >= 3>> While speaking there are a bit of rules. Like when you are saying hello would be pronounced without one of the L's so that you won't have to repeat yourself a bunch of time.
+Example:
+Hello would be pronounced "henz-ale-lai-oumf" AND NOT "henz-ale-lai-lai-oumf".
+Food would be pronounced "rohf-oumf-zet" AND NOT "rohf-oumf-oumf-zet". <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+<span class= Evese>Anyways let's begin with the pronunciations.
+Q = kai
+W = vai
+E = aie
+R = rie
+T = hirt
+Y = ai
+U = ourt
+I = ikz
+O = oumf
+P = imf
+A = an
+S = sou
+D = zet
+F = ronf
+G = gon
+H = henz
+J = zei
+K = kinz
+L = lai
+Z = cai
+X = heij
+C = siz
+V = vau
+B = benz
+N = negt
+M = mau</span>
+<<linkreplace "Translate">><<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill >= 2>> Anyways let's begin with the pronounciations.
+Q = kai
+W = vai
+E = aie
+R = rie
+T = hirt
+Y = ai
+U = ourt
+I = ikz
+O = oumf
+P = imf
+A = an
+S = sou
+D = zet
+F = ronf
+G = gon
+H = henz
+J = zei
+K = kinz
+L = lai
+Z = cai
+X = heij
+C = siz
+V = vau
+B = benz
+N = negt
+M = mau <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+<<if $SpeakingSkill <= 1>>\
+You feel like you got a bit better in speaking... <<set $SpeakingXP += 150>>
+<<elseif $SpeakingSkill >= 2>>\
+You seem to understand the vocals well enough for this book to be of any help...
+<</if>>\
+
+<<link "Close the book">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+</center>
+
+

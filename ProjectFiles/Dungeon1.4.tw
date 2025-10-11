@@ -1,0 +1,17 @@
+:: Dungeon1.4 {"position":"1275,2900","size":"100,100"}
+As you walk forward you see a door.
+You open it to see a treasure chest...
+
+You open the chest to see 389 Coins, 2 healing potions<<if $lootchance lte 35>>, a tier 2 healing potion<</if>> and 6 crystal fragments.
+
+<<link "Leave the dungeon">>
+<<goto $lastVisitedPassage1>>
+<<set $Coins += 389>>
+<<set $hpPOT += 2>>
+<<if $lootchance lte 35>>
+	<<set $hpPOT1 += 1>>
+<</if>>
+<<set $crystalFragments += 6>>
+<</link>>
+
+

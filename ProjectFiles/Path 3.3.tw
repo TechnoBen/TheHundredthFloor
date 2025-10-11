@@ -1,0 +1,71 @@
+:: Path 3.3 {"position":"1725,2775","size":"100,100"}
+You started going deeper into the forest.
+There are a lot of trees and its oddly quiet.
+
+
+Go deeper into the forest:
+<<link [[Go in running|Path 3.4]]>>
+<<dateadd '5m'>>
+<<set $curFatigue += 55>>
+    <<set $lastVisitedPassage to "Path 3.4">>
+<<ForestRun>>
+<</link>>
+<<link [[Go in carefully|Path 3.4]]>>
+<<dateadd '30m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 3.4">>
+    <<ForestWalk>>
+<</link>>
+
+Go back:
+<<link [[Go back running|Path 3.2]]>>
+<<dateadd '5m'>>
+<<set $curFatigue += 55>>
+    <<set $lastVisitedPassage to "Path 3.2">>
+<<ForestRun>>
+<</link>>
+<<link [[Go back carefully|Path 3.2]]>>
+<<dateadd '30m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 3.2">>
+    <<ForestWalk>>
+<</link>>
+
+You can:
+<<link [[Waste time|Path 3.3]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5 + $INT>>
+<</link>>
+<<link [[Look for a plant monster|Combat remake]]>>
+<<dateadd '10m'>>
+<<set $curFatigue += 10>>
+<<dateadd '1h'>>
+<<set $lastVisitedPassage to "Path 3.3">>
+<<set $curFatigue += 15>>
+    <<set _mobAmount to random(100)>>
+        <<if _mobAmount lte 5>>
+            <<mob rabbit>>
+            <<mob plantMonster>>
+            <<mob plantMonster>>
+            <<mob plantMonster>>
+        <<elseif _mobAmount lte 15>>
+            <<mob plantMonster>>
+            <<mob plantMonster>>
+            <<mob rabbit>>
+        <<elseif _mobAmount lte 30>>
+            <<mob plantMonster>>
+            <<mob plantMonster>>
+        <<elseif _mobAmount lte 100>>
+            <<mob plantMonster>>
+        <</if>>
+<</link>>
+<<if $axe1 == true>>\
+<<link [[Chop down wood|Path 3.3]]>>
+<<set $planks += 1>> <<set $curFatigue += 20>> <<dateadd '15m'>>
+<</link>>
+<<elseif $axe1 == false>>\
+You need a iron axe to chop down wood!
+<</if>>\
+
+
+

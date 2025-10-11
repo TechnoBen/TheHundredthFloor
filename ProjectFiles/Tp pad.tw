@@ -1,0 +1,46 @@
+:: Tp pad [no-party-time-loss] {"position":"1875,475","size":"100,100"}
+You stepped on the teleportation pad... A screen comes out asking you where to teleport:
+
+<<link "Go back">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+--------------------------------------------
+\<center>Floor 1
+<<if $tppadONE == false>>\
+You havent bought access to this Teleportation pad!
+<<else>>\
+<<link [[Starters town|Town centre]]>>
+<<set $location to "town">>
+<</link>>
+<</if>>\
+<<if $tppadTWO == false>>\
+You havent bought access to this Teleportation pad!
+<<else>>\
+<<link [[Oakheart|Oakheart centre]]>>
+<<set $location to "town">>
+<</link>>
+<</if>>\
+</center>\
+--------------------------------------------
+\<center>Floor 2
+<<if $tppadTHREE == false>>\
+You havent bought access to this Teleportation pad!
+<<else>>\
+<<link [[Tree library|Library 1]]>>
+<<set $location to "snowy1">>
+<</link>>
+<</if>>\
+<<if $tppadFOUR == false>>\
+You havent bought access to this Teleportation pad!
+<<else>>\
+<<link [[Whitewall entarance|3rd town entarance]]>>
+<<set $location to "town">>
+<</link>>
+<</if>>\
+</center>\
+--------------------------------------------
+\<<link "Go back">>
+<<goto $lastVisitedPassage1>>
+<</link>>
+
+

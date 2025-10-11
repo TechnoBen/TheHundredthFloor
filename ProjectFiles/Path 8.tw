@@ -1,0 +1,26 @@
+:: Path 8 {"position":"3650,1275","size":"100,100"}
+You walk down to path to see that it splits. On the new way theres a sign
+<span class= Evese>"Small establishment nearby."</span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> .... It says something about a establishment? <<elseif $ReadingSkill >= 3>> Small establishment nearby. <</if>> <<set $ReadingXP += 55>><</linkreplace>>
+The snow there seems to be getting higher there though...
+
+1. <<link [[Follow the path|Path 9]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 9">>
+<<SnowPlains1>>
+<</link>>
+2. <<link [[Follow the 2nd path|Path 8.1]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 8.1">>
+<<SnowPlains1>>
+<</link>>
+3. <<link [[Go back|Path 7]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 7">>
+<<SnowPlains1>>
+<</link>>
+
+
+

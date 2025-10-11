@@ -1,0 +1,13 @@
+:: Gathering area {"position":"2225,2400","size":"100,100"}
+You are in the gathering area.
+There are around 50 chairs and a table with a chair.
+It looks like it was placed there pretty quickly because someone was running out of time. You assume that it was not from the creators of the game...
+Theres a small sign left "I'm here from 8am to 12pm!"
+
+People in here:
+<<if setup.datesystems.default.getDate().h gte 8 and setup.datesystems.default.getDate().h lte 12>> <li><<link [[Speak to Blu3B3llrex|Blu3B3llrexConvo]]>> <<if $hasSpokenWithBlue== false>> <<goto "Blue 1">> <</if>><</link>> </li><<else>><</if>>
+
+Direction:
+<<link [[Go back|Oakheart centre]]>> <</link>>
+
+

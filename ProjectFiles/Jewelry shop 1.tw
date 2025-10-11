@@ -1,0 +1,10 @@
+:: Jewelry shop 1 [no-fainting-or-hunger no-party-time-loss] {"position":"1600,1925","size":"100,100"}
+You go inside the jewelry shop to see a 3 people at the counter.
+"Hello there! Are you in need of something?" asked one of the people...
+"No not really. I'm just looking around." you say as 2 of them sigh... You started looking around the shop to see a LOT of diamond related stuff and less gold related jewelry.
+
+1. [[Buy jewelry]]
+2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "Jewelry shop 1">> <</link>>
+3. <<link [[Go back|Town entarance]]>> <<dateadd '1m'>> <</link>>
+
+

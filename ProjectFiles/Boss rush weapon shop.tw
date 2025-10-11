@@ -1,0 +1,94 @@
+:: Boss rush weapon shop [no-fainting-or-hunger] {"position":"950,875","size":"100,100"}
+<<button "Buy a copper sword | 132 coins">>
+<<if $Coins >= 132>> 
+<<set $sword1 to true>>
+<<set $Coins -= 132>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 131>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a copper short sword with a shield | 132 coins">>
+<<if $Coins >= 132>> 
+<<set $swordnshield1 to true>>
+<<set $Coins -= 132>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 131>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a copper rapier | 134 coins">>
+<<if $Coins >= 134>> 
+<<set $rapier1 to true>>
+<<set $Coins -= 134>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 133>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy a copper heavy sword | 156 coins">>
+<<if $Coins >= 156>> 
+<<set $heavysword1 to true>>
+<<set $Coins -= 156>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 155>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+<<button "Buy an iron sword | 993 coins">>
+<<if $Coins >= 993>> 
+<<set $sword4 to true>>
+<<set $Coins -= 993>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 992>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy an iron short sword with a shield | 993 coins">>
+<<if $Coins >= 993>> 
+<<set $swordnshield4 to true>>
+<<set $Coins -= 993>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 992>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy an iron rapier | 1000 coins">>
+<<if $Coins >= 1000>> 
+<<set $rapier4 to true>>
+<<set $Coins -= 1000>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 999>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+<<button "Buy an iron heavy sword | 1056 coins">>
+<<if $Coins >= 1056>> 
+<<set $heavysword4 to true>>
+<<set $Coins -= 1056>>
+<<goto "Boss rush weapon shop">>
+<<elseif $Coins <= 1055>>
+<<script>>
+UI.alert("You dont have enough coins!");
+<</script>>
+<</if>>
+<</button>>
+
+[[Go back|Boss rush main room]] 
+
+

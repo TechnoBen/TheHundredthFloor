@@ -1,0 +1,19 @@
+:: FD 1.1 {"position":"2225,2025","size":"100,100"}
+You went in deeper into the dungeon.
+The corridor is going straight so far.
+
+Directions:
+<<link [[Go deeper into the floor dungeon...|FD 1.2]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "FD 1.2">>
+    <<F1Dungeon>>
+<</link>>
+<<link [[Go back...|FD1]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<<set $lastVisitedPassage to "FD1">>
+<<F1Dungeon>>
+<</link>>
+
+

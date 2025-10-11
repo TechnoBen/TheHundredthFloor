@@ -1,0 +1,56 @@
+:: Skill points [no-fainting-or-hunger no-party-time-loss] {"position":"3125,225","size":"100,100"}
+--------------------------------------
+\<center>YOUR SKILLS: $combatSkills
+--------------------------------------
+\You have $SP Skill points.</center>\
+<<if $combatSkills.includes("Do nothing") == true>>\
+Lvl 1 stamina regen: <<link [[3 points to level up|Skill points]]>>
+<<if $SP >= 3>>
+	<<set $SP -= 3>>
+    <<run $combatSkills.push("Do nothing+")>>
+    <<run $combatSkills.delete("Do nothing")>>
+<</if>><</link>>
+<<elseif $combatSkills.includes("Do nothing+") == true>>\
+Lvl 2 stamina regen: <<link [[8 points to level up|Skill points]]>>
+  <<if $SP >= 8>>
+	<<set $SP -= 8>>
+    <<run $combatSkills.push("Do nothing++")>>
+    <<run $combatSkills.delete("Do nothing+")>>
+<</if>><</link>>
+<</if>>\
+<<if $combatSkills.includes("Stab") == true>>\
+Lvl 1 stab: <<link [[4 points to level up|Skill points]]>>
+  <<if $SP >= 4>>
+	<<set $SP -= 4>>
+    <<run $combatSkills.push("Stab+")>>
+    <<run $combatSkills.delete("Stab")>>
+<</if>><</link>>
+<<elseif $combatSkills.includes("Stab+") == true>>\
+Lvl 2 stab: <<link [[10 points to level up|Skill points]]>>
+  <<if $SP >= 10>>
+	<<set $SP -= 10>>
+    <<run $combatSkills.push("Stab++")>>
+    <<run $combatSkills.delete("Stab+")>>
+<</if>><</link>>
+<</if>>\
+<<if $combatSkills.includes("Charge") == true>>\
+Lvl 1 charge: <<link [[5 points to level up|Skill points]]>>
+  <<if $SP >= 5>>
+	<<set $SP -= 5>>
+    <<run $combatSkills.push("Charge+")>>
+    <<run $combatSkills.delete("Charge")>>
+<</if>><</link>>
+<<elseif $combatSkills.includes("Charge+") == true>>\
+Lvl 2 charge: <<link [[11 points to level up|Skill points]]>>
+  <<if $SP >= 11>>
+	<<set $SP -= 11>>
+    <<run $combatSkills.push("Charge++")>>
+    <<run $combatSkills.delete("Charge+")>>
+<</if>><</link>>
+<</if>>\
+--------------------------------------
+\<center><<link [[Close|Library 1]]>>
+<</link>></center>\
+--------------------------------------
+
+

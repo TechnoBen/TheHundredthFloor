@@ -1,0 +1,11 @@
+:: win Zegrath [autosave] {"position":"400,2900","size":"100,100"}
+Zegrath seems to be tired out. He is bleeding a lot.
+<span class="zegrath">"I cannot believe it. Im losing to a weakling such as yourself. Very well then. In the cave. There is a black wolf. Tame it or I shall haunt you even if im dead."</span> he says breathing heavily... After which he dies.
+
+<<link "Continue">>
+<<set $Reputation -= 50>>
+<<set $zegrathDead to true>>
+<<goto $lastVisitedPassage>>
+<</link>>
+
+

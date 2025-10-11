@@ -1,0 +1,176 @@
+:: Buy weapons 3 [no-fainting-or-hunger no-party-time-loss] {"position":"3775,1850","size":"100,100"}
+<center>
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/weapons/Iron sword.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron sword:
+            Slash DMG + 6
+            Pierce DMG + 2.25
+        </div>\
+        <div class="border1">\
+            <<link "Buy the sword | 723 col">>
+                <<if $Coins >= 723>> 
+                    <<set $sword4 to true>>
+                    <<notify>> You bought an iron sword! <</notify>>
+                    <<set $Coins -= 723>>
+                    <<goto "Buy weapons 3">>
+                <<elseif $Coins <= 723>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/weapons/Iron sword n shield.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron sword and shield:
+            Slash DMG + 4
+            Blunt DMG + 2.45
+            Slash DEF + 3
+            Pierce DEF + 1.5
+            Blunt DEF + 3
+        </div>\
+        <div class="border1">\
+            <<link "Buy the sword and shield | 743 col">>
+                <<if $Coins >= 743>> 
+                    <<set $swordnshield4 to true>>
+                    <<set $Coins -= 743>>
+                    <<notify>> You bought an iron sword and shield! <</notify>>
+                    <<goto "Buy weapons 3">>
+                <<elseif $Coins <= 742>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/weapons/Iron rapier.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron rapier:
+            Pierce DMG + 4
+        </div>\
+        <div class="border1">\
+            <<link "Buy the rapier | 800 col">>
+                <<if $Coins >= 800>> 
+                    <<set $rapier4 to true>>
+                    <<notify>> You bought a iron rapier! <</notify>>
+                    <<set $Coins -= 800>>
+                    <<goto "Buy weapons 3">>
+                <<elseif $Coins <= 799>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/weapons/Iron heavy sword.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron heavy sword:
+            Slash DMG + 12
+            Blunt DMG + 6.78
+        </div>\
+        <div class="border1">\
+            <<link "Buy the heavy sword | 856 col">>
+                <<if $Coins >= 856>> 
+                    <<set $heavysword4 to true>>
+                    <<set $Coins -= 856>>
+                    <<notify>> You bought a iron heavy sword! <</notify>>
+                    <<goto "Buy weapons 3">>
+                <<elseif $Coins <= 855>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/weapons/ironaxe.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron axe:
+            Slash DMG + 2
+            Blunt DMG + 0.75
+        </div>\
+        <div class="border1">\
+            <<link "Buy the axe | 65 col">>
+                <<if $Coins >= 65>> 
+                    <<set $axe1 to true>>
+                    <<notify>> You bought an axe! <</notify>>
+                    <<set $Coins -= 65>>
+                    <<goto "Buy weapons 3">>
+                <<elseif $Coins <= 64>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/weapons/ironshovel.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Iron shovel:
+            Pierce DMG + 1
+        </div>\
+        <div class="border1">\
+            <<link "Buy the shovel | 65 col">>
+                <<if $Coins >= 156>> 
+                    <<set $shovel1 to true>>
+                    <<notify>> You bought a shovel! <</notify>>
+                    <<set $Coins -= 65>>
+                    <<goto "Buy weapons 3">>
+                <<elseif $Coins <= 64>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+
+[[Go back|Weaponsmith 4]] 
+</center>
+
+

@@ -1,0 +1,39 @@
+:: 0.1.15 [NoSave] {"position":"375,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+<span class="death">OLD PLAYERS!!! Please open the debug menu whenever you open a old save file and press the fix traits button! I still dont know how to do generic objects in JS which is why its a debug option.</span>
+
+Keep in mind I coded most of this update while being mostly sleep deprived and sick... Expect a few bugs and errors. Report those anywhere you want to. I'll see it, eventually.
+
+- Finally added traits and a traits UI which can be found at the stats menu.
+- Removed leftover debug code in fear gaining
+- Added a debuff and a buff variable for fear
+- Since its the 5 am, 1st of Jan I decided to expand on Asterias lore since I made her last year at 5 am, 1st of Jan! I'm gonna try to do this every new year at 5 am lol. Ill obviously add more lore when it isnt new year but its just guaranteed Asteria lore that I love. (30/1 update: ive continued doing more lore since I didnt manage to finish her lore on new years. As of this moment Ive added her appearance to the forest and youll be able to speak to her if youre friends with her. Ill finish her house and dungeon appearance within this version. Hopefully.)
+- Big change!! I finally figured out how to make Inn rooms actually last a day. If you noticed before inn rooms would not let you go in again if you leave it before 9 am. Thats because i did not know how to make it set dates. I figured it out though!!! This is huge :D But i also feel stupid for not getting this idea earlier
+- Added the option to take a break infront of the floor boss rooms
+- Removed some useless code from the character creator that I left over from when I first started the game. I didnt know StoryInit did what I did so I just slapped the variables to start the game there lmao
+- Added PKer kill counter. No idea why I havent done that already.
+- Reworked shops UI (Weaponsmiths, tailors and armorsmiths. The jewelry is not getting a rework until I add more stuff. Thanks to Hituro for making it look even better)
+- Did some changes to the intro.
+
+- Fixed typos.
+- Fixed a bug where no matter what you cant buy a ring of achieving under the reason that you cant have more than one. The problem was that I made it check if you have more than 1 points instead of rings :p
+- Fixed save names not working.
+- Fixed quite an old forest bug where you wouldnt get to the destination you chose after ending combat at the forest. This one has been extremely annoying to me and it was a simple fix... I dont know why I just did it.
+
+NEW TRAITS:
+Positives:
+- Strong
+- Dexterous
+- Brave
+- Durable
+- Bloodlust (Thanks to Optimystic for the trait suggestion)
+Negatives:
+- Weak
+- Clumsy
+- Cowardly
+- Insomniac
+
+[[Back|Changelogs and game information]]
+
+

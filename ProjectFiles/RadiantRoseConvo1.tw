@@ -1,0 +1,11 @@
+:: RadiantRoseConvo1 {"position":"3150,1975","size":"100,100"}
+You get closer to RadiantRose.
+<span class="radiant">"What do you want?"</span>
+
+1. <<link [[Speak to her|RadiantSpeak1]]>> <</link>>
+2. <<link [[Invite her to your party|invite her to your party]]>>
+	<<set $lastVisitedPassage to "Town centre 1">>
+<</link>>
+3. [[Nevermind|Town centre 1]]
+
+

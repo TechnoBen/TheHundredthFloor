@@ -1,0 +1,16 @@
+:: CrimsonSpeak1 {"position":"3275,1975","size":"100,100"}
+You sit down next to him.
+"I see."
+<span class="crimson">"Man I wish I could tame a dog in this game."</span>
+"That would be nice."
+<span class="crimson">"Yeah." </span>
+
+The two of you talk about dogs.
+
+<<link [[Go back|Town centre 1]]>>
+	<<dateadd '1h'>>
+	<<set $NPCs.CrimsonSentinel.Affection += 1>>
+    <<set $CurFear -= 1>>
+<</link>>
+
+

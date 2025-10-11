@@ -1,0 +1,322 @@
+:: F1BOSSBATTLE {"position":"825,2525","size":"100,100"}
+You are looking across the hall to see the boss sitting on a throne.
+You get closer to the boss as it's eyes glow red and it stands up, grabbing a huge axe.
+
+As it stood up you see the name "Deathlord" pop up and 3 health bars just like in the beta. It started coming to you.
+<<if $raidParty == true>>\
+<span class="Blu3b3llrex">"Alright everyone. Let's get this done quickly. Healers give everyone a potion just in case someone needs it!"</span> <<set $hpPOT += 1>>
+<</if>>\
+
+WARNING! RAID PARTY DOESNT WORK AS OF NOW! PRESS FIGHT IT ALONE!
+
+You can:
+<<if $raidParty == true>>\
+<<link [[Command your people to attack|F1BOSSBATTLE 1.1]]>>
+<<set $mobs.Deathlord.CurHP -= 45>>
+<</link>>
+<<link [[Command your people to charge|F1BOSSBATTLE 1.1]]>>
+<<set $mobs.Deathlord.CurHP -= 52>>
+<</link>>
+<<link [[Command your people to dodge|F1BOSSBATTLE 1.1]]>>
+<</link>>
+<<elseif $raidParty == false>>\
+You don't have a raid party to command.
+<</if>>\
+[[Fight it alone|Combat remake]]
+
+
+:: F1BossBattle {"position":"825,2650","size":"100,100"}
+You are fighting Deathlord, The floor 1 boss.
+It has <<= $F1BossHP.toFixed(2)>> HP.
+\<<CombatText>>\<</CombatText>>\
+
+Your stats:
+HP: $CurHP/$MaxHP
+STM: $curStamina/$maxStamina
+
+HP pots: $hpPOT
+STM potions: $stmPOT
+<<if $floorBoss
+<<if $raidParty == true>>\
+Raid party hp: $raidHP/1000
+<</if>>\
+<<if $radiantRoseParty == true>>\
+RadiantRose's stats:
+HP: $CurHPRadiantRose/$MaxHPRadiantRose
+STM: $curStaminaRadiantRose/$maxStaminaRadiantRose
+<</if>>\
+<<if $shadowScytheParty == true>>\
+ShadowScythe's stats:
+HP: $CurHPShadowScythe/$MaxHPShadowScythe
+STM: $curStaminaShadowScythe/$maxStaminaShadowScythe
+<</if>>\
+<<if $crimsonSentinelParty == true>>\
+CrimsonSentinel's stats:
+HP: $CurHPCrimsonSentinel/$MaxHPCrimsonSentinel
+STM: $curStaminaCrimsonSentinel/$maxStaminaCrimsonSentinel
+<</if>>\
+
+<<set _attacks = ["Do nothing","Stab","Charge","Drink a HP potion", "Drink a STM potion"] >>''Select your attack:'' <<listbox "$attack">>
+	<<optionsfrom _attacks>>
+
+    <</listbox>>
+
+<<if $radiantRoseParty == true>>\
+<<set _attacksRadiantRose = ["Do nothing","Stab","Charge","Give a HP potion to RadiantRose","Give a STM potion to RadiantRose"] >>''Select RadiantRose's attack:'' <<listbox "$attackRadiantRose">>
+	<<optionsfrom _attacksRadiantRose>>
+    
+<</listbox>>
+<</if>>\
+<<if $shadowScytheParty == true>>\
+<<set _attacksShadowScythe = ["Do nothing","Stab","Charge","Give a HP potion to ShadowScythe","Give a STM potion to ShadowScythe"] >>''Select ShadowScythe's attack:'' <<listbox "$attackShadowScythe">>
+	<<optionsfrom _attacksShadowScythe>>
+    
+<</listbox>>
+<</if>>\
+<<if $crimsonSentinelParty == true>>\
+<<set _attacksCrimsonSentinel = ["Do nothing","Stab","Charge","Give a HP potion to CrimsonSentinel","Give a STM potion to CrimsonSentinel"] >>''Select CrimsonSentinel's attack:'' <<listbox "$attackCrimsonSentinel">>
+	<<optionsfrom _attacksCrimsonSentinel>>
+    
+<</listbox>>
+<</if>>\
+
+<<link "Continue...">>
+
+<<if $raidParty == true>>
+<<set $F1BossHP -= 10>> 
+<<set $raidHP -= 133>>
+<</if>>
+
+<<if $shadowScytheParty == true>>
+<<if $DEFShadowScythe < 133>>
+<<set $CurHPShadowScythe -= 133 - $DEFShadowScythe>>
+<<elseif $DEFShadowScythe >= 133>>
+<<set $CurHPShadowScythe -= 1>>
+<</if>>
+<</if>>
+<<if $crimsonSentinelParty == true>>
+<<if $DEFCrimsonSentinel < 133>>
+<<set $CurHPCrimsonSentinel -= 133 - $DEFCrimsonSentinel>>
+<<elseif $DEFCrimsonSentinel >= 133>>
+<<set $CurHPCrimsonSentinel -= 1>>
+<</if>>
+<</if>>
+<<if $radiantRoseParty == true>>
+<<if $DEFRadiantRose < 133>>
+<<set $CurHPRadiantRose -= 133 - $DEFRadiantRose>>
+<<elseif $DEFRadiantRose >= 133>>
+<<set $CurHPRadiantRose -= 1>>
+<</if>>
+<</if>>
+<<if $armorDEF + $DEF < 133>>
+<<set $CurHP -= 133 - $DEF - $armorDEF>>
+<<elseif $armorDEF + $DEF >= 133>>
+<<set $CurHP -= 1>>
+<</if>>
+<<dateadd '1m'>>
+
+<<if $attack is "Do nothing">>
+<<if $curStamina <= $maxStamina >>
+<<set $curStamina += 5 + $INT>>
+<<elseif $curStamina >= $maxStamina>>
+<<set $curStamina -= 5 + $INT>>
+<</if>>
+<</if>>
+<<if $attack is "Stab">>
+<<if $curStamina >= 9>>  
+ <<set $F1BossHP -= ($STR + $weaponDMG)>> 
+<<set $curStamina -= 10>> <<set $curFatigue += 3>>
+<<elseif $curStamina<=9>>
+<<set $curStamina += 5>>
+<</if>>
+<</if>>
+<<if $attack is "Charge">>
+<<if $curStamina >= 16>>  <<set $curFatigue += 7>>
+<<set $F1BossHP -= ($weaponDMG + $DEX/2 + $STR)>>  
+<<set $curStamina -= 16>>
+<<elseif $curStamina<=16>>
+<<set $curStamina += 5>>
+<</if>>
+<</if>>
+<<if $attack is "Drink a HP potion">>
+<<if $hpPOT >= 1>>  
+<<set $CurHP += 183>>
+<<set $hpPOT -= 1>>
+<</if>>
+<</if>>
+<<if $attack is "Drink a STM potion">>
+<<if $stmPOT >= 1>>  
+<<set $curStamina += 50>>
+<<set $curFatigue -= 100>>
+<<set $stmPOT -= 1>>
+<</if>>
+<</if>>
+<<if $radiantRoseParty == true>>
+<<if $attackRadiantRose is "Do nothing">>
+<<if $curStaminaRadiantRose <= $maxStaminaRadiantRose >>
+<<set $curStaminaRadiantRose += 5>>
+<<elseif $curStaminaRadiantRose >= $maxStaminaRadiantRose>>
+<<set $curStaminaRadiantRose -= 5>>
+<</if>>
+<</if>>
+<<if $attackRadiantRose is "Stab">>
+<<if $curStaminaRadiantRose >= 9>>  
+ <<set $F1BossHP -= ($STRRadiantRose + $weaponDMGRadiantRose)>> 
+<<set $curStaminaRadiantRose -= 10>>
+<<elseif $curStaminaRadiantRose<=9>>
+<<set $curStaminaRadiantRose += 5>>
+<</if>>
+<</if>>
+<<if $attackRadiantRose is "Charge">>
+<<if $curStaminaRadiantRose >= 16>>  
+<<set $F1BossHP -= ($weaponDMGRadiantRose + $DEXRadiantRose/2 + $STRRadiantRose)>> 
+<<set $curStaminaRadiantRose -= 16>>
+<<elseif $curStaminaRadiantRose<=16>>
+<<set $curStaminaRadiantRose += 5>>
+<</if>>
+<</if>>
+<<if $attackRadiantRose is "Give a HP potion to RadiantRose">>
+<<if $hpPOT >= 1>>  
+<<set $CurHPRadiantRose += 183>>
+<<set $hpPOT -= 1>>
+<</if>>
+<</if>>
+<<if $attackRadiantRose is "Give a STM potion to RadiantRose">>
+<<if $stmPOT >= 1>>  
+<<set $curStaminaRadiantRose += 50>>
+<<set $stmPOT -= 1>>
+<</if>>
+<</if>>
+<</if>>
+
+<<if $shadowScytheParty == true>>
+<<if $attackShadowScythe is "Do nothing">>
+<<if $curStaminaShadowScythe <= $maxStaminaShadowScythe >>
+<<set $curStaminaShadowScythe += 5>>
+<<elseif $curStaminaShadowScythe >= $maxStaminaShadowScythe>>
+<<set $curStaminaShadowScythe -= 5>>
+<</if>>
+<</if>>
+<<if $attackShadowScythe is "Stab">>
+<<if $curStaminaShadowScythe >= 9>>  
+ <<set $F1BossHP -= ($STRShadowScythe + $weaponDMGShadowScythe)>> 
+<<set $curStaminaShadowScythe -= 10>>
+<<elseif $curStaminaShadowScythe<=9>>
+<<set $curStaminaShadowScythe += 5>>
+<</if>>
+<</if>>
+<<if $attackShadowScythe is "Charge">>
+<<if $curStaminaShadowScythe >= 16>>  
+<<set $F1BossHP -= ($weaponDMGShadowScythe + $DEXShadowScythe/2 + $STRShadowScythe)>> 
+<<set $curStaminaShadowScythe -= 16>>
+<<elseif $curStaminaShadowScythe<=16>>
+<<set $curStaminaShadowScythe += 5>>
+<</if>>
+<</if>>
+<<if $attackShadowScythe is "Give a HP potion to ShadowScythe">>
+<<if $hpPOT >= 1>>  
+<<set $CurHPShadowScythe += 183>>
+<<set $hpPOT -= 1>>
+<</if>>
+<</if>>
+<<if $attackShadowScythe is "Give a STM potion to ShadowScythe">>
+<<if $stmPOT >= 1>>  
+<<set $curStaminaShadowScythe += 50>>
+<<set $stmPOT -= 1>>
+<</if>>
+<</if>>
+<</if>>
+
+<<if $crimsonSentinelParty == true>>
+<<if $attackCrimsonSentinel is "Do nothing">>
+<<if $curStaminaCrimsonSentinel <= $maxStaminaCrimsonSentinel >>
+<<set $curStaminaCrimsonSentinel += 5>>
+<<elseif $curStaminaCrimsonSentinel >= $maxStaminaCrimsonSentinel>>
+<<set $curStaminaCrimsonSentinel -= 5>>
+<</if>>
+<</if>>
+<<if $attackCrimsonSentinel is "Stab">>
+<<if $curStaminaCrimsonSentinel >= 9>>  
+ <<set $F1BossHP -= ($STRCrimsonSentinel + $weaponDMGCrimsonSentinel)>> 
+<<set $curStaminaCrimsonSentinel -= 10>>
+<<elseif $curStaminaCrimsonSentinel<=9>>
+<<set $curStaminaCrimsonSentinel += 5>>
+<</if>>
+<</if>>
+<<if $attackCrimsonSentinel is "Charge">>
+<<if $curStaminaCrimsonSentinel >= 16>>  
+<<set $F1BossHP -= ($weaponDMGCrimsonSentinel + $DEXCrimsonSentinel/2 + $STRCrimsonSentinel)>> 
+<<set $curStaminaCrimsonSentinel -= 16>>
+<<elseif $curStaminaCrimsonSentinel <= 16>>
+<<set $curStaminaCrimsonSentinel += 5>>
+<</if>>
+<</if>>
+<<if $attackCrimsonSentinel is "Give a HP potion to CrimsonSentinel">>
+<<if $hpPOT >= 1>>  
+<<set $CurHPCrimsonSentinel += 183>>
+<<set $hpPOT -= 1>>
+<</if>>
+<</if>>
+<<if $attackCrimsonSentinel is "Give a STM potion to CrimsonSentinel">>
+<<if $stmPOT >= 1>>  
+<<set $curStaminaCrimsonSentinel += 50>>
+<<set $stmPOT -= 1>>
+<</if>>
+<</if>>
+<</if>>
+
+<<if $attack is "Stab">>
+<<if $weaponType is "Heavy Sword">>
+ <<set $curStamina -= 15>>
+  <<set $curHunger -= 4>>
+<</if>> <</if>>
+<<if $attack is "Charge">>
+<<if $weaponType is "Heavy Sword">>
+ <<set $curStamina -= 15>>
+   <<set $curHunger -= 5>>
+<</if>> <</if>>
+<<if $attack is "Stab">>
+ <<if $weaponType is "Rapier">>
+ <<set $curStamina += 4>>
+   <<set $curHunger += 1>>
+<</if>> <</if>>
+<<if $attack is "Charge">>
+ <<if $weaponType is "Rapier">>
+ <<set $curStamina += 4>>
+   <<set $curHunger += 1>>
+<</if>> <</if>>
+
+<<set $curHunger -= 1>>
+
+<<set $attack to "Do nothing">>
+<<set $attackRadiantRose to "Do nothing">>
+
+<<if $F1BossHP lte 0>>
+<<if $blueRaid == true>>
+<<goto "Blue f1boss">>
+<<else>>
+<<goto "win F1Boss">>
+<</if>>
+<<else>>
+<<set _currentp to passage()>>
+<<goto _currentp>>
+<</if>>
+
+<<if $raidHP lte 0>>
+<<set $raidParty to false>>
+<</if>>
+
+<<if $CurHP lte 0>> <<goto "lose">>
+<</if>>
+
+<<if $CurHPRadiantRose lte 0>> <<set $radiantRoseParty to false>> <<set $NPCs.RadiantRose.Affection to 0>>
+<</if>>
+<<if $CurHPShadowScythe lte 0>> <<set $shadowScytheParty to false>> <<set $NPCs.ShadowScythe.Affection to 0>>
+<</if>>
+<<if $CurHPCrimsonSentinel lte 0>> <<set $crimsonSentinelParty to false>> <<set $NPCs.CrimsonSentinel.Affection to 0>>
+<</if>>
+
+<</link>>
+You can't run away from this fight... Not like you have to anyways.
+
+

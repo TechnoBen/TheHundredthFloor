@@ -1,0 +1,26 @@
+:: Asteria house outside {"position":"3200,1400","size":"100,100"}
+You're standing on Asterias porch.
+There are a few flower pots with cornflowers, although they are quite... dead.
+Next to the stairs to the porch is a wooden rocking chair. Theres a small amount of snow on top of it, probably due to snowstorms but it looks like it hasn't been used for a really long time.
+
+You can:
+1. <<link [[Knock on the door|Asterias house corridor1]]>>
+	<<set $AsteriaResponse to 1>>
+<</link>>
+2. <<link [[Just enter|Asterias house corridor1]]>>
+	<<if !$asteriaDoorAnnoy>>
+		<<set $AsteriaResponse to kitsuneRNG(2, 11)>>
+     <</if>>
+<</link>>
+3. <<link [[Sit down on her rocking chair|Asteria house outside]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue -=10>>
+	<<set $curStamina += 5>>
+<</link>>
+4. <<link [[Go back|Path 10.2]]>>
+	<<dateadd '5m'>>
+	<<set $curFatigue += 5>>
+<</link>>
+
+
+

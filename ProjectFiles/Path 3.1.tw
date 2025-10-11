@@ -1,0 +1,49 @@
+:: Path 3.1 [Path] {"position":"1725,2525","size":"100,100"}
+You started going down the forest.
+At some point the path ends.
+There are a lot of trees and its oddly quiet.
+<<if setup.datesystems.default.getDate().h gte 17 and setup.datesystems.default.getDate().h lte 17 && $asteriaAffection >= 10>>\
+You can see Asteria picking up flowers and mushrooms.
+<</if>>\
+
+Go deeper into the forest:
+<<link [[Go in running|Path 3.2]]>>
+    <<dateadd '5m'>>
+    <<set $curFatigue += 55>>
+    <<set $location to "forest2">>
+    <<set $lastVisitedPassage to "Path 3.2">>
+<<ForestRun>>
+<</link>>
+<<link [[Go in carefully|Path 3.2]]>>
+    <<dateadd '30m'>>
+    <<set $curFatigue += 15>> 
+    <<set $location to "forest2">>
+    <<set $lastVisitedPassage to "Path 3.2">>
+    <<ForestWalk>>
+<</link>>
+
+Go back:
+<<link [[Go backwards|Path 4]]>> <<dateadd '30m'>> <<set $location to "plains">> <<set $curFatigue += 25>> <<set $location to "plains">>
+        <<set $lastVisitedPassage to "Path 4">>
+        <<Plains1>>
+<</link>>
+
+You can:
+<<link [[Waste time|Path 3.1]]>>
+<<dateadd '10m'>>
+<<set $curStamina += 5 + $INT>>
+<</link>>
+<<if $axe1 == true>>\
+<<link [[Chop down wood|Path 3.1]]>>
+<<set $planks += 1>> <<set $curFatigue += 20>> <<dateadd '15m'>>
+<</link>>
+<<elseif $axe1 == false>>\
+You need a iron axe to chop down wood!
+<</if>>\
+<<if setup.datesystems.default.getDate().h gte 17 and setup.datesystems.default.getDate().h lte 17 && $asteriaAffection >= 10>>\
+<<link [[Speak to Asteria|Asteria forest]]>>
+	<<dateadd '2m'>>
+<</link>>
+<</if>>\
+
+

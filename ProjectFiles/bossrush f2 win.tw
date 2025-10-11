@@ -1,0 +1,43 @@
+:: bossrush f2 win [autosave] {"position":"800,1100","size":"100,100"}
+The boss health bar got to red, you go in for your last strike and succesfully hit it.
+It turns into ashes and a screen pops up
+<<set $floorBossBattle to false>> <<set $blueRaid to false>> <<set $raidParty to false>>
+<center><img src = "Textures/Congratulations!!!.png" width="100%"/></center>
+"You have beaten the floor 2 boss
+Everyone who participated in this battle will get a choice to get 1 item!
+Choose wisely.
+You also got 2280 XP and 3138 Coins."
+
+You can chose:
+<<link [[Light armor|Boss rush boss room]]>>
+  <<set $f2BossKilled to true>>
+  <<MobRewards>>
+  <<set $StoneCP to true>>
+<</link>>
+<<link [[Heavy armor|Boss rush boss room]]>>
+  <<set $f2BossKilled to true>>
+  <<MobRewards>>
+  <<set $hStoneCP to true>>
+<</link>>
+Or you can get:
+<<link [[A heavy sword|Boss rush boss room]]>>
+  <<set $f2BossKilled to true>>
+  <<MobRewards>>
+  <<set $heavyswordStone to true>> 
+<</link>>
+<<link [[Fire stopper scroll|Boss rush boss room]]>>
+  <<set $fireStopperScroll += 1>>
+  <<MobRewards>>
+  <<set $heavyswordStone to true>> 
+<</link>>
+
+<<set $percentFboss to 0>>
+<<set $DEFCrimsonSentinel += 3>>
+<<set $weaponDMGCrimsonSentinel += 2>>
+<<set $weaponDMGRadiantRose += 1>>
+<<set $weaponDMGShadowScythe += 3>>
+<<set $raidParty to false>>
+<<set $raidMaxHP += 100>>
+<<set $bossRush += 1>>
+
+

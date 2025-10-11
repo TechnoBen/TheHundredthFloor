@@ -1,0 +1,44 @@
+:: Molly 4am event {"position":"3325,625","size":"100,100"}
+You decided to sit on a bench that is near the street.
+Because of how quiet the place is you can hear them well.
+
+<span class="Molly">"So you have no information about a player like that? Tall white man? Usually wearing white and red clothes?"</span> you hear. The voice saying that sounds like a woman.
+"You do realize that there are a lot of tall boys in white and red right? I could even name a few right now. But yeah I haven't seen the person you're looking especially with the small amount of information you're giving. Why are you looking for someone like that anyways?" responds a deep voice.
+<span class="Molly">"I'm looking to kill said person. We knew eachother IRL and I suspect that they have came in this game since he is are a massive VRMMO nerd."</span> the woman explains.
+"Why would you kill someone you know IRL?" questions the man.
+<span class="Molly">"None of your business."</span> says the woman. <span class="Molly">"Well ill be heading my way."</span>
+You stand up from the bench and as you attempt to walk away, a chilling sensation crawls up your spine. Suddenly, you feel a presence behind you, a sword pointed at your back. Does she know you've been eavesdropping...?
+<span class="Molly">"Who are you and why were you listening to my conversation?"</span> she asks, calmly.
+
+<div id="opt5">\
+<<link "Reveal yourself">><<replace "#opt5">>
+"My name is $gamename and I was just curious about what you were talking about... Sorry for listening..." you awkwardly respond. "Can you lower your weapon?"
+<span class="Molly">"You're telling me that you were just curious...? That sounds stupid."</span>
+"But it's true." you respond. She lowers her sword.
+<span class="Molly">"That has to be the dumbest reason to eavesdropping... How much did you even hear?"</span> she asks.
+"Well... I heard that you are looking for a man that you want to kill for whatever reason..." you say back.
+<span class="Molly">"Aha... So you're gonna tell the PK hunters about it?"</span>
+"No, but I have some information on a man like that. The library also has a book that let's you see every player. Though I want to know your reason for looking person. I doubt you would want to kill someone just because..." you turn to face the woman. She has green eyes, orange hair, and is dressed in blue and green with a sword.
+<span class="Molly">"Oh is that so? And what if you're lying?"</span> she asks.
+"Why would I be? I saw him at the first floor walking around."
+<span class="Molly">"I see. If thats the case then I will hear you out at the library. I will also explain what happened."</span> she says as she sheaths her sword, walking away.
+<<link [[Continue.|Town street 2]]>>
+	<<dateadd "15m">>
+	<<set $event5part1 to true>>
+<</link>>
+<</replace>><</link>>
+<<link "Reach for your weapon">><<replace "#opt5">>
+You jump to create distance between the girl and you, reaching for your sword. As soon as you do that she goes in for a slash on your arm succesfully landing a hit. You drop your sword on the ground. <<set $CurHP -= 100>>
+"Well this is awkward..." you say. You look at your enemy to see a woman in green eyes, orange hair. She is dressed in blue and green.
+<span class="Molly">"Not gonna answer are you?"</span> she says.
+You grab your sword and run away.
+
+<<link [[Continue.|Town street 2]]>>
+	<<dateadd "15m">>
+	<<set $event5fail to true>>
+<</link>>
+<</replace>><</link>>
+</div>
+
+
+

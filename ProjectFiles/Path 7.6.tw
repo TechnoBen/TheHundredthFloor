@@ -1,0 +1,18 @@
+:: Path 7.6 {"position":"4275,1150","size":"100,100"}
+You went down the path. Theres snow that reaches your kneecaps.
+You can see an entarance to a cave.
+
+1. <<link [[Go in|Cave 1.1]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<<set $location to "cave1">>
+    <<set $lastVisitedPassage to "Cave 1.1">>
+<<SnowPlains2>>
+<</link>>
+2. <<link [[Go back|Path 7.4]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<<SnowPlains2>>
+<</link>>
+
+

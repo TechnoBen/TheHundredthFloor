@@ -1,0 +1,121 @@
+:: Buy weapons 2 [no-fainting-or-hunger no-party-time-loss] {"position":"4650,1275","size":"100,100"}
+<center>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/weapons/copperswordwithcrystalfragments.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Copper sword with crystal fragments:
+            Slash DMG + 5
+            Pierce DMG + 1.75
+        </div>\
+        <div class="border1">\
+            <<link "Buy the sword | 1100 col">>
+                <<if $Coins >= 1100>> 
+                    <<set $sword2 to true>>
+                    <<notify>> You bought a copper sword with crystal fragments! <</notify>>
+                    <<set $Coins -= 1100>>
+                    <<goto "Buy weapons 2">>
+                <<elseif $Coins <= 1099>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/weapons/coppershortswordwshieldwithcrystalfragments.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Copper short sword with a shield with crystal fragments:
+            Slash DMG + 3
+            Blunt DMG + 2.25
+            Slash DEF + 2
+            Pierce DEF + 1.24
+            Blunt DEF + 2
+        </div>\
+        <div class="border1">\
+            <<link "Buy the sword and shield | 1120 col">>
+                <<if $Coins >= 1120>> 
+                    <<set $swordnshield2 to true>>
+                    <<notify>> You bought a copper sword and shield with copper fragments! <</notify>>
+                    <<set $Coins -= 1120>>
+                    <<goto "Buy weapons 2">>
+                <<elseif $Coins <= 1119>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+<div class="cols">\
+    <div class="col1">\
+        <div class="border1">\
+	        <div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);" />\
+                <img class="sword" src = "Textures/weapons/copperrapierwithcrystalfragments.png" style="transform: translate(-119px)" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Copper rapier with crystal fragments:
+            Pierce DMG + 3
+        </div>\
+        <div class="border1">\
+            <<link "Buy the rapier | 1055 col">>
+                <<if $Coins >= 1055>> 
+                    <<set $rapier2 to true>>
+                    <<set $Coins -= 1055>>
+                    <<notify>> You bought a copper rapier with crystal fragments! <</notify>>
+                    <<goto "Buy weapons 2">>
+                <<elseif $Coins <= 1054>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+             <</link>>
+        </div>\
+    </div>\
+    <div class="col2">\
+        <div class="border1">\
+        	<div class="paperdoll">\
+    		    <img src = "Textures/Body/Mannequin.png" style="transform: translate(-20px);"/>\
+                <img class="sword" src = "Textures/weapons/copperheavyswordwithcrystalfragments.png" style="transform: translate(-119px);" />\
+    	    </div>\
+        </div>\
+        <div class="border2">\
+            Copper heavy sword with crystal fragments:
+            Slash DMG + 10
+            Blunt DMG + 6.72
+        </div>\
+        <div class="border1">\
+            <<link "Buy the heavy sword | 1191 col">>
+                <<if $Coins >= 1191>> 
+                    <<set $heavysword1 to true>>
+                    <<set $Coins -= 1191>>
+                    <<notify>> You bought a copper heavy sword with crystal fragments! <</notify>>
+                    <<goto "Buy weapons 2">>
+                <<elseif $Coins <= 1191>>
+                    <<script>>
+                        UI.alert("You dont have enough col!");
+                    <</script>>
+                <</if>>
+            <</link>>
+        </div>\
+    </div>\
+</div>\
+
+[[Go back|Weaponsmith 3]] 
+</center>
+
+

@@ -1,0 +1,34 @@
+:: 0.1.13 [NoSave] {"position":"325,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+- Added variables for STR buff, DEX buff/debuff for future use.
+- Added 10 ring slots (7 out of them can be seen on the player model) (Modders please forgive me for I have sinned by creating this abomination. (update on that. Henka from the twine discord server shortened the equip code by 100 times... Then he helped me with the unequip code.))
+- The floor 1 jewelry now sells 3 rings
+- Added a ring to the achievements menu
+- Added a generic object for dealt damage by the player. Old players please check the debug menu if youre loading a save file. I could not figure out how to add it on the JS part where it would check if its undefined. (Thanks to Henka for explaining objects to me)
+- You can now see how much damage you dealt to your enemy
+- You can now see the total amount of damage youve dealt since the start of your game
+- Raised the skeletons DEX from 35 > 55
+- You can now hover over the bar texts to see your stats in numbers
+- Added overkill. A new effect where if the enemy deals 1 damage to you they feel scared making you gain 100% str + dex boost
+- Added the option to invite players over to your forest hut (as of now u can only invite. you cant do anything else)
+- Added 2 Asteria events (+ a wearable item you get from said event)
+- Continued expanding F3s map... Nothing in there yet though.
+
+- Fixed a bug where charging with no weapons while having a STR debuff would calculate the debuff without having the halfed STR
+- Fixed the christmas hat showing over hair (I was lazy sorry)
+- Fixed the christmas hat missing 2 pixels
+
+NEW ITEMS:
+Diamond ring (obtainable)
+Golden ring (obtainable)
+Silver ring (obtainable)
+Tearful tomb ring (unobtainable as of now)
+Ring of achieving (obtainable via achievements shop)
+Ring of the undead (obtainable)
+Ring of the living (unobtainable)
+Asterias flower crown
+
+[[Back|Changelogs and game information]]
+
+

@@ -1,0 +1,37 @@
+:: Path 10.3 {"position":"4025,1525","size":"100,100"}
+You are standing outside a town. You can see a big sign saying <span class= Evese>"Welcome to the Whitewall town!"</span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> .... It says something about being welcome? <<elseif $ReadingSkill >= 3>> Welcome to the Whitewall town!. <</if>> <<set $ReadingXP += 5>><</linkreplace>>
+
+Directions:
+1. <<link [[Go back|Path 10.2]]>>
+	<<dateadd '15m'>>
+	<<set $curFatigue += 15>>
+    <<set $lastVisitedPassage to "Path 10.2">>
+<<SnowPlains1>>
+<</link>>
+
+Locations:
+<<link [[Go inside the town|3rd town entarance]]>>
+<<dateadd '2m'>>
+<<set $location to "town">>
+<</link>>
+<<nobr>><<if $pathDone1 == true>><<link [[Path to the Frozen lake|Frozen lake]]>>
+<<dateadd '34m'>> <<set $curFatigue += 23>>
+<</link>> <<elseif $pathDone1 is false>>\ You haven't made the path yet. <</if>>
+<<if $shovel1 == true>>
+<<if $pathDone1 == false>>
+<<link [[Make a path|Path 10.3]]>>
+<<set $pathProgress1 += 1>>  <<dateadd '21m'>> <<set $curFatigue += 58>>
+<</link>>
+<</if>>
+<</if>>
+<<if $shovel1 is false>>
+You need a iron shovel to make a path!
+<</if>>
+<<if $pathDone1 == false>>
+<<if $pathProgress1 <= 35>>
+ | $pathProgress1/35
+ <</if>>
+ <</if>>
+<</nobr>>
+
+

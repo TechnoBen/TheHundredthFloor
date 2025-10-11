@@ -1,0 +1,50 @@
+:: 0.0.3 [NoSave] {"position":"200,275","size":"100,100"}
+ [[Back|Changelogs and game information]]
+
+- Added nonbinary as a option
+- Reorganized folder for the textures... Now its still bad
+- Remade the forest
+- Added the first ever dungeon
+- Added more backgrouns
+- Stamina potions remove 100 fatigue
+- Attacking adds less fatigue than it used to
+- Added the floor dungeon
+- Added a skeleton
+- Added a skeleton warrior
+- Added the first floor boss
+- Made the stats screen a bit more clean
+- Added a game banner... Its not great but its something 
+- Started working on Oakheart
+- Made a new event in there
+- Made a new character
+- Lowered down the coins given from rabbits and plant monsters
+- Fatigue gain while doing anything has been lowerd to 2. It was at 5
+
+- Fixed buying clothes from the tailor would sent you to the armor smith...
+- Fixed buttons not working when trying to buy clothes
+- Fixed Crimson and Shadow staying in your party after you disband it.
+- Fixed some places not having backgrounds (like when going from the huts path back to the plains)
+- Fixed ShadowScythes first convo not working
+- Fixed ShadowScythe and CrimsonSentinel not getting healed in the hospital
+- Fixed your XP getting set to 0 even though you had more than the required XP to level up
+- Fixed the path to your house leading to inside the house and not outside...
+
+NEW ITEMS:
+ Red cape
+ Copper short sword with a shield
+ Crystal fragments
+ Floor one key
+ Hardened leather chestplate
+ Hardened leather pants
+ Hardened leather boots
+ The shadow hunters coat
+ Shadow hunters heavy chestplate
+ Shadow hunters light chetsplate
+ Bone heavy sword
+ Bone sword
+ Bone rapier
+ Bone short sword and shield
+ 
+ [[Back|Changelogs and game information]]
+
+

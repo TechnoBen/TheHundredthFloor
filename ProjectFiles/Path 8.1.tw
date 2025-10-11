@@ -1,0 +1,14 @@
+:: Path 8.1 [Path] {"position":"3775,1275","size":"100,100"}
+You walk down to path. The snow has gotten to your chest. Forward you can see a cave and at the entarance theres a sign
+<span class= Evese>"Welcome to our small establishment!" </span> <<linkreplace "Translate">> <<if $ReadingSkill == 1>> You don't understand what the text says... At all. <<elseif $ReadingSkill == 2>> .... It says something about a small establishment? <<elseif $ReadingSkill >= 3>> Welcome to our small establishment! <</if>> <<set $ReadingXP += 55>><</linkreplace>>
+
+1. <<link [[Enter the small establishment|Path 8.2]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<</link>>
+2. <<link [[Go back|Path 8]]>>
+<<dateadd '15m'>>
+<<set $curFatigue += 15>>
+<</link>>
+
+
