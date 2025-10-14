@@ -126,7 +126,7 @@
 
 <</widget>>
 
-<<widget "ShadowHitting">>
+<<widget "ShadowHiting">>
 
     <<set _barkChanceShadHit to random(0, 100)>>
     <<set _barkChoiceShadHit to random(1, 2)>>

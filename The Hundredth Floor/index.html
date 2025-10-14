@@ -2348,7 +2348,7 @@ window.kitsuneRNG = function (min, max) {
   const url = 'Textures/Icons/game icon.png';
       
   $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
-})();</script><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-passagedata pid="1" name="0.0.1" tags="NoSave" position="0,275" size="100,100">The &quot;where my struggles started&quot; version.
+})();</script><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-passagedata pid="1" name="0.0.1" tags="NoSave" position="0,275" size="100,100">The &quot;where my struggles started&quot; version.
 
 Yeah this is the first ever version of the game. I called it the &quot;where my struggles started&quot; because I got stuck on the Character creator screen FOR 5 HOURS. In my defence idk what im doing! Also the logs are gonna look messy af so prepare yourself lol.
 
@@ -4217,6 +4217,7 @@ Should you walk in anyways?
     &lt;&lt;set _barkChanceCrit1 to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceCrit2 to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceCrit3 to random(0, 100)&gt;&gt;
+    &lt;&lt;set _barkChanceCrit4 to random(0, 100)&gt;&gt;
 
     &lt;&lt;if _npc.name === &quot;Zegrath&quot; &amp;&amp; _barkChanceCrit1 &gt;= 25&gt;&gt;
         &lt;&lt;set _barkChoiceCrit3 to random(1, 3)&gt;&gt;
@@ -4226,6 +4227,15 @@ Should you walk in anyways?
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;zegrath&quot;&gt;&quot;You are gonna reGRET THIS YOU DUMB, INSOLENT, FUCKING WORM!&quot;&lt;/span&gt;&#39;)&gt;&gt;
         &lt;&lt;elseif _barkChoiceCrit3 === 3&gt;&gt;
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;zegrath&quot;&gt;&quot;YOU ARE DEAD MEAT, YOU FILTHY MAGGOT!&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+    &lt;&lt;if _npc.name === &quot;CrimsonSentinel&quot; &amp;&amp; _barkChanceCrit4 &gt;= 25&gt;&gt;
+        &lt;&lt;set _barkChoiceCrit4 to random(1, 2)&gt;&gt;
+        &lt;&lt;if _barkChoiceCrit4 === 1&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;F-fuck... Im fine!&quot;&lt;/span&gt; CrimsonSentinel says that, yet he looks quite hurt.&#39;)&gt;&gt;
+        &lt;&lt;elseif _barkChoiceCrit4 === 2&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;Shit!&quot;&lt;/span&gt; Crimson mutters out.&#39;)&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 
@@ -4256,6 +4266,7 @@ Should you walk in anyways?
     &lt;&lt;set _barkChanceHit1 to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceHit2 to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceHit3 to random(0, 100)&gt;&gt;
+    &lt;&lt;set _barkChanceHit4 to random(0, 100)&gt;&gt;
 
     &lt;&lt;if _npc.name === &quot;Zegrath&quot; &amp;&amp; _barkChanceHit1 &gt;= 75&gt;&gt;
         &lt;&lt;set _barkChoiceHit1 to random(1, 3)&gt;&gt;
@@ -4265,6 +4276,15 @@ Should you walk in anyways?
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;zegrath&quot;&gt;&quot;You did not just-&quot;&lt;/span&gt; he stops himself mid sentence. You can see a vein on his forehead.&#39;)&gt;&gt;
         &lt;&lt;elseif _barkChoiceHit1 === 3&gt;&gt;
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;zegrath&quot;&gt;&quot;Your strenght will never surpass mine you filthy maggot!&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+    &lt;&lt;if _npc.name === &quot;CrimsonSentinel&quot; &amp;&amp; _barkChanceHit4 &gt;= 75&gt;&gt;
+        &lt;&lt;set _barkChoiceHit4 to random(1, 2)&gt;&gt;
+        &lt;&lt;if _barkChoiceHit4 === 1&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;Is everyone alright?&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;elseif _barkChoiceHit4 === 2&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;You have to try harder to hurt me!&quot;&lt;/span&gt;&#39;)&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 
@@ -4308,11 +4328,71 @@ Should you walk in anyways?
     &lt;&lt;set _barkChanceRadCrit to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChoiceRadCrit to random(1, 2)&gt;&gt;
     
-    &lt;&lt;if _barkChanceRadHit &gt;= 25&gt;&gt;
-        &lt;&lt;if _barkChoiceRadHit === 1&gt;&gt;
+    &lt;&lt;if _barkChanceRadCrit &gt;= 25&gt;&gt;
+        &lt;&lt;if _barkChoiceRadCrit === 1&gt;&gt;
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;radiant&quot;&gt;&quot;THIS is how its done!&quot;&lt;/span&gt;&#39;)&gt;&gt;
-        &lt;&lt;elseif _barkChoiceRadHit === 2&gt;&gt;
+        &lt;&lt;elseif _barkChoiceRadCrit === 2&gt;&gt;
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;radiant&quot;&gt;&quot;Hell yeah! Lets do that again!&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;ShadowHiting&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceShadHit to random(0, 100)&gt;&gt;
+    &lt;&lt;set _barkChoiceShadHit to random(1, 2)&gt;&gt;
+
+    &lt;&lt;if _barkChanceShadHit &gt;= 75&gt;&gt;
+        &lt;&lt;if _barkChoiceShadHit === 1&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;shadow&quot;&gt;&quot;Heh.&quot;&lt;/span&gt; Shadow says with a smirk on his face.&#39;)&gt;&gt;
+        &lt;&lt;elseif _barkChoiceShadHit === 2&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;shadow&quot;&gt;&quot;Will you die already?&quot;&lt;/span&gt; he says, looking bored as ever.&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;ShadowCritting&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceShadCrit to random(0, 100)&gt;&gt;
+    &lt;&lt;set _barkChoiceShadCrit to random(1, 2)&gt;&gt;
+    
+    &lt;&lt;if _barkChanceShadCrit &gt;= 25&gt;&gt;
+        &lt;&lt;if _barkChoiceShadCrit === 1&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;shadow&quot;&gt;&quot;Heheh.&quot;&lt;/span&gt; Shadow says with a huge smirk on his face.&#39;)&gt;&gt;
+        &lt;&lt;elseif _barkChoiceShadCrit === 2&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;shadow&quot;&gt;&quot;You sure you wanna continue fighting~&quot;&lt;/span&gt; he says, with a mocking smile on his face.&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;CrimsonHiting&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceCrimHit to random(0, 100)&gt;&gt;
+    &lt;&lt;set _barkChoiceCrimHit to random(1, 2)&gt;&gt;
+
+    &lt;&lt;if _barkChanceCrimHit &gt;= 75&gt;&gt;
+        &lt;&lt;if _barkChoiceCrimHit === 1&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;I have got you now!&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;elseif _barkChoiceCrimHit === 2&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;Lets see you take that!&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;CrimsonCritting&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceCrimCrit to random(0, 100)&gt;&gt;
+    &lt;&lt;set _barkChoiceCrimCrit to random(1, 2)&gt;&gt;
+    
+    &lt;&lt;if _barkChanceCrimCrit &gt;= 25&gt;&gt;
+        &lt;&lt;if _barkChoiceCrimCrit === 1&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;YEAHHH!!&quot;&lt;/span&gt; CrimsonSentinel seems to be really getting into the fight.&#39;)&gt;&gt;
+        &lt;&lt;elseif _barkChoiceCrimCrit === 2&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;crimson&quot;&gt;&quot;Feeling quite strong for a tank!&quot;&lt;/span&gt;&#39;)&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 
@@ -9308,6 +9388,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;ShadowScythe slashes at &#39; + $mobs[_i].name + &#39; with his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 25&gt;&gt;
+                &lt;&lt;ShadowHiting&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.baseDMG to (($NPCs.ShadowScythe.SlashSTR + $NPCs.ShadowScythe.weaponSlashDMG) * $NPCs.ShadowScythe.CritDMG) * $mobs[_i].SlashDEF&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG&gt;&gt;
@@ -9316,6 +9397,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! ShadowScythe slashes at &#39; + $mobs[_i].name + &#39; with his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 25&gt;&gt;
+                &lt;&lt;ShadowCritting&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;/for&gt;&gt;
@@ -9336,6 +9418,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt/1.2 * $mobs[_i].bleedDef&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;ShadowScythe charges at &#39; + $mobs[_i].name + &#39; and sweeps his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 31&gt;&gt;
+                &lt;&lt;ShadowHiting&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.baseDMG to (($NPCs.ShadowScythe.weaponSlashDMG + $NPCs.ShadowScythe.DEX/2 + $NPCs.ShadowScythe.SlashSTR) * $NPCs.ShadowScythe.CritDMG) * $mobs[_i].SlashDEF&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG&gt;&gt;
@@ -9344,6 +9427,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! ShadowScythe charges at &#39; + $mobs[_i].name + &#39; and sweeps his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 31&gt;&gt;
+                &lt;&lt;ShadowCritting&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;/for&gt;&gt;
@@ -9376,6 +9460,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CrimsonSentinel slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt;  
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 12&gt;&gt;
+                &lt;&lt;CrimsonHiting&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.baseDMG to (($NPCs.CrimsonSentinel.SlashSTR + $NPCs.CrimsonSentinel.weaponSlashDMG) * $NPCs.CrimsonSentinel.CritDMG) * $mobs[_i].SlashDEF&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
@@ -9384,6 +9469,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! CrimsonSentinel slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt; 
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 12&gt;&gt;
+                &lt;&lt;CrimsonCritting&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;/for&gt;&gt;
@@ -9402,12 +9488,14 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CrimsonSentinel bashes &#39; + $mobs[_i].name + &#39; with his shield dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt; 
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 15&gt;&gt;
+                &lt;&lt;CrimsonHiting&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.baseDMG to (($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $NPCs.CrimsonSentinel.CritDMG) * $mobs[_i].BluntDEF&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! CrimsonSentinel bashes &#39; + $mobs[_i].name + &#39; with his shield dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39; damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 15&gt;&gt;
+                &lt;&lt;CrimsonCritting&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;/for&gt;&gt;
