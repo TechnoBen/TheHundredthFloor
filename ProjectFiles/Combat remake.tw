@@ -5,7 +5,7 @@ You have encountered:
  	Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
  	<</if>>\
 <</for>>\
-<<run $combat_log.splice(0, $combat_log.length - 10)>>\
+<<run $combat_log.splice(0, $combat_log.length - 20)>>\
 <<if $combat_log.length>>\
 	<div id='combat_log'><<= $combat_log.join('<br>')>></div>\
 	<br>\
@@ -662,6 +662,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt/1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
                 <<run $combat_log.push('RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<RadiantHiting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 6>>
             <<else>>
                 <<set $NPCs.RadiantRose.baseDMG to (($NPCs.RadiantRose.PierceSTR + $NPCs.RadiantRose.weaponPierceDMG) * $NPCs.RadiantRose.CritDMG) * $mobs[_i].PierceDEF>>
@@ -670,6 +671,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef>>
                 <<run $combat_log.push('CRITICAL HIT! RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<RadiantCritting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 6>>
             <</if>>
         <</if>>
@@ -690,6 +692,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef>>
                 <<run $combat_log.push('RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<RadiantHiting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 10>>
             <<else>>
                 <<set $NPCs.RadiantRose.baseDMG to (($NPCs.RadiantRose.weaponPierceDMG + $NPCs.RadiantRose.DEX/2 + $NPCs.RadiantRose.PierceSTR) * $NPCs.RadiantRose.CritDMG) * $mobs[_i].PierceDEF>> 
@@ -698,6 +701,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
                 <<run $combat_log.push('CRITICAL HIT! RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + ' damage')>>
+                <<RadiantCritting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 10>>
             <</if>>
         <</if>>
@@ -735,8 +739,8 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $NPCs.ShadowScythe.baseDMG to (($NPCs.ShadowScythe.SlashSTR + $NPCs.ShadowScythe.weaponSlashDMG) * $NPCs.ShadowScythe.CritDMG) * $mobs[_i].SlashDEF>>
                 <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>> 
-				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5>>
-				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.5>>
+				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
                 <<run $combat_log.push('CRITICAL HIT! ShadowScythe slashes at ' + $mobs[_i].name + ' with his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + ' damage')>>
                 <<set $NPCs.ShadowScythe.CurSTM -= 25>>
             <</if>>
@@ -744,7 +748,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</for>>
         <<elseif $NPCs.ShadowScythe.CurSTM<= 5>>
             <<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
-            <<run $combat_log.push('ShadowScythe is too tired to fight so she does nothing.')>>
+            <<run $combat_log.push('ShadowScythe is too tired to fight so he does nothing.')>>
         <</if>>
     <</if>>
     <<if $attackShadowScythe is "Charge & sweep">>
@@ -772,7 +776,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</for>>
         <<elseif $NPCs.ShadowScythe.CurSTM <= 30>>
             <<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
-            <<run $combat_log.push('ShadowScythe is too tired to fight so she does nothing.')>>
+            <<run $combat_log.push('ShadowScythe is too tired to fight so he does nothing.')>>
         <</if>>
     <</if>>
 <</if>>
@@ -812,7 +816,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</for>>
         <<elseif $NPCs.CrimsonSentinel.CurSTM<= 11>>
             <<set $NPCs.CrimsonSentinel.CurSTM += 5 + $NPCs.CrimsonSentinel.INT>>
-            <<run $combat_log.push('CrimsonSentinel is too tired to fight so she does nothing.')>>
+            <<run $combat_log.push('CrimsonSentinel is too tired to fight so he does nothing.')>>
         <</if>>
     <</if>>
     <<if $attackCrimsonSentinel is "Shield bash">>
@@ -836,7 +840,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</for>>
         <<elseif $NPCs.CrimsonSentinel.CurSTM<= 14>>
             <<set $NPCs.CrimsonSentinel.CurSTM += 5 + $NPCs.CrimsonSentinel.INT>>
-            <<run $combat_log.push('CrimsonSentinel is too tired to fight so she does nothing.')>>
+            <<run $combat_log.push('CrimsonSentinel is too tired to fight so he does nothing.')>>
         <</if>>
     <</if>>
 <</if>>
@@ -904,7 +908,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</for>>
         <<elseif $NPCs.Zegrath.CurSTM<= 11>>
             <<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
-            <<run $combat_log.push('Zegrath is too tired to fight so she does nothing.')>>
+            <<run $combat_log.push('Zegrath is too tired to fight so he does nothing.')>>
         <</if>>
     <</if>>
     <<if $attackZegrath is "Slash">>
@@ -956,7 +960,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</for>>
         <<elseif $NPCs.Zegrath.CurSTM<= 14>>
             <<set $NPCs.Zegrath.CurSTM += 5 + $NPCs.Zegrath.INT>>
-            <<run $combat_log.push('Zegrath is too tired to fight so she does nothing.')>>
+            <<run $combat_log.push('Zegrath is too tired to fight so he does nothing.')>>
         <</if>>
     <</if>>
     <<if $attackZegrath is "FireSword">>

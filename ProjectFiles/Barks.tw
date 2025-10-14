@@ -1,0 +1,107 @@
+:: Barks [widget] {"position":"2875,725"}
+
+<<widget "GettingCritted">>
+
+    <<set _barkChanceCrit1 to random(0, 100)>>
+    <<set _barkChanceCrit2 to random(0, 100)>>
+    <<set _barkChanceCrit3 to random(0, 100)>>
+
+    <<if _npc.name === "Zegrath" && _barkChanceCrit1 >= 25>>
+        <<set _barkChoiceCrit3 to random(1, 3)>>
+        <<if _barkChoiceCrit3 === 1>>
+            <<run $combat_log.push('<span class="zegrath">"OH? IS THAT SO YOU MOTHER FUCKER?!?"</span>')>>
+        <<elseif _barkChoiceCrit3 === 2>>
+            <<run $combat_log.push('<span class="zegrath">"You are gonna reGRET THIS YOU DUMB, INSOLENT, FUCKING WORM!"</span>')>>
+        <<elseif _barkChoiceCrit3 === 3>>
+            <<run $combat_log.push('<span class="zegrath">"YOU ARE DEAD MEAT, YOU FILTHY MAGGOT!"</span>')>>
+        <</if>>
+    <</if>>
+
+    <<if _npc.name === "ShadowScythe" && _barkChanceCrit2 >= 25>>
+        <<set _barkChoiceCrit2 to random(1, 2)>>
+        <<if _barkChoiceCrit2 === 1>>
+            <<run $combat_log.push('<span class="shadow">"Tsk."</span>')>>
+        <<elseif _barkChoiceCrit2 === 2>>
+            <<run $combat_log.push('<span class="shadow">"Urgh-"</span> unlike his usual carefree attidute he actually looks hurt.')>>
+        <</if>>
+    <</if>>
+
+    <<if _npc.name === "RadiantRose" && _barkChanceCrit3 >= 25>>
+        <<set _barkChoiceCrit1 to random(1, 3)>>
+        <<if _barkChoiceCrit1 === 1>>
+            <<run $combat_log.push('<span class="radiant">"Ouch, ouch, ouch."</span>')>>
+        <<elseif _barkChoiceCrit1 === 2>>
+            <<run $combat_log.push('<span class="radiant">"Well fuck you too!"</span>')>>
+        <<elseif _barkChoiceCrit1 === 3>>
+            <<run $combat_log.push('<span class="radiant">"Owww..."</span> she continues sobbing.')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "GettingHit">>
+
+    <<set _barkChanceHit1 to random(0, 100)>>
+    <<set _barkChanceHit2 to random(0, 100)>>
+    <<set _barkChanceHit3 to random(0, 100)>>
+
+    <<if _npc.name === "Zegrath" && _barkChanceHit1 >= 75>>
+        <<set _barkChoiceHit1 to random(1, 3)>>
+        <<if _barkChoiceHit1 === 1>>
+            <<run $combat_log.push('<span class="zegrath">"You mother fu-"</span> he takes a deep breath, calming himself down.')>>
+        <<elseif _barkChoiceHit1 === 2>>
+            <<run $combat_log.push('<span class="zegrath">"You did not just-"</span> he stops himself mid sentence. You can see a vein on his forehead.')>>
+        <<elseif _barkChoiceHit1 === 3>>
+            <<run $combat_log.push('<span class="zegrath">"Your strenght will never surpass mine you filthy maggot!"</span>')>>
+        <</if>>
+    <</if>>
+
+    <<if _npc.name === "ShadowScythe" && _barkChanceHit2 >= 75>>
+        <<set _barkChoiceHit2 to random(1, 2)>>
+        <<if _barkChoiceHit2 === 1>>
+            <<run $combat_log.push('<span class="shadow">"..."</span> Shadow looks bored.')>>
+        <<elseif _barkChoiceHit2 === 2>>
+            <<run $combat_log.push('<span class="shadow">"Is that all you have got?"</span>')>>
+        <</if>>
+    <</if>>
+
+    <<if _npc.name === "RadiantRose" && _barkChanceHit3 >= 75>>
+        <<set _barkChoiceHit3 to random(1, 2)>>
+        <<if _barkChoiceHit3 === 1>>
+            <<run $combat_log.push('<span class="radiant">"Weakling!"</span>')>>
+        <<elseif _barkChoiceHit3 === 2>>
+            <<run $combat_log.push('<span class="radiant">"Why dont you try hitting harder?"</span>')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "RadiantHiting">>
+
+    <<set _barkChanceRadHit to random(0, 100)>>
+    <<set _barkChoiceRadHit to random(1, 2)>>
+
+    <<if _barkChanceRadHit >= 75>>
+        <<if _barkChoiceRadHit === 1>>
+            <<run $combat_log.push('<span class="radiant">"Nieheheh! Fear my power!"</span> Radiant says with a slight smile on her face.')>>
+        <<elseif _barkChoiceRadHit === 2>>
+            <<run $combat_log.push('<span class="radiant">"You want more of that?"</span>')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "RadiantCritting">>
+
+    <<set _barkChanceRadCrit to random(0, 100)>>
+    <<set _barkChoiceRadCrit to random(1, 2)>>
+    
+    <<if _barkChanceRadHit >= 25>>
+        <<if _barkChoiceRadHit === 1>>
+            <<run $combat_log.push('<span class="radiant">"THIS is how its done!"</span>')>>
+        <<elseif _barkChoiceRadHit === 2>>
+            <<run $combat_log.push('<span class="radiant">"Hell yeah! Lets do that again!"</span>')>>
+        <</if>>
+    <</if>>
+
+<</widget>>

@@ -4,4 +4,7 @@ Im ass with github so im unsure how it really works, however the project files b
 Command for compiling
 tweego -o index.html (projectfile)
 
+In my case the command is: 
+tweego -o index.html C:\Users\ASROCK\Documents\GitHub\TheHundredthFloor\ProjectFiles
+
 https://www.motoslave.net/tweego/docs/#usage-options for the other compiling options

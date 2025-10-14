@@ -1,4 +1,4 @@
-:: StoryStylesheet [stylesheet]
+:: StoryStylesheet [stylesheet] {"position":"100,0"}
 .paperdoll {
   position: relative;
   top: 100;
