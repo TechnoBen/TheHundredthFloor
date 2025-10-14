@@ -5,6 +5,7 @@
     <<set _barkChanceCrit1 to random(0, 100)>>
     <<set _barkChanceCrit2 to random(0, 100)>>
     <<set _barkChanceCrit3 to random(0, 100)>>
+    <<set _barkChanceCrit4 to random(0, 100)>>
 
     <<if _npc.name === "Zegrath" && _barkChanceCrit1 >= 25>>
         <<set _barkChoiceCrit3 to random(1, 3)>>
@@ -14,6 +15,15 @@
             <<run $combat_log.push('<span class="zegrath">"You are gonna reGRET THIS YOU DUMB, INSOLENT, FUCKING WORM!"</span>')>>
         <<elseif _barkChoiceCrit3 === 3>>
             <<run $combat_log.push('<span class="zegrath">"YOU ARE DEAD MEAT, YOU FILTHY MAGGOT!"</span>')>>
+        <</if>>
+    <</if>>
+
+    <<if _npc.name === "CrimsonSentinel" && _barkChanceCrit4 >= 25>>
+        <<set _barkChoiceCrit4 to random(1, 2)>>
+        <<if _barkChoiceCrit4 === 1>>
+            <<run $combat_log.push('<span class="crimson">"F-fuck... Im fine!"</span> CrimsonSentinel says that, yet he looks quite hurt.')>>
+        <<elseif _barkChoiceCrit4 === 2>>
+            <<run $combat_log.push('<span class="crimson">"Shit!"</span> Crimson mutters out.')>>
         <</if>>
     <</if>>
 
@@ -44,6 +54,7 @@
     <<set _barkChanceHit1 to random(0, 100)>>
     <<set _barkChanceHit2 to random(0, 100)>>
     <<set _barkChanceHit3 to random(0, 100)>>
+    <<set _barkChanceHit4 to random(0, 100)>>
 
     <<if _npc.name === "Zegrath" && _barkChanceHit1 >= 75>>
         <<set _barkChoiceHit1 to random(1, 3)>>
@@ -53,6 +64,15 @@
             <<run $combat_log.push('<span class="zegrath">"You did not just-"</span> he stops himself mid sentence. You can see a vein on his forehead.')>>
         <<elseif _barkChoiceHit1 === 3>>
             <<run $combat_log.push('<span class="zegrath">"Your strenght will never surpass mine you filthy maggot!"</span>')>>
+        <</if>>
+    <</if>>
+
+    <<if _npc.name === "CrimsonSentinel" && _barkChanceHit4 >= 75>>
+        <<set _barkChoiceHit4 to random(1, 2)>>
+        <<if _barkChoiceHit4 === 1>>
+            <<run $combat_log.push('<span class="crimson">"Is everyone alright?"</span>')>>
+        <<elseif _barkChoiceHit4 === 2>>
+            <<run $combat_log.push('<span class="crimson">"You have to try harder to hurt me!"</span>')>>
         <</if>>
     <</if>>
 
@@ -96,11 +116,71 @@
     <<set _barkChanceRadCrit to random(0, 100)>>
     <<set _barkChoiceRadCrit to random(1, 2)>>
     
-    <<if _barkChanceRadHit >= 25>>
-        <<if _barkChoiceRadHit === 1>>
+    <<if _barkChanceRadCrit >= 25>>
+        <<if _barkChoiceRadCrit === 1>>
             <<run $combat_log.push('<span class="radiant">"THIS is how its done!"</span>')>>
-        <<elseif _barkChoiceRadHit === 2>>
+        <<elseif _barkChoiceRadCrit === 2>>
             <<run $combat_log.push('<span class="radiant">"Hell yeah! Lets do that again!"</span>')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "ShadowHitting">>
+
+    <<set _barkChanceShadHit to random(0, 100)>>
+    <<set _barkChoiceShadHit to random(1, 2)>>
+
+    <<if _barkChanceShadHit >= 75>>
+        <<if _barkChoiceShadHit === 1>>
+            <<run $combat_log.push('<span class="shadow">"Heh."</span> Shadow says with a smirk on his face.')>>
+        <<elseif _barkChoiceShadHit === 2>>
+            <<run $combat_log.push('<span class="shadow">"Will you die already?"</span> he says, looking bored as ever.')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "ShadowCritting">>
+
+    <<set _barkChanceShadCrit to random(0, 100)>>
+    <<set _barkChoiceShadCrit to random(1, 2)>>
+    
+    <<if _barkChanceShadCrit >= 25>>
+        <<if _barkChoiceShadCrit === 1>>
+            <<run $combat_log.push('<span class="shadow">"Heheh."</span> Shadow says with a huge smirk on his face.')>>
+        <<elseif _barkChoiceShadCrit === 2>>
+            <<run $combat_log.push('<span class="shadow">"You sure you wanna continue fighting~"</span> he says, with a mocking smile on his face.')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "CrimsonHiting">>
+
+    <<set _barkChanceCrimHit to random(0, 100)>>
+    <<set _barkChoiceCrimHit to random(1, 2)>>
+
+    <<if _barkChanceCrimHit >= 75>>
+        <<if _barkChoiceCrimHit === 1>>
+            <<run $combat_log.push('<span class="crimson">"I have got you now!"</span>')>>
+        <<elseif _barkChoiceCrimHit === 2>>
+            <<run $combat_log.push('<span class="crimson">"Lets see you take that!"</span>')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "CrimsonCritting">>
+
+    <<set _barkChanceCrimCrit to random(0, 100)>>
+    <<set _barkChoiceCrimCrit to random(1, 2)>>
+    
+    <<if _barkChanceCrimCrit >= 25>>
+        <<if _barkChoiceCrimCrit === 1>>
+            <<run $combat_log.push('<span class="crimson">"YEAHHH!!"</span> CrimsonSentinel seems to be really getting into the fight.')>>
+        <<elseif _barkChoiceCrimCrit === 2>>
+            <<run $combat_log.push('<span class="crimson">"Feeling quite strong for a tank!"</span>')>>
         <</if>>
     <</if>>
 
