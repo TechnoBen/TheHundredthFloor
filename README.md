@@ -1,0 +1,7 @@
+Hello, this is the main THF repo thing that I do not understand.
+Im ass with github so im unsure how it really works, however the project files be for where ill keep the code, passages and stuff and THF is where you should be placing the .html once you compile the game.
+
+Command for compiling
+tweego -o index.html (projectfile)
+
+https://www.motoslave.net/tweego/docs/#usage-options for the other compiling options
