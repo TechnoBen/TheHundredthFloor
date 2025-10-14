@@ -25,9 +25,9 @@ Raid party hp: $raidHP/1000
 <<for _i range $partyMembers>>
 <<set _npc = $NPCs[_i]>>\
     <<= _npc.name>>'s stats:
-    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
     STM: <<= _npc.CurSTM.toFixed(0)>>/<<= _npc.MaxSTM.toFixed(0)>>
-	<<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+	<<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
 <</for>>\
 
 <<if $turnChanceCur >= 0.01>><<if $bonusTurnPlayer === true>>EXTRA TURN! <</if>>Select your attack:<<nobr>>
@@ -655,7 +655,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.RadiantRose.CurSTM >= 6>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitRadiantRose === _i>>
-            <<if $NPCs.RadiantRose.CritChance <= _critChanceRNG>>
+            <<if $NPCs.RadiantRose.CritChance <= _critChanceRNGRadiant>>
                 <<set $NPCs.RadiantRose.baseDMG to ($NPCs.RadiantRose.PierceSTR + $NPCs.RadiantRose.weaponPierceDMG) * $mobs[_i].PierceDEF>>
                 <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
@@ -685,7 +685,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.RadiantRose.CurSTM >= 10>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitRadiantRose === _i>>
-            <<if $NPCs.RadiantRose.CritChance <= _critChanceRNG>>
+            <<if $NPCs.RadiantRose.CritChance <= _critChanceRNGRadiant>>
                 <<set $NPCs.RadiantRose.baseDMG to ($NPCs.RadiantRose.weaponPierceDMG + $NPCs.RadiantRose.DEX/2 + $NPCs.RadiantRose.PierceSTR) * $mobs[_i].PierceDEF>>
                 <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>> 
@@ -727,7 +727,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.ShadowScythe.CurSTM >= 25>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitShadow === _i>>
-            <<if $NPCs.ShadowScythe.CritChance <= _critChanceRNG>>
+            <<if $NPCs.ShadowScythe.CritChance <= _critChanceRNGShadow>>
                 <<set $NPCs.ShadowScythe.baseDMG to ($NPCs.ShadowScythe.SlashSTR + $NPCs.ShadowScythe.weaponSlashDMG) * $mobs[_i].SlashDEF>>
                 <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
@@ -757,7 +757,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.ShadowScythe.CurSTM >= 31>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitShadow === _i>>
-            <<if $NPCs.ShadowScythe.CritChance <= _critChanceRNG>>
+            <<if $NPCs.ShadowScythe.CritChance <= _critChanceRNGShadow>>
                 <<set $NPCs.ShadowScythe.baseDMG to ($NPCs.ShadowScythe.weaponSlashDMG + $NPCs.ShadowScythe.DEX/2 + $NPCs.ShadowScythe.SlashSTR) * $mobs[_i].SlashDEF>>
                 <<set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
@@ -799,7 +799,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.CrimsonSentinel.CurSTM >= 12>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitCrimson === _i>>
-            <<if $NPCs.CrimsonSentinel.CritChance <= _critChanceRNG>>
+            <<if $NPCs.CrimsonSentinel.CritChance <= _critChanceRNGCrimson>>
                 <<set $NPCs.CrimsonSentinel.baseDMG to ($NPCs.CrimsonSentinel.SlashSTR + $NPCs.CrimsonSentinel.weaponSlashDMG) * $mobs[_i].SlashDEF>>
                 <<set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
@@ -829,7 +829,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.CrimsonSentinel.CurSTM >= 15>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitCrimson === _i>>
-            <<if $NPCs.CrimsonSentinel.CritChance <= _critChanceRNG>>
+            <<if $NPCs.CrimsonSentinel.CritChance <= _critChanceRNGCrimson>>
                 <<set $NPCs.CrimsonSentinel.baseDMG to ($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $mobs[_i].BluntDEF>>
                 <<set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG>>
                 <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
@@ -867,7 +867,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.Zegrath.CurSTM >= 12>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitZegrath === _i>>
-            <<if $NPCs.Zegrath.CritChance <= _critChanceRNG>>
+            <<if $NPCs.Zegrath.CritChance <= _critChanceRNGZegrath>>
                 <<if $ZegrathFireSword >= 1>>
                     <<set $NPCs.Zegrath.baseDMG to kitsuneRNG(($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG), (125*($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG)/100)) * $mobs[_i].PierceDEF>>
                     <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>
@@ -923,7 +923,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <<if $NPCs.Zegrath.CurSTM >= 15>>
         <<for _i = 0; _i lte 99; _i++>>
         <<if $enemyHitZegrath === _i>>
-            <<if $NPCs.Zegrath.CritChance <= _critChanceRNG>>
+            <<if $NPCs.Zegrath.CritChance <= _critChanceRNGZegrath>>
                 <<if $ZegrathFireSword >= 1>>
                     <<set $NPCs.Zegrath.baseDMG to kitsuneRNG(($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG), (125*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $mobs[_i].SlashDEF>>
                     <<set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG>>

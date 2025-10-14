@@ -2348,7 +2348,7 @@ window.kitsuneRNG = function (min, max) {
   const url = 'Textures/Icons/game icon.png';
       
   $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
-})();</script><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-passagedata pid="1" name="0.0.1" tags="NoSave" position="0,275" size="100,100">The &quot;where my struggles started&quot; version.
+})();</script><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-passagedata pid="1" name="0.0.1" tags="NoSave" position="0,275" size="100,100">The &quot;where my struggles started&quot; version.
 
 Yeah this is the first ever version of the game. I called it the &quot;where my struggles started&quot; because I got stuck on the Character creator screen FOR 5 HOURS. In my defence idk what im doing! Also the logs are gonna look messy af so prepare yourself lol.
 
@@ -8678,9 +8678,9 @@ Raid party hp: $raidHP/1000
 &lt;&lt;for _i range $partyMembers&gt;&gt;
 &lt;&lt;set _npc = $NPCs[_i]&gt;&gt;\
     &lt;&lt;= _npc.name&gt;&gt;&#39;s stats:
-    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
+    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
     STM: &lt;&lt;= _npc.CurSTM.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxSTM.toFixed(0)&gt;&gt;
-	&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
+	&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;\
 
 &lt;&lt;if $turnChanceCur &gt;= 0.01&gt;&gt;&lt;&lt;if $bonusTurnPlayer === true&gt;&gt;EXTRA TURN! &lt;&lt;/if&gt;&gt;Select your attack:&lt;&lt;nobr&gt;&gt;
@@ -9308,7 +9308,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.RadiantRose.CurSTM &gt;= 6&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitRadiantRose === _i&gt;&gt;
-            &lt;&lt;if $NPCs.RadiantRose.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.RadiantRose.CritChance &lt;= _critChanceRNGRadiant&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.baseDMG to ($NPCs.RadiantRose.PierceSTR + $NPCs.RadiantRose.weaponPierceDMG) * $mobs[_i].PierceDEF&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt;
@@ -9338,7 +9338,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.RadiantRose.CurSTM &gt;= 10&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitRadiantRose === _i&gt;&gt;
-            &lt;&lt;if $NPCs.RadiantRose.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.RadiantRose.CritChance &lt;= _critChanceRNGRadiant&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.baseDMG to ($NPCs.RadiantRose.weaponPierceDMG + $NPCs.RadiantRose.DEX/2 + $NPCs.RadiantRose.PierceSTR) * $mobs[_i].PierceDEF&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt; 
@@ -9380,7 +9380,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.ShadowScythe.CurSTM &gt;= 25&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitShadow === _i&gt;&gt;
-            &lt;&lt;if $NPCs.ShadowScythe.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.ShadowScythe.CritChance &lt;= _critChanceRNGShadow&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.baseDMG to ($NPCs.ShadowScythe.SlashSTR + $NPCs.ShadowScythe.weaponSlashDMG) * $mobs[_i].SlashDEF&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
@@ -9410,7 +9410,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.ShadowScythe.CurSTM &gt;= 31&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitShadow === _i&gt;&gt;
-            &lt;&lt;if $NPCs.ShadowScythe.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.ShadowScythe.CritChance &lt;= _critChanceRNGShadow&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.baseDMG to ($NPCs.ShadowScythe.weaponSlashDMG + $NPCs.ShadowScythe.DEX/2 + $NPCs.ShadowScythe.SlashSTR) * $mobs[_i].SlashDEF&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.dmgDealtTotal += $NPCs.ShadowScythe.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
@@ -9452,7 +9452,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.CrimsonSentinel.CurSTM &gt;= 12&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitCrimson === _i&gt;&gt;
-            &lt;&lt;if $NPCs.CrimsonSentinel.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.CrimsonSentinel.CritChance &lt;= _critChanceRNGCrimson&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.baseDMG to ($NPCs.CrimsonSentinel.SlashSTR + $NPCs.CrimsonSentinel.weaponSlashDMG) * $mobs[_i].SlashDEF&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
@@ -9482,7 +9482,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.CrimsonSentinel.CurSTM &gt;= 15&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitCrimson === _i&gt;&gt;
-            &lt;&lt;if $NPCs.CrimsonSentinel.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.CrimsonSentinel.CritChance &lt;= _critChanceRNGCrimson&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.baseDMG to ($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $mobs[_i].BluntDEF&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
@@ -9520,7 +9520,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.Zegrath.CurSTM &gt;= 12&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitZegrath === _i&gt;&gt;
-            &lt;&lt;if $NPCs.Zegrath.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.Zegrath.CritChance &lt;= _critChanceRNGZegrath&gt;&gt;
                 &lt;&lt;if $ZegrathFireSword &gt;= 1&gt;&gt;
                     &lt;&lt;set $NPCs.Zegrath.baseDMG to kitsuneRNG(($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG), (125*($NPCs.Zegrath.PierceSTR + $NPCs.Zegrath.weaponPierceDMG)/100)) * $mobs[_i].PierceDEF&gt;&gt;
                     &lt;&lt;set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG&gt;&gt;
@@ -9576,7 +9576,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
         &lt;&lt;if $NPCs.Zegrath.CurSTM &gt;= 15&gt;&gt;
         &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
         &lt;&lt;if $enemyHitZegrath === _i&gt;&gt;
-            &lt;&lt;if $NPCs.Zegrath.CritChance &lt;= _critChanceRNG&gt;&gt;
+            &lt;&lt;if $NPCs.Zegrath.CritChance &lt;= _critChanceRNGZegrath&gt;&gt;
                 &lt;&lt;if $ZegrathFireSword &gt;= 1&gt;&gt;
                     &lt;&lt;set $NPCs.Zegrath.baseDMG to kitsuneRNG(($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG), (125*($NPCs.Zegrath.SlashSTR + $NPCs.Zegrath.weaponSlashDMG)/100)) * $mobs[_i].SlashDEF&gt;&gt;
                     &lt;&lt;set $NPCs.Zegrath.dmgDealtTotal += $NPCs.Zegrath.baseDMG&gt;&gt;
@@ -11607,9 +11607,9 @@ Raid party hp: $raidHP/1000
 &lt;&lt;for _i range $partyMembers&gt;&gt;
 &lt;&lt;set _npc = $NPCs[_i]&gt;&gt;\
     &lt;&lt;= _npc.name&gt;&gt;&#39;s stats:
-    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
+    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
     STM: &lt;&lt;= _npc.CurSTM.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxSTM.toFixed(0)&gt;&gt;
-	&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
+	&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;\
 
 Select your move:&lt;&lt;nobr&gt;&gt;
