@@ -1015,18 +1015,21 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<set $NPCs.RadiantRose.Affection to 0>>
     <<run $partyMembers.delete("RadiantRose")>>
     <<run $combat_log.push('RadiantRose escapes and leaves your party.')>>
+    <<MemberEscape>>
     <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
 <</if>>
 <<if $NPCs.ShadowScythe.CurHP lte 0 && $partyMembers.includes("ShadowScythe")>>
     <<set $NPCs.ShadowScythe.Affection to 0>>
     <<run $partyMembers.delete("ShadowScythe")>>
     <<run $combat_log.push('ShadowScythe escapes and leaves your party.')>>
+    <<MemberEscape>>
     <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
 <</if>>
 <<if $NPCs.CrimsonSentinel.CurHP lte 0 && $partyMembers.includes("CrimsonSentinel")>> 
     <<set $NPCs.CrimsonSentinel.Affection to 0>>
     <<run $partyMembers.delete("CrimsonSentinel")>>
     <<run $combat_log.push('CrimsonSentinel escapes and leaves your party.')>>
+    <<MemberEscape>>
     <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
 <</if>>
 <<if $NPCs.BlackWolf.CurHP lte 0 && $partyMembers.includes($NPCs.BlackWolf.name)>>
@@ -1034,12 +1037,14 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 	<<run $partyMembers.delete($NPCs.BlackWolf.name)>>
     <<run $combat_log.push($NPCs.BlackWolf.name + ' died.')>>
     <<set $NPCs.Zegrath.Affection -= 100>>
+    <<Deaths>>
     <<set $CurFear += (50 - ($FearPercentBuff*50/100) + ($FearPercentDebuff*50/100))>>
 <</if>>
 <<if $NPCs.Zegrath.CurHP lte 0 && $partyMembers.includes("Zegrath")>> 
     <<set $NPCs.Zegrath.Dead to true>>
     <<run $partyMembers.delete("Zegrath")>>
     <<run $combat_log.push('Zegrath died.')>>
+    <<Deaths>>
     <<set $CurFear += (50 - ($FearPercentBuff*50/100) + ($FearPercentDebuff*50/100))>>
 <</if>>
 

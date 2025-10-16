@@ -185,3 +185,83 @@
     <</if>>
 
 <</widget>>
+
+<<widget "MemberEscape">>
+
+    <<if $partyMembers.includes("RadiantRose")>>
+        <<set _barkChoiceRad to random(1, 2)>>
+        <<if _barkChoiceRad === 1>>
+            <<run $combat_log.push('<span class="radiant">"Stay safe!"</span> Radiant looks worried.')>>
+        <<elseif _barkChoiceRad === 2>>
+            <<run $combat_log.push('<span class="radiant">"Wait dont go! We cant do this alone!"</span> Radiant looks worried.')>>
+        <</if>>
+    <</if>>
+
+    <<if $partyMembers.includes("ShadowScythe")>>
+        <<set _barkChoiceShad to random(1, 2)>>
+        <<if _barkChoiceShad === 1>>
+            <<run $combat_log.push('<span class="shadow">"Watch out for any PKers on your way back!"</span> Shadow shouts out, worried for the HP of your escaping party member.')>>
+        <<elseif _barkChoiceShad === 2>>
+            <<run $combat_log.push('<span class="shadow">"Careful now."</span> he says, opening a path for your escaping party member.')>>
+        <</if>>
+    <</if>>
+
+    <<if $partyMembers.includes("CrimsonSentinel")>>
+        <<set _barkChoiceCrim to random(1, 2)>>
+        <<if _barkChoiceCrim === 1>>
+            <<run $combat_log.push('<span class="crimson">"Catch you later, alright?"</span> Crimson looks back to the escaping party member, making sure they can safely do so.')>>
+        <<elseif _barkChoiceCrim === 2>>
+            <<run $combat_log.push('<span class="crimson">"Stay safe, friend."</span> he says, his resolve slightly cracking due to the higher thread ahead of him.')>>
+        <</if>>
+    <</if>>
+
+    <<if $partyMembers.includes("Zegrath")>>
+        <<set _barkChoiceZeg to random(1, 2)>>
+        <<if _barkChoiceZeg === 1>>
+            <<run $combat_log.push('<span class="zegrath">"WHO LET YOU ESCAPE YOU WORM!!"</span> Zegrath shouts out at your escaping party member.')>>
+        <<elseif _barkChoiceZeg === 2>>
+            <<run $combat_log.push('<span class="zegrath">"SCARED? THEN GO DIE!"</span> Zegrath looks incredibly pissed off.')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "Deaths">>
+
+    <<if $partyMembers.includes("RadiantRose")>>
+        <<set _barkChoiceRad to random(1, 2)>>
+        <<if _barkChoiceRad === 1>>
+            <<run $combat_log.push('<span class="radiant">"N-no... This cant be!"</span> Radiant looks anguished.')>>
+        <<elseif _barkChoiceRad === 2>>
+            <<run $combat_log.push('<span class="radiant">"How did we... let this happen!"</span>')>>
+        <</if>>
+    <</if>>
+
+    <<if $partyMembers.includes("ShadowScythe")>>
+        <<set _barkChoiceShad to random(1, 2)>>
+        <<if _barkChoiceShad === 1>>
+            <<run $combat_log.push('<span class="shadow">"Fuck."</span> Shadow looks furious.')>>
+        <<elseif _barkChoiceShad === 2>>
+            <<run $combat_log.push('<span class="shadow">"I will avenge you. Rest in piece."</span> he says, the grip on his weapon getting tighter.')>>
+        <</if>>
+    <</if>>
+
+    <<if $partyMembers.includes("CrimsonSentinel")>>
+        <<set _barkChoiceCrim to random(1, 2)>>
+        <<if _barkChoiceCrim === 1>>
+            <<run $combat_log.push('<span class="crimson">"Im sorry... Ive failed as a tank."</span> Crimson grieves, he has a blank expression fueled with self hatred.')>>
+        <<elseif _barkChoiceCrim === 2>>
+            <<run $combat_log.push('<span class="crimson">"I allowed for this to happen, didnt I?"</span> he says, his expression full of nothing but self hatred.')>>
+        <</if>>
+    <</if>>
+
+    <<if $partyMembers.includes("Zegrath")>>
+        <<set _barkChoiceZeg to random(1, 2)>>
+        <<if _barkChoiceZeg === 1>>
+            <<run $combat_log.push('<span class="zegrath">"WHO ALLOWED YOU TO DIE YOU MOTHER FUCKER!"</span> Zegrath swings his swords at your dead party party members dissapearing corpse.')>>
+        <<elseif _barkChoiceZeg === 2>>
+            <<run $combat_log.push('<span class="zegrath">"YOU USELESS PEACE OF SHIT! DID I GIVE YOU THE PERMISSION TO DIE, MAGGOT!"</span> Zegrath looks incredibly pissed off.')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
