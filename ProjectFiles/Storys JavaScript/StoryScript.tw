@@ -767,6 +767,12 @@ Config.saves.onLoad = function(save) {
 		if(typeof variables.XPadd === 'undefined') {
 			variables.XPadd = 0.001;
 		} 
+		if(typeof variables.PowerUpCount === 'undefined') {
+			variables.PowerUpCount = 0;
+		}
+		if(typeof variables.PowerUpPotency === 'undefined') {
+			variables.PowerUpPotency = 0;
+		} 
 	}
 }
 

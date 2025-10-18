@@ -34,6 +34,7 @@ Added burn, count gets lowered for players at player turn end while mobs lose co
 - Completely reworked NPCs
 NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
 - Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats
+Added party member barks (reacts to getting hit/crit or landing a hit/crit and on deaths/escapes)
 - CritChance gets raised by 0.1 with every STR lvl
 - Extra turns get raised by 0.5 with every DEX lvl
 - Made the level up notif to stay for 3 passages
@@ -65,7 +66,7 @@ Stage 3: 50% > 25%
 - Added some basic options into game customization due to me finally figuring out how it works lmao (Also thanks to Greyelf for making my code better)
 - Slightly debuffed XP from mobs
 - Heavily debuffed Col from mobs
-- Added X new encounter in F2
+- Added 2 new encounter in F2
 
 - Fixed my dumbass scuffed code that when you walk from path 1 to path 2 but get into a fight it would send you back to path 1 instead of path 2
 - Fixed CrimsonSentinel not getting HP when you sleep

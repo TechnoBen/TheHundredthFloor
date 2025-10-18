@@ -140,4 +140,131 @@
 
 <</widget>>
 
+<<widget PowerUpCount>>
 
+	/* Player */
+	<<if $PowerUpCount >= 1>>
+    	<<set $PowerUpCount -= 1>>
+	<<elseif $PowerUpCount <= 0 && $PowerUpPotency >= 0.01>>
+		<<set $STRPercentBuff -= $PowerUpPotency>>
+		<<set $PowerUpPotency to 0>>
+	<</if>>
+
+	/* RadiantRose */
+	<<if $NPCs.RadiantRose.PowerUpCount >= 1>>
+		<<set $NPCs.RadiantRose.PowerUpCount -= 1>>
+	<<elseif $NPCs.RadiantRose.PowerUpCount <= 0 && $NPCs.RadiantRose.PowerUpPotency >= 0.01>>
+		<<set $NPCs.RadiantRose.STRPercentBuff -= $NPCs.RadiantRose.PowerUpPotency>>
+		<<set $NPCs.RadiantRose.PowerUpPotency to 0>>
+	<</if>>
+
+	/* ShadowScythe */
+	<<if $NPCs.ShadowScythe.PowerUpCount >= 1>>
+		<<set $NPCs.ShadowScythe.PowerUpCount -= 1>>
+	<<elseif $NPCs.ShadowScythe.PowerUpCount <= 0 && $NPCs.ShadowScythe.PowerUpPotency >= 0.01>>
+		<<set $NPCs.ShadowScythe.STRPercentBuff -= $NPCs.ShadowScythe.PowerUpPotency>>
+		<<set $NPCs.ShadowScythe.PowerUpPotency to 0>>
+	<</if>>
+
+	/* CrimsonSentinel */
+	<<if $NPCs.CrimsonSentinel.PowerUpCount >= 1>>
+		<<set $NPCs.CrimsonSentinel.PowerUpCount -= 1>>
+	<<elseif $NPCs.CrimsonSentinel.PowerUpCount <= 0 && $NPCs.CrimsonSentinel.PowerUpPotency >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.STRPercentBuff -= $NPCs.CrimsonSentinel.PowerUpPotency>>
+		<<set $NPCs.CrimsonSentinel.PowerUpPotency to 0>>
+	<</if>>
+
+	/* Zegrath */
+	<<if $NPCs.Zegrath.PowerUpCount >= 1>>
+		<<set $NPCs.Zegrath.PowerUpCount -= 1>>
+	<<elseif $NPCs.Zegrath.PowerUpCount <= 0 && $NPCs.Zegrath.PowerUpPotency >= 0.01>>
+		<<set $NPCs.Zegrath.STRPercentBuff -= $NPCs.Zegrath.PowerUpPotency>>
+		<<set $NPCs.Zegrath.PowerUpPotency to 0>>
+	<</if>>
+
+<</widget>>
+
+<<widget PowerUpCountMobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].PowerUpCount >= 1>>
+		<<set _mob[_i].PowerUpCount -= 1>>
+	<<elseif _mob[_i].PowerUpCount <= 0 && _mob[_i].PowerUpPotency >= 0.01>>
+		<<set _mob[_i].STRPercentBuff -= _mob[_i].PowerUpPotency>>
+		<<set _mob[_i].PowerUpPotency to 0>>
+  	<</if>>
+<</for>>
+<</widget>>
+
+<<widget HitRelatedStatusMobs>>
+
+	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
+
+	<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].PowerUpPotency >= 0.01>>
+		<<set _mob[_i].STRPercentBuff -= _mob[_i].PowerUpPotency>>
+		<<set _mob[_i].PowerUpPotency /= 2>>
+		<<set _mob[_i].STRPercentBuff += _mob[_i].PowerUpPotency>>
+	<</if>>
+	<</for>>
+
+<</widget>>
+
+<<widget HitRelatedStatusPlayer>>
+
+	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
+
+	<<if $PowerUpPotency >= 0.01>>
+		<<set $STRPercentBuff -= $PowerUpPotency>>
+		<<set $PowerUpPotency /= 2>>
+		<<set $STRPercentBuff += $PowerUpPotency>>
+	<</if>>
+
+<</widget>>
+
+<<widget HitRelatedStatusRadiant>>
+
+	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
+
+	<<if $NPCs.RadiantRose.PowerUpPotency >= 0.01>>
+		<<set $NPCs.RadiantRose.STRPercentBuff -= $NPCs.RadiantRose.PowerUpPotency>>
+		<<set $NPCs.RadiantRose.PowerUpPotency /= 2>>
+		<<set $NPCs.RadiantRose.STRPercentBuff += $NPCs.RadiantRose.PowerUpPotency>>
+	<</if>>
+
+<</widget>>
+
+<<widget HitRelatedStatusShadow>>
+
+	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
+
+	<<if $NPCs.ShadowScythe.PowerUpPotency >= 0.01>>
+		<<set $NPCs.ShadowScythe.STRPercentBuff -= $NPCs.ShadowScythe.PowerUpPotency>>
+		<<set $NPCs.ShadowScythe.PowerUpPotency /= 2>>
+		<<set $NPCs.ShadowScythe.STRPercentBuff += $NPCs.ShadowScythe.PowerUpPotency>>
+	<</if>>
+
+<</widget>>
+
+<<widget HitRelatedStatusCrim>>
+
+	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
+
+	<<if $NPCs.CrimsonSentinel.PowerUpPotency >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.STRPercentBuff -= $NPCs.CrimsonSentinel.PowerUpPotency>>
+		<<set $NPCs.CrimsonSentinel.PowerUpPotency /= 2>>
+		<<set $NPCs.CrimsonSentinel.STRPercentBuff += $NPCs.CrimsonSentinel.PowerUpPotency>>
+	<</if>>
+
+<</widget>>
+
+<<widget HitRelatedStatusZegrath>>
+
+	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
+
+	<<if $NPCs.Zegrath.PowerUpPotency >= 0.01>>
+		<<set $NPCs.Zegrath.STRPercentBuff -= $NPCs.Zegrath.PowerUpPotency>>
+		<<set $NPCs.Zegrath.PowerUpPotency /= 2>>
+		<<set $NPCs.Zegrath.STRPercentBuff += $NPCs.Zegrath.PowerUpPotency>>
+	<</if>>
+
+<</widget>>

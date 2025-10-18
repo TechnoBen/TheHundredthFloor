@@ -37,6 +37,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 7,
     Coins: 7
   },
@@ -71,6 +74,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 8,
     Coins: 9
   },
@@ -105,6 +111,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 31,
     Coins: 12
   },
@@ -139,6 +148,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 26,
     Coins: 11
   },
@@ -173,6 +185,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 38,
     Coins: 17
   },
@@ -207,6 +222,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 49,
     Coins: 18
   },
@@ -241,6 +259,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 43,
     Coins: 12
   },
@@ -275,6 +296,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 48,
     Coins: 22
   },
@@ -309,6 +333,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 36,
     Coins: 10
   },
@@ -343,6 +370,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 67,
     Coins: 15
   },
@@ -377,6 +407,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 53,
     Coins: 15
   },
@@ -411,6 +444,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 73,
     Coins: 34
   },
@@ -445,6 +481,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 73,
     Coins: 34
   },
@@ -479,6 +518,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 345,
     Coins: 126
   },
@@ -513,6 +555,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 0,
     Coins: 0
   },
@@ -547,6 +592,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 134,
     Coins: 67
   },
@@ -581,6 +629,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 102,
     Coins: 32
   },
@@ -615,6 +666,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 1,
     Coins: 1
   },
@@ -649,6 +703,9 @@
     burnCountCur: 0,
     burnCountDealt: 34,
     burnPotencyDealt: 3,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 2280,
     Coins: 3138
   },
@@ -683,6 +740,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 0,
     Coins: 0
   },
@@ -717,6 +777,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     XP: 0,
     Coins: 0
   },
@@ -765,6 +828,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -801,7 +867,7 @@
     dmgDealtTotal: 0,
 	  bleedPotency: 0,
 	  bleedCountMax: 10,
-	  bleedCountCur: 3.2,
+	  bleedCountCur: 0,
     bleedPotencyDealt: 2,
     bleedCountDealt: 3,
     bleedDef: 1,
@@ -809,6 +875,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -853,6 +922,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -897,6 +969,9 @@
     burnCountCur: 0,
     burnCountDealt: 1,
     burnPotencyDealt: 1,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -941,6 +1016,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -993,6 +1071,9 @@
     burnCountCur: 0,
     burnCountDealt: 0,
     burnPotencyDealt: 0,
+    STRPercentBuff: 1,
+    PowerUpCount: 0,
+    PowerUpPotency: 0,
     Dead: false
   }
 }>>
@@ -1340,11 +1421,9 @@
 <<set $burnPotency to 0>>
 <<set $burnCountCur to 0>>
 <<set $burnCountDealt to 0>>
-burnPotency: 0,
-burnCountCur: 0,
-burnCountDealt: 0,
-burnPotencyDealt: 0,
 <<set $burnPotencyDealt to 0>>
+<<set $PowerUpCount to 0>>
+<<set $PowerUpPotency to 0>>
 
 <<set $gameStarted to false>>
 <<set $paidForInn1 to false>> 
