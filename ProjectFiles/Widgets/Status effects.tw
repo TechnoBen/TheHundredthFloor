@@ -187,10 +187,10 @@
 <<widget PowerUpCountMobs>>
 <<for _i = 0; _i lt $mobs.length; _i++>>
 	<<if _mob[_i].PowerUpCount >= 1>>
-		<<set _mob[_i].PowerUpCount -= 1>>
+		<<set $mobs[_i].PowerUpCount -= 1>>
 	<<elseif _mob[_i].PowerUpCount <= 0 && _mob[_i].PowerUpPotency >= 0.01>>
-		<<set _mob[_i].STRPercentBuff -= _mob[_i].PowerUpPotency>>
-		<<set _mob[_i].PowerUpPotency to 0>>
+		<<set $mobs[_i].STRPercentBuff -= $mobs[_i].PowerUpPotency>>
+		<<set $mobs[_i].PowerUpPotency to 0>>
   	<</if>>
 <</for>>
 <</widget>>
@@ -199,13 +199,11 @@
 
 	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */
 
-	<<for _i = 0; _i lt $mobs.length; _i++>>
 	<<if _mob[_i].PowerUpPotency >= 0.01>>
-		<<set _mob[_i].STRPercentBuff -= _mob[_i].PowerUpPotency>>
-		<<set _mob[_i].PowerUpPotency /= 2>>
-		<<set _mob[_i].STRPercentBuff += _mob[_i].PowerUpPotency>>
+		<<set $mobs[_i].STRPercentBuff -= $mobs[_i].PowerUpPotency>>
+		<<set $mobs[_i].PowerUpPotency /= 2>>
+		<<set $mobs[_i].STRPercentBuff += $mobs[_i].PowerUpPotency>>
 	<</if>>
-	<</for>>
 
 <</widget>>
 

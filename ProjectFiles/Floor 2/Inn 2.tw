@@ -6,7 +6,7 @@ The receptionist seems to be an NPC so speaking to them will be... Fun. You can 
 <</link>>
 2. <<link [[Order a drink|Buy items 1]]>>
 <</link>>
-3. <<link [[Exit the small bar|Path 8.2]]
+3. <<link [[Exit the small bar|Path 8.2]]>>
 <<dateadd '1m'>>
 <</link>>
 

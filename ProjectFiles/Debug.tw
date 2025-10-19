@@ -325,6 +325,10 @@ Testing related:
 	<<set $SlashSTR to 1000>>
 <</link>>
 
+<<link "DEX + 10">>
+	<<set $DEX += 10>>
+<</link>>
+
 <<link "coins">>
 	<<set $Coins to 1000>>
 <</link>>

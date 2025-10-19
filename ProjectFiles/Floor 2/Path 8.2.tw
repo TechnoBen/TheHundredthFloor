@@ -16,7 +16,7 @@ You can:
 <<link [[Use the anvil|Crafting]]>>
 <<set $lastvisitedpassage1 to "Path 8.2">>
 <</link>>
-<<link [[Check out what the person is selling|Weaponsmith 3]]
+<<link [[Check out what the person is selling|Weaponsmith 3]]>>
 <<dateadd '1m'>>
 <</link>>
 

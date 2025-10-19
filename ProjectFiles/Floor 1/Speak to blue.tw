@@ -7,7 +7,7 @@
 
 You guys think about how cool it would be to lead a guild...
 <<set $blueBellAffection += 1>>
-<<link [[Go back|Gathering area]] 
+<<link [[Go back|Gathering area]]>>
 <<dateadd '1h'>>
 <</link>>
 

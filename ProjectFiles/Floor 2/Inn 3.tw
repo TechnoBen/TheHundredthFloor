@@ -4,7 +4,7 @@ There is no receptionist... You can see a sign saying <span class= Evese>"Welcom
 
 1. <<link [[Get a room|Inn room purchase 2]]>>
 <</link>>
-2. <<link [[Exit the inn|Town street 2]]
+2. <<link [[Exit the inn|Town street 2]]>>
 <<dateadd '1m'>>
 <</link>>
 

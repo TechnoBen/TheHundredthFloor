@@ -4,7 +4,7 @@ You decided to help Blu3B3llrex out.
 <span class="Blu3b3llrex">"Yeah you can help me move some of the boxes if you want... There are way too much of them anyways..."</span>
 A hour and 30 minutes later you and Blu3 decide to take a small break...
 <<set $blueBellAffection += 2>>
-<<link [[Go back|Gathering area]] 
+<<link [[Go back|Gathering area]]>>
 <<set $curFatigue += 55>>
 <<dateadd '1h'>>
 <<dateadd '30m'>>
