@@ -582,8 +582,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<GettingCritted>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 2>>
-                        <<set _mob[_i].PowerUpPotency += 20>>
-                        <<set _mob[_i].STRPercentBuff += 20>>
+                        <<set _mob[_i].PowerUpPotency += 0.20>>
+                        <<set _mob[_i].STRPercentBuff += 0.20>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
@@ -603,8 +603,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 2>>
-                        <<set _mob[_i].PowerUpPotency += 20>>
-                        <<set _mob[_i].STRPercentBuff += 20>>
+                        <<set _mob[_i].PowerUpPotency += 0.20>>
+                        <<set _mob[_i].STRPercentBuff += 0.20>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
@@ -641,8 +641,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<GettingCritted>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 4>>
-                        <<set _mob[_i].PowerUpPotency += 40>>
-                        <<set _mob[_i].STRPercentBuff += 40>>
+                        <<set _mob[_i].PowerUpPotency += 0.40>>
+                        <<set _mob[_i].STRPercentBuff += 0.40>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
@@ -666,8 +666,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 4>>
-                        <<set _mob[_i].PowerUpPotency += 40>>
-                        <<set _mob[_i].STRPercentBuff += 40>>
+                        <<set _mob[_i].PowerUpPotency += 0.40>>
+                        <<set _mob[_i].STRPercentBuff += 0.40>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
@@ -859,8 +859,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _mob[_i].PoisePotency += 20>>
                         <<set _mob[_i].CritDMG += 0.1>>
                         <<set _mob[_i].PowerUpCount += 2>>
-                        <<set _mob[_i].PowerUpPotency += 10>>
-                        <<set _mob[_i].STRPercentBuff += 10>>
+                        <<set _mob[_i].PowerUpPotency += 0.10>>
+                        <<set _mob[_i].STRPercentBuff += 0.10>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push(_npc.name + ' dodges the attack from ' + _mob[_i].name)>>
@@ -888,8 +888,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _mob[_i].PoisePotency += 20>>
                         <<set _mob[_i].CritDMG += 0.1>>
                         <<set _mob[_i].PowerUpCount += 2>>
-                        <<set _mob[_i].PowerUpPotency += 10>>
-                        <<set _mob[_i].STRPercentBuff += 10>>
+                        <<set _mob[_i].PowerUpPotency += 0.10>>
+                        <<set _mob[_i].STRPercentBuff += 0.10>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>

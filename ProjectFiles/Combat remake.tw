@@ -759,7 +759,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <</if>>
             <</for>>
             <<HitRelatedStatusPlayer>>
-        <<elseif $curStamina <= 25>>
+        <<elseif $curStamina <= 35>>
             <<set $attack to "Nothing">>
             <<set $attackText to "Do nothing">>
             <<set $curStamina += 5 + $INT>>
@@ -970,7 +970,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
         <</if>>
         <</for>>
         <<HitRelatedStatusShadow>>
-        <<elseif $NPCs.ShadowScythe.CurSTM<= 5>>
+        <<elseif $NPCs.ShadowScythe.CurSTM <= 25>>
             <<set $NPCs.ShadowScythe.CurSTM += 5 + $NPCs.ShadowScythe.INT>>
             <<run $combat_log.push('ShadowScythe is too tired to fight so he does nothing.')>>
         <</if>>
