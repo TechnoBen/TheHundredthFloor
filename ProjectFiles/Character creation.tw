@@ -2,8 +2,8 @@
 Alright. Let's start things up with the character creator.
 You will select how you want your character to look. For now let's begin with your name
 
-Your name is: <<textbox "$name" `['Kichi','Joseph','Jonathan','Toya','Josuke','Jotaro','Gary','Derrick','DeezGunz','Sean','TechnoBen','Johnny Bravo','Leo','Lily','Marceline','Hayato.'].random()`>>
-Your in-game name is: <<textbox "$gamename" `['BallsDeep69','Tiffany','MUDA','xVx_K1r1t0_xVx_KillMe','Fluffles','Jeffrey','King of Ashes','Squeaker','Johnny Black','Sinon','Ben','Hamod','T0dd','Leeeeeeroy','Jeeenkins','SmartSquirrel'].random()`>>
+Your name is: <<textbox "$name" `['Kichi','Joseph','Jonathan','Toya','Josuke','Jotaro','Gary','Derrick','DeezGunz','Sean','TechnoBen','Johnny Bravo','Leo','Lily','Marceline','Hayato.', 'Bob'].random()`>>
+Your in-game name is: <<textbox "$gamename" `['BallsDeep69','Tiffany','MUDA','xVx_K1r1t0_xVx_KillMe','Fluffles','Jeffrey','King of Ashes','Squeaker','Johnny Black','Sinon','Ben','Hamod','T0dd','Leeeeeeroy','Jeeenkins','SmartSquirrel', 'DarkOver1ord', 'Optifreak'].random()`>>
 
 <<set _skinColor = ["Pale","Light", "Medium", "Dark","White"]>>''Select your skin tone:'' <<listbox "$skinToneVal">>
 	<<optionsfrom _skinColor>>

@@ -31,6 +31,10 @@ A more advanced system for showing you what loot you got
 Added bleeding (and bleeding defence), you have count which once filled up you get dmg dealt depending on the potency. Each weapon (expect for the blunties) will make your enemy bleed. This is the first effect ever that exists for mobs, players AND party members.
 Added a turn counter
 Added burn, count gets lowered for players at player turn end while mobs lose count at enemy turn end. Potency deals damage as well and then gets halved.
+Added poise, count gets lowered each crit and it raises the crit dmg by 1%, potency raises crit chance and it gets deleted on crit
+Added 3rd weapon skills, they have cooldowns
+Added an icon for each attack type
+Added Power Up, raises your dmg depending on the potency
 - Completely reworked NPCs
 NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
 - Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats
