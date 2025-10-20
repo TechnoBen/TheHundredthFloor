@@ -773,6 +773,12 @@ Config.saves.onLoad = function(save) {
 		if(typeof variables.PowerUpPotency === 'undefined') {
 			variables.PowerUpPotency = 0;
 		} 
+		if(typeof variables.PoiseCount === 'undefined') {
+			variables.PoiseCount = 0;
+		}
+		if(typeof variables.PoisePotency === 'undefined') {
+			variables.PoisePotency = 0;
+		} 
 	}
 }
 

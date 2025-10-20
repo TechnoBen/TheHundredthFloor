@@ -266,3 +266,93 @@
 	<</if>>
 
 <</widget>>
+
+<<widget CritRelatedStatusesMobs>>
+
+/* Triggers whenever a crit happens */
+
+	<<if _mob[_i].PoisePotency >= 0.01>>
+		<<set $mobs[_i].CritChance -= $mobs[_i].PoisePotency>>
+		<<set $mobs[_i].PoisePotency to 0>>
+		<<set $mobs[_i].CritChance += $mobs[_i].PoisePotency>>
+		<<set $mobs[_i].CritDMG -= $mobs[_i].PoiseCount/10>>
+		<<set $mobs[_i].PoiseCount -= 1>>
+		<<set $mobs[_i].CritDMG += $mobs[_i].PoiseCount/10>>
+	<</if>>
+
+
+<</widget>>
+
+<<widget CritRelatedStatusesPlayer>>
+
+/* Triggers whenever a crit happens */
+	<<if $PoisePotency >= 0.01>>
+		<<set $critChance -= $PoisePotency>>
+		<<set $PoisePotency to 0>>
+		<<set $critChance += $PoisePotency>>
+		<<set $critDMG -= $PoiseCount/10>>
+		<<set $PoiseCount -= 1>>
+		<<set $critDMG += $PoiseCount/10>>
+	<</if>>
+
+<</widget>>
+
+<<widget CritRelatedStatusesRadiant>>
+
+/* Triggers whenever a crit happens */
+
+	<<if $NPCs.RadiantRose.PoisePotency >= 0.01>>
+		<<set $NPCs.RadiantRose.CritChance -= $NPCs.RadiantRose.PoisePotency>>
+		<<set $NPCs.RadiantRose.PoisePotency to 0>>
+		<<set $NPCs.RadiantRose.CritChance += $NPCs.RadiantRose.PoisePotency>>
+		<<set $NPCs.RadiantRose.CritDMG -= $NPCs.RadiantRose.PoiseCount/10>>
+		<<set $NPCs.RadiantRose.PoiseCount -= 1>>
+		<<set $NPCs.RadiantRose.CritDMG += $NPCs.RadiantRose.PoiseCount/10>>
+	<</if>>
+
+<</widget>>
+
+<<widget CritRelatedStatusesCrimson>>
+
+/* Triggers whenever a crit happens */
+
+	<<if $NPCs.CrimsonSentinel.PoisePotency >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.CritChance -= $NPCs.CrimsonSentinel.PoisePotency>>
+		<<set $NPCs.CrimsonSentinel.PoisePotency to 0>>
+		<<set $NPCs.CrimsonSentinel.CritChance += $NPCs.CrimsonSentinel.PoisePotency>>
+		<<set $NPCs.CrimsonSentinel.CritDMG -= $NPCs.CrimsonSentinel.PoiseCount/10>>
+		<<set $NPCs.CrimsonSentinel.PoiseCount -= 1>>
+		<<set $NPCs.CrimsonSentinel.CritDMG += $NPCs.CrimsonSentinel.PoiseCount/10>>
+	<</if>>
+
+<</widget>>
+
+<<widget CritRelatedStatusesShadow>>
+
+/* Triggers whenever a crit happens */
+
+	<<if $NPCs.ShadowScythe.PoisePotency >= 0.01>>
+		<<set $NPCs.ShadowScythe.CritChance -= $NPCs.ShadowScythe.PoisePotency>>
+		<<set $NPCs.ShadowScythe.PoisePotency to 0>>
+		<<set $NPCs.ShadowScythe.CritChance += $NPCs.ShadowScythe.PoisePotency>>
+		<<set $NPCs.ShadowScythe.CritDMG -= $NPCs.ShadowScythe.PoiseCount/10>>
+		<<set $NPCs.ShadowScythe.PoiseCount -= 1>>
+		<<set $NPCs.ShadowScythe.CritDMG += $NPCs.ShadowScythe.PoiseCount/10>>
+	<</if>>
+
+<</widget>>
+
+<<widget CritRelatedStatusesZegrath>>
+
+	/* Triggers whenever a crit happens */
+
+	<<if $NPCs.Zegrath.PoisePotency >= 0.01>>
+		<<set $NPCs.Zegrath.CritChance -= $NPCs.Zegrath.PoisePotency>>
+		<<set $NPCs.Zegrath.PoisePotency to 0>>
+		<<set $NPCs.Zegrath.CritChance += $NPCs.Zegrath.PoisePotency>>
+		<<set $NPCs.Zegrath.CritDMG -= $NPCs.Zegrath.PoiseCount/10>>
+		<<set $NPCs.Zegrath.PoiseCount -= 1>>
+		<<set $NPCs.Zegrath.CritDMG += $NPCs.Zegrath.PoiseCount/10>>
+	<</if>>
+
+<</widget>>

@@ -40,6 +40,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 7,
     Coins: 7
   },
@@ -77,6 +79,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 8,
     Coins: 9
   },
@@ -114,6 +118,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 31,
     Coins: 12
   },
@@ -151,6 +157,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 26,
     Coins: 11
   },
@@ -188,6 +196,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 38,
     Coins: 17
   },
@@ -225,6 +235,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 49,
     Coins: 18
   },
@@ -262,6 +274,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 43,
     Coins: 12
   },
@@ -299,6 +313,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 48,
     Coins: 22
   },
@@ -336,6 +352,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 36,
     Coins: 10
   },
@@ -373,6 +391,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 67,
     Coins: 15
   },
@@ -410,6 +430,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 53,
     Coins: 15
   },
@@ -447,6 +469,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 73,
     Coins: 34
   },
@@ -484,6 +508,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 73,
     Coins: 34
   },
@@ -521,6 +547,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 345,
     Coins: 126
   },
@@ -558,6 +586,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 0,
     Coins: 0
   },
@@ -595,6 +625,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 134,
     Coins: 67
   },
@@ -632,6 +664,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 102,
     Coins: 32
   },
@@ -669,6 +703,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 1,
     Coins: 1
   },
@@ -706,6 +742,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 2280,
     Coins: 3138
   },
@@ -743,6 +781,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 0,
     Coins: 0
   },
@@ -780,6 +820,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     XP: 0,
     Coins: 0
   },
@@ -831,6 +873,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -878,6 +922,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -925,6 +971,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -972,6 +1020,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -1019,6 +1069,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     Affection: 0,
     Dead: false
   },
@@ -1074,6 +1126,8 @@
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
+    PoiseCount: 0,
+    PoisePotency: 0,
     Dead: false
   }
 }>>
@@ -1424,6 +1478,8 @@
 <<set $burnPotencyDealt to 0>>
 <<set $PowerUpCount to 0>>
 <<set $PowerUpPotency to 0>>
+<<set $PoiseCount to 0>>
+<<set $PoisePotency to 0>>
 
 <<set $gameStarted to false>>
 <<set $paidForInn1 to false>> 

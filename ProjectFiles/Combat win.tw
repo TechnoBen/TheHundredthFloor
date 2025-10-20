@@ -26,6 +26,41 @@ You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col 
 	<<set $NPCs.CrimsonSentinel.bleedCountCur to 0>>
 	<<set $NPCs.Zegrath.bleedPotency to 0>>
 	<<set $NPCs.Zegrath.bleedCountCur to 0>>
+
+    <<set $critChance -= $PoisePotency>>
+	<<set $PoisePotency to 0>>
+    <<set $critDMG -= $PoiseCount/10>>
+	<<set $PoiseCount to 0>>
+    <<set $NPCs.RadiantRose.CritChance -= $NPCs.RadiantRose.PoisePotency>>
+	<<set $NPCs.RadiantRose.PoisePotency to 0>>
+    <<set $NPCs.RadiantRose.CritDMG -= $NPCs.RadiantRose.PoiseCount/10>>
+	<<set $NPCs.RadiantRose.PoiseCount to 0>>
+    <<set $NPCs.ShadowScythe.CritChance -= $NPCs.ShadowScythe.PoisePotency>>
+	<<set $NPCs.ShadowScythe.PoisePotency to 0>>
+    <<set $NPCs.ShadowScythe.CritDMG -= $NPCs.ShadowScythe.PoiseCount/10>>
+	<<set $NPCs.ShadowScythe.PoiseCount to 0>>
+    <<set $NPCs.CrimsonSentinel.CritChance -= $NPCs.CrimsonSentinel.PoisePotency>>
+	<<set $NPCs.CrimsonSentinel.PoisePotency to 0>>
+    <<set $NPCs.CrimsonSentinel.CritDMG -= $NPCs.CrimsonSentinel.PoiseCount/10>>
+	<<set $NPCs.CrimsonSentinel.PoiseCount to 0>>
+    <<set $NPCs.Zegrath.CritChance -= $NPCs.Zegrath.PoisePotency>>
+	<<set $NPCs.Zegrath.PoisePotency to 0>>
+    <<set $NPCs.Zegrath.CritDMG -= $NPCs.Zegrath.PoiseCount/10>>
+	<<set $NPCs.Zegrath.PoiseCount to 0>>
+
+    <<if $CDThroatSlit>>
+        <<unset $CDThroatSlit>>
+    <</if>>
+    <<if $CDLeapingSlash>>
+        <<unset $CDLeapingSlash>>
+    <</if>>
+    <<if $CDMultistrike>>
+        <<unset $CDMultistrike>>
+    <</if>>
+    <<if $CDMultistrikeRadiant>>
+        <<unset $CDMultistrikeRadiant>>
+    <</if>>
+
     <<if settings.turns == true>>
     	<<set $turns to 1>>
         <<run $combat_log.push('<span class="turnCount">--| TURN ' + $turns + ' |--</span>')>>
