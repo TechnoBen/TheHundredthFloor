@@ -48,6 +48,38 @@ You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col 
     <<set $NPCs.Zegrath.CritDMG -= $NPCs.Zegrath.PoiseCount/10>>
 	<<set $NPCs.Zegrath.PoiseCount to 0>>
 
+    <<set $DEFPercentBuff -= $DefenseUpPotency>>
+    <<set $DefenseUpCount -= $DefenseUpCount>>
+    <<set $DefenseUpPotency -= $DefenseUpPotency>>
+    <<set $NPCs.RadiantRose.DEFPercentBuff -= $NPCs.RadiantRose.DefenseUpPotency>>
+    <<set $NPCs.RadiantRose.DefenseUpCount -= $NPCs.RadiantRose.DefenseUpCount>>
+    <<set $NPCs.RadiantRose.DefenseUpPotency -= $NPCs.RadiantRose.DefenseUpPotency>>
+    <<set $NPCs.ShadowScythe.DEFPercentBuff -= $NPCs.ShadowScythe.DefenseUpPotency>>
+    <<set $NPCs.ShadowScythe.DefenseUpCount -= $NPCs.ShadowScythe.DefenseUpCount>>
+    <<set $NPCs.ShadowScythe.DefenseUpPotency -= $NPCs.ShadowScythe.DefenseUpPotency>>
+    <<set $NPCs.CrimsonSentinel.DEFPercentBuff -= $NPCs.CrimsonSentinel.DefenseUpPotency>>
+    <<set $NPCs.CrimsonSentinel.DefenseUpCount -= $NPCs.CrimsonSentinel.DefenseUpCount>>
+    <<set $NPCs.CrimsonSentinel.DefenseUpPotency -= $NPCs.CrimsonSentinel.DefenseUpPotency>>
+    <<set $NPCs.Zegrath.DEFPercentBuff -= $NPCs.Zegrath.DefenseUpPotency>>
+    <<set $NPCs.Zegrath.DefenseUpPotency -= $NPCs.Zegrath.DefenseUpPotency>>
+    <<set $NPCs.Zegrath.DefenseUpCount -= $NPCs.Zegrath.DefenseUpCount>>
+
+    <<set $DEFPercentBuff += $DefenseDownPotency>>
+    <<set $DefenseDownCount -= $DefenseDownCount>>
+    <<set $DefenseDownPotency -= $DefenseDownPotency>>
+    <<set $NPCs.RadiantRose.DEFPercentBuff += $NPCs.RadiantRose.DefenseDownPotency>>
+    <<set $NPCs.RadiantRose.DefenseDownCount -= $NPCs.RadiantRose.DefenseDownCount>>
+    <<set $NPCs.RadiantRose.DefenseDownPotency -= $NPCs.RadiantRose.DefenseDownPotency>>
+    <<set $NPCs.ShadowScythe.DEFPercentBuff += $NPCs.ShadowScythe.DefenseDownPotency>>
+    <<set $NPCs.ShadowScythe.DefenseDownCount -= $NPCs.ShadowScythe.DefenseDownCount>>
+    <<set $NPCs.ShadowScythe.DefenseDownPotency -= $NPCs.ShadowScythe.DefenseDownPotency>>
+    <<set $NPCs.CrimsonSentinel.DEFPercentBuff += $NPCs.CrimsonSentinel.DefenseDownPotency>>
+    <<set $NPCs.CrimsonSentinel.DefenseDownCount -= $NPCs.CrimsonSentinel.DefenseDownCount>>
+    <<set $NPCs.CrimsonSentinel.DefenseDownPotency -= $NPCs.CrimsonSentinel.DefenseDownPotency>>
+    <<set $NPCs.Zegrath.DEFPercentBuff += $NPCs.Zegrath.DefenseDownPotency>>
+    <<set $NPCs.Zegrath.DefenseDownPotency -= $NPCs.Zegrath.DefenseDownPotency>>
+    <<set $NPCs.Zegrath.DefenseDownCount -= $NPCs.Zegrath.DefenseDownCount>>
+
     <<if $CDThroatSlit>>
         <<unset $CDThroatSlit>>
     <</if>>
@@ -59,6 +91,18 @@ You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col 
     <</if>>
     <<if $CDMultistrikeRadiant>>
         <<unset $CDMultistrikeRadiant>>
+    <</if>>
+    <<if $CDBrace>>
+        <<unset $CDBrace>>
+    <</if>>
+    <<if $CDBraceCrim>>
+        <<unset $CDBraceCrim>>
+    <</if>>
+    <<if $CDPunctureSS>>
+        <<unset $CDPunctureSS>>
+    <</if>>
+    <<if $CDUpperCut>>
+        <<unset $CDUpperCut>>
     <</if>>
 
     <<if settings.turns == true>>

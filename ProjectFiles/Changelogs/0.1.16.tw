@@ -35,6 +35,7 @@ Added poise, count gets lowered each crit and it raises the crit dmg by 1%, pote
 Added 3rd weapon skills, they have cooldowns
 Added an icon for each attack type
 Added Power Up, raises your dmg depending on the potency
+Added a Defense multiplier for the new statuses Defense Up and Defense Down
 - Completely reworked NPCs
 NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
 - Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats
@@ -71,6 +72,8 @@ Stage 3: 50% > 25%
 - Slightly debuffed XP from mobs
 - Heavily debuffed Col from mobs
 - Added 2 new encounter in F2
+- Remade serving drinks
+- Greatly debuffed all the other work types
 
 - Fixed my dumbass scuffed code that when you walk from path 1 to path 2 but get into a fight it would send you back to path 1 instead of path 2
 - Fixed CrimsonSentinel not getting HP when you sleep
@@ -82,7 +85,7 @@ Stage 3: 50% > 25%
 - Fixed infinite fainting. Again.
 - Fixed a bug where the new F2 encounters from previous versions wouldnt have a chance to be seen... lmao...
 
-- Removed the THF forum from [[Links] due to it being unfortunately dead. Once again thanks to Jaedo for making it. It was really cool to see it happen!
+- Removed the THF forum from [[Links]] due to it being unfortunately dead. Once again thanks to Jaedo for making it. It was really cool to see it happen!
 - Removed the ingame guide since its getting outdated and I dont want to update it
 
 NEW ITEMS:

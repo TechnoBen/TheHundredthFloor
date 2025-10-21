@@ -2,38 +2,43 @@
 You decided to do some work around the Library.
 Work hours:
 6:00AM - 6:00PM
+<<if $drinksrng>>
+You served $drinksrng drinks, gaining $drinksrng col.
 
+<</if>>\
 You can:
 <<if setup.datesystems.default.getDate().h gte 6 and setup.datesystems.default.getDate().h lte 17>>\
-<<link [[Serve water to people reading (36 col per hour)|Work 1]]>>
+<<link [[Serve water to people reading (2.5 col per drink served, 1 hour)|Work 1]]>>
 <<dateadd '1h'>>
-<<set $Coins += 36>>
-<<set $drinksrng to random(35)>>
-<<set $drinkserved += 12 + $drinksrng>>
-<<set $curFatigue += 76>>
+<<set _drinksrng to random((3 + $DEX), (7 + $DEX))>>
+<<set $drinkserved += _drinksrng>>
+<<set $Coins += $drinksrng*2.5>>
+<<set $curFatigue += 40 + $drinksrng>>
 <<set $hoursWorked += 1>>
 <</link>>
 <<if $hoursWorked >= 50>>\
-<<link [[Sweep the floor (49 col per 1 hour)|Work 1]]>>
+<<link [[Sweep the floor (23 col per 1 hour)|Work 1]]>>
 <<dateadd '1h'>>
-<<set $Coins += 49>>
-<<set $curFatigue += 102>>
+<<set $Coins += 23>>
+<<set $curFatigue += 82>>
 <<set $hoursWorked += 1>>
 <</link>>
 <<elseif $hoursWorked <= 49>>\
 You need to work for 40 hours before being able to swipe the floor!<</if>>
 <<if $hoursWorked >= 100>>\
-<<link [[Put books back to their place (75 col per 1 hour)|Work 1]]>>
+<<link [[Put books back to their place (43 col per 1 hour)|Work 1]]>>
 <<dateadd '1h'>>
-<<set $Coins += 75>>
-<<set $curFatigue += 122>>
+<<set $Coins += 43>>
+<<set $curFatigue += 102>>
 <<set $hoursWorked += 1>>
 <</link>>
 <<elseif $hoursWorked <= 99>>\
-You need to work for 100 hours before being able to swipe the floor!<</if>>\
-<<else>>[[You can't work anymore!|Library 1]]
+You need to work for 100 hours before being able to place books back!<</if>>\
+<<else>>[[Its too early for work.|Library 1]]
 <</if>>\
 
-[[Go back|Library 1]]
+<<link [[Go back|Library 1]]>>
+    <<unset $drinksrng>>
+<</link>>
 
 

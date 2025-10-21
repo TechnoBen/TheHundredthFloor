@@ -195,6 +195,116 @@
 <</for>>
 <</widget>>
 
+<<widget DefenseUpCountMobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].DefenseUpCount >= 1>>
+		<<set $mobs[_i].DefenseUpCount -= 1>>
+	<<elseif _mob[_i].DefenseUpCount <= 0 && _mob[_i].DefenseUpPotency >= 0.01>>
+		<<set $mobs[_i].DEFPercentBuff += $mobs[_i].DefenseUpPotency>>
+		<<set $mobs[_i].DefenseUpPotency to 0>>
+  	<</if>>
+<</for>>
+<</widget>>
+
+<<widget DefenseUpCountPlayers>>
+
+	/* Player */
+	<<if $DefenseUpCount >= 1>>
+    	<<set $DefenseUpCount -= 1>>
+	<<elseif $DefenseUpCount <= 0 && $DefenseUpPotency >= 0.01>>
+		<<set $DEFPercentBuff -= $DefenseUpPotency>>
+		<<set $DefenseUpPotency to 0>>
+	<</if>>
+
+	/* RadiantRose */
+	<<if $NPCs.RadiantRose.DefenseUpCount >= 1>>
+		<<set $NPCs.RadiantRose.DefenseUpCount -= 1>>
+	<<elseif $NPCs.RadiantRose.DefenseUpCount <= 0 && $NPCs.RadiantRose.DefenseUpPotency >= 0.01>>
+		<<set $NPCs.RadiantRose.DEFPercentBuff -= $NPCs.RadiantRose.DefenseUpPotency>>
+		<<set $NPCs.RadiantRose.DefenseUpPotency to 0>>
+	<</if>>
+
+	/* ShadowScythe */
+	<<if $NPCs.ShadowScythe.DefenseUpCount >= 1>>
+		<<set $NPCs.ShadowScythe.DefenseUpCount -= 1>>
+	<<elseif $NPCs.ShadowScythe.DefenseUpCount <= 0 && $NPCs.ShadowScythe.DefenseUpPotency >= 0.01>>
+		<<set $NPCs.ShadowScythe.DEFPercentBuff -= $NPCs.ShadowScythe.DefenseUpPotency>>
+		<<set $NPCs.ShadowScythe.DefenseUpPotency to 0>>
+	<</if>>
+
+	/* CrimsonSentinel */
+	<<if $NPCs.CrimsonSentinel.DefenseUpCount >= 1>>
+		<<set $NPCs.CrimsonSentinel.DefenseUpCount -= 1>>
+	<<elseif $NPCs.CrimsonSentinel.DefenseUpCount <= 0 && $NPCs.CrimsonSentinel.DefenseUpPotency >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.DEFPercentBuff -= $NPCs.CrimsonSentinel.DefenseUpPotency>>
+		<<set $NPCs.CrimsonSentinel.DefenseUpPotency to 0>>
+	<</if>>
+
+	/* Zegrath */
+	<<if $NPCs.Zegrath.DefenseUpCount >= 1>>
+		<<set $NPCs.Zegrath.DefenseUpCount -= 1>>
+	<<elseif $NPCs.Zegrath.DefenseUpCount <= 0 && $NPCs.Zegrath.DefenseUpPotency >= 0.01>>
+		<<set $NPCs.Zegrath.DEFPercentBuff -= $NPCs.Zegrath.DefenseUpPotency>>
+		<<set $NPCs.Zegrath.DefenseUpPotency to 0>>
+	<</if>>
+
+<</widget>>
+
+<<widget DefenseDownCountMobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].DefenseDownCount >= 1>>
+		<<set $mobs[_i].DefenseDownCount -= 1>>
+	<<elseif _mob[_i].DefenseDownCount <= 0 && _mob[_i].DefenseDownPotency >= 0.01>>
+		<<set $mobs[_i].DEFPercentBuff -= $mobs[_i].DefenseDownPotency>>
+		<<set $mobs[_i].DefenseDownPotency to 0>>
+  	<</if>>
+<</for>>
+<</widget>>
+
+<<widget DefenseDownCountPlayers>>
+
+	/* Player */
+	<<if $DefenseDownCount >= 1>>
+    	<<set $DefenseDownCount -= 1>>
+	<<elseif $DefenseDownCount <= 0 && $DefenseDownPotency >= 0.01>>
+		<<set $DEFPercentBuff += $DefenseDownPotency>>
+		<<set $DefenseDownPotency to 0>>
+	<</if>>
+
+	/* RadiantRose */
+	<<if $NPCs.RadiantRose.DefenseDownCount >= 1>>
+		<<set $NPCs.RadiantRose.DefenseDownCount -= 1>>
+	<<elseif $NPCs.RadiantRose.DefenseDownCount <= 0 && $NPCs.RadiantRose.DefenseDownPotency >= 0.01>>
+		<<set $NPCs.RadiantRose.DEFPercentBuff += $NPCs.RadiantRose.DefenseDownPotency>>
+		<<set $NPCs.RadiantRose.DefenseDownPotency to 0>>
+	<</if>>
+
+	/* ShadowScythe */
+	<<if $NPCs.ShadowScythe.DefenseDownCount >= 1>>
+		<<set $NPCs.ShadowScythe.DefenseDownCount -= 1>>
+	<<elseif $NPCs.ShadowScythe.DefenseDownCount <= 0 && $NPCs.ShadowScythe.DefenseDownPotency >= 0.01>>
+		<<set $NPCs.ShadowScythe.DEFPercentBuff += $NPCs.ShadowScythe.DefenseDownPotency>>
+		<<set $NPCs.ShadowScythe.DefenseDownPotency to 0>>
+	<</if>>
+
+	/* CrimsonSentinel */
+	<<if $NPCs.CrimsonSentinel.DefenseDownCount >= 1>>
+		<<set $NPCs.CrimsonSentinel.DefenseDownCount -= 1>>
+	<<elseif $NPCs.CrimsonSentinel.DefenseDownCount <= 0 && $NPCs.CrimsonSentinel.DefenseDownPotency >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.DEFPercentBuff += $NPCs.CrimsonSentinel.DefenseDownPotency>>
+		<<set $NPCs.CrimsonSentinel.DefenseDownPotency to 0>>
+	<</if>>
+
+	/* Zegrath */
+	<<if $NPCs.Zegrath.DefenseDownCount >= 1>>
+		<<set $NPCs.Zegrath.DefenseDownCount -= 1>>
+	<<elseif $NPCs.Zegrath.DefenseDownCount <= 0 && $NPCs.Zegrath.DefenseDownPotency >= 0.01>>
+		<<set $NPCs.Zegrath.DEFPercentBuff += $NPCs.Zegrath.DefenseDownPotency>>
+		<<set $NPCs.Zegrath.DefenseDownPotency to 0>>
+	<</if>>
+
+<</widget>>
+
 <<widget HitRelatedStatusMobs>>
 
 	/* In short, whenever a skill is meant to trigger during a hit (or crit) it activates. */

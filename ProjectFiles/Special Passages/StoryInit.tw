@@ -42,6 +42,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 7,
     Coins: 7
   },
@@ -81,6 +86,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 8,
     Coins: 9
   },
@@ -120,6 +130,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 31,
     Coins: 12
   },
@@ -159,6 +174,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 26,
     Coins: 11
   },
@@ -198,6 +218,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 38,
     Coins: 17
   },
@@ -237,6 +262,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 49,
     Coins: 18
   },
@@ -276,6 +306,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 43,
     Coins: 12
   },
@@ -315,6 +350,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 48,
     Coins: 22
   },
@@ -354,6 +394,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 36,
     Coins: 10
   },
@@ -393,6 +438,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 67,
     Coins: 15
   },
@@ -432,6 +482,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 53,
     Coins: 15
   },
@@ -471,6 +526,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 73,
     Coins: 34
   },
@@ -510,6 +570,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 73,
     Coins: 34
   },
@@ -549,6 +614,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 345,
     Coins: 126
   },
@@ -588,6 +658,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 0,
     Coins: 0
   },
@@ -627,6 +702,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 134,
     Coins: 67
   },
@@ -666,6 +746,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 102,
     Coins: 32
   },
@@ -705,6 +790,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 1,
     Coins: 1
   },
@@ -744,6 +834,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 2280,
     Coins: 3138
   },
@@ -783,6 +878,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 0,
     Coins: 0
   },
@@ -822,6 +922,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     XP: 0,
     Coins: 0
   },
@@ -875,6 +980,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     Affection: 0,
     Dead: false
   },
@@ -924,6 +1034,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     Affection: 0,
     Dead: false
   },
@@ -973,6 +1088,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     Affection: 0,
     Dead: false
   },
@@ -1022,6 +1142,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     Affection: 0,
     Dead: false
   },
@@ -1071,6 +1196,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     Affection: 0,
     Dead: false
   },
@@ -1128,6 +1258,11 @@
     PowerUpPotency: 0,
     PoiseCount: 0,
     PoisePotency: 0,
+    DefenseUpCount: 0,
+    DefenseUpPotency: 0,
+    DefenseDownCount: 0,
+    DefenseDownPotency: 0,
+    DEFPercentBuff: 1,
     Dead: false
   }
 }>>
@@ -1480,6 +1615,11 @@
 <<set $PowerUpPotency to 0>>
 <<set $PoiseCount to 0>>
 <<set $PoisePotency to 0>>
+<<set $DefenseUpCount to 0>>
+<<set $DefenseUpPotency to 0>>
+<<set $DefenseDownCount to 0>>
+<<set $DefenseDownPotency to 0>>
+<<set $DEFPercentBuff to 1>>
 
 <<set $gameStarted to false>>
 <<set $paidForInn1 to false>> 
