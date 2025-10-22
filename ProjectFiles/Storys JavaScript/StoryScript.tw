@@ -779,6 +779,36 @@ Config.saves.onLoad = function(save) {
 		if(typeof variables.PoisePotency === 'undefined') {
 			variables.PoisePotency = 0;
 		} 
+		if(typeof variables.DefenseUpCount === 'undefined') {
+			variables.DefenseUpCount = 0;
+		}
+		if(typeof variables.DefenseUpPotency === 'undefined') {
+			variables.DefenseUpPotency = 0;
+		} 
+		if(typeof variables.DefenseDownCount === 'undefined') {
+			variables.DefenseDownCount = 0;
+		}
+		if(typeof variables.DefenseDownPotency === 'undefined') {
+			variables.DefenseDownPotency = 0;
+		} 
+		if(typeof variables.DEFPercentBuff === 'undefined') {
+			variables.DEFPercentBuff = 1;
+		} 
+		if(typeof variables.DazedCount === 'undefined') {
+			variables.DazedCount = 0;
+		} 
+		if(typeof variables.DazedPotency === 'undefined') {
+			variables.DazedPotency = 0;
+		} 
+		if(typeof variables.StunnedCount === 'undefined') {
+			variables.StunnedCount = 0;
+		} 
+		if(typeof variables.FlowPotency === 'undefined') {
+			variables.FlowPotency = 0;
+		} 
+		if(typeof variables.FlowCount === 'undefined') {
+			variables.FlowCount = 0;
+		} 
 	}
 }
 

@@ -36,6 +36,8 @@ Added 3rd weapon skills, they have cooldowns
 Added an icon for each attack type
 Added Power Up, raises your dmg depending on the potency
 Added a Defense multiplier for the new statuses Defense Up and Defense Down
+Added flow, a status that raises your max turn chance
+Reworked stuns and added Daze, potency makes the chance of getting stunned higher
 - Completely reworked NPCs
 NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
 - Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats

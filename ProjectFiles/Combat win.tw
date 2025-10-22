@@ -80,6 +80,38 @@ You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col 
     <<set $NPCs.Zegrath.DefenseDownPotency -= $NPCs.Zegrath.DefenseDownPotency>>
     <<set $NPCs.Zegrath.DefenseDownCount -= $NPCs.Zegrath.DefenseDownCount>>
 
+    <<set $DazedCount -= $DazedCount>>
+    <<set $DazedPotency -= $DazedPotency>>
+    <<set $StunnedCount -= $StunnedCount>>
+    <<set $NPCs.RadiantRose.DazedCount -= $NPCs.RadiantRose.DazedCount>>
+    <<set $NPCs.RadiantRose.DazedPotency -= $NPCs.RadiantRose.DazedPotency>>
+    <<set $NPCs.RadiantRose.StunnedCount -= $NPCs.RadiantRose.StunnedCount>>
+    <<set $NPCs.ShadowScythe.DazedCount -= $NPCs.ShadowScythe.DazedCount>>
+    <<set $NPCs.ShadowScythe.DazedPotency -= $NPCs.ShadowScythe.DazedPotency>>
+    <<set $NPCs.ShadowScythe.StunnedCount -= $NPCs.ShadowScythe.StunnedCount>>
+    <<set $NPCs.CrimsonSentinel.DazedCount -= $NPCs.CrimsonSentinel.DazedCount>>
+    <<set $NPCs.CrimsonSentinel.DazedPotency -= $NPCs.CrimsonSentinel.DazedPotency>>
+    <<set $NPCs.CrimsonSentinel.StunnedCount -= $NPCs.CrimsonSentinel.StunnedCount>>
+    <<set $NPCs.Zegrath.DazedCount -= $NPCs.Zegrath.DazedCount>>
+    <<set $NPCs.Zegrath.DazedPotency -= $NPCs.Zegrath.DazedPotency>>
+    <<set $NPCs.Zegrath.StunnedCount -= $NPCs.Zegrath.StunnedCount>>
+
+    <<set $FlowCount -= $FlowCount>>
+    <<set $turnChanceMax -= $FlowPotency>>
+    <<set $FlowPotency -= $FlowPotency>>
+    <<set $NPCs.RadiantRose.FlowCount -= $NPCs.RadiantRose.FlowCount>>
+    <<set $NPCs.RadiantRose.turnChanceMax -= $NPCs.RadiantRose.FlowPotency>>
+    <<set $NPCs.RadiantRose.FlowPotency -= $NPCs.RadiantRose.FlowPotency>>
+    <<set $NPCs.ShadowScythe.FlowCount -= $NPCs.ShadowScythe.FlowCount>>
+    <<set $NPCs.ShadowScythe.turnChanceMax -= $NPCs.ShadowScythe.FlowPotency>>
+    <<set $NPCs.ShadowScythe.FlowPotency -= $NPCs.ShadowScythe.FlowPotency>>
+    <<set $NPCs.CrimsonSentinel.FlowCount -= $NPCs.CrimsonSentinel.FlowCount>>
+    <<set $NPCs.CrimsonSentinel.turnChanceMax -= $NPCs.CrimsonSentinel.FlowPotency>>
+    <<set $NPCs.CrimsonSentinel.FlowPotency -= $NPCs.CrimsonSentinel.FlowPotency>>
+    <<set $NPCs.Zegrath.FlowCount -= $NPCs.Zegrath.FlowCount>>
+    <<set $NPCs.Zegrath.turnChanceMax -= $NPCs.Zegrath.FlowPotency>>
+    <<set $NPCs.Zegrath.FlowPotency -= $NPCs.Zegrath.FlowPotency>>
+
     <<if $CDThroatSlit>>
         <<unset $CDThroatSlit>>
     <</if>>
@@ -103,6 +135,15 @@ You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col 
     <</if>>
     <<if $CDUpperCut>>
         <<unset $CDUpperCut>>
+    <</if>>
+    <<if $CDConcussion>>
+        <<unset $CDConcussion>>
+    <</if>>
+    <<if $CDUnfocusedStrike>>
+        <<unset $CDUnfocusedStrike>>
+    <</if>>
+    <<if $CDUnfocusedStrikeZeg>>
+        <<unset $CDUnfocusedStrikeZeg>>
     <</if>>
 
     <<if settings.turns == true>>

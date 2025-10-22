@@ -3,7 +3,7 @@ You have encountered:
 <<set _mob = $mobs>>\
 <<for _i = 0; _i lte 99; _i++>>\
   	<<if $mobs[_i]>>\
- 	<<if $mobs[_i].bonusTurn === 1>>EXTRA TURN! <</if>>Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].PowerUpCount >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].PowerUpCount.toFixed(0)>> (<<= $mobs[_i].PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $mobs[_i].DefenseUpCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseUpCount.toFixed(0)>> (<<= $mobs[_i].DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $mobs[_i].DefenseDownCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseDownCount.toFixed(0)>> (<<= $mobs[_i].DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $mobs[_i].PoiseCount >= 0.1>> | <span class="poise"><<= $mobs[_i].PoiseCount.toFixed(0)>> (<<= $mobs[_i].PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+ 	<<if $mobs[_i].bonusTurn === 1>>EXTRA TURN! <</if>>Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].StunnedCount >= 0.1>> | <span class="stun"><<= $mobs[_i].StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $mobs[_i].DazedCount >= 0.1>> | <span class="stun"><<= $mobs[_i].DazedCount.toFixed(0)>> (<<= $mobs[_i].DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if $mobs[_i].PowerUpCount >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].PowerUpCount.toFixed(0)>> (<<= $mobs[_i].PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $mobs[_i].DefenseUpCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseUpCount.toFixed(0)>> (<<= $mobs[_i].DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $mobs[_i].FlowCount >= 0.1>> | <span class="flow"><<= $mobs[_i].FlowCount.toFixed(0)>> (<<= $mobs[_i].FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $mobs[_i].DefenseDownCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseDownCount.toFixed(0)>> (<<= $mobs[_i].DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $mobs[_i].PoiseCount >= 0.1>> | <span class="poise"><<= $mobs[_i].PoiseCount.toFixed(0)>> (<<= $mobs[_i].PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
  	<</if>>\
 <</for>>\
 <<run $combat_log.splice(0, $combat_log.length - 20)>>
@@ -12,9 +12,9 @@ You have encountered:
 	<br>\ 
 <</if>>\
 $gamename stats:
-HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>><<if $PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>><<if $StunnedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= $StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $DazedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= $DazedCount.toFixed(0)>> (<<= $DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if $PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $FlowCount >= 0.1 && settings.statuses === false>> | <span class="flow"><<= $FlowCount.toFixed(0)>> (<<= $FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
 STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
-<<if $PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === true>> | <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === true>> | <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+<<if $StunnedCount >= 0.01 && settings.statuses === true>> <span class="stun"><<= $StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $DazedCount >= 0.01 && settings.statuses === true>> <span class="stun"><<= $DazedCount.toFixed(0)>> (<<= $DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>> <<if $PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === true>> <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $FlowCount >= 0.1 && settings.statuses === true>><span class="flow"><<= $FlowCount.toFixed(0)>> (<<= $FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === true>> <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
 <ol>\
 <<if $hpPOT >= 1>><li>HP pots: $hpPOT</li><</if>>
 <<if $hpPOT1 >= 1>><li>HP pots T2: $hpPOT1</li><</if>>
@@ -26,24 +26,27 @@ Raid party hp: $raidHP/1000
 <<for _i range $partyMembers>>
 <<set _npc = $NPCs[_i]>>\
     <<= _npc.name>>'s stats:
-    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.StunnedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= _npc.StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if _npc.DazedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= _npc.DazedCount.toFixed(0)>> (<<= _npc.DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if _npc.PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.FlowCount >= 0.1 && settings.statuses === false>> | <span class="flow"><<= _npc.FlowCount.toFixed(0)>> (<<= _npc.FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
     STM: <<= _npc.CurSTM.toFixed(0)>>/<<= _npc.MaxSTM.toFixed(0)>>
-	<<if _npc.PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === true>> | <span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === true>> | <span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+	<<if _npc.StunnedCount >= 0.01 && settings.statuses === true>><span class="stun"><<= _npc.StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if _npc.DazedCount >= 0.01 && settings.statuses === true>><span class="stun"><<= _npc.DazedCount.toFixed(0)>> (<<= _npc.DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if _npc.PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === true>><span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.FlowCount >= 0.1 && settings.statuses === true>><span class="flow"><<= _npc.FlowCount.toFixed(0)>> (<<= _npc.FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === true>><span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
 <</for>>\
 
 Select your move:<<nobr>>
 <label>
     <<radiobutton "$attack" "Do nothing" checked>> Do nothing
 </label>
+<<if $StunnedCount <= 0>><label>
 <label>
      | <<radiobutton "$attack" "Block">> Block
 </label>
 <label>
      | <<radiobutton "$attack" "Dodge">> Dodge
 </label>
+<<if $weaponType is "Shield and sword">>
 <label>
     <<if $CDBrace >= 1>> | CD: $CDBrace Brace for impact<<else>> | <<radiobutton "$attack" "Brace for impact">> Brace for impact<</if>>
 </label>
+<</if>>
 <<if $hpPOT >= 1>> 
     <label>
          | <<radiobutton "$attack" "Drink a HP potion">> Drink a tier 1 health potion</label>
@@ -65,6 +68,7 @@ Select your move:<<nobr>>
         </label>
     <</if>>
 <</for>>
+<</if>>
 <</nobr>>
 <<nobr>>
 Select a party member: 
@@ -84,13 +88,13 @@ Select a party member:
 <<for _i = 0; _i lte 4; _i++>>\
 <<capture _i>>\
 <<if $partyMembers[_i] === "RadiantRose">>\
-Select <span class="radiant">RadiantRose</span>'s move: <label><<radiobutton "$attackRadiantRose" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackRadiantRose" "Block">> Block </label> | <label><<radiobutton "$attackRadiantRose" "Dodge">> Dodge</label>
+Select <span class="radiant">RadiantRose</span>'s move: <label><<radiobutton "$attackRadiantRose" "Do nothing" checked>> Do nothing</label><<if $NPCs.RadiantRose.StunnedCount <= 0>> | <label><<radiobutton "$attackRadiantRose" "Block">> Block </label> | <label><<radiobutton "$attackRadiantRose" "Dodge">> Dodge</label><</if>>
 <</if>>\
 <<if $partyMembers[_i] === "ShadowScythe">>\
-Select <span class="shadow">ShadowScythe</span>'s move: <label><<radiobutton "$attackShadowScythe" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackShadowScythe" "Block">> Block </label> | <label><<radiobutton "$attackShadowScythe" "Dodge">> Dodge</label>
+Select <span class="shadow">ShadowScythe</span>'s move: <label><<radiobutton "$attackShadowScythe" "Do nothing" checked>> Do nothing</label><<if $NPCs.ShadowScythe.StunnedCount <= 0>> | <label><<radiobutton "$attackShadowScythe" "Block">> Block </label> | <label><<radiobutton "$attackShadowScythe" "Dodge">> Dodge</label><</if>>
 <</if>>\
 <<if $partyMembers[_i] === "CrimsonSentinel">>\
-Select <span class="crimson">CrimsonSentinel</span>'s move: <label><<radiobutton "$attackCrimsonSentinel" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackCrimsonSentinel" "Block">> Block </label> | <label><<radiobutton "$attackCrimsonSentinel" "Dodge">> Dodge</label><label><<if $CDBraceCrim >= 1>> | CD: $CDBraceCrim Brace for impact<<else>> | <<radiobutton "$attackCrimsonSentinel" "Brace for impact">> Brace for impact<</if>></label>
+Select <span class="crimson">CrimsonSentinel</span>'s move: <label><<radiobutton "$attackCrimsonSentinel" "Do nothing" checked>> Do nothing</label><<if $NPCs.CrimsonSentinel.StunnedCount <= 0>> | <label><<radiobutton "$attackCrimsonSentinel" "Block">> Block </label> | <label><<radiobutton "$attackCrimsonSentinel" "Dodge">> Dodge</label><label><<if $CDBraceCrim >= 1>> | CD: $CDBraceCrim Brace for impact<<else>> | <<radiobutton "$attackCrimsonSentinel" "Brace for impact">> Brace for impact<</if>></label><</if>>
 <<nobr>>
 Select a party member: 
 <label>
@@ -108,7 +112,7 @@ Select a party member:
 <</nobr>>
 <</if>>\
 <<if $partyMembers[_i] === "Zegrath">>\
-Select <span class="zegrath">Zegrath</span>'s move: <label><<radiobutton "$attackZegrath" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackZegrath" "Block">> Block </label> | <label><<radiobutton "$attackZegrath" "Dodge">> Dodge</label>
+Select <span class="zegrath">Zegrath</span>'s move: <label><<radiobutton "$attackZegrath" "Do nothing" checked>> Do nothing</label><<if $NPCs.Zegrath.StunnedCount <= 0>> | <label><<radiobutton "$attackZegrath" "Block">> Block </label> | <label><<radiobutton "$attackZegrath" "Dodge">> Dodge</label> <</if>>
 <</if>>\
 <</capture>>\
 <</for>>\
@@ -419,7 +423,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 <<set _mob = $mobs>>
 <<for _i = 0; _i lt $mobs.length; _i++>>
     /* BOARS */
-    <<if _mob[_i].name is "Wild Boar" or _mob[_i].name is "Ram" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Wild Boar" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Ram" && _mob[_i].turnChanceCur > 0>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
         <<set _mobHit to kitsuneRNG(0, 100)>>
@@ -431,6 +435,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<set _npc.CurHP -= _mob[_i].baseDMG>>
 					<<set _npc.burnPotency += _mob[_i].burnPotencyDealt>>
 					<<set _npc.burnCountCur += _mob[_i].burnCountDealt>>
+                    <<set _npc.DazedPotency += 2>>
+                    <<set _npc.DazedCount += 1>>
                     <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<GettingHit>>
                 <<else>>
@@ -438,6 +444,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<set _npc.CurHP -= _mob[_i].baseDMG>>
 					<<set _npc.burnPotency += _mob[_i].burnPotencyDealt*2>>
 					<<set _npc.burnCountCur += _mob[_i].burnCountDealt*2>>
+                    <<set _npc.DazedPotency += 5>>
+                    <<set _npc.DazedCount += 1>>
                     <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<GettingCritted>>
                     <<CritRelatedStatusesMobs>>
@@ -455,12 +463,16 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<set $CurHP -= _mob[_i].baseDMG>>
 					<<set $burnPotency += _mob[_i].burnPotencyDealt>>
 					<<set $burnCountCur += _mob[_i].burnCountDealt>>
+                    <<set $DazedPotency += 2>>
+                    <<set $DazedCount += 1>>
                     <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                 <<else>>
                     <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                     <<set $CurHP -= _mob[_i].baseDMG>>
 					<<set $burnPotency += _mob[_i].burnPotencyDealt>>
 					<<set $burnCountCur += _mob[_i].burnCountDealt>>
+                    <<set $DazedPotency += 5>>
+                    <<set $DazedCount += 1>>
                     <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<CritRelatedStatusesMobs>>
                 <</if>>
@@ -473,7 +485,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
     <</if>>
     /* RABBITS, WOLVES, MIMICS */
-    <<if _mob[_i].name is "Rabbit" or _mob[_i].name is "White wolf" or _mob[_i].name is "Glowing chest">>
+    <<if _mob[_i].name is "Rabbit" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "White wolf" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Glowing chest" && _mob[_i].turnChanceCur > 0>>
 	<<if _mob[_i].turnChanceCur >= 0.01>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
@@ -591,7 +603,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
     <</if>>
 	<</if>>
     /* Plant monsters */
-    <<if _mob[_i].name is "Plant monster" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Plant monster" && _mob[_i].turnChanceCur > 0>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
         <<set _mobHit to kitsuneRNG(0, 100)>>
@@ -646,7 +658,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <</if>>
         <</if>>
     /* Skeleton, Boulder guardian */
-    <<if _mob[_i].name is "Skeleton" or _mob[_i].name is "Oni" or _mob[_i].name is "Boulder guardian" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Skeleton" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Oni" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Boulder guardian" && _mob[_i].turnChanceCur > 0>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
         <<set _mobHit to kitsuneRNG(0, 100)>>
@@ -657,11 +669,15 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<if _mob[_i].CritChance <= _critChanceRNG>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ((_npc.BluntDEF + _npc.armorBluntDEF) * _npc.DEFPercentBuff)) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<set _npc.DazedPotency += 3>>
+                        <<set _npc.DazedCount += 2>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<GettingHit>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - ((_npc.BluntDEF + _npc.armorBluntDEF) * _npc.DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<set _npc.DazedPotency += 3>>
+                        <<set _npc.DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<GettingCritted>>
                         <<CritRelatedStatusesMobs>>
@@ -680,10 +696,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<if _mob[_i].CritChance <= _critChanceRNG>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<set $DazedPotency += 3>>
+                        <<set $DazedCount += 2>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<set $DazedPotency += 3>>
+                        <<set $DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 2>>
@@ -699,7 +719,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <</if>>
         <</if>>
     /* Skulltron */
-    <<if _mob[_i].name is "Skulltron" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Skulltron" && _mob[_i].turnChanceCur > 0>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
@@ -768,11 +788,15 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<if _mob[_i].CritChance <= _critChanceRNG>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ((_npc.BluntDEF + _npc.armorBluntDEF) * _npc.DEFPercentBuff)) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<set _npc.DazedPotency += 5>>
+                        <<set _npc.DazedCount += 1>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<GettingHit>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - ((_npc.BluntDEF + _npc.armorBluntDEF) * _npc.DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<set _npc.DazedPotency += 8>>
+                        <<set _npc.DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<GettingCritted>>
                         <<CritRelatedStatusesMobs>>
@@ -788,10 +812,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<if _mob[_i].CritChance <= _critChanceRNG>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<set $DazedPotency += 5>>
+                        <<set $DazedCount += 1>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<set $DazedPotency += 8>>
+                        <<set $DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
@@ -805,7 +833,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
     <</if>>
     /* Skeleton warrior */
-    <<if _mob[_i].name is "Skeleton warrior" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Skeleton warrior" && _mob[_i].turnChanceCur > 0>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
@@ -913,7 +941,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
     <</if>>
     /* Deathlord */
-    <<if _mob[_i].name is "Deathlord" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Deathlord" && _mob[_i].turnChanceCur > 0>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
@@ -1055,7 +1083,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
     <</if>>
     /* Poisonous lizard */
-    <<if _mob[_i].name is "Poisonous lizard" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Poisonous lizard" && _mob[_i].turnChanceCur > 0>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
@@ -1165,7 +1193,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
     <</if>>
     /* Boldegar */
-    <<if _mob[_i].name is "Boldegar" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Boldegar" && _mob[_i].turnChanceCur > 0>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
@@ -1228,11 +1256,15 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<if _mob[_i].CritChance <= _critChanceRNG>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - ((_npc.BluntDEF + _npc.armorBluntDEF) * _npc.DEFPercentBuff)) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<set _npc.DazedPotency += 7>>
+                        <<set _npc.DazedCount += 2>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<GettingHit>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - ((_npc.BluntDEF + _npc.armorBluntDEF) * _npc.DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
+                        <<set _npc.DazedPotency += 8>>
+                        <<set _npc.DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + _npc.name + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<GettingCritted>>
                         <<CritRelatedStatusesMobs>>
@@ -1248,10 +1280,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<if _mob[_i].CritChance <= _critChanceRNG>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<set $DazedPotency += 7>>
+                        <<set $DazedCount += 2>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
+                        <<set $DazedPotency += 8>>
+                        <<set $DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
@@ -1266,7 +1302,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
     <</if>>
 <</if>>
 /* Player killers */
-    <<if _mob[_i].name is "Player killer" && _mob[_i].turnChanceCur >= 0.01>>
+    <<if _mob[_i].name is "Player killer" && _mob[_i].turnChanceCur > 0>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
         <<set _critChanceRNG to kitsuneRNG(0, 100)>>
@@ -1331,10 +1367,16 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' stabs ' + _npc.name + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<GettingHit>>
+                        <<if _npc.StunnedCount <= 0>>
+                            <<set _npc.StunnedCount += 4>>
+                        <</if>>
                     <<else>>
                         <<set _mob[_i].baseDMG to ((((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - ((_npc.PierceDEF + _npc.armorPierceDEF) * _npc.DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * _npc.blockingModifier>>
                         <<set _npc.CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' stabs ' + _npc.name + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
+                        <<if _npc.StunnedCount <= 0>>
+                            <<set _npc.StunnedCount += 6>>
+                        <</if>>
                         <<GettingCritted>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
@@ -1350,16 +1392,16 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' stabs ' + $gamename + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
-                        <<if $paralized <= 0>>
-                            <<set $paralized to 8>>
+                        <<if $StunnedCount <= 0>>
+                            <<set $StunnedCount += 4>>
                         <</if>>
                     <<else>>
                         <<set _mob[_i].baseDMG to ((((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' and stabs ' + $gamename + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
-                        <<if $paralized <= 0>>
-                            <<set $paralized to 8>>
+                        <<if $StunnedCount <= 0>>
+                            <<set $StunnedCount += 6>>
                         <</if>>
                     <</if>>
                 <<HitRelatedStatusMobs>>
@@ -1379,6 +1421,10 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 <<PowerUpCountMobs>>
 <<DefenseDownCountPlayers>>
 <<DefenseUpCountPlayers>>
+<<dazedMobs>>
+<<dazedPotencyPlayers>>
+<<dazedPotencyMobs>>
+<<FlowCountPlayers>>
 
 <<if $CDThroatSlit>>
     <<set $CDThroatSlit -= 1>>
@@ -1436,6 +1482,27 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
     <</if>>
 <</if>>
 
+<<if $CDConcussion>>
+    <<set $CDConcussion -= 1>>
+    <<if $CDConcussion == 0>>
+        <<unset $CDConcussion>>
+    <</if>>
+<</if>>
+
+<<if $CDUnfocusedStrike>>
+    <<set $CDUnfocusedStrike -= 1>>
+    <<if $CDUnfocusedStrike == 0>>
+        <<unset $CDUnfocusedStrike>>
+    <</if>>
+<</if>>
+
+<<if $CDUnfocusedStrikeZeg>>
+    <<set $CDUnfocusedStrikeZeg -= 1>>
+    <<if $CDUnfocusedStrikeZeg == 0>>
+        <<unset $CDUnfocusedStrikeZeg>>
+    <</if>>
+<</if>>
+
 /* Mobs dying */
 <<for _i = 0; _i lt $mobs.length; _i++>>
   <<if _mob[_i].CurHP <= 0.01>>
@@ -1473,6 +1540,9 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 <<unset $bonusTurnShadowScythe>>
 <<unset $bonusTurnCrimsonSentinel>>
 <<unset $bonusTurnZegrath>>
+
+<<stunnedPlayers>>
+<<stunnedMobs>>
 
 /* Bonus turn mob */
 <<for _i = 0; _i lt $mobs.length; _i++>>

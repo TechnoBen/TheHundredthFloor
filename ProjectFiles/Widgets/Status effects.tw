@@ -3,7 +3,7 @@
 
 /* Player bleed */
 <<if $bleedCountCur >= $bleedCountMax>>
-    <<run $combat_log.push('<span class="bleedTrigger">' + $gamename + ' took ' + $bleedPotency.toFixed(2) + ' bleed damage.</span>')>>
+    <<run $combat_log.push('<span class="bleedTrigger">' + $gamename + ' took ' + $bleedPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Bleed.png" />damage</span>')>>
 	<<set $CurHP -= $bleedPotency>>
 	<<set $bleedPotency to 0>>
 	<<set $bleedCountCur to 0>>
@@ -11,7 +11,7 @@
 
 /* RadiantRose bleed */
 <<if $NPCs.RadiantRose.bleedCountCur >= $NPCs.RadiantRose.bleedCountMax>>
-    <<run $combat_log.push('<span class="bleedTrigger">RadiantRose took ' + $NPCs.RadiantRose.bleedPotency.toFixed(2) + ' bleed damage.</span>')>>
+    <<run $combat_log.push('<span class="bleedTrigger">RadiantRose took ' + $NPCs.RadiantRose.bleedPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Bleed.png" />damage</span>')>>
 	<<set $NPCs.RadiantRose.CurHP -= $NPCs.RadiantRose.bleedPotency>>
 	<<set $NPCs.RadiantRose.bleedPotency to 0>>
 	<<set $NPCs.RadiantRose.bleedCountCur to 0>>
@@ -19,7 +19,7 @@
 
 /* ShadowScythe bleed */
 <<if $NPCs.ShadowScythe.bleedCountCur >= $NPCs.ShadowScythe.bleedCountMax>>
-    <<run $combat_log.push('<span class="bleedTrigger">ShadowScythe took ' + $NPCs.ShadowScythe.bleedPotency.toFixed(2) + ' bleed damage.</span>')>>
+    <<run $combat_log.push('<span class="bleedTrigger">ShadowScythe took ' + $NPCs.ShadowScythe.bleedPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Bleed.png" />damage</span>')>>
 	<<set $NPCs.ShadowScythe.CurHP -= $NPCs.ShadowScythe.bleedPotency>>
 	<<set $NPCs.ShadowScythe.bleedPotency to 0>>
 	<<set $NPCs.ShadowScythe.bleedCountCur to 0>>
@@ -27,7 +27,7 @@
 
 /* CrimsonSentinel bleed */
 <<if $NPCs.CrimsonSentinel.bleedCountCur >= $NPCs.CrimsonSentinel.bleedCountMax>>
-    <<run $combat_log.push('<span class="bleedTrigger">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.bleedPotency.toFixed(2) + ' bleed damage.</span>')>>
+    <<run $combat_log.push('<span class="bleedTrigger">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.bleedPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Bleed.png" />damage</span>')>>
 	<<set $NPCs.CrimsonSentinel.CurHP -= $NPCs.CrimsonSentinel.bleedPotency>>
 	<<set $NPCs.CrimsonSentinel.bleedPotency to 0>>
 	<<set $NPCs.CrimsonSentinel.bleedCountCur to 0>>
@@ -35,7 +35,7 @@
 
 /* Zegrath bleed */
 <<if $NPCs.Zegrath.bleedCountCur >= $NPCs.Zegrath.bleedCountMax>>
-    <<run $combat_log.push('<span class="bleedTrigger">Zegrath took ' + $NPCs.Zegrath.bleedPotency.toFixed(2) + ' bleed damage.</span>')>>
+    <<run $combat_log.push('<span class="bleedTrigger">Zegrath took ' + $NPCs.Zegrath.bleedPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Bleed.png" />damage</span>')>>
 	<<set $NPCs.Zegrath.CurHP -= $NPCs.Zegrath.bleedPotency>>
 	<<set $NPCs.Zegrath.bleedPotency to 0>>
 	<<set $NPCs.Zegrath.bleedCountCur to 0>>
@@ -45,7 +45,7 @@
 <<set _mob = $mobs>>
 <<for _i = 0; _i lt $mobs.length; _i++>>
   <<if _mob[_i].bleedCountCur >= _mob[_i].bleedCountMax>>
-    <<run $combat_log.push('<span class="bleedTrigger">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].bleedPotency.toFixed(2) + ' bleed damage.</span>')>>
+    <<run $combat_log.push('<span class="bleedTrigger">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].bleedPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Bleed.png" />damage</span>')>>
 	<<set $mobs[_i].CurHP -= $mobs[_i].bleedPotency>>
 	<<set $mobs[_i].bleedPotency to 0>>
 	<<set $mobs[_i].bleedCountCur to 0>>
@@ -59,7 +59,7 @@
 
 /* Player burn */
 <<if $burnCountCur >= 0.01>>
-    <<run $combat_log.push('<span class="burnTrigger">' + $gamename + ' took ' + $burnPotency.toFixed(2) + ' burn damage.</span>')>>
+    <<run $combat_log.push('<span class="burnTrigger">' + $gamename + ' took ' + $burnPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Burn.png" />damage</span>')>>
 	<<set $CurHP -= $burnPotency>>
 	<<set $burnPotency /= 2>>
 	<<set $burnCountCur -= 1>>
@@ -67,7 +67,7 @@
 
 /* RadiantRose burn */
 <<if $NPCs.RadiantRose.burnCountCur >= 0.01>>
-    <<run $combat_log.push('<span class="burnTrigger">RadiantRose took ' + $NPCs.RadiantRose.burnPotency.toFixed(2) + ' burn damage.</span>')>>
+    <<run $combat_log.push('<span class="burnTrigger">RadiantRose took ' + $NPCs.RadiantRose.burnPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Burn.png" />damage</span>')>>
 	<<set $NPCs.RadiantRose.CurHP -= $NPCs.RadiantRose.burnPotency>>
 	<<set $NPCs.RadiantRose.burnPotency /= 2>>
 	<<set $NPCs.RadiantRose.burnCountCur -= 1>>
@@ -75,7 +75,7 @@
 
 /* ShadowScythe burn */
 <<if $NPCs.ShadowScythe.burnCountCur >= 0.01>>
-    <<run $combat_log.push('<span class="burnTrigger">ShadowScythe took ' + $NPCs.ShadowScythe.burnPotency.toFixed(2) + ' burn damage.</span>')>>
+    <<run $combat_log.push('<span class="burnTrigger">ShadowScythe took ' + $NPCs.ShadowScythe.burnPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Burn.png" />damage</span>')>>
 	<<set $NPCs.ShadowScythe.CurHP -= $NPCs.ShadowScythe.burnPotency>>
 	<<set $NPCs.ShadowScythe.burnPotency /= 2>>
 	<<set $NPCs.ShadowScythe.burnCountCur -= 1>>
@@ -83,7 +83,7 @@
 
 /* CrimsonSentinel burn */
 <<if $NPCs.CrimsonSentinel.burnCountCur >= 0.01>>
-    <<run $combat_log.push('<span class="burnTrigger">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.burnPotency.toFixed(2) + ' burn damage.</span>')>>
+    <<run $combat_log.push('<span class="burnTrigger">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.burnPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Burn.png" />damage</span>')>>
 	<<set $NPCs.CrimsonSentinel.CurHP -= $NPCs.CrimsonSentinel.burnPotency>>
 	<<set $NPCs.CrimsonSentinel.burnPotency /= 2>>
 	<<set $NPCs.CrimsonSentinel.burnCountCur -= 1>>
@@ -91,7 +91,7 @@
 
 /* Zegrath burn */
 <<if $NPCs.Zegrath.burnCountCur >= 0.01>>
-    <<run $combat_log.push('<span class="burnTrigger">Zegrath took ' + $NPCs.Zegrath.burnPotency.toFixed(2) + ' burn damage.</span>')>>
+    <<run $combat_log.push('<span class="burnTrigger">Zegrath took ' + $NPCs.Zegrath.burnPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Burn.png" />damage</span>')>>
 	<<set $NPCs.Zegrath.CurHP -= $NPCs.Zegrath.burnPotency>>
 	<<set $NPCs.Zegrath.burnPotency /= 2>>
 	<<set $NPCs.Zegrath.burnCountCur -= 1>>
@@ -125,7 +125,7 @@
 <<set _mob = $mobs>>
 <<for _i = 0; _i lt $mobs.length; _i++>>
   <<if _mob[_i].burnCountCur >= 0.01>>
-    <<run $combat_log.push('<span class="burnTrigger">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].burnPotency.toFixed(2) + ' burn damage.</span>')>>
+    <<run $combat_log.push('<span class="burnTrigger">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].burnPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Burn.png" />damage</span>')>>
 	<<set $mobs[_i].CurHP -= $mobs[_i].burnPotency>>
 	<<set $mobs[_i].burnPotency /= 2>>
 	<<set $mobs[_i].burnCountCur -= 1>>
@@ -301,6 +301,241 @@
 	<<elseif $NPCs.Zegrath.DefenseDownCount <= 0 && $NPCs.Zegrath.DefenseDownPotency >= 0.01>>
 		<<set $NPCs.Zegrath.DEFPercentBuff += $NPCs.Zegrath.DefenseDownPotency>>
 		<<set $NPCs.Zegrath.DefenseDownPotency to 0>>
+	<</if>>
+
+<</widget>>
+
+<<widget "dazedMobs">>
+	<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].DazedCount >= 0.01>>
+    	<<set _rngDazedMobs to random(0, _mob[_i].turnChanceMax)>>
+		<<if _rngDazedMobs <= _mob[_i].DazedPotency>>
+			<<set $mobs[_i].StunnedCount += 4>>
+			<<set $mobs[_i].DazedPotency /= 2>>
+			<<set $mobs[_i].DazedCount -= 1>>
+			<<run $combat_log.push('<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png" />Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' got stunned<img class="status" src = "Textures/Statuses/Stunned.png" /></span>')>>
+		<<else>>
+			<<set $mobs[_i].DazedCount -= 1>>
+		<</if>>
+	<<else>>
+		<<set $mobs[_i].DazedPotency to 0>>
+	<</if>>
+	<</for>>
+<</widget>>
+
+<<widget "dazedPlayers">>
+	/* Player turn passage */
+
+	/* Player dazed */
+	<<if $DazedCount >= 0.01>>
+    <<set _rngDazed to random(0, $turnChanceMax)>>
+		<<if _rngDazed <= $DazedPotency>>
+			<<set $StunnedCount += 4>>
+			<<set $DazedPotency /= 2>>
+			<<set $DazedCount -= 1>>
+			<<run $combat_log.push('<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png" />' + $gamename + ' got stunned<img class="status" src = "Textures/Statuses/Stunned.png" /></span>')>>
+		<<else>>
+			<<set $DazedCount -= 1>>
+		<</if>>
+	<<else>>
+		<<set $DazedPotency to 0>>
+	<</if>>
+
+	/* Radiant dazed */
+	<<if $NPCs.RadiantRose.DazedCount >= 0.01>>
+    <<set _rngDazed1 to random(0, $NPCs.RadiantRose.turnChanceMax)>>
+		<<if _rngDazed1 <= $NPCs.RadiantRose.DazedPotency>>
+			<<set $NPCs.RadiantRose.StunnedCount += 4>>
+			<<set $NPCs.RadiantRose.DazedPotency /= 2>>
+			<<set $NPCs.RadiantRose.DazedCount -= 1>>
+			<<run $combat_log.push('<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png" />RadiantRose got stunned<img class="status" src = "Textures/Statuses/Stunned.png" /></span>')>>
+		<<else>>
+			<<set $NPCs.RadiantRose.DazedCount -= 1>>
+		<</if>>
+	<<else>>
+		<<set $NPCs.RadiantRose.DazedPotency to 0>>
+	<</if>>
+
+	/* Shadow dazed */
+	<<if $NPCs.ShadowScythe.DazedCount >= 0.01>>
+    <<set _rngDazed2 to random(0, $NPCs.ShadowScythe.turnChanceMax)>>
+		<<if _rngDazed2 <= $NPCs.ShadowScythe.DazedPotency>>
+			<<set $NPCs.ShadowScythe.StunnedCount += 4>>
+			<<set $NPCs.ShadowScythe.DazedPotency /= 2>>
+			<<set $NPCs.ShadowScythe.DazedCount -= 1>>
+			<<run $combat_log.push('<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png" />ShadowScythe got stunned<img class="status" src = "Textures/Statuses/Stunned.png" /></span>')>>
+		<<else>>
+			<<set $NPCs.ShadowScythe.DazedCount -= 1>>
+		<</if>>
+	<<else>>
+		<<set $NPCs.ShadowScythe.DazedPotency to 0>>
+	<</if>>
+
+	/* Crim dazed */
+	<<if $NPCs.CrimsonSentinel.DazedCount >= 0.01>>
+    <<set _rngDazed3 to random(0, $NPCs.CrimsonSentinel.turnChanceMax)>>
+		<<if _rngDazed3 <= $NPCs.CrimsonSentinel.DazedPotency>>
+			<<set $NPCs.CrimsonSentinel.StunnedCount += 4>>
+			<<set $NPCs.CrimsonSentinel.DazedPotency /= 2>>
+			<<set $NPCs.CrimsonSentinel.DazedCount -= 1>>
+			<<run $combat_log.push('<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png" />CrimsonSentinel got stunned<img class="status" src = "Textures/Statuses/Stunned.png" /></span>')>>
+		<<else>>
+			<<set $NPCs.CrimsonSentinel.DazedCount -= 1>>
+		<</if>>
+	<<else>>
+		<<set $NPCs.CrimsonSentinel.DazedPotency to 0>>
+	<</if>>
+
+	/* Zegrath dazed */
+	<<if $NPCs.Zegrath.DazedCount >= 0.01>>
+    <<set _rngDazed4 to random(0, $NPCs.Zegrath.turnChanceMax)>>
+		<<if _rngDazed4 <= $NPCs.Zegrath.DazedPotency>>
+			<<set $NPCs.Zegrath.StunnedCount += 4>>
+			<<set $NPCs.Zegrath.DazedPotency /= 2>>
+			<<set $NPCs.Zegrath.DazedCount -= 1>>
+			<<run $combat_log.push('<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png" />Zegrath got stunned<img class="status" src = "Textures/Statuses/Stunned.png" /></span>')>>
+		<<else>>
+			<<set $NPCs.Zegrath.DazedCount -= 1>>
+		<</if>>
+	<<else>>
+		<<set $NPCs.Zegrath.DazedPotency to 0>>
+	<</if>>
+
+<</widget>>
+
+<<widget "dazedPotencyMobs">>
+	<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].DazedCount <= 0.01>>
+		<<set $mobs[_i].DazedPotency to 0>>
+	<</if>>
+	<</for>>
+<</widget>>
+
+<<widget "dazedPotencyPlayers">>
+	/* Player turn passage */
+
+	/* Player dazed */
+	<<if $DazedCount <= 0>>
+		<<set $DazedPotency to 0>>
+	<</if>>
+
+	/* Radiant dazed */
+	<<if $NPCs.RadiantRose.DazedCount <= 0>>
+		<<set $NPCs.RadiantRose.DazedPotency to 0>>
+	<</if>>
+
+	/* Shadow dazed */
+	<<if $NPCs.ShadowScythe.DazedCount <= 0>>
+		<<set $NPCs.ShadowScythe.DazedPotency to 0>>
+	<</if>>
+
+	/* Crim dazed */
+	<<if $NPCs.CrimsonSentinel.DazedCount <= 0>>
+		<<set $NPCs.CrimsonSentinel.DazedPotency to 0>>
+	<</if>>
+
+	/* Zegrath dazed */
+	<<if $NPCs.Zegrath.DazedCount <= 0>>
+		<<set $NPCs.Zegrath.DazedPotency to 0>>
+	<</if>>
+
+<</widget>>
+
+<<widget "stunnedMobs">>
+	<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].StunnedCount >= 0.01>>
+		<<set $mobs[_i].turnChanceCur -= $mobs[_i].turnChanceMax>>
+		<<set $mobs[_i].StunnedCount -= 1>>
+	<</if>>
+	<</for>>
+<</widget>>
+
+<<widget "stunnedPlayers">>
+/* Player turn passage */
+
+	/* Player stun */
+	<<if $StunnedCount >= 0.01>>
+		<<set $turnChanceCur -= $turnChanceMax>>
+		<<set $StunnedCount -= 1>>
+	<</if>>
+
+	/* Radiant stun */
+	<<if $NPCs.RadiantRose.StunnedCount >= 0.01>>
+		<<set $NPCs.RadiantRose.turnChanceCur -= $NPCs.RadiantRose.turnChanceMax>>
+		<<set $NPCs.RadiantRose.StunnedCount -= 1>>
+	<</if>>
+
+	/* Shadow stun */
+	<<if $NPCs.ShadowScythe.StunnedCount >= 0.01>>
+		<<set $NPCs.ShadowScythe.turnChanceCur -= $NPCs.ShadowScythe.turnChanceMax>>
+		<<set $NPCs.ShadowScythe.StunnedCount -= 1>>
+	<</if>>
+
+	/* Crim stun */
+	<<if $NPCs.CrimsonSentinel.StunnedCount >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.turnChanceCur -= $NPCs.CrimsonSentinel.turnChanceMax>>
+		<<set $NPCs.CrimsonSentinel.StunnedCount -= 1>>
+	<</if>>
+
+	/* Zegrath stun */
+	<<if $NPCs.Zegrath.StunnedCount >= 0.01>>
+		<<set $NPCs.Zegrath.turnChanceCur -= $NPCs.Zegrath.turnChanceMax>>
+		<<set $NPCs.Zegrath.StunnedCount -= 1>>
+	<</if>>
+
+<</widget>>
+
+<<widget FlowCountMobs>>
+<<for _i = 0; _i lt $mobs.length; _i++>>
+	<<if _mob[_i].FlowCount >= 1>>
+		<<set $mobs[_i].FlowCount -= 1>>
+	<<elseif _mob[_i].FlowCount <= 0 && _mob[_i].FlowPotency >= 0.01>>
+		<<set $mobs[_i].turnChanceMax -= $mobs[_i].FlowPotency>>
+		<<set $mobs[_i].FlowPotency to 0>>
+  	<</if>>
+<</for>>
+<</widget>>
+
+<<widget FlowCountPlayers>>
+
+	/* Player */
+	<<if $FlowCount >= 1>>
+    	<<set $FlowCount -= 1>>
+	<<elseif $FlowCount <= 0 && $FlowPotency >= 0.01>>
+		<<set $turnChanceMax -= $FlowPotency>>
+		<<set $FlowPotency to 0>>
+	<</if>>
+
+	/* RadiantRose */
+	<<if $NPCs.RadiantRose.FlowCount >= 1>>
+		<<set $NPCs.RadiantRose.FlowCount -= 1>>
+	<<elseif $NPCs.RadiantRose.FlowCount <= 0 && $NPCs.RadiantRose.FlowPotency >= 0.01>>
+		<<set $NPCs.RadiantRose.turnChanceMax -= $NPCs.RadiantRose.FlowPotency>>
+		<<set $NPCs.RadiantRose.FlowPotency to 0>>
+	<</if>>
+
+	/* ShadowScythe */
+	<<if $NPCs.ShadowScythe.FlowCount >= 1>>
+		<<set $NPCs.ShadowScythe.FlowCount -= 1>>
+	<<elseif $NPCs.ShadowScythe.FlowCount <= 0 && $NPCs.ShadowScythe.FlowPotency >= 0.01>>
+		<<set $NPCs.ShadowScythe.turnChanceMax -= $NPCs.ShadowScythe.FlowPotency>>
+		<<set $NPCs.ShadowScythe.FlowPotency to 0>>
+	<</if>>
+
+	/* CrimsonSentinel */
+	<<if $NPCs.CrimsonSentinel.FlowCount >= 1>>
+		<<set $NPCs.CrimsonSentinel.FlowCount -= 1>>
+	<<elseif $NPCs.CrimsonSentinel.FlowCount <= 0 && $NPCs.CrimsonSentinel.FlowPotency >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.turnChanceMax -= $NPCs.CrimsonSentinel.FlowPotency>>
+		<<set $NPCs.CrimsonSentinel.FlowPotency to 0>>
+	<</if>>
+
+	/* Zegrath */
+	<<if $NPCs.Zegrath.FlowCount >= 1>>
+		<<set $NPCs.Zegrath.FlowCount -= 1>>
+	<<elseif $NPCs.Zegrath.FlowCount <= 0 && $NPCs.Zegrath.FlowPotency >= 0.01>>
+		<<set $NPCs.Zegrath.turnChanceMax -= $NPCs.Zegrath.FlowPotency>>
+		<<set $NPCs.Zegrath.FlowPotency to 0>>
 	<</if>>
 
 <</widget>>

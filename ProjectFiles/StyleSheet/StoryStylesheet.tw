@@ -178,6 +178,14 @@ text-decoration: none;
 	color: #27668f;
 }
 
+.stun {
+	color: #dbd017;
+}
+
+.flow {
+	color: #17db40;
+}
+
 .turnCount {
 	color: #C7CF63;
 }
