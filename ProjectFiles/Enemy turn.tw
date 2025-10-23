@@ -75,13 +75,11 @@ Select a party member:
 <label>
     <<radiobutton "$enemyHitPlayer" "Player" checked>> Myself
 </label>
-<<for _members range $partyMembers.length>>
+<<for _members range $partyMembers>>
     <<capture _members>>
-        <<if $partyMembers[_members]>>
-            <label>
-                 | <<radiobutton "$enemyHitPlayer" _members>> <<= $partyMembers[_members]>>
-            </label>
-     	<</if>>
+        <label>
+             | <<radiobutton "$enemyHitPlayer" _members>> _members
+        </label>
     <</capture>>
 <</for>>
 <</nobr>>
@@ -100,13 +98,11 @@ Select a party member:
 <label>
     <<radiobutton "$enemyHitCrimson" "Player" checked>> $gamename
 </label>
-<<for _members1 range $partyMembers.length>>
+<<for _members1 range $partyMembers>>
     <<capture _members1>>
-        <<if $partyMembers[_members1]>>
-            <label>
-                 | <<radiobutton "$enemyHitCrimson" _members1>> <<= $partyMembers[_members1]>>
-            </label>
-     	<</if>>
+        <label>
+             | <<radiobutton "$enemyHitCrimson" _members1>> _members1
+        </label>
     <</capture>>
 <</for>>
 <</nobr>>
@@ -150,6 +146,32 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 <</if>>
 /* HP pot tier 1 */
 <<if $attack is "Drink a HP potion">>
+    <<if $enemyHitPlayer === "Player" && $hpPOT >= 1 && $potCooldown <= 0>>
+        <<set $CurHP += 50>>
+        <<set $hpPOT -= 1>>
+        <<set $potCooldown += 2>>
+        <<run $combat_log.push('You drink a tier 1 health potion')>>
+    <<elseif $enemyHitPlayer === "RadiantRose" && $hpPOT >= 1>>
+        <<set $NPCs.RadiantRose.CurHP += 50>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to RadiantRose')>>
+    <<elseif $enemyHitPlayer === "CrimsonSentinel" && $hpPOT >= 1>>
+        <<set $NPCs.CrimsonSentinel.CurHP += 50>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to CrimsonSentinel')>>
+    <<elseif $enemyHitPlayer === "ShadowScythe" && $hpPOT >= 1>>
+        <<set $NPCs.ShadowScythe.CurHP += 50>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to ShdaowScythe')>>
+    <<elseif $enemyHitPlayer === "Zegrath" && $hpPOT >= 1>>
+        <<set $NPCs.Zegrath.CurHP += 50>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to Zegrath')>>
+    <<elseif $hpPOT <= 1>>
+        <<run $combat_log.push('You dont have any tier 1 health potions')>>
+    <</if>>
+<</if>>
+/* <<if $attack is "Drink a HP potion">>
     <<if $enemyHitPlayer === "Player">>
         <<set $attackText to "Drink HP potion">>
         <<if $hpPOT >= 1 && $potCooldown <= 0>>  
@@ -158,26 +180,54 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <<set $potCooldown += 2>>
             <<run $combat_log.push('You drink a tier 1 health potion')>>
         <<elseif $hpPOT <= 0>> 
-            <<set $attack to "Do nothing">>
             <<run $combat_log.push('You dont have any tier 1 health potions')>>
         <</if>>
     <<else>>
-        <<for _members range $partyMembers.length>>
+        <<set _npc = $NPCs[_members]>>
+        <<run console.log(_members)>>
+        <<run console.log($NPCs[_members])>>
+        <<for _members range $partyMembers>>
         <<if $enemyHitPlayer === _members>>
             <<if $hpPOT >= 1>>
                 <<set _npc.CurHP += 50>>
                 <<set $hpPOT -= 1>>
                 <<run $combat_log.push('You give a tier 1 health potion to ' + _npc.name)>>
             <<elseif $hpPOT <= 0>>
-                <<set $attack to "Do nothing">>
                 <<run $combat_log.push('You dont have any tier 1 health potions to give to your teammates.')>>
             <</if>>
         <</if>>
         <</for>>
     <</if>>
-<</if>>
+<</if>> */
 /* HP pot tier 2 */
-<<if $attack is "Drink a HP potion tier 2">>
+<<if $attack is "Drink a HP potion">>
+    <<if $enemyHitPlayer === "Player" && $hpPOT1 >= 1 && $potCooldown <= 0>>
+        <<set $RegenHP += 2>>
+        <<set $RegenAmount to 60>>
+        <<set $hpPOT1 -= 1>>
+        <<set $potCooldown += 4>>
+        <<run $combat_log.push('You drink a tier 2 potion.')>>
+    <<elseif $enemyHitPlayer === "RadiantRose" && $hpPOT1 >= 1>>
+        <<set $NPCs.RadiantRose.CurHP += 120>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 2 health potion to RadiantRose')>>
+    <<elseif $enemyHitPlayer === "CrimsonSentinel" && $hpPOT1 >= 1>>
+        <<set $NPCs.CrimsonSentinel.CurHP += 120>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 2 health potion to CrimsonSentinel')>>
+    <<elseif $enemyHitPlayer === "ShadowScythe" && $hpPOT1 >= 1>>
+        <<set $NPCs.ShadowScythe.CurHP += 120>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 2 health potion to ShdaowScythe')>>
+    <<elseif $enemyHitPlayer === "Zegrath" && $hpPOT1 >= 1>>
+        <<set $NPCs.Zegrath.CurHP += 120>>
+        <<set $hpPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 2 health potion to Zegrath')>>
+    <<elseif $hpPOT <= 1>>
+        <<run $combat_log.push('You dont have any tier 2 health potions')>>
+    <</if>>
+<</if>>
+/* <<if $attack is "Drink a HP potion tier 2">>
     <<if $enemyHitPlayer === "Player">>
         <<set $attackText to "Drink HP potion">>
         <<if $hpPOT1 >= 1 && $potCooldown <= 0>>  
@@ -191,7 +241,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <<run $combat_log.push('You dont have any tier 2 health potions.')>>
         <</if>>
     <<else>>
-        <<for _i range $partyMembers.length>>
+        <<set _npc = $NPCs[_members]>>
+        <<for _members range $partyMembers>>
         <<if $enemyHitPlayer === _i>>
             <<if $hpPOT1 >= 1>>
                 <<set _npc.CurHP += 120>>
@@ -204,9 +255,36 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
         <</for>>
     <</if>>
-<</if>>
+<</if>> */
 /* STM pot tier 1 */
 <<if $attack is "Drink a STM potion">>
+    <<if $enemyHitPlayer === "Player" && $stmPOT >= 1 && $potCooldown <= 0>>
+        <<set $curStamina += 50>>
+        <<set $curFatigue -= 100>>
+        <<set $stmPOT -= 1>>
+        <<set $potCooldown += 2>>
+        <<run $combat_log.push('You drink a tier 1 health potion')>>
+    <<elseif $enemyHitPlayer === "RadiantRose" && $stmPOT >= 1>>
+        <<set $NPCs.RadiantRose.CurSTM += 50>>
+        <<set $stmPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to RadiantRose')>>
+    <<elseif $enemyHitPlayer === "CrimsonSentinel" && $stmPOT >= 1>>
+        <<set $NPCs.CrimsonSentinel.CurSTM += 50>>
+        <<set $stmPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to CrimsonSentinel')>>
+    <<elseif $enemyHitPlayer === "ShadowScythe" && $stmPOT >= 1>>
+        <<set $NPCs.ShadowScythe.CurSTM += 50>>
+        <<set $stmPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to ShdaowScythe')>>
+    <<elseif $enemyHitPlayer === "Zegrath" && $stmPOT >= 1>>
+        <<set $NPCs.Zegrath.CurSTM += 50>>
+        <<set $stmPOT -= 1>>
+        <<run $combat_log.push('You gave a tier 1 health potion to Zegrath')>>
+    <<elseif $stmPOT <= 1>>
+        <<run $combat_log.push('You dont have any tier 1 health potions')>>
+    <</if>>
+<</if>>
+/* <<if $attack is "Drink a STM potion">>
     <<if $enemyHitPlayer === "Player">>
         <<set $attackText to "Drink STM potion">>
         <<if $stmPOT >= 1 && $potCooldown <= 0>>  
@@ -220,7 +298,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <<set $attack to "Do nothing">>
         <</if>>
     <<else>>
-        <<for _i range $partyMembers.length>>
+        <<set _npc = $NPCs[_members]>>
+        <<for _members range $partyMembers>>
         <<if $enemyHitPlayer === _i>>
             <<if $stmPOT >= 1>>
                 <<set _npc.CurSTM += 50>>
@@ -233,10 +312,60 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
         <</for>>
     <</if>>
-<</if>>
+<</if>> */
 
 /* Brace for impact */
 <<if $attack is "Brace for impact">>
+    <<if $enemyHitPlayer === "Player" && $curStamina >= 25>>
+        <<set $curStamina -= 25>>
+        <<set $curHunger -= 10>>
+        <<set $curFatigue += 5>>
+        <<set $DefenseUpCount += 4>>
+        <<set $DefenseUpPotency += 0.25>>
+        <<set $DEFPercentBuff += 0.25>>
+        <<set $CDBrace to 6>>
+        <<run $combat_log.push($gamename + ' raises their shield, bracing themselves for impact.')>>
+    <<elseif $enemyHitPlayer === "RadiantRose" && $curStamina >= 25>>
+        <<set $curStamina -= 25>>
+        <<set $curHunger -= 10>>
+        <<set $curFatigue += 5>>
+        <<set $NPCs.RadiantRose.DefenseUpCount += 4>>
+        <<set $NPCs.RadiantRose.DefenseUpPotency += 0.25>>
+        <<set $NPCs.RadiantRose.DEFPercentBuff += 0.25>>
+        <<set $CDBrace to 6>>
+        <<run $combat_log.push($gamename + ' raises their shield, bracing RadiantRose for impact.')>>
+    <<elseif $enemyHitPlayer === "CrimsonSentinel" && $curStamina >= 25>>
+        <<set $curStamina -= 25>>
+        <<set $curHunger -= 10>>
+        <<set $curFatigue += 5>>
+        <<set $NPCs.CrimsonSentinel.DefenseUpCount += 4>>
+        <<set $NPCs.CrimsonSentinel.DefenseUpPotency += 0.25>>
+        <<set $NPCs.CrimsonSentinel.DEFPercentBuff += 0.25>>
+        <<set $CDBrace to 6>>
+        <<run $combat_log.push($gamename + ' raises their shield, bracing CrimsonSentinel for impact.')>>
+    <<elseif $enemyHitPlayer === "ShadowScythe" && $curStamina >= 25>>
+        <<set $curStamina -= 25>>
+        <<set $curHunger -= 10>>
+        <<set $curFatigue += 5>>
+        <<set $NPCs.ShadowScythe.DefenseUpCount += 4>>
+        <<set $NPCs.ShadowScythe.DefenseUpPotency += 0.25>>
+        <<set $NPCs.ShadowScythe.DEFPercentBuff += 0.25>>
+        <<set $CDBrace to 6>>
+        <<run $combat_log.push($gamename + ' raises their shield, bracing ShadowScythe for impact.')>>
+    <<elseif $enemyHitPlayer === "Zegrath" && $curStamina >= 25>>
+        <<set $curStamina -= 25>>
+        <<set $curHunger -= 10>>
+        <<set $curFatigue += 5>>
+        <<set $NPCs.Zegrath.DefenseUpCount += 4>>
+        <<set $NPCs.Zegrath.DefenseUpPotency += 0.25>>
+        <<set $NPCs.Zegrath.DEFPercentBuff += 0.25>>
+        <<set $CDBrace to 6>>
+        <<run $combat_log.push($gamename + ' raises their shield, bracing Zegrath for impact.')>>
+    <<elseif $curStamina <= 24>>
+        <<run $combat_log.push($gamename + ' is too tired for this action.')>>
+    <</if>>
+<</if>>
+/*<<if $attack is "Brace for impact">>
     <<if $enemyHitPlayer === "Player">>
         <<if $curStamina >= 25>>  
             <<set $curStamina -= 25>>
@@ -248,11 +377,11 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <<run $combat_log.push($gamename + ' raises their shield, bracing themselves for impact.')>>
             <<set $CDBrace to 6>>
         <<elseif $curStamina <= 24>>
-            <<set $curStamina += 5 + $INT>>
             <<run $combat_log.push($gamename + ' is too tired for this action.')>>
         <</if>>
     <<else>>
-    <<for _members range $partyMembers.length>>
+    <<set _npc = $NPCs[_members]>>
+    <<for _members range $partyMembers>>
     <<if $enemyHitPlayer === _members>>
         <<if $curStamina >= 25>>  
             <<set $curStamina -= 25>>
@@ -264,13 +393,12 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <<run $combat_log.push($gamename + ' raises his shield, bracing ' + _npc.name + ' for impact.')>>
             <<set $CDBrace to 6>>
         <<elseif $curStamina <= 24>>
-            <<set $curStamina += 5 + $INT>>
             <<run $combat_log.push($gamename + ' is too tired for this action.')>>
         <</if>>
     <</if>>
     <</for>>
     <</if>>
-<</if>>
+<</if>>*/
 
 /* Party moves */
 
@@ -358,6 +486,46 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 <</if>>
 /* Brace for impact crimson */
 <<if $attackCrimsonSentinel is "Brace for impact">>
+    <<if $enemyHitCrimson === "Player" && $NPCs.CrimsonSentinel.CurSTM >= 25>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
+        <<set $DefenseUpCount += 4>>
+        <<set $DefenseUpPotency += 0.25>>
+        <<set $DEFPercentBuff += 0.25>>
+        <<set $CDBraceCrim to 6>>
+        <<run $combat_log.push('CrimsonSentinel raises his shield, bracing themselves for impact.')>>
+    <<elseif $enemyHitCrimson === "RadiantRose" && $NPCs.CrimsonSentinel.CurSTM >= 25>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
+        <<set $NPCs.RadiantRose.DefenseUpCount += 4>>
+        <<set $NPCs.RadiantRose.DefenseUpPotency += 0.25>>
+        <<set $NPCs.RadiantRose.DEFPercentBuff += 0.25>>
+        <<set $CDBraceCrim to 6>>
+        <<run $combat_log.push('CrimsonSentinel raises his shield, bracing RadiantRose for impact.')>>
+    <<elseif $enemyHitCrimson === "CrimsonSentinel" && $NPCs.CrimsonSentinel.CurSTM >= 25>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
+        <<set $NPCs.CrimsonSentinel.DefenseUpCount += 4>>
+        <<set $NPCs.CrimsonSentinel.DefenseUpPotency += 0.25>>
+        <<set $NPCs.CrimsonSentinel.DEFPercentBuff += 0.25>>
+        <<set $CDBraceCrim to 6>>
+        <<run $combat_log.push('CrimsonSentinel raises his shield, bracing CrimsonSentinel for impact.')>>
+    <<elseif $enemyHitCrimson === "ShadowScythe" && $NPCs.CrimsonSentinel.CurSTM >= 25>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
+        <<set $NPCs.ShadowScythe.DefenseUpCount += 4>>
+        <<set $NPCs.ShadowScythe.DefenseUpPotency += 0.25>>
+        <<set $NPCs.ShadowScythe.DEFPercentBuff += 0.25>>
+        <<set $CDBraceCrim to 6>>
+        <<run $combat_log.push('CrimsonSentinel raises his shield, bracing ShadowScythe for impact.')>>
+    <<elseif $enemyHitCrimson === "Zegrath" && $NPCs.CrimsonSentinel.CurSTM >= 25>>
+        <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
+        <<set $NPCs.Zegrath.DefenseUpCount += 4>>
+        <<set $NPCs.Zegrath.DefenseUpPotency += 0.25>>
+        <<set $NPCs.Zegrath.DEFPercentBuff += 0.25>>
+        <<set $CDBraceCrim to 6>>
+        <<run $combat_log.push('CrimsonSentinel raises his shield, bracing Zegrath for impact.')>>
+    <<elseif $NPCs.CrimsonSentinel.CurSTM <= 24>>
+        <<run $combat_log.push('CrimsonSentinel is too tired for this action.')>>
+    <</if>>
+<</if>>
+/* <<if $attackCrimsonSentinel is "Brace for impact">>
     <<if $enemyHitCrimson === "Player">>
         <<if $NPCs.CrimsonSentinel.CurSTM >= 25>>  
             <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
@@ -371,7 +539,8 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
             <<run $combat_log.push('CrimsonSentinel is too tired for this action.')>>
         <</if>>
     <<else>>
-    <<for _members1 range $partyMembers.length>>
+    <<set _npc = $NPCs[_members1]>>
+    <<for _members1 range $partyMembers>>
     <<if $enemyHitCrimson === _members1>>
         <<if $NPCs.CrimsonSentinel.CurSTM >= 25>>  
             <<set $NPCs.CrimsonSentinel.CurSTM -= 25>>
@@ -387,7 +556,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
     <</if>>
     <</for>>
     <</if>>
-<</if>>
+<</if>> */
 
 /* Zegrath */
 
