@@ -291,6 +291,10 @@ text-decoration: none;
 	color: #17db40;
 }
 
+.poison {
+	color: #97cd7a;
+}
+
 .turnCount {
 	color: #C7CF63;
 }
@@ -470,12 +474,12 @@ text-decoration: none;
 	display: inline-block;
 	top: 4px;
 	border-width: 0px;
-    border-bottom: 2px dotted white;  /* If you want dots under the hoverable text */
+    border-bottom: 2px solid white;  /* If you want dots under the hoverable text */
 }
 .hoverTipTxt {
 	position: relative;
 	vertical-align: text-bottom;
-	line-height: initial;
+	line-height: 1.55em;
 }
 .hoverTipTxt .hoverBox {
 	position: absolute;
@@ -1358,6 +1362,18 @@ Config.saves.onLoad = function(save) {
 		} 
 		if(typeof variables.FlowCount === 'undefined') {
 			variables.FlowCount = 0;
+		} 
+		if(typeof variables.poisonCountCur === 'undefined') {
+			variables.poisonCountCur = 0;
+		}
+      	if(typeof variables.poisonCountDealt === 'undefined') {
+			variables.poisonCountDealt = 0;
+		} 
+      	if(typeof variables.poisonPotency === 'undefined') {
+			variables.poisonPotency = 0;
+		} 
+      	if(typeof variables.poisonPotencyDealt === 'undefined') {
+			variables.poisonPotencyDealt = 0;
 		} 
 	}
 }
@@ -2406,7 +2422,7 @@ window.kitsuneRNG = function (min, max) {
   const url = 'Textures/Icons/game icon.png';
       
   $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
-})();</script><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
+})();</script><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
 Your achievement points: $achvPoints
 
 &lt;&lt;button &quot;Start with 50 bonus coins | 1 achievement points&quot;&gt;&gt;
@@ -5659,7 +5675,7 @@ Game mode:
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="Combat remake" tags="player-turn Town NoSave" position="0,2075" size="100,100">You have encountered:
 &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;\
   	&lt;&lt;if $mobs[_i]&gt;&gt;\
- 	Level &lt;&lt;= $mobs[_i].lvl.toFixed(0)&gt;&gt; &lt;&lt;= $mobs[_i].name&gt;&gt;: &lt;&lt;= $mobs[_i].CurHP.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].MaxHP.toFixed(2)&gt;&gt; &lt;&lt;if $mobs[_i].StunnedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DazedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PowerUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].FlowCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $mobs[_i].FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseDownCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PoiseCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $mobs[_i].PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].bleedCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].burnCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $mobs[_i].burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+ 	Level &lt;&lt;= $mobs[_i].lvl.toFixed(0)&gt;&gt; &lt;&lt;= $mobs[_i].name&gt;&gt;: &lt;&lt;= $mobs[_i].CurHP.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].MaxHP.toFixed(2)&gt;&gt; &lt;&lt;if $mobs[_i].StunnedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DazedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PowerUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].FlowCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $mobs[_i].FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseDownCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PoiseCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $mobs[_i].PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].bleedCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].burnCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $mobs[_i].burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].poisonCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= $mobs[_i].poisonCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
  	&lt;&lt;/if&gt;&gt;\
 &lt;&lt;/for&gt;&gt;\
 &lt;&lt;run $combat_log.splice(0, $combat_log.length - 20)&gt;&gt;\
@@ -5668,9 +5684,9 @@ Game mode:
 	&lt;br&gt;\
 &lt;&lt;/if&gt;&gt;\
 $gamename stats:
-HP: &lt;&lt;= $CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= $MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+HP: &lt;&lt;= $CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= $MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= $poisonCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
 STM: &lt;&lt;= $curStamina.toFixed(0)&gt;&gt;/&lt;&lt;= $maxStamina.toFixed(0)&gt;&gt;
-&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= $poisonCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
 &lt;ol&gt;\
 &lt;&lt;if $hpPOT &gt;= 1&gt;&gt;&lt;li&gt;HP pots: $hpPOT&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $hpPOT1 &gt;= 1&gt;&gt;&lt;li&gt;HP pots T2: $hpPOT1&lt;/li&gt;&lt;&lt;/if&gt;&gt;
@@ -5682,9 +5698,9 @@ Raid party hp: $raidHP/1000
 &lt;&lt;for _i range $partyMembers&gt;&gt;
 &lt;&lt;set _npc = $NPCs[_i]&gt;&gt;\
     &lt;&lt;= _npc.name&gt;&gt;&#39;s stats:
-    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= _npc.poisonCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
     STM: &lt;&lt;= _npc.CurSTM.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxSTM.toFixed(0)&gt;&gt;
-	&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;poison&quot;&gt;&lt;&lt;= _npc.poisonCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
 &lt;&lt;/for&gt;&gt;\
 
 &lt;&lt;if $turnChanceCur &gt;= 0.01&gt;&gt;&lt;&lt;if $bonusTurnPlayer === true&gt;&gt;EXTRA TURN! &lt;&lt;/if&gt;&gt;Select your attack:&lt;&lt;nobr&gt;&gt;
@@ -5693,34 +5709,34 @@ Raid party hp: $raidHP/1000
 &lt;/label&gt;
 &lt;&lt;if $weaponType is &quot;None&quot;&gt;&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Punch&quot;&gt;&gt; Punch
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Punch&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot;&gt;Punch&lt;br&gt;[On hit] Inflict 1 &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict 3 &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot;&gt; potency&#39;`&gt;&gt;Punch&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $weaponType is &quot;Short sword&quot;&gt;&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Slash&quot;&gt;&gt; Slash
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Slash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot;&gt;Slash&lt;br&gt;[On hit] Inflict &lt;&lt;= $bleedCountDealt.toFixed(2)&gt;&gt;  &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict &lt;&lt;= $bleedPotencyDealt.toFixed(2)&gt;&gt; &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt; potency&#39;`&gt;&gt;Slash&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Stab&quot;&gt;&gt; Stab
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Stab&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot;&gt;Stab&lt;br&gt;[On hit] Inflict &lt;&lt;= ($bleedCountDealt/1.5).toFixed(2)&gt;&gt;  &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict &lt;&lt;= ($bleedPotencyDealt/2).toFixed(2)&gt;&gt; &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt; potency&#39;`&gt;&gt;Stab&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
-        &lt;&lt;if $CDUnfocusedStrike &gt;= 1&gt;&gt; | CD: $CDUnfocusedStrike Unfocused strike&lt;&lt;else&gt;&gt; | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Unfocused strike&quot;&gt;&gt; Unfocused strike&lt;&lt;/if&gt;&gt;
+        &lt;&lt;if $CDUnfocusedStrike &gt;= 1&gt;&gt; | CD: $CDUnfocusedStrike &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Slash.png&quot;&gt;Unfocused strike&lt;br&gt;[On hit] If enemy does not have&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;, inflict&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Bleed.png&quot;&gt;potency again&lt;br&gt;[On hit] If enemy has&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;repeat the attack and clear all&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;potency&lt;br&gt;[On kill] If enemy has&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;, gain +3&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Flow.png&quot;&gt;count&lt;br&gt;[On kill] If enemy has&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;, gain +25&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Flow.png&quot;&gt;potency&#39;`500&gt;&gt;Unfocused strike&lt;&lt;/hovertip&gt;&gt; &lt;&lt;else&gt;&gt; | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Unfocused strike&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Slash.png&quot;&gt;Unfocused strike&lt;br&gt;[On hit] If enemy does not have&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;, inflict&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Bleed.png&quot;&gt;potency again&lt;br&gt;[On hit] If enemy has&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;repeat the attack and clear all&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;potency&lt;br&gt;[On kill] If enemy has&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;, gain +3&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Flow.png&quot;&gt;count&lt;br&gt;[On kill] If enemy has&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Stunned.png&quot;&gt;, gain +25&lt;img class=&quot;status&quot; src=&quot;Textures/Statuses/Flow.png&quot;&gt;potency&#39;`500&gt;&gt;Unfocused strike&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;
     &lt;/label&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $weaponType is &quot;Shield and sword&quot;&gt;&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Slash&quot;&gt;&gt; Slash
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Slash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot;&gt;Slash&lt;br&gt;[On hit] Inflict &lt;&lt;= $bleedCountDealt.toFixed(2)&gt;&gt;  &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict &lt;&lt;= $bleedPotencyDealt.toFixed(2)&gt;&gt; &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt; potency&#39;`&gt;&gt;Slash&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Shield bash&quot;&gt;&gt; Shield bash
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Shield bash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot;&gt;Shield bash&lt;br&gt;[On hit] Inflict 2 &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict 5 &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot;&gt; potency&#39;`&gt;&gt;Shield bash&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $weaponType is &quot;Rapier&quot;&gt;&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Stab&quot;&gt;&gt; Stab
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Stab&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot;&gt;Stab&lt;br&gt;[On hit] Inflict &lt;&lt;= ($bleedCountDealt/1.5).toFixed(2)&gt;&gt;  &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict &lt;&lt;= ($bleedPotencyDealt/2).toFixed(2)&gt;&gt; &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt; potency&#39;`&gt;&gt;Stab&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Charge&quot;&gt;&gt; Charge
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Charge&quot;&gt;&gt; &lt;&lt;hovertip `&#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot;&gt;Charge&lt;br&gt;[On hit] Inflict &lt;&lt;= ($bleedCountDealt).toFixed(2)&gt;&gt;  &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt;count&lt;br&gt;[On hit] Inflict &lt;&lt;= ($bleedPotencyDealt).toFixed(2)&gt;&gt; &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot;&gt; potency&#39;`&gt;&gt;Stab&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
         &lt;&lt;if $CDMultistrike &gt;= 1&gt;&gt; | CD: $CDMultistrike Multi strike&lt;&lt;else&gt;&gt; | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Multi strike&quot;&gt;&gt; Multi strike&lt;&lt;/if&gt;&gt;
@@ -5885,6 +5901,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                     &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                     &lt;&lt;set $mobs[_i].DazedPotency += 3&gt;&gt;
                     &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
+                    &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                    &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                    &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                    &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                     &lt;&lt;run $combat_log.push($gamename + &#39; punches &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                     &lt;&lt;set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -5893,6 +5913,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                     &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                     &lt;&lt;set $mobs[_i].DazedPotency += 6&gt;&gt;
                     &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
+                    &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                    &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                    &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                    &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                     &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; punches &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
@@ -5921,6 +5945,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 4&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; throws a heavy punch at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to (($weaponBluntDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -5929,6 +5957,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 6&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; throws a heavy punch at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -5958,6 +5990,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt/1.5&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt/2 * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.8) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -5966,6 +6002,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -5994,6 +6034,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt/1.5&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt/2 * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6002,6 +6046,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -6030,6 +6078,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.75) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6038,6 +6090,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -6071,6 +6127,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 							    &lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						        &lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                                 &lt;&lt;run $combat_log.push($gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                             &lt;&lt;else&gt;&gt;
                                 &lt;&lt;set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6079,6 +6139,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                             &lt;&lt;/if&gt;&gt;
@@ -6107,6 +6171,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                                 &lt;&lt;run $combat_log.push($gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                             &lt;&lt;else&gt;&gt;
                                 &lt;&lt;set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6115,6 +6183,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                             &lt;&lt;/if&gt;&gt;
@@ -6148,6 +6220,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                                 &lt;&lt;run $combat_log.push($gamename + &#39; charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                             &lt;&lt;else&gt;&gt;
                                 &lt;&lt;set $baseDMG to (($weaponPierceDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $PierceSTR - ($STRPercentDebuff*($PierceSTR + $weaponDMG)/100) + ($STRPercentBuff*( $PierceSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6156,6 +6232,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5&gt;&gt;
 								&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                             &lt;&lt;/if&gt;&gt;
@@ -6187,6 +6267,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedPotency += 5&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push($gamename + &#39; bashes their shield at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6195,6 +6279,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedPotency += 7&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; bashes their shield at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
             &lt;&lt;/if&gt;&gt;
@@ -6225,6 +6313,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedPotency += 2&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push($gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; with the blunt side of their heavy sword dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6233,6 +6325,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedPotency += 4&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; with the blunt side of their heavy sword dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
             &lt;&lt;/if&gt;&gt;
@@ -6263,6 +6359,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 4&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6271,6 +6371,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 6&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -6304,6 +6408,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;if $mobs[_i].DazedCount &lt;= 0&gt;&gt;
                             &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; smashes &#39; + $mobs[_i].name + &#39;s head dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.5) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6314,6 +6422,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;if $mobs[_i].DazedCount &lt;= 0&gt;&gt;
                             &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; smashes &#39; + $mobs[_i].name + &#39;s head dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -6345,6 +6457,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt*1.2&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.2 * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; mutilates &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 1) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
@@ -6353,6 +6469,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt*1.7&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.7 * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; mutilates &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -6382,6 +6502,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; pierces the throat of &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
@@ -6391,6 +6515,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; pierces the throat of  &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
@@ -6430,6 +6558,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; leaps into the air, hitting &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDLeapingSlash to 5&gt;&gt;
                         &lt;&lt;if $mobs[_i].CurHP &lt;= 0&gt;&gt;
@@ -6445,6 +6577,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 7&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; leaps into the air, hitting  &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDLeapingSlash to 5&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
@@ -6484,6 +6620,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; chargest at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDMultistrike to 6&gt;&gt;
                         &lt;&lt;set $PoisePotency += 5&gt;&gt;
@@ -6496,6 +6636,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; charges at  &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDMultistrike to 6&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
@@ -6529,6 +6673,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 3&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 5&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; throws a left hook at &#39; + $mobs[_i].name + &#39; then they throw a right hook and finally uppercuts &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDUpperCut to 7&gt;&gt;
                         &lt;&lt;if $mobs[_i].CurHP &lt;= 0&gt;&gt;
@@ -6543,6 +6691,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency += 6&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount += 5&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; throws a left hook at &#39; + $mobs[_i].name + &#39; then they throw a right hook and finally uppercuts &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDUpperCut to 7&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
@@ -6586,6 +6738,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency -= $mobs[_i].DazedPotency&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount -= $mobs[_i].DazedCount&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; hits &#39; + $mobs[_i].name + &#39; on the head, making them fall to the ground, disoriented, dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;damage&#39;)&gt;&gt;
@@ -6600,6 +6756,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedPotency -= $mobs[_i].DazedPotency&gt;&gt;
                         &lt;&lt;set $mobs[_i].DazedCount -= $mobs[_i].DazedCount&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; hits &#39; + $mobs[_i].name + &#39; on the head, making them fall to the ground, disoriented, dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;damage&#39;)&gt;&gt;
@@ -6640,6 +6800,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     						&lt;&lt;set $mobs[_i].bleedPotency += ($bleedPotencyDealt * 2) * $mobs[_i].bleedDef&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; swings their sword at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;set $CDUnfocusedStrike to 8&gt;&gt;
                         &lt;&lt;if $mobs[_i].StunnedCount &gt;= 1&gt;&gt;
                             &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6647,6 +6811,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                             &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
                             &lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
     					    &lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                            &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                            &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
+                            &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                            &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                             &lt;&lt;run $combat_log.push($gamename + &#39; does a follow up attack at the distracted &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                             &lt;&lt;set $mobs[_i].StunnedCount to 0&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
@@ -6661,6 +6829,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                        &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
 						&lt;&lt;if $mobs[_i].StunnedCount &lt;= 0&gt;&gt;
 						    &lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
     						&lt;&lt;set $mobs[_i].bleedPotency += ($bleedPotencyDealt * 1.5) * $mobs[_i].bleedDef&gt;&gt;
@@ -6675,6 +6847,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                             &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                             &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                             &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
+                            &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
+                            &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
+                            &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
+                            &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                             &lt;&lt;set $mobs[_i].bleedCountCur += $bleedCountDealt&gt;&gt;
     					    &lt;&lt;set $mobs[_i].bleedPotency += ($bleedPotencyDealt * 1.5) * $mobs[_i].bleedDef&gt;&gt;
                             &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; does a follow up attack at the distracted &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
@@ -6721,6 +6897,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt/1.5&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt/2 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;RadiantRose stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.RadiantRose.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;RadiantHiting&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.CurSTM -= 6&gt;&gt;
@@ -6730,6 +6910,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt * $NPCs.RadiantRose.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt * $NPCs.RadiantRose.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! RadiantRose stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.RadiantRose.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;RadiantCritting&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.CurSTM -= 6&gt;&gt;
@@ -6753,6 +6937,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt; 
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;RadiantRose charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.RadiantRose.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;RadiantHiting&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.CurSTM -= 10&gt;&gt;
@@ -6762,6 +6950,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt * $NPCs.RadiantRose.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt * $NPCs.RadiantRose.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! RadiantRose charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.RadiantRose.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;RadiantCritting&gt;&gt;
                 &lt;&lt;CritRelatedStatusesRadiant&gt;&gt;
@@ -6793,6 +6985,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $NPCs.RadiantRose.CritChance += 5&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.PoisePotency += 5&gt;&gt;
                 &lt;&lt;set $NPCs.RadiantRose.CritDMG += 0.1&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;RadiantRose charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.RadiantRose.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;RadiantHiting&gt;&gt;
             &lt;&lt;else&gt;&gt;
@@ -6801,6 +6997,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt * $NPCs.RadiantRose.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt * $NPCs.RadiantRose.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! RadiantRose charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.RadiantRose.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;RadiantCritting&gt;&gt;
                 &lt;&lt;CritRelatedStatusesRadiant&gt;&gt;
@@ -6837,6 +7037,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;ShadowScythe slashes at &#39; + $mobs[_i].name + &#39; with his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 25&gt;&gt;
                 &lt;&lt;ShadowHiting&gt;&gt;
@@ -6846,6 +7050,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt; 
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.5&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt * $NPCs.ShadowScythe.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt * $NPCs.ShadowScythe.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! ShadowScythe slashes at &#39; + $mobs[_i].name + &#39; with his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 25&gt;&gt;
                 &lt;&lt;ShadowCritting&gt;&gt;
@@ -6869,6 +7077,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt/1.1&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt/1.2 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;ShadowScythe charges at &#39; + $mobs[_i].name + &#39; and sweeps his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 31&gt;&gt;
                 &lt;&lt;ShadowHiting&gt;&gt;
@@ -6878,6 +7090,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.4&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt * $NPCs.ShadowScythe.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt * $NPCs.ShadowScythe.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! ShadowScythe charges at &#39; + $mobs[_i].name + &#39; and sweeps his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.ShadowScythe.CurSTM -= 31&gt;&gt;
                 &lt;&lt;ShadowCritting&gt;&gt;
@@ -6902,6 +7118,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt&gt;&gt;
                 &lt;&lt;set _mob[_i].DefenseDownCount += 4&gt;&gt;
                 &lt;&lt;set _mob[_i].DefenseDownPotency += 0.1&gt;&gt;
                 &lt;&lt;set _mob[_i].DEFPercentBuff += 0.1&gt;&gt;
@@ -6914,13 +7134,17 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.4&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt * $NPCs.ShadowScythe.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt * $NPCs.ShadowScythe.CritDMG&gt;&gt;
                 &lt;&lt;set _mob[_i].DefenseDownCount += 4&gt;&gt;
                 &lt;&lt;set _mob[_i].DefenseDownPotency += 0.12&gt;&gt;
                 &lt;&lt;set _mob[_i].DEFPercentBuff += 0.12&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! ShadowScythe charges at &#39; + $mobs[_i].name + &#39; and sweeps his scythe dealing &#39; + $NPCs.ShadowScythe.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;ShadowCritting&gt;&gt;
                 &lt;&lt;CritRelatedStatusesShadow&gt;&gt;
-                &lt;&lt;set $CDPunctureSS to 0&gt;&gt;
+                &lt;&lt;set $CDPunctureSS to 6&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
         &lt;&lt;/for&gt;&gt;
@@ -6952,6 +7176,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.CrimsonSentinel.bleedCountDealt&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CrimsonSentinel slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;  
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 12&gt;&gt;
                 &lt;&lt;CrimsonHiting&gt;&gt;
@@ -6961,6 +7189,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedCountCur += $NPCs.CrimsonSentinel.bleedCountDealt*1.5&gt;&gt;
 				&lt;&lt;set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt * $NPCs.CrimsonSentinel.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt * $NPCs.CrimsonSentinel.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! CrimsonSentinel slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt; 
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 12&gt;&gt;
                 &lt;&lt;CrimsonCritting&gt;&gt;
@@ -6984,6 +7216,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedPotency += 5&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CrimsonSentinel bashes &#39; + $mobs[_i].name + &#39; with his shield dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt; 
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 15&gt;&gt;
                 &lt;&lt;CrimsonHiting&gt;&gt;
@@ -6993,6 +7229,10 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedPotency += 7&gt;&gt;
                 &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt * $NPCs.CrimsonSentinel.CritDMG&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt&gt;&gt;
+                &lt;&lt;set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt * $NPCs.CrimsonSentinel.CritDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! CrimsonSentinel bashes &#39; + $mobs[_i].name + &#39; with his shield dealing &#39; + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM -= 15&gt;&gt;
                 &lt;&lt;CrimsonCritting&gt;&gt;
@@ -7537,6 +7777,17 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     &lt;&lt;set $NPCs.Zegrath.turnChanceMax -= $NPCs.Zegrath.FlowPotency&gt;&gt;
     &lt;&lt;set $NPCs.Zegrath.FlowPotency -= $NPCs.Zegrath.FlowPotency&gt;&gt;
 
+    &lt;&lt;set $poisonCountCur to 0&gt;&gt;
+    &lt;&lt;set $poisonPotency to 0&gt;&gt;
+    &lt;&lt;set $NPCs.RadiantRose.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.RadiantRose.poisonPotency to 0&gt;&gt;
+	&lt;&lt;set $NPCs.ShadowScythe.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.ShadowScythe.poisonPotency to 0&gt;&gt;
+	&lt;&lt;set $NPCs.CrimsonSentinel.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.CrimsonSentinel.poisonPotency to 0&gt;&gt;
+	&lt;&lt;set $NPCs.Zegrath.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.Zegrath.poisonPotency to 0&gt;&gt;
+
     &lt;&lt;if $CDThroatSlit&gt;&gt;
         &lt;&lt;unset $CDThroatSlit&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -7584,7 +7835,9 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     	&lt;&lt;goto &quot;Enemy turn&quot;&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;/link&gt;&gt; | 30 stamina</tw-passagedata><tw-passagedata pid="42" name="Combat win" tags="" position="200,2075" size="100,100">You won the fight, getting &lt;&lt;= $combat_drops&gt;&gt;, &lt;&lt;= $combatCol.toFixed(0)&gt;&gt; col and &lt;&lt;= $combatXP.toFixed(0)&gt;&gt; XP.
+&lt;&lt;/link&gt;&gt; | 30 stamina</tw-passagedata><tw-passagedata pid="42" name="Combat win" tags="" position="200,2075" size="100,100">--| Congratulations! |--
+Col: &lt;&lt;= $combatCol.toFixed(0)&gt;&gt; | XP: &lt;&lt;= $combatXP.toFixed(0)&gt;&gt;
+Items: &lt;&lt;= $combat_drops&gt;&gt;
 &lt;&lt;EventCurrencies&gt;&gt;\
 &lt;&lt;link &quot;Continue&quot;&gt;&gt;
     &lt;&lt;set $turnChanceCur to $turnChanceMax&gt;&gt;
@@ -7696,6 +7949,17 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     &lt;&lt;set $NPCs.Zegrath.FlowCount -= $NPCs.Zegrath.FlowCount&gt;&gt;
     &lt;&lt;set $NPCs.Zegrath.turnChanceMax -= $NPCs.Zegrath.FlowPotency&gt;&gt;
     &lt;&lt;set $NPCs.Zegrath.FlowPotency -= $NPCs.Zegrath.FlowPotency&gt;&gt;
+
+    &lt;&lt;set $poisonCountCur to 0&gt;&gt;
+    &lt;&lt;set $poisonPotency to 0&gt;&gt;
+    &lt;&lt;set $NPCs.RadiantRose.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.RadiantRose.poisonPotency to 0&gt;&gt;
+	&lt;&lt;set $NPCs.ShadowScythe.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.ShadowScythe.poisonPotency to 0&gt;&gt;
+	&lt;&lt;set $NPCs.CrimsonSentinel.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.CrimsonSentinel.poisonPotency to 0&gt;&gt;
+	&lt;&lt;set $NPCs.Zegrath.poisonCountCur to 0&gt;&gt;
+	&lt;&lt;set $NPCs.Zegrath.poisonPotency to 0&gt;&gt;
 
     &lt;&lt;if $CDThroatSlit&gt;&gt;
         &lt;&lt;unset $CDThroatSlit&gt;&gt;
@@ -8971,7 +9235,7 @@ The doll is blocking the door... Even if you tried to run away it seems to have 
 &lt;&lt;set _mob = $mobs&gt;&gt;\
 &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;\
   	&lt;&lt;if $mobs[_i]&gt;&gt;\
- 	&lt;&lt;if $mobs[_i].bonusTurn === 1&gt;&gt;EXTRA TURN! &lt;&lt;/if&gt;&gt;Level &lt;&lt;= $mobs[_i].lvl.toFixed(0)&gt;&gt; &lt;&lt;= $mobs[_i].name&gt;&gt;: &lt;&lt;= $mobs[_i].CurHP.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].MaxHP.toFixed(2)&gt;&gt; &lt;&lt;if $mobs[_i].StunnedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DazedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PowerUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].FlowCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $mobs[_i].FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseDownCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PoiseCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $mobs[_i].PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].bleedCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].burnCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $mobs[_i].burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+ 	&lt;&lt;if $mobs[_i].bonusTurn === 1&gt;&gt;EXTRA TURN! &lt;&lt;/if&gt;&gt;Level &lt;&lt;= $mobs[_i].lvl.toFixed(0)&gt;&gt; &lt;&lt;= $mobs[_i].name&gt;&gt;: &lt;&lt;= $mobs[_i].CurHP.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].MaxHP.toFixed(2)&gt;&gt; &lt;&lt;if $mobs[_i].StunnedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DazedCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $mobs[_i].DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PowerUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseUpCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].FlowCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $mobs[_i].FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].DefenseDownCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $mobs[_i].DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].PoiseCount &gt;= 0.1&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $mobs[_i].PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].bleedCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $mobs[_i].bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $mobs[_i].bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $mobs[_i].burnCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $mobs[_i].burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $mobs[_i].poisonCountCur &gt;= 0.1&gt;&gt; | &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= $mobs[_i].poisonCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $mobs[_i].poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
  	&lt;&lt;/if&gt;&gt;\
 &lt;&lt;/for&gt;&gt;\
 &lt;&lt;run $combat_log.splice(0, $combat_log.length - 20)&gt;&gt;
@@ -8980,9 +9244,9 @@ The doll is blocking the door... Even if you tried to run away it seems to have 
 	&lt;br&gt;\ 
 &lt;&lt;/if&gt;&gt;\
 $gamename stats:
-HP: &lt;&lt;= $CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= $MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+HP: &lt;&lt;= $CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= $MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= $poisonCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
 STM: &lt;&lt;= $curStamina.toFixed(0)&gt;&gt;/&lt;&lt;= $maxStamina.toFixed(0)&gt;&gt;
-&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
+&lt;&lt;if $StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= $DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= $FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= $FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= $DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= $DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= $PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= $PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= $bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= $bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= $bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if $burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= $burnCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if $poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;poison&quot;&gt;&lt;&lt;= $poisonCountCur.toFixed(0)&gt;&gt; (&lt;&lt;= $poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
 &lt;ol&gt;\
 &lt;&lt;if $hpPOT &gt;= 1&gt;&gt;&lt;li&gt;HP pots: $hpPOT&lt;/li&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $hpPOT1 &gt;= 1&gt;&gt;&lt;li&gt;HP pots T2: $hpPOT1&lt;/li&gt;&lt;&lt;/if&gt;&gt;
@@ -8994,9 +9258,9 @@ Raid party hp: $raidHP/1000
 &lt;&lt;for _i range $partyMembers&gt;&gt;
 &lt;&lt;set _npc = $NPCs[_i]&gt;&gt;\
     &lt;&lt;= _npc.name&gt;&gt;&#39;s stats:
-    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+    HP: &lt;&lt;= _npc.CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxHP.toFixed(0)&gt;&gt;&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === false&gt;&gt; | &lt;span class=&quot;poison&quot;&gt;&lt;&lt;= _npc.poisonCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
     STM: &lt;&lt;= _npc.CurSTM.toFixed(0)&gt;&gt;/&lt;&lt;= _npc.MaxSTM.toFixed(0)&gt;&gt;
-	&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+	&lt;&lt;if _npc.StunnedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.StunnedCount.toFixed(0)&gt;&gt;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Stunned.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DazedCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;stun&quot;&gt;&lt;&lt;= _npc.DazedCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DazedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PowerUpCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.PowerUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PowerUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/STR raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseUpCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseUpCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseUpPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF raise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.FlowCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;flow&quot;&gt;&lt;&lt;= _npc.FlowCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.FlowPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Flow.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.DefenseDownCount &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;defenseStatus&quot;&gt;&lt;&lt;= _npc.DefenseDownCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.DefenseDownPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/DEF down.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.PoiseCount &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;poise&quot;&gt;&lt;&lt;= _npc.PoiseCount.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.PoisePotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poise.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.bleedCountCur &gt;= 0.1 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;bleedTrigger&quot;&gt;&lt;&lt;= _npc.bleedCountCur.toFixed(2)&gt;&gt;/&lt;&lt;= _npc.bleedCountMax.toFixed(0)&gt;&gt; (&lt;&lt;= _npc.bleedPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Bleed.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt; &lt;&lt;if _npc.burnCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt; &lt;span class=&quot;burnTrigger&quot;&gt;&lt;&lt;= _npc.burnCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.burnPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Burn.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;&lt;if _npc.poisonCountCur &gt;= 0.01 &amp;&amp; settings.statuses === true&gt;&gt;&lt;span class=&quot;poison&quot;&gt;&lt;&lt;= _npc.poisonCountCur.toFixed(2)&gt;&gt; (&lt;&lt;= _npc.poisonPotency.toFixed(2)&gt;&gt;)&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;\
 &lt;&lt;/for&gt;&gt;\
 
 Select your move:&lt;&lt;nobr&gt;&gt;
@@ -9168,7 +9432,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt; */
 /* HP pot tier 2 */
-&lt;&lt;if $attack is &quot;Drink a HP potion&quot;&gt;&gt;
+&lt;&lt;if $attack is &quot;Drink a HP potion tier 2&quot;&gt;&gt;
     &lt;&lt;if $enemyHitPlayer === &quot;Player&quot; &amp;&amp; $hpPOT1 &gt;= 1 &amp;&amp; $potCooldown &lt;= 0&gt;&gt;
         &lt;&lt;set $RegenHP += 2&gt;&gt;
         &lt;&lt;set $RegenAmount to 60&gt;&gt;
@@ -9177,21 +9441,21 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
         &lt;&lt;run $combat_log.push(&#39;You drink a tier 2 potion.&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;RadiantRose&quot; &amp;&amp; $hpPOT1 &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.RadiantRose.CurHP += 120&gt;&gt;
-        &lt;&lt;set $hpPOT -= 1&gt;&gt;
+        &lt;&lt;set $hpPOT1 -= 1&gt;&gt;
         &lt;&lt;run $combat_log.push(&#39;You gave a tier 2 health potion to RadiantRose&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;CrimsonSentinel&quot; &amp;&amp; $hpPOT1 &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.CrimsonSentinel.CurHP += 120&gt;&gt;
-        &lt;&lt;set $hpPOT -= 1&gt;&gt;
+        &lt;&lt;set $hpPOT1 -= 1&gt;&gt;
         &lt;&lt;run $combat_log.push(&#39;You gave a tier 2 health potion to CrimsonSentinel&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;ShadowScythe&quot; &amp;&amp; $hpPOT1 &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.ShadowScythe.CurHP += 120&gt;&gt;
-        &lt;&lt;set $hpPOT -= 1&gt;&gt;
+        &lt;&lt;set $hpPOT1 -= 1&gt;&gt;
         &lt;&lt;run $combat_log.push(&#39;You gave a tier 2 health potion to ShdaowScythe&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;Zegrath&quot; &amp;&amp; $hpPOT1 &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.Zegrath.CurHP += 120&gt;&gt;
-        &lt;&lt;set $hpPOT -= 1&gt;&gt;
+        &lt;&lt;set $hpPOT1 -= 1&gt;&gt;
         &lt;&lt;run $combat_log.push(&#39;You gave a tier 2 health potion to Zegrath&#39;)&gt;&gt;
-    &lt;&lt;elseif $hpPOT &lt;= 1&gt;&gt;
+    &lt;&lt;elseif $hpPOT1 &lt;= 1&gt;&gt;
         &lt;&lt;run $combat_log.push(&#39;You dont have any tier 2 health potions&#39;)&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -9231,23 +9495,23 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
         &lt;&lt;set $curFatigue -= 100&gt;&gt;
         &lt;&lt;set $stmPOT -= 1&gt;&gt;
         &lt;&lt;set $potCooldown += 2&gt;&gt;
-        &lt;&lt;run $combat_log.push(&#39;You drink a tier 1 health potion&#39;)&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;You drink a tier 1 stamina potion&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;RadiantRose&quot; &amp;&amp; $stmPOT &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.RadiantRose.CurSTM += 50&gt;&gt;
         &lt;&lt;set $stmPOT -= 1&gt;&gt;
-        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 health potion to RadiantRose&#39;)&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 stamina potion to RadiantRose&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;CrimsonSentinel&quot; &amp;&amp; $stmPOT &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.CrimsonSentinel.CurSTM += 50&gt;&gt;
         &lt;&lt;set $stmPOT -= 1&gt;&gt;
-        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 health potion to CrimsonSentinel&#39;)&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 stamina potion to CrimsonSentinel&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;ShadowScythe&quot; &amp;&amp; $stmPOT &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.ShadowScythe.CurSTM += 50&gt;&gt;
         &lt;&lt;set $stmPOT -= 1&gt;&gt;
-        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 health potion to ShdaowScythe&#39;)&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 stamina potion to ShdaowScythe&#39;)&gt;&gt;
     &lt;&lt;elseif $enemyHitPlayer === &quot;Zegrath&quot; &amp;&amp; $stmPOT &gt;= 1&gt;&gt;
         &lt;&lt;set $NPCs.Zegrath.CurSTM += 50&gt;&gt;
         &lt;&lt;set $stmPOT -= 1&gt;&gt;
-        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 health potion to Zegrath&#39;)&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;You gave a tier 1 stamina potion to Zegrath&#39;)&gt;&gt;
     &lt;&lt;elseif $stmPOT &lt;= 1&gt;&gt;
         &lt;&lt;run $combat_log.push(&#39;You dont have any tier 1 health potions&#39;)&gt;&gt;
     &lt;&lt;/if&gt;&gt;
@@ -10292,6 +10556,8 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - ((_npc.PierceDEF + _npc.armorPierceDEF) * _npc.DEFPercentBuff)) * _mob[_i].STRPercentBuff) * _npc.blockingModifier&gt;&gt;
                         &lt;&lt;set _npc.CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; pierces &#39; + _npc.name + &#39; with its tongue and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, poisoning them.&#39;)&gt;&gt;
+                        &lt;&lt;set _poisonCountCur += 3&gt;&gt;
+                        &lt;&lt;set _poisonPotency += 5&gt;&gt;
                         &lt;&lt;GettingHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].PierceSTR - ((_npc.PierceDEF + _npc.armorPierceDEF) * _npc.DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * _npc.blockingModifier&gt;&gt;
@@ -10299,6 +10565,8 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; pierces &#39; + _npc.name + &#39; with its tongue and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, poisoning them.&#39;)&gt;&gt;
                         &lt;&lt;GettingCritted&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
+                        &lt;&lt;set _npc.poisonCountCur += 3&gt;&gt;
+                        &lt;&lt;set _npc.poisonPotency += 8&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                     &lt;&lt;run $combat_log.push(_npc.name + &#39; dodges the attack from &#39; + _mob[_i].name)&gt;&gt;
@@ -10312,12 +10580,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; pierces &#39; + $gamename + &#39; with its tongue and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, poisoning them.&#39;)&gt;&gt;
-                        &lt;&lt;set $poisoned1 to 12&gt;&gt;
+                        &lt;&lt;set $poisonCountCur += 3&gt;&gt;
+                        &lt;&lt;set $poisonPotency += 5&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; pierces &#39; + $gamename + &#39; with its tongue and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, poisoning them.&#39;)&gt;&gt;
-                        &lt;&lt;set $poisoned1 to 15&gt;&gt;
+                        &lt;&lt;set $poisonCountCur += 3&gt;&gt;
+                        &lt;&lt;set $poisonPotency += 8&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -12411,11 +12681,11 @@ Directions:
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="76" name="Dungeon1.4" tags="" position="1275,2900" size="100,100">As you walk forward you see a door.
 You open it to see a treasure chest...
 
-You open the chest to see 389 Coins, 2 healing potions&lt;&lt;if $lootchance lte 35&gt;&gt;, a tier 2 healing potion&lt;&lt;/if&gt;&gt; and 6 crystal fragments.
+You open the chest to see 165 Coins, 2 healing potions&lt;&lt;if $lootchance lte 35&gt;&gt;, a tier 2 healing potion&lt;&lt;/if&gt;&gt; and 6 crystal fragments.
 
 &lt;&lt;link &quot;Leave the dungeon&quot;&gt;&gt;
 &lt;&lt;goto $lastVisitedPassage1&gt;&gt;
-&lt;&lt;set $Coins += 389&gt;&gt;
+&lt;&lt;set $Coins += 165&gt;&gt;
 &lt;&lt;set $hpPOT += 2&gt;&gt;
 &lt;&lt;if $lootchance lte 35&gt;&gt;
 	&lt;&lt;set $hpPOT1 += 1&gt;&gt;
@@ -22627,6 +22897,12 @@ Customize the game:
     	&lt;&lt;set $outfit12 to true&gt;&gt;
     	&lt;&lt;set $isOutfitOn = &quot;Outfit 11&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
+    &lt;&lt;if $gamename is &quot;waste&quot;&gt;&gt;
+    	&lt;&lt;set $dookieSword to true&gt;&gt;
+    	&lt;&lt;set $isWeaponSkinOn = &quot;Dookie sword&quot;&gt;&gt;
+      &lt;&lt;set $poisonCountDealt += 1&gt;&gt;
+      &lt;&lt;set $poisonPotencyDealt += 1&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="311" name="Friends" tags="" position="325,1150" size="100,100">You open your friend tab to see that 10 out of 12 friends are online.
 Everyone is at the lobby probably waiting for the game to launch which will be in around 5 minutes.
 
@@ -23038,6 +23314,9 @@ You sat down at one of the benches near the fountain and you started waiting. Af
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $AsteriasPotatoSack&gt;&gt;
   &lt;li&gt;Asterias potato sack&lt;/li&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $dookieSword&gt;&gt;
+  &lt;li&gt;Dookie sword&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $starterSword&gt;&gt;
   &lt;li&gt;Starter sword&lt;/li&gt;
@@ -25455,6 +25734,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 7,
     Coins: 7
   },
@@ -25504,6 +25787,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 8,
     Coins: 9
   },
@@ -25553,6 +25840,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 31,
     Coins: 12
   },
@@ -25602,6 +25893,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 26,
     Coins: 11
   },
@@ -25651,6 +25946,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 38,
     Coins: 17
   },
@@ -25700,6 +25999,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 49,
     Coins: 18
   },
@@ -25749,6 +26052,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 43,
     Coins: 12
   },
@@ -25798,6 +26105,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 48,
     Coins: 22
   },
@@ -25847,6 +26158,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 36,
     Coins: 10
   },
@@ -25896,6 +26211,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 67,
     Coins: 15
   },
@@ -25945,6 +26264,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 53,
     Coins: 15
   },
@@ -25994,6 +26317,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 73,
     Coins: 34
   },
@@ -26043,6 +26370,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 73,
     Coins: 34
   },
@@ -26092,6 +26423,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 345,
     Coins: 126
   },
@@ -26141,6 +26476,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 0,
     Coins: 0
   },
@@ -26190,6 +26529,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 134,
     Coins: 67
   },
@@ -26239,6 +26582,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 102,
     Coins: 32
   },
@@ -26288,6 +26635,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 1,
     Coins: 1
   },
@@ -26337,6 +26688,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 2280,
     Coins: 3138
   },
@@ -26386,6 +26741,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 0,
     Coins: 0
   },
@@ -26435,6 +26794,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 0,
     Coins: 0
   },
@@ -26498,6 +26861,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -26557,6 +26924,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -26616,6 +26987,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -26675,6 +27050,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -26734,6 +27113,10 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -26801,7 +27184,64 @@ I am sorry for not making old save files compatible with the new update though. 
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Dead: false
+  }
+}&gt;&gt;
+
+&lt;&lt;set setup.weapons = {
+  copperSword: {
+    name: &quot;Copper sword&quot;,
+    id: &quot;copperSword&quot;,
+    tags: [&quot;weapon&quot;, &quot;sword&quot;],
+    passives: [&quot;&quot;],
+    description: [&quot;A lightweight weapon made out of copper. Slash DMG + 2, Pierce DMG + 0.5&quot;],
+    weaponSlashDMG: 2,
+    weaponPierceDMG: 0.5,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 2,
+    bleedPotencyDealt: 1
+  }
+}&gt;&gt;
+&lt;&lt;set setup.armors = {
+  leatherChestplate: {
+    name: &quot;Leather chestplate&quot;,
+    id: &quot;leatherChestplate&quot;,
+    tags: [&quot;armor&quot;, &quot;light armor&quot;, &quot;chestplate&quot;],
+    passives: [&quot;&quot;],
+    description: [&quot;A light piece of armor. Slash DEF + 1.8, Pierce DEF + 0.8, Blunt DEF + 1.5&quot;],
+    armorSlashDEF: 0,
+    armorPierceDEF: 0,
+    armorBluntDEF: 0,
+    armorMagicDEF: 0
+  }
+}&gt;&gt;
+&lt;&lt;set setup.items = {
+  boarLeather: {
+    name: &quot;Boar leather&quot;,
+    id: &quot;boarLeather&quot;,
+    tags: [&quot;junk&quot;],
+    description: [&quot;Leather from a boar.&quot;],
+    count: 0,
+    selling: 2,
+    buying: 3,
+  },
+  boarMeat: {
+    name: &quot;Raw boar meat&quot;,
+    id: &quot;boarMeat&quot;,
+    tags: [&quot;edible&quot;, &quot;meat&quot;, &quot;raw&quot;],
+    description: [&quot;Raw boar meat, not really filling.&quot;],
+    hungerRestore: 10,
+    fatigueRestore: 0,
+    staminaRestore: 0,
+    healthRestore: 0,
+    count: 0,
+    selling: 10,
+    buying: 15
   }
 }&gt;&gt;
 
@@ -26901,10 +27341,6 @@ I am sorry for not making old save files compatible with the new update though. 
 &lt;&lt;set $tppadFOUR to false&gt;&gt;
 &lt;&lt;set $tppadFIVE to false&gt;&gt;
 &lt;&lt;set $tppadSIX to false&gt;&gt;
-
-&lt;&lt;set $battleEvent1 = [ &quot;None&quot;, &quot;None2&quot;, &quot;Boar&quot;]&gt;&gt;
-&lt;&lt;set $battleEvent2 = [ &quot;None&quot;,&quot;Rabbit&quot;,&quot;Plant monster&quot;,&quot;Dungeon&quot;]&gt;&gt;
-&lt;&lt;set $battleEvent3 = [ &quot;None&quot;,&quot;SkeletonWarrior&quot;]&gt;&gt;
 
 &lt;&lt;set $workone to false&gt;&gt;
 &lt;&lt;set $drinkserved to 0&gt;&gt;
@@ -27149,6 +27585,10 @@ I am sorry for not making old save files compatible with the new update though. 
 &lt;&lt;set $burnCountCur to 0&gt;&gt;
 &lt;&lt;set $burnCountDealt to 0&gt;&gt;
 &lt;&lt;set $burnPotencyDealt to 0&gt;&gt;
+&lt;&lt;set $poisonPotency to 0&gt;&gt;
+&lt;&lt;set $poisonCountCur to 0&gt;&gt;
+&lt;&lt;set $poisonCountDealt to 0&gt;&gt;
+&lt;&lt;set $poisonPotencyDealt to 0&gt;&gt;
 &lt;&lt;set $PowerUpCount to 0&gt;&gt;
 &lt;&lt;set $PowerUpPotency to 0&gt;&gt;
 &lt;&lt;set $PoiseCount to 0&gt;&gt;
@@ -27239,6 +27679,8 @@ I am sorry for not making old save files compatible with the new update though. 
 &lt;&lt;set $timeRemember = {
 }&gt;&gt;
 &lt;&lt;set $weaponInventory = {
+}&gt;&gt;
+&lt;&lt;set $inventory = {
 }&gt;&gt;
 
 &lt;&lt;set $dailyKills to 0&gt;&gt;
@@ -28301,6 +28743,10 @@ Weapon: &lt;&lt;if $isWeaponOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;
   &lt;&lt;set $isWeaponOn to &quot;None&quot;&gt;&gt; 
   &lt;&lt;set $weaponType = &quot;None&quot;&gt;&gt; 
 &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;&lt;&lt;if $isWeaponSkinOn !== &quot;None&quot;&gt;&gt; + &lt;&lt;link &quot;$isWeaponSkinOn&quot;&gt;&gt; 
+    &lt;&lt;if $isWeaponSkinOn === &quot;Dookie sword&quot;&gt;&gt;
+      &lt;&lt;set $poisonCountDealt -= 1&gt;&gt;
+      &lt;&lt;set $poisonPotencyDealt -= 1&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
     &lt;&lt;set $isWeaponSkinOn to &quot;None&quot;&gt;&gt; 
     &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
     &lt;&lt;/link&gt;&gt; 
@@ -28820,6 +29266,14 @@ Blunt: &lt;&lt;= $armorBluntDEF.toFixed(2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $AsteriasPotatoSack&gt;&gt;
   &lt;li&gt;&lt;&lt;hovertip &quot;Second year anniversary event item.&quot;&gt;&gt;Asterias potato sack&lt;&lt;/hovertip&gt;&gt; | &lt;&lt;link &quot;Equip skin&quot;&gt;&gt; &lt;&lt;set $isWeaponSkinOn to &quot;Asterias potato sack&quot;&gt;&gt; &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/li&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $dookieSword&gt;&gt;
+  &lt;li&gt;&lt;&lt;hovertip `&#39;Jaedos weapon skin.&lt;br&gt;[On hit] Inflict 1 &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot;&gt;count.&lt;br&gt;[On hit] Inflict 1 &lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot;&gt; potency.&#39;`&gt;&gt;Dookie sword&lt;&lt;/hovertip&gt;&gt; | &lt;&lt;link &quot;Equip skin&quot;&gt;&gt;
+    &lt;&lt;set $isWeaponSkinOn to &quot;Dookie sword&quot;&gt;&gt; 
+    &lt;&lt;set $poisonCountDealt += 1&gt;&gt;
+    &lt;&lt;set $poisonPotencyDealt += 1&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
+  &lt;&lt;/link&gt;&gt;&lt;/li&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $starterSword&gt;&gt;
   &lt;li&gt;Starter sword | &lt;&lt;link &quot;Equip&quot;&gt;&gt; 
@@ -32083,6 +32537,8 @@ Gender changing potion:  $genderChangingPotion | &lt;&lt;link &quot;Male&quot;&g
 		&lt;img class=&quot;sword&quot; src = &quot;Textures/weapons/Candy cane shield n sword.png&quot; width=&quot;140%&quot; /&gt;
     &lt;&lt;elseif $isWeaponSkinOn is &quot;Asterias potato sack&quot;&gt;&gt;
 		&lt;img class=&quot;sword&quot; src = &quot;Textures/weapons/Potato sack.png&quot; width=&quot;140%&quot; /&gt;
+	&lt;&lt;elseif $isWeaponSkinOn is &quot;Dookie sword&quot;&gt;&gt;
+		&lt;img class=&quot;sword&quot; src = &quot;Textures/weapons/Shit sword.png&quot; width=&quot;140%&quot; /&gt;
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -33025,6 +33481,15 @@ You obtained $candyCanesCurDrop candy canes.
 		&lt;&lt;set $mobs[_i].STRPercentBuff += $mobs[_i].PowerUpPotency&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
+	/* Poison. */
+
+	&lt;&lt;if _mob[_i].poisonCountCur &gt;= 0.01&gt;&gt;
+		&lt;&lt;set $mobs[_i].CurHP -= $mobs[_i].poisonPotency&gt;&gt;
+		&lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;poison&quot;&gt;Level &#39; + $mobs[_i].lvl + &#39; &#39; + $mobs[_i].name + &#39; took &#39; + $mobs[_i].poisonPotency.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;damage&lt;/span&gt;&#39;)&gt;&gt;
+		&lt;&lt;set $mobs[_i].poisonCountCur -= 1&gt;&gt;
+		&lt;&lt;set $mobs[_i].poisonPotency -= 1&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget HitRelatedStatusPlayer&gt;&gt;
@@ -33035,6 +33500,13 @@ You obtained $candyCanesCurDrop candy canes.
 		&lt;&lt;set $STRPercentBuff -= $PowerUpPotency&gt;&gt;
 		&lt;&lt;set $PowerUpPotency /= 2&gt;&gt;
 		&lt;&lt;set $STRPercentBuff += $PowerUpPotency&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+
+	&lt;&lt;if $poisonCountCur &gt;= 0.01&gt;&gt;
+		&lt;&lt;set $CurHP -= $poisonPotency&gt;&gt;
+		&lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;poison&quot;&gt;&#39; + $gamename + &#39; took &#39; + $poisonPotency.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;damage&lt;/span&gt;&#39;)&gt;&gt;
+		&lt;&lt;set $poisonCountCur -= 1&gt;&gt;
+		&lt;&lt;set $poisonPotency -= 1&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/widget&gt;&gt;
@@ -33049,6 +33521,13 @@ You obtained $candyCanesCurDrop candy canes.
 		&lt;&lt;set $NPCs.RadiantRose.STRPercentBuff += $NPCs.RadiantRose.PowerUpPotency&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
+	&lt;&lt;if $NPCs.RadiantRose.poisonCountCur &gt;= 0.01&gt;&gt;
+		&lt;&lt;set $NPCs.RadiantRose.CurHP -= $NPCs.RadiantRose.poisonPotency&gt;&gt;
+		&lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;poison&quot;&gt;RadiantRose took &#39; + $NPCs.RadiantRose.poisonPotency.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;damage&lt;/span&gt;&#39;)&gt;&gt;
+		&lt;&lt;set $NPCs.RadiantRose.poisonCountCur -= 1&gt;&gt;
+		&lt;&lt;set $NPCs.RadiantRose.poisonPotency -= 1&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget HitRelatedStatusShadow&gt;&gt;
@@ -33059,6 +33538,13 @@ You obtained $candyCanesCurDrop candy canes.
 		&lt;&lt;set $NPCs.ShadowScythe.STRPercentBuff -= $NPCs.ShadowScythe.PowerUpPotency&gt;&gt;
 		&lt;&lt;set $NPCs.ShadowScythe.PowerUpPotency /= 2&gt;&gt;
 		&lt;&lt;set $NPCs.ShadowScythe.STRPercentBuff += $NPCs.ShadowScythe.PowerUpPotency&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+
+	&lt;&lt;if $NPCs.ShadowScythe.poisonCountCur &gt;= 0.01&gt;&gt;
+		&lt;&lt;set $NPCs.ShadowScythe.CurHP -= $NPCs.ShadowScythe.poisonPotency&gt;&gt;
+		&lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;poison&quot;&gt;ShadowScythe took &#39; + $NPCs.ShadowScythe.poisonPotency.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;damage&lt;/span&gt;&#39;)&gt;&gt;
+		&lt;&lt;set $NPCs.ShadowScythe.poisonCountCur -= 1&gt;&gt;
+		&lt;&lt;set $NPCs.ShadowScythe.poisonPotency -= 1&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/widget&gt;&gt;
@@ -33073,6 +33559,13 @@ You obtained $candyCanesCurDrop candy canes.
 		&lt;&lt;set $NPCs.CrimsonSentinel.STRPercentBuff += $NPCs.CrimsonSentinel.PowerUpPotency&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
+	&lt;&lt;if $NPCs.CrimsonSentinel.poisonCountCur &gt;= 0.01&gt;&gt;
+		&lt;&lt;set $NPCs.CrimsonSentinel.CurHP -= $NPCs.CrimsonSentinel.poisonPotency&gt;&gt;
+		&lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;poison&quot;&gt;CrimsonSentinel took &#39; + $NPCs.CrimsonSentinel.poisonPotency.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;damage&lt;/span&gt;&#39;)&gt;&gt;
+		&lt;&lt;set $NPCs.CrimsonSentinel.poisonCountCur -= 1&gt;&gt;
+		&lt;&lt;set $NPCs.CrimsonSentinel.poisonPotency -= 1&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget HitRelatedStatusZegrath&gt;&gt;
@@ -33083,6 +33576,13 @@ You obtained $candyCanesCurDrop candy canes.
 		&lt;&lt;set $NPCs.Zegrath.STRPercentBuff -= $NPCs.Zegrath.PowerUpPotency&gt;&gt;
 		&lt;&lt;set $NPCs.Zegrath.PowerUpPotency /= 2&gt;&gt;
 		&lt;&lt;set $NPCs.Zegrath.STRPercentBuff += $NPCs.Zegrath.PowerUpPotency&gt;&gt;
+	&lt;&lt;/if&gt;&gt;
+
+	&lt;&lt;if $NPCs.Zegrath.poisonCountCur &gt;= 0.01&gt;&gt;
+		&lt;&lt;set $NPCs.Zegrath.CurHP -= $NPCs.Zegrath.poisonPotency&gt;&gt;
+		&lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;poison&quot;&gt;Zegrath took &#39; + $NPCs.Zegrath.poisonPotency.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Poison.png&quot; /&gt;damage&lt;/span&gt;&#39;)&gt;&gt;
+		&lt;&lt;set $NPCs.Zegrath.poisonCountCur -= 1&gt;&gt;
+		&lt;&lt;set $NPCs.Zegrath.poisonPotency -= 1&gt;&gt;
 	&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/widget&gt;&gt;

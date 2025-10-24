@@ -1,5 +1,7 @@
 :: Combat win {"position":"200,2075","size":"100,100"}
-You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col and <<= $combatXP.toFixed(0)>> XP.
+--| Congratulations! |--
+Col: <<= $combatCol.toFixed(0)>> | XP: <<= $combatXP.toFixed(0)>>
+Items: <<= $combat_drops>>
 <<EventCurrencies>>\
 <<link "Continue">>
     <<set $turnChanceCur to $turnChanceMax>>
@@ -111,6 +113,17 @@ You won the fight, getting <<= $combat_drops>>, <<= $combatCol.toFixed(0)>> col 
     <<set $NPCs.Zegrath.FlowCount -= $NPCs.Zegrath.FlowCount>>
     <<set $NPCs.Zegrath.turnChanceMax -= $NPCs.Zegrath.FlowPotency>>
     <<set $NPCs.Zegrath.FlowPotency -= $NPCs.Zegrath.FlowPotency>>
+
+    <<set $poisonCountCur to 0>>
+    <<set $poisonPotency to 0>>
+    <<set $NPCs.RadiantRose.poisonCountCur to 0>>
+	<<set $NPCs.RadiantRose.poisonPotency to 0>>
+	<<set $NPCs.ShadowScythe.poisonCountCur to 0>>
+	<<set $NPCs.ShadowScythe.poisonPotency to 0>>
+	<<set $NPCs.CrimsonSentinel.poisonCountCur to 0>>
+	<<set $NPCs.CrimsonSentinel.poisonPotency to 0>>
+	<<set $NPCs.Zegrath.poisonCountCur to 0>>
+	<<set $NPCs.Zegrath.poisonPotency to 0>>
 
     <<if $CDThroatSlit>>
         <<unset $CDThroatSlit>>

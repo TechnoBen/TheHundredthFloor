@@ -2,7 +2,7 @@
 You have encountered:
 <<for _i = 0; _i lte 99; _i++>>\
   	<<if $mobs[_i]>>\
- 	Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].StunnedCount >= 0.1>> | <span class="stun"><<= $mobs[_i].StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $mobs[_i].DazedCount >= 0.1>> | <span class="stun"><<= $mobs[_i].DazedCount.toFixed(0)>> (<<= $mobs[_i].DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if $mobs[_i].PowerUpCount >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].PowerUpCount.toFixed(0)>> (<<= $mobs[_i].PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $mobs[_i].DefenseUpCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseUpCount.toFixed(0)>> (<<= $mobs[_i].DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $mobs[_i].FlowCount >= 0.1>> | <span class="flow"><<= $mobs[_i].FlowCount.toFixed(0)>> (<<= $mobs[_i].FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $mobs[_i].DefenseDownCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseDownCount.toFixed(0)>> (<<= $mobs[_i].DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $mobs[_i].PoiseCount >= 0.1>> | <span class="poise"><<= $mobs[_i].PoiseCount.toFixed(0)>> (<<= $mobs[_i].PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+ 	Level <<= $mobs[_i].lvl.toFixed(0)>> <<= $mobs[_i].name>>: <<= $mobs[_i].CurHP.toFixed(2)>>/<<= $mobs[_i].MaxHP.toFixed(2)>> <<if $mobs[_i].StunnedCount >= 0.1>> | <span class="stun"><<= $mobs[_i].StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $mobs[_i].DazedCount >= 0.1>> | <span class="stun"><<= $mobs[_i].DazedCount.toFixed(0)>> (<<= $mobs[_i].DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if $mobs[_i].PowerUpCount >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].PowerUpCount.toFixed(0)>> (<<= $mobs[_i].PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $mobs[_i].DefenseUpCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseUpCount.toFixed(0)>> (<<= $mobs[_i].DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $mobs[_i].FlowCount >= 0.1>> | <span class="flow"><<= $mobs[_i].FlowCount.toFixed(0)>> (<<= $mobs[_i].FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $mobs[_i].DefenseDownCount >= 0.1>> | <span class="defenseStatus"><<= $mobs[_i].DefenseDownCount.toFixed(0)>> (<<= $mobs[_i].DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $mobs[_i].PoiseCount >= 0.1>> | <span class="poise"><<= $mobs[_i].PoiseCount.toFixed(0)>> (<<= $mobs[_i].PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>> <<if $mobs[_i].bleedCountCur >= 0.1>> | <span class="bleedTrigger"><<= $mobs[_i].bleedCountCur.toFixed(2)>>/<<= $mobs[_i].bleedCountMax.toFixed(0)>> (<<= $mobs[_i].bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if $mobs[_i].burnCountCur >= 0.1>> | <span class="burnTrigger"><<= $mobs[_i].burnCountCur.toFixed(0)>> (<<= $mobs[_i].burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>><<if $mobs[_i].poisonCountCur >= 0.1>> | <span class="poison"><<= $mobs[_i].poisonCountCur.toFixed(0)>> (<<= $mobs[_i].poisonPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/poison.png" /></span><</if>>
  	<</if>>\
 <</for>>\
 <<run $combat_log.splice(0, $combat_log.length - 20)>>\
@@ -11,9 +11,9 @@ You have encountered:
 	<br>\
 <</if>>\
 $gamename stats:
-HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>><<if $StunnedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= $StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $DazedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= $DazedCount.toFixed(0)>> (<<= $DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if $PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $FlowCount >= 0.1 && settings.statuses === false>> | <span class="flow"><<= $FlowCount.toFixed(0)>> (<<= $FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+HP: <<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>><<if $StunnedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= $StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $DazedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= $DazedCount.toFixed(0)>> (<<= $DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if $PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $FlowCount >= 0.1 && settings.statuses === false>> | <span class="flow"><<= $FlowCount.toFixed(0)>> (<<= $FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if $burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>><<if $poisonCountCur >= 0.01 && settings.statuses === false>> | <span class="poison"><<= $poisonCountCur.toFixed(0)>> (<<= $poisonPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poison.png" /></span><</if>>
 STM: <<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>
-<<if $StunnedCount >= 0.01 && settings.statuses === true>> <span class="stun"><<= $StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $DazedCount >= 0.01 && settings.statuses === true>> <span class="stun"><<= $DazedCount.toFixed(0)>> (<<= $DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>> <<if $PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === true>> <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $FlowCount >= 0.1 && settings.statuses === true>><span class="flow"><<= $FlowCount.toFixed(0)>> (<<= $FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === true>> <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>\
+<<if $StunnedCount >= 0.01 && settings.statuses === true>> <span class="stun"><<= $StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if $DazedCount >= 0.01 && settings.statuses === true>> <span class="stun"><<= $DazedCount.toFixed(0)>> (<<= $DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>> <<if $PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= $PowerUpCount.toFixed(0)>> (<<= $PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if $DefenseUpCount >= 0.1 && settings.statuses === true>> <span class="defenseStatus"><<= $DefenseUpCount.toFixed(0)>> (<<= $DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if $FlowCount >= 0.1 && settings.statuses === true>><span class="flow"><<= $FlowCount.toFixed(0)>> (<<= $FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if $DefenseDownCount >= 0.1 && settings.statuses === true>> <span class="defenseStatus"><<= $DefenseDownCount.toFixed(0)>> (<<= $DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if $PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= $PoiseCount.toFixed(0)>> (<<= $PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if $bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= $bleedCountCur.toFixed(2)>>/<<= $bleedCountMax.toFixed(0)>> (<<= $bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if $burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= $burnCountCur.toFixed(0)>> (<<= $burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>><<if $poisonCountCur >= 0.01 && settings.statuses === true>> <span class="poison"><<= $poisonCountCur.toFixed(0)>> (<<= $poisonPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poison.png" /></span><</if>>\
 <ol>\
 <<if $hpPOT >= 1>><li>HP pots: $hpPOT</li><</if>>
 <<if $hpPOT1 >= 1>><li>HP pots T2: $hpPOT1</li><</if>>
@@ -25,9 +25,9 @@ Raid party hp: $raidHP/1000
 <<for _i range $partyMembers>>
 <<set _npc = $NPCs[_i]>>\
     <<= _npc.name>>'s stats:
-    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.StunnedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= _npc.StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if _npc.DazedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= _npc.DazedCount.toFixed(0)>> (<<= _npc.DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>> <<if _npc.PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.FlowCount >= 0.1 && settings.statuses === false>> | <span class="flow"><<= _npc.FlowCount.toFixed(0)>> (<<= _npc.FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+    HP: <<= _npc.CurHP.toFixed(0)>>/<<= _npc.MaxHP.toFixed(0)>><<if _npc.StunnedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= _npc.StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if _npc.DazedCount >= 0.01 && settings.statuses === false>> | <span class="stun"><<= _npc.DazedCount.toFixed(0)>> (<<= _npc.DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>> <<if _npc.PowerUpCount >= 0.01 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.FlowCount >= 0.1 && settings.statuses === false>> | <span class="flow"><<= _npc.FlowCount.toFixed(0)>> (<<= _npc.FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === false>> | <span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === false>> | <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === false>> | <span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>><<if _npc.burnCountCur >= 0.01 && settings.statuses === false>> | <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>><<if _npc.poisonCountCur >= 0.01 && settings.statuses === false>> | <span class="poison"><<= _npc.poisonCountCur.toFixed(2)>> (<<= _npc.poisonPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poison.png" /></span><</if>>
     STM: <<= _npc.CurSTM.toFixed(0)>>/<<= _npc.MaxSTM.toFixed(0)>>
-	<<if _npc.StunnedCount >= 0.01 && settings.statuses === true>><span class="stun"><<= _npc.StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if _npc.DazedCount >= 0.01 && settings.statuses === true>><span class="stun"><<= _npc.DazedCount.toFixed(0)>> (<<= _npc.DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if _npc.PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === true>><span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.FlowCount >= 0.1 && settings.statuses === true>><span class="flow"><<= _npc.FlowCount.toFixed(0)>> (<<= _npc.FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === true>><span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>>
+	<<if _npc.StunnedCount >= 0.01 && settings.statuses === true>><span class="stun"><<= _npc.StunnedCount.toFixed(0)>><img class="status" src = "Textures/Statuses/Stunned.png" /></span><</if>><<if _npc.DazedCount >= 0.01 && settings.statuses === true>><span class="stun"><<= _npc.DazedCount.toFixed(0)>> (<<= _npc.DazedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Dazed.png" /></span><</if>><<if _npc.PowerUpCount >= 0.01 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.PowerUpCount.toFixed(0)>> (<<= _npc.PowerUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/STR raise.png" /></span><</if>><<if _npc.DefenseUpCount >= 0.1 && settings.statuses === true>><span class="defenseStatus"><<= _npc.DefenseUpCount.toFixed(0)>> (<<= _npc.DefenseUpPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF raise.png" /></span><</if>><<if _npc.FlowCount >= 0.1 && settings.statuses === true>><span class="flow"><<= _npc.FlowCount.toFixed(0)>> (<<= _npc.FlowPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Flow.png" /></span><</if>><<if _npc.DefenseDownCount >= 0.1 && settings.statuses === true>><span class="defenseStatus"><<= _npc.DefenseDownCount.toFixed(0)>> (<<= _npc.DefenseDownPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/DEF down.png" /></span><</if>><<if _npc.PoiseCount >= 0.01 && settings.statuses === true>> <span class="poise"><<= _npc.PoiseCount.toFixed(0)>> (<<= _npc.PoisePotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poise.png" /></span><</if>><<if _npc.bleedCountCur >= 0.1 && settings.statuses === true>><span class="bleedTrigger"><<= _npc.bleedCountCur.toFixed(2)>>/<<= _npc.bleedCountMax.toFixed(0)>> (<<= _npc.bleedPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Bleed.png" /></span><</if>> <<if _npc.burnCountCur >= 0.01 && settings.statuses === true>> <span class="burnTrigger"><<= _npc.burnCountCur.toFixed(2)>> (<<= _npc.burnPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Burn.png" /></span><</if>><<if _npc.poisonCountCur >= 0.01 && settings.statuses === true>><span class="poison"><<= _npc.poisonCountCur.toFixed(2)>> (<<= _npc.poisonPotency.toFixed(2)>>)<img class="status" src = "Textures/Statuses/Poison.png" /></span><</if>>\
 <</for>>\
 
 <<if $turnChanceCur >= 0.01>><<if $bonusTurnPlayer === true>>EXTRA TURN! <</if>>Select your attack:<<nobr>>
@@ -36,34 +36,34 @@ Raid party hp: $raidHP/1000
 </label>
 <<if $weaponType is "None">>
     <label>
-         | <<radiobutton "$attack" "Punch">> Punch
+         | <<radiobutton "$attack" "Punch">> <<hovertip `'<img class="status" src = "Textures/Statuses/Blunt.png">Punch<br>[On hit] Inflict 1 <img class="status" src = "Textures/Statuses/Dazed.png">count<br>[On hit] Inflict 3 <img class="status" src = "Textures/Statuses/Dazed.png"> potency'`>>Punch<</hovertip>>
     </label>
 <</if>>
 <<if $weaponType is "Short sword">>
     <label>
-         | <<radiobutton "$attack" "Slash">> Slash
+         | <<radiobutton "$attack" "Slash">> <<hovertip `'<img class="status" src = "Textures/Statuses/Slash.png">Slash<br>[On hit] Inflict <<= $bleedCountDealt.toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= $bleedPotencyDealt.toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Slash<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Stab">> Stab
+         | <<radiobutton "$attack" "Stab">> <<hovertip `'<img class="status" src = "Textures/Statuses/Pierce.png">Stab<br>[On hit] Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Stab<</hovertip>>
     </label>
     <label>
-        <<if $CDUnfocusedStrike >= 1>> | CD: $CDUnfocusedStrike Unfocused strike<<else>> | <<radiobutton "$attack" "Unfocused strike">> Unfocused strike<</if>>
+        <<if $CDUnfocusedStrike >= 1>> | CD: $CDUnfocusedStrike <<hovertip `'<img class="status" src="Textures/Statuses/Slash.png">Unfocused strike<br>[On hit] If enemy does not have<img class="status" src="Textures/Statuses/Stunned.png">, inflict<img class="status" src="Textures/Statuses/Bleed.png">potency again<br>[On hit] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">repeat the attack and clear all<img class="status" src="Textures/Statuses/Stunned.png">potency<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +3<img class="status" src="Textures/Statuses/Flow.png">count<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +25<img class="status" src="Textures/Statuses/Flow.png">potency'`500>>Unfocused strike<</hovertip>> <<else>> | <<radiobutton "$attack" "Unfocused strike">> <<hovertip `'<img class="status" src="Textures/Statuses/Slash.png">Unfocused strike<br>[On hit] If enemy does not have<img class="status" src="Textures/Statuses/Stunned.png">, inflict<img class="status" src="Textures/Statuses/Bleed.png">potency again<br>[On hit] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">repeat the attack and clear all<img class="status" src="Textures/Statuses/Stunned.png">potency<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +3<img class="status" src="Textures/Statuses/Flow.png">count<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +25<img class="status" src="Textures/Statuses/Flow.png">potency'`500>>Unfocused strike<</hovertip>><</if>>
     </label>
 <</if>>
 <<if $weaponType is "Shield and sword">>
     <label>
-         | <<radiobutton "$attack" "Slash">> Slash
+         | <<radiobutton "$attack" "Slash">> <<hovertip `'<img class="status" src = "Textures/Statuses/Slash.png">Slash<br>[On hit] Inflict <<= $bleedCountDealt.toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= $bleedPotencyDealt.toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Slash<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Shield bash">> Shield bash
+         | <<radiobutton "$attack" "Shield bash">> <<hovertip `'<img class="status" src = "Textures/Statuses/Blunt.png">Shield bash<br>[On hit] Inflict 2 <img class="status" src = "Textures/Statuses/Dazed.png">count<br>[On hit] Inflict 5 <img class="status" src = "Textures/Statuses/Dazed.png"> potency'`>>Shield bash<</hovertip>>
     </label>
 <</if>>
 <<if $weaponType is "Rapier">>
     <label>
-         | <<radiobutton "$attack" "Stab">> Stab
+         | <<radiobutton "$attack" "Stab">> <<hovertip `'<img class="status" src = "Textures/Statuses/Pierce.png">Stab<br>[On hit] Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Stab<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Charge">> Charge
+         | <<radiobutton "$attack" "Charge">> <<hovertip `'<img class="status" src = "Textures/Statuses/Pierce.png">Charge<br>[On hit] Inflict <<= ($bleedCountDealt).toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= ($bleedPotencyDealt).toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Stab<</hovertip>>
     </label>
     <label>
         <<if $CDMultistrike >= 1>> | CD: $CDMultistrike Multi strike<<else>> | <<radiobutton "$attack" "Multi strike">> Multi strike<</if>>
@@ -228,6 +228,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                     <<set $dmgDealt.Total += $baseDMG>>
                     <<set $mobs[_i].DazedPotency += 3>>
                     <<set $mobs[_i].DazedCount += 1>>
+                    <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                    <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                    <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                    <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                     <<run $combat_log.push($gamename + ' punches ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                 <<else>>
                     <<set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)>>
@@ -236,6 +240,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                     <<set $dmgDealt.Total += $baseDMG>>
                     <<set $mobs[_i].DazedPotency += 6>>
                     <<set $mobs[_i].DazedCount += 1>>
+                    <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                    <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                    <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                    <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                     <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' punches ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<CritRelatedStatusesPlayer>>
                 <</if>>
@@ -264,6 +272,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
                         <<set $mobs[_i].DazedPotency += 4>>
                         <<set $mobs[_i].DazedCount += 1>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' throws a heavy punch at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to (($weaponBluntDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)>>
@@ -272,6 +284,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
                         <<set $mobs[_i].DazedPotency += 6>>
                         <<set $mobs[_i].DazedCount += 2>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' throws a heavy punch at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -301,6 +317,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt/1.5>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.8) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
@@ -309,6 +329,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -337,6 +361,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt/1.5>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
@@ -345,6 +373,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -373,6 +405,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.75) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
@@ -381,6 +417,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -414,6 +454,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $dmgDealt.Total += $baseDMG>>
 							    <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						        <<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                                <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                                 <<run $combat_log.push($gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                             <<else>>
                                 <<set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)>>
@@ -422,6 +466,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $dmgDealt.Total += $baseDMG>>
 								<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
 								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                                <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                                 <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                                 <<CritRelatedStatusesPlayer>>
                             <</if>>
@@ -450,6 +498,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $dmgDealt.Total += $baseDMG>>
 								<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                                <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                                 <<run $combat_log.push($gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                             <<else>>
                                 <<set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)>>
@@ -458,6 +510,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $dmgDealt.Total += $baseDMG>>
 								<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
 								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                                <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                                 <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                                 <<CritRelatedStatusesPlayer>>
                             <</if>>
@@ -491,6 +547,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $dmgDealt.Total += $baseDMG>>
 								<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                                <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                                 <<run $combat_log.push($gamename + ' charges at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                             <<else>>
                                 <<set $baseDMG to (($weaponPierceDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $PierceSTR - ($STRPercentDebuff*($PierceSTR + $weaponDMG)/100) + ($STRPercentBuff*( $PierceSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
@@ -499,6 +559,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $dmgDealt.Total += $baseDMG>>
 								<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.5>>
 								<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                                <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                                 <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' charges at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                                 <<CritRelatedStatusesPlayer>>
                             <</if>>
@@ -530,6 +594,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $dmgDealt.Total += $baseDMG>>
                 <<set $mobs[_i].DazedPotency += 5>>
                 <<set $mobs[_i].DazedCount += 2>>
+                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                 <<run $combat_log.push($gamename + ' bashes their shield at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
             <<else>>
                 <<set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)>>
@@ -538,6 +606,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $dmgDealt.Total += $baseDMG>>
                 <<set $mobs[_i].DazedPotency += 7>>
                 <<set $mobs[_i].DazedCount += 2>>
+                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                 <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' bashes their shield at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                 <<CritRelatedStatusesPlayer>>
             <</if>>
@@ -568,6 +640,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $dmgDealt.Total += $baseDMG>>
                 <<set $mobs[_i].DazedPotency += 2>>
                 <<set $mobs[_i].DazedCount += 1>>
+                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                 <<run $combat_log.push($gamename + ' strikes ' + $mobs[_i].name + ' with the blunt side of their heavy sword dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
             <<else>>
                 <<set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)>>
@@ -576,6 +652,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $dmgDealt.Total += $baseDMG>>
                 <<set $mobs[_i].DazedPotency += 4>>
                 <<set $mobs[_i].DazedCount += 1>>
+                <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                 <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' strikes ' + $mobs[_i].name + ' with the blunt side of their heavy sword dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                 <<CritRelatedStatusesPlayer>>
             <</if>>
@@ -606,6 +686,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
                         <<set $mobs[_i].DazedPotency += 4>>
                         <<set $mobs[_i].DazedCount += 1>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' strikes ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)>>
@@ -614,6 +698,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
                         <<set $mobs[_i].DazedPotency += 6>>
                         <<set $mobs[_i].DazedCount += 2>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' strikes ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -647,6 +735,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<if $mobs[_i].DazedCount <= 0>>
                             <<set $mobs[_i].DazedCount += 1>>
                         <</if>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' smashes ' + $mobs[_i].name + 's head dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.5) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)>>
@@ -657,6 +749,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<if $mobs[_i].DazedCount <= 0>>
                             <<set $mobs[_i].DazedCount += 1>>
                         <</if>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' smashes ' + $mobs[_i].name + 's head dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -688,6 +784,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.2>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.2 * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' mutilates ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                     <<else>>
                         <<set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 1) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
@@ -696,6 +796,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt*1.7>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.7 * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' mutilates ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                     <</if>>
@@ -725,6 +829,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].CurHP -= $baseDMG>>
                         <<set $dmgDealt.Combat to $baseDMG>>
                         <<set $dmgDealt.Total += $baseDMG>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
                         <<run $combat_log.push($gamename + ' pierces the throat of ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
@@ -734,6 +842,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].CurHP -= $baseDMG>>
                         <<set $dmgDealt.Combat to $baseDMG>>
                         <<set $dmgDealt.Total += $baseDMG>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' pierces the throat of  ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
@@ -773,6 +885,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].DazedCount += 1>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' leaps into the air, hitting ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />/<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<set $CDLeapingSlash to 5>>
                         <<if $mobs[_i].CurHP <= 0>>
@@ -788,6 +904,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
                         <<set $mobs[_i].DazedPotency += 7>>
                         <<set $mobs[_i].DazedCount += 2>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' leaps into the air, hitting  ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />/<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<set $CDLeapingSlash to 5>>
                         <<CritRelatedStatusesPlayer>>
@@ -827,6 +947,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' chargest at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<set $CDMultistrike to 6>>
                         <<set $PoisePotency += 5>>
@@ -839,6 +963,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Combat to $baseDMG>>
                         <<set $dmgDealt.Total += $baseDMG>>
 						<<set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' charges at  ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<set $CDMultistrike to 6>>
                         <<CritRelatedStatusesPlayer>>
@@ -872,6 +1000,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
                         <<set $mobs[_i].DazedPotency += 3>>
                         <<set $mobs[_i].DazedCount += 5>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' throws a left hook at ' + $mobs[_i].name + ' then they throw a right hook and finally uppercuts ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<set $CDUpperCut to 7>>
                         <<if $mobs[_i].CurHP <= 0>>
@@ -886,6 +1018,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $dmgDealt.Total += $baseDMG>>
                         <<set $mobs[_i].DazedPotency += 6>>
                         <<set $mobs[_i].DazedCount += 5>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' throws a left hook at ' + $mobs[_i].name + ' then they throw a right hook and finally uppercuts ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                         <<set $CDUpperCut to 7>>
                         <<CritRelatedStatusesPlayer>>
@@ -929,6 +1065,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].CurHP -= $baseDMG>>
                         <<set $dmgDealt.Combat to $baseDMG>>
                         <<set $dmgDealt.Total += $baseDMG>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<set $mobs[_i].DazedPotency -= $mobs[_i].DazedPotency>>
                         <<set $mobs[_i].DazedCount -= $mobs[_i].DazedCount>>
                         <<run $combat_log.push($gamename + ' hits ' + $mobs[_i].name + ' on the head, making them fall to the ground, disoriented, dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />/<img class="status" src = "Textures/Statuses/Dazed.png" />damage')>>
@@ -943,6 +1083,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].CurHP -= $baseDMG>>
                         <<set $dmgDealt.Combat to $baseDMG>>
                         <<set $dmgDealt.Total += $baseDMG>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                         <<set $mobs[_i].DazedPotency -= $mobs[_i].DazedPotency>>
                         <<set $mobs[_i].DazedCount -= $mobs[_i].DazedCount>>
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' hits ' + $mobs[_i].name + ' on the head, making them fall to the ground, disoriented, dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />/<img class="status" src = "Textures/Statuses/Dazed.png" />damage')>>
@@ -983,6 +1127,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     						<<set $mobs[_i].bleedPotency += ($bleedPotencyDealt * 2) * $mobs[_i].bleedDef>>
                         <</if>>
                         <<run $combat_log.push($gamename + ' swings their sword at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<set $CDUnfocusedStrike to 8>>
                         <<if $mobs[_i].StunnedCount >= 1>>
                             <<set $mobs[_i].CurHP -= $baseDMG>>
@@ -990,6 +1138,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                             <<set $dmgDealt.Total += $baseDMG>>
                             <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
     					    <<set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef>>
+                            <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                            <<set $mobs[_i].poisonPotency += $poisonPotencyDealt>>
+                            <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                            <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                             <<run $combat_log.push($gamename + ' does a follow up attack at the distracted ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                             <<set $mobs[_i].StunnedCount to 0>>
                         <</if>>
@@ -1004,6 +1156,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].CurHP -= $baseDMG>>
                         <<set $dmgDealt.Combat to $baseDMG>>
                         <<set $dmgDealt.Total += $baseDMG>>
+                        <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                        <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                        <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                        <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
 						<<if $mobs[_i].StunnedCount <= 0>>
 						    <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
     						<<set $mobs[_i].bleedPotency += ($bleedPotencyDealt * 1.5) * $mobs[_i].bleedDef>>
@@ -1018,6 +1174,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                             <<set $mobs[_i].CurHP -= $baseDMG>>
                             <<set $dmgDealt.Combat to $baseDMG>>
                             <<set $dmgDealt.Total += $baseDMG>>
+                            <<set $mobs[_i].poisonCountCur += $poisonCountDealt>>
+                            <<set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG>>
+                            <<set $mobs[_i].burnCountCur += $burnCountDealt>>
+                            <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                             <<set $mobs[_i].bleedCountCur += $bleedCountDealt>>
     					    <<set $mobs[_i].bleedPotency += ($bleedPotencyDealt * 1.5) * $mobs[_i].bleedDef>>
                             <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' does a follow up attack at the distracted ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
@@ -1064,6 +1224,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt/1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt/2 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt>>
                 <<run $combat_log.push('RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantHiting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 6>>
@@ -1073,6 +1237,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt * $NPCs.RadiantRose.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt * $NPCs.RadiantRose.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantCritting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 6>>
@@ -1096,6 +1264,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>> 
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt>>
                 <<run $combat_log.push('RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantHiting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 10>>
@@ -1105,6 +1277,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt * $NPCs.RadiantRose.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt * $NPCs.RadiantRose.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantCritting>>
                 <<CritRelatedStatusesRadiant>>
@@ -1136,6 +1312,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $NPCs.RadiantRose.CritChance += 5>>
                 <<set $NPCs.RadiantRose.PoisePotency += 5>>
                 <<set $NPCs.RadiantRose.CritDMG += 0.1>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt>>
                 <<run $combat_log.push('RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantHiting>>
             <<else>>
@@ -1144,6 +1324,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.RadiantRose.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.RadiantRose.bleedCountDealt*1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.RadiantRose.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.RadiantRose.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.RadiantRose.poisonPotencyDealt * $NPCs.RadiantRose.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.RadiantRose.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.RadiantRose.burnPotencyDealt * $NPCs.RadiantRose.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! RadiantRose charges at ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantCritting>>
                 <<CritRelatedStatusesRadiant>>
@@ -1180,6 +1364,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt>>
                 <<run $combat_log.push('ShadowScythe slashes at ' + $mobs[_i].name + ' with his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                 <<set $NPCs.ShadowScythe.CurSTM -= 25>>
                 <<ShadowHiting>>
@@ -1189,6 +1377,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>> 
 				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt * $NPCs.ShadowScythe.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt * $NPCs.ShadowScythe.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! ShadowScythe slashes at ' + $mobs[_i].name + ' with his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                 <<set $NPCs.ShadowScythe.CurSTM -= 25>>
                 <<ShadowCritting>>
@@ -1212,6 +1404,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt/1.1>>
 				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt/1.2 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt>>
                 <<run $combat_log.push('ShadowScythe charges at ' + $mobs[_i].name + ' and sweeps his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                 <<set $NPCs.ShadowScythe.CurSTM -= 31>>
                 <<ShadowHiting>>
@@ -1221,6 +1417,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.4>>
 				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt * $NPCs.ShadowScythe.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt * $NPCs.ShadowScythe.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! ShadowScythe charges at ' + $mobs[_i].name + ' and sweeps his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                 <<set $NPCs.ShadowScythe.CurSTM -= 31>>
                 <<ShadowCritting>>
@@ -1245,6 +1445,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt>>
                 <<set _mob[_i].DefenseDownCount += 4>>
                 <<set _mob[_i].DefenseDownPotency += 0.1>>
                 <<set _mob[_i].DEFPercentBuff += 0.1>>
@@ -1257,13 +1461,17 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.ShadowScythe.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.ShadowScythe.bleedCountDealt*1.4>>
 				<<set $mobs[_i].bleedPotency += $NPCs.ShadowScythe.bleedPotencyDealt*1.3 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.ShadowScythe.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.ShadowScythe.poisonPotencyDealt * $NPCs.ShadowScythe.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.ShadowScythe.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.ShadowScythe.burnPotencyDealt * $NPCs.ShadowScythe.CritDMG>>
                 <<set _mob[_i].DefenseDownCount += 4>>
                 <<set _mob[_i].DefenseDownPotency += 0.12>>
                 <<set _mob[_i].DEFPercentBuff += 0.12>>
                 <<run $combat_log.push('CRITICAL HIT! ShadowScythe charges at ' + $mobs[_i].name + ' and sweeps his scythe dealing ' + $NPCs.ShadowScythe.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<ShadowCritting>>
                 <<CritRelatedStatusesShadow>>
-                <<set $CDPunctureSS to 0>>
+                <<set $CDPunctureSS to 6>>
             <</if>>
         <</if>>
         <</for>>
@@ -1295,6 +1503,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.CrimsonSentinel.bleedCountDealt>>
 				<<set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt>>
                 <<run $combat_log.push('CrimsonSentinel slashes at ' + $mobs[_i].name + ' dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>  
                 <<set $NPCs.CrimsonSentinel.CurSTM -= 12>>
                 <<CrimsonHiting>>
@@ -1304,6 +1516,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
 				<<set $mobs[_i].bleedCountCur += $NPCs.CrimsonSentinel.bleedCountDealt*1.5>>
 				<<set $mobs[_i].bleedPotency += $NPCs.CrimsonSentinel.bleedPotencyDealt*1.5 * $mobs[_i].bleedDef>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt * $NPCs.CrimsonSentinel.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt * $NPCs.CrimsonSentinel.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! CrimsonSentinel slashes at ' + $mobs[_i].name + ' dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>> 
                 <<set $NPCs.CrimsonSentinel.CurSTM -= 12>>
                 <<CrimsonCritting>>
@@ -1327,6 +1543,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
                 <<set $mobs[_i].DazedPotency += 5>>
                 <<set $mobs[_i].DazedCount += 2>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt>>
+                <<set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt>>
                 <<run $combat_log.push('CrimsonSentinel bashes ' + $mobs[_i].name + ' with his shield dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>> 
                 <<set $NPCs.CrimsonSentinel.CurSTM -= 15>>
                 <<CrimsonHiting>>
@@ -1336,6 +1556,10 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG>>
                 <<set $mobs[_i].DazedPotency += 7>>
                 <<set $mobs[_i].DazedCount += 2>>
+                <<set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt>>
+                <<set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt * $NPCs.CrimsonSentinel.CritDMG>>
+                <<set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt>>
+                <<set $mobs[_i].burnPotency += $NPCs.CrimsonSentinel.burnPotencyDealt * $NPCs.CrimsonSentinel.CritDMG>>
                 <<run $combat_log.push('CRITICAL HIT! CrimsonSentinel bashes ' + $mobs[_i].name + ' with his shield dealing ' + $NPCs.CrimsonSentinel.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
                 <<set $NPCs.CrimsonSentinel.CurSTM -= 15>>
                 <<CrimsonCritting>>
@@ -1879,6 +2103,17 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<set $NPCs.Zegrath.FlowCount -= $NPCs.Zegrath.FlowCount>>
     <<set $NPCs.Zegrath.turnChanceMax -= $NPCs.Zegrath.FlowPotency>>
     <<set $NPCs.Zegrath.FlowPotency -= $NPCs.Zegrath.FlowPotency>>
+
+    <<set $poisonCountCur to 0>>
+    <<set $poisonPotency to 0>>
+    <<set $NPCs.RadiantRose.poisonCountCur to 0>>
+	<<set $NPCs.RadiantRose.poisonPotency to 0>>
+	<<set $NPCs.ShadowScythe.poisonCountCur to 0>>
+	<<set $NPCs.ShadowScythe.poisonPotency to 0>>
+	<<set $NPCs.CrimsonSentinel.poisonCountCur to 0>>
+	<<set $NPCs.CrimsonSentinel.poisonPotency to 0>>
+	<<set $NPCs.Zegrath.poisonCountCur to 0>>
+	<<set $NPCs.Zegrath.poisonPotency to 0>>
 
     <<if $CDThroatSlit>>
         <<unset $CDThroatSlit>>

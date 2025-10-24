@@ -115,6 +115,12 @@ Customize the game:
     	<<set $outfit12 to true>>
     	<<set $isOutfitOn = "Outfit 11">>
     <</if>>
+    <<if $gamename is "waste">>
+    	<<set $dookieSword to true>>
+    	<<set $isWeaponSkinOn = "Dookie sword">>
+      <<set $poisonCountDealt += 1>>
+      <<set $poisonPotencyDealt += 1>>
+    <</if>>
 <</link>>
 
 

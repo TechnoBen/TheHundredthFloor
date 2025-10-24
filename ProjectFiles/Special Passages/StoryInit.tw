@@ -52,6 +52,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 7,
     Coins: 7
   },
@@ -101,6 +105,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 8,
     Coins: 9
   },
@@ -150,6 +158,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 31,
     Coins: 12
   },
@@ -199,6 +211,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 26,
     Coins: 11
   },
@@ -248,6 +264,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 38,
     Coins: 17
   },
@@ -297,6 +317,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 49,
     Coins: 18
   },
@@ -346,6 +370,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 43,
     Coins: 12
   },
@@ -395,6 +423,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 48,
     Coins: 22
   },
@@ -444,6 +476,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 36,
     Coins: 10
   },
@@ -493,6 +529,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 67,
     Coins: 15
   },
@@ -542,6 +582,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 53,
     Coins: 15
   },
@@ -591,6 +635,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 73,
     Coins: 34
   },
@@ -640,6 +688,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 73,
     Coins: 34
   },
@@ -689,6 +741,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 345,
     Coins: 126
   },
@@ -738,6 +794,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 0,
     Coins: 0
   },
@@ -787,6 +847,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 134,
     Coins: 67
   },
@@ -836,6 +900,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 102,
     Coins: 32
   },
@@ -885,6 +953,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 1,
     Coins: 1
   },
@@ -934,6 +1006,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 2280,
     Coins: 3138
   },
@@ -983,6 +1059,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 0,
     Coins: 0
   },
@@ -1032,6 +1112,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     XP: 0,
     Coins: 0
   },
@@ -1095,6 +1179,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -1154,6 +1242,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -1213,6 +1305,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -1272,6 +1368,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -1331,6 +1431,10 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Affection: 0,
     Dead: false
   },
@@ -1398,7 +1502,64 @@
     StunnedCount: 0,
     FlowCount: 0,
     FlowPotency: 0,
+    poisonPotency: 0,
+    poisonCountCur: 0,
+    poisonCountDealt: 0,
+    poisonPotencyDealt: 0,
     Dead: false
+  }
+}>>
+
+<<set setup.weapons = {
+  copperSword: {
+    name: "Copper sword",
+    id: "copperSword",
+    tags: ["weapon", "sword"],
+    passives: [""],
+    description: ["A lightweight weapon made out of copper. Slash DMG + 2, Pierce DMG + 0.5"],
+    weaponSlashDMG: 2,
+    weaponPierceDMG: 0.5,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 2,
+    bleedPotencyDealt: 1
+  }
+}>>
+<<set setup.armors = {
+  leatherChestplate: {
+    name: "Leather chestplate",
+    id: "leatherChestplate",
+    tags: ["armor", "light armor", "chestplate"],
+    passives: [""],
+    description: ["A light piece of armor. Slash DEF + 1.8, Pierce DEF + 0.8, Blunt DEF + 1.5"],
+    armorSlashDEF: 0,
+    armorPierceDEF: 0,
+    armorBluntDEF: 0,
+    armorMagicDEF: 0
+  }
+}>>
+<<set setup.items = {
+  boarLeather: {
+    name: "Boar leather",
+    id: "boarLeather",
+    tags: ["junk"],
+    description: ["Leather from a boar."],
+    count: 0,
+    selling: 2,
+    buying: 3,
+  },
+  boarMeat: {
+    name: "Raw boar meat",
+    id: "boarMeat",
+    tags: ["edible", "meat", "raw"],
+    description: ["Raw boar meat, not really filling."],
+    hungerRestore: 10,
+    fatigueRestore: 0,
+    staminaRestore: 0,
+    healthRestore: 0,
+    count: 0,
+    selling: 10,
+    buying: 15
   }
 }>>
 
@@ -1498,10 +1659,6 @@
 <<set $tppadFOUR to false>>
 <<set $tppadFIVE to false>>
 <<set $tppadSIX to false>>
-
-<<set $battleEvent1 = [ "None", "None2", "Boar"]>>
-<<set $battleEvent2 = [ "None","Rabbit","Plant monster","Dungeon"]>>
-<<set $battleEvent3 = [ "None","SkeletonWarrior"]>>
 
 <<set $workone to false>>
 <<set $drinkserved to 0>>
@@ -1746,6 +1903,10 @@
 <<set $burnCountCur to 0>>
 <<set $burnCountDealt to 0>>
 <<set $burnPotencyDealt to 0>>
+<<set $poisonPotency to 0>>
+<<set $poisonCountCur to 0>>
+<<set $poisonCountDealt to 0>>
+<<set $poisonPotencyDealt to 0>>
 <<set $PowerUpCount to 0>>
 <<set $PowerUpPotency to 0>>
 <<set $PoiseCount to 0>>
@@ -1836,6 +1997,8 @@
 <<set $timeRemember = {
 }>>
 <<set $weaponInventory = {
+}>>
+<<set $inventory = {
 }>>
 
 <<set $dailyKills to 0>>

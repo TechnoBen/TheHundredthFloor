@@ -407,6 +407,10 @@ Weapon: <<if $isWeaponOn is "None">> None <<else>> <<link "$isWeaponOn">>
   <<set $isWeaponOn to "None">> 
   <<set $weaponType = "None">> 
 <</link>> <</if>><<if $isWeaponSkinOn !== "None">> + <<link "$isWeaponSkinOn">> 
+    <<if $isWeaponSkinOn === "Dookie sword">>
+      <<set $poisonCountDealt -= 1>>
+      <<set $poisonPotencyDealt -= 1>>
+    <</if>>
     <<set $isWeaponSkinOn to "None">> 
     <<goto "Wardrobe">> 
     <</link>> 
@@ -926,6 +930,14 @@ Blunt: <<= $armorBluntDEF.toFixed(2)>>
 <</if>>
 <<if $AsteriasPotatoSack>>
   <li><<hovertip "Second year anniversary event item.">>Asterias potato sack<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Asterias potato sack">> <<goto "Wardrobe">> <</link>></li>
+<</if>>
+<<if $dookieSword>>
+  <li><<hovertip `'Jaedos weapon skin.<br>[On hit] Inflict 1 <img class="status" src = "Textures/Statuses/Poison.png">count.<br>[On hit] Inflict 1 <img class="status" src = "Textures/Statuses/Poison.png"> potency.'`>>Dookie sword<</hovertip>> | <<link "Equip skin">>
+    <<set $isWeaponSkinOn to "Dookie sword">> 
+    <<set $poisonCountDealt += 1>>
+    <<set $poisonPotencyDealt += 1>>
+    <<goto "Wardrobe">> 
+  <</link>></li>
 <</if>>
 <<if $starterSword>>
   <li>Starter sword | <<link "Equip">> 

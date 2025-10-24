@@ -258,6 +258,9 @@
 <<if $AsteriasPotatoSack>>
   <li>Asterias potato sack</li>
 <</if>>
+<<if $dookieSword>>
+  <li>Dookie sword</li>
+<</if>>
 <<if $starterSword>>
   <li>Starter sword</li>
 <</if>>

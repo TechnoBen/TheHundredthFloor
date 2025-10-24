@@ -186,6 +186,10 @@ text-decoration: none;
 	color: #17db40;
 }
 
+.poison {
+	color: #97cd7a;
+}
+
 .turnCount {
 	color: #C7CF63;
 }
@@ -365,12 +369,12 @@ text-decoration: none;
 	display: inline-block;
 	top: 4px;
 	border-width: 0px;
-    border-bottom: 2px dotted white;  /* If you want dots under the hoverable text */
+    border-bottom: 2px solid white;  /* If you want dots under the hoverable text */
 }
 .hoverTipTxt {
 	position: relative;
 	vertical-align: text-bottom;
-	line-height: initial;
+	line-height: 1.55em;
 }
 .hoverTipTxt .hoverBox {
 	position: absolute;

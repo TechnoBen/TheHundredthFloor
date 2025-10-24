@@ -550,6 +550,15 @@
 		<<set $mobs[_i].STRPercentBuff += $mobs[_i].PowerUpPotency>>
 	<</if>>
 
+	/* Poison. */
+
+	<<if _mob[_i].poisonCountCur >= 0.01>>
+		<<set $mobs[_i].CurHP -= $mobs[_i].poisonPotency>>
+		<<run $combat_log.push('<span class="poison">Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' took ' + $mobs[_i].poisonPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Poison.png" />damage</span>')>>
+		<<set $mobs[_i].poisonCountCur -= 1>>
+		<<set $mobs[_i].poisonPotency -= 1>>
+	<</if>>
+
 <</widget>>
 
 <<widget HitRelatedStatusPlayer>>
@@ -560,6 +569,13 @@
 		<<set $STRPercentBuff -= $PowerUpPotency>>
 		<<set $PowerUpPotency /= 2>>
 		<<set $STRPercentBuff += $PowerUpPotency>>
+	<</if>>
+
+	<<if $poisonCountCur >= 0.01>>
+		<<set $CurHP -= $poisonPotency>>
+		<<run $combat_log.push('<span class="poison">' + $gamename + ' took ' + $poisonPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Poison.png" />damage</span>')>>
+		<<set $poisonCountCur -= 1>>
+		<<set $poisonPotency -= 1>>
 	<</if>>
 
 <</widget>>
@@ -574,6 +590,13 @@
 		<<set $NPCs.RadiantRose.STRPercentBuff += $NPCs.RadiantRose.PowerUpPotency>>
 	<</if>>
 
+	<<if $NPCs.RadiantRose.poisonCountCur >= 0.01>>
+		<<set $NPCs.RadiantRose.CurHP -= $NPCs.RadiantRose.poisonPotency>>
+		<<run $combat_log.push('<span class="poison">RadiantRose took ' + $NPCs.RadiantRose.poisonPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Poison.png" />damage</span>')>>
+		<<set $NPCs.RadiantRose.poisonCountCur -= 1>>
+		<<set $NPCs.RadiantRose.poisonPotency -= 1>>
+	<</if>>
+
 <</widget>>
 
 <<widget HitRelatedStatusShadow>>
@@ -584,6 +607,13 @@
 		<<set $NPCs.ShadowScythe.STRPercentBuff -= $NPCs.ShadowScythe.PowerUpPotency>>
 		<<set $NPCs.ShadowScythe.PowerUpPotency /= 2>>
 		<<set $NPCs.ShadowScythe.STRPercentBuff += $NPCs.ShadowScythe.PowerUpPotency>>
+	<</if>>
+
+	<<if $NPCs.ShadowScythe.poisonCountCur >= 0.01>>
+		<<set $NPCs.ShadowScythe.CurHP -= $NPCs.ShadowScythe.poisonPotency>>
+		<<run $combat_log.push('<span class="poison">ShadowScythe took ' + $NPCs.ShadowScythe.poisonPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Poison.png" />damage</span>')>>
+		<<set $NPCs.ShadowScythe.poisonCountCur -= 1>>
+		<<set $NPCs.ShadowScythe.poisonPotency -= 1>>
 	<</if>>
 
 <</widget>>
@@ -598,6 +628,13 @@
 		<<set $NPCs.CrimsonSentinel.STRPercentBuff += $NPCs.CrimsonSentinel.PowerUpPotency>>
 	<</if>>
 
+	<<if $NPCs.CrimsonSentinel.poisonCountCur >= 0.01>>
+		<<set $NPCs.CrimsonSentinel.CurHP -= $NPCs.CrimsonSentinel.poisonPotency>>
+		<<run $combat_log.push('<span class="poison">CrimsonSentinel took ' + $NPCs.CrimsonSentinel.poisonPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Poison.png" />damage</span>')>>
+		<<set $NPCs.CrimsonSentinel.poisonCountCur -= 1>>
+		<<set $NPCs.CrimsonSentinel.poisonPotency -= 1>>
+	<</if>>
+
 <</widget>>
 
 <<widget HitRelatedStatusZegrath>>
@@ -608,6 +645,13 @@
 		<<set $NPCs.Zegrath.STRPercentBuff -= $NPCs.Zegrath.PowerUpPotency>>
 		<<set $NPCs.Zegrath.PowerUpPotency /= 2>>
 		<<set $NPCs.Zegrath.STRPercentBuff += $NPCs.Zegrath.PowerUpPotency>>
+	<</if>>
+
+	<<if $NPCs.Zegrath.poisonCountCur >= 0.01>>
+		<<set $NPCs.Zegrath.CurHP -= $NPCs.Zegrath.poisonPotency>>
+		<<run $combat_log.push('<span class="poison">Zegrath took ' + $NPCs.Zegrath.poisonPotency.toFixed(2) + '<img class="status" src = "Textures/Statuses/Poison.png" />damage</span>')>>
+		<<set $NPCs.Zegrath.poisonCountCur -= 1>>
+		<<set $NPCs.Zegrath.poisonPotency -= 1>>
 	<</if>>
 
 <</widget>>

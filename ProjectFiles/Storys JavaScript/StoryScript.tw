@@ -809,6 +809,18 @@ Config.saves.onLoad = function(save) {
 		if(typeof variables.FlowCount === 'undefined') {
 			variables.FlowCount = 0;
 		} 
+		if(typeof variables.poisonCountCur === 'undefined') {
+			variables.poisonCountCur = 0;
+		}
+      	if(typeof variables.poisonCountDealt === 'undefined') {
+			variables.poisonCountDealt = 0;
+		} 
+      	if(typeof variables.poisonPotency === 'undefined') {
+			variables.poisonPotency = 0;
+		} 
+      	if(typeof variables.poisonPotencyDealt === 'undefined') {
+			variables.poisonPotencyDealt = 0;
+		} 
 	}
 }
 
