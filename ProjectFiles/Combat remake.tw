@@ -36,42 +36,42 @@ Raid party hp: $raidHP/1000
 </label>
 <<if $weaponType is "None">>
     <label>
-         | <<radiobutton "$attack" "Punch">> <<hovertip `'<img class="status" src = "Textures/Statuses/Blunt.png">Punch<br>[On hit] Inflict 1 <img class="status" src = "Textures/Statuses/Dazed.png">count<br>[On hit] Inflict 3 <img class="status" src = "Textures/Statuses/Dazed.png"> potency'`>>Punch<</hovertip>>
+         | <<radiobutton "$attack" "Punch">> <<hovertip `'?b Punch ?onhit Inflict 1 ?dazed count ?onhit Inflict 3 ?dazed potency'`>>Punch<</hovertip>>
     </label>
 <</if>>
 <<if $weaponType is "Short sword">>
     <label>
-         | <<radiobutton "$attack" "Slash">> <<hovertip `'<img class="status" src = "Textures/Statuses/Slash.png">Slash<br>[On hit] Inflict <<= $bleedCountDealt.toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= $bleedPotencyDealt.toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Slash<</hovertip>>
+         | <<radiobutton "$attack" "Slash">> <<hovertip `'?s Slash ?onhit Inflict <<= $bleedCountDealt.toFixed(2)>> ?bleed count ?onhit Inflict <<= $bleedPotencyDealt.toFixed(2)>> ?bleed potency'`>>Slash<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Stab">> <<hovertip `'<img class="status" src = "Textures/Statuses/Pierce.png">Stab<br>[On hit] Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Stab<</hovertip>>
+         | <<radiobutton "$attack" "Stab">> <<hovertip `'?p Stab ?onhit Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>>
     </label>
     <label>
-        <<if $CDUnfocusedStrike >= 1>> | CD: $CDUnfocusedStrike <<hovertip `'<img class="status" src="Textures/Statuses/Slash.png">Unfocused strike<br>[On hit] If enemy does not have<img class="status" src="Textures/Statuses/Stunned.png">, inflict<img class="status" src="Textures/Statuses/Bleed.png">potency again<br>[On hit] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">repeat the attack and clear all<img class="status" src="Textures/Statuses/Stunned.png">potency<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +3<img class="status" src="Textures/Statuses/Flow.png">count<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +25<img class="status" src="Textures/Statuses/Flow.png">potency'`500>>Unfocused strike<</hovertip>> <<else>> | <<radiobutton "$attack" "Unfocused strike">> <<hovertip `'<img class="status" src="Textures/Statuses/Slash.png">Unfocused strike<br>[On hit] If enemy does not have<img class="status" src="Textures/Statuses/Stunned.png">, inflict<img class="status" src="Textures/Statuses/Bleed.png">potency again<br>[On hit] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">repeat the attack and clear all<img class="status" src="Textures/Statuses/Stunned.png">potency<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +3<img class="status" src="Textures/Statuses/Flow.png">count<br>[On kill] If enemy has<img class="status" src="Textures/Statuses/Stunned.png">, gain +25<img class="status" src="Textures/Statuses/Flow.png">potency'`500>>Unfocused strike<</hovertip>><</if>>
+        <<if $CDUnfocusedStrike >= 1>> | CD: $CDUnfocusedStrike <<hovertip `'?s Unfocused strike ?onhit If enemy does not have ?stun, inflict ?bleed potency again ?onhit If enemy has ?stun repeat the attack and clear all ?stun potency ?onkill If enemy has ?stun, gain +3 ?flow count ?onkill If enemy has ?stun, gain +25 ?flow potency'`600>>Unfocused strike<</hovertip>> <<else>> | <<radiobutton "$attack" "Unfocused strike">> <<hovertip `'?s Unfocused strike ?onhit If enemy does not have ?stun, inflict ?bleed potency again ?onhit If enemy has ?stun repeat the attack and clear all ?stun potency ?onkill If enemy has ?stun, gain +3 ?flow count ?onkill If enemy has ?stun, gain +25 ?flow potency'`600>>Unfocused strike<</hovertip>><</if>>
     </label>
 <</if>>
 <<if $weaponType is "Shield and sword">>
     <label>
-         | <<radiobutton "$attack" "Slash">> <<hovertip `'<img class="status" src = "Textures/Statuses/Slash.png">Slash<br>[On hit] Inflict <<= $bleedCountDealt.toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= $bleedPotencyDealt.toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Slash<</hovertip>>
+         | <<radiobutton "$attack" "Slash">> <<hovertip `'?s Slash ?onhit Inflict <<= $bleedCountDealt.toFixed(2)>> ?bleed count ?onhit Inflict <<= $bleedPotencyDealt.toFixed(2)>> ?bleed potency'`>>Slash<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Shield bash">> <<hovertip `'<img class="status" src = "Textures/Statuses/Blunt.png">Shield bash<br>[On hit] Inflict 2 <img class="status" src = "Textures/Statuses/Dazed.png">count<br>[On hit] Inflict 5 <img class="status" src = "Textures/Statuses/Dazed.png"> potency'`>>Shield bash<</hovertip>>
+         | <<radiobutton "$attack" "Shield bash">> <<hovertip `'?b Shield bash ?onhit Inflict 2 ?dazed count ?onhit Inflict 5 ?dazed potency'`>>Shield bash<</hovertip>>
     </label>
 <</if>>
 <<if $weaponType is "Rapier">>
     <label>
-         | <<radiobutton "$attack" "Stab">> <<hovertip `'<img class="status" src = "Textures/Statuses/Pierce.png">Stab<br>[On hit] Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Stab<</hovertip>>
+         | <<radiobutton "$attack" "Stab">> <<hovertip `'?p Stab ?onhit Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Charge">> <<hovertip `'<img class="status" src = "Textures/Statuses/Pierce.png">Charge<br>[On hit] Inflict <<= ($bleedCountDealt).toFixed(2)>>  <img class="status" src = "Textures/Statuses/Bleed.png">count<br>[On hit] Inflict <<= ($bleedPotencyDealt).toFixed(2)>> <img class="status" src = "Textures/Statuses/Bleed.png"> potency'`>>Stab<</hovertip>>
+         | <<radiobutton "$attack" "Charge">> <<hovertip `'?p Charge ?onhit Inflict <<= ($bleedCountDealt).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>>
     </label>
     <label>
-        <<if $CDMultistrike >= 1>> | CD: $CDMultistrike Multi strike<<else>> | <<radiobutton "$attack" "Multi strike">> Multi strike<</if>>
+        <<if $CDMultistrike >= 1>> | CD: $CDMultistrike <<hovertip `'?p Multi strike ?onuse Repeat 3 times + 1 more for each 10 DEX ?onhit Gain 1 ?poise count ?onhit Gain 5 ?poise potency'` 400>>Multi strike<</hovertip>><<else>> | <<radiobutton "$attack" "Multi strike">> <<hovertip `'?p Multi strike ?onuse Repeat 3 times + 1 more for each 10 DEX ?onhit Gain 1 ?poise count ?onhit Gain 5 ?poise potency'` 400>>Multi strike<</hovertip>><</if>>
     </label>
 <</if>>
 <<if $weaponType is "Heavy sword">>
     <label>
-         | <<radiobutton "$attack" "Slash">> Slash
+         | <<radiobutton "$attack" "Slash">> <<hovertip `'?s Slash ?onhit Inflict <<= $bleedCountDealt.toFixed(2)>> ?bleed count ?onhit Inflict <<= $bleedPotencyDealt.toFixed(2)>> ?bleed potency'`>>Slash<</hovertip>>
     </label>
     <label>
          | <<radiobutton "$attack" "Blunt strike">> Blunt strike
@@ -82,7 +82,7 @@ Raid party hp: $raidHP/1000
 <</if>>
 <<if $weaponType is "Gauntlets">>
     <label>
-         | <<radiobutton "$attack" "Punch">> Punch
+         | <<radiobutton "$attack" "Punch">> <<hovertip `'?b Punch ?onhit Inflict 1 ?dazed count ?onhit Inflict 3 ?dazed potency'`>>Punch<</hovertip>>
     </label>
     <label>
          | <<radiobutton "$attack" "Heavy punch">> Heavy punch
@@ -104,7 +104,7 @@ Raid party hp: $raidHP/1000
 <</if>>
 <<if $weaponType is "Dagger">>
     <label>
-         | <<radiobutton "$attack" "Stab">> Stab
+         | <<radiobutton "$attack" "Stab">> <<hovertip `'?p Stab ?onhit Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>>
     </label>
     <label>
          | <<radiobutton "$attack" "Mutilate">> Mutilate

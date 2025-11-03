@@ -162,6 +162,22 @@ text-decoration: none;
 	color: red;
 }
 
+.onhit {
+	color: #c1e88e;
+}
+
+.oncrit {
+	color: #9fc66b;
+}
+
+.onkill {
+	color: #b31200;
+}
+
+.onuse {
+	color: #0799a3;
+}
+
 .bleedTrigger {
 	color: #A62300;
 }
