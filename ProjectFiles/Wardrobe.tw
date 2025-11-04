@@ -932,7 +932,7 @@ Blunt: <<= $armorBluntDEF.toFixed(2)>>
   <li><<hovertip "Second year anniversary event item.">>Asterias potato sack<</hovertip>> | <<link "Equip skin">> <<set $isWeaponSkinOn to "Asterias potato sack">> <<goto "Wardrobe">> <</link>></li>
 <</if>>
 <<if $dookieSword>>
-  <li><<hovertip `'Jaedos weapon skin.<br>[On hit] Inflict 1 <img class="status" src = "Textures/Statuses/Poison.png">count.<br>[On hit] Inflict 1 <img class="status" src = "Textures/Statuses/Poison.png"> potency.'`>>Dookie sword<</hovertip>> | <<link "Equip skin">>
+  <li><<hovertip `'Jaedos weapon skin ?onhit Inflict 1 ?poison count ?onhit Inflict 1 ?poison potency'`>>Dookie sword<</hovertip>> | <<link "Equip skin">>
     <<set $isWeaponSkinOn to "Dookie sword">> 
     <<set $poisonCountDealt += 1>>
     <<set $poisonPotencyDealt += 1>>

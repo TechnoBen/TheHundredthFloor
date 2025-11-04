@@ -828,6 +828,9 @@ Template.add("b",`<img class="status" src = "Textures/Statuses/Blunt.png">`);
 Template.add("p",`<img class="status" src = "Textures/Statuses/Pierce.png">`);
 Template.add("s",`<img class="status" src = "Textures/Statuses/Slash.png">`);
 
+Template.add("dmg",`<br><img class="status" src = "Textures/Statuses/DMG.png">`);
+Template.add("stm",`| <img class="status" src = "Textures/Statuses/STM.png">`);
+
 Template.add("beforeattack",`<br><span class="onhit">[Before attack]</span>`);
 Template.add("onhit",`<br><span class="onhit">[On hit]</span>`);
 Template.add("oncrit",`<br><span class="oncrit">[On crit]</span>`);
@@ -842,6 +845,21 @@ Template.add("poise",`<span class="poise"><img class="status" src = "Textures/St
 Template.add("dazed",`<span class="stun"><img class="status" src = "Textures/Statuses/Dazed.png">Dazed</span>`);
 Template.add("stun",`<span class="stun"><img class="status" src = "Textures/Statuses/Stunned.png">Stun</span>`);
 Template.add("flow",`<span class="flow"><img class="status" src = "Textures/Statuses/Flow.png">Flow</span>`);
+Template.add("powerup",`<span class="bleedTrigger"><img class="status" src = "Textures/Statuses/STR raise.png">Power Up</span>`);
+Template.add("defdown",`<span class="defenseStatus"><img class="status" src = "Textures/Statuses/DEF down.png">DEF Down</span>`);
+Template.add("defRaise",`<span class="defenseStatus"><img class="status" src = "Textures/Statuses/DEF raise.png">DEF Up</span>`);
+
+// status descriptions
+Template.add("bleedDesc",`?bleed <br>Once the count reaches the max, deal ?bleed damage depending on the potency, then reset the count`);
+Template.add("burnDesc",`?burn <br>After the turn of whoever has this effect, lose Y hp for X turns`);
+Template.add("poisonDesc",`?poison <br>Once a combat action is done, lose Y hp for X turns`);
+Template.add("dazedDesc",`?dazed <br>Each turn you have a chance of getting ?stun depending on your potency<br>Once the user gets ?stun, clear all potency`);
+Template.add("stunDesc",`?stun <br>Prevents the user from doing anything`);
+Template.add("defDownDesc",`?defdown <br>Lowers the defense by Y% for X turns`);
+Template.add("flowDesc",`?flow <br>Raises the chance of getting an extra turn by Y% for X turns`);
+Template.add("poiseDesc",`?poise <br>Raises the crit rate by Y% <br>Raises the crit damage by X<br>Count is lowered only when a crit has been landed`);
+Template.add("powerUpDesc",`?powerUp <br>Raises the STR by Y% for X turns<br>Once a hit is landed, potency gets halved`);
+Template.add("defRaiseDesc",`?defRaise <br>Raises the defense by Y% for X turns`);
 
 // meters.min.js, for SugarCube 2, by Chapel
 // v1.0.1, 2022-07-21, 3bdbdfbe5ae47a46e4f4e52766d78701939ae9a6

@@ -171,7 +171,7 @@ text-decoration: none;
 }
 
 .onkill {
-	color: #b31200;
+	color: #bd6706ff;
 }
 
 .onuse {
@@ -385,7 +385,7 @@ text-decoration: none;
 	display: inline-block;
 	top: 4px;
 	border-width: 0px;
-    border-bottom: 2px solid white;  /* If you want dots under the hoverable text */
+/*    border-bottom: 2px solid white; If you want dots under the hoverable text */
 }
 .hoverTipTxt {
 	position: relative;
