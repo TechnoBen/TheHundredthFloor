@@ -38,6 +38,7 @@ Added Power Up, raises your dmg depending on the potency
 Added a Defense multiplier for the new statuses Defense Up and Defense Down
 Added flow, a status that raises your max turn chance
 Reworked stuns and added Daze, potency makes the chance of getting stunned higher
+Added Status and attack hover tips that explain what everything does
 - Completely reworked NPCs
 NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
 - Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats
@@ -94,7 +95,7 @@ NEW ITEMS:
 Copper gauntlets (upgrade variant too)
 Copper mace (upgrade variant too)
 Copper dagger (upgrade variant too)
-Iron gauntlets (upgrade variant too, uses crystal instead of woof)
+Iron gauntlets (upgrade variant too, uses crystal instead of wood)
 Iron mace (upgrade variant too)
 Iron dagger (upgrade variant too)
 Oni teeth gauntlets (upgrade variant too)

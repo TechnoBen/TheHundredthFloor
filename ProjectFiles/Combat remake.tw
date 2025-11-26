@@ -459,6 +459,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $mobs[_i].burnCountCur += $burnCountDealt>>
                                 <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                                 <<run $combat_log.push($gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                                <<PlayerHit>>
                             <<else>>
                                 <<set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)>>
                                 <<set $mobs[_i].CurHP -= $baseDMG>>
@@ -471,6 +472,7 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                                 <<set $mobs[_i].burnCountCur += $burnCountDealt>>
                                 <<set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG>>
                                 <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' slashes at ' + $mobs[_i].name + ' dealing ' + $baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                                <<PlayerCrit>>
                                 <<CritRelatedStatusesPlayer>>
                             <</if>>
                         <</if>>
@@ -1905,6 +1907,9 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 <<if $turnChanceCur > _bonusTurnRNG>>
     <<set _bonusTurn to true>>
     <<set $bonusTurnPlayer to true>>
+<<else>>
+    <<set $turnChanceCur -= $turnChanceCur>>
+    <<set $attack to "No skill">>
 <</if>>
 
 <<if $partyMembers.includes("RadiantRose")>>
@@ -1913,6 +1918,9 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<if $NPCs.RadiantRose.turnChanceCur > _bonusTurnRNG>>
         <<set _bonusTurn to true>>
         <<set $bonusTurnRadiantRose to true>>
+    <<else>>
+        <<set $NPCs.RadiantRose.turnChanceCur -= $NPCs.RadiantRose.turnChanceCur>>
+        <<set $attackRadiantRose to "No skill">>
     <</if>>
 <</if>>
 
@@ -1922,6 +1930,9 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<if $NPCs.ShadowScythe.turnChanceCur > _bonusTurnRNG>>
         <<set _bonusTurn to true>>
         <<set $bonusTurnShadowScythe to true>>
+    <<else>>
+        <<set $NPCs.ShadowScythe.turnChanceCur -= $NPCs.ShadowScythe.turnChanceCur>>
+        <<set $attackShadowScythe to "No skill">>
     <</if>>
 <</if>>
 
@@ -1931,6 +1942,9 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<if $NPCs.CrimsonSentinel.turnChanceCur > _bonusTurnRNG>>
         <<set _bonusTurn to true>>
         <<set $bonusTurnCrimsonSentinel to true>>
+    <<else>>
+        <<set $NPCs.CrimsonSentinel.turnChanceCur -= $NPCs.CrimsonSentinel.turnChanceCur>>
+        <<set $attackCrimsonSentinel to "No skill">>
     <</if>>
 <</if>>
 
@@ -1940,6 +1954,9 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<if $NPCs.Zegrath.turnChanceCur > _bonusTurnRNG>>
         <<set _bonusTurn to true>>
         <<set $bonusTurnZegrath to true>>
+    <<else>>
+        <<set $NPCs.Zegrath.turnChanceCur -= $NPCs.Zegrath.turnChanceCur>>
+        <<set $attackZegrath to "No skill">>
     <</if>>
 <</if>>
 

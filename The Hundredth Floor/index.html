@@ -2475,7 +2475,7 @@ window.kitsuneRNG = function (min, max) {
   const url = 'Textures/Icons/game icon.png';
       
   $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
-})();</script><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
+})();</script><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
 Your achievement points: $achvPoints
 
 &lt;&lt;button &quot;Start with 50 bonus coins | 1 achievement points&quot;&gt;&gt;
@@ -5058,6 +5058,7 @@ Added Power Up, raises your dmg depending on the potency
 Added a Defense multiplier for the new statuses Defense Up and Defense Down
 Added flow, a status that raises your max turn chance
 Reworked stuns and added Daze, potency makes the chance of getting stunned higher
+Added Status and attack hover tips that explain what everything does
 - Completely reworked NPCs
 NPC rework makes it easier to add new NPCs (hopefully), made combat a bit easier to write (thats a lie), gives me a way to add random NPCs (that I probably wont even figure out how to add into combat)
 - Remade the stat appointment system both visually and functionally (is that the correct way to say it?) so it matches the new stats
@@ -5114,7 +5115,7 @@ NEW ITEMS:
 Copper gauntlets (upgrade variant too)
 Copper mace (upgrade variant too)
 Copper dagger (upgrade variant too)
-Iron gauntlets (upgrade variant too, uses crystal instead of woof)
+Iron gauntlets (upgrade variant too, uses crystal instead of wood)
 Iron mace (upgrade variant too)
 Iron dagger (upgrade variant too)
 Oni teeth gauntlets (upgrade variant too)
@@ -5565,18 +5566,31 @@ Game mode:
     &lt;&lt;set _pantsChoice = _pantsChoice.random()&gt;&gt;
     
 &lt;&lt;if $favColor is &quot;Blue&quot;&gt;&gt;
-    &lt;&lt;set $shirt1 to true&gt;&gt; &lt;&lt;set $isShirtOn = &quot;Blue shirt&quot;&gt;&gt;
+    &lt;&lt;set $shirt1 to true&gt;&gt; 
+    &lt;&lt;set $isShirtOn = &quot;Blue shirt&quot;&gt;&gt;
+    &lt;&lt;set $barkColor === 159990&gt;&gt;
 &lt;&lt;elseif $favColor is &quot;Red&quot;&gt;&gt;
-    &lt;&lt;set $shirt2 to true&gt;&gt; &lt;&lt;set $isShirtOn = &quot;Red shirt&quot;&gt;&gt;
+    &lt;&lt;set $shirt2 to true&gt;&gt; 
+    &lt;&lt;set $isShirtOn = &quot;Red shirt&quot;&gt;&gt;
+    &lt;&lt;set $barkColor === 991515&gt;&gt;
 &lt;&lt;elseif $favColor is &quot;Green&quot;&gt;&gt;
-    &lt;&lt;set $shirt3 to true&gt;&gt; &lt;&lt;set $isShirtOn = &quot;Green shirt&quot;&gt;&gt;
+    &lt;&lt;set $shirt3 to true&gt;&gt; 
+    &lt;&lt;set $isShirtOn = &quot;Green shirt&quot;&gt;&gt;
+    &lt;&lt;set $barkColor to 579957&gt;&gt;
 &lt;&lt;elseif $favColor is &quot;Pink&quot;&gt;&gt;
-    &lt;&lt;set $shirt4 to true&gt;&gt; &lt;&lt;set $isShirtOn = &quot;Pink shirt&quot;&gt;&gt;
+    &lt;&lt;set $shirt4 to true&gt;&gt; 
+    &lt;&lt;set $isShirtOn = &quot;Pink shirt&quot;&gt;&gt;
+    &lt;&lt;set $barkColor === 991599&gt;&gt;
 &lt;&lt;elseif $favColor is &quot;White&quot;&gt;&gt;
-    &lt;&lt;set $shirt5 to true&gt;&gt; &lt;&lt;set $isShirtOn = &quot;White shirt&quot;&gt;&gt;
+    &lt;&lt;set $shirt5 to true&gt;&gt; 
+    &lt;&lt;set $isShirtOn = &quot;White shirt&quot;&gt;&gt;
+    &lt;&lt;set $barkColor === 159990&gt;&gt;
 &lt;&lt;elseif $favColor is &quot;Black&quot;&gt;&gt;
-    &lt;&lt;set $shirt6 to true&gt;&gt; &lt;&lt;set $isShirtOn = &quot;Black shirt&quot;&gt;&gt;
+    &lt;&lt;set $shirt6 to true&gt;&gt; 
+    &lt;&lt;set $isShirtOn = &quot;Black shirt&quot;&gt;&gt;
+    &lt;&lt;set $barkColor === 262626&gt;&gt;
 &lt;&lt;/if&gt;&gt;
+
 &lt;&lt;if _pantsChoice is &quot;Pants&quot;&gt;&gt;
     &lt;&lt;set $pants1 to true&gt;&gt;
 	&lt;&lt;set $isPantsOn to &quot;Starter pants&quot;&gt;&gt;
@@ -6185,6 +6199,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                                 &lt;&lt;run $combat_log.push($gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                                &lt;&lt;PlayerHit&gt;&gt;
                             &lt;&lt;else&gt;&gt;
                                 &lt;&lt;set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                                 &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6197,6 +6212,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                                &lt;&lt;PlayerCrit&gt;&gt;
                                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                             &lt;&lt;/if&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
@@ -7631,6 +7647,9 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 &lt;&lt;if $turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
     &lt;&lt;set _bonusTurn to true&gt;&gt;
     &lt;&lt;set $bonusTurnPlayer to true&gt;&gt;
+&lt;&lt;else&gt;&gt;
+    &lt;&lt;set $turnChanceCur -= $turnChanceCur&gt;&gt;
+    &lt;&lt;set $attack to &quot;No skill&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $partyMembers.includes(&quot;RadiantRose&quot;)&gt;&gt;
@@ -7639,6 +7658,9 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     &lt;&lt;if $NPCs.RadiantRose.turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
         &lt;&lt;set _bonusTurn to true&gt;&gt;
         &lt;&lt;set $bonusTurnRadiantRose to true&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $NPCs.RadiantRose.turnChanceCur -= $NPCs.RadiantRose.turnChanceCur&gt;&gt;
+        &lt;&lt;set $attackRadiantRose to &quot;No skill&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -7648,6 +7670,9 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     &lt;&lt;if $NPCs.ShadowScythe.turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
         &lt;&lt;set _bonusTurn to true&gt;&gt;
         &lt;&lt;set $bonusTurnShadowScythe to true&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $NPCs.ShadowScythe.turnChanceCur -= $NPCs.ShadowScythe.turnChanceCur&gt;&gt;
+        &lt;&lt;set $attackShadowScythe to &quot;No skill&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -7657,6 +7682,9 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     &lt;&lt;if $NPCs.CrimsonSentinel.turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
         &lt;&lt;set _bonusTurn to true&gt;&gt;
         &lt;&lt;set $bonusTurnCrimsonSentinel to true&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $NPCs.CrimsonSentinel.turnChanceCur -= $NPCs.CrimsonSentinel.turnChanceCur&gt;&gt;
+        &lt;&lt;set $attackCrimsonSentinel to &quot;No skill&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -7666,6 +7694,9 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
     &lt;&lt;if $NPCs.Zegrath.turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
         &lt;&lt;set _bonusTurn to true&gt;&gt;
         &lt;&lt;set $bonusTurnZegrath to true&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set $NPCs.Zegrath.turnChanceCur -= $NPCs.Zegrath.turnChanceCur&gt;&gt;
+        &lt;&lt;set $attackZegrath to &quot;No skill&quot;&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -11006,12 +11037,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 
 /* Bonus turn mob */
 &lt;&lt;for _i = 0; _i lt $mobs.length; _i++&gt;&gt;
-&lt;&lt;set _mob[_i].turnChanceCur -= 100&gt;&gt;
-&lt;&lt;set _bonusTurnRNG to random(100)&gt;&gt;
-&lt;&lt;if _mob[_i].turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
-  &lt;&lt;set _bonusTurn to true&gt;&gt;
-  &lt;&lt;set _mob[_i].bonusTurn to 1&gt;&gt;
-&lt;&lt;/if&gt;&gt;
+    &lt;&lt;set _mob[_i].turnChanceCur -= 100&gt;&gt;
+    &lt;&lt;set _bonusTurnRNG to random(100)&gt;&gt;
+    &lt;&lt;if _mob[_i].turnChanceCur &gt; _bonusTurnRNG&gt;&gt;
+      &lt;&lt;set _bonusTurn to true&gt;&gt;
+      &lt;&lt;set _mob[_i].bonusTurn to 1&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+        &lt;&lt;set _mob[_i].turnChanceCur -= _mob[_i].turnChanceCur&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
 &lt;&lt;/for&gt;&gt;
 
 &lt;&lt;if _bonusTurn === true&gt;&gt;
@@ -12514,7 +12547,7 @@ UI.alert(&quot;You dont have enough col!&quot;);
         &lt;/div&gt;\
         &lt;div class=&quot;border1&quot;&gt;\
             &lt;&lt;link &quot;Buy the shovel | 65 col&quot;&gt;&gt;
-                &lt;&lt;if $Coins &gt;= 156&gt;&gt; 
+                &lt;&lt;if $Coins &gt;= 65&gt;&gt; 
                     &lt;&lt;set $shovel1 to true&gt;&gt;
                     &lt;&lt;set $Coins -= 65&gt;&gt;
                     &lt;&lt;notify&gt;&gt; You bought a shovel! &lt;&lt;/notify&gt;&gt;
@@ -27252,6 +27285,7 @@ I am sorry for not making old save files compatible with the new update though. 
     tags: [&quot;weapon&quot;, &quot;sword&quot;],
     passives: [&quot;&quot;],
     description: [&quot;A lightweight weapon made out of copper. Slash DMG + 2, Pierce DMG + 0.5&quot;],
+    sprite: &quot;Textures/weapons/coppersword.png&quot;,
     weaponSlashDMG: 2,
     weaponPierceDMG: 0.5,
     weaponBluntDMG: 0,
@@ -27727,13 +27761,55 @@ I am sorry for not making old save files compatible with the new update though. 
 &quot;Combat&quot; : 0,
 }&gt;&gt;
 
-&lt;&lt;set $traits = {
-}&gt;&gt;
 &lt;&lt;set $timeRemember = {
+}&gt;&gt;
+&lt;&lt;set $traits = {
 }&gt;&gt;
 &lt;&lt;set $weaponInventory = {
 }&gt;&gt;
 &lt;&lt;set $inventory = {
+}&gt;&gt;
+&lt;&lt;set $personality = {
+  main: {
+  name: &quot;Gloomy&quot;,
+  responsesType: &quot;Gloomy&quot;,
+  onHit: [&quot;You&#39;re going down!&quot;, &quot;Ready for more?&quot;],
+  onCrit: [&quot;YEAHH!! THAT&#39;S HOW I DO IT!&quot;, &quot;I suggest trying to run away, foul beast!&quot;],
+  hitOn: [&quot;Try hitting harder will you?&quot;, &quot;Is that all you&#39;ve got!&quot;],
+  critOn: [&quot;Tsk. Luck hit.&quot;, &quot;Youre gonna regret that.&quot;, &quot;Fucker-&quot;],
+  npcFlee: [&quot;Stay safe!&quot;],
+  npcDying: [&quot;N-no... This cant be...&quot;]
+  },
+  temp1: {
+  name: &quot;Stressed&quot;,
+  responsesType: &quot;None&quot;,
+  onHit: [&quot;Die, die, die!&quot;],
+  onCrit: [&quot;&quot;],
+  hitOn: [&quot;&quot;],
+  critOn: [&quot;&quot;],
+  npcFlee: [&quot;&quot;],
+  npcDying: [&quot;&quot;]
+  },
+  temp2: {
+  name: &quot;None&quot;,
+  responsesType: &quot;None&quot;, 
+  onHit: [&quot;&quot;],
+  onCrit: [&quot;&quot;],
+  hitOn: [&quot;&quot;],
+  critOn: [&quot;&quot;],
+  npcFlee: [&quot;&quot;],
+  npcDying: [&quot;&quot;]
+  },
+  temp3: {
+  name: &quot;None&quot;,
+  responsesType: &quot;None&quot;, 
+  onHit: [&quot;&quot;],
+  onCrit: [&quot;&quot;],
+  hitOn: [&quot;&quot;],
+  critOn: [&quot;&quot;],
+  npcFlee: [&quot;&quot;],
+  npcDying: [&quot;&quot;]
+  }
 }&gt;&gt;
 
 &lt;&lt;set $dailyKills to 0&gt;&gt;
@@ -30579,8 +30655,52 @@ Gender changing potion:  $genderChangingPotion | &lt;&lt;link &quot;Male&quot;&g
 
 &lt;&lt;link &quot;Go back&quot;&gt;&gt;
 &lt;&lt;goto $lastVisitedPassage1&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="352" name="Barks" tags="widget" position="2875,725" size="100,100">&lt;&lt;widget &quot;GettingCritted&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="352" name="Barks" tags="widget" position="2875,725" size="100,100">&lt;&lt;widget &quot;GettingCrittedPlayer&quot;&gt;&gt;
 
+    &lt;&lt;set _barkChanceCrit to random(0, 100)&gt;&gt;
+
+    &lt;&lt;if _barkChanceCrit &gt;= 25&gt;&gt;
+        &lt;&lt;if $personality.temp1.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCrit to $personality.temp1.critOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCrit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp2.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCrit to $personality.temp2.critOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCrit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp3.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCrit to $personality.temp3.critOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCrit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.main.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCrit to $personality.main.critOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCrit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;GettingHitPlayer&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceHit to random(0, 100)&gt;&gt;
+
+    &lt;&lt;if _barkChanceHit &gt;= 75&gt;&gt;
+        &lt;&lt;if $personality.temp1.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHit to $personality.temp1.hitOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp2.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHit to $personality.temp2.hitOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp3.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHit to $personality.temp3.hitOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.main.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHit to $personality.main.hitOn.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHit + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+
+
+&lt;&lt;widget &quot;GettingCritted&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceCrit to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceCrit1 to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceCrit2 to random(0, 100)&gt;&gt;
     &lt;&lt;set _barkChanceCrit3 to random(0, 100)&gt;&gt;
@@ -30670,6 +30790,51 @@ Gender changing potion:  $genderChangingPotion | &lt;&lt;link &quot;Male&quot;&g
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;radiant&quot;&gt;&quot;Weakling!&quot;&lt;/span&gt;&#39;)&gt;&gt;
         &lt;&lt;elseif _barkChoiceHit3 === 2&gt;&gt;
             &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;radiant&quot;&gt;&quot;Why dont you try hitting harder?&quot;&lt;/span&gt;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;PlayerHit&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceHitting to random(0, 100)&gt;&gt;
+
+    &lt;&lt;if _barkChanceHitting &gt;= 75&gt;&gt;
+        &lt;&lt;if $personality.temp1.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHitting to $personality.temp1.onHit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHitting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp2.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHitting to $personality.temp2.onHit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHitting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp3.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHitting to $personality.temp3.onHit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHitting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.main.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceHitting to $personality.main.onHit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceHitting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+&lt;&lt;/widget&gt;&gt;
+
+&lt;&lt;widget &quot;PlayerCrit&quot;&gt;&gt;
+
+    &lt;&lt;set _barkChanceCritting to random(0, 100)&gt;&gt;
+
+    &lt;&lt;if _barkChanceCritting &gt;= 75&gt;&gt;
+        
+        &lt;&lt;if $personality.temp1.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCritting to $personality.temp1.onCrit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCritting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp2.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCritting to $personality.temp2.onCrit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCritting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.temp3.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCritting to $personality.temp3.onCrit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCritting + &#39;&quot;&#39;)&gt;&gt;
+        &lt;&lt;elseif $personality.main.name !== &quot;None&quot;&gt;&gt;
+            &lt;&lt;set _barkChoiceCritting to $personality.main.onCrit.random()&gt;&gt;
+            &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceCritting + &#39;&quot;&#39;)&gt;&gt;
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/if&gt;&gt;
 
@@ -30767,6 +30932,20 @@ Gender changing potion:  $genderChangingPotion | &lt;&lt;link &quot;Male&quot;&g
 
 &lt;&lt;widget &quot;MemberEscape&quot;&gt;&gt;
 
+    &lt;&lt;if $personality.temp1.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCFlee to $personality.temp1.npcFlee.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCFlee + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;elseif $personality.temp2.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCFlee to $personality.temp2.npcFlee.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCFlee + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;elseif $personality.temp3.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCFlee to $personality.temp3.npcFlee.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCFlee + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;elseif $personality.main.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCFlee to $personality.main.npcFlee.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCFlee + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
     &lt;&lt;if $partyMembers.includes(&quot;RadiantRose&quot;)&gt;&gt;
         &lt;&lt;set _barkChoiceRad to random(1, 2)&gt;&gt;
         &lt;&lt;if _barkChoiceRad === 1&gt;&gt;
@@ -30806,6 +30985,20 @@ Gender changing potion:  $genderChangingPotion | &lt;&lt;link &quot;Male&quot;&g
 &lt;&lt;/widget&gt;&gt;
 
 &lt;&lt;widget &quot;Deaths&quot;&gt;&gt;
+
+    &lt;&lt;if $personality.temp1.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCDead to $personality.temp1.npcDying.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCDead + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;elseif $personality.temp2.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCDead to $personality.temp2.npcDying.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCDead + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;elseif $personality.temp3.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCDead to $personality.temp3.npcDying.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCDead + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;elseif $personality.main.name !== &quot;None&quot;&gt;&gt;
+        &lt;&lt;set _barkChoiceNPCDead to $personality.main.npcDying.random()&gt;&gt;
+        &lt;&lt;run $combat_log.push(&#39;&quot;&#39; + _barkChoiceNPCDead + &#39;&quot;&#39;)&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
 
     &lt;&lt;if $partyMembers.includes(&quot;RadiantRose&quot;)&gt;&gt;
         &lt;&lt;set _barkChoiceRad to random(1, 2)&gt;&gt;

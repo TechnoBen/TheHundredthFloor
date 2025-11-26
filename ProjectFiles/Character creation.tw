@@ -56,18 +56,31 @@ Game mode:
     <<set _pantsChoice = _pantsChoice.random()>>
     
 <<if $favColor is "Blue">>
-    <<set $shirt1 to true>> <<set $isShirtOn = "Blue shirt">>
+    <<set $shirt1 to true>> 
+    <<set $isShirtOn = "Blue shirt">>
+    <<set $barkColor === 159990>>
 <<elseif $favColor is "Red">>
-    <<set $shirt2 to true>> <<set $isShirtOn = "Red shirt">>
+    <<set $shirt2 to true>> 
+    <<set $isShirtOn = "Red shirt">>
+    <<set $barkColor === 991515>>
 <<elseif $favColor is "Green">>
-    <<set $shirt3 to true>> <<set $isShirtOn = "Green shirt">>
+    <<set $shirt3 to true>> 
+    <<set $isShirtOn = "Green shirt">>
+    <<set $barkColor to 579957>>
 <<elseif $favColor is "Pink">>
-    <<set $shirt4 to true>> <<set $isShirtOn = "Pink shirt">>
+    <<set $shirt4 to true>> 
+    <<set $isShirtOn = "Pink shirt">>
+    <<set $barkColor === 991599>>
 <<elseif $favColor is "White">>
-    <<set $shirt5 to true>> <<set $isShirtOn = "White shirt">>
+    <<set $shirt5 to true>> 
+    <<set $isShirtOn = "White shirt">>
+    <<set $barkColor === 159990>>
 <<elseif $favColor is "Black">>
-    <<set $shirt6 to true>> <<set $isShirtOn = "Black shirt">>
+    <<set $shirt6 to true>> 
+    <<set $isShirtOn = "Black shirt">>
+    <<set $barkColor === 262626>>
 <</if>>
+
 <<if _pantsChoice is "Pants">>
     <<set $pants1 to true>>
 	<<set $isPantsOn to "Starter pants">>

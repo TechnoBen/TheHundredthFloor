@@ -1721,12 +1721,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 
 /* Bonus turn mob */
 <<for _i = 0; _i lt $mobs.length; _i++>>
-<<set _mob[_i].turnChanceCur -= 100>>
-<<set _bonusTurnRNG to random(100)>>
-<<if _mob[_i].turnChanceCur > _bonusTurnRNG>>
-  <<set _bonusTurn to true>>
-  <<set _mob[_i].bonusTurn to 1>>
-<</if>>
+    <<set _mob[_i].turnChanceCur -= 100>>
+    <<set _bonusTurnRNG to random(100)>>
+    <<if _mob[_i].turnChanceCur > _bonusTurnRNG>>
+      <<set _bonusTurn to true>>
+      <<set _mob[_i].bonusTurn to 1>>
+    <<else>>
+        <<set _mob[_i].turnChanceCur -= _mob[_i].turnChanceCur>>
+    <</if>>
 <</for>>
 
 <<if _bonusTurn === true>>

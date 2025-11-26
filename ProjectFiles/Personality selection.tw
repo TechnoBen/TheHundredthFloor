@@ -1,0 +1,57 @@
+:: Pesronality selection [NoSave no-fainting-or-hunger] {"position":"500,400","size":"100,100"}
+Choose your own personality:
+
+Select a personality: <<nobr>><<for _i, _value range $personalities>>
+    <<capture _i>>
+        <<if $personalities[_i].name !== "None">> | <</if>>
+        <<link `$personalities[_i].name`>>
+            <<set $personality.main.name to $personalities[_i].name>>
+            <<set $personality.main.responsesType to $personalities[_i].responsesType>>
+            <<set $personality.main.onHit to $personalities[_i].onHit>>
+            <<set $personality.main.onCrit to $personalities[_i].onCrit>>
+            <<set $personality.main.hitOn to $personalities[_i].hitOn>>
+            <<set $personality.main.critOn to $personalities[_i].critOn>>
+            <<set $personality.main.npcFlee to $personalities[_i].npcFlee>>
+            <<set $personality.main.npcDying to $personalities[_i].npcDying>>
+            <<goto "Pesronality selection">>
+        <</link>>
+    <</capture>>
+<</for>><</nobr>>
+Delete a personality: <<nobr>><<for _i, _value range $personalities>>
+    <<capture _i>>
+        <<if $personalities[_i].name !== "None">> | <</if>>
+        <<link `$personalities[_i].name`>>
+            <<run delete $personalities[_i]>>
+            <<goto "Pesronality selection">>
+        <</link>>
+    <</capture>>
+<</for>><</nobr>>
+
+Customize your personality:
+Name: <<textbox "$personality.main.name" $personality.main.name>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>>
+Type: <<textbox "$personality.main.responsesType" $personality.main.responsesType>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>> <<hovertip "This is for possible future purposes.<br>It could define the responses of some random interactions.<br>Use the main personality types for this otherwise it could break.">>(?)<</hovertip>>
+Barks whenever you hit: <<textbox "$personality.main.onHit" _onHitTxt>> <<link "Set">>
+    <<set $personality.main.onHit to _onHitTxt>>
+    <<goto "Pesronality selection">>
+<</link>>
+Barks whenever you crit: <<textbox "$personality.main.onCrit" $personality.main.onCrit>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>>
+Barks whenever you're hit: <<textbox "$personality.main.hitOn" $personality.main.hitOn>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>>
+Barks whenever you're critted: <<textbox "$personality.main.critOn" $personality.main.critOn>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>>
+Barks whenever an ally flees: <<textbox "$personality.main.npcFlee" $personality.main.npcFlee>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>>
+Barks whenever an ally dies: <<textbox "$personality.main.npcDying" $personality.main.npcDying>> <<link "Set">>
+    <<goto "Pesronality selection">>
+<</link>>
+
+[[Start]]

@@ -1,7 +1,51 @@
 :: Barks [widget] {"position":"2875,725"}
 
+<<widget "GettingCrittedPlayer">>
+
+    <<set _barkChanceCrit to random(0, 100)>>
+
+    <<if _barkChanceCrit >= 25>>
+        <<if $personality.temp1.name !== "None">>
+            <<set _barkChoiceCrit to $personality.temp1.critOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCrit + '"')>>
+        <<elseif $personality.temp2.name !== "None">>
+            <<set _barkChoiceCrit to $personality.temp2.critOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCrit + '"')>>
+        <<elseif $personality.temp3.name !== "None">>
+            <<set _barkChoiceCrit to $personality.temp3.critOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCrit + '"')>>
+        <<elseif $personality.main.name !== "None">>
+            <<set _barkChoiceCrit to $personality.main.critOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCrit + '"')>>
+        <</if>>
+    <</if>>
+<</widget>>
+
+<<widget "GettingHitPlayer">>
+
+    <<set _barkChanceHit to random(0, 100)>>
+
+    <<if _barkChanceHit >= 75>>
+        <<if $personality.temp1.name !== "None">>
+            <<set _barkChoiceHit to $personality.temp1.hitOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHit + '"')>>
+        <<elseif $personality.temp2.name !== "None">>
+            <<set _barkChoiceHit to $personality.temp2.hitOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHit + '"')>>
+        <<elseif $personality.temp3.name !== "None">>
+            <<set _barkChoiceHit to $personality.temp3.hitOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHit + '"')>>
+        <<elseif $personality.main.name !== "None">>
+            <<set _barkChoiceHit to $personality.main.hitOn.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHit + '"')>>
+        <</if>>
+    <</if>>
+<</widget>>
+
+
 <<widget "GettingCritted">>
 
+    <<set _barkChanceCrit to random(0, 100)>>
     <<set _barkChanceCrit1 to random(0, 100)>>
     <<set _barkChanceCrit2 to random(0, 100)>>
     <<set _barkChanceCrit3 to random(0, 100)>>
@@ -91,6 +135,51 @@
             <<run $combat_log.push('<span class="radiant">"Weakling!"</span>')>>
         <<elseif _barkChoiceHit3 === 2>>
             <<run $combat_log.push('<span class="radiant">"Why dont you try hitting harder?"</span>')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "PlayerHit">>
+
+    <<set _barkChanceHitting to random(0, 100)>>
+
+    <<if _barkChanceHitting >= 75>>
+        <<if $personality.temp1.name !== "None">>
+            <<set _barkChoiceHitting to $personality.temp1.onHit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHitting + '"')>>
+        <<elseif $personality.temp2.name !== "None">>
+            <<set _barkChoiceHitting to $personality.temp2.onHit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHitting + '"')>>
+        <<elseif $personality.temp3.name !== "None">>
+            <<set _barkChoiceHitting to $personality.temp3.onHit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHitting + '"')>>
+        <<elseif $personality.main.name !== "None">>
+            <<set _barkChoiceHitting to $personality.main.onHit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceHitting + '"')>>
+        <</if>>
+    <</if>>
+
+<</widget>>
+
+<<widget "PlayerCrit">>
+
+    <<set _barkChanceCritting to random(0, 100)>>
+
+    <<if _barkChanceCritting >= 75>>
+        
+        <<if $personality.temp1.name !== "None">>
+            <<set _barkChoiceCritting to $personality.temp1.onCrit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCritting + '"')>>
+        <<elseif $personality.temp2.name !== "None">>
+            <<set _barkChoiceCritting to $personality.temp2.onCrit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCritting + '"')>>
+        <<elseif $personality.temp3.name !== "None">>
+            <<set _barkChoiceCritting to $personality.temp3.onCrit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCritting + '"')>>
+        <<elseif $personality.main.name !== "None">>
+            <<set _barkChoiceCritting to $personality.main.onCrit.random()>>
+            <<run $combat_log.push('"' + _barkChoiceCritting + '"')>>
         <</if>>
     <</if>>
 
@@ -188,6 +277,20 @@
 
 <<widget "MemberEscape">>
 
+    <<if $personality.temp1.name !== "None">>
+        <<set _barkChoiceNPCFlee to $personality.temp1.npcFlee.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCFlee + '"')>>
+    <<elseif $personality.temp2.name !== "None">>
+        <<set _barkChoiceNPCFlee to $personality.temp2.npcFlee.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCFlee + '"')>>
+    <<elseif $personality.temp3.name !== "None">>
+        <<set _barkChoiceNPCFlee to $personality.temp3.npcFlee.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCFlee + '"')>>
+    <<elseif $personality.main.name !== "None">>
+        <<set _barkChoiceNPCFlee to $personality.main.npcFlee.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCFlee + '"')>>
+    <</if>>
+
     <<if $partyMembers.includes("RadiantRose")>>
         <<set _barkChoiceRad to random(1, 2)>>
         <<if _barkChoiceRad === 1>>
@@ -227,6 +330,20 @@
 <</widget>>
 
 <<widget "Deaths">>
+
+    <<if $personality.temp1.name !== "None">>
+        <<set _barkChoiceNPCDead to $personality.temp1.npcDying.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCDead + '"')>>
+    <<elseif $personality.temp2.name !== "None">>
+        <<set _barkChoiceNPCDead to $personality.temp2.npcDying.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCDead + '"')>>
+    <<elseif $personality.temp3.name !== "None">>
+        <<set _barkChoiceNPCDead to $personality.temp3.npcDying.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCDead + '"')>>
+    <<elseif $personality.main.name !== "None">>
+        <<set _barkChoiceNPCDead to $personality.main.npcDying.random()>>
+        <<run $combat_log.push('"' + _barkChoiceNPCDead + '"')>>
+    <</if>>
 
     <<if $partyMembers.includes("RadiantRose")>>
         <<set _barkChoiceRad to random(1, 2)>>

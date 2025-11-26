@@ -1517,6 +1517,7 @@
     tags: ["weapon", "sword"],
     passives: [""],
     description: ["A lightweight weapon made out of copper. Slash DMG + 2, Pierce DMG + 0.5"],
+    sprite: "Textures/weapons/coppersword.png",
     weaponSlashDMG: 2,
     weaponPierceDMG: 0.5,
     weaponBluntDMG: 0,
@@ -1992,13 +1993,118 @@
 "Combat" : 0,
 }>>
 
-<<set $traits = {
-}>>
 <<set $timeRemember = {
+}>>
+<<set $traits = {
 }>>
 <<set $weaponInventory = {
 }>>
 <<set $inventory = {
+}>>
+<<set $personality = {
+  main: {
+  name: "None",
+  responsesType: "None",
+  onHit: ["You're going down!", "Ready for more?"],
+  onCrit: ["YEAHH!! THAT'S HOW I DO IT!", "I suggest trying to run away, foul beast!"],
+  hitOn: ["Try hitting harder will you?", "Is that all you've got!"],
+  critOn: ["Tsk. Luck hit.", "Youre gonna regret that.", "Fucker-"],
+  npcFlee: ["Stay safe!"],
+  npcDying: ["N-no... This cant be..."]
+  },
+  temp1: {
+  name: "None",
+  responsesType: "None",
+  onHit: [""],
+  onCrit: [""],
+  hitOn: [""],
+  critOn: [""],
+  npcFlee: [""],
+  npcDying: [""]
+  },
+  temp2: {
+  name: "None",
+  responsesType: "None", 
+  onHit: [""],
+  onCrit: [""],
+  hitOn: [""],
+  critOn: [""],
+  npcFlee: [""],
+  npcDying: [""]
+  },
+  temp3: {
+  name: "None",
+  responsesType: "None", 
+  onHit: [""],
+  onCrit: [""],
+  hitOn: [""],
+  critOn: [""],
+  npcFlee: [""],
+  npcDying: [""]
+  }
+}>>
+
+<<set $personalities = {
+none: {
+  name: "None",
+  responsesType: "None", 
+  onHit: [""],
+  onCrit: [""],
+  hitOn: [""],
+  critOn: [""],
+  npcFlee: [""],
+  npcDying: [""]
+}, 
+gloomy: {
+  name: "Gloomy",
+  responsesType: "Gloomy", 
+  onHit: ["Oh, I landed a hit... Not that it matters.", "Haah. Maybe it will give up...?", "Hm... I wish I was not here.", "Does this hit even matter...?"],
+  onCrit: ["That felt stronger than usual... What would it change though?", "A critical hit... How nice.", "Did I anger it...? I hope not.", "Hmm... A strong hit.", "Ah. Convenient."],
+  hitOn: ["... maybe I should start dodging more?", "Oh lord, this will get worse wont it?", "I dont want to be here.", "My HP is getting chipped off... I should just get away.", "Surely... It will leave me alone eventually right?"],
+  critOn: ["Agh- I should have stayed home.", "Ugh... That hurt a lot.", "I should just... Run.", "I dont want to be here man.", "Fucking hell... Is there a point to this?"],
+  npcFlee: ["My friend... Please dont go...", "I am so screwed.", "Ah... Guess im left to die.", "I dont want to die...", "Maybe I should just flee too."],
+  npcDying: ["Am I gonna be next?", "No... Please...", "Why do I keep pushing on?", "My dear friend... Now dead.", "... This is going bad."]
+},
+prideful: {
+  name: "Prideful",
+  responsesType: "Prideful", 
+  onHit: ["A perfect strike as always!", "Flawless hit!", "This is what true skill is!", "Feel my raw power you wretch!", "See this? This is how you hit!"],
+  onCrit: ["This! Is! How! You! Get! Things! DONE!", "What a hit! Not that I expected anything worse from myself.", "This is a masterpiece of a hit! Do not get distracted!", "Watch my expertise shine before you!"],
+  hitOn: ["You call that a hit? Insulting.", "What a pathetic attempt of trying to hurt me.", "You have to try harder to hurt me.", "A weak hit huh. You will pay for this insult.", "You dear hit me? Ill make you regret this."],
+  critOn: ["A lucky shot! That is all!", "Tsk! That did NOT hurt you hear me!?", "Did you hit me with a feather you dumb fuck??", "Barely noticed that you hit me."],
+  npcFlee: ["Running? Fine. Your help was not needed thanks to my presence anyways.", "Running like a pest? That just proves im better!", "Continue running, weakling!", "Run, coward!", "Tsk. What a dissapointment you are."],
+  npcDying: ["Get up! You are making me look bad enough as it is!", "Is that all you could do? Shame me?", "Dont you dare die on me you fool!", "You couldnt even handle a simple fight such as this one? Dissapointing."]
+},
+stoic: {
+  name: "Stoic",
+  responsesType: "Stoic", 
+  onHit: ["A necessary hit.", "The battle continues.", "A step closer to end this.", "This should decide the outcome of this fight."],
+  onCrit: ["The outcome was certain.", "A decisive blow.", "This is another step to end this fight.", "The battle seems to be continuing in my favor."],
+  hitOn: ["The pain does not matter.", "Nothing but a minor inconvenience.", "This changes nothing."],
+  critOn: ["Urgh- Maybe I shouldve blocked that.", "A managable injury.", "I have had it worse.", "A step back for me."],
+  npcFlee: ["Reasonable response.", "Whatever raises the chances of survival.", "The weak must escape after all..."],
+  npcDying: ["The pain is over.", "No more struggle for them.", "Death happens often enough.", "They fought with honor."]
+},
+carefree: {
+  name: "Carefree",
+  responsesType: "Carefree", 
+  onHit: ["Got em!", "Didnt see that coming did ya?", "Lets see you eat that!", "Heheh! Guess I am a natural!"],
+  onCrit: ["Holy shi- did yall see that?", "Hell fucking yeah!", "I did that didnt I? Thats cool.", "Lets see you take that!"],
+  hitOn: ["Heyyyy that hurt...", "Oof.", "That was uncalled for yknow?", "You didnt have to hit me, thats just rude!"],
+  critOn: ["Fine, fine... This hurt a lot more than I expected.", "Ow to the fucking ouch.", "Mhm... That sure did hurt.", "Was that necessary?"],
+  npcFlee: ["Guess they had better things to do aye?", "More fun for me.", "Stay safe, Ill be having fun over here!"],
+  npcDying: ["Fuck, this got serious didnt it?", "Oh.", "Thats... bad.", "Shit... Thats... Awful."]
+},
+hopeful: {
+  name: "Hopeful",
+  responsesType: "Hopeful", 
+  onHit: ["Weve got this!", "With each hit, our win gets closer!", "I wont let anyone down!"],
+  onCrit: ["The tides are turning in our favor!", "This is what hope looks like! Weve got this!", "We can achieve everything as long as we believe in ourselves!"],
+  hitOn: ["I can recover! This is nothing but a scracth!", "Im still standing!", "I wont give up!"],
+  critOn: ["I can still fight! This is nothing!", "Try it again, but I will forever stand!", "Nothing you do will work on me!", "This... hurts..."],
+  npcFlee: ["Stay strong!", "See you later!", "Please... come back..."],
+  npcDying: ["Is there any hope for us...?", "A-ah... No... I cant...", "Is this where my hope led us?", "This is all my fault..."]
+},
 }>>
 
 <<set $dailyKills to 0>>

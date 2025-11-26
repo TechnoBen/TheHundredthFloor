@@ -240,7 +240,7 @@
         </div>\
         <div class="border1">\
             <<link "Buy the shovel | 65 col">>
-                <<if $Coins >= 156>> 
+                <<if $Coins >= 65>> 
                     <<set $shovel1 to true>>
                     <<set $Coins -= 65>>
                     <<notify>> You bought a shovel! <</notify>>
