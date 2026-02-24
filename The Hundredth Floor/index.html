@@ -2475,7 +2475,7 @@ window.kitsuneRNG = function (min, max) {
   const url = 'Textures/Icons/game icon.png';
       
   $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
-})();</script><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
+})();</script><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
 Your achievement points: $achvPoints
 
 &lt;&lt;button &quot;Start with 50 bonus coins | 1 achievement points&quot;&gt;&gt;
@@ -5795,7 +5795,7 @@ Raid party hp: $raidHP/1000
          | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Slash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?s Slash ?dmg 100%?s ?stm 12 ?onhit Inflict &lt;&lt;= $bleedCountDealt.toFixed(2)&gt;&gt; ?bleed count ?onhit Inflict &lt;&lt;= $bleedPotencyDealt.toFixed(2)&gt;&gt; ?bleed potency&#39;`&gt;&gt;Slash&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Shield bash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Shield bash ?dmg 100%?b ?stm 15 ?onhit Inflict 2 ?dazed count ?onhit Inflict 5 ?dazed potency&#39;`&gt;&gt;Shield bash&lt;&lt;/hovertip&gt;&gt;
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Shield bash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Shield bash ?dmg 100%?b ?stm 15 ?onhit Inflict 1 ?dazed count ?onhit Inflict 2 ?dazed potency&#39;`&gt;&gt;Shield bash&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $weaponType is &quot;Rapier&quot;&gt;&gt;
@@ -5836,7 +5836,7 @@ Raid party hp: $raidHP/1000
          | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Strike&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Strike ?dmg 100%?b ?stm 12 ?onhit Inflict 1 ?dazed count ?onhit Inflict 4 ?dazed potency&#39;`&gt;&gt;Strike&lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
-         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Head smash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Head smash ?dmg 150%?s ?stm 20 ?onhit If enemy has no ?dazed count, inflict 1 ?dazed count ?onhit Inflict 6 ?dazed potency&#39;` 500&gt;&gt; Head smash &lt;&lt;/hovertip&gt;&gt;
+         | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Head smash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Head smash ?dmg 125%?b ?stm 20 ?onhit If enemy has no ?dazed count, inflict 1 ?dazed count ?onhit Inflict 5 ?dazed potency&#39;` 500&gt;&gt; Head smash &lt;&lt;/hovertip&gt;&gt;
     &lt;/label&gt;
     &lt;label&gt;
         &lt;&lt;if $CDConcussion &gt;= 1&gt;&gt; | CD: $CDConcussion &lt;&lt;hovertip `&#39;?b Concussion ?dmg 70%?b ?stm 35 ?onhit Deal damage equal to the amount of ?dazed, then clear all ?dazed ?onhit If enemy has ?stun, deal 30%?b, else inflict 1 ?stun count&#39;` 600&gt;&gt;Concussion&lt;&lt;/hovertip&gt;&gt;&lt;&lt;else&gt;&gt; | &lt;&lt;radiobutton &quot;$attack&quot; &quot;Concussion&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Concussion ?dmg 70%?b ?stm 35 ?onhit Deal damage equal to the amount of ?dazed, then clear all ?dazed ?onhit If enemy has ?stun, deal 30%?b, else inflict 1 ?stun count&#39;` 600&gt;&gt;Concussion&lt;&lt;/hovertip&gt;&gt;&lt;&lt;/if&gt;&gt;
@@ -5902,7 +5902,7 @@ Choose who &lt;span class=&quot;shadow&quot;&gt;ShadowScythe&lt;/span&gt; attack
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;if $partyMembers[_i] === &quot;CrimsonSentinel&quot;&gt;&gt;\
-&lt;&lt;if $NPCs.CrimsonSentinel.turnChanceCur &gt;= 0.01&gt;&gt;&lt;&lt;if $bonusTurnCrimsonSentinel === true&gt;&gt;EXTRA TURN! &lt;&lt;/if&gt;&gt;Select &lt;span class=&quot;crimson&quot;&gt;CrimsonSentinel&lt;/span&gt;&#39;s attack: &lt;label&gt;&lt;&lt;radiobutton &quot;$attackCrimsonSentinel&quot; &quot;Do nothing&quot; checked&gt;&gt; Do nothing&lt;/label&gt; | &lt;label&gt;&lt;&lt;radiobutton &quot;$attackCrimsonSentinel&quot; &quot;Slash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?s Slash ?dmg 100%?s ?stm 12 ?onhit Inflict &lt;&lt;= $NPCs.CrimsonSentinel.bleedCountDealt.toFixed(2)&gt;&gt; ?bleed count ?onhit Inflict &lt;&lt;= $NPCs.CrimsonSentinel.bleedPotencyDealt.toFixed(2)&gt;&gt; ?bleed potency&#39;`&gt;&gt;Slash&lt;&lt;/hovertip&gt;&gt;&lt;/label&gt; | &lt;label&gt;&lt;&lt;radiobutton &quot;$attackCrimsonSentinel&quot; &quot;Shield bash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Shield bash ?dmg 100%?b ?stm 15 ?onhit Inflict 2 ?dazed count ?onhit Inflict 5 ?dazed potency&#39;`&gt;&gt;Shield bash&lt;&lt;/hovertip&gt;&gt;&lt;/label&gt;
+&lt;&lt;if $NPCs.CrimsonSentinel.turnChanceCur &gt;= 0.01&gt;&gt;&lt;&lt;if $bonusTurnCrimsonSentinel === true&gt;&gt;EXTRA TURN! &lt;&lt;/if&gt;&gt;Select &lt;span class=&quot;crimson&quot;&gt;CrimsonSentinel&lt;/span&gt;&#39;s attack: &lt;label&gt;&lt;&lt;radiobutton &quot;$attackCrimsonSentinel&quot; &quot;Do nothing&quot; checked&gt;&gt; Do nothing&lt;/label&gt; | &lt;label&gt;&lt;&lt;radiobutton &quot;$attackCrimsonSentinel&quot; &quot;Slash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?s Slash ?dmg 100%?s ?stm 12 ?onhit Inflict &lt;&lt;= $NPCs.CrimsonSentinel.bleedCountDealt.toFixed(2)&gt;&gt; ?bleed count ?onhit Inflict &lt;&lt;= $NPCs.CrimsonSentinel.bleedPotencyDealt.toFixed(2)&gt;&gt; ?bleed potency&#39;`&gt;&gt;Slash&lt;&lt;/hovertip&gt;&gt;&lt;/label&gt; | &lt;label&gt;&lt;&lt;radiobutton &quot;$attackCrimsonSentinel&quot; &quot;Shield bash&quot;&gt;&gt; &lt;&lt;hovertip `&#39;?b Shield bash ?dmg 100%?b ?stm 15 ?onhit Inflict 1 ?dazed count ?onhit Inflict 2 ?dazed potency&#39;`&gt;&gt;Shield bash&lt;&lt;/hovertip&gt;&gt;&lt;/label&gt;
 &lt;&lt;nobr&gt;&gt;
 Choose who &lt;span class=&quot;crimson&quot;&gt;CrimsonSentinel&lt;/span&gt; attacks: &lt;&lt;for _i = 0; _i lte 99; _i++&gt;&gt;
     &lt;&lt;capture _i&gt;&gt;
@@ -5973,6 +5973,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                     &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                     &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                     &lt;&lt;run $combat_log.push($gamename + &#39; punches &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                    &lt;&lt;PlayerHit&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                     &lt;&lt;set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                     &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -5986,6 +5987,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                     &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                     &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; punches &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                     &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                    &lt;&lt;PlayerCrit&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6017,6 +6019,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; throws a heavy punch at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to (($weaponBluntDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6030,6 +6033,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; throws a heavy punch at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6062,6 +6066,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.8) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6075,6 +6080,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6106,6 +6112,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6119,6 +6126,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6150,6 +6158,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 0.75) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6163,6 +6172,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; stabs &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6245,6 +6255,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                                 &lt;&lt;run $combat_log.push($gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                                &lt;&lt;PlayerHit&gt;&gt;
                             &lt;&lt;else&gt;&gt;
                                 &lt;&lt;set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100)) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                                 &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6258,6 +6269,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; slashes at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                                &lt;&lt;PlayerCrit&gt;&gt;
                             &lt;&lt;/if&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/for&gt;&gt;
@@ -6294,6 +6306,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                                 &lt;&lt;run $combat_log.push($gamename + &#39; charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                                &lt;&lt;PlayerHit&gt;&gt;
                             &lt;&lt;else&gt;&gt;
                                 &lt;&lt;set $baseDMG to (($weaponPierceDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $PierceSTR - ($STRPercentDebuff*($PierceSTR + $weaponDMG)/100) + ($STRPercentBuff*( $PierceSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                                 &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6306,6 +6319,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; charges at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                                &lt;&lt;PlayerCrit&gt;&gt;
                                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                             &lt;&lt;/if&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
@@ -6334,25 +6348,27 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                 &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedPotency += 5&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedPotency += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push($gamename + &#39; bashes their shield at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                &lt;&lt;PlayerHit&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                 &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                 &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedPotency += 7&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedPotency += 4&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonCountCur += $poisonCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonPotency += $poisonPotencyDealt * $critDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; bashes their shield at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                &lt;&lt;PlayerCrit&gt;&gt;
                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
@@ -6387,6 +6403,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                 &lt;&lt;run $combat_log.push($gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; with the blunt side of their heavy sword dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                &lt;&lt;PlayerHit&gt;&gt;
             &lt;&lt;else&gt;&gt;
                 &lt;&lt;set $baseDMG to (($weaponBluntDMG + $BluntSTR - ($STRPercentDebuff*($BluntSTR + $weaponDMG)/100) + ($STRPercentBuff*( $BluntSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6399,6 +6416,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                 &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; with the blunt side of their heavy sword dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                &lt;&lt;PlayerCrit&gt;&gt;
                 &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
             &lt;&lt;/if&gt;&gt;
         &lt;&lt;/if&gt;&gt;
@@ -6433,6 +6451,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6445,6 +6464,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; strikes &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
@@ -6469,11 +6489,11 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;if $enemyHitPlayer === _i&gt;&gt;
                 &lt;&lt;set _critChanceRNG to kitsuneRNG(0, 100)&gt;&gt;
                     &lt;&lt;if $critChance &lt;= _critChanceRNG&gt;&gt;
-                        &lt;&lt;set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.5) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
+                        &lt;&lt;set $baseDMG to (($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.25) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
-                        &lt;&lt;set $mobs[_i].DazedPotency += 6&gt;&gt;
+                        &lt;&lt;set $mobs[_i].DazedPotency += 5&gt;&gt;
                         &lt;&lt;if $mobs[_i].DazedCount &lt;= 0&gt;&gt;
                             &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
@@ -6482,12 +6502,13 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; smashes &#39; + $mobs[_i].name + &#39;s head dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100)) * 1.5) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Combat to $baseDMG&gt;&gt;
                         &lt;&lt;set $dmgDealt.Total += $baseDMG&gt;&gt;
-                        &lt;&lt;set $mobs[_i].DazedPotency += 8&gt;&gt;
+                        &lt;&lt;set $mobs[_i].DazedPotency += 7&gt;&gt;
                         &lt;&lt;if $mobs[_i].DazedCount &lt;= 0&gt;&gt;
                             &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
@@ -6496,6 +6517,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; smashes &#39; + $mobs[_i].name + &#39;s head dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
@@ -6531,6 +6553,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; mutilates &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 1) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6543,6 +6566,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; mutilates &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
@@ -6579,6 +6603,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt * $mobs[_i].bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; pierces the throat of &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDThroatSlit to 9&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * 1.5) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6590,6 +6615,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
 						&lt;&lt;set $mobs[_i].bleedPotency += $bleedPotencyDealt*1.5 * $mobs[_i].bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; pierces the throat of  &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;&lt;span class=&quot;bleedTrigger&quot;&gt;Level &#39; + $mobs[_i].lvl + &#39; &#39; + $mobs[_i].name + &#39; took &#39; + $mobs[_i].bleedPotency.toFixed(2) + &#39; bleed damage.&lt;/span&gt;&#39;)&gt;&gt;
 	                    &lt;&lt;set $mobs[_i].CurHP -= $mobs[_i].bleedPotency&gt;&gt;
@@ -6638,6 +6664,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                             &lt;&lt;set $PowerUpPotency += 30 + $Level&gt;&gt;
                             &lt;&lt;set $STRPercentBuff += 30 + $Level&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to (($SlashSTR + $weaponSlashDMG - ($STRPercentDebuff*($SlashSTR + $weaponSlashDMG)/100) + ($STRPercentBuff*($SlashSTR + $weaponSlashDMG)/100) * $critDMG) * ($mobs[_i].SlashDEF * $mobs[_i].DEFPercentBuff)) + ((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100) * 0.25) * $critDMG) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff))&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6652,6 +6679,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt * $critDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; leaps into the air, hitting  &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDLeapingSlash to 5&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                         &lt;&lt;if $mobs[_i].CurHP &lt;= 0&gt;&gt;
                             &lt;&lt;set $PowerUpCount += 4&gt;&gt;
@@ -6699,6 +6727,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $critChance += 5&gt;&gt;
                         &lt;&lt;set $PoiseCount += 1&gt;&gt;
                         &lt;&lt;set $critDMG += 0.1&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to (($weaponPierceDMG + $DEX/2 - ($DEXPercentDebuff*($DEX/2)/100) + ($DEXPercentBuff*($DEX/2)/100) + $PierceSTR - ($STRPercentDebuff*($PierceSTR + $weaponDMG)/100) + ($STRPercentBuff*( $PierceSTR + $weaponDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                         &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -6712,6 +6741,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; charges at  &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDMultistrike to 6&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6747,6 +6777,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].burnCountCur += $burnCountDealt&gt;&gt;
                         &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; throws a left hook at &#39; + $mobs[_i].name + &#39; then they throw a right hook and finally uppercuts &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                         &lt;&lt;set $CDUpperCut to 7&gt;&gt;
                         &lt;&lt;if $mobs[_i].CurHP &lt;= 0&gt;&gt;
                             &lt;&lt;set $PowerUpCount += 4&gt;&gt;
@@ -6767,6 +6798,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; throws a left hook at &#39; + $mobs[_i].name + &#39; then they throw a right hook and finally uppercuts &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDUpperCut to 7&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;set $PowerUpCount += 2&gt;&gt;
                         &lt;&lt;set $PowerUpPotency += 10 + $Level&gt;&gt;
                         &lt;&lt;set $STRPercentBuff += 10 + $Level&gt;&gt;
@@ -6815,6 +6847,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;set $mobs[_i].DazedCount -= $mobs[_i].DazedCount&gt;&gt;
                         &lt;&lt;run $combat_log.push($gamename + &#39; hits &#39; + $mobs[_i].name + &#39; on the head, making them fall to the ground, disoriented, dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDConcussion to 6&gt;&gt;
+                        &lt;&lt;PlayerHit&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set $baseDMG to ((((($BluntSTR + $weaponBluntDMG - ($STRPercentDebuff*($BluntSTR + $weaponBluntDMG)/100) + ($STRPercentBuff*($BluntSTR + $weaponBluntDMG)/100))* 0.70) * $critDMG) + $mobs[_i].DazedPotency) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff))&gt;&gt;
                         &lt;&lt;if $mobs[_i].StunnedCount &gt;= 1&gt;&gt;
@@ -6834,6 +6867,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; hits &#39; + $mobs[_i].name + &#39; on the head, making them fall to the ground, disoriented, dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;/&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Dazed.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDConcussion to 6&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;/for&gt;&gt;
@@ -6886,6 +6920,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                             &lt;&lt;set $mobs[_i].burnPotency += $burnPotencyDealt&gt;&gt;
                             &lt;&lt;run $combat_log.push($gamename + &#39; does a follow up attack at the distracted &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                             &lt;&lt;set $mobs[_i].StunnedCount to 0&gt;&gt;
+                            &lt;&lt;PlayerHit&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
                         &lt;&lt;if $mobs[_i].CurHP &lt;= 0&gt;&gt;
                             &lt;&lt;set $FlowCount += 3&gt;&gt;
@@ -6911,6 +6946,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                         &lt;&lt;/if&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! &#39; + $gamename + &#39; swings their sword at &#39; + $mobs[_i].name + &#39; dealing &#39; + $baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;set $CDUnfocusedStrike to 8&gt;&gt;
+                        &lt;&lt;PlayerCrit&gt;&gt;
                         &lt;&lt;CritRelatedStatusesPlayer&gt;&gt;
                         &lt;&lt;if $mobs[_i].StunnedCount &gt;= 1&gt;&gt;
                             &lt;&lt;set $mobs[_i].CurHP -= $baseDMG&gt;&gt;
@@ -7283,8 +7319,8 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $NPCs.CrimsonSentinel.baseDMG to (($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $NPCs.CrimsonSentinel.STRPercentBuff) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedPotency += 5&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedPotency += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt&gt;&gt;
@@ -7296,8 +7332,8 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
                 &lt;&lt;set $NPCs.CrimsonSentinel.baseDMG to ((($NPCs.CrimsonSentinel.weaponBluntDMG + $NPCs.CrimsonSentinel.BluntSTR) * $NPCs.CrimsonSentinel.CritDMG) * $NPCs.CrimsonSentinel.STRPercentBuff) * ($mobs[_i].BluntDEF * $mobs[_i].DEFPercentBuff)&gt;&gt;
                 &lt;&lt;set $NPCs.CrimsonSentinel.dmgDealtTotal += $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].CurHP -= $NPCs.CrimsonSentinel.baseDMG&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedPotency += 7&gt;&gt;
-                &lt;&lt;set $mobs[_i].DazedCount += 2&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedPotency += 4&gt;&gt;
+                &lt;&lt;set $mobs[_i].DazedCount += 1&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonCountCur += $NPCs.CrimsonSentinel.poisonCountDealt&gt;&gt;
                 &lt;&lt;set $mobs[_i].poisonPotency += $NPCs.CrimsonSentinel.poisonPotencyDealt * $NPCs.CrimsonSentinel.CritDMG&gt;&gt;
                 &lt;&lt;set $mobs[_i].burnCountCur += $NPCs.CrimsonSentinel.burnCountDealt&gt;&gt;
@@ -7731,7 +7767,7 @@ Choose who &lt;span class=&quot;zegrath&quot;&gt;Zegrath&lt;/span&gt; attacks: &
 &lt;&lt;elseif not $mobs.length &amp;&amp; $floorBossBattle !== true&gt;&gt;
 	/* Combat end here */
 	&lt;&lt;goto &quot;Combat win&quot;&gt;&gt;
-&lt;&lt;elseif $mobs.length &gt;= 1 &amp;&amp; $floorBossBattle !== true&gt;&gt;
+&lt;&lt;elseif $mobs.length &gt;= 1&gt;&gt;
     &lt;&lt;goto &#39;Enemy turn&#39;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -10068,6 +10104,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                     &lt;&lt;set $DazedPotency += 2&gt;&gt;
                     &lt;&lt;set $DazedCount += 1&gt;&gt;
                     &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; charges towards &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                    &lt;&lt;GettingHitPlayer&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                     &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                     &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
@@ -10076,6 +10113,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                     &lt;&lt;set $DazedPotency += 5&gt;&gt;
                     &lt;&lt;set $DazedCount += 1&gt;&gt;
                     &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; charges towards &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                    &lt;&lt;GettingCrittedPlayer&gt;&gt;
                     &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                 &lt;&lt;/if&gt;&gt;
             &lt;&lt;else&gt;&gt;
@@ -10132,12 +10170,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; sank their claws into &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; sank their claws into &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                         &lt;&lt;set _mob[_i].PoiseCount += 1&gt;&gt;
                         &lt;&lt;set _mob[_i].CritChance += 25&gt;&gt;
@@ -10186,12 +10226,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; bites &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += ( _mob[_i].bleedPotencyDealt * 1.5 ) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; bites &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10243,6 +10285,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; with its vines and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * _mob[_i].CritDMG) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
@@ -10250,6 +10293,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; with its vines and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
                     &lt;&lt;run $combat_log.push($gamename + &#39; dodges the attack from &#39; + _mob[_i].name)&gt;&gt;
@@ -10301,12 +10345,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set $DazedPotency += 3&gt;&gt;
                         &lt;&lt;set $DazedCount += 2&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; strikes with its mace at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;set $DazedPotency += 3&gt;&gt;
                         &lt;&lt;set $DazedCount += 2&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; strikes with its mace at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                         &lt;&lt;set _mob[_i].PowerUpCount += 2&gt;&gt;
                         &lt;&lt;set _mob[_i].PowerUpPotency += 0.20&gt;&gt;
@@ -10364,12 +10410,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                         &lt;&lt;set _mob[_i].PowerUpCount += 4&gt;&gt;
                         &lt;&lt;set _mob[_i].PowerUpPotency += 0.40&gt;&gt;
@@ -10417,12 +10465,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set $DazedPotency += 5&gt;&gt;
                         &lt;&lt;set $DazedCount += 1&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; strikes its shield at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;set $DazedPotency += 8&gt;&gt;
                         &lt;&lt;set $DazedCount += 2&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; strikes its shield at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10475,12 +10525,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10525,12 +10577,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt/2) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; charges and stabs &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to ((((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; charges and stabs &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10590,12 +10644,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at you with his axe &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at you with his axe &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                         &lt;&lt;set _mob[_i].PoiseCount += 1&gt;&gt;
                         &lt;&lt;set _mob[_i].CritChance += 20&gt;&gt;
@@ -10656,23 +10712,27 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; with his axe and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                         &lt;&lt;set $blockingModifier to $blockingModifier / 2&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt*2&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*2) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; comes in for a second attack and slashes at &#39; + $gamename + &#39; with his axe and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; charges and stabs &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;set $blockingModifier to $blockingModifier / 2&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt*2&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*3.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; comes in for a second attack and slashes at &#39; + $gamename + &#39; with his axe and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10733,12 +10793,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set _mob[_i].CritChance += 15&gt;&gt;
                         &lt;&lt;set _mob[_i].PoisePotency += 15&gt;&gt;
                         &lt;&lt;set _mob[_i].CritDMG += 0.1&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; whips its tail at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10781,6 +10843,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; pierces &#39; + $gamename + &#39; with its tongue and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, poisoning them.&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                         &lt;&lt;set $poisonCountCur += 3&gt;&gt;
                         &lt;&lt;set $poisonPotency += 5&gt;&gt;
                     &lt;&lt;else&gt;&gt;
@@ -10789,6 +10852,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; pierces &#39; + $gamename + &#39; with its tongue and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, poisoning them.&#39;)&gt;&gt;
                         &lt;&lt;set $poisonCountCur += 3&gt;&gt;
                         &lt;&lt;set $poisonPotency += 8&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -10841,11 +10905,13 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; throws a molten rock at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, setting them on fire.&#39;)&gt;&gt;
                         &lt;&lt;set $burnPotency += _mob[_i].burnPotencyDealt&gt;&gt;
 						&lt;&lt;set $burnCountCur += _mob[_i].burnCountDealt&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; throws a molten rock at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage, setting them on fire.&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;set $burnPotency += _mob[_i].burnPotencyDealt*2&gt;&gt;
 						&lt;&lt;set $burnCountCur += _mob[_i].burnCountDealt*2&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
@@ -10891,12 +10957,14 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;set $DazedPotency += 7&gt;&gt;
                         &lt;&lt;set $DazedCount += 2&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slams &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;set $DazedPotency += 8&gt;&gt;
                         &lt;&lt;set $DazedCount += 2&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slams &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Blunt.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;HitRelatedStatusMobs&gt;&gt;
@@ -10950,6 +11018,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedCountCur += _mob[_i].bleedCountDealt&gt;&gt;
 						&lt;&lt;set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
@@ -10957,6 +11026,7 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
 						&lt;&lt;set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; slashes at &#39; + $gamename + &#39; and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Slash.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                     &lt;&lt;/if&gt;&gt;
                 &lt;&lt;HitRelatedStatusMobs&gt;&gt;
                 &lt;&lt;else&gt;&gt;
@@ -11003,11 +11073,13 @@ Select $NPCs.BlackWolf.name&#39;s move: &lt;label&gt;&lt;&lt;radiobutton &quot;$
                         &lt;&lt;if $StunnedCount &lt;= 0&gt;&gt;
                             &lt;&lt;set $StunnedCount += 4&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
+                        &lt;&lt;GettingHitPlayer&gt;&gt;
                     &lt;&lt;else&gt;&gt;
                         &lt;&lt;set _mob[_i].baseDMG to ((((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier&gt;&gt;
                         &lt;&lt;set $CurHP -= _mob[_i].baseDMG&gt;&gt;
                         &lt;&lt;run $combat_log.push(&#39;CRITICAL HIT! Level: &#39; + _mob[_i].lvl + &#39; &#39; + _mob[_i].name + &#39; and stabs &#39; + $gamename + &#39; with a paralizing knife and dealt &#39; + _mob[_i].baseDMG.toFixed(2) + &#39;&lt;img class=&quot;status&quot; src = &quot;Textures/Statuses/Pierce.png&quot; /&gt;damage&#39;)&gt;&gt;
                         &lt;&lt;CritRelatedStatusesMobs&gt;&gt;
+                        &lt;&lt;GettingCrittedPlayer&gt;&gt;
                         &lt;&lt;if $StunnedCount &lt;= 0&gt;&gt;
                             &lt;&lt;set $StunnedCount += 6&gt;&gt;
                         &lt;&lt;/if&gt;&gt;
@@ -22809,7 +22881,7 @@ XP modifier additive: &lt;&lt;textbox &quot;_XPadd1&quot; _XPadd1&gt;&gt; &lt;&l
 	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 Bleed defence gained on DEF stat raised: &lt;&lt;textbox &quot;_bleedDefGain1&quot; _bleedDefGain1&gt;&gt; &lt;&lt;link &quot;Set&quot;&gt;&gt;
-	&lt;&lt;set _bleedDefGain1 to Number(_MaxHP1)&gt;&gt;
+	&lt;&lt;set _bleedDefGain1 to Number(_bleedDefGain1)&gt;&gt;
 	&lt;&lt;if _bleedDefGain1 is NaN&gt;&gt;
   		&lt;&lt;run UI.alert(&quot;Not a valid number!&quot;)&gt;&gt;
 	&lt;&lt;else&gt;&gt;
@@ -23010,9 +23082,7 @@ DEX: $DEX
 INT: $INT
 
 You have $Points points.
-
-Use your points:
-&lt;&lt;link [[Stat points]]&gt;&gt; &lt;&lt;set $lastVisitedPassage1 to &quot;Finish&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
+&lt;&lt;link [[Use your points|Stat points]]&gt;&gt; &lt;&lt;set $lastVisitedPassage1 to &quot;Finish&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
 &lt;&lt;link [[Change your personality|Personality selection]]&gt;&gt; &lt;&lt;set $lastVisitedPassage5 to &quot;Finish&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
 
 Use your achievement points:
@@ -26103,9 +26173,9 @@ I am sorry for not making old save files compatible with the new update though. 
     STRModifier: 0.58,
     CritChance: 8,
     CritDMG: 2.5,
-    SlashDEF: 0.8,
-    PierceDEF: 0.8,
-    BluntDEF: 1.4,
+    SlashDEF: 0.9,
+    PierceDEF: 0.9,
+    BluntDEF: 1.6,
     DEX: 12,
     turnChanceMax: 100,
     turnChanceCur: 100,
@@ -26167,8 +26237,8 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 7,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 2.1,
-    bleedCountDealt: 1,
+    bleedPotencyDealt: 6.5,
+    bleedCountDealt: 4,
     bleedDef: 1.1,
     burnPotency: 0,
     burnCountCur: 0,
@@ -26220,8 +26290,8 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 10,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 2,
-    bleedCountDealt: 1,
+    bleedPotencyDealt: 4.6,
+    bleedCountDealt: 3.4,
     bleedDef: 1,
     burnPotency: 0,
     burnCountCur: 0,
@@ -26262,9 +26332,9 @@ I am sorry for not making old save files compatible with the new update though. 
     STRModifier: 1.1,
     CritChance: 5,
     CritDMG: 1.5,
-    SlashDEF: 1.4,
+    SlashDEF: 0.9,
     PierceDEF: 0.7,
-    BluntDEF: 0.9,
+    BluntDEF: 1.4,
     DEX: 12,
     turnChanceMax: 100,
     turnChanceCur: 100,
@@ -26273,7 +26343,7 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 10,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 3,
+    bleedPotencyDealt: 6,
     bleedCountDealt: 3,
     bleedDef: 0.1,
     burnPotency: 0,
@@ -26315,9 +26385,9 @@ I am sorry for not making old save files compatible with the new update though. 
     STRModifier: 0.47,
     CritChance: 12,
     CritDMG: 1.7,
-    SlashDEF: 1.6,
+    SlashDEF: 0.4,
     PierceDEF: 0.7,
-    BluntDEF: 0.4,
+    BluntDEF: 1.6,
     DEX: 7,
     turnChanceMax: 100,
     turnChanceCur: 100,
@@ -26379,8 +26449,8 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 8,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 2,
-    bleedCountDealt: 3.2,
+    bleedPotencyDealt: 7,
+    bleedCountDealt: 4.2,
     bleedDef: 1,
     burnPotency: 0,
     burnCountCur: 0,
@@ -26432,8 +26502,8 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 4,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 2,
-    bleedCountDealt: 1,
+    bleedPotencyDealt: 5,
+    bleedCountDealt: 2,
     bleedDef: 1,
     burnPotency: 0,
     burnCountCur: 0,
@@ -26485,8 +26555,8 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 7,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 2,
-    bleedCountDealt: 3.2,
+    bleedPotencyDealt: 8.3,
+    bleedCountDealt: 4,
     bleedDef: 1,
     burnPotency: 0,
     burnCountCur: 0,
@@ -26538,7 +26608,7 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 7,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 2,
+    bleedPotencyDealt: 7,
     bleedCountDealt: 3.3,
     bleedDef: 1,
     burnPotency: 0,
@@ -26697,7 +26767,7 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 10,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 3,
+    bleedPotencyDealt: 7,
     bleedCountDealt: 4,
     bleedDef: 0,
     burnPotency: 0,
@@ -26750,7 +26820,7 @@ I am sorry for not making old save files compatible with the new update though. 
 	  bleedPotency: 0,
 	  bleedCountMax: 10,
 	  bleedCountCur: 0,
-    bleedPotencyDealt: 1,
+    bleedPotencyDealt: 15,
     bleedCountDealt: 5,
     bleedDef: 0,
     burnPotency: 0,
@@ -27330,7 +27400,7 @@ I am sorry for not making old save files compatible with the new update though. 
     burnPotency: 0,
     burnCountCur: 0,
     burnCountDealt: 1,
-    burnPotencyDealt: 1,
+    burnPotencyDealt: 10,
     STRPercentBuff: 1,
     PowerUpCount: 0,
     PowerUpPotency: 0,
@@ -27985,7 +28055,7 @@ I am sorry for not making old save files compatible with the new update though. 
   responsesType: &quot;Default&quot;,
   onHit: [&quot;You&#39;re going down!&quot;, &quot;Ready for more?&quot;],
   onCrit: [&quot;YEAHH!! THAT&#39;S HOW I DO IT!&quot;, &quot;I suggest trying to run away, foul beast!&quot;],
-  hitOn: [&quot;Try hitting harder will you?&quot;, &quot;Is that all you&#39;ve got!&quot;],
+  hitOn: [&quot;Try hitting harder will you?&quot;, &quot;Is that all you&#39;ve got!?&quot;],
   critOn: [&quot;Tsk. Lucky hit.&quot;, &quot;Youre gonna regret that.&quot;, &quot;Fucker-&quot;],
   npcFlee: [&quot;Stay safe!&quot;],
   npcDying: [&quot;N-no... This cant be...&quot;]
@@ -28038,7 +28108,7 @@ default: {
   responsesType: &quot;Default&quot;,
   onHit: [&quot;You&#39;re going down!&quot;, &quot;Ready for more?&quot;],
   onCrit: [&quot;YEAHH!! THAT&#39;S HOW I DO IT!&quot;, &quot;I suggest trying to run away, foul beast!&quot;],
-  hitOn: [&quot;Try hitting harder will you?&quot;, &quot;Is that all you&#39;ve got!&quot;],
+  hitOn: [&quot;Try hitting harder will you?&quot;, &quot;Is that all you&#39;ve got!?&quot;],
   critOn: [&quot;Tsk. Lucky hit.&quot;, &quot;Youre gonna regret that.&quot;, &quot;Fucker-&quot;],
   npcFlee: [&quot;Stay safe!&quot;],
   npcDying: [&quot;N-no... This cant be...&quot;]
@@ -28059,9 +28129,9 @@ prideful: {
   onHit: [&quot;A perfect strike as always!&quot;, &quot;Flawless hit!&quot;, &quot;This is what true skill is!&quot;, &quot;Feel my raw power you wretch!&quot;, &quot;See this? This is how you hit!&quot;],
   onCrit: [&quot;This! Is! How! You! Get! Things! DONE!&quot;, &quot;What a hit! Not that I expected anything worse from myself.&quot;, &quot;This is a masterpiece of a hit! Do not get distracted!&quot;, &quot;Watch my expertise shine before you!&quot;],
   hitOn: [&quot;You call that a hit? Insulting.&quot;, &quot;What a pathetic attempt of trying to hurt me.&quot;, &quot;You have to try harder to hurt me.&quot;, &quot;A weak hit huh. You will pay for this insult.&quot;, &quot;You dear hit me? Ill make you regret this.&quot;],
-  critOn: [&quot;A lucky shot! That is all!&quot;, &quot;Tsk! That did NOT hurt you hear me!?&quot;, &quot;Did you hit me with a feather you dumb fuck??&quot;, &quot;Barely noticed that you hit me.&quot;],
-  npcFlee: [&quot;Running? Fine. Your help was not needed thanks to my presence anyways.&quot;, &quot;Running like a pest? That just proves im better!&quot;, &quot;Continue running, weakling!&quot;, &quot;Run, coward!&quot;, &quot;Tsk. What a dissapointment you are.&quot;],
-  npcDying: [&quot;Get up! You are making me look bad enough as it is!&quot;, &quot;Is that all you could do? Shame me?&quot;, &quot;Dont you dare die on me you fool!&quot;, &quot;You couldnt even handle a simple fight such as this one? Dissapointing.&quot;]
+  critOn: [&quot;A lucky hit! That is all!&quot;, &quot;Tsk! That did NOT hurt you hear me!?&quot;, &quot;Did you hit me with a feather you dumb fuck??&quot;, &quot;Barely noticed that you hit me.&quot;],
+  npcFlee: [&quot;Running? Fine. Your help was not needed thanks to my presence anyways.&quot;, &quot;Running like a pest? That just proves im better!&quot;, &quot;Continue running, weakling!&quot;, &quot;Run, coward!&quot;, &quot;Tsk. What a disappointment you are.&quot;],
+  npcDying: [&quot;Get up! You are making me look bad enough as it is!&quot;, &quot;Is that all you could do? Shame me?&quot;, &quot;Dont you dare die on me you fool!&quot;, &quot;You couldnt even handle a simple fight such as this one? Disappointing.&quot;]
 },
 stoic: {
   name: &quot;Stoic&quot;,
@@ -28069,7 +28139,7 @@ stoic: {
   onHit: [&quot;A necessary hit.&quot;, &quot;The battle continues.&quot;, &quot;A step closer to end this.&quot;, &quot;This should decide the outcome of this fight.&quot;],
   onCrit: [&quot;The outcome was certain.&quot;, &quot;A decisive blow.&quot;, &quot;This is another step to end this fight.&quot;, &quot;The battle seems to be continuing in my favor.&quot;],
   hitOn: [&quot;The pain does not matter.&quot;, &quot;Nothing but a minor inconvenience.&quot;, &quot;This changes nothing.&quot;],
-  critOn: [&quot;Urgh- Maybe I shouldve blocked that.&quot;, &quot;A managable injury.&quot;, &quot;I have had it worse.&quot;, &quot;A step back for me.&quot;],
+  critOn: [&quot;Urgh- Maybe I shouldve blocked that.&quot;, &quot;A manageable injury.&quot;, &quot;I have had it worse.&quot;, &quot;A step back for me.&quot;],
   npcFlee: [&quot;Reasonable response.&quot;, &quot;Whatever raises the chances of survival.&quot;, &quot;The weak must escape after all...&quot;],
   npcDying: [&quot;The pain is over.&quot;, &quot;No more struggle for them.&quot;, &quot;Death happens often enough.&quot;, &quot;They fought with honor.&quot;]
 },

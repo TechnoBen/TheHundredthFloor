@@ -635,6 +635,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<set $DazedPotency += 2>>
                     <<set $DazedCount += 1>>
                     <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                    <<GettingHitPlayer>>
                 <<else>>
                     <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                     <<set $CurHP -= _mob[_i].baseDMG>>
@@ -643,6 +644,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                     <<set $DazedPotency += 5>>
                     <<set $DazedCount += 1>>
                     <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges towards ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                    <<GettingCrittedPlayer>>
                     <<CritRelatedStatusesMobs>>
                 <</if>>
             <<else>>
@@ -699,12 +701,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' sank their claws into ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' sank their claws into ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PoiseCount += 1>>
                         <<set _mob[_i].CritChance += 25>>
@@ -753,12 +757,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' bites ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += ( _mob[_i].bleedPotencyDealt * 1.5 ) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' bites ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -810,6 +816,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' with its vines and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * _mob[_i].CritDMG) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
@@ -817,6 +824,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' with its vines and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
+                        <<GettingCrittedPlayer>>
                     <</if>>
                 <<else>>
                     <<run $combat_log.push($gamename + ' dodges the attack from ' + _mob[_i].name)>>
@@ -868,12 +876,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set $DazedPotency += 3>>
                         <<set $DazedCount += 2>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<set $DazedPotency += 3>>
                         <<set $DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes with its mace at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 2>>
                         <<set _mob[_i].PowerUpPotency += 0.20>>
@@ -931,12 +941,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PowerUpCount += 4>>
                         <<set _mob[_i].PowerUpPotency += 0.40>>
@@ -984,12 +996,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set $DazedPotency += 5>>
                         <<set $DazedCount += 1>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<set $DazedPotency += 8>>
                         <<set $DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' strikes its shield at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -1042,12 +1056,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -1092,12 +1108,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt/2) * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to ((((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -1157,12 +1175,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at you with his axe ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at you with his axe ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                         <<set _mob[_i].PoiseCount += 1>>
                         <<set _mob[_i].CritChance += 20>>
@@ -1223,23 +1243,27 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                         <<set $blockingModifier to $blockingModifier / 2>>
                         <<set _mob[_i].baseDMG to (_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt*2>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*2) * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' comes in for a second attack and slashes at ' + $gamename + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' charges and stabs ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
+                        <<GettingCrittedPlayer>>
                         <<set $blockingModifier to $blockingModifier / 2>>
                         <<set _mob[_i].baseDMG to ((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt*2>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*3.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' comes in for a second attack and slashes at ' + $gamename + ' with his axe and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -1300,12 +1324,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _mob[_i].CritChance += 15>>
                         <<set _mob[_i].PoisePotency += 15>>
                         <<set _mob[_i].CritDMG += 0.1>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' whips its tail at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -1348,6 +1374,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set _mob[_i].baseDMG to ((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' pierces ' + $gamename + ' with its tongue and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage, poisoning them.')>>
+                        <<GettingHitPlayer>>
                         <<set $poisonCountCur += 3>>
                         <<set $poisonPotency += 5>>
                     <<else>>
@@ -1356,6 +1383,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' pierces ' + $gamename + ' with its tongue and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage, poisoning them.')>>
                         <<set $poisonCountCur += 3>>
                         <<set $poisonPotency += 8>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<else>>
@@ -1408,11 +1436,13 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' throws a molten rock at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage, setting them on fire.')>>
                         <<set $burnPotency += _mob[_i].burnPotencyDealt>>
 						<<set $burnCountCur += _mob[_i].burnCountDealt>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].PierceSTR - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' throws a molten rock at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage, setting them on fire.')>>
                         <<CritRelatedStatusesMobs>>
+                        <<GettingCrittedPlayer>>
                         <<set $burnPotency += _mob[_i].burnPotencyDealt*2>>
 						<<set $burnCountCur += _mob[_i].burnCountDealt*2>>
                     <</if>>
@@ -1458,12 +1488,14 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<set $DazedPotency += 7>>
                         <<set $DazedCount += 2>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].BluntSTR - (($BluntDEF + $armorBluntDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<set $DazedPotency += 8>>
                         <<set $DazedCount += 2>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slams ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Blunt.png" />damage')>>
+                        <<GettingCrittedPlayer>>
                         <<CritRelatedStatusesMobs>>
                     <</if>>
                 <<HitRelatedStatusMobs>>
@@ -1517,6 +1549,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedCountCur += _mob[_i].bleedCountDealt>>
 						<<set $bleedPotency += _mob[_i].bleedPotencyDealt * $bleedDef>>
                         <<run $combat_log.push('Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to (((_mob[_i].SlashSTR - (($SlashDEF + $armorSlashDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
@@ -1524,6 +1557,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 						<<set $bleedPotency += (_mob[_i].bleedPotencyDealt*1.5) * $bleedDef>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' slashes at ' + $gamename + ' and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Slash.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
+                        <<GettingCrittedPlayer>>
                     <</if>>
                 <<HitRelatedStatusMobs>>
                 <<else>>
@@ -1570,11 +1604,13 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
                         <<if $StunnedCount <= 0>>
                             <<set $StunnedCount += 4>>
                         <</if>>
+                        <<GettingHitPlayer>>
                     <<else>>
                         <<set _mob[_i].baseDMG to ((((_mob[_i].PierceSTR + _mob[_i].DEX / 2) - (($PierceDEF + $armorPierceDEF) * $DEFPercentBuff)) * _mob[_i].CritDMG) * _mob[_i].STRPercentBuff) * $blockingModifier>>
                         <<set $CurHP -= _mob[_i].baseDMG>>
                         <<run $combat_log.push('CRITICAL HIT! Level: ' + _mob[_i].lvl + ' ' + _mob[_i].name + ' and stabs ' + $gamename + ' with a paralizing knife and dealt ' + _mob[_i].baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesMobs>>
+                        <<GettingCrittedPlayer>>
                         <<if $StunnedCount <= 0>>
                             <<set $StunnedCount += 6>>
                         <</if>>

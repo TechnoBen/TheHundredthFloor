@@ -25,9 +25,7 @@ DEX: $DEX
 INT: $INT
 
 You have $Points points.
-
-Use your points:
-<<link [[Stat points]]>> <<set $lastVisitedPassage1 to "Finish">> <</link>>
+<<link [[Use your points|Stat points]]>> <<set $lastVisitedPassage1 to "Finish">> <</link>>
 <<link [[Change your personality|Personality selection]]>> <<set $lastVisitedPassage5 to "Finish">> <</link>>
 
 Use your achievement points:

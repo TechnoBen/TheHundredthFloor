@@ -58,7 +58,7 @@ XP modifier additive: <<textbox "_XPadd1" _XPadd1>> <<link "Set">>
 	<</if>>
 <</link>>
 Bleed defence gained on DEF stat raised: <<textbox "_bleedDefGain1" _bleedDefGain1>> <<link "Set">>
-	<<set _bleedDefGain1 to Number(_MaxHP1)>>
+	<<set _bleedDefGain1 to Number(_bleedDefGain1)>>
 	<<if _bleedDefGain1 is NaN>>
   		<<run UI.alert("Not a valid number!")>>
 	<<else>>
