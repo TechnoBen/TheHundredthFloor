@@ -489,6 +489,8 @@ Armor defence:
 Slash: <<= $armorSlashDEF.toFixed(2)>>
 Pierce: <<= $armorPierceDEF.toFixed(2)>>
 Blunt: <<= $armorBluntDEF.toFixed(2)>>
+
+<<link [[Change your personality|Personality selection]]>> <<set $lastVisitedPassage5 to "Wardrobe">> <</link>>
 <h1><b>CLOTHES</b></h1>\
 <<nobr>>\
 <ol>

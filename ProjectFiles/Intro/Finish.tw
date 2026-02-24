@@ -28,6 +28,7 @@ You have $Points points.
 
 Use your points:
 <<link [[Stat points]]>> <<set $lastVisitedPassage1 to "Finish">> <</link>>
+<<link [[Change your personality|Personality selection]]>> <<set $lastVisitedPassage5 to "Finish">> <</link>>
 
 Use your achievement points:
 <<link [[Achievements points]]>> <</link>>

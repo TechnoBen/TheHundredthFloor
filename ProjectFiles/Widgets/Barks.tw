@@ -166,7 +166,7 @@
 
     <<set _barkChanceCritting to random(0, 100)>>
 
-    <<if _barkChanceCritting >= 75>>
+    <<if _barkChanceCritting >= 25>>
         
         <<if $personality.temp1.name !== "None">>
             <<set _barkChoiceCritting to $personality.temp1.onCrit.random()>>

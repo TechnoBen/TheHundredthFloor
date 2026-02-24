@@ -93,10 +93,10 @@ Raid party hp: $raidHP/1000
 <</if>>
 <<if $weaponType is "Mace">>
     <label>
-         | <<radiobutton "$attack" "Strike">> <<hovertip `'?b Strike ?dmg 100%?b ?stm 20 ?onhit Inflict 1 ?dazed count ?onhit Inflict 4 ?dazed potency'`>>Strike<</hovertip>>
+         | <<radiobutton "$attack" "Strike">> <<hovertip `'?b Strike ?dmg 100%?b ?stm 12 ?onhit Inflict 1 ?dazed count ?onhit Inflict 4 ?dazed potency'`>>Strike<</hovertip>>
     </label>
     <label>
-         | <<radiobutton "$attack" "Head smash">> <<hovertip `'?b Head smash ?dmg 150%?s ?stm 12 ?onhit If enemy has no ?dazed count, inflict 1 ?dazed count ?onhit Inflict 6 ?dazed potency'` 500>> Head smash <</hovertip>>
+         | <<radiobutton "$attack" "Head smash">> <<hovertip `'?b Head smash ?dmg 150%?s ?stm 20 ?onhit If enemy has no ?dazed count, inflict 1 ?dazed count ?onhit Inflict 6 ?dazed potency'` 500>> Head smash <</hovertip>>
     </label>
     <label>
         <<if $CDConcussion >= 1>> | CD: $CDConcussion <<hovertip `'?b Concussion ?dmg 70%?b ?stm 35 ?onhit Deal damage equal to the amount of ?dazed, then clear all ?dazed ?onhit If enemy has ?stun, deal 30%?b, else inflict 1 ?stun count'` 600>>Concussion<</hovertip>><<else>> | <<radiobutton "$attack" "Concussion">> <<hovertip `'?b Concussion ?dmg 70%?b ?stm 35 ?onhit Deal damage equal to the amount of ?dazed, then clear all ?dazed ?onhit If enemy has ?stun, deal 30%?b, else inflict 1 ?stun count'` 600>>Concussion<</hovertip>><</if>>
@@ -2179,4 +2179,4 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     	<<goto "Enemy turn">>
 	<</if>>
 <</if>>
-<</link>> | 30 stamina
+<</link>> ?stm 30

@@ -2003,12 +2003,12 @@
 }>>
 <<set $personality = {
   main: {
-  name: "None",
-  responsesType: "None",
+  name: "Default",
+  responsesType: "Default",
   onHit: ["You're going down!", "Ready for more?"],
   onCrit: ["YEAHH!! THAT'S HOW I DO IT!", "I suggest trying to run away, foul beast!"],
   hitOn: ["Try hitting harder will you?", "Is that all you've got!"],
-  critOn: ["Tsk. Luck hit.", "Youre gonna regret that.", "Fucker-"],
+  critOn: ["Tsk. Lucky hit.", "Youre gonna regret that.", "Fucker-"],
   npcFlee: ["Stay safe!"],
   npcDying: ["N-no... This cant be..."]
   },
@@ -2054,7 +2054,17 @@ none: {
   critOn: [""],
   npcFlee: [""],
   npcDying: [""]
-}, 
+},
+default: {
+  name: "Default",
+  responsesType: "Default",
+  onHit: ["You're going down!", "Ready for more?"],
+  onCrit: ["YEAHH!! THAT'S HOW I DO IT!", "I suggest trying to run away, foul beast!"],
+  hitOn: ["Try hitting harder will you?", "Is that all you've got!"],
+  critOn: ["Tsk. Lucky hit.", "Youre gonna regret that.", "Fucker-"],
+  npcFlee: ["Stay safe!"],
+  npcDying: ["N-no... This cant be..."]
+  },
 gloomy: {
   name: "Gloomy",
   responsesType: "Gloomy", 

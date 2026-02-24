@@ -1,4 +1,4 @@
-:: Pesronality selection [NoSave no-fainting-or-hunger] {"position":"500,400","size":"100,100"}
+:: Personality selection [NoSave no-fainting-or-hunger] {"position":"500,400","size":"100,100"}
 Choose your own personality:
 
 Select a personality: <<nobr>><<for _i, _value range $personalities>>
@@ -13,7 +13,7 @@ Select a personality: <<nobr>><<for _i, _value range $personalities>>
             <<set $personality.main.critOn to $personalities[_i].critOn>>
             <<set $personality.main.npcFlee to $personalities[_i].npcFlee>>
             <<set $personality.main.npcDying to $personalities[_i].npcDying>>
-            <<goto "Pesronality selection">>
+            <<goto "Personality selection">>
         <</link>>
     <</capture>>
 <</for>><</nobr>>
@@ -22,36 +22,73 @@ Delete a personality: <<nobr>><<for _i, _value range $personalities>>
         <<if $personalities[_i].name !== "None">> | <</if>>
         <<link `$personalities[_i].name`>>
             <<run delete $personalities[_i]>>
-            <<goto "Pesronality selection">>
+            <<goto "Personality selection">>
         <</link>>
     <</capture>>
 <</for>><</nobr>>
 
 Customize your personality:
-Name: <<textbox "$personality.main.name" $personality.main.name>> <<link "Set">>
-    <<goto "Pesronality selection">>
+<<link "Add to personalities">>
+    /* I have no idea why or how this works I just saw it from some forum post :sob:
+    I cant tell if this is needlessly complicated or not. */
+    <<set _count = 0>>
+    <<set _tag = "customPersonality">>
+    <<for _count = 0; $personalities[_tag]; _count++>>
+        <<set _tag = "customPersonality" + (_count + 1)>>
+    <</for>>
+    <<set $personalities[_tag] = $personality.main>>
+    <<goto "Personality selection">>
 <</link>>
-Type: <<textbox "$personality.main.responsesType" $personality.main.responsesType>> <<link "Set">>
-    <<goto "Pesronality selection">>
-<</link>> <<hovertip "This is for possible future purposes.<br>It could define the responses of some random interactions.<br>Use the main personality types for this otherwise it could break.">>(?)<</hovertip>>
-Barks whenever you hit: <<textbox "$personality.main.onHit" _onHitTxt>> <<link "Set">>
-    <<set $personality.main.onHit to _onHitTxt>>
-    <<goto "Pesronality selection">>
-<</link>>
-Barks whenever you crit: <<textbox "$personality.main.onCrit" $personality.main.onCrit>> <<link "Set">>
-    <<goto "Pesronality selection">>
-<</link>>
-Barks whenever you're hit: <<textbox "$personality.main.hitOn" $personality.main.hitOn>> <<link "Set">>
-    <<goto "Pesronality selection">>
-<</link>>
-Barks whenever you're critted: <<textbox "$personality.main.critOn" $personality.main.critOn>> <<link "Set">>
-    <<goto "Pesronality selection">>
-<</link>>
-Barks whenever an ally flees: <<textbox "$personality.main.npcFlee" $personality.main.npcFlee>> <<link "Set">>
-    <<goto "Pesronality selection">>
-<</link>>
-Barks whenever an ally dies: <<textbox "$personality.main.npcDying" $personality.main.npcDying>> <<link "Set">>
-    <<goto "Pesronality selection">>
-<</link>>
+Name: <<set _barksname = $personality.main.name>><<do>>
+  <<textarea "_barksname" _barksname>>
+  <<link "Update">>
+    <<set $personality.main.name = _barksname>>
+    <<redo>>
+  <</link>><</do>>
+Type: <<set _barksresponsesType = $personality.main.responsesType>><<do>>
+  <<textarea "_barksresponsesType" _barksresponsesType>>
+  <<link "Update">>
+    <<set $personality.main.responsesType = _barksresponsesType>>
+    <<redo>>
+  <</link>><</do>><<hovertip "This is for possible future purposes.<br>It could define the responses of some random interactions.<br>Use the main personality types for this otherwise it could break.">>(?)<</hovertip>>
+Barks whenever you hit: <<set _barksOnHit = $personality.main.onHit.join("\n")>><<do>>
+  <<textarea "_barksOnHit" _barksOnHit>>
+  <<link "Update">>
+    <<set $personality.main.onHit = _barksOnHit.split("\n")>>
+    <<redo>>
+  <</link>><</do>>
+Barks whenever you crit: <<set _barksOnCrit = $personality.main.onCrit.join("\n")>><<do>>
+  <<textarea "_barksOnCrit" _barksOnCrit>>
+  <<link "Update">>
+    <<set $personality.main.onCrit = _barksOnCrit.split("\n")>>
+    <<redo>>
+  <</link>><</do>>
+Barks whenever you're hit: <<set _barksHitOn = $personality.main.hitOn.join("\n")>><<do>>
+  <<textarea "_barksHitOn" _barksHitOn>>
+  <<link "Update">>
+    <<set $personality.main.hitOn = _barksHitOn.split("\n")>>
+    <<redo>>
+  <</link>><</do>>
+Barks whenever you're critted: <<set _barksCritOn = $personality.main.critOn.join("\n")>><<do>>
+  <<textarea "_barksCritOn" _barksCritOn>>
+  <<link "Update">>
+    <<set $personality.main.critOn = _barksCritOn.split("\n")>>
+    <<redo>>
+  <</link>><</do>>
+Barks whenever an ally flees: <<set _barksNpcFlee = $personality.main.npcFlee.join("\n")>><<do>>
+  <<textarea "_barksNpcFlee" _barksNpcFlee>>
+  <<link "Update">>
+    <<set $personality.main.npcFlee = _barksNpcFlee.split("\n")>>
+    <<redo>>
+  <</link>><</do>>
+Barks whenever an ally dies: <<set _barksNpcDying = $personality.main.npcDying.join("\n")>><<do>>
+  <<textarea "_barksNpcDying" _barksNpcDying>>
+  <<link "Update">>
+    <<set $personality.main.npcDying = _barksNpcDying.split("\n")>>
+    <<redo>>
+  <</link>><</do>>
 
-[[Start]]
+<<link "Go back">>
+    <<goto $lastVisitedPassage5>>
+    <<unset $lastVisitedPassage5>>
+<</link>>
