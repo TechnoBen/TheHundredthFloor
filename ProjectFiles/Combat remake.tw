@@ -60,7 +60,7 @@ Raid party hp: $raidHP/1000
 <</if>>
 <<if $weaponType is "Rapier">>
     <label>
-         | <<radiobutton "$attack" "Stab">> <<hovertip `'?p Stab ?dmg 100%?p ?stm 6 ?onhit Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>>
+         | <<radiobutton "$attack" "Stab">> <<hovertip `'?p Stab ?dmg 100%?p ?stm 6 ?onhit Inflict 2 ?poise potency ?onhit Inflict <<= ($bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>>
     </label>
     <label>
          | <<radiobutton "$attack" "Charge">> <<hovertip `'?p Charge ?dmg 100%?p + 50% DEX ?stm 10 ?onhit Inflict <<= ($bleedCountDealt).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($bleedPotencyDealt).toFixed(2)>> ?bleed potency'`>>Charge<</hovertip>>
@@ -130,7 +130,7 @@ Choose who to attack: <<for _i = 0; _i lte 99; _i++>>
 <<for _i = 0; _i lte 99; _i++>>\
 <<capture _i>>\
 <<if $partyMembers[_i] == "RadiantRose">>\
-<<if $NPCs.RadiantRose.turnChanceCur >= 0.01>><<if $bonusTurnRadiantRose === true>>EXTRA TURN! <</if>>Select <span class="radiant">RadiantRose</span>'s attack: <label><<radiobutton "$attackRadiantRose" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackRadiantRose" "Stab">> <<hovertip `'?p Stab ?dmg 100%?p ?stm 6 ?onhit Inflict <<= ($NPCs.RadiantRose.bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($NPCs.RadiantRose.bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>></label> | <label><<radiobutton "$attackRadiantRose" "Charge">> <<hovertip `'?p Charge ?dmg 100%?p + 50% DEX ?stm 10 ?onhit Inflict <<= ($NPCs.RadiantRose.bleedCountDealt).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($NPCs.RadiantRose.bleedPotencyDealt).toFixed(2)>> ?bleed potency'`>>Charge<</hovertip>></label><label><<if $CDMultistrikeRadiant >= 1>> | CD: $CDMultistrikeRadiant <<hovertip `'?p Multi strike ?dmg 100%?p + 50% DEX ?stm 20 ?onuse Repeat 3 times + 1 more for each 10 DEX ?onhit Gain 1 ?poise count ?onhit Gain 5 ?poise potency'` 400>>Multi strike<</hovertip>><<else>> | <<radiobutton "$attackRadiantRose" "Multi strike">> <<hovertip `'?p Multi strike ?dmg 100%?p + 50% DEX ?stm 20 ?onuse Repeat 3 times + 1 more for each 10 DEX ?onhit Gain 1 ?poise count ?onhit Gain 5 ?poise potency'` 400>>Multi strike<</hovertip>><</if>></label>
+<<if $NPCs.RadiantRose.turnChanceCur >= 0.01>><<if $bonusTurnRadiantRose === true>>EXTRA TURN! <</if>>Select <span class="radiant">RadiantRose</span>'s attack: <label><<radiobutton "$attackRadiantRose" "Do nothing" checked>> Do nothing</label> | <label><<radiobutton "$attackRadiantRose" "Stab">> <<hovertip `'?p Stab ?dmg 100%?p ?stm 6 ?onhit Inflict 2 ?poise potency ?onhit Inflict <<= ($NPCs.RadiantRose.bleedCountDealt/1.5).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($NPCs.RadiantRose.bleedPotencyDealt/2).toFixed(2)>> ?bleed potency'`>>Stab<</hovertip>></label> | <label><<radiobutton "$attackRadiantRose" "Charge">> <<hovertip `'?p Charge ?dmg 100%?p + 50% DEX ?stm 10 ?onhit Inflict <<= ($NPCs.RadiantRose.bleedCountDealt).toFixed(2)>> ?bleed count ?onhit Inflict <<= ($NPCs.RadiantRose.bleedPotencyDealt).toFixed(2)>> ?bleed potency'`>>Charge<</hovertip>></label><label><<if $CDMultistrikeRadiant >= 1>> | CD: $CDMultistrikeRadiant <<hovertip `'?p Multi strike ?dmg 100%?p + 50% DEX ?stm 20 ?onuse Repeat 3 times + 1 more for each 10 DEX ?onhit Gain 1 ?poise count ?onhit Gain 5 ?poise potency'` 400>>Multi strike<</hovertip>><<else>> | <<radiobutton "$attackRadiantRose" "Multi strike">> <<hovertip `'?p Multi strike ?dmg 100%?p + 50% DEX ?stm 20 ?onuse Repeat 3 times + 1 more for each 10 DEX ?onhit Gain 1 ?poise count ?onhit Gain 5 ?poise potency'` 400>>Multi strike<</hovertip>><</if>></label>
 <<nobr>>
 Choose who <span class="radiant">RadiantRose</span> attacks: <<for _i = 0; _i lte 99; _i++>>
     <<capture _i>>
@@ -373,6 +373,12 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<set $mobs[_i].burnPotency += $burnPotencyDealt>>
                         <<run $combat_log.push($gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<PlayerHit>>
+                        <<set $PoisePotency += 2>>
+                        <<set $critChance += 2>>
+                        <<if $PoiseCount <= 0.1>>
+                            <<set $PoiseCount += 1>>
+                            <<set $critDMG += 0.1>>
+                        <</if>>
                     <<else>>
                         <<set $baseDMG to (($PierceSTR + $weaponPierceDMG - ($STRPercentDebuff*($PierceSTR + $weaponPierceDMG)/100) + ($STRPercentBuff*($PierceSTR + $weaponPierceDMG)/100)) * $critDMG) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
                         <<set $mobs[_i].CurHP -= $baseDMG>>
@@ -387,6 +393,12 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                         <<run $combat_log.push('CRITICAL HIT! ' + $gamename + ' stabs ' + $mobs[_i].name + ' dealing ' + $baseDMG + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                         <<CritRelatedStatusesPlayer>>
                         <<PlayerCrit>>
+                        <<set $PoisePotency += 3>>
+                        <<set $critChance += 3>>
+                        <<if $PoiseCount <= 0.1>>
+                            <<set $PoiseCount += 1>>
+                            <<set $critDMG += 0.1>>
+                        <</if>>
                     <</if>>
                 <</if>>
             <</for>>
@@ -1269,6 +1281,12 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<run $combat_log.push('RadiantRose stabs ' + $mobs[_i].name + ' dealing ' + $NPCs.RadiantRose.baseDMG.toFixed(2) + '<img class="status" src = "Textures/Statuses/Pierce.png" />damage')>>
                 <<RadiantHiting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 6>>
+                <<set $NPCs.RadiantRose.CritChance += 2>>
+                <<set $NPCs.RadiantRose.PoisePotency += 2>>
+                <<if $NPCs.RadiantRose.PoiseCount <= 0.1>>
+                    <<set $NPCs.RadiantRose.PoiseCount += 1>>
+                    <<set $NPCs.RadiantRose.CritDMG += 0.1>>
+                <</if>>
             <<else>>
                 <<set $NPCs.RadiantRose.baseDMG to ((($NPCs.RadiantRose.PierceSTR + $NPCs.RadiantRose.weaponPierceDMG) * $NPCs.RadiantRose.CritDMG) * $NPCs.RadiantRose.STRPercentBuff) * ($mobs[_i].PierceDEF * $mobs[_i].DEFPercentBuff)>>
                 <<set $NPCs.RadiantRose.dmgDealtTotal += $NPCs.RadiantRose.baseDMG>>
@@ -1283,6 +1301,12 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
                 <<RadiantCritting>>
                 <<set $NPCs.RadiantRose.CurSTM -= 6>>
                 <<CritRelatedStatusesRadiant>>
+                <<set $NPCs.RadiantRose.CritChance += 3>>
+                <<set $NPCs.RadiantRose.PoisePotency += 3>>
+                <<if $NPCs.RadiantRose.PoiseCount <= 0.1>>
+                    <<set $NPCs.RadiantRose.PoiseCount += 1>>
+                    <<set $NPCs.RadiantRose.CritDMG += 0.1>>
+                <</if>>
             <</if>>
         <</if>>
         <</for>>
