@@ -434,14 +434,3 @@ hopeful: {
 			Engine.restart();
 	<</script>>
 <</link>>
-
-<<link "ragout 10">>
-	<<set $ragoutMeat to 10>>
-<</link>>
-[[Cave 2.1]]
-
-<<link "raid">>
-  <<set $raidParty to true>>
-<</link>>
-
-[[F2 BOSS]]

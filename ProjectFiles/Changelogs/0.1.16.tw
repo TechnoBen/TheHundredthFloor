@@ -77,6 +77,7 @@ Stage 3: 50% > 25%
 - Added 2 new encounter in F2
 - Remade serving drinks
 - Greatly debuffed all the other work types
+- Added player personalities for combat with the ability to customize them to your hearts content.
 
 - Fixed my dumbass scuffed code that when you walk from path 1 to path 2 but get into a fight it would send you back to path 1 instead of path 2
 - Fixed CrimsonSentinel not getting HP when you sleep

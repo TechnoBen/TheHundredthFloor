@@ -7,8 +7,6 @@ As it stood up you see the name "Deathlord" pop up and 3 health bars just like i
 <span class="Blu3b3llrex">"Alright everyone. Let's get this done quickly. Healers give everyone a potion just in case someone needs it!"</span> <<set $hpPOT += 1>>
 <</if>>\
 
-WARNING! RAID PARTY DOESNT WORK AS OF NOW! PRESS FIGHT IT ALONE!
-
 You can:
 <<if $raidParty == true>>\
 <<link [[Command your people to attack|F1BOSSBATTLE 1.1]]>>
