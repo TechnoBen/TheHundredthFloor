@@ -3,7 +3,7 @@
 It's swinging its arms around like a madman... 
 It's getting closer and closer you as It's basically slashing everywhere, destroying the floor and pillars around you all.
 
-Floor boss health: $mobs.Deathlord.CurHP
+Floor boss health: $mobs[0].CurHP/$mobs[0].MaxHP
 
 Your HP: $CurHP/$MaxHP
 Your raid partys HP: $raidHP/1000

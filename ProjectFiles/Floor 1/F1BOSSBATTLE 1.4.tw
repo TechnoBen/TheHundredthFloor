@@ -2,7 +2,7 @@
 The boss is charging towards you. You can either fight it or order your raid party to charge at it which would cause A LOT of damage to everyone.
 On the other hand if you do fight it alone the others wouldn't be able to help because it would be moving too much...
 
-Floor boss health: $MonsterHP
+Floor boss health: $mobs[0].CurHP/$mobs[0].MaxHP
 
 Your HP: $CurHP/$MaxHP
 Your raid partys HP: $raidHP/1000
@@ -14,7 +14,7 @@ You can:
 <<set $CurHP -= 373>>
 <</link>>
 <<link [[Command your people to charge|F1BOSSBATTLE 1.5]]>>
-<<set $MonsterHP -= 52>>
+<<set $mobs[0].CurHP -= 52>>
 <<set $raidHP -= 379>>
 <<set $CurHP -= 100>>
 <</link>>

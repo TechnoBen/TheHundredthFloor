@@ -1,6 +1,6 @@
 :: THF shop [no-fainting-or-hunger no-party-time-loss] {"position":"1475,1500","size":"100,100"}
 You enter the shop.
-<span class="Techno">"Welcome back! This time we are celebrating the 2nd year aye? Feel free to get whatever you wish, as long as you've got the gold for it."</span> says the man on the counter. He looks like the dev. You wonder who could that be.
+<span class="Techno">"Welcome back! 3rd year? A shame theres nothing new but hey, the shop is still quite full. Feel free to get whatever you wish, as long as you've got the gold for it."</span> says the man on the counter. He looks like the dev. You wonder who could that be.
 
 1. <<link [[Check out the event shop|THF shop sellables]]>> <</link>>
 2. <<link [[Go to the wardrobe|Wardrobe]]>> <<set $lastVisitedPassage1 to "THF shop">> <</link>>

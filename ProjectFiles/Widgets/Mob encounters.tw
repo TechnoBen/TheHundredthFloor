@@ -165,15 +165,22 @@
 
 <<widget "SnowPlains1">>
     <<set $mobAmount to random(100)>>
-    <<if $mobAmount lte 22>>
-        <<mob wolf1>>
-        <<mob wolf1>>
-		<<mob wolf2>>
-    <<elseif $mobAmount lte 45>>
-    	<<mob wolf2>>
-        <<mob wolf1>>
-    <<elseif $mobAmount lte 100>>
-    	<<mob wolf1>>
+    <<set $mobAttack to random(100)>>
+    <<if $mobAttack lte 25>>
+        <<if $mobAmount lte 22 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+    	    <<mob wolf1>>
+            <<mob wolf1>>
+	    	<<mob wolf2>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 45 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf2>>
+            <<mob wolf1>>
+            <<goto "Combat remake">>
+        <<elseif $mobAmount lte 100 && $beingFollowedPK <= 0 && $beingFollowedSC <= 0>>
+            <<mob wolf1>>
+            <<mob wolf3>>
+            <<goto "Combat remake">>
+        <</if>>
     <</if>>
 <</widget>>
 

@@ -656,7 +656,7 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
         <</if>>
     <</if>>
     /* RABBITS, WOLVES, MIMICS */
-    <<if _mob[_i].name is "Rabbit" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "White wolf" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Glowing chest" && _mob[_i].turnChanceCur > 0>>
+    <<if _mob[_i].name is "Rabbit" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Black wolf" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "White wolf" && _mob[_i].turnChanceCur > 0 or _mob[_i].name is "Glowing chest" && _mob[_i].turnChanceCur > 0>>
 	<<if _mob[_i].turnChanceCur >= 0.01>>
         <<set _mobSkill to random(0, 100)>>
         <<set _randomHit to random(0, $partyMembers.length)>>
@@ -1716,23 +1716,18 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 
 /* Mobs dying */
 <<for _i = 0; _i lt $mobs.length; _i++>>
-  <<if _mob[_i].CurHP <= 0.01>>
-    <<MobRewards>>
-    <<run $combat_log.push('Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' has been slain.')>>
-  	<<run $mobs.deleteAt(_i)>>
-  <</if>>
+    <<if _mob[_i].CurHP <= 0.01>>
+        <<MobRewards>>
+        <<run $combat_log.push('Level ' + $mobs[_i].lvl + ' ' + $mobs[_i].name + ' has been slain.')>>
+  	    <<run $mobs.deleteAt(_i)>>
+      <</if>>
 <</for>>
 
 /* FEED THE WOLFIE!!!!! */
 <<if $attack == "Feed dog">>
-<<set $attackText to "Feed dog">>
+    <<run $combat_log.push('You threw the Black wolf a piece of ragout meat. It seems happy?')>>
 	<<set $wolfTame += 1>>
     <<set $ragoutMeat -= 1>>
-<</if>>
-
-/* WOLF TAMED */
-<<if $wolfTame >= 3 && $monstername === "Black wolf">>
-	<<goto "Wolf tame 1">>
 <</if>>
 
 <<dateadd '1m'>>
@@ -1770,6 +1765,23 @@ Select $NPCs.BlackWolf.name's move: <label><<radiobutton "$attackWolf" "Do nothi
 <<if _bonusTurn === true>>
 	/* Bonus turn activate for mob this time */
     <<goto "Enemy turn">>
+<<elseif $wolfTame >= 3>>
+    /* BALCK WOLF TAMED */
+    <<for _i = 0; _i lt $mobs.length; _i++>>
+    <<if $mobs[_i].name === "Black wolf">>>>
+        <<run $mobs.deleteAt(_i)>>
+        <<if settings.turns == true>>
+    	    <<set $turns to 1>>
+            <<run $combat_log.push('<span class="turnCount">--| TURN ' + $turns + ' |--</span>')>>
+        <</if>>
+        <<unset $wolfTame>>
+        <<set $combat_drops = []>>
+        <<set $combatCol to 0>>
+        <<set $combatXP to 0>>
+        <<set $combat_log = []>>
+        <<goto "Wolf tame 1">>
+    <</if>>
+    <</for>>
 <<elseif not $mobs.length && $floorBossBattle !== true>>
 	/* Combat end here */
 	<<goto "Combat win">>

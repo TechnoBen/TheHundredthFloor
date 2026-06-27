@@ -1,69 +1,69 @@
 :: Random widgets [widget] {"position":"2375,725","size":"100,100"}
 <<widget "Party2FBossAttack">>
 	<<if $partyMembers.includes("RadiantRose")>>\
-    	<<set $MonsertHP -= $DEXRadiantRose/7 + $STRRadiantRose/5 + $weaponDMGRadiantRose>>
-        <<set $MonsterDMGDealt += $DEXRadiantRose/7 + $STRRadiantRose/5 + $weaponDMGRadiantRose>>
+    	<<set $mobs[0].CurHP -= $NPCs.RadiantRose.DEX/7 + $NPCs.RadiantRose.PierceSTR/5 + $NPCs.RadiantRose.PierceSTR>>
+        <<set $MonsterDMGDealt += $NPCs.RadiantRose.DEX/7 + $NPCs.RadiantRose.PierceSTR/5 + $NPCs.RadiantRose.PierceSTR>>
 	<</if>>
 	<<if $partyMembers.includes("ShadowScythe")>>\
-	    <<set $MonsertHP -= $DEXShadowScythe/7 + $STRShadowScythe/5 + $weaponDMGShadowScythe>>
-        <<set $MonsterDMGDealt += $DEXShadowScythe/7 + $STRShadowScythe/5 + $weaponDMGShadowScythe>>
+	    <<set $mobs[0].CurHP -= $NPCs.ShadowScythe.DEX/7 + $NPCs.ShadowScythe.SlashSTR/5 + $NPCs.ShadowScythe.SlashSTR>>
+        <<set $MonsterDMGDealt += $NPCs.ShadowScythe.DEX/7 + $NPCs.ShadowScythe.SlashSTR/5 + $NPCs.ShadowScythe.SlashSTR>>
 	<</if>>
 	<<if $partyMembers.includes("CrimsonSentinel")>>\
-	    <<set $MonsertHP -= $STRCrimsonSentinel/4 + $weaponDMGCrimsonSentinel>>
-        <<set $MonsterDMGDealt += $STRCrimsonSentinel/4 + $weaponDMGCrimsonSentinel>>
+	    <<set $mobs[0].CurHP -= $NPCs.CrimsonSentinel.SlashSTR/4 + $NPCs.CrimsonSentinel.weaponSlashDMG>>
+        <<set $MonsterDMGDealt += $NPCs.CrimsonSentinel.SlashSTR + $NPCs.CrimsonSentinel.weaponSlashDMG>>
 	<</if>>
 	<<if $partyMembers.includes("Zegrath")>>\
-	    <<set $MonsertHP -= $STRZegrath/5 + $weaponDMGZegrath>>
+	    <<set $mobs[0].CurHP -= $STRZegrath/5 + $weaponDMGZegrath>>
         <<set $MonsterDMGDealt += $STRZegrath/5 + $weaponDMGZegrath>>
 	<</if>>
-	<<if $partyMembers.includes($NPCs.BlackWolf.name)>>\
-	    <<set $MonsertHP -= $wolfSTR/3>>
-        <<set $MonsterDMGDealt += $wolfSTR/3>>
+	<<if $partyMembers.includes("BlackWolf")>>\
+	    <<set $mobs[0].CurHP -= $NPCs.BlackWolf.SlashSTR/3>>
+        <<set $MonsterDMGDealt += $NPCs.BlackWolf.SlashSTR/3>>
 	<</if>>
-	<<set $MonsterHP -= $STR/5 + $weaponDMG/5>>
-	<<set $MonsterDMGDealt += $STR/5 + $weaponDMG/5>>
+	<<set $mobs[0].CurHP -= $SlashSTR/5 + $weaponSlashDMG/5>>
+	<<set $MonsterDMGDealt += $SlashSTR/5 + $weaponSlashDMG/5>>
 <</widget>>
 
 <<widget "Party2FBossHit">>
 	<<if $partyMembers.includes("RadiantRose")>>
-		<<set $CurHPRadiantRose -= $monsterSTR - $DEFRadiantRose>>
+		<<set $NPCs.RadiantRose.CurHP -= $mobs[0].BluntSTR - ($NPCs.RadiantRose.BluntDEF + $NPCs.RadiantRose.armorBluntDEF)>>
 	<</if>>
 	<<if $partyMembers.includes("ShadowScythe")>>
-	    <<set $CurHPShadowScythe -= $monsterSTR - $DEFShadowScythe>>
+	    <<set $NPCs.ShadowScythe.CurHP -= $mobs[0].BluntSTR - ($NPCs.ShadowScythe.BluntDEF + $NPCs.ShadowScythe.armorBluntDEF)>>
 	<</if>>
 	<<if $partyMembers.includes("CrimsonSentinel")>>
-		<<set $CurHPCrimsonSentinel -= $monsterSTR - $DEFCrimsonSentinel>>
+		<<set $NPCs.CrimsonSentinel.CurHP -= $mobs[0].BluntSTR - ($NPCs.CrimsonSentinel.BluntDEF + $NPCs.CrimsonSentinel.armorBluntDEF)>>
 	<</if>>
 	<<if $partyMembers.includes("Zegrath")>>
-		<<set $CurHPZegrath -= $monsterSTR - $DEFZegrath>>
+		<<set $NPCs.Zegrath.CurHP -= $mobs[0].BluntSTR - ($NPCs.Zegrath.BluntDEF + $NPCs.Zegrath.armorBluntDEF)>>
 	<</if>>
-	<<if $partyMembers.includes($NPCs.BlackWolf.name)>>
-		<<set $NPCs.BlackWolf.CurHP -= $monsterSTR - $wolfDEF>>
+	<<if $partyMembers.includes("BlackWolf")>>
+		<<set $NPCs.BlackWolf.CurHP -= $mobs[0].BluntSTR - ($NPCs.BlackWolf.BluntDEF + $NPCs.BlackWolf.armorBluntDEF)>>
 	<</if>>
-	<<if $CurHPRadiantRose lte 0>>
+	<<if $NPCs.RadiantRose.CurHP lte 0>>
     	<<set $NPCs.RadiantRose.Affection to 0>>
     	<<run $partyMembers.delete("RadiantRose")>>
 	<</if>>
-	<<if $CurHPShadowScythe lte 0>>
+	<<if $NPCs.ShadowScythe.CurHP lte 0>>
    		<<set $NPCs.ShadowScythe.Affection to 0>>
     	<<run $partyMembers.delete("ShadowScythe")>>
 	<</if>>
-	<<if $CurHPCrimsonSentinel lte 0>> 
+	<<if $NPCs.CrimsonSentinel.CurHP lte 0>> 
 	    <<set $NPCs.CrimsonSentinel.Affection to 0>>
 	    <<run $partyMembers.delete("CrimsonSentinel")>>
 	<</if>>
 	<<if $NPCs.BlackWolf.CurHP lte 0>>
 		<<set $NPCs.BlackWolf.Dead to true>> 
-		<<run $partyMembers.delete($NPCs.BlackWolf.name)>>
+		<<run $partyMembers.delete("BlackWolf")>>
 	<</if>>
-	<<if $CurHPZegrath lte 0>> 
+	<<if $NPCs.Zegrath.CurHP lte 0>> 
     	<<set $NPCs.Zegrath.Dead to true>>
     	<<run $partyMembers.delete("Zegrath")>>
 	<</if>>
 	<<if $raidParty == true>>
-		<<set $raidHP -= $monsterSTR>>
+		<<set $raidHP -= $mobs[0].BluntSTR>>
 	<</if>>
-	<<set $CurHP -= $monsterSTR - $DEF - $armorDEF>>
+	<<set $CurHP -= $mobs[0].BluntSTR - ($BluntDEF + $armorBluntDEF)>>
 <</widget>>
 
 <<widget "EventCurrencies">>\

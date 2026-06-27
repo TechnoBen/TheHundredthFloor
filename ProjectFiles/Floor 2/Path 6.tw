@@ -17,6 +17,7 @@ You can:
     <</if>>
 	<<dateadd '35m'>> 
 	<<set $curFatigue += 15>>
+    <<goto "Combat remake">>
 <</link>>
 
 Locations:

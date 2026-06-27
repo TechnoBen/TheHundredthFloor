@@ -2,9 +2,7 @@
   You call $NPCs.BlackWolf.name. She looks confused but then seems to realize that you named her. She is happy.
 
 <<link "Continue">>
-	<<run $partyMembers.push($NPCs.BlackWolf.name)>>
+	<<run $partyMembers.push("BlackWolf")>>
 	<<set $partyON to true>>
 	<<goto $lastVisitedPassage>>
 <</link>>
-
-

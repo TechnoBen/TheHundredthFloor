@@ -7,7 +7,8 @@ You can:
 <<link [[Check her stats|Stats wolf]]>>
 <</link>>
 <<link [[Add her to your party|Cave 2.2]]>>
-	<<run $partyMembers.push($NPCs.BlackWolf.name)>>
+	<<run $partyMembers.push("BlackWolf")>>
+	<<set $partyON to true>>
 <</link>>
 <<link "Spend time with $NPCs.BlackWolf.name">>
 	<<goto "Wolf convo">>

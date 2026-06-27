@@ -5,13 +5,13 @@ You went down the path. Theres snow that reaches your kneecaps.
 	<<dateadd '15m'>>
 	<<set $curFatigue += 15>>
     <<set $lastVisitedPassage to "Path 7.2">>
-<<SnowPlains1>>
+	<<SnowPlains1>>
 <</link>>
 2. <<link [[Go back|Path 7]]>>
 	<<dateadd '15m'>>
 	<<set $curFatigue += 15>>
     <<set $lastVisitedPassage to "Path 7">>
-<<SnowPlains1>>
+	<<SnowPlains1>>
 <</link>>
 
 

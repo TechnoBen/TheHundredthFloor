@@ -1868,22 +1868,22 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
 
 
 /* Black wolf attacks */
-<<if $partyMembers.includes($NPCs.BlackWolf.name)>>
+<<if $partyMembers.includes("BlackWolf")>>
 	<<if $NPCs.BlackWolf.CurSTM >= 10 && $NPCs.BlackWolf.timeOut <= 0>>
     	<<set _randomHitBlackWolf to random(0, $mobs.length - 1)>>
-      	<<set $NPCs.BlackWolf.baseDMG to ($NPCs.BlackWolf.SlashSTR) * $mobs[_randomHitBlackWolf].BluntDEF>>
+      	<<set $NPCs.BlackWolf.baseDMG to ($NPCs.BlackWolf.SlashSTR) * $mobs[_randomHitBlackWolf].SlashDEF>>
     	<<set $mobs[_randomHitBlackWolf].CurHP -= $NPCs.BlackWolf.baseDMG>>
       	<<set $NPCs.BlackWolf.dmgDealtTotal += $NPCs.BlackWolf.baseDMG>>
       	<<set $NPCs.BlackWolf.CurSTM -= 10>>
-		<<set $mobs[_i].bleedCountCur += $NPCs.BlackWolf.bleedCountDealt>>
-		<<set $mobs[_i].bleedPotency += $NPCs.BlackWolf.bleedPotencyDealt * $mobs[_i].bleedDef>>
+		<<set $mobs[_randomHitBlackWolf].bleedCountCur += $NPCs.BlackWolf.bleedCountDealt>>
+		<<set $mobs[_randomHitBlackWolf].bleedPotency += $NPCs.BlackWolf.bleedPotencyDealt * $mobs[_randomHitBlackWolf].bleedDef>>
     	<<run $combat_log.push($NPCs.BlackWolf.name + ' slashes at the '+ $mobs[_randomHitBlackWolf].name + ' with her nails, dealing ' + $NPCs.BlackWolf.baseDMG.toFixed(2) + ' damage!')>>
     <<elseif $NPCs.BlackWolf.CurSTM >= 0 && $NPCs.BlackWolf.timeOut >= 1>>
     	<<set $NPCs.BlackWolf.CurSTM += $NPCs.BlackWolf.INT>>
       	<<set $NPCs.BlackWolf.timeOut -= 1>>
     <<elseif $NPCs.BlackWolf.timeOut <= 0 && $NPCs.BlackWolf.CurSTM <= 10>>
     	<<run $combat_log.push($NPCs.BlackWolf.name + ' needs to rest for a bit.')>>
-		<<set $NPCs.BlackWolf.timeOut to kitsuneRNG(5, 12)>>
+		<<set $NPCs.BlackWolf.timeOut to kitsuneRNG(3, 12)>>
     	<<set $NPCs.BlackWolf.CurSTM += $NPCs.BlackWolf.INT>>
     <</if>>
 <</if>>
@@ -1925,9 +1925,9 @@ Choose who <span class="zegrath">Zegrath</span> attacks: <<for _i = 0; _i lte 99
     <<MemberEscape>>
     <<set $CurFear += (25 - ($FearPercentBuff*25/100) + ($FearPercentDebuff*25/100))>>
 <</if>>
-<<if $NPCs.BlackWolf.CurHP lte 0 && $partyMembers.includes($NPCs.BlackWolf.name)>>
+<<if $NPCs.BlackWolf.CurHP lte 0 && $partyMembers.includes("BlackWolf")>>
 	<<set $NPCs.BlackWolf.Dead to true>> 
-	<<run $partyMembers.delete($NPCs.BlackWolf.name)>>
+	<<run $partyMembers.delete("BlackWolf")>>
     <<run $combat_log.push($NPCs.BlackWolf.name + ' died.')>>
     <<set $NPCs.Zegrath.Affection -= 100>>
     <<Deaths>>

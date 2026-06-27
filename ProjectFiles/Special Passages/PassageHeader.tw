@@ -15,13 +15,16 @@ Party members | <<link "Disband party">>
 <li>$partyMembers[0]</li>
 <</if>>
 <<if $partyMembers[1]>>
-<li>$partyMembers[1]</li>
+<li><<if $partyMembers[1] === "BlackWolf">>$NPCs.BlackWolf.name<<else>>$partyMembers[1]<</if>></li>
 <</if>>
 <<if $partyMembers[2]>>
-<li>$partyMembers[2]</li>
+<li><<if $partyMembers[2] === "BlackWolf">>$NPCs.BlackWolf.name<<else>>$partyMembers[2]<</if>></li>
 <</if>>
 <<if $partyMembers[3]>>
-<li>$partyMembers[3]</li>
+<li><<if $partyMembers[3] === "BlackWolf">>$NPCs.BlackWolf.name<<else>>$partyMembers[3]<</if>></li>
+<</if>>
+<<if $partyMembers[4]>>
+<li><<if $partyMembers[4] === "BlackWolf">>$NPCs.BlackWolf.name<<else>>$partyMembers[4]<</if>></li>
 <</if>>
 <</if>>
 </ol>
@@ -280,12 +283,15 @@ There are some rumors that players have defeated the third floor boss... Perhaps
 	<ol><span class= "death">Exporting the game as a file is a good way to prevent save loses. Make sure to do it regularly!</span> | <<link "Export">><<script>>UI.saves()<</script>> <<set $exportReminder to 150>><</link>> | <<link "OK">> <<set $exportReminder to 150>> <</link>> </ol>
 <</if>>
 
-<<if $OneYearTHF == true && $TwoYearsTHFmsg !== true>>
-<ol><span class="Techno">Hello again, $gamename. I am here again to thank you for being here for the 2nd year anniversary! This year was absolutely crazy. There were so many updated to THF that added a lot of new features that Ive been wanting to add. Infact this update there is an entire combat rework! Thats crazy aint it? Honestly I still can't believe It's been 2 years since the first release of the game. I still feel like I made the game last year which is like... Wild. Same as last year, I have re-enabled the anniversary shop. There are not a lot of new items though which I am sorry for but I just didn't realize that I dont have much time left then I also noticed that I have 3 exams (pretty sure I failed the math exam lmao). One of them being quite important. The next week there may or may not be a change or two to a certain shop item though. No promises since Its a brand new feature that I wanted to tease with one of the anniversary items but I just didn't have enough time to code it haha.
-
-I hope you enjoy the event and the new combat system :)
-I am sorry for not making old save files compatible with the new update though. Ill try to finish that soon enough. But after I do that I will deffo extend the time for the anniversary event so that everyone can get what they want. | <<link "Close message">>
-<<set $TwoYearsTHFmsg to true>> 
+<<if $OneYearTHF == true && $ThreeYearsTHFmsg !== true>>
+<ol><span class="Techno">Third year? Hell yeah. Its the third THF anniversary now! Aint that crazy? And the combat update still aint done lol.
+For this year, I unfortunately have nothing new to the event shop. Sorry bout that. Motivation got quite low and I had no new ideas.
+Though next time ill try to have a lot more going
+Combat update has been getting crazier with each new feature though. Im honestly surprised how big its gotten. I was thinking its gonna be one of those small updates I do and get it over with faster than I thought.
+Status effects might be my favorite change I've done. I just hope that yall like them as much as I do hahah.
+As always, there will be a giveaway in the discord for a custom weapon skin and a fit.
+Thank you for playing, I hope you enjoy the event despite the lack of new items. | <<link "Close message">>
+<<set $ThreeYearsTHFmsg to true>> 
 <<set $lootchance to kitsuneRNG(1, 100)>>
 	<<if $lootchance lte 50>>
     	<<set $AnniversaryCakeVanilla += 1>>

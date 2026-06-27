@@ -4,7 +4,7 @@ The boss throws one of its axes at you and your raid group.
 "Yeah! We are fine... so far."
 The boss has tired itself out... It seems to be realizing that you and Blu3 are leading the group, so its preparing for a attack.
 
-Floor boss health: $MonsterHP
+Floor boss health: $mobs[0].CurHP/$mobs[0].MaxHP
 
 Your HP: $CurHP/$MaxHP
 Your raid partys HP: $raidHP/1000
@@ -12,10 +12,10 @@ Your raid partys HP: $raidHP/1000
 You can:
 <<if $raidParty == true>>
 <<link [[Command your people to attack|F1BOSSBATTLE 1.4]]>>
-<<set $mobs.Deathlord.CurHP -= 45>>
+<<set $mobs[0].CurHP -= 45>>
 <</link>>
 <<link [[Command your people to charge|F1BOSSBATTLE 1.4]]>>
-<<set $mobs.Deathlord.CurHP -= 52>>
+<<set $mobs[0].CurHP -= 52>>
 <</link>>
 <<link [[Command your people to dodge|F1BOSSBATTLE 1.4]]>>
 <</link>>

@@ -429,35 +429,19 @@ hopeful: {
 }>>
 <</link>>
 
-Testing related:
-<<link "Testing dummy">>
-	<<set $monstername to "Testing dummy">>
-	<<set $MonsterHP to 9999999999999>>
-	<<set $mobLvl to random(0)>>
-	<<set $monsterSTR to 0>>
-	<<set $monsterDEX to 999>>
-	<<goto "Combat remake">>
-<</link>>
-<<link "Slash STR 1000">>
-	<<set $SlashSTR to 1000>>
-<</link>>
-
-<<link "DEX + 10">>
-	<<set $DEX += 10>>
-<</link>>
-
-<<link "coins">>
-	<<set $Coins to 1000>>
-<</link>>
-
-<<link "Zeg">>
-	<<run $partyMembers.push("Zegrath")>>
-<</link>>
-
 <<link "Restart the game.">>
 	<<script>>
 			Engine.restart();
 	<</script>>
 <</link>>
 
+<<link "ragout 10">>
+	<<set $ragoutMeat to 10>>
+<</link>>
+[[Cave 2.1]]
 
+<<link "raid">>
+  <<set $raidParty to true>>
+<</link>>
+
+[[F2 BOSS]]
