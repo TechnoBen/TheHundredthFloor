@@ -857,8 +857,8 @@ Template.add("dazedDesc",`?dazed <br>Each turn you have a chance of getting ?stu
 Template.add("stunDesc",`?stun <br>Prevents the user from doing anything`);
 Template.add("defDownDesc",`?defdown <br>Lowers the defense by Y% for X turns`);
 Template.add("flowDesc",`?flow <br>Raises the chance of getting an extra turn by Y% for X turns`);
-Template.add("poiseDesc",`?poise <br>Raises the crit rate by Y% <br>Raises the crit damage by X<br>Count is lowered only when a crit has been landed`);
-Template.add("powerUpDesc",`?powerUp <br>Raises the STR by Y% for X turns<br>Once a hit is landed, potency gets halved`);
+Template.add("poiseDesc",`?poise <br>Raises the crit rate by Y% <br>Raises the crit damage by X<br>Count is lowered only when a crit has been landed. <br>Potency is set to 0 only when a crit has been landed.`);
+Template.add("powerUpDesc",`?powerup <br>Raises the STR by Y% for X turns<br>Once a hit is landed, potency gets halved`);
 Template.add("defRaiseDesc",`?defRaise <br>Raises the defense by Y% for X turns`);
 
 // meters.min.js, for SugarCube 2, by Chapel
@@ -1799,6 +1799,14 @@ Setting.addList("UIbars", {
 });
 // UI bars end
 
+// UI bars (hp stm fatigue hunger)
+var settingbuttons = ["Buttons vertical text","Buttons vertical","Buttons horizontal","Buttons text"];
+Setting.addList("buttons", {
+	label		: "Change the style of the sidebar buttons.",
+	list		: settingbuttons,
+});
+// UI bars end
+
 // Turn counter on/off
 Setting.addToggle("statuses", {
 	label : "Display statuses under or next to hp (players only)",
@@ -1808,12 +1816,6 @@ Setting.addToggle("statuses", {
 // Turn counter on/off
 Setting.addToggle("turns", {
 	label : "Turn counter",
-	default  : true,
-}); 
-
-// new/old buttons and frame
-Setting.addToggle("buttons", {
-	label : "New button style",
 	default  : true,
 }); 
 

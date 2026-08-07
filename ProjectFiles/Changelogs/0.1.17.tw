@@ -1,0 +1,12 @@
+:: 0.1.17 [NoSave] {"position":"350,150","size":"100,100"}
+[[Back|Changelogs and game information]]
+
+- Added an option to make the sidebar buttons horizontal instead of vertical
+- Reworked the inventory system and every item
+- Reworked the sprites and paper doll system
+- Reworked the player stats by a bit to add necklaces, helmets and left hand slot.
+- Added limb loss (arms only)
+
+- Fixed the Black wolf dealing 8 pierce and slash str as an enemy
+
+[[Back|Changelogs and game information]]

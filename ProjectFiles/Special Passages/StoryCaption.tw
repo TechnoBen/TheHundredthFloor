@@ -1,10 +1,10 @@
 :: StoryCaption [data <nobr>] {"position":"1750,100","size":"100,100"}
-<<if $NoSideBar == true>>\
+<<if $NoSideBar === true>>\
   -------------------------------
   <center><h1>THE HUNDREDTH FLOOR</h1>\
   -------------------------------
   A game by TechnoBen
-  Beta version: [[0.1.16]]
+  Beta version: [[0.1.17]]
   (subject to change)
   -------------------------------
   <<if settings.buttons == true>>\
@@ -82,7 +82,7 @@
   <center><<hovertip "<<= $curHunger.toFixed(0)>>/<<= $maxHunger.toFixed(0)>>">>Hunger:<</hovertip>> <<showmeter 'hunger1' `$curHunger /$maxHunger`>></center> 
   <center><<hovertip "<<= $curFatigue.toFixed(0)>>/<<= $maxFatigue.toFixed(0)>>">>Fatigue:<</hovertip>> <<showmeter 'fatigue1' `$curFatigue /$maxFatigue`>></center>\<</if>><</nobr>>\
   -------------------------------
-  <<if settings.buttons == true>>\
+  <<if settings.buttons === "Buttons vertical">>\
   <<link "<img src='Textures/Buttons/Inventory.png'>">>
   <<script>>
   Dialog.setup("Inventory", "inv");
@@ -125,7 +125,50 @@
     <<goto "Start the game">>
   <</link>>
   <</if>>\
-  <<elseif settings.buttons == false>>\
+  <<elseif settings.buttons === "Buttons vertical text">>\
+  <<link "<img src='Textures/Buttons/Inventory.png'>">>
+  <<script>>
+  Dialog.setup("Inventory", "inv");
+  Dialog.wiki(Story.get("Inventory").processText());
+  Dialog.open();
+  <</script>>
+  <</link>> Inventory
+  <<link "<img src='Textures/Buttons/Stats.png'>">>
+  <<script>>
+  Dialog.setup("Stats", "stats");
+  Dialog.wiki(Story.get("Stats").processText());
+  Dialog.open();
+  <</script>>
+  <</link>> Stats
+  <<link "<img src='Textures/Buttons/Social.png'>">>
+  <<script>>
+  Dialog.setup("Social", "social");
+  Dialog.wiki(Story.get("Social").processText());
+  Dialog.open();
+  <</script>>
+  <</link>> Social
+  <<link "<img src='Textures/Buttons/Achievements.png'>">>
+  <<script>>
+  Dialog.setup("Achievements", "achievements");
+  Dialog.wiki(Story.get("Achievements").processText());
+  Dialog.open();
+  <</script>>
+  <</link>> Achievements
+  <<link "<img src='Textures/Buttons/Debug.png'>">>
+  <<script>>
+  Dialog.setup("Debug", "debug");
+  Dialog.wiki(Story.get("Debug").processText());
+  Dialog.open();
+  <</script>>
+  <</link>> Debug
+  <<if $eventStart is true>>\
+  <<link "<img src='Textures/Buttons/Logout.png'>">>
+  	<<set $lastVisitedPassageLog to passage()>>
+    <<set $location to "start">>
+    <<goto "Start the game">> Logout
+  <</link>>
+  <</if>>\
+  <<elseif settings.buttons === "Buttons text">>\
   <div class="UIButtons">\
   <<button "Inventory">>
   <<script>>
@@ -154,22 +197,59 @@
   Dialog.wiki(Story.get("Achievements").processText());
   Dialog.open();
   <</script>>
-  <</button>>
-  <<button "Debug">>	
+<</button>>
+<<button "Debug">>	
+  <<script>>
+    Dialog.setup("Debug", "debug");
+    Dialog.wiki(Story.get("Debug").processText());
+    Dialog.open();
+  <</script>>
+<</button>>
+  <<if $eventStart is true>>\
+   <<button "Logout">>	
+  	  <<set $lastVisitedPassageLog to passage()>>
+      <<set $location to "start">>
+      <<goto "Start the game">>
+    <</button>>
+  <</if>>\
+  </div>\
+   <<elseif settings.buttons === "Buttons horizontal">>\
+  <<link "<img src='Textures/Buttons/Inventory.png'>">>
+  <<script>>
+  Dialog.setup("Inventory", "inv");
+  Dialog.wiki(Story.get("Inventory").processText());
+  Dialog.open();
+  <</script>>
+  <</link>><<link "<img src='Textures/Buttons/Stats.png'>">>
+  <<script>>
+  Dialog.setup("Stats", "stats");
+  Dialog.wiki(Story.get("Stats").processText());
+  Dialog.open();
+  <</script>>
+  <</link>><<link "<img src='Textures/Buttons/Social.png'>">>
+  <<script>>
+  Dialog.setup("Social", "social");
+  Dialog.wiki(Story.get("Social").processText());
+  Dialog.open();
+  <</script>>
+  <</link>><<link "<img src='Textures/Buttons/Achievements.png'>">>
+  <<script>>
+  Dialog.setup("Achievements", "achievements");
+  Dialog.wiki(Story.get("Achievements").processText());
+  Dialog.open();
+  <</script>>
+  <</link>><<link "<img src='Textures/Buttons/Debug.png'>">>
   <<script>>
   Dialog.setup("Debug", "debug");
   Dialog.wiki(Story.get("Debug").processText());
   Dialog.open();
   <</script>>
-  <</button>>
-  <<if $eventStart is true>>\
-   <<button "Logout">>	
-	<<set $lastVisitedPassageLog to passage()>>
+<</link>><<if $eventStart is true>>\<<link "<img src='Textures/Buttons/Logout.png'>">>
+  	<<set $lastVisitedPassageLog to passage()>>
     <<set $location to "start">>
     <<goto "Start the game">>
-  <</button>>
+  <</link>>
   <</if>>\
-  </div>\
   <</if>>\
   -------------------------------
   <</if>>

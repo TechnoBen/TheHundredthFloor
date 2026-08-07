@@ -21,8 +21,8 @@ Delete a personality: <<nobr>><<for _i, _value range $personalities>>
     <<capture _i>>
         <<if $personalities[_i].name !== "None">> | <</if>>
         <<link `$personalities[_i].name`>>
-            <<run delete $personalities[_i]>>
-            <<goto "Personality selection">>
+          <<run delete $personalities[_i]>>
+          <<goto "Personality selection">>
         <</link>>
     <</capture>>
 <</for>><</nobr>>
@@ -34,7 +34,7 @@ Customize your personality:
     <<set _count = 0>>
     <<set _tag = "customPersonality">>
     <<for _count = 0; $personalities[_tag]; _count++>>
-        <<set _tag = "customPersonality" + (_count + 1)>>
+      <<set _tag = "customPersonality" + (_count + 1)>>
     <</for>>
     <<set $personalities[_tag] = $personality.main>>
     <<goto "Personality selection">>

@@ -1125,8 +1125,8 @@
     lvl_range: { min: 10, max: 20 },
     MaxHP: 300,
     CurHP: 300,
-    SlashSTR: 8,
-    PierceSTR: 8,
+    SlashSTR: 80,
+    PierceSTR: 80,
     BluntSTR: 0,
     SlashDEF: 0.7,
     PierceDEF: 0.4,
@@ -1565,34 +1565,70 @@
 }>>
 
 <<set setup.weapons = {
+  starterSword: {
+    name: "Starter sword",
+    id: "starterSword",
+    tags: ["weapon", "sword"],
+    passives: [""],
+    description: ["A badly made weapon out of wood and iron. The wood is splinty. Swinging it is enough to get splints into your hand. It's heavier than a normal should be too. Whoever made it couldn't have given less of a fuck for comfort.<br>?s + $inventory[_i].weaponSlashDMG<br>?p + $inventory[_i].weaponPierceDMG"],
+    sprite: "Textures/Weapons/Starter sword.png",
+    moveset: "Sword",
+    weaponSlashDMG: 1,
+    weaponPierceDMG: 0.25,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 2,
+    bleedPotencyDealt: 1
+  },
   copperSword: {
     name: "Copper sword",
     id: "copperSword",
     tags: ["weapon", "sword"],
     passives: [""],
-    description: ["A lightweight weapon made out of copper. Slash DMG + 2, Pierce DMG + 0.5"],
+    description: ["A lightweight weapon made out of copper.<br>?s + $inventory[_i].weaponSlashDMG<br>?p + $inventory[_i].weaponPierceDMG"],
     sprite: "Textures/weapons/coppersword.png",
+    moveset: "Sword",
     weaponSlashDMG: 2,
     weaponPierceDMG: 0.5,
     weaponBluntDMG: 0,
     weaponMagicDMG: 0,
     bleedCountDealt: 2,
     bleedPotencyDealt: 1
+  },
+  copperSword: {
+    name: "Copper rapier",
+    id: "copperRapier",
+    tags: ["weapon", "rapier"],
+    passives: [""],
+    description: ["A lightweight weapon made out of copper.<br>?p + $inventory[_i].weaponPierceDMG"],
+    sprite: "Textures/weapons/copperrapier.png",
+    moveset: "Rapier",
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
   }
 }>>
+
 <<set setup.armors = {
   leatherChestplate: {
     name: "Leather chestplate",
     id: "leatherChestplate",
     tags: ["armor", "light armor", "chestplate"],
     passives: [""],
-    description: ["A light piece of armor. Slash DEF + 1.8, Pierce DEF + 0.8, Blunt DEF + 1.5"],
-    armorSlashDEF: 0,
-    armorPierceDEF: 0,
-    armorBluntDEF: 0,
+    description: ["A light piece of armor.<br>?s + $inventory[_i].armorSlashDEF<br>?p + $inventory[_i].armorPierceDEF<br>?b + $inventory[_i].armorBluntDEF"],
+    spriteLHand: "",
+    sprite: "Textures/Armor/Starter breastplate.png",
+    spriteRHand: "",
+    armorSlashDEF: 1.8,
+    armorPierceDEF: 0.8,
+    armorBluntDEF: 1.5,
     armorMagicDEF: 0
   }
 }>>
+
 <<set setup.items = {
   boarLeather: {
     name: "Boar leather",
@@ -2053,8 +2089,60 @@
 }>>
 <<set $weaponInventory = {
 }>>
-<<set $inventory = {
+
+<<set $player = {
+  body: "Textures/Body/Body Pale.png",
+  bodyRightArm: "Textures/Body/Right arm.png",
+  bodyLeftArm: "Textures/Body/Left arm.png",
+  eyes: "",
+  hairFront: "",
+  hairTop: "",
+  hairBack: "",
+  cosmeticHandR: "",
+  cosmeticHandL: "",
+  cosmeticHead: "",
+  cosmeticBodyR: "",
+  cosmeticBodyL: "",
+  cosmeticBody: "",
+  cosmeticLeggings: "",
+  cosmeticBoots: "",
+  helmet: "",
+  necklace: "",
+  cape: "",
+  chestplate: "",
+  chestplateLHand: "",
+  chestplateRHand: "",
+  leggings: "",
+  bootsArmor: "",
+  shirt: "",
+  shirtRHand: "",
+  shirtLHand: "",
+  pant: "",
+  boots: "",
+  rightHand: "",
+  leftHand: "",
+  finger1: "",
+  finger2: "",
+  finger3: "",
+  finger4: "",
+  finger5: "",
+  finger6: "",
+  finger7: "",
+  finger8: "",
+  finger9: "",
+  finger10: "",
+  hipR: "",
+  hipL: "",
+  back1: "",
+  back2: "",
+  lowerBack1: "",
+  lowerBack2: ""
 }>>
+
+<<set $inventory = {
+  
+}>>
+
 <<set $personality = {
   main: {
   name: "Default",

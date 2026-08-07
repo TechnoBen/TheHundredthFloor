@@ -95,975 +95,106 @@
 	    <img class="location" src = "Textures/Body/Fear/Eye 10.png" width="140%" />
     <</if>>
 <</if>>
-/* BODY */
-<<nobr>>
-<<if $gender == "Male" or $gender == "Nonbinary">>
-	<<if $skinToneVal is "Pale">>
-		<img class="skin" src = "Textures/Body/Body Pale.png" width="140%" />
-	<<elseif $skinToneVal is "Light">>
-		<img class="skin" src = "Textures/Body/Body Light.png" width="140%" />
-	<<elseif $skinToneVal is "Medium">>
-		<img class="skin" src = "Textures/Body/Body Medium.png" width="140%" />
-	<<elseif $skinToneVal is "Dark">>
-		<img class="skin" src = "Textures/Body/Body Dark.png" width="140%" />
-        	<<elseif $skinToneVal is "White">>
-		<img class="skin" src = "Textures/Body/Body White.png" width="140%" />
-    <</if>>
-<<elseif $gender == "Female">>
-	<<if $skinToneVal is "Pale">>
-		<img class="skin" src = "Textures/Body/Fem Body Pale.png" width="140%" />
-	<<elseif $skinToneVal is "Light">>
-		<img class="skin" src = "Textures/Body/Fem Body Light.png" width="140%" />
-	<<elseif $skinToneVal is "Medium">>
-		<img class="skin" src = "Textures/Body/Fem Body Medium.png" width="140%" />
- 	<<elseif $skinToneVal is "White">>
-		<img class="skin" src = "Textures/Body/Fem Body White.png" width="140%" />
-	<<elseif $skinToneVal is "Dark">>
-		<img class="skin" src = "Textures/Body/Fem Body Dark.png" width="140%" />
-	<</if>>
+
+<<if settings.hair == true && $player.helmet !== "">>
+	<img class="skin" @src = "$player.hairBack"/>
 <</if>>
-<</nobr>>
-/* EYES */
-<<nobr>>
-<<if settings.eyes == true>>
-	<<if $eyeColor is "Dark gray">>
-		<img class="eyes" src = "Textures/Eyes/Dark Gray eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light gray">>
-		<img class="eyes" src = "Textures/Eyes/Light Gray Eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Dark brown">>
-		<img class="eyes" src = "Textures/Eyes/Dark Brown eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light brown">>
-		<img class="eyes" src = "Textures/Eyes/Light Brown Eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Dark purple">>
-		<img class="eyes" src = "Textures/Eyes/Dark Purple eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light purple">>
-		<img class="eyes" src = "Textures/Eyes/Light Purple eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Dark red">>
-		<img class="eyes" src = "Textures/Eyes/Dark Red eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light red">>
-		<img class="eyes" src = "Textures/Eyes/Light Red eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Dark green">>
-		<img class="eyes" src = "Textures/Eyes/Dark Green eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light green">>
-		<img class="eyes" src = "Textures/Eyes/Light Green eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Dark blue">>
-		<img class="eyes" src = "Textures/Eyes/Dark Blue eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light blue">>
-		<img class="eyes" src = "Textures/Eyes/Light Blue eyes.gif" width="140%" />
-    <<elseif $eyeColor is "Dark pink">>
-		<img class="eyes" src = "Textures/Eyes/Dark Pink Eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light pink">>
-		<img class="eyes" src = "Textures/Eyes/Light Pink Eyes.gif" width="140%" />
-    <<elseif $eyeColor is "Dark orange">>
-		<img class="eyes" src = "Textures/Eyes/Dark Orange Eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light orange">>
-		<img class="eyes" src = "Textures/Eyes/Light Orange Eyes.gif" width="140%" />
-    <<elseif $eyeColor is "Dark yellow">>
-		<img class="eyes" src = "Textures/Eyes/Dark Yellow Eyes.gif" width="140%" />
-	<<elseif $eyeColor is "Light yellow">>
-		<img class="eyes" src = "Textures/Eyes/Light Yellow Eyes.gif" width="140%" />
-    <<elseif $eyeColor is "Bob">>
-		<img class="eyes" src = "Textures/Eyes/Bob eyes.gif" width="140%" />
-	<</if>>
-<<elseif settings.eyes == false>>
-	<<if $eyeColor is "Dark gray">>
-		<img class="eyes" src = "Textures/Eyes/Dark Gray eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light gray">>
-		<img class="eyes" src = "Textures/Eyes/Light Gray Eyes.png" width="140%" />
-	<<elseif $eyeColor is "Dark brown">>
-		<img class="eyes" src = "Textures/Eyes/Dark Brown eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light brown">>
-		<img class="eyes" src = "Textures/Eyes/Light Brown Eyes.png" width="140%" />
-	<<elseif $eyeColor is "Dark purple">>
-		<img class="eyes" src = "Textures/Eyes/Dark Purple eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light purple">>
-		<img class="eyes" src = "Textures/Eyes/Light Purple eyes.png" width="140%" />
-	<<elseif $eyeColor is "Dark red">>
-		<img class="eyes" src = "Textures/Eyes/Dark Red eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light red">>
-		<img class="eyes" src = "Textures/Eyes/Light Red eyes.png" width="140%" />
-	<<elseif $eyeColor is "Dark green">>
-		<img class="eyes" src = "Textures/Eyes/Dark Green eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light green">>
-		<img class="eyes" src = "Textures/Eyes/Light Green eyes.png" width="140%" />
-	<<elseif $eyeColor is "Dark blue">>
-		<img class="eyes" src = "Textures/Eyes/Dark Blue eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light blue">>
-		<img class="eyes" src = "Textures/Eyes/Light Blue eyes.png" width="140%" />
-    <<elseif $eyeColor is "Dark pink">>
-		<img class="eyes" src = "Textures/Eyes/Dark Pink Eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light pink">>
-		<img class="eyes" src = "Textures/Eyes/Light Pink Eyes.png" width="140%" />
-    <<elseif $eyeColor is "Dark orange">>
-		<img class="eyes" src = "Textures/Eyes/Dark Orange Eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light orange">>
-		<img class="eyes" src = "Textures/Eyes/Light Orange Eyes.png" width="140%" />
-    <<elseif $eyeColor is "Dark yellow">>
-		<img class="eyes" src = "Textures/Eyes/Dark Yellow Eyes.png" width="140%" />
-	<<elseif $eyeColor is "Light yellow">>
-		<img class="eyes" src = "Textures/Eyes/Light Yellow Eyes.png" width="140%" />
-    <<elseif $eyeColor is "Bob">>
-		<img class="eyes" src = "Textures/Eyes/Bob eyes.png" width="140%" />
-	<</if>>
-<</if>>
-<</nobr>>
-/* Clothes */
-<<nobr>>
+
+	<img class="skin" @src = "$player.body"/>
+	<img class="skin" @src = "$player.bodyLeftArm"/>
+
 <<if settings.clothes == true>>
-<<if $gender == "Male" or $gender == "Nonbinary">>
-	<<if $isShirtOn is "Blue shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/BlueShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Red shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/RedShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Green shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/GreenShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Pink shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/PinkShirt.png" width="140%" />
-    <<elseif $isShirtOn is "White shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/WhiteShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Black shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/BlackShirt.png" width="140%" />
-        <<elseif $isShirtOn is "Blue open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/BlueShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Red open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/RedShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Green open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/GreenShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Pink open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/PinkShirtOpenSholder.png" width="140%" />
-    <<elseif $isShirtOn is "White open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/WhiteShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Black open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/BlackShirtOpenSholder.png" width="140%" />
-    <<elseif $isShirtOn is "Blue tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Blue tank top.png" width="140%" />
-	<<elseif $isShirtOn is "Red tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Red tank top.png" width="140%" />
-	<<elseif $isShirtOn is "Green tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Green tank top.png" width="140%" />
-	<<elseif $isShirtOn is "Pink tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Pink tank top.png" width="140%" />
-    <<elseif $isShirtOn is "White tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/White tank top.png" width="140%" />
-	<<elseif $isShirtOn is "Black tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Black tank top.png" width="140%" />
-    <</if>>
-<<elseif $gender == "Female">>
-	<<if $isShirtOn is "Blue open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemBlueShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Red open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemRedShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Green open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemGreenShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Pink open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemPinkShirtOpenSholder.png" width="140%" />
-        	<<elseif $isShirtOn is "White open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemWhiteShirtOpenSholder.png" width="140%" />
-	<<elseif $isShirtOn is "Black open shoulder shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemBlackShirtOpenSholder.png" width="140%" />
-        <<elseif $isShirtOn is "Blue shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemBlueShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Red shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemRedShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Green shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemGreenShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Pink shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemPinkShirt.png" width="140%" />
-    <<elseif $isShirtOn is "White shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemWhiteShirt.png" width="140%" />
-	<<elseif $isShirtOn is "Black shirt">>
-		<img class="shirt" src = "Textures/armor/StarterGear/FemBlackShirt.png" width="140%" />
-    <<elseif $isShirtOn is "Blue tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Blue tank top fem.png" width="140%" />
-	<<elseif $isShirtOn is "Red tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Red tank top fem.png" width="140%" />
-	<<elseif $isShirtOn is "Green tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Green tank top fem.png" width="140%" />
-	<<elseif $isShirtOn is "Pink tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Pink tank top fem.png" width="140%" />
-    <<elseif $isShirtOn is "White tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/White tank top fem.png" width="140%" />
-	<<elseif $isShirtOn is "Black tank top">>
-		<img class="shirt" src = "Textures/armor/Clothes/Black tank top fem.png" width="140%" />
-    <</if>>
+	<img class="skin" @src = "$player.boots"/>
+	<img class="skin" @src = "$player.pants"/>
+	<img class="skin" @src = "$player.shirtLHand"/>
+	<img class="skin" @src = "$player.shirt"/>
 <</if>>
+
+
+
+<<if settings.armor == true>>
+	<img class="skin" @src = "$player.bootsArmor"/>
+	<img class="skin" @src = "$player.leggings"/>
+	<img class="skin" @src = "$player.chestplateLHand"/>
+	<img class="skin" @src = "$player.chestplate"/>
 <</if>>
-<</nobr>>
-/*pants and boots*/
-<<if $gender == "Male" or $gender == "Nonbinary">>
-	<<if settings.clothes == true>>
-		<<if $isPantsOn is "Starter pants">>
-			<img class="pants" src = "Textures/armor/StarterGear/Pants.png" width="140%" />
-     	<<elseif $isPantsOn is "White pants">>
-			<img class="pants" src = "Textures/armor/StarterGear/White pants.png" width="140%" /> 
-     	 <<elseif $isPantsOn is "Gray pants">>
-			<img class="pants" src = "Textures/armor/StarterGear/Gray pants.png" width="140%" /> 
- 		<</if>>
-		<<if $isBootsOn is "Starter boots">>
-			<img class="boots" src = "Textures/armor/StarterGear/Boots.png" width="140%" /> 
-		<</if>>
-	<</if>>
-	<<if settings.armor == true>>
-		<<if $isArmorBootsOn is "Leather boots">>
-			<img class="armor1" src = "Textures/armor/leatherarmor/leatherBoots.png" width="140%" />
-		<<elseif $isArmorBootsOn is "Hardened leather boots">>
-			<img class="armor1" src = "Textures/armor/heavyleatherarmor/hleatherarmorboots.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Iron feet guards">>
-			<img class="armor1" src = "Textures/armor/armor/Iron feet guards.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Iron boots">>
-			<img class="armor1" src = "Textures/armor/armor/Iron feet armor.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Heavy Oni leather boots">>
-			<img class="armor1" src = "Textures/armor/armor/Heavy Oni leather boots.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Light Oni leather boots">>
-			<img class="armor1" src = "Textures/armor/armor/Light Oni leather boots.png" width="140%" />
-		<</if>> 
-	<</if>>
-    <<if settings.armor == true>>
-		<<if $isArmorPantsOn is "Leather pants">>
-			<img class="armor1" src = "Textures/armor/leatherarmor/leatherPants.png" width="140%" />
-		<<elseif $isArmorPantsOn is "Hardened leather pants">>
-			<img class="armor1" src = "Textures/armor/heavyleatherarmor/hleatherarmorpants.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Iron leg guards">>
-			<img class="armor1" src = "Textures/armor/armor/Iron leg guards.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Iron pants">>
-			<img class="armor1" src = "Textures/armor/armor/Iron pants.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Heavy Oni leather pants">>
-			<img class="armor1" src = "Textures/armor/armor/Heavy Oni leather pants.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Light Oni leather pants">>
-			<img class="armor1" src = "Textures/armor/armor/Light Oni leather pants.png" width="140%" />
-        <</if>>
-	<</if>>
-    <<if $isPantsOn is "Starter skirt" && settings.clothes == true>>
-		<img class="pants" src = "Textures/armor/StarterGear/StarterSkirt.png" width="140%" />
-    <</if>>
-<<elseif $gender == "Female">>
-	<<if settings.clothes == true>>
-		<<if $isPantsOn is "Starter pants">>
-			<img class="pants" src = "Textures/armor/StarterGear/FemPants.png" width="140%" /> 
-      	<<elseif $isPantsOn is "White pants">>
-			<img class="pants" src = "Textures/armor/StarterGear/Fem white pants.png" width="140%" /> 
-      	<<elseif $isPantsOn is "Gray pants">>
-			<img class="pants" src = "Textures/armor/StarterGear/Fem gray pants.png" width="140%" /> 
-		<</if>>
-	<</if>>
-	<<if $isBootsOn is "Starter boots" && settings.clothes == true>>
-		<img class="boots" src = "Textures/armor/StarterGear/FemBoots.png" width="140%" /> 
-	<</if>>
-	<<if settings.armor == true>>
-		<<if $isArmorBootsOn is "Leather boots">>
-			<img class="armor1" src = "Textures/armor/leatherarmor/FemleatherBoots.png" width="140%" />
-		<<elseif $isArmorBootsOn is "Hardened leather boots">>
-			<img class="armor1" src = "Textures/armor/heavyleatherarmor/Femhleatherarmorboots.png" width="140%" /> 
-    	 <<elseif $isArmorBootsOn is "Iron feet guards">>
-			<img class="armor1" src = "Textures/armor/armor/Fem Iron feet guards.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Iron boots">>
-			<img class="armor1" src = "Textures/armor/armor/Fem Iron feet armor.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Heavy Oni leather boots">>
-			<img class="armor1" src = "Textures/armor/armor/Heavy Oni leather boots fem.png" width="140%" />
-    	<<elseif $isArmorBootsOn is "Light Oni leather boots">>
-		<img class="armor1" src = "Textures/armor/armor/Light Oni leather boots fem.png" width="140%" />
-		<</if>> 
-	<</if>>
-	<<if settings.armor == true>>
-		<<if $isArmorPantsOn is "Leather pants">>
-			<img class="armor1" src = "Textures/armor/leatherarmor/FemleatherPants.png" width="140%" />
-		<<elseif $isArmorPantsOn is "Hardened leather pants">>
-			<img class="armor1" src = "Textures/armor/heavyleatherarmor/Femhleatherarmorpants.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Iron leg guards">>
-			<img class="armor1" src = "Textures/armor/armor/Fem Iron leg guards.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Iron pants">>
-			<img class="armor1" src = "Textures/armor/armor/Fem Iron pants.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Heavy Oni leather pants">>
-			<img class="armor1" src = "Textures/armor/armor/Heavy Oni leather pants fem.png" width="140%" />
-    	<<elseif $isArmorPantsOn is "Light Oni leather pants">>
-			<img class="armor1" src = "Textures/armor/armor/Light Oni leather pants fem.png" width="140%" />
- 		<</if>>
-    <</if>>
-    <<if $isPantsOn is "Starter skirt" && settings.clothes == true>>
-		<img class="pants" src = "Textures/armor/StarterGear/FemSkirt.png" width="140%" />
-	<</if>>
+
+	<img class="skin" @src = "$player.bodyRightArm"/>
+
+<<if settings.clothes == true>>
+	<img class="skin" @src = "$player.shirtRHand"/>
 <</if>>
+
+<<if settings.armor == true>>
+	<img class="skin" @src = "$player.chestplateRhand"/>
+<</if>>
+
+<<if settings.eyes == true>>
+	<img class="skin" @src = "$player.eyes"/>
+<<elseif settings.eyes == false>>
+	/*animated eyes off???*/
+<</if>>
+
 /*outfits*/
 <<if settings.outfits == true>>
-	<<if $isOutfitOn is "Outfit 1">>
-		<img class="outfit" src = "Textures/armor/Outfits/outfit1.png" width="140%" />
-	<</if>>
-	<<if $isOutfitOn is "Outfit 2">>
-		<img class="outfit" src = "Textures/armor/Outfits/outfit2.png" width="140%" />
-	<</if>>
-	<<if $isOutfitOn is "Outfit 4">>
-		<img class="outfit" src = "Textures/armor/Outfits/outfit4.png" width="140%" />
-	<</if>>
-	<<if $isOutfitOn is "Outfit 3">>
-		<img class="outfit" src = "Textures/armor/Outfits/outfit3.png" width="140%" />
-	<</if>>
-	<<if $isOutfitOn is "Outfit 6">>
-		<img class="outfit" src = "Textures/armor/Outfits/outfit6.png" width="140%" />
-	<</if>>
-	<<if $isOutfitOn is "Outfit 5">>
-		<img class="outfit" src = "Textures/armor/Outfits/outfit5.png" width="140%" />
-	<</if>>
-	<<if $isOutfitOn is "Mask of a nameless man">>
-		<img class="outfit" src = "Textures/armor/Outfits/Unnamed mans mask.png" width="140%" />
-	<</if>>
-	<<if $gender == "Male" or $gender == "Nonbinary">>
-		<<if $isOutfitOn is "Outfit 8">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit8male.png" width="140%" />
-		<</if>>
-		<<if $isOutfitOn is "Outfit 9">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit9male.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Outfit 10">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit10male.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Outfit 11">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit11male.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "ShadowScythe outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/ShadowScytheMale.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "ShadowScythe outfit 1">>
-			<img class="outfit" src = "Textures/armor/Outfits/ShadowScytheMale1.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "CrimsonSentinel outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/CrimsonSentinelMale.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "CrimsonSentinel outfit 1">>
-			<img class="outfit" src = "Textures/armor/Outfits/CrimsonSentinelMale1.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "RadiantRose outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/RadiantRoseMale.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Fallen grace outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/Kirin outfit M.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Familiar gambit outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/Toru outfit M.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Bobs armor">>
-			<img class="outfit" src = "Textures/armor/Outfits/Bobs armor.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Armor of a nameless man (masked)">>
-			<img class="outfit" src = "Textures/armor/Outfits/Unnamed mans armor and mask.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Armor of a nameless man">>
-			<img class="outfit" src = "Textures/armor/Outfits/Unnamed mans armor.png" width="140%" />
-		<</if>>
-	<<elseif $gender == "Female">>
-		<<if $isOutfitOn is "Outfit 8">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit8female.png" width="140%" />
-		<</if>>
-		<<if $isOutfitOn is "Outfit 9">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit9female.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Outfit 10">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit10female.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Outfit 11">>
-			<img class="outfit" src = "Textures/armor/Outfits/outfit11female.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "ShadowScythe outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/ShadowScytheFem.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "ShadowScythe outfit 1">>
-			<img class="outfit" src = "Textures/armor/Outfits/ShadowScytheFem1.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "CrimsonSentinel outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/CrimsonSentinelFem.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "CrimsonSentinel outfit 1">>
-			<img class="outfit" src = "Textures/armor/Outfits/CrimsonSentinelFem1.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "RadiantRose outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/RadiantRoseFem.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Fallen grace outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/Kirin outfit F.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Familiar gambit outfit">>
-			<img class="outfit" src = "Textures/armor/Outfits/Toru outfit F.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Bobs armor">>
-			<img class="outfit" src = "Textures/armor/Outfits/Bobs armor F.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Armor of a nameless man (masked)">>
-			<img class="outfit" src = "Textures/armor/Outfits/Unnamed mans armor and mask fem.png" width="140%" />
-		<</if>>
-        <<if $isOutfitOn is "Armor of a nameless man">>
-			<img class="outfit" src = "Textures/armor/Outfits/Unnamed mans armor fem.png" width="140%" />
-		<</if>>
-	<</if>>
+	<img class="skin" @src = "$player.cosmeticBodyL"/>
+	<img class="skin" @src = "$player.cosmeticBody"/>
+	<img class="skin" @src = "$player.cosmeticBodyR"/>
+	<img class="skin" @src = "$player.cosmeticLeggings"/>
+	<img class="skin" @src = "$player.cosmeticBoots"/>
 <</if>>
-/*hair*/
-<<if settings.hair == true>>
-<<if $hairColor is "Bald">>
-<<elseif $hairColor is "Medium black">>
-<img class="hair" src = "Textures/Body/Hair/MediumBlack.png" width="140%" />
-<<elseif $hairColor is "Medium red">>
-<img class="hair" src = "Textures/Body/Hair/MediumRed.png" width="140%" />
-<<elseif $hairColor is "Medium blond">>
-<img class="hair" src = "Textures/Body/Hair/MediumBlond.png" width="140%" />
-<<elseif $hairColor is "Medium brown">>
-<img class="hair" src = "Textures/Body/Hair/MediumBrown.png" width="140%" />
-<<elseif $hairColor is "Medium purple">>
-<img class="hair" src = "Textures/Body/Hair/MediumPurple.png" width="140%" />
-<<elseif $hairColor is "Medium blue">>
-<img class="hair" src = "Textures/Body/Hair/MediumBlue.png" width="140%" />
-<<elseif $hairColor is "Medium green">>
-<img class="hair" src = "Textures/Body/Hair/MediumGreen.png" width="140%" />
-<<elseif $hairColor is "Medium pink">>
-<img class="hair" src = "Textures/Body/Hair/MediumPink.png" width="140%" />
-<<elseif $hairColor is "Short brown">>
-<img class="hair" src = "Textures/Body/Hair/ShortBrown.png" width="140%" />
-<<elseif $hairColor is "Short red">>
-<img class="hair" src = "Textures/Body/Hair/ShortRed.png" width="140%" />
-<<elseif $hairColor is "Short green">>
-<img class="hair" src = "Textures/Body/Hair/ShortGreen.png" width="140%" />
-<<elseif $hairColor is "Short pink">>
-<img class="hair" src = "Textures/Body/Hair/ShortPink.png" width="140%" />
-<<elseif $hairColor is "Short purple">>
-<img class="hair" src = "Textures/Body/Hair/ShortPurple.png" width="140%" />
-<<elseif $hairColor is "Short blue">>
-<img class="hair" src = "Textures/Body/Hair/ShortBlue.png" width="140%" />
-<<elseif $hairColor is "Short black">>
-<img class="hair" src = "Textures/Body/Hair/ShortBlack.png" width="140%" />
-<<elseif $hairColor is "Short blond">>
-<img class="hair" src = "Textures/Body/Hair/ShortBlond.png" width="140%" />
-<<elseif $hairColor is "Long blue">>
-<img class="hair" src = "Textures/Body/Hair/LongBlue.png" width="140%" />
-<<elseif $hairColor is "Long pink">>
-<img class="hair" src = "Textures/Body/Hair/LongPink.png" width="140%" />
-<<elseif $hairColor is "Long purple">>
-<img class="hair" src = "Textures/Body/Hair/LongPurple.png" width="140%" />
-<<elseif $hairColor is "Long black">>
-<img class="hair" src = "Textures/Body/Hair/LongBlack.png" width="140%" />
-<<elseif $hairColor is "Long blond">>
-<img class="hair" src = "Textures/Body/Hair/LongBlond.png" width="140%" />
-<<elseif $hairColor is "Long red">>
-<img class="hair" src = "Textures/Body/Hair/LongRed.png" width="140%" />
-<<elseif $hairColor is "Long green">>
-<img class="hair" src = "Textures/Body/Hair/LongGreen.png" width="140%" />
-<<elseif $hairColor is "Long brown">>
-<img class="hair" src = "Textures/Body/Hair/LongBrown.png" width="140%" />
-<<elseif $hairColor is "Spiky brown">>
-<img class="hair" src = "Textures/Body/Hair/Spiky brown.png" width="140%" />
-<<elseif $hairColor is "Spiky black">>
-<img class="hair" src = "Textures/Body/Hair/Spiky black.png" width="140%" />
-<<elseif $hairColor is "Spiky blond">>
-<img class="hair" src = "Textures/Body/Hair/Spiky blond.png" width="140%" />
-<<elseif $hairColor is "Spiky purple">>
-<img class="hair" src = "Textures/Body/Hair/Spiky purple.png" width="140%" />
-<<elseif $hairColor is "Spiky green">>
-<img class="hair" src = "Textures/Body/Hair/Spiky green.png" width="140%" />
-<<elseif $hairColor is "Spiky pink">>
-<img class="hair" src = "Textures/Body/Hair/Spiky pink.png" width="140%" />
-<<elseif $hairColor is "Spiky blue">>
-<img class="hair" src = "Textures/Body/Hair/Spiky blue.png" width="140%" />
-<<elseif $hairColor is "Spiky red">>
-<img class="hair" src = "Textures/Body/Hair/Spiky red.png" width="140%" />
-<<elseif $hairColor is "Pompadour brown">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful brown hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour black">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful black hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour green">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful green hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour blond">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful blond hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour red">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful red hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour purple">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful purple hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour pink">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful pink hair.png" width="140%" />
-<<elseif $hairColor is "Pompadour blue">>
-<img class="hair" src = "Textures/Body/Hair/Beautiful blue hair.png" width="140%" />
-<<elseif $hairColor is "Medium black 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium black 2.png" width="140%" />
-<<elseif $hairColor is "Medium red 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium red 2.png" width="140%" />
-<<elseif $hairColor is "Medium blond 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium blond 2.png" width="140%" />
-<<elseif $hairColor is "Medium brown 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium brown 2.png" width="140%" />
-<<elseif $hairColor is "Medium purple 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium purple 2.png" width="140%" />
-<<elseif $hairColor is "Medium blue 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium blue 2.png" width="140%" />
-<<elseif $hairColor is "Medium green 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium green 2.png" width="140%" />
-<<elseif $hairColor is "Medium pink 2">>
-<img class="hair" src = "Textures/Body/Hair/Medium pink 2.png" width="140%" />
-<<elseif $hairColor is "Short brown spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short brown spiky.png" width="140%" />
-<<elseif $hairColor is "Short red spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short red spiky.png" width="140%" />
-<<elseif $hairColor is "Short green spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short green spiky.png" width="140%" />
-<<elseif $hairColor is "Short pink spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short pink spiky.png" width="140%" />
-<<elseif $hairColor is "Short purple spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short purple spiky.png" width="140%" />
-<<elseif $hairColor is "Short blue spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short blue spiky.png" width="140%" />
-<<elseif $hairColor is "Short black spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short black spiky.png" width="140%" />
-<<elseif $hairColor is "Short blond spiky">>
-<img class="hair" src = "Textures/Body/Hair/Short blond spiky.png" width="140%" />
-<<elseif $hairColor is "Medium black over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium black over eye.png" width="140%" />
-<<elseif $hairColor is "Medium red over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium red over eye.png" width="140%" />
-<<elseif $hairColor is "Medium blond over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium blond over eye.png" width="140%" />
-<<elseif $hairColor is "Medium brown over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium brown over eye.png" width="140%" />
-<<elseif $hairColor is "Medium purple over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium purple over eye.png" width="140%" />
-<<elseif $hairColor is "Medium blue over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium blue over eye.png" width="140%" />
-<<elseif $hairColor is "Medium green over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium green over eye.png" width="140%" />
-<<elseif $hairColor is "Medium pink over eye">>
-<img class="hair" src = "Textures/Body/Hair/Medium pink over eye.png" width="140%" />
-<<elseif $hairColor is "Long blue 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Blue 2.png" width="140%" />
-<<elseif $hairColor is "Long pink 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Pink 2.png" width="140%" />
-<<elseif $hairColor is "Long purple 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Purple 2.png" width="140%" />
-<<elseif $hairColor is "Long black 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Black 2.png" width="140%" />
-<<elseif $hairColor is "Long blond 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Blond 2.png" width="140%" />
-<<elseif $hairColor is "Long red 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Red 2.png" width="140%" />
-<<elseif $hairColor is "Long green 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Green 2.png" width="140%" />
-<<elseif $hairColor is "Long brown 2">>
-<img class="hair" src = "Textures/Body/Hair/Long Brown 2.png" width="140%" />
-<<elseif $hairColor is "Medium black 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium black 3.png" width="140%" />
-<<elseif $hairColor is "Medium red 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium red 3.png" width="140%" />
-<<elseif $hairColor is "Medium blond 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium blond 3.png" width="140%" />
-<<elseif $hairColor is "Medium brown 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium brown 3.png" width="140%" />
-<<elseif $hairColor is "Medium purple 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium purple 3.png" width="140%" />
-<<elseif $hairColor is "Medium blue 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium blue 3.png" width="140%" />
-<<elseif $hairColor is "Medium green 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium green 3.png" width="140%" />
-<<elseif $hairColor is "Medium pink 3">>
-<img class="hair" src = "Textures/Body/Hair/Medium pink 3.png" width="140%" />
-<<elseif $hairColor is "Short brown 1">>
-<img class="hair" src = "Textures/Body/Hair/Short brown 1.png" width="140%" />
-<<elseif $hairColor is "Short red 1">>
-<img class="hair" src = "Textures/Body/Hair/Short red 1.png" width="140%" />
-<<elseif $hairColor is "Short green 1">>
-<img class="hair" src = "Textures/Body/Hair/Short green 1.png" width="140%" />
-<<elseif $hairColor is "Short pink 1">>
-<img class="hair" src = "Textures/Body/Hair/Short pink 1.png" width="140%" />
-<<elseif $hairColor is "Short purple 1">>
-<img class="hair" src = "Textures/Body/Hair/Short purple 1.png" width="140%" />
-<<elseif $hairColor is "Short blue 1">>
-<img class="hair" src = "Textures/Body/Hair/Short blue 1.png" width="140%" />
-<<elseif $hairColor is "Short black 1">>
-<img class="hair" src = "Textures/Body/Hair/Short black 1.png" width="140%" />
-<<elseif $hairColor is "Short blond 1">>
-<img class="hair" src = "Textures/Body/Hair/Short blond 1.png" width="140%" />
-<</if>>
-<</if>>
-<<if settings.armor == true>>
-<<if $gender == "Male" or $gender == "Nonbinary">>
-	<<if $isChestplateOn is "Starter breastplate">>
-		<img class="armor1" src = "Textures/armor/StarterGear/Breastplate.png" width="140%" />
-	<<elseif $isChestplateOn is "Leather chestplate">>
-		<img class="armor1" src = "Textures/armor/leatherarmor/leatherChestplate.png" width="140%" />
-	<<elseif $isChestplateOn is "Heavy shadow hunter chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/shadowhunterschestplate.png" width="140%" />
-	<<elseif $isChestplateOn is "Light shadow hunter chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/shadowhunterschestplatelight.png" width="140%" />
-	<<elseif $isChestplateOn is "Hardened leather chestplate">>
-		<img class="armor1" src = "Textures/armor/heavyleatherarmor/hleatherarmorchestplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Iron breastplate">>
-		<img class="armor1" src = "Textures/armor/armor/Iron breastplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Iron armor">>
-		<img class="armor1" src = "Textures/armor/armor/Iron armor.png" width="140%" />
-    <<elseif $isChestplateOn is "Light Oni leather chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Light Oni leather chestplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Heavy Oni leather chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Heavy Oni leather chestplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Heavy stone chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Heavy stone chestplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Light stone chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Light stone chestplate.png" width="140%" />
-	<</if>> 
-<<elseif $gender == "Female">>
-	<<if $isChestplateOn is "Starter breastplate">>
-		<img class="armor1" src = "Textures/armor/StarterGear/FemBreastplate.png" width="140%" />
-	<<elseif $isChestplateOn is "Leather chestplate">>
-		<img class="armor1" src = "Textures/armor/leatherarmor/FemleatherChestplate.png" width="140%" />
-	<<elseif $isChestplateOn is "Heavy shadow hunter chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Femshadowhunterschestplate.png" width="140%" />
-	<<elseif $isChestplateOn is "Light shadow hunter chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Femshadowhunterschestplatelight.png" width="140%" />
-	<<elseif $isChestplateOn is "Hardened leather chestplate">>
-		<img class="armor1" src = "Textures/armor/heavyleatherarmor/Femhleatherarmorchestplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Iron breastplate">>
-		<img class="armor1" src = "Textures/armor/armor/Fem Iron breastplate.png" width="140%" />
-    <<elseif $isChestplateOn is "Iron armor">>
-		<img class="armor1" src = "Textures/armor/armor/Fem Iron armor.png" width="140%" />
-    <<elseif $isChestplateOn is "Light Oni leather chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Light Oni leather chestplate fem.png" width="140%" />
-    <<elseif $isChestplateOn is "Heavy Oni leather chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Heavy Oni leather chestplate fem.png" width="140%" />
-    <<elseif $isChestplateOn is "Heavy stone chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Heavy stone chestplate fem.png" width="140%" />
-    <<elseif $isChestplateOn is "Light stone chestplate">>
-		<img class="armor1" src = "Textures/armor/armor/Light stone chestplate fem.png" width="140%" />
-	<</if>> 
-<</if>>
-<</if>>
-/* capes */
+
+	<img class="skin" @src = "$player.necklace"/>
+
+	<img class="skin" @src = "$player.necklace"/>
+
+	<img class="skin" @src = "$player.lowerBack2"/>
+	<img class="skin" @src = "$player.lowerBack1"/>
+	<img class="skin" @src = "$player.back2"/>
+	<img class="skin" @src = "$player.back1"/>
+
 <<if settings.capes == true>>
-<<if $gender == "Male" or $gender == "Nonbinary">>
-	<<if $isCapeOn is "Red cape">>
-		<img class="armor1" src = "Textures/armor/capes/red cape.png" width="140%" />
-	<<elseif $isCapeOn is "Shadow hunters coat">>
-		<img class="armor1" src = "Textures/armor/capes/shadowhuntercoat.png" width="140%" />
-     <<elseif $isCapeOn is "Mysteriously vague poncho">>
-		<img class="armor1" src = "Textures/armor/capes/Mysteriously Vague Poncho.png" width="140%" />
-     <<elseif $isCapeOn is "Otherworldly remnant">>
-		<img class="armor1" src = "Textures/armor/capes/Otherworldly Remnant.png" width="140%" />
-     <<elseif $isCapeOn is "Wolf fur cape">>
-		<img class="armor1" src = "Textures/armor/capes/wolf fur cape.png" width="140%" />
-     <<elseif $isCapeOn is "Marcellus coat">>
-		<img class="armor1" src = "Textures/armor/capes/Marcellus coat male.png" width="140%" />
-     <</if>> 
-<<elseif $gender == "Female">>
-	<<if $isCapeOn is "Red cape">>
-		<img class="armor1" src = "Textures/armor/capes/Femred cape.png" width="140%" />
-	<<elseif $isCapeOn is "Shadow hunters coat">>
-		<img class="armor1" src = "Textures/armor/capes/Femshadowhuntercoat.png" width="140%" />
-     <<elseif $isCapeOn is "Mysteriously vague poncho">>
-		<img class="armor1" src = "Textures/armor/capes/Mysteriously Vague Poncho fem.png" width="140%" />
-     <<elseif $isCapeOn is "Otherworldly remnant">>
-		<img class="armor1" src = "Textures/armor/capes/Otherworldly Remnant fem.png" width="140%" />
-     <<elseif $isCapeOn is "Wolf fur cape">>
-		<img class="armor1" src = "Textures/armor/capes/wolf fur cape fem.png" width="140%" />
-     <<elseif $isCapeOn is "Marcellus coat">>
-		<img class="armor1" src = "Textures/armor/capes/Marcellus coat female.png" width="140%" />
-     <</if>>
+	<img class="skin" @src = "$player.cape"/>
 <</if>>
+
+	<img class="skin" @src = "$player.hipL"/>
+	<img class="skin" @src = "$player.hipR"/>
+
+/*hair*/
+<<if settings.hair == true && $player.helmet !== "">>
+	<img class="skin" @src = "$player.hairFront"/>
+	<img class="skin" @src = "$player.hairTop"/>
 <</if>>
+
+<<if settings.armor == true>>
+	<img class="skin" @src = "$player.helmet"/>
+<</if>>
+<<if settings.outfits == true>>
+	<img class="skin" @src = "$player.cosmeticHead"/>
+<</if>>
+
 /* weapons */
 <<if settings.weapons == true>>
-<<if $isWeaponSkinOn == "None">>
-<<if $isWeaponOn is "Starter sword">>
-<img class="sword" src = "Textures/armor/StarterGear/Starter Sword.png" width="140%" />
-<<elseif $isWeaponOn is "Iron Shovel">>
-<img class="sword" src = "Textures/weapons/ironshovel.png" width="140%" />
-<<elseif $isWeaponOn is "Copper short sword and a shield">>
-<img class="sword" src = "Textures/weapons/coppershortswordwshield.png" width="140%" />
-<<elseif $isWeaponOn is "Copper sword">>
-<img class="sword" src = "Textures/weapons/coppersword.png" width="140%" />
-<<elseif $isWeaponOn is "Copper dagger">>
-<img class="sword" src = "Textures/weapons/Copper dagger.png" width="140%" />
-<<elseif $isWeaponOn is "Copper mace">>
-<img class="sword" src = "Textures/weapons/Copper mace.png" width="140%" />
-<<elseif $isWeaponOn is "Copper gauntlets">>
-<img class="sword" src = "Textures/weapons/Copper gauntlets.png" width="140%" />
-<<elseif $isWeaponOn is "Copper rapier">>
-<img class="sword" src = "Textures/weapons/copperrapier.png" width="140%" />
-<<elseif $isWeaponOn is "Copper katana">>
-<img class="sword" src = "Textures/weapons/copperkatana.png" width="140%" />
-<<elseif $isWeaponOn is "Copper heavy sword">>
-<img class="sword" src = "Textures/weapons/copperheavysword.png" width="140%" />
-<<elseif $isWeaponOn is "Iron Axe">>
-<img class="sword" src = "Textures/weapons/ironaxe.png" width="140%" />
-<<elseif $isWeaponOn is "Iron pickaxe">>
-<img class="sword" src = "Textures/weapons/pickaxe.png" width="140%" />
-<<elseif $isWeaponOn is "Bone heavy sword">>
-<img class="sword" src = "Textures/weapons/boneheavysword.png" width="140%" />
-<<elseif $isWeaponOn is "Bone sword">>
-<img class="sword" src = "Textures/weapons/bonesword.png" width="140%" />
-<<elseif $isWeaponOn is "Bone rapier">>
-<img class="sword" src = "Textures/weapons/bonerapier.png" width="140%" />
-<<elseif $isWeaponOn is "Bone short sword and a shield">>
-<img class="sword" src = "Textures/weapons/boneshortswordwshield.png" width="140%" />
-<<elseif $isWeaponOn is "Copper sword with crystal fragments">>
-<img class="sword" src = "Textures/weapons/copperswordwithcrystalfragments.png" width="140%" />
-<<elseif $isWeaponOn is "Copper dagger with crystal fragments">>
-<img class="sword" src = "Textures/weapons/Copper dagger with crystal fragments.png" width="140%" />
-<<elseif $isWeaponOn is "Copper mace with crystal fragments">>
-<img class="sword" src = "Textures/weapons/Copper mace with crystal fragments.png" width="140%" />
-<<elseif $isWeaponOn is "Copper gauntlets with crystal fragments">>
-<img class="sword" src = "Textures/weapons/Copper gauntlets with crystal fragments.png" width="140%" />
-<<elseif $isWeaponOn is "Copper rapier with crystal fragments">>
-<img class="sword" src = "Textures/weapons/copperrapierwithcrystalfragments.png" width="140%" />
-<<elseif $isWeaponOn is "Copper heavy sword with crystal fragments">>
-<img class="sword" src = "Textures/weapons/copperheavyswordwithcrystalfragments.png" width="140%" />
-<<elseif $isWeaponOn is "Iron dagger">>
-<img class="sword" src = "Textures/weapons/Iron dagger.png" width="140%" />
-<<elseif $isWeaponOn is "Iron mace">>
-<img class="sword" src = "Textures/weapons/Iron mace.png" width="140%" />
-<<elseif $isWeaponOn is "Iron gauntlets">>
-<img class="sword" src = "Textures/weapons/Iron gauntlets.png" width="140%" />
-<<elseif $isWeaponOn is "Iron dagger with a wooden handle">>
-<img class="sword" src = "Textures/weapons/Iron dagger with a wooden handle.png" width="140%" />
-<<elseif $isWeaponOn is "Iron mace with a wooden handle">>
-<img class="sword" src = "Textures/weapons/Iron mace with a wooden handle.png" width="140%" />
-<<elseif $isWeaponOn is "Iron gauntlets with crystal fragments">>
-<img class="sword" src = "Textures/weapons/Iron gauntlets with crystal fragments.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth dagger">>
-<img class="sword" src = "Textures/weapons/Oni teeth dagger.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth mace">>
-<img class="sword" src = "Textures/weapons/Oni teeth mace.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth gauntlets">>
-<img class="sword" src = "Textures/weapons/Oni teeth gauntlets.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather dagger">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather dagger.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather mace">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather mace.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather gauntlets">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather gauntlets.png" width="140%" />
-<<elseif $isWeaponOn is "Copper short sword and a shield with crystal fragments">>
-<<elseif $isWeaponOn is "Copper short sword and a shield with crystal fragments">>
-<img class="sword" src = "Textures/weapons/coppershortswordwshieldwithcrystalfragments.png" width="140%" />
-<<elseif $isWeaponOn is "Iron short sword and a shield">>
-<img class="sword" src = "Textures/weapons/Iron sword n shield.png" width="140%" />
-<<elseif $isWeaponOn is "Iron sword">>
-<img class="sword" src = "Textures/weapons/Iron sword.png" width="140%" />
-<<elseif $isWeaponOn is "Iron rapier">>
-<img class="sword" src = "Textures/weapons/Iron rapier.png" width="140%" />
-<<elseif $isWeaponOn is "Iron heavy sword">>
-<img class="sword" src = "Textures/weapons/Iron heavy sword.png" width="140%" />
-<<elseif $isWeaponOn is "Iron short sword and a shield with a wooden handle">>
-<img class="sword" src = "Textures/weapons/Iron sword n shield with a wooden handle.png" width="140%" />
-<<elseif $isWeaponOn is "Iron sword with a wooden handle">>
-<img class="sword" src = "Textures/weapons/Iron sword with a wooden handle.png" width="140%" />
-<<elseif $isWeaponOn is "Iron rapier with a wooden handle">>
-<img class="sword" src = "Textures/weapons/Iron rapier with a wooden handle.png" width="140%" />
-<<elseif $isWeaponOn is "Iron heavy sword with a wooden handle">>
-<img class="sword" src = "Textures/weapons/Iron heavy sword with a wooden handle.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth heavy sword">>
-<img class="sword" src = "Textures/weapons/Oni teeth heavy sword.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth sword">>
-<img class="sword" src = "Textures/weapons/Oni teeth sword.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth rapier">>
-<img class="sword" src = "Textures/weapons/Oni teeth rapier.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth short sword and a shield">>
-<img class="sword" src = "Textures/weapons/Oni teeth shield n sword.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather heavy sword">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather heavy sword.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather sword">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather sword.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather rapier">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather rapier.png" width="140%" />
-<<elseif $isWeaponOn is "Oni teeth and leather short sword and a shield">>
-<img class="sword" src = "Textures/weapons/Oni teeth and leather shield n sword.png" width="140%" />
-<<elseif $isWeaponOn is "Boulder slayer">>
-<img class="sword" src = "Textures/weapons/Boulder slayer.png" width="140%" />
+	<img class="skin" @src = "$player.leftHand"/>
+	<img class="skin" @src = "$player.rightHand"/>
 <</if>>
-<<elseif $isWeaponSkinOn !== "None">>
-	<<if $isWeaponSkinOn is "Flower rapier">>
-		<img class="sword" src = "Textures/weapons/Flower rapier.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Blood drainer">>
-		<img class="sword" src = "Textures/weapons/Blood drainer.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Shadow taker">>
-		<img class="sword" src = "Textures/weapons/Shadow taker.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Tarnished imprint">>
-		<img class="sword" src = "Textures/weapons/Kirin sword.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Dusters resort">>
-		<img class="sword" src = "Textures/weapons/Toru gauntlets.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Blood sword">>
-		<img class="sword" src = "Textures/weapons/Blood sword.gif" width="140%" />
-    <<elseif $isWeaponSkinOn is "Candy cane sword">>
-		<img class="sword" src = "Textures/weapons/Candy cane sword.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Candy cane heavy sword">>
-		<img class="sword" src = "Textures/weapons/Candy cane heavy sword.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Candy cane rapier">>
-		<img class="sword" src = "Textures/weapons/Candy cane rapier.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Candy cane shield and sword">>
-		<img class="sword" src = "Textures/weapons/Candy cane shield n sword.png" width="140%" />
-    <<elseif $isWeaponSkinOn is "Asterias potato sack">>
-		<img class="sword" src = "Textures/weapons/Potato sack.png" width="140%" />
-	<<elseif $isWeaponSkinOn is "Dookie sword">>
-		<img class="sword" src = "Textures/weapons/Shit sword.png" width="140%" />
-	<</if>>
-<</if>>
+
+<<if settings.outfits == true>>
+	<img class="skin" @src = "$player.cosmeticHandL"/>
+	<img class="skin" @src = "$player.cosmeticHandR"/>
 <</if>>
 /* RINGS */
-<<nobr>>
-	<<if $Finger1 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 1.png" width="140%" />
-	<</if>>
-	<<if $Finger2 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 2.png" width="140%" />
-	<</if>>
-	<<if $Finger3 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 3.png" width="140%" />
-	<</if>>
-	<<if $Finger4 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 4.png" width="140%" />
-	<</if>>
-	<<if $Finger5 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 5.png" width="140%" />
-	<</if>>
-	<<if $Finger9 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 6.png" width="140%" />
-	<</if>>
-	<<if $Finger10 is "Diamond ring">>
-		<img class="sword" src = "Textures/Ring/Diamond ring 7.png" width="140%" />
-	<</if>>
-    <<if $Finger1 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 1.png" width="140%" />
-	<</if>>
-	<<if $Finger2 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 2.png" width="140%" />
-	<</if>>
-	<<if $Finger3 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 3.png" width="140%" />
-	<</if>>
-	<<if $Finger4 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 4.png" width="140%" />
-	<</if>>
-	<<if $Finger5 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 5.png" width="140%" />
-	<</if>>
-	<<if $Finger9 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 6.png" width="140%" />
-	<</if>>
-	<<if $Finger10 is "Silver ring">>
-		<img class="sword" src = "Textures/Ring/Silver ring 7.png" width="140%" />
-	<</if>>
-    <<if $Finger1 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 1.png" width="140%" />
-	<</if>>
-	<<if $Finger2 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 2.png" width="140%" />
-	<</if>>
-	<<if $Finger3 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 3.png" width="140%" />
-	<</if>>
-	<<if $Finger4 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 4.png" width="140%" />
-	<</if>>
-	<<if $Finger5 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 5.png" width="140%" />
-	<</if>>
-	<<if $Finger9 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 6.png" width="140%" />
-	<</if>>
-	<<if $Finger10 is "Golden ring">>
-		<img class="sword" src = "Textures/Ring/Golden ring 7.png" width="140%" />
-	<</if>>
-    <<if $Finger1 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 1.png" width="140%" />
-	<</if>>
-	<<if $Finger2 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 2.png" width="140%" />
-	<</if>>
-	<<if $Finger3 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 3.png" width="140%" />
-	<</if>>
-	<<if $Finger4 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 4.png" width="140%" />
-	<</if>>
-	<<if $Finger5 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 5.png" width="140%" />
-	<</if>>
-	<<if $Finger9 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 6.png" width="140%" />
-	<</if>>
-	<<if $Finger10 is "Tearful tomb ring">>
-		<img class="sword" src = "Textures/Ring/Tearful tomb ring 7.png" width="140%" />
-	<</if>>
-    <<if $Finger1 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 1.png" width="140%" />
-	<</if>>
-	<<if $Finger2 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 2.png" width="140%" />
-	<</if>>
-	<<if $Finger3 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 3.png" width="140%" />
-	<</if>>
-	<<if $Finger4 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 4.png" width="140%" />
-	<</if>>
-	<<if $Finger5 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 5.png" width="140%" />
-	<</if>>
-	<<if $Finger9 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 6.png" width="140%" />
-	<</if>>
-	<<if $Finger10 is "Ring of achieving">>
-		<img class="sword" src = "Textures/Ring/Ring of achieving 7.png" width="140%" />
-	<</if>>
-    <<if $Finger1 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 1.png" width="140%" />
-	<</if>>
-	<<if $Finger2 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 2.png" width="140%" />
-	<</if>>
-	<<if $Finger3 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 3.png" width="140%" />
-	<</if>>
-	<<if $Finger4 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 4.png" width="140%" />
-	<</if>>
-	<<if $Finger5 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 5.png" width="140%" />
-	<</if>>
-	<<if $Finger9 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 6.png" width="140%" />
-	<</if>>
-	<<if $Finger10 is "Ring of the undead">>
-		<img class="sword" src = "Textures/Ring/Undead ring 7.png" width="140%" />
-	<</if>>
-    <<if $Finger1 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 1.png" width="140%" />
-<</if>>
-<<if $Finger2 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 2.png" width="140%" />
-<</if>>
-<<if $Finger3 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 3.png" width="140%" />
-<</if>>
-<<if $Finger4 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 4.png" width="140%" />
-<</if>>
-<<if $Finger5 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 5.png" width="140%" />
-<</if>>
-<<if $Finger9 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 6.png" width="140%" />
-<</if>>
-<<if $Finger10 is "Ring of the living">>
-  <img class="sword" src = "Textures/Ring/Ring of the living 7.png" width="140%" />
-<</if>>
 
-/* OUTFIT FRONT */
-<<if $isOutfitOn is "Asterias flower crown">>
-		<img class="outfit" src = "Textures/armor/Outfits/Asteria flower crown.png" width="140%" />
-<</if>>
-<<if $isOutfitOn is "Christmas hat">>
-		<img class="outfit" src = "Textures/armor/Outfits/Christmas hat.png" width="140%" />
-<</if>>
-<<if $isOutfitOn is "Pumpkin head">>
-		<img class="outfit" src = "Textures/armor/Outfits/Pumpkin head.png" width="140%" />
-<</if>>
+/* Hats helmets */
 
-<</nobr>>
 <<if $location is "dungeon" or $location is "cave1">>
-		<img class="time" src = "Textures/Time/Dungeon lightning.png" width="140%" />
+	<img class="time" src = "Textures/Time/Dungeon lightning.png" width="140%" />
 <</if>>
 <<if settings.characterFrame == true>>
 	<img class="location" src = "Textures/Locations/Frame.png" width="140%" />
 <</if>>
 </div>
+
 <</nobr>>
 <</widget>>
 
