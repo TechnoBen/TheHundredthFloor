@@ -1,66 +1,76 @@
 :: StoryCaption [data <nobr>] {"position":"1750,100","size":"100,100"}
 <<if $NoSideBar === true>>\
-  -------------------------------
+-------------------------------\
   <center><h1>THE HUNDREDTH FLOOR</h1>\
-  -------------------------------
+-------------------------------\
   A game by TechnoBen
   Beta version: [[0.1.17]]
   (subject to change)
-  -------------------------------
-  <<if settings.buttons == true>>\
-  <<link "<img src='Textures/Buttons/Achievements.png'>">>
-  <<script>>
-  Dialog.setup("Achievements", "achievements");
-  Dialog.wiki(Story.get("Achievements").processText());
-  Dialog.open();
-  <</script>>
-  <</link>>
-  <<link "<img src='Textures/Buttons/Debug.png'>">>
-  <<script>>
-  Dialog.setup("Debug", "debug");
-  Dialog.wiki(Story.get("Debug").processText());
-  Dialog.open();
-  <</script>>
-  <</link>>
-  <<elseif settings.buttons == false>>\
-  <div class="UIButtons">\
-  <<button "Guide">>
-  <<script>>
-  Dialog.setup("Guide", "guide");
-  Dialog.wiki(Story.get("Guide").processText());
-  Dialog.open();
-  <</script>>
-  <</button>>
+-------------------------------\
+  <<if settings.buttons === "Buttons vertical">>\
+    <<link "<img src='Textures/Buttons/Achievements.png'>">>
+      <<script>>
+        Dialog.setup("Achievements", "achievements");
+        Dialog.wiki(Story.get("Achievements").processText());
+        Dialog.open();
+       <</script>>
+    <</link>>
+    <<link "<img src='Textures/Buttons/Debug.png'>">>
+      <<script>>
+        Dialog.setup("Debug", "debug");
+        Dialog.wiki(Story.get("Debug").processText());
+        Dialog.open();
+      <</script>>
+    <</link>>
+<<elseif settings.buttons === "Buttons horizontal">>\
+<div class="UIButtons">\
   <<button "Achievements">>
-  <<script>>
-  Dialog.setup("Achievements", "achievements");
-  Dialog.wiki(Story.get("Achievements").processText());
-  Dialog.open();
-  <</script>>
+    <<script>>
+      Dialog.setup("Achievements", "achievements");
+      Dialog.wiki(Story.get("Achievements").processText());
+      Dialog.open();
+    <</script>>
   <</button>>
   <<button "Debug">>	
-  <<script>>
-  Dialog.setup("Debug", "debug");
-  Dialog.wiki(Story.get("Debug").processText());
-  Dialog.open();
-  <</script>>
+    <<script>>
+      Dialog.setup("Debug", "debug");
+      Dialog.wiki(Story.get("Debug").processText());
+      Dialog.open();
+    <</script>>
   <</button>>
-  </div>\
-  <</if>>\
-  </center>\
-  -------------------------------
-  <<else>>\
-  -------------------------------
-  <<Player>> <</Player>>
+</div>\
+  <<elseif settings.buttons === "Buttons vertical text">>\
+  <div class="left">\
+    <<link "<img src='Textures/Buttons/Achievements.png'>">> 
+      <<script>>
+        Dialog.setup("Achievements", "achievements");
+        Dialog.wiki(Story.get("Achievements").processText());
+        Dialog.open();
+       <</script>>
+    <</link>> Achievements
+    <<link "<img src='Textures/Buttons/Debug.png'>">> 
+      <<script>>
+        Dialog.setup("Debug", "debug");
+        Dialog.wiki(Story.get("Debug").processText());
+        Dialog.open();
+      <</script>>
+    <</link>> Debug
+</div>\
+<</if>>\
+</center>\
+-------------------------------\
+<<else>>\
+-------------------------------\
+<<Player>> <</Player>>
   
   
   
   
   
-  -------------------------------
-  <<date " [day_short] [month_short] [d], [y] [h]:[0m]">> 
-  -------------------------------
-  \<<nobr>>\
+-------------------------------\
+<<date " [day_short] [month_short] [d], [y] [h]:[0m]">> 
+-------------------------------\
+\<<nobr>>\
   <<if settings.UIbars == "Large">>
   <center><<hovertip "<<= $CurHP.toFixed(0)>>/<<= $MaxHP.toFixed(0)>>">>Health:<</hovertip>>  <<showmeter 'health3' `$CurHP /$MaxHP`>></center>
   <center><<hovertip "<<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>">>Stamina:<</hovertip>> <<showmeter 'stamina3' `$curStamina /$maxStamina`>></center>
@@ -81,8 +91,8 @@
   <center><<hovertip "<<= $curStamina.toFixed(0)>>/<<= $maxStamina.toFixed(0)>>">>Stamina:<</hovertip>> <<showmeter 'stamina1' `$curStamina /$maxStamina`>></center>
   <center><<hovertip "<<= $curHunger.toFixed(0)>>/<<= $maxHunger.toFixed(0)>>">>Hunger:<</hovertip>> <<showmeter 'hunger1' `$curHunger /$maxHunger`>></center> 
   <center><<hovertip "<<= $curFatigue.toFixed(0)>>/<<= $maxFatigue.toFixed(0)>>">>Fatigue:<</hovertip>> <<showmeter 'fatigue1' `$curFatigue /$maxFatigue`>></center>\<</if>><</nobr>>\
-  -------------------------------
-  <<if settings.buttons === "Buttons vertical">>\
+-------------------------------\
+<<if settings.buttons === "Buttons vertical">>\
   <<link "<img src='Textures/Buttons/Inventory.png'>">>
   <<script>>
   Dialog.setup("Inventory", "inv");
@@ -118,14 +128,15 @@
   Dialog.open();
   <</script>>
   <</link>>
-  <<if $eventStart is true>>\
+<<if $eventStart is true>>\
   <<link "<img src='Textures/Buttons/Logout.png'>">>
   	<<set $lastVisitedPassageLog to passage()>>
     <<set $location to "start">>
     <<goto "Start the game">>
   <</link>>
-  <</if>>\
-  <<elseif settings.buttons === "Buttons vertical text">>\
+<</if>>\
+<<elseif settings.buttons === "Buttons vertical text">>\
+<div class="left">\
   <<link "<img src='Textures/Buttons/Inventory.png'>">>
   <<script>>
   Dialog.setup("Inventory", "inv");
@@ -161,14 +172,15 @@
   Dialog.open();
   <</script>>
   <</link>> Debug
-  <<if $eventStart is true>>\
+<<if $eventStart is true>>\
   <<link "<img src='Textures/Buttons/Logout.png'>">>
   	<<set $lastVisitedPassageLog to passage()>>
     <<set $location to "start">>
     <<goto "Start the game">> Logout
   <</link>>
-  <</if>>\
-  <<elseif settings.buttons === "Buttons text">>\
+<</if>>\
+</div>\
+<<elseif settings.buttons === "Buttons text">>\
   <div class="UIButtons">\
   <<button "Inventory">>
   <<script>>
@@ -251,7 +263,7 @@
   <</link>>
   <</if>>\
   <</if>>\
-  -------------------------------
+  -------------------------------\
   <</if>>
 
 

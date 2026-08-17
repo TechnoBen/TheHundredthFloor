@@ -1800,7 +1800,7 @@ Setting.addList("UIbars", {
 // UI bars end
 
 // UI bars (hp stm fatigue hunger)
-var settingbuttons = ["Buttons vertical text","Buttons vertical","Buttons horizontal","Buttons text"];
+var settingbuttons = ["Buttons vertical","Buttons vertical text","Buttons horizontal","Buttons text"];
 Setting.addList("buttons", {
 	label		: "Change the style of the sidebar buttons.",
 	list		: settingbuttons,
@@ -1850,6 +1850,11 @@ Setting.addToggle("eyes", {
 	default  : true,
 }); 
 
+// boobs... how the hell do i say this without sounding creepy? This just adds or removes boobs.
+Setting.addToggle("boobs", {
+	label : "Female body even if you're not a woman.",
+	default  : false,
+}); 
 
 // Visible capes
 Setting.addToggle("capes", {

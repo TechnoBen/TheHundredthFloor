@@ -1,486 +1,201 @@
 :: Wardrobe [no-fainting-or-hunger no-party-time-loss] {"position":"1625,350","size":"100,100"}
 <h1><b>Your equipment</b></h1>\
-Body: <<if $isShirtOn is "None">> None <<else>> <<link "$isShirtOn">> <<if $isShirtOn?.includes('shirt')>> <<set $isShirtOn to "None">> <</if>> <<set $isShirtOn = "None">> <<goto "Wardrobe">> <</link>> <</if>> + <<if $isChestplateOn is "None">> None <<else>> <<link "$isChestplateOn">> 
-  <<if $isChestplateOn is "Starter breastplate">> 
-    <<set $armorBluntDEF -= 1>> 
-    <<set $armorPierceDEF -= 1>> 
-  <<elseif $isChestplateOn is "Leather chestplate">> 
-    <<set $armorSlashDEF -= 1.8>> 
-    <<set $armorPierceDEF -= 0.8>> 
-    <<set $armorBluntDEF -= 1.5>> 
-  <<elseif $isChestplateOn is "Hardened leather chestplate">> 
-    <<set $armorSlashDEF -= 3.5>> 
-    <<set $armorPierceDEF -= 1.9>> 
-    <<set $armorBluntDEF -= 3.1>> 
-    <<set $maxStamina += 24>> 
-  <<elseif $isChestplateOn is "Iron breastplate">> 
-    <<set $armorSlashDEF -= 4.7>> 
-    <<set $armorPierceDEF -= 2.1>>
-    <<set $armorBluntDEF -= 0.6>> 
-  <<elseif $isChestplateOn is "Iron armor">> 
-    <<set $armorSlashDEF -= 8.1>> 
-    <<set $armorPierceDEF -= 4>> 
-    <<set $armorBluntDEF -= 0.95>> 
-    <<set $maxStamina += 30>> 
-  <<elseif $isChestplateOn is "Heavy shadow hunter chestplate">> 
-    <<set $armorSlashDEF -= 11>> 
-    <<set $armorPierceDEF -= 7.5>> 
-    <<set $armorBluntDEF -= 1>> 
-    <<set $maxStamina += 39>> 
-  <<elseif $isChestplateOn is "Light shadow hunter chestplate">> 
-    <<set $armorSlashDEF -= 7>> 
-    <<set $armorPierceDEF -= 4.5>> 
-    <<set $armorBluntDEF -= 0.3>> 
-  <<elseif $isChestplateOn is "Heavy Oni leather chestplate">> 
-    <<set $armorSlashDEF -= 11.34>> 
-    <<set $armorPierceDEF -= 2.5>> 
-    <<set $armorBluntDEF -= 8.51>> 
-    <<set $maxStamina += 45>> 
-  <<elseif $isChestplateOn is "Light Oni leather chestplate">> 
-    <<set $armorSlashDEF -= 8.2>> 
-    <<set $armorPierceDEF -= 1.65>> 
-    <<set $armorBluntDEF -= 5.9>> 
-  <<elseif $isChestplateOn is "Heavy stone chestplate">> 
-    <<set $armorSlashDEF -= 21>> 
-    <<set $armorPierceDEF += 7>> 
-    <<set $armorBluntDEF -= 21>> 
-    <<set $maxStamina += 97>> 
-  <<elseif $isChestplateOn is "Light stone chestplate">> 
-    <<set $armorSlashDEF -= 16>> 
-    <<set $armorPierceDEF += 5.5>> 
-    <<set $armorBluntDEF -= 16>> 
-    <<set $maxStamina += 20>> 
-  <</if>> 
-  <<set $isChestplateOn = "None">> 
-  <<goto "Wardrobe">> 
-<</link>> <</if>> + <<if $isCapeOn is "None">> None <<else>><<link "$isCapeOn">> 
-  <<if $isCapeOn is "Red cape">> 
-    <<set $maxStamina -= 20>> 
-  <<elseif $isCapeOn is "Marcellus coat">> 
-    <<set $maxStamina -= 10>> 
-    <<set $MaxHP -= 2>> 
-  <<elseif $isCapeOn is "Shadow hunters coat">> 
-    <<set $MaxHP -= 97>> 
-    <<set $maxStamina -= 85>> 
-  <<elseif $isCapeOn is "Wolf fur cape">> 
-    <<set $MaxHP -= 112>> 
-    <<set $maxStamina -= 95>> 
-  <<elseif $isCapeOn is "Mysteriously vague poncho">> 
-    <<set $MaxHP -= 10>> 
-    <<set $maxStamina -= 25>> 
-  <<elseif $isCapeOn is "Otherworldly remnant">> 
-    <<set $MaxHP -= 34>> 
-    <<set $maxStamina -= 33>> 
-  <</if>> 
-  <<goto "Wardrobe">> 
-  <<set $isCapeOn = "None">> 
-<</link>> <</if>> + <<if $isOutfitOn is "None">> None <<else>> <<link "$isOutfitOn">> 
-  <<if $isShirtOn is "Outfit 5">> 
-    <<set $maxStamina -= 50>> 
-    <<set $armorDEF += 3>> 
-    <<set $isShirtOn to "None">> 
-  <<elseif $isShirtOn is "Outfit 1">> 
-    <<set $isShirtOn to "None">> 
-    <<set $armorDEF += 1>> 
-  <<elseif $isShirtOn is "Outfit 2">> 
-    <<set $isShirtOn to "None">> 
-    <<set $maxStamina -= 25>> 
-  <<elseif $isShirtOn is "Outfit 4">> 
-    <<set $isShirtOn to "None">> 
-  <<elseif $isShirtOn is "Outfit 7">> 
-    <<set $isShirtOn = "None">>
-    <<set $maxStamina -= 25>> 
-    <<set $armorDEF += 1>> 
-  <<elseif $isShirtOn is "Outfit 9">> 
-    <<set $isShirtOn = "None">>
-    <<set $INT -= 1>> 
-  <<elseif $isShirtOn is "Outfit 10">> 
-    <<set $isShirtOn = "None">>
-    <<set $INT += 2>> 
-  <</if>> 
-  <<set $isOutfitOn to "None">> 
-  <<goto "Wardrobe">> 
-<</link>> <</if>>
-Legs: <<if $isPantsOn is "None">> None <<else>> <<link "$isPantsOn">>
+<nobr>Head: <<if $player.helmet is "None">> Helmet <<else>> <<link "$player.helmet.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.helmet.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.helmet.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.helmet>>
     <<goto "Wardrobe">>
-    <<set $isPantsOn to "None">> 
-<</link>> <</if>> + <<if $isArmorPantsOn is "None">> None <<else>> <<link "$isArmorPantsOn">> 
-  <<if $isArmorPantsOn is "Leather pants">> 
-    <<set $armorSlashDEF -= 1.6>> 
-    <<set $armorPierceDEF -= 0.9>> 
-    <<set $armorBluntDEF -= 1.4>> 
-  <<elseif $isArmorPantsOn is "Hardened leather pants">> 
-    <<set $armorSlashDEF -= 3.2>> 
-    <<set $armorPierceDEF -= 1.5>> 
-    <<set $armorBluntDEF -= 2.8>> 
-    <<set $maxStamina += 17>> 
-  <<elseif $isArmorPantsOn is "Iron leg guards">> 
-    <<set $armorSlashDEF -= 3.2>> 
-    <<set $armorPierceDEF -= 1.7>> 
-    <<set $armorBluntDEF -= 0.35>> 
-  <<elseif $isArmorPantsOn is "Iron pants">> 
-    <<set $armorSlashDEF -= 5.5>> 
-    <<set $armorPierceDEF -= 2.75>> 
-    <<set $armorBluntDEF -= 0.67>> 
-    <<set $maxStamina += 27>> 
-  <<elseif $isArmorPantsOn is "Light Oni leather pants">> 
-    <<set $armorSlashDEF -= 6.56>> 
-    <<set $armorPierceDEF -= 0.9>> 
-    <<set $armorBluntDEF -= 3.78>> 
-  <<elseif $isArmorPantsOn is "Heavy Oni leather pants">> 
-    <<set $armorSlashDEF -= 9.45>> 
-    <<set $armorPierceDEF -= 1.68>> 
-    <<set $armorBluntDEF -= 7.57>> 
-    <<set $maxStamina += 39>> 
-  <</if>> 
-  <<goto "Wardrobe">> 
-  <<set $isArmorPantsOn to "None">> 
-<</link>> <</if>>
-Feet: <<if $isBootsOn is "None">> None <<else>> <<link "$isBootsOn">>
+  <<set $player.helmet = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> </nobr>
+<nobr>Body: <<if $player.shirt is "None">> Shirt <<else>> <<link "$player.shirt.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.shirt.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.shirt.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.shirt>>
     <<goto "Wardrobe">>
-    <<set $isBootsOn to "None">>
-<</link>> <</if>> + <<if $isArmorBootsOn is "None">> None <<else>> <<link "$isArmorBootsOn">> 
-  <<if $isArmorBootsOn is "Leather boots">> 
-    <<set $armorSlashDEF -= 0.8>> 
-    <<set $armorPierceDEF -= 0.3>> 
-    <<set $armorBluntDEF -= 0.5>> 
-  <<elseif $isArmorBootsOn is "Hardened leather boots">> 
-    <<set $armorSlashDEF -= 2.5>> 
-    <<set $armorPierceDEF -= 1.1>> 
-    <<set $armorBluntDEF -= 1.8>> 
-    <<set $maxStamina += 17>> 
-  <<elseif $isArmorBootsOn is "Iron feet guards">> 
-    <<set $armorSlashDEF -= 1.8>> 
-    <<set $armorPierceDEF -= 0.95>> 
-    <<set $armorBluntDEF -= 0.2>> 
-  <<elseif $isArmorBootsOn is "Iron boots">> 
-    <<set $armorSlashDEF -= 4.2>> 
-    <<set $armorPierceDEF -= 1.62>> 
-    <<set $armorBluntDEF -= 0.34>> 
-    <<set $maxStamina += 20>> 
-  <<elseif $isArmorBootsOn is "Light Oni leather boots">> 
-    <<set $armorSlashDEF -= 4.78>> 
-    <<set $armorPierceDEF -= 0.68>> 
-    <<set $armorBluntDEF -= 1.92>> 
-  <<elseif $isArmorBootsOn is "Heavy Oni leather boots">> 
-    <<set $armorSlashDEF -= 8>> 
-    <<set $armorPierceDEF -= 1.12>> 
-    <<set $armorBluntDEF -= 5.92>> 
-    <<set $maxStamina += 33>> 
-  <</if>> 
-  <<goto "Wardrobe">> 
-  <<set $isArmorBootsOn to "None">> 
-<</link>> <</if>>
-Weapon: <<if $isWeaponOn is "None">> None <<else>> <<link "$isWeaponOn">> 
-  <<if $isWeaponOn is "Starter sword">> 
-    <<set $weaponSlashDMG -= 1>> 
-    <<set $weaponPierceDMG -= 0.25>> 
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 0.43>>
-  <<elseif $isWeaponOn is "Copper sword">> 
-    <<set $weaponSlashDMG -= 2>> 
-    <<set $weaponPierceDMG -= 0.5>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Iron sword">> 
-    <<set $weaponSlashDMG -= 6>> 
-    <<set $weaponPierceDMG -= 2.25>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Iron sword with a wooden handle">> 
-    <<set $weaponSlashDMG -= 7>> 
-    <<set $weaponPierceDMG -= 4>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Copper sword with crystal fragments">> 
-    <<set $weaponSlashDMG -= 5>> 
-    <<set $weaponPierceDMG -= 1.75>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Copper short sword and a shield">> 
-    <<set $weaponSlashDMG -= 1>> 
-    <<set $weaponBluntDMG -= 1>> 
-    <<set $armorSlashDEF -= 1>> 
-    <<set $armorPierceDEF -= 0.5>> 
-    <<set $armorBluntDEF -= 1>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Copper rapier">> 
-    <<set $weaponPierceDMG -= 1>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Copper heavy sword">> 
-    <<set $weaponSlashDMG -= 4>> 
-    <<set $weaponBluntDMG -= 2.75>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Copper dagger">> 
-    <<set $weaponPierceDMG -= 1>> 
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 3>>
-  <<elseif $isWeaponOn is "Copper mace">> 
-    <<set $weaponBluntDMG -= 2>>
-  <<elseif $isWeaponOn is "Copper gauntlets">> 
-    <<set $weaponBluntDMG -= 1.5>> 
-  <<elseif $isWeaponOn is "Iron gauntlets">> 
-    <<set $weaponBluntDMG -= 5.2>>
-  <<elseif $isWeaponOn is "Iron dagger">> 
-    <<set $weaponPierceDMG -= 3.8>>
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 3>>
-  <<elseif $isWeaponOn is "Iron mace">> 
-    <<set $weaponBluntDMG -= 6.5>>
-  <<elseif $isWeaponOn is "Iron gauntlets with crystal fragments">> 
-    <<set $weaponBluntDMG -= 7>>
-  <<elseif $isWeaponOn is "Iron dagger with a wooden handle">> 
-    <<set $weaponPierceDMG -= 5>>
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 3>>
-  <<elseif $isWeaponOn is "Iron mace with a wooden handle">> 
-    <<set $weaponBluntDMG -= 6>> 
-  <<elseif $isWeaponOn is "Oni teeth gauntlets">> 
-    <<set $weaponBluntDMG -= 10.5>>
-  <<elseif $isWeaponOn is "Oni teeth dagger">> 
-    <<set $weaponPierceDMG -= 9.1>>
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 3>>
-  <<elseif $isWeaponOn is "Oni teeth mace">> 
-    <<set $weaponBluntDMG -= 11>>
-  <<elseif $isWeaponOn is "Oni teeth and leather gauntlets">> 
-    <<set $weaponBluntDMG -= 12.6>>
-  <<elseif $isWeaponOn is "Oni teeth and leather dagger">> 
-    <<set $weaponPierceDMG -= 11.1>>
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 3>>
-  <<elseif $isWeaponOn is "Oni teeth and leather mace">> 
-    <<set $weaponBluntDMG -= 13>>
-  <<elseif $isWeaponOn is "Copper heavy sword with crystal fragments">> 
-    <<set $weaponSlashDMG -= 10>> 
-    <<set $weaponBluntDMG -= 6.72>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Copper gauntlets with crystal fragments">> 
-    <<set $weaponBluntDMG -= 3.75>>
-  <<elseif $isWeaponOn is "Copper mace with crystal fragments">> 
-    <<set $weaponBluntDMG -= 5>>
-  <<elseif $isWeaponOn is "Copper dagger with crystal fragments">> 
-    <<set $weaponBluntDMG -= 2.75>>
-    <<set $bleedCountDealt -= 1.25>>
-    <<set $bleedPotencyDealt -= 3>>
-  <<elseif $isWeaponOn is "Copper short sword and a shield with crystal fragments">> 
-    <<set $weaponSlashDMG -= 3>> 
-    <<set $weaponBluntDMG -= 2.25>> 
-    <<set $armorSlashDEF -= 2>> 
-    <<set $armorPierceDEF -= 1.24>> 
-    <<set $armorBluntDEF -= 2>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Copper rapier with crystal fragments">> 
-    <<set $weaponPierceDMG -= 3>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Copper katana">> 
-    <<set $weaponPierceDMG -= 1>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Bone sword">> 
-    <<set $weaponSlashDMG -= 8>> 
-    <<set $weaponPierceDMG -= 3.56>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Bone short sword and a shield">> 
-    <<set $weaponSlashDMG -= 5>> 
-    <<set $weaponBluntDMG -= 3.45>> 
-    <<set $armorSlashDEF -= 4>> 
-    <<set $armorPierceDEF -= 2.15>> 
-    <<set $armorBluntDEF -= 4>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Iron short sword and a shield">> 
-    <<set $weaponSlashDMG -= 4>> 
-    <<set $weaponBluntDMG -= 2.45>> 
-    <<set $armorSlashDEF -= 3>> 
-    <<set $armorPierceDEF -= 1.5>> 
-    <<set $armorBluntDEF -= 3>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Iron short sword and a shield with a wooden handle">> 
-    <<set $weaponSlashDMG -= 4.5>> 
-    <<set $weaponBluntDMG -= 2.78>> 
-    <<set $armorSlashDEF -= 3.5>> 
-    <<set $armorPierceDEF -= 1.25>> 
-    <<set $armorBluntDEF -= 3.5>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Bone rapier">> 
-    <<set $weaponPierceDMG -= 5>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Bone heavy sword">> 
-    <<set $weaponSlashDMG -= 15>> 
-    <<set $weaponBluntDMG -= 7>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Iron Axe">> 
-    <<set $weaponSlashDMG -= 2>> 
-    <<set $weaponBluntDMG -= 0.75>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Iron Shovel">> 
-    <<set $weaponPierceDMG -= 1>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Iron pickaxe">> 
-    <<set $weaponSlashDMG -= 1>> 
-    <<set $weaponPierceDMG -= 0.5>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Iron rapier">> 
-    <<set $weaponPierceDMG -= 4>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Iron rapier with a wooden handle">> 
-    <<set $weaponPierceDMG -= 4.5>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Iron heavy sword">> 
-    <<set $weaponSlashDMG -= 12>> 
-    <<set $weaponBluntDMG -= 6.78>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Iron heavy sword with a wooden handle">> 
-    <<set $weaponSlashDMG -= 13>> 
-    <<set $weaponBluntDMG -= 7.9>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Oni teeth rapier">> 
-    <<set $weaponPierceDMG -= 8>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Oni teeth heavy sword">> 
-    <<set $weaponSlashDMG -= 19>> 
-    <<set $weaponBluntDMG -= 12>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Oni teeth sword">> 
-    <<set $weaponSlashDMG -= 11>> 
-    <<set $weaponPierceDMG -= 4.7>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Oni teeth short sword and a shield">> 
-    <<set $weaponSlashDMG -= 8>> 
-    <<set $weaponBluntDMG -= 5.66>> 
-    <<set $armorSlashDEF -= 7>> 
-    <<set $armorPierceDEF -= 3.89>> 
-    <<set $armorBluntDEF -= 7>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Oni teeth and leather rapier">> 
-    <<set $weaponPierceDMG -= 9>> 
-    <<set $bleedCountDealt -= 0.75>>
-    <<set $bleedPotencyDealt -= 0.25>>
-  <<elseif $isWeaponOn is "Oni teeth and leather heavy sword">> 
-    <<set $weaponSlashDMG -= 21>> 
-    <<set $weaponBluntDMG -= 15>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <<elseif $isWeaponOn is "Oni teeth and leather sword">> 
-    <<set $weaponSlashDMG -= 13>> 
-    <<set $weaponPierceDMG -= 5.6>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 1>>
-  <<elseif $isWeaponOn is "Oni teeth and leather short sword and a shield">> 
-    <<set $weaponSlashDMG -= 9>> 
-    <<set $weaponBluntDMG -= 5.6>> 
-    <<set $armorSlashDEF -= 8>> 
-    <<set $armorPierceDEF -= 5.6>> 
-    <<set $armorBluntDEF -= 8>> 
-    <<set $bleedCountDealt -= 2>>
-    <<set $bleedPotencyDealt -= 0.78>>
-  <<elseif $isWeaponOn is "Boulder slayer">> 
-    <<set $weaponSlashDMG -= 29>> 
-    <<set $weaponBluntDMG -= 18>> 
-    <<set $bleedCountDealt -= 4>>
-    <<set $bleedPotencyDealt -= 2>>
-  <</if>> 
-  <<goto "Wardrobe">> 
-  <<set $isWeaponOn to "None">> 
-  <<set $weaponType = "None">> 
-<</link>> <</if>><<if $isWeaponSkinOn !== "None">> + <<link "$isWeaponSkinOn">> 
-    <<if $isWeaponSkinOn === "Dookie sword">>
-      <<set $poisonCountDealt -= 1>>
-      <<set $poisonPotencyDealt -= 1>>
-    <</if>>
-    <<set $isWeaponSkinOn to "None">> 
-    <<goto "Wardrobe">> 
-    <</link>> 
-<</if>>
-<<nobr>>Left hand: <<for _i = 1; _i lte 5; _i++>>
-  <<capture _i>>
-      <<if _i != 1>>+<</if>> 
-      <<if State.variables["Finger" + _i] is "None">>
-      None
-      <<else>>
-      <<link `State.variables["Finger" + _i]`>>
-      <<if State.variables["Finger" + _i] is "Tearful tomb ring">>
-          <<set $tearfulTombRing += 1>>
-          <<set $STRPercentBuff -= 5>>
-      <<elseif State.variables["Finger" + _i] is "Diamond ring">>
-          <<set $diamondRing += 1>>
-      <<elseif State.variables["Finger" + _i] is "Golden ring">>
-          <<set $goldenRing += 1>>
-      <<elseif State.variables["Finger" + _i] is "Silver ring">>
-          <<set $silverRing += 1>>
-      <<elseif State.variables["Finger" + _i] is "Ring of achieving">>
-          <<set $ringOfAchieving += 1>>
-          <<set $STRPercentBuff -= $AchvRingKeep>>
-      <<elseif State.variables["Finger" + _i] is "Ring of the undead">>
-          <<set $ringOfTheUndead += 1>>
-          <<set $maxStamina -= 20>>
-          <<set $STRPercentBuff -= 2>>
-          <<set $DEXPercentBuff -= 7>>
-      <<elseif State.variables["Finger" + _i] is "Ring of the living">>
-          <<set $ringOfTheLiving += 1>>
-      <</if>>
-      <<set State.variables["Finger" + _i] to "None">>
-      <<goto "Wardrobe">>
-    <</link>>
-    <</if>>
-  <</capture>>
-<</for>><</nobr>>
-<<nobr>>Right hand: <<for _i = 6; _i lte 10; _i++>>
-  <<capture _i>>
-      <<if _i != 6>>+<</if>> 
-      <<if State.variables["Finger" + _i] is "None">>
-      None
-      <<else>>
-      <<link `State.variables["Finger" + _i]`>>
-      <<if State.variables["Finger" + _i] is "Tearful tomb ring">>
-          <<set $tearfulTombRing += 1>>
-          <<set $STRPercentBuff -= 5>>
-      <<elseif State.variables["Finger" + _i] is "Diamond ring">>
-          <<set $diamondRing += 1>>
-      <<elseif State.variables["Finger" + _i] is "Golden ring">>
-          <<set $goldenRing += 1>>
-      <<elseif State.variables["Finger" + _i] is "Silver ring">>
-          <<set $silverRing += 1>>
-      <<elseif State.variables["Finger" + _i] is "Ring of achieving">>
-          <<set $ringOfAchieving += 1>>
-          <<set $STRPercentBuff -= $AchvRingKeep>>
-      <<elseif State.variables["Finger" + _i] is "Ring of the undead">>
-          <<set $ringOfTheUndead += 1>>
-          <<set $maxStamina -= 20>>
-          <<set $STRPercentBuff -= 2>>
-          <<set $DEXPercentBuff -= 7>>
-      <<elseif State.variables["Finger" + _i] is "Ring of the living">>
-          <<set $ringOfTheLiving += 1>>
-      <</if>>
-      <<set State.variables["Finger" + _i] to "None">>
-      <<goto "Wardrobe">>
-    <</link>>
-    <</if>>
-  <</capture>>
-<</for>><</nobr>>
+  <<set $player.shirt = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> + <<if $player.chestplate is "None">> Chestplate <<else>> <<link "$player.chestplate.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.chestplate.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.chestplate.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.chestplate>>
+    <<goto "Wardrobe">>
+  <<set $player.chestplate = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> + <<if $player.cape is "None">> Cape <<else>> <<link "$player.cape.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.cape.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.cape.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.cape>>
+    <<goto "Wardrobe">>
+  <<set $player.cape = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> + <<if $player.necklace is "None">> Necklace <<else>> <<link "$player.necklace.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.necklace.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.necklace.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.necklace>>
+    <<goto "Wardrobe">>
+  <<set $player.necklace = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> + <<if $player.cosmetic is "None">> Cosmetic <<else>> <<link "$player.cosmetic.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.cosmetic.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.cosmetic.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.cosmetic>>
+    <<goto "Wardrobe">>
+  <<set $player.cosmetic = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>></nobr>
+<nobr>Legs: <<if $player.pants is "None">> Pants <<else>> <<link "$player.pants.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.pants.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.pants.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.pants>>
+    <<goto "Wardrobe">>
+  <<set $player.pants = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> + <<if $player.leggings is "None">> Leggings <<else>> <<link "$player.leggings.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.leggings.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.leggings.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.leggings>>
+    <<goto "Wardrobe">>
+  <<set $player.leggings = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>></nobr>
+<nobr>Feet: <<if $player.boots is "None">> Boots <<else>> <<link "$player.boots.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.boots.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.boots.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.boots>>
+    <<goto "Wardrobe">>
+  <<set $player.boots = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> + <<if $player.bootsArmor is "None">> Feet armor <<else>> <<link "$player.bootsArmor.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.bootsArmor.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.bootsArmor.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.bootsArmor>>
+    <<goto "Wardrobe">>
+  <<set $player.bootsArmor = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> </nobr>
+  <nobr>Right hand:<<if $player.rightHand is "None">> No weapon equipped <<else>> <<link "$player.rightHand.name">> 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.rightHand.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.rightHand.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.rightHand>>
+    <<goto "Wardrobe">>
+  <<set $player.rightHand = "None">> 
+  <<goto "Wardrobe">>
+  <</link>><</if>> </nobr>
+  Rings: None + None + None + None + None
+<nobr>Left hand:<<if $player.leftHand is "None">> No weapon equipped <<else>> <<link "$player.leftHand.name">> 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.leftHand.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.leftHand.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.leftHand>>
+    <<goto "Wardrobe">>
+  <<set $player.leftHand = "None">> 
+  <<goto "Wardrobe">>
+  <</link>> <</if>> </nobr>
+  Rings: None + None + None + None + None
+  <nobr>Sheathes:<<if $player.hipsSheath is "None">> Hips <<else>> <<link "$player.hipsSheath.name">> 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.hipsSheath.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.hipsSheath.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.hipsSheath>>
+    <<goto "Wardrobe">>
+  <<set $player.hipsSheath = "None">> 
+  <<goto "Wardrobe">>
+  <</link>><</if>> + <<if $player.backRightSheathe is "None">> Back right sheathe <<else>> <<link "$player.backRightSheathe.name">> 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.backRightSheathe.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.backRightSheathe.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.backRightSheathe>>
+    <<goto "Wardrobe">>
+  <<set $player.backRightSheathe = "None">> 
+  <<goto "Wardrobe">>
+  <</link>><</if>> + <<if $player.backLeftSheathe is "None">> Back left sheathe <<else>> <<link "$player.backLeftSheathe.name">> 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.backLeftSheathe.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.backLeftSheathe.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.backLeftSheathe>>
+    <<goto "Wardrobe">>
+  <<set $player.backLeftSheathe = "None">> 
+  <<goto "Wardrobe">>
+  <</link>><</if>> + <<if $player.lowerBackRightSheathe is "None">> Lower back right sheathe <<else>> <<link "$player.lowerBackRightSheathe.name">> 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.lowerBackRightSheathe.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.lowerBackRightSheathe.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.lowerBackRightSheathe>>
+    <<goto "Wardrobe">>
+  <<set $player.lowerBackRightSheathe = "None">> 
+  <<goto "Wardrobe">>
+  <</link>><</if>> + <<if $player.lowerBackLeftSheathe is "None">> Lower back left sheathe <<else>> <<link "$player.lowerBackLeftSheathe.name">> 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    <<set _count = 0>>
+    <<set _tag = $player.lowerBackLeftSheathe.id>>
+    <<for _count = 0; $inventory[_tag]; _count++>>
+      <<set _tag = $player.lowerBackLeftSheathe.id + (_count + 1)>>
+    <</for>>
+    <<set $inventory[_tag] = $player.lowerBackLeftSheathe>>
+    <<goto "Wardrobe">>
+  <<set $player.lowerBackLeftSheathe = "None">> 
+  <<goto "Wardrobe">>
+  <</link>><</if>> </nobr>
 Weapon damage:
 Slash: <<= $weaponSlashDMG.toFixed(2)>>
 Pierce: <<= $weaponPierceDMG.toFixed(2)>>
@@ -492,55 +207,269 @@ Blunt: <<= $armorBluntDEF.toFixed(2)>>
 
 <<link [[Change your personality|Personality selection]]>> <<set $lastVisitedPassage5 to "Wardrobe">> <</link>>
 
-<<link [[Chestplate|Wardrobe]]>>
-<<set $inventory.leatherChestplate = clone(setup.armors.leatherChestplate)>>
-<</link>>
-<<link [[Sword|Wardrobe]]>>
+<<nobr>>
+<<link [[Starter Chestplate|Wardrobe]]>>
+<<set $inventory.starterChestplate = clone(setup.armors.starterChestplate)>>
+<</link>> | 
+<<link [[Copper Sword|Wardrobe]]>>
 <<set $inventory.copperSword = clone(setup.weapons.copperSword)>>
-<</link>>
+<</link>> | 
+<<link [[Copper rapier|Wardrobe]]>>
+<<set $inventory.copperRapier = clone(setup.weapons.copperRapier)>>
+<</link>> | 
+<<link [[Copper Sword|Wardrobe]]>>
+<<set $inventory.copperSword = clone(setup.weapons.copperSword)>>
+<</link>> | 
+<<link [[Copper Mace|Wardrobe]]>>
+<<set $inventory.copperMace = clone(setup.weapons.copperMace)>>
+<</link>> | 
+<<link [[Copper Dagger|Wardrobe]]>>
+<<set $inventory.copperDagger = clone(setup.weapons.copperDagger)>>
+<</link>> | 
+<<link [[Copper heavy sword|Wardrobe]]>>
+<<set $inventory.copperHeavySword = clone(setup.weapons.copperHeavySword)>>
+<</link>> | 
 <<link [[Starter Sword|Wardrobe]]>>
-<<set $inventory.copperSword = clone(setup.weapons.starterSword)>>
-<</link>>
-<<link [[Bread|Wardrobe]]>>
+<<set $inventory.starterSword = clone(setup.weapons.starterSword)>>
+<</link>> | 
+<<link [[Starter shirt|Wardrobe]]>>
+<<set $inventory.starterShirt = clone(setup.clothes.starterShirt)>>
+<</link>> | 
+<<link [[Open shoulder shirt|Wardrobe]]>>
+<<set $inventory.openShoulderShirt = clone(setup.clothes.openShoulderShirt)>>
+<</link>> | 
+<<link [[Open shoulder shirt|Wardrobe]]>>
+<<set $inventory.openShoulderShirt1 = clone(setup.clothes.openShoulderShirt1)>>
+<</link>> | 
+<<link [[White jeans|Wardrobe]]>>
+<<set $inventory.whiteJeans = clone(setup.clothes.whiteJeans)>>
+<</link>> | 
+<<link [[Gray skirt|Wardrobe]]>>
+<<set $inventory.graySkirt = clone(setup.clothes.graySkirt)>>
+<</link>> | 
+<<link [[Old boots|Wardrobe]]>>
+<<set $inventory.oldBoots = clone(setup.clothes.oldBoots)>>
+<</link>> | 
+<<link [[Boar meat|Wardrobe]]>>
   <<if !$inventory.boarMeat >>
     <<set $inventory.boarMeat = clone(setup.items.boarMeat)>>
     <<set $inventory.boarMeat.count += 1>>
   <<else>>
     <<set $inventory.boarMeat.count += 1>>
   <</if>>
+<</link>>| 
+<</nobr>>
+
+Front: 
+<<link [[Bald|Wardrobe]]>>
+<<set $player.hair.top = "">>
+<<goto "Wardrobe">>
+<</link>> | <<link [[Fluffy bangs|Wardrobe]]>>
+<<set $player.hair.top = "Textures/Hair/Front/Fluffy bangs.png">>
+<<goto "Wardrobe">>
+<</link>> | <<link [[Spiky bangs|Wardrobe]]>>
+<<set $player.hair.top = "Textures/Hair/Front/Spiky bangs.png">>
+<<goto "Wardrobe">>
+<</link>>
+Top:
+<<link [[Bald|Wardrobe]]>>
+<<set $player.hair.front = "">>
+<</link>> | <<link [[Fluffy bangs|Wardrobe]]>>
+<<set $player.hair.front = "Textures/Hair/Top/Fluffy top.png">>
+<<goto "Wardrobe">>
+<</link>> | <<link [[Shaved top|Wardrobe]]>>
+<<set $player.hair.front = "Textures/Hair/Top/Shaved top.png">>
+<<goto "Wardrobe">>
+<</link>> | <<link [[Spiky top|Wardrobe]]>>
+<<set $player.hair.front = "Textures/Hair/Top/Spiky top.png">>
+<<goto "Wardrobe">>
+<</link>>
+Back:
+<<link [[Bald|Wardrobe]]>>
+<<set $player.hair.back = "">>
+<</link>> | <<link [[Fluffy bottom|Wardrobe]]>>
+<<set $player.hair.back = "Textures/Hair/Bottom/Fluffy bottom.png">>
+<<goto "Wardrobe">>
+<</link>> | <<link [[Fluffy long bottom|Wardrobe]]>>
+<<set $player.hair.back = "Textures/Hair/Bottom/Fluffy long bottom.png">>
+<<goto "Wardrobe">>
+<</link>> | <<link [[Fluffy medium bottom|Wardrobe]]>>
+<<set $player.hair.back = "Textures/Hair/Bottom/Fluffy medium bottom.png">>
+<<goto "Wardrobe">>
+<</link>>
+
+<<link [[Male or fem|Wardrobe]]>>
+  <<if $gender is "Male">>
+    <<set $gender to "Female">>
+  <<else>>
+    <<set $gender to "Male">>
+  <</if>>
+  <<goto "Wardrobe">>
 <</link>>
 
 <<link "Clear filters">> 
   <<set $invFilters to ["None"]>>
   <<goto "Wardrobe">>
 <</link>>
-<<link "Filter to edible">> 
+<<link "set Filter to edible">> 
   <<set $invFilters to ["edible"]>>
   <<goto "Wardrobe">>
 <</link>>
+<<link "push Filter to edible">> 
+  <<run $invFilters.push("edible")>>
+  <<goto "Wardrobe">>
+<</link>>
+<<link "set Filter to weapon">> 
+  <<set $invFilters to ["weapon"]>>
+  <<goto "Wardrobe">>
+<</link>>
+<<link "push Filter to weapon">> 
+  <<run $invFilters.push("weapon")>>
+  <<goto "Wardrobe">>
+<</link>>
 
-<<for _i, _value range $inventory>>
-<<if $invFilters.includes("None") or $inventory[_i].tags.includes($invFilters)>><<hovertip "$inventory[_i].description">><<= $inventory[_i].name>><</hovertip>> <<if $inventory[_i].count>>($inventory[_i].count)<</if>>: <<if $inventory[_i].tags.includes("weapon")>><<link "Equip sword">>
-<<for _i, _value range $inventory>>
-  <<set $player.rightHand to $inventory[_i].sprite>>
-  <<goto "Wardrobe">>
-<</for>>
-<</link>> | <</if>><<if $inventory[_i].tags.includes("armor")>><<link "Equip armor">>
-<<for _i, _value range $inventory>>
-  <<if $inventory[_i].tags.includes("helmet")>>
-  <<elseif $inventory[_i].tags.includes("chestplate")>>
-    <<set $player.chestplateLHand to $inventory[_i].spriteLHand>>
-    <<set $player.chestplate to $inventory[_i].sprite>>
-    <<set $player.chestplateRHand to $inventory[_i].spriteRHand>>
-  <<elseif $inventory[_i].tags.includes("leggings")>>
-  <<elseif $inventory[_i].tags.includes("boots")>>
-  <</if>>
-  <<goto "Wardrobe">>
-<</for>>
-<</link>> | <</if>><<if $inventory[_i].tags.includes("edible")>><<link "Eat item">>
+<<nobr>>
+<<set _isNone to $invFilters.includes("None")>>
 
-<</link>> | <</if>><<capture _i>><<link "Discard item">>
-  <<run delete $inventory[_i]>>
-  <<goto "Wardrobe">>
-<</link>><</capture>><</if>>
+<<for _i, _item range $inventory>>
+    <<capture _i>>
+        <<if _item.tags.includes($invFilters) or _isNone >>
+            <<hovertip _item.description>><<= $inventory[_i].name>><</hovertip>>
+            <<if _item.count>>(_item.count)<</if>> |
+
+            <<if _item.tags.includes("weapon")>>
+
+                <<if $player.rightHand is "None">>
+                    <<link "Equip right hand">>
+                        <<set $player.rightHand = clone($inventory[_i])>>
+                        <<run delete $inventory[_i]>>
+                        <<goto "Wardrobe">>
+                    <</link>>
+                <<else>>
+                    Unaquipable
+                <</if>>
+                 | 
+                <<if $player.leftHand is "None">>
+                    <<link "Equip left hand">>
+                        <<set $player.leftHand = clone($inventory[_i])>>
+                        <<run delete $inventory[_i]>>
+                        <<goto "Wardrobe">>
+                    <</link>> |
+                <<else>>
+                    Unnaquipable |
+                <</if>>
+
+    		<</if>>
+    		    <<if _item.tags.includes("armor")>>
+                <<link "Equip armor">>
+                    <<if $inventory[_i].tags.includes("helmet")>>
+                        <<if $player.helmet !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.helmet = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <<elseif $inventory[_i].tags.includes("chestplate")>>
+                        <<if $player.chestplate !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.chestplate = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <<elseif $inventory[_i].tags.includes("leggings")>>
+                        <<if $player.leggings !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.leggings = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <<elseif $inventory[_i].tags.includes("boots")>>
+                        <<if $player.boots !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.boots = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <</if>>
+                <</link>>
+                | 
+            <</if>>
+            <<if _item.tags.includes("clothes")>>
+                <<link "Wear clothe">>
+                    <<if $inventory[_i].tags.includes("shirt")>>
+                          <<if $player.shirt !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.shirt = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <<elseif $inventory[_i].tags.includes("pants")>>
+                        <<if $player.pants !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.pants = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <<elseif $inventory[_i].tags.includes("shoes")>>
+                        <<if $player.boots !== "None">>
+                            <<script>>
+                              UI.alert("You have already equipped something in that slot!<br>Unequip it first.");
+                            <</script>>
+                        <<else>>
+                            <<set $player.boots = clone($inventory[_i])>>
+                            <<run delete $inventory[_i]>>
+                            <<goto "Wardrobe">>
+                        <</if>>
+                    <</if>>
+                <</link>>
+                | 
+            <</if>>
+            <<link "Remove 1">>
+                <<if $inventory[_i].count > 1>>
+                    <<set $inventory[_i].count -= 1>>
+                <<else>>
+                    <<run delete $inventory[_i]>>
+                <</if>>
+                <<goto "Wardrobe">>
+            <</link>>
+            <<if $inventory[_i].count >= 5>>
+                | <<link "Remove 5">>
+                    <<set $inventory[_i].count -= 5>>
+                    <<goto "Wardrobe">>
+                <</link>>
+            <</if>>
+            <<if $inventory[_i].count >= 10>>
+                | <<link "Remove 10">>
+                    <<set $inventory[_i].count -= 10>>
+                    <<goto "Wardrobe">>
+                <</link>>
+            <</if>>
+            <<if $inventory[_i].count >= 2>>
+                | <<link "Remove all">>
+                    <<run delete $inventory[_i]>>
+                    <<goto "Wardrobe">>
+                <</link>>
+            <</if>>
+        <</if>>
+    <br>
+    <</capture>>
 <</for>>
+<</nobr>>

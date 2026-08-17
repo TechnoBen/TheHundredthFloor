@@ -97,91 +97,109 @@
 <</if>>
 
 <<if settings.hair == true && $player.helmet !== "">>
-	<img class="skin" @src = "$player.hairBack"/>
+	<img class="skin" @src = "$player.hair?.back"/>
 <</if>>
 
-	<img class="skin" @src = "$player.body"/>
-	<img class="skin" @src = "$player.bodyLeftArm"/>
+<<if settings.weapons == true>>
+	<img class="leftWeapon" @src = "$player.leftHand?.sprite"/>
+<</if>>
+
+	<<if settings.boobs === true or $gender is "Female">>
+		<img class="skin" @src = "$player.body?.spriteFemale"/>
+	<<elseif settings.boobs === false or $gender is "Male">>
+		<img class="skin" @src = "$player.body?.spriteMale"/>
+	<</if>>
+	<img class="skin" @src = "$player.body?.spriteLeftArm"/>
 
 <<if settings.clothes == true>>
-	<img class="skin" @src = "$player.boots"/>
-	<img class="skin" @src = "$player.pants"/>
-	<img class="skin" @src = "$player.shirtLHand"/>
-	<img class="skin" @src = "$player.shirt"/>
+	<img class="skin" @src = "$player.boots?.sprite"/>
+	<img class="skin" @src = "$player.pants?.sprite"/>
+	<img class="skin" @src = "$player.shirt?.spriteLHand"/>
+	<<if settings.boobs === true or $gender is "Female">>
+		<img class="skin" @src = "$player.shirt?.spriteFemale"/>
+	<<elseif settings.boobs === false or $gender is "Male">>
+		<img class="skin" @src = "$player.shirt?.spriteMale"/>
+	<</if>>
 <</if>>
 
-
-
-<<if settings.armor == true>>
-	<img class="skin" @src = "$player.bootsArmor"/>
-	<img class="skin" @src = "$player.leggings"/>
-	<img class="skin" @src = "$player.chestplateLHand"/>
-	<img class="skin" @src = "$player.chestplate"/>
+<<if settings.armor === true>>
+	<img class="skin" @src = "$player.bootsArmor?.sprite"/>
+	<img class="skin" @src = "$player.leggings?.sprite"/>
+	<img class="skin" @src = "$player.chestplate?.spriteLHand"/>
+	<<if settings.boobs === true or $gender is "Female">>
+		<img class="skin" @src = "$player.chestplate?.spriteFemale"/>
+	<<elseif settings.boobs === false or $gender is "Male">>
+		<img class="skin" @src = "$player.chestplate?.spriteMale"/>
+	<</if>>
 <</if>>
 
-	<img class="skin" @src = "$player.bodyRightArm"/>
+	<img class="skin" @src = "$player.body?.spriteRightArm"/>
 
 <<if settings.clothes == true>>
-	<img class="skin" @src = "$player.shirtRHand"/>
+	<img class="skin" @src = "$player.shirt?.spriteRHand"/>
 <</if>>
 
 <<if settings.armor == true>>
-	<img class="skin" @src = "$player.chestplateRhand"/>
+	<img class="skin" @src = "$player.chestplate?.spriteRHand"/>
 <</if>>
 
 <<if settings.eyes == true>>
-	<img class="skin" @src = "$player.eyes"/>
+	<img class="skin" @src = "$player.eyes.sprite"/>
 <<elseif settings.eyes == false>>
 	/*animated eyes off???*/
 <</if>>
 
 /*outfits*/
 <<if settings.outfits == true>>
-	<img class="skin" @src = "$player.cosmeticBodyL"/>
-	<img class="skin" @src = "$player.cosmeticBody"/>
-	<img class="skin" @src = "$player.cosmeticBodyR"/>
-	<img class="skin" @src = "$player.cosmeticLeggings"/>
-	<img class="skin" @src = "$player.cosmeticBoots"/>
+	<img class="skin" @src = "$player.cosmeticBodyL?.sprite"/>
+	<img class="skin" @src = "$player.cosmeticBody?.sprite"/>
+	<img class="skin" @src = "$player.cosmeticBodyR?.sprite"/>
+	<img class="skin" @src = "$player.cosmeticLeggings?.sprite"/>
+	<img class="skin" @src = "$player.cosmeticBoots?.sprite"/>
 <</if>>
 
-	<img class="skin" @src = "$player.necklace"/>
+	<img class="skin" @src = "$player.necklace?.sprite"/>
 
-	<img class="skin" @src = "$player.necklace"/>
-
-	<img class="skin" @src = "$player.lowerBack2"/>
-	<img class="skin" @src = "$player.lowerBack1"/>
-	<img class="skin" @src = "$player.back2"/>
-	<img class="skin" @src = "$player.back1"/>
+	<img class="skin" @src = "$player.lowerBack2?.sprite"/>
+	<img class="skin" @src = "$player.lowerBack1?.sprite"/>
+	<img class="skin" @src = "$player.back2?.sprite"/>
+	<img class="skin" @src = "$player.back1?.sprite"/>
 
 <<if settings.capes == true>>
-	<img class="skin" @src = "$player.cape"/>
+	<img class="skin" @src = "$player.cape?.sprite"/>
 <</if>>
 
-	<img class="skin" @src = "$player.hipL"/>
-	<img class="skin" @src = "$player.hipR"/>
+	<img class="skin" @src = "$player.hipL?.sprite"/>
+	<img class="skin" @src = "$player.hipR?.sprite"/>
+	<img class="skin" @src = "$player.hipLmace?.sprite"/>
+	<img class="skin" @src = "$player.hipRmace?.sprite"/>
+	<img class="skin" @src = "$player.hipsSheathe?.sprite"/>
+	<img class="skin" @src = "$player.backLeftSheathe?.sprite"/>
+	<img class="skin" @src = "$player.backRightSheathe?.sprite"/>
+	<img class="skin" @src = "$player.lowerBackLeftSheathe?.sprite"/>
+	<img class="skin" @src = "$player.lowerBackRightSheathe?.sprite"/>
 
 /*hair*/
 <<if settings.hair == true && $player.helmet !== "">>
-	<img class="skin" @src = "$player.hairFront"/>
-	<img class="skin" @src = "$player.hairTop"/>
+	<img class="skin" @src = "$player.hair?.front"/>
+	<img class="skin" @src = "$player.hair?.top"/>
 <</if>>
 
 <<if settings.armor == true>>
-	<img class="skin" @src = "$player.helmet"/>
+	<img class="skin" @src = "$player.helmet?.sprite"/>
 <</if>>
 <<if settings.outfits == true>>
-	<img class="skin" @src = "$player.cosmeticHead"/>
+	<img class="skin" @src = "$player.cosmeticHead?.sprite"/>
 <</if>>
 
 /* weapons */
 <<if settings.weapons == true>>
-	<img class="skin" @src = "$player.leftHand"/>
-	<img class="skin" @src = "$player.rightHand"/>
+	<img class="skin" @src = "$player.rightHand?.sprite"/>
 <</if>>
 
 <<if settings.outfits == true>>
-	<img class="skin" @src = "$player.cosmeticHandL"/>
-	<img class="skin" @src = "$player.cosmeticHandR"/>
+	<img class="skin" @src = "$player.cosmeticHandL?.sprite"/>
+	<img class="skin" @src = "$player.cosmeticHandR?.sprite"/>
 <</if>>
 /* RINGS */
 

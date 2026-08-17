@@ -126,6 +126,11 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   top: 0;
   right: 0;
 }
+.leftWeapon {
+  position: absolute;
+  top: 0;
+  right: -29px;
+}
 .armor1 {
   position: absolute;
   top: 0;
@@ -176,7 +181,6 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   top: 0;
   right: 0;
 }
-}
 .ring 1 {
   position: absolute;
   top: 0;
@@ -216,6 +220,10 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.left {
+  text-align: justify;
 }
 
 .heavy-sword {
@@ -2370,7 +2378,7 @@ Setting.addList("UIbars", {
 // UI bars end
 
 // UI bars (hp stm fatigue hunger)
-var settingbuttons = ["Buttons vertical text","Buttons vertical","Buttons horizontal","Buttons text"];
+var settingbuttons = ["Buttons vertical","Buttons vertical text","Buttons horizontal","Buttons text"];
 Setting.addList("buttons", {
 	label		: "Change the style of the sidebar buttons.",
 	list		: settingbuttons,
@@ -2420,6 +2428,11 @@ Setting.addToggle("eyes", {
 	default  : true,
 }); 
 
+// boobs... how the hell do i say this without sounding creepy? This just adds or removes boobs.
+Setting.addToggle("boobs", {
+	label : "Female body even if you're not a woman.",
+	default  : false,
+}); 
 
 // Visible capes
 Setting.addToggle("capes", {
@@ -2477,7 +2490,7 @@ window.kitsuneRNG = function (min, max) {
   const url = 'Textures/Icons/game icon.png';
       
   $('head').append(`<link rel='shortcut icon' type='image/${url.split('.').at(-1)}' href='${url}'>`);
-})();</script><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
+})();</script><tw-tag name="Town" color="orange"></tw-tag><tw-tag name="NoSave" color="red"></tw-tag><tw-tag name="no-fainting-or-hunger" color="blue"></tw-tag><tw-tag name="widget" color="yellow"></tw-tag><tw-tag name="Buttons" color="green"></tw-tag><tw-tag name="percent_stat" color="blue"></tw-tag><tw-tag name="autosave" color="green"></tw-tag><tw-tag name="Path" color="purple"></tw-tag><tw-tag name="no-party-time-loss" color="blue"></tw-tag><tw-tag name="data" color="red"></tw-tag><tw-passagedata pid="1" name="Achievements points" tags="NoSave no-fainting-or-hunger" position="800,675" size="100,100">&lt;div class=&quot;UIButtons&quot;&gt;\
 Your achievement points: $achvPoints
 
 &lt;&lt;button &quot;Start with 50 bonus coins | 1 achievement points&quot;&gt;&gt;
@@ -25614,67 +25627,77 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;\</tw-passagedata><tw-passagedata pid="342" name="StoryAuthor" tags="" position="2125,100" size="100,100">BenIsDyingAgain/TechnoBen</tw-passagedata><tw-passagedata pid="343" name="StoryCaption" tags="data <nobr>" position="1750,100" size="100,100">&lt;&lt;if $NoSideBar === true&gt;&gt;\
-  -------------------------------
+-------------------------------\
   &lt;center&gt;&lt;h1&gt;THE HUNDREDTH FLOOR&lt;/h1&gt;\
-  -------------------------------
+-------------------------------\
   A game by TechnoBen
   Beta version: [[0.1.17]]
   (subject to change)
-  -------------------------------
-  &lt;&lt;if settings.buttons == true&gt;&gt;\
-  &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Achievements.png&#39;&gt;&quot;&gt;&gt;
-  &lt;&lt;script&gt;&gt;
-  Dialog.setup(&quot;Achievements&quot;, &quot;achievements&quot;);
-  Dialog.wiki(Story.get(&quot;Achievements&quot;).processText());
-  Dialog.open();
-  &lt;&lt;/script&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Debug.png&#39;&gt;&quot;&gt;&gt;
-  &lt;&lt;script&gt;&gt;
-  Dialog.setup(&quot;Debug&quot;, &quot;debug&quot;);
-  Dialog.wiki(Story.get(&quot;Debug&quot;).processText());
-  Dialog.open();
-  &lt;&lt;/script&gt;&gt;
-  &lt;&lt;/link&gt;&gt;
-  &lt;&lt;elseif settings.buttons == false&gt;&gt;\
-  &lt;div class=&quot;UIButtons&quot;&gt;\
-  &lt;&lt;button &quot;Guide&quot;&gt;&gt;
-  &lt;&lt;script&gt;&gt;
-  Dialog.setup(&quot;Guide&quot;, &quot;guide&quot;);
-  Dialog.wiki(Story.get(&quot;Guide&quot;).processText());
-  Dialog.open();
-  &lt;&lt;/script&gt;&gt;
-  &lt;&lt;/button&gt;&gt;
+-------------------------------\
+  &lt;&lt;if settings.buttons === &quot;Buttons vertical&quot;&gt;&gt;\
+    &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Achievements.png&#39;&gt;&quot;&gt;&gt;
+      &lt;&lt;script&gt;&gt;
+        Dialog.setup(&quot;Achievements&quot;, &quot;achievements&quot;);
+        Dialog.wiki(Story.get(&quot;Achievements&quot;).processText());
+        Dialog.open();
+       &lt;&lt;/script&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+    &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Debug.png&#39;&gt;&quot;&gt;&gt;
+      &lt;&lt;script&gt;&gt;
+        Dialog.setup(&quot;Debug&quot;, &quot;debug&quot;);
+        Dialog.wiki(Story.get(&quot;Debug&quot;).processText());
+        Dialog.open();
+      &lt;&lt;/script&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+&lt;&lt;elseif settings.buttons === &quot;Buttons horizontal&quot;&gt;&gt;\
+&lt;div class=&quot;UIButtons&quot;&gt;\
   &lt;&lt;button &quot;Achievements&quot;&gt;&gt;
-  &lt;&lt;script&gt;&gt;
-  Dialog.setup(&quot;Achievements&quot;, &quot;achievements&quot;);
-  Dialog.wiki(Story.get(&quot;Achievements&quot;).processText());
-  Dialog.open();
-  &lt;&lt;/script&gt;&gt;
+    &lt;&lt;script&gt;&gt;
+      Dialog.setup(&quot;Achievements&quot;, &quot;achievements&quot;);
+      Dialog.wiki(Story.get(&quot;Achievements&quot;).processText());
+      Dialog.open();
+    &lt;&lt;/script&gt;&gt;
   &lt;&lt;/button&gt;&gt;
   &lt;&lt;button &quot;Debug&quot;&gt;&gt;	
-  &lt;&lt;script&gt;&gt;
-  Dialog.setup(&quot;Debug&quot;, &quot;debug&quot;);
-  Dialog.wiki(Story.get(&quot;Debug&quot;).processText());
-  Dialog.open();
-  &lt;&lt;/script&gt;&gt;
+    &lt;&lt;script&gt;&gt;
+      Dialog.setup(&quot;Debug&quot;, &quot;debug&quot;);
+      Dialog.wiki(Story.get(&quot;Debug&quot;).processText());
+      Dialog.open();
+    &lt;&lt;/script&gt;&gt;
   &lt;&lt;/button&gt;&gt;
-  &lt;/div&gt;\
-  &lt;&lt;/if&gt;&gt;\
-  &lt;/center&gt;\
-  -------------------------------
-  &lt;&lt;else&gt;&gt;\
-  -------------------------------
-  &lt;&lt;Player&gt;&gt; &lt;&lt;/Player&gt;&gt;
+&lt;/div&gt;\
+  &lt;&lt;elseif settings.buttons === &quot;Buttons vertical text&quot;&gt;&gt;\
+  &lt;div class=&quot;left&quot;&gt;\
+    &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Achievements.png&#39;&gt;&quot;&gt;&gt; 
+      &lt;&lt;script&gt;&gt;
+        Dialog.setup(&quot;Achievements&quot;, &quot;achievements&quot;);
+        Dialog.wiki(Story.get(&quot;Achievements&quot;).processText());
+        Dialog.open();
+       &lt;&lt;/script&gt;&gt;
+    &lt;&lt;/link&gt;&gt; Achievements
+    &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Debug.png&#39;&gt;&quot;&gt;&gt; 
+      &lt;&lt;script&gt;&gt;
+        Dialog.setup(&quot;Debug&quot;, &quot;debug&quot;);
+        Dialog.wiki(Story.get(&quot;Debug&quot;).processText());
+        Dialog.open();
+      &lt;&lt;/script&gt;&gt;
+    &lt;&lt;/link&gt;&gt; Debug
+&lt;/div&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;/center&gt;\
+-------------------------------\
+&lt;&lt;else&gt;&gt;\
+-------------------------------\
+&lt;&lt;Player&gt;&gt; &lt;&lt;/Player&gt;&gt;
   
   
   
   
   
-  -------------------------------
-  &lt;&lt;date &quot; [day_short] [month_short] [d], [y] [h]:[0m]&quot;&gt;&gt; 
-  -------------------------------
-  \&lt;&lt;nobr&gt;&gt;\
+-------------------------------\
+&lt;&lt;date &quot; [day_short] [month_short] [d], [y] [h]:[0m]&quot;&gt;&gt; 
+-------------------------------\
+\&lt;&lt;nobr&gt;&gt;\
   &lt;&lt;if settings.UIbars == &quot;Large&quot;&gt;&gt;
   &lt;center&gt;&lt;&lt;hovertip &quot;&lt;&lt;= $CurHP.toFixed(0)&gt;&gt;/&lt;&lt;= $MaxHP.toFixed(0)&gt;&gt;&quot;&gt;&gt;Health:&lt;&lt;/hovertip&gt;&gt;  &lt;&lt;showmeter &#39;health3&#39; `$CurHP /$MaxHP`&gt;&gt;&lt;/center&gt;
   &lt;center&gt;&lt;&lt;hovertip &quot;&lt;&lt;= $curStamina.toFixed(0)&gt;&gt;/&lt;&lt;= $maxStamina.toFixed(0)&gt;&gt;&quot;&gt;&gt;Stamina:&lt;&lt;/hovertip&gt;&gt; &lt;&lt;showmeter &#39;stamina3&#39; `$curStamina /$maxStamina`&gt;&gt;&lt;/center&gt;
@@ -25695,8 +25718,8 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
   &lt;center&gt;&lt;&lt;hovertip &quot;&lt;&lt;= $curStamina.toFixed(0)&gt;&gt;/&lt;&lt;= $maxStamina.toFixed(0)&gt;&gt;&quot;&gt;&gt;Stamina:&lt;&lt;/hovertip&gt;&gt; &lt;&lt;showmeter &#39;stamina1&#39; `$curStamina /$maxStamina`&gt;&gt;&lt;/center&gt;
   &lt;center&gt;&lt;&lt;hovertip &quot;&lt;&lt;= $curHunger.toFixed(0)&gt;&gt;/&lt;&lt;= $maxHunger.toFixed(0)&gt;&gt;&quot;&gt;&gt;Hunger:&lt;&lt;/hovertip&gt;&gt; &lt;&lt;showmeter &#39;hunger1&#39; `$curHunger /$maxHunger`&gt;&gt;&lt;/center&gt; 
   &lt;center&gt;&lt;&lt;hovertip &quot;&lt;&lt;= $curFatigue.toFixed(0)&gt;&gt;/&lt;&lt;= $maxFatigue.toFixed(0)&gt;&gt;&quot;&gt;&gt;Fatigue:&lt;&lt;/hovertip&gt;&gt; &lt;&lt;showmeter &#39;fatigue1&#39; `$curFatigue /$maxFatigue`&gt;&gt;&lt;/center&gt;\&lt;&lt;/if&gt;&gt;&lt;&lt;/nobr&gt;&gt;\
-  -------------------------------
-  &lt;&lt;if settings.buttons === &quot;Buttons vertical&quot;&gt;&gt;\
+-------------------------------\
+&lt;&lt;if settings.buttons === &quot;Buttons vertical&quot;&gt;&gt;\
   &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Inventory.png&#39;&gt;&quot;&gt;&gt;
   &lt;&lt;script&gt;&gt;
   Dialog.setup(&quot;Inventory&quot;, &quot;inv&quot;);
@@ -25732,14 +25755,15 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
   Dialog.open();
   &lt;&lt;/script&gt;&gt;
   &lt;&lt;/link&gt;&gt;
-  &lt;&lt;if $eventStart is true&gt;&gt;\
+&lt;&lt;if $eventStart is true&gt;&gt;\
   &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Logout.png&#39;&gt;&quot;&gt;&gt;
   	&lt;&lt;set $lastVisitedPassageLog to passage()&gt;&gt;
     &lt;&lt;set $location to &quot;start&quot;&gt;&gt;
     &lt;&lt;goto &quot;Start the game&quot;&gt;&gt;
   &lt;&lt;/link&gt;&gt;
-  &lt;&lt;/if&gt;&gt;\
-  &lt;&lt;elseif settings.buttons === &quot;Buttons vertical text&quot;&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;&lt;elseif settings.buttons === &quot;Buttons vertical text&quot;&gt;&gt;\
+&lt;div class=&quot;left&quot;&gt;\
   &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Inventory.png&#39;&gt;&quot;&gt;&gt;
   &lt;&lt;script&gt;&gt;
   Dialog.setup(&quot;Inventory&quot;, &quot;inv&quot;);
@@ -25775,14 +25799,15 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
   Dialog.open();
   &lt;&lt;/script&gt;&gt;
   &lt;&lt;/link&gt;&gt; Debug
-  &lt;&lt;if $eventStart is true&gt;&gt;\
+&lt;&lt;if $eventStart is true&gt;&gt;\
   &lt;&lt;link &quot;&lt;img src=&#39;Textures/Buttons/Logout.png&#39;&gt;&quot;&gt;&gt;
   	&lt;&lt;set $lastVisitedPassageLog to passage()&gt;&gt;
     &lt;&lt;set $location to &quot;start&quot;&gt;&gt;
     &lt;&lt;goto &quot;Start the game&quot;&gt;&gt; Logout
   &lt;&lt;/link&gt;&gt;
-  &lt;&lt;/if&gt;&gt;\
-  &lt;&lt;elseif settings.buttons === &quot;Buttons text&quot;&gt;&gt;\
+&lt;&lt;/if&gt;&gt;\
+&lt;/div&gt;\
+&lt;&lt;elseif settings.buttons === &quot;Buttons text&quot;&gt;&gt;\
   &lt;div class=&quot;UIButtons&quot;&gt;\
   &lt;&lt;button &quot;Inventory&quot;&gt;&gt;
   &lt;&lt;script&gt;&gt;
@@ -25865,7 +25890,7 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
   &lt;&lt;/link&gt;&gt;
   &lt;&lt;/if&gt;&gt;\
   &lt;&lt;/if&gt;&gt;\
-  -------------------------------
+  -------------------------------\
   &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="344" name="StoryInit" tags="StoryInit" position="1625,100" size="100,100">&lt;&lt;datesetup&gt;&gt;
 &lt;&lt;dateset &quot;12h 0m 6d 11mo 2022y&quot;&gt;&gt;
 &lt;&lt;set $newUI to true&gt;&gt;
@@ -27453,7 +27478,7 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
     tags: [&quot;weapon&quot;, &quot;sword&quot;],
     passives: [&quot;&quot;],
     description: [&quot;A lightweight weapon made out of copper.&lt;br&gt;?s + $inventory[_i].weaponSlashDMG&lt;br&gt;?p + $inventory[_i].weaponPierceDMG&quot;],
-    sprite: &quot;Textures/weapons/coppersword.png&quot;,
+    sprite: &quot;Textures/Weapons/Copper sword.png&quot;,
     moveset: &quot;Sword&quot;,
     weaponSlashDMG: 2,
     weaponPierceDMG: 0.5,
@@ -27462,14 +27487,59 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
     bleedCountDealt: 2,
     bleedPotencyDealt: 1
   },
-  copperSword: {
+  copperRapier: {
     name: &quot;Copper rapier&quot;,
     id: &quot;copperRapier&quot;,
     tags: [&quot;weapon&quot;, &quot;rapier&quot;],
     passives: [&quot;&quot;],
     description: [&quot;A lightweight weapon made out of copper.&lt;br&gt;?p + $inventory[_i].weaponPierceDMG&quot;],
-    sprite: &quot;Textures/weapons/copperrapier.png&quot;,
+    sprite: &quot;Textures/Weapons/Copper rapier.png&quot;,
     moveset: &quot;Rapier&quot;,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
+  },
+  copperHeavySword: {
+    name: &quot;Copper heavy sword&quot;,
+    id: &quot;copperHeavySword&quot;,
+    tags: [&quot;weapon&quot;, &quot;heavy sword&quot;],
+    passives: [&quot;&quot;],
+    description: [&quot;A heavy weapon made out of copper.&lt;br&gt;?p + $inventory[_i].weaponPierceDMG&quot;],
+    sprite: &quot;Textures/Weapons/Copper heavy.png&quot;,
+    moveset: &quot;Heavy sword&quot;,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
+  },
+  copperMace: {
+    name: &quot;Copper mace&quot;,
+    id: &quot;copperMace&quot;,
+    tags: [&quot;weapon&quot;, &quot;mace&quot;],
+    passives: [&quot;&quot;],
+    description: [&quot;A heavy weapon made out of copper.&lt;br&gt;?b + $inventory[_i].weaponBluntDMG&quot;],
+    sprite: &quot;Textures/Weapons/Copper mace.png&quot;,
+    moveset: &quot;Mace&quot;,
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
+  },
+  copperDagger: {
+    name: &quot;Copper dagger&quot;,
+    id: &quot;copperDagger&quot;,
+    tags: [&quot;weapon&quot;, &quot;dagger&quot;],
+    passives: [&quot;&quot;],
+    description: [&quot;A small, lightweight weapon made out of copper.&lt;br&gt;?p + $inventory[_i].weaponPierceDMG&quot;],
+    sprite: &quot;Textures/Weapons/Copper dagger.png&quot;,
+    moveset: &quot;Dagger&quot;,
     weaponSlashDMG: 0,
     weaponPierceDMG: 1,
     weaponBluntDMG: 0,
@@ -27480,19 +27550,74 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
 }&gt;&gt;
 
 &lt;&lt;set setup.armors = {
-  leatherChestplate: {
-    name: &quot;Leather chestplate&quot;,
-    id: &quot;leatherChestplate&quot;,
+  starterChestplate: {
+    name: &quot;Starter chestplate&quot;,
+    id: &quot;starterChestplate&quot;,
     tags: [&quot;armor&quot;, &quot;light armor&quot;, &quot;chestplate&quot;],
     passives: [&quot;&quot;],
-    description: [&quot;A light piece of armor.&lt;br&gt;?s + $inventory[_i].armorSlashDEF&lt;br&gt;?p + $inventory[_i].armorPierceDEF&lt;br&gt;?b + $inventory[_i].armorBluntDEF&quot;],
+    description: [&quot;A light piece of armor that covers nothing but your chest.&lt;br&gt;?s + $inventory[_i].armorSlashDEF&lt;br&gt;?p + $inventory[_i].armorPierceDEF&lt;br&gt;?b + $inventory[_i].armorBluntDEF&quot;],
     spriteLHand: &quot;&quot;,
-    sprite: &quot;Textures/Armor/Starter breastplate.png&quot;,
+    spriteMale: &quot;Textures/Armor/Starter breastplate.png&quot;,
+    spriteFemale: &quot;Textures/Armor/Starter breastplate female.png&quot;,
     spriteRHand: &quot;&quot;,
     armorSlashDEF: 1.8,
     armorPierceDEF: 0.8,
     armorBluntDEF: 1.5,
     armorMagicDEF: 0
+  }
+}&gt;&gt;
+
+&lt;&lt;set setup.clothes = { 
+  starterShirt: {
+    name: &quot;Starter shirt&quot;,
+    id: &quot;starterShirt&quot;,
+    tags: [&quot;clothes&quot;, &quot;shirt&quot;],
+    description: [&quot;Your starting shirt. It&#39;s comfortable. Surprisingly.&quot;],
+    spriteMale: &quot;Textures/Clothes/Shirts/Shirt body.png&quot;,
+    spriteFemale: &quot;Textures/Clothes/Shirts/Shirt body female.png&quot;,
+    spriteLHand: &quot;Textures/Clothes/Shirts/Shirt left hand.png&quot;,
+    spriteRHand: &quot;Textures/Clothes/Shirts/Shirt right hand.png&quot;
+  },
+  openShoulderShirt: {
+    name: &quot;Open shoulder shirt&quot;,
+    id: &quot;openShoulderShirt&quot;,
+    tags: [&quot;clothes&quot;, &quot;shirt&quot;],
+    description: [&quot;A shirt with open shoulders. It&#39;s comfortable.&quot;],
+    spriteMale: &quot;Textures/Clothes/Shirts/Open shoulder body.png&quot;,
+    spriteFemale: &quot;Textures/Clothes/Shirts/Open shoulder body female 1.png&quot;,
+    spriteLHand: &quot;Textures/Clothes/Shirts/Shirt left hand.png&quot;,
+    spriteRHand: &quot;Textures/Clothes/Shirts/Shirt right hand.png&quot;
+  },
+  openShoulderShirt1: {
+    name: &quot;Open shoulder shirt&quot;,
+    id: &quot;openShoulderShirt1&quot;,
+    tags: [&quot;clothes&quot;, &quot;shirt&quot;],
+    description: [&quot;A shirt with open shoulders. It&#39;s comfortable.&quot;],
+    spriteMale: &quot;Textures/Clothes/Shirts/Open shoulder body.png&quot;,
+    spriteFemale: &quot;Textures/Clothes/Shirts/Open shoulder body female 2.png&quot;,
+    spriteLHand: &quot;Textures/Clothes/Shirts/Shirt left hand.png&quot;,
+    spriteRHand: &quot;Textures/Clothes/Shirts/Shirt right hand.png&quot;
+  },
+  whiteJeans: {
+    name: &quot;White jeans&quot;,
+    id: &quot;whiteJeans&quot;,
+    tags: [&quot;clothes&quot;, &quot;pants&quot;],
+    description: [&quot;A pair of white jeans.&quot;],
+    sprite: &quot;Textures/Clothes/Pants/White jeans.png&quot;,
+  },
+  graySkirt: {
+    name: &quot;Gray skirt&quot;,
+    id: &quot;graySkirt&quot;,
+    tags: [&quot;clothes&quot;, &quot;pants&quot;, &quot;skirts&quot;],
+    description: [&quot;A gray skirt.&quot;],
+    sprite: &quot;Textures/Clothes/Pants/Gray skirt.png&quot;,
+  },
+  oldBoots: {
+    name: &quot;Old boots&quot;,
+    id: &quot;oldBoots&quot;,
+    tags: [&quot;clothes&quot;, &quot;shoes&quot;],
+    description: [&quot;A pair of old boots. You started the game with those.&lt;br&gt;They are not exactly comfortable.&quot;],
+    sprite: &quot;Textures/Clothes/Boots/Boots.png&quot;,
   }
 }&gt;&gt;
 
@@ -27937,7 +28062,6 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
 &lt;&lt;set $faints to 0&gt;&gt;
 &lt;&lt;set $cookedmeals to 0&gt;&gt;
 &lt;&lt;set $hoursWorked to 0&gt;&gt;
-&lt;&lt;set $hairColor to &quot;None&quot;&gt;&gt;
 &lt;&lt;set $onFire to 0&gt;&gt;
 &lt;&lt;set $SP to 1&gt;&gt;
 &lt;&lt;set $poisoned1 to 0&gt;&gt;
@@ -27958,52 +28082,51 @@ Thank you for playing, I hope you enjoy the event despite the lack of new items.
 }&gt;&gt;
 
 &lt;&lt;set $player = {
-  body: &quot;Textures/Body/Body Pale.png&quot;,
-  bodyRightArm: &quot;Textures/Body/Right arm.png&quot;,
-  bodyLeftArm: &quot;Textures/Body/Left arm.png&quot;,
-  eyes: &quot;&quot;,
-  hairFront: &quot;&quot;,
-  hairTop: &quot;&quot;,
-  hairBack: &quot;&quot;,
-  cosmeticHandR: &quot;&quot;,
-  cosmeticHandL: &quot;&quot;,
-  cosmeticHead: &quot;&quot;,
-  cosmeticBodyR: &quot;&quot;,
-  cosmeticBodyL: &quot;&quot;,
-  cosmeticBody: &quot;&quot;,
-  cosmeticLeggings: &quot;&quot;,
-  cosmeticBoots: &quot;&quot;,
-  helmet: &quot;&quot;,
-  necklace: &quot;&quot;,
-  cape: &quot;&quot;,
-  chestplate: &quot;&quot;,
-  chestplateLHand: &quot;&quot;,
-  chestplateRHand: &quot;&quot;,
-  leggings: &quot;&quot;,
-  bootsArmor: &quot;&quot;,
-  shirt: &quot;&quot;,
-  shirtRHand: &quot;&quot;,
-  shirtLHand: &quot;&quot;,
-  pant: &quot;&quot;,
-  boots: &quot;&quot;,
-  rightHand: &quot;&quot;,
-  leftHand: &quot;&quot;,
-  finger1: &quot;&quot;,
-  finger2: &quot;&quot;,
-  finger3: &quot;&quot;,
-  finger4: &quot;&quot;,
-  finger5: &quot;&quot;,
-  finger6: &quot;&quot;,
-  finger7: &quot;&quot;,
-  finger8: &quot;&quot;,
-  finger9: &quot;&quot;,
-  finger10: &quot;&quot;,
-  hipR: &quot;&quot;,
-  hipL: &quot;&quot;,
-  back1: &quot;&quot;,
-  back2: &quot;&quot;,
-  lowerBack1: &quot;&quot;,
-  lowerBack2: &quot;&quot;
+  body: {spriteMale: &quot;Textures/Body/Body Pale.png&quot;, spriteFemale: &quot;Textures/Body/Body Pale female.png&quot;, spriteRightArm: &quot;Textures/Body/Right pale arm.png&quot;, spriteLeftArm: &quot;Textures/Body/Left pale arm.png&quot;},
+  eyes: {sprite: &quot;Textures/Eyes/Dark Red eyes.png&quot;},
+  hair: {front: &quot;None&quot;, top: &quot;None&quot;, back: &quot;None&quot;},
+  cosmeticHandR: &quot;None&quot;,
+  cosmeticHandL: &quot;None&quot;,
+  cosmeticHead: &quot;None&quot;,
+  cosmeticBodyR: &quot;None&quot;,
+  cosmeticBodyL: &quot;None&quot;,
+  cosmeticBody: &quot;None&quot;,
+  cosmeticLeggings: &quot;None&quot;,
+  cosmeticBoots: &quot;None&quot;,
+  helmet: &quot;None&quot;,
+  necklace: &quot;None&quot;,
+  cape: &quot;None&quot;,
+  chestplate: &quot;None&quot;,
+  leggings: &quot;None&quot;,
+  bootsArmor: &quot;None&quot;,
+  shirt: &quot;None&quot;,
+  pant: &quot;None&quot;,
+  boots: &quot;None&quot;,
+  rightHand: &quot;None&quot;,
+  leftHand: &quot;None&quot;,
+  finger1: &quot;None&quot;,
+  finger2: &quot;None&quot;,
+  finger3: &quot;None&quot;,
+  finger4: &quot;None&quot;,
+  finger5: &quot;None&quot;,
+  finger6: &quot;None&quot;,
+  finger7: &quot;None&quot;,
+  finger8: &quot;None&quot;,
+  finger9: &quot;None&quot;,
+  finger10: &quot;None&quot;,
+  hipR: &quot;None&quot;,
+  hipL: &quot;None&quot;,
+  hipRmace: &quot;None&quot;,
+  hipLmace: &quot;None&quot;,
+  back1: &quot;None&quot;,
+  back2: &quot;None&quot;,
+  lowerBack1: &quot;None&quot;,
+  lowerBack2: &quot;None&quot;,
+  hipsSheath: &quot;None&quot;,
+  backLeftSheathe: &quot;None&quot;,
+  backRightSheathe: &quot;None&quot;,
+  lowerBackLeftSheathe: &quot;None&quot;,
+  lowerBackRightSheathe: &quot;None&quot;
 }&gt;&gt;
 
 &lt;&lt;set $inventory = {
@@ -28778,487 +28901,202 @@ aaaa
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;link [[Library 1]]&gt;&gt;
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="352" name="Wardrobe" tags="no-fainting-or-hunger no-party-time-loss" position="1625,350" size="100,100">&lt;h1&gt;&lt;b&gt;Your equipment&lt;/b&gt;&lt;/h1&gt;\
-Body: &lt;&lt;if $isShirtOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isShirtOn&quot;&gt;&gt; &lt;&lt;if $isShirtOn?.includes(&#39;shirt&#39;)&gt;&gt; &lt;&lt;set $isShirtOn to &quot;None&quot;&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;&lt;set $isShirtOn = &quot;None&quot;&gt;&gt; &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $isChestplateOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isChestplateOn&quot;&gt;&gt; 
-  &lt;&lt;if $isChestplateOn is &quot;Starter breastplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Leather chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 1.8&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.8&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1.5&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Hardened leather chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 3.5&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.9&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 3.1&gt;&gt; 
-    &lt;&lt;set $maxStamina += 24&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Iron breastplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 4.7&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 2.1&gt;&gt;
-    &lt;&lt;set $armorBluntDEF -= 0.6&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Iron armor&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 8.1&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 4&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.95&gt;&gt; 
-    &lt;&lt;set $maxStamina += 30&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Heavy shadow hunter chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 11&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 7.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1&gt;&gt; 
-    &lt;&lt;set $maxStamina += 39&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Light shadow hunter chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 7&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 4.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.3&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Heavy Oni leather chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 11.34&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 2.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 8.51&gt;&gt; 
-    &lt;&lt;set $maxStamina += 45&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Light Oni leather chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 8.2&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.65&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 5.9&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Heavy stone chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 21&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF += 7&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 21&gt;&gt; 
-    &lt;&lt;set $maxStamina += 97&gt;&gt; 
-  &lt;&lt;elseif $isChestplateOn is &quot;Light stone chestplate&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 16&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF += 5.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 16&gt;&gt; 
-    &lt;&lt;set $maxStamina += 20&gt;&gt; 
-  &lt;&lt;/if&gt;&gt; 
-  &lt;&lt;set $isChestplateOn = &quot;None&quot;&gt;&gt; 
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $isCapeOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt;&lt;&lt;link &quot;$isCapeOn&quot;&gt;&gt; 
-  &lt;&lt;if $isCapeOn is &quot;Red cape&quot;&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 20&gt;&gt; 
-  &lt;&lt;elseif $isCapeOn is &quot;Marcellus coat&quot;&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 10&gt;&gt; 
-    &lt;&lt;set $MaxHP -= 2&gt;&gt; 
-  &lt;&lt;elseif $isCapeOn is &quot;Shadow hunters coat&quot;&gt;&gt; 
-    &lt;&lt;set $MaxHP -= 97&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 85&gt;&gt; 
-  &lt;&lt;elseif $isCapeOn is &quot;Wolf fur cape&quot;&gt;&gt; 
-    &lt;&lt;set $MaxHP -= 112&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 95&gt;&gt; 
-  &lt;&lt;elseif $isCapeOn is &quot;Mysteriously vague poncho&quot;&gt;&gt; 
-    &lt;&lt;set $MaxHP -= 10&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 25&gt;&gt; 
-  &lt;&lt;elseif $isCapeOn is &quot;Otherworldly remnant&quot;&gt;&gt; 
-    &lt;&lt;set $MaxHP -= 34&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 33&gt;&gt; 
-  &lt;&lt;/if&gt;&gt; 
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-  &lt;&lt;set $isCapeOn = &quot;None&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $isOutfitOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isOutfitOn&quot;&gt;&gt; 
-  &lt;&lt;if $isShirtOn is &quot;Outfit 5&quot;&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 50&gt;&gt; 
-    &lt;&lt;set $armorDEF += 3&gt;&gt; 
-    &lt;&lt;set $isShirtOn to &quot;None&quot;&gt;&gt; 
-  &lt;&lt;elseif $isShirtOn is &quot;Outfit 1&quot;&gt;&gt; 
-    &lt;&lt;set $isShirtOn to &quot;None&quot;&gt;&gt; 
-    &lt;&lt;set $armorDEF += 1&gt;&gt; 
-  &lt;&lt;elseif $isShirtOn is &quot;Outfit 2&quot;&gt;&gt; 
-    &lt;&lt;set $isShirtOn to &quot;None&quot;&gt;&gt; 
-    &lt;&lt;set $maxStamina -= 25&gt;&gt; 
-  &lt;&lt;elseif $isShirtOn is &quot;Outfit 4&quot;&gt;&gt; 
-    &lt;&lt;set $isShirtOn to &quot;None&quot;&gt;&gt; 
-  &lt;&lt;elseif $isShirtOn is &quot;Outfit 7&quot;&gt;&gt; 
-    &lt;&lt;set $isShirtOn = &quot;None&quot;&gt;&gt;
-    &lt;&lt;set $maxStamina -= 25&gt;&gt; 
-    &lt;&lt;set $armorDEF += 1&gt;&gt; 
-  &lt;&lt;elseif $isShirtOn is &quot;Outfit 9&quot;&gt;&gt; 
-    &lt;&lt;set $isShirtOn = &quot;None&quot;&gt;&gt;
-    &lt;&lt;set $INT -= 1&gt;&gt; 
-  &lt;&lt;elseif $isShirtOn is &quot;Outfit 10&quot;&gt;&gt; 
-    &lt;&lt;set $isShirtOn = &quot;None&quot;&gt;&gt;
-    &lt;&lt;set $INT += 2&gt;&gt; 
-  &lt;&lt;/if&gt;&gt; 
-  &lt;&lt;set $isOutfitOn to &quot;None&quot;&gt;&gt; 
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;
-Legs: &lt;&lt;if $isPantsOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isPantsOn&quot;&gt;&gt;
+&lt;nobr&gt;Head: &lt;&lt;if $player.helmet is &quot;None&quot;&gt;&gt; Helmet &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.helmet.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.helmet.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.helmet.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.helmet&gt;&gt;
     &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-    &lt;&lt;set $isPantsOn to &quot;None&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $isArmorPantsOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isArmorPantsOn&quot;&gt;&gt; 
-  &lt;&lt;if $isArmorPantsOn is &quot;Leather pants&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 1.6&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.9&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1.4&gt;&gt; 
-  &lt;&lt;elseif $isArmorPantsOn is &quot;Hardened leather pants&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 3.2&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 2.8&gt;&gt; 
-    &lt;&lt;set $maxStamina += 17&gt;&gt; 
-  &lt;&lt;elseif $isArmorPantsOn is &quot;Iron leg guards&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 3.2&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.7&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.35&gt;&gt; 
-  &lt;&lt;elseif $isArmorPantsOn is &quot;Iron pants&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 5.5&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 2.75&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.67&gt;&gt; 
-    &lt;&lt;set $maxStamina += 27&gt;&gt; 
-  &lt;&lt;elseif $isArmorPantsOn is &quot;Light Oni leather pants&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 6.56&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.9&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 3.78&gt;&gt; 
-  &lt;&lt;elseif $isArmorPantsOn is &quot;Heavy Oni leather pants&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 9.45&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.68&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 7.57&gt;&gt; 
-    &lt;&lt;set $maxStamina += 39&gt;&gt; 
-  &lt;&lt;/if&gt;&gt; 
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-  &lt;&lt;set $isArmorPantsOn to &quot;None&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;
-Feet: &lt;&lt;if $isBootsOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isBootsOn&quot;&gt;&gt;
+  &lt;&lt;set $player.helmet = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;/nobr&gt;
+&lt;nobr&gt;Body: &lt;&lt;if $player.shirt is &quot;None&quot;&gt;&gt; Shirt &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.shirt.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.shirt.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.shirt.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.shirt&gt;&gt;
     &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-    &lt;&lt;set $isBootsOn to &quot;None&quot;&gt;&gt;
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $isArmorBootsOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isArmorBootsOn&quot;&gt;&gt; 
-  &lt;&lt;if $isArmorBootsOn is &quot;Leather boots&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 0.8&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.3&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.5&gt;&gt; 
-  &lt;&lt;elseif $isArmorBootsOn is &quot;Hardened leather boots&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 2.5&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.1&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1.8&gt;&gt; 
-    &lt;&lt;set $maxStamina += 17&gt;&gt; 
-  &lt;&lt;elseif $isArmorBootsOn is &quot;Iron feet guards&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 1.8&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.95&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.2&gt;&gt; 
-  &lt;&lt;elseif $isArmorBootsOn is &quot;Iron boots&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 4.2&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.62&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 0.34&gt;&gt; 
-    &lt;&lt;set $maxStamina += 20&gt;&gt; 
-  &lt;&lt;elseif $isArmorBootsOn is &quot;Light Oni leather boots&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 4.78&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.68&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1.92&gt;&gt; 
-  &lt;&lt;elseif $isArmorBootsOn is &quot;Heavy Oni leather boots&quot;&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 8&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.12&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 5.92&gt;&gt; 
-    &lt;&lt;set $maxStamina += 33&gt;&gt; 
-  &lt;&lt;/if&gt;&gt; 
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-  &lt;&lt;set $isArmorBootsOn to &quot;None&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;
-Weapon: &lt;&lt;if $isWeaponOn is &quot;None&quot;&gt;&gt; None &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$isWeaponOn&quot;&gt;&gt; 
-  &lt;&lt;if $isWeaponOn is &quot;Starter sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 1&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 0.25&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.43&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 2&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 0.5&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 6&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 2.25&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron sword with a wooden handle&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 7&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 4&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper sword with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 5&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 1.75&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper short sword and a shield&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 1&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 1&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 1&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 0.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 1&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper rapier&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 1&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper heavy sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 4&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 2.75&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper dagger&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 1&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 3&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper mace&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper gauntlets&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 1.5&gt;&gt; 
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron gauntlets&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 5.2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron dagger&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 3.8&gt;&gt;
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 3&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron mace&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 6.5&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron gauntlets with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 7&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron dagger with a wooden handle&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 5&gt;&gt;
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 3&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron mace with a wooden handle&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 6&gt;&gt; 
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth gauntlets&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 10.5&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth dagger&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 9.1&gt;&gt;
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 3&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth mace&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 11&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather gauntlets&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 12.6&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather dagger&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 11.1&gt;&gt;
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 3&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather mace&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 13&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper heavy sword with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 10&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 6.72&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper gauntlets with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 3.75&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper mace with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 5&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper dagger with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 2.75&gt;&gt;
-    &lt;&lt;set $bleedCountDealt -= 1.25&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 3&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper short sword and a shield with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 3&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 2.25&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 2&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.24&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 2&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper rapier with crystal fragments&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 3&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Copper katana&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 1&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Bone sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 8&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 3.56&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Bone short sword and a shield&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 5&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 3.45&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 4&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 2.15&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 4&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron short sword and a shield&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 4&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 2.45&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 3&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.5&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 3&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron short sword and a shield with a wooden handle&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 4.5&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 2.78&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 3.5&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 1.25&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 3.5&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Bone rapier&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 5&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Bone heavy sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 15&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 7&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron Axe&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 2&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 0.75&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron Shovel&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 1&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron pickaxe&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 1&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 0.5&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron rapier&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 4&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron rapier with a wooden handle&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 4.5&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron heavy sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 12&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 6.78&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Iron heavy sword with a wooden handle&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 13&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 7.9&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth rapier&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 8&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth heavy sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 19&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 12&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 11&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 4.7&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth short sword and a shield&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 8&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 5.66&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 7&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 3.89&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 7&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather rapier&quot;&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 9&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 0.75&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.25&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather heavy sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 21&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 15&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather sword&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 13&gt;&gt; 
-    &lt;&lt;set $weaponPierceDMG -= 5.6&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 1&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Oni teeth and leather short sword and a shield&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 9&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 5.6&gt;&gt; 
-    &lt;&lt;set $armorSlashDEF -= 8&gt;&gt; 
-    &lt;&lt;set $armorPierceDEF -= 5.6&gt;&gt; 
-    &lt;&lt;set $armorBluntDEF -= 8&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 2&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 0.78&gt;&gt;
-  &lt;&lt;elseif $isWeaponOn is &quot;Boulder slayer&quot;&gt;&gt; 
-    &lt;&lt;set $weaponSlashDMG -= 29&gt;&gt; 
-    &lt;&lt;set $weaponBluntDMG -= 18&gt;&gt; 
-    &lt;&lt;set $bleedCountDealt -= 4&gt;&gt;
-    &lt;&lt;set $bleedPotencyDealt -= 2&gt;&gt;
-  &lt;&lt;/if&gt;&gt; 
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-  &lt;&lt;set $isWeaponOn to &quot;None&quot;&gt;&gt; 
-  &lt;&lt;set $weaponType = &quot;None&quot;&gt;&gt; 
-&lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;&lt;&lt;if $isWeaponSkinOn !== &quot;None&quot;&gt;&gt; + &lt;&lt;link &quot;$isWeaponSkinOn&quot;&gt;&gt; 
-    &lt;&lt;if $isWeaponSkinOn === &quot;Dookie sword&quot;&gt;&gt;
-      &lt;&lt;set $poisonCountDealt -= 1&gt;&gt;
-      &lt;&lt;set $poisonPotencyDealt -= 1&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
-    &lt;&lt;set $isWeaponSkinOn to &quot;None&quot;&gt;&gt; 
-    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt; 
-    &lt;&lt;/link&gt;&gt; 
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;nobr&gt;&gt;Left hand: &lt;&lt;for _i = 1; _i lte 5; _i++&gt;&gt;
-  &lt;&lt;capture _i&gt;&gt;
-      &lt;&lt;if _i != 1&gt;&gt;+&lt;&lt;/if&gt;&gt; 
-      &lt;&lt;if State.variables[&quot;Finger&quot; + _i] is &quot;None&quot;&gt;&gt;
-      None
-      &lt;&lt;else&gt;&gt;
-      &lt;&lt;link `State.variables[&quot;Finger&quot; + _i]`&gt;&gt;
-      &lt;&lt;if State.variables[&quot;Finger&quot; + _i] is &quot;Tearful tomb ring&quot;&gt;&gt;
-          &lt;&lt;set $tearfulTombRing += 1&gt;&gt;
-          &lt;&lt;set $STRPercentBuff -= 5&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Diamond ring&quot;&gt;&gt;
-          &lt;&lt;set $diamondRing += 1&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Golden ring&quot;&gt;&gt;
-          &lt;&lt;set $goldenRing += 1&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Silver ring&quot;&gt;&gt;
-          &lt;&lt;set $silverRing += 1&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Ring of achieving&quot;&gt;&gt;
-          &lt;&lt;set $ringOfAchieving += 1&gt;&gt;
-          &lt;&lt;set $STRPercentBuff -= $AchvRingKeep&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Ring of the undead&quot;&gt;&gt;
-          &lt;&lt;set $ringOfTheUndead += 1&gt;&gt;
-          &lt;&lt;set $maxStamina -= 20&gt;&gt;
-          &lt;&lt;set $STRPercentBuff -= 2&gt;&gt;
-          &lt;&lt;set $DEXPercentBuff -= 7&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Ring of the living&quot;&gt;&gt;
-          &lt;&lt;set $ringOfTheLiving += 1&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-      &lt;&lt;set State.variables[&quot;Finger&quot; + _i] to &quot;None&quot;&gt;&gt;
-      &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
-  &lt;&lt;/capture&gt;&gt;
-&lt;&lt;/for&gt;&gt;&lt;&lt;/nobr&gt;&gt;
-&lt;&lt;nobr&gt;&gt;Right hand: &lt;&lt;for _i = 6; _i lte 10; _i++&gt;&gt;
-  &lt;&lt;capture _i&gt;&gt;
-      &lt;&lt;if _i != 6&gt;&gt;+&lt;&lt;/if&gt;&gt; 
-      &lt;&lt;if State.variables[&quot;Finger&quot; + _i] is &quot;None&quot;&gt;&gt;
-      None
-      &lt;&lt;else&gt;&gt;
-      &lt;&lt;link `State.variables[&quot;Finger&quot; + _i]`&gt;&gt;
-      &lt;&lt;if State.variables[&quot;Finger&quot; + _i] is &quot;Tearful tomb ring&quot;&gt;&gt;
-          &lt;&lt;set $tearfulTombRing += 1&gt;&gt;
-          &lt;&lt;set $STRPercentBuff -= 5&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Diamond ring&quot;&gt;&gt;
-          &lt;&lt;set $diamondRing += 1&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Golden ring&quot;&gt;&gt;
-          &lt;&lt;set $goldenRing += 1&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Silver ring&quot;&gt;&gt;
-          &lt;&lt;set $silverRing += 1&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Ring of achieving&quot;&gt;&gt;
-          &lt;&lt;set $ringOfAchieving += 1&gt;&gt;
-          &lt;&lt;set $STRPercentBuff -= $AchvRingKeep&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Ring of the undead&quot;&gt;&gt;
-          &lt;&lt;set $ringOfTheUndead += 1&gt;&gt;
-          &lt;&lt;set $maxStamina -= 20&gt;&gt;
-          &lt;&lt;set $STRPercentBuff -= 2&gt;&gt;
-          &lt;&lt;set $DEXPercentBuff -= 7&gt;&gt;
-      &lt;&lt;elseif State.variables[&quot;Finger&quot; + _i] is &quot;Ring of the living&quot;&gt;&gt;
-          &lt;&lt;set $ringOfTheLiving += 1&gt;&gt;
-      &lt;&lt;/if&gt;&gt;
-      &lt;&lt;set State.variables[&quot;Finger&quot; + _i] to &quot;None&quot;&gt;&gt;
-      &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-    &lt;&lt;/link&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
-  &lt;&lt;/capture&gt;&gt;
-&lt;&lt;/for&gt;&gt;&lt;&lt;/nobr&gt;&gt;
+  &lt;&lt;set $player.shirt = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.chestplate is &quot;None&quot;&gt;&gt; Chestplate &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.chestplate.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.chestplate.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.chestplate.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.chestplate&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.chestplate = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.cape is &quot;None&quot;&gt;&gt; Cape &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.cape.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.cape.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.cape.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.cape&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.cape = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.necklace is &quot;None&quot;&gt;&gt; Necklace &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.necklace.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.necklace.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.necklace.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.necklace&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.necklace = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.cosmetic is &quot;None&quot;&gt;&gt; Cosmetic &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.cosmetic.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.cosmetic.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.cosmetic.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.cosmetic&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.cosmetic = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;&lt;/nobr&gt;
+&lt;nobr&gt;Legs: &lt;&lt;if $player.pants is &quot;None&quot;&gt;&gt; Pants &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.pants.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.pants.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.pants.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.pants&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.pants = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.leggings is &quot;None&quot;&gt;&gt; Leggings &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.leggings.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.leggings.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.leggings.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.leggings&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.leggings = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt;&lt;/nobr&gt;
+&lt;nobr&gt;Feet: &lt;&lt;if $player.boots is &quot;None&quot;&gt;&gt; Boots &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.boots.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.boots.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.boots.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.boots&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.boots = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.bootsArmor is &quot;None&quot;&gt;&gt; Feet armor &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.bootsArmor.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.bootsArmor.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.bootsArmor.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.bootsArmor&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.bootsArmor = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;/nobr&gt;
+  &lt;nobr&gt;Right hand:&lt;&lt;if $player.rightHand is &quot;None&quot;&gt;&gt; No weapon equipped &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.rightHand.name&quot;&gt;&gt; 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.rightHand.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.rightHand.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.rightHand&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.rightHand = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;/nobr&gt;
+  Rings: None + None + None + None + None
+&lt;nobr&gt;Left hand:&lt;&lt;if $player.leftHand is &quot;None&quot;&gt;&gt; No weapon equipped &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.leftHand.name&quot;&gt;&gt; 
+    /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.leftHand.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.leftHand.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.leftHand&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.leftHand = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;/nobr&gt;
+  Rings: None + None + None + None + None
+  &lt;nobr&gt;Sheathes:&lt;&lt;if $player.hipsSheath is &quot;None&quot;&gt;&gt; Hips &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.hipsSheath.name&quot;&gt;&gt; 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.hipsSheath.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.hipsSheath.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.hipsSheath&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.hipsSheath = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.backRightSheathe is &quot;None&quot;&gt;&gt; Back right sheathe &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.backRightSheathe.name&quot;&gt;&gt; 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.backRightSheathe.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.backRightSheathe.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.backRightSheathe&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.backRightSheathe = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.backLeftSheathe is &quot;None&quot;&gt;&gt; Back left sheathe &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.backLeftSheathe.name&quot;&gt;&gt; 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.backLeftSheathe.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.backLeftSheathe.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.backLeftSheathe&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.backLeftSheathe = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.lowerBackRightSheathe is &quot;None&quot;&gt;&gt; Lower back right sheathe &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.lowerBackRightSheathe.name&quot;&gt;&gt; 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.lowerBackRightSheathe.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.lowerBackRightSheathe.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.lowerBackRightSheathe&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.lowerBackRightSheathe = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt; + &lt;&lt;if $player.lowerBackLeftSheathe is &quot;None&quot;&gt;&gt; Lower back left sheathe &lt;&lt;else&gt;&gt; &lt;&lt;link &quot;$player.lowerBackLeftSheathe.name&quot;&gt;&gt; 
+  /* Same code as personality select. I have no idea why or how it works but it does! */
+    &lt;&lt;set _count = 0&gt;&gt;
+    &lt;&lt;set _tag = $player.lowerBackLeftSheathe.id&gt;&gt;
+    &lt;&lt;for _count = 0; $inventory[_tag]; _count++&gt;&gt;
+      &lt;&lt;set _tag = $player.lowerBackLeftSheathe.id + (_count + 1)&gt;&gt;
+    &lt;&lt;/for&gt;&gt;
+    &lt;&lt;set $inventory[_tag] = $player.lowerBackLeftSheathe&gt;&gt;
+    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;set $player.lowerBackLeftSheathe = &quot;None&quot;&gt;&gt; 
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+  &lt;&lt;/link&gt;&gt;&lt;&lt;/if&gt;&gt; &lt;/nobr&gt;
 Weapon damage:
 Slash: &lt;&lt;= $weaponSlashDMG.toFixed(2)&gt;&gt;
 Pierce: &lt;&lt;= $weaponPierceDMG.toFixed(2)&gt;&gt;
@@ -29270,58 +29108,272 @@ Blunt: &lt;&lt;= $armorBluntDEF.toFixed(2)&gt;&gt;
 
 &lt;&lt;link [[Change your personality|Personality selection]]&gt;&gt; &lt;&lt;set $lastVisitedPassage5 to &quot;Wardrobe&quot;&gt;&gt; &lt;&lt;/link&gt;&gt;
 
-&lt;&lt;link [[Chestplate|Wardrobe]]&gt;&gt;
-&lt;&lt;set $inventory.leatherChestplate = clone(setup.armors.leatherChestplate)&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;link [[Sword|Wardrobe]]&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;link [[Starter Chestplate|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.starterChestplate = clone(setup.armors.starterChestplate)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Copper Sword|Wardrobe]]&gt;&gt;
 &lt;&lt;set $inventory.copperSword = clone(setup.weapons.copperSword)&gt;&gt;
-&lt;&lt;/link&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Copper rapier|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.copperRapier = clone(setup.weapons.copperRapier)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Copper Sword|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.copperSword = clone(setup.weapons.copperSword)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Copper Mace|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.copperMace = clone(setup.weapons.copperMace)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Copper Dagger|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.copperDagger = clone(setup.weapons.copperDagger)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Copper heavy sword|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.copperHeavySword = clone(setup.weapons.copperHeavySword)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
 &lt;&lt;link [[Starter Sword|Wardrobe]]&gt;&gt;
-&lt;&lt;set $inventory.copperSword = clone(setup.weapons.starterSword)&gt;&gt;
-&lt;&lt;/link&gt;&gt;
-&lt;&lt;link [[Bread|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.starterSword = clone(setup.weapons.starterSword)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Starter shirt|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.starterShirt = clone(setup.clothes.starterShirt)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Open shoulder shirt|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.openShoulderShirt = clone(setup.clothes.openShoulderShirt)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Open shoulder shirt|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.openShoulderShirt1 = clone(setup.clothes.openShoulderShirt1)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[White jeans|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.whiteJeans = clone(setup.clothes.whiteJeans)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Gray skirt|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.graySkirt = clone(setup.clothes.graySkirt)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Old boots|Wardrobe]]&gt;&gt;
+&lt;&lt;set $inventory.oldBoots = clone(setup.clothes.oldBoots)&gt;&gt;
+&lt;&lt;/link&gt;&gt; | 
+&lt;&lt;link [[Boar meat|Wardrobe]]&gt;&gt;
   &lt;&lt;if !$inventory.boarMeat &gt;&gt;
     &lt;&lt;set $inventory.boarMeat = clone(setup.items.boarMeat)&gt;&gt;
     &lt;&lt;set $inventory.boarMeat.count += 1&gt;&gt;
   &lt;&lt;else&gt;&gt;
     &lt;&lt;set $inventory.boarMeat.count += 1&gt;&gt;
   &lt;&lt;/if&gt;&gt;
+&lt;&lt;/link&gt;&gt;| 
+&lt;&lt;/nobr&gt;&gt;
+
+Front: 
+&lt;&lt;link [[Bald|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.top = &quot;&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Fluffy bangs|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.top = &quot;Textures/Hair/Front/Fluffy bangs.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Spiky bangs|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.top = &quot;Textures/Hair/Front/Spiky bangs.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+Top:
+&lt;&lt;link [[Bald|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.front = &quot;&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Fluffy bangs|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.front = &quot;Textures/Hair/Top/Fluffy top.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Shaved top|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.front = &quot;Textures/Hair/Top/Shaved top.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Spiky top|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.front = &quot;Textures/Hair/Top/Spiky top.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+Back:
+&lt;&lt;link [[Bald|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.back = &quot;&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Fluffy bottom|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.back = &quot;Textures/Hair/Bottom/Fluffy bottom.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Fluffy long bottom|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.back = &quot;Textures/Hair/Bottom/Fluffy long bottom.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt; | &lt;&lt;link [[Fluffy medium bottom|Wardrobe]]&gt;&gt;
+&lt;&lt;set $player.hair.back = &quot;Textures/Hair/Bottom/Fluffy medium bottom.png&quot;&gt;&gt;
+&lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+
+&lt;&lt;link [[Male or fem|Wardrobe]]&gt;&gt;
+  &lt;&lt;if $gender is &quot;Male&quot;&gt;&gt;
+    &lt;&lt;set $gender to &quot;Female&quot;&gt;&gt;
+  &lt;&lt;else&gt;&gt;
+    &lt;&lt;set $gender to &quot;Male&quot;&gt;&gt;
+  &lt;&lt;/if&gt;&gt;
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
 
 &lt;&lt;link &quot;Clear filters&quot;&gt;&gt; 
   &lt;&lt;set $invFilters to [&quot;None&quot;]&gt;&gt;
   &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
-&lt;&lt;link &quot;Filter to edible&quot;&gt;&gt; 
+&lt;&lt;link &quot;set Filter to edible&quot;&gt;&gt; 
   &lt;&lt;set $invFilters to [&quot;edible&quot;]&gt;&gt;
   &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
 &lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;push Filter to edible&quot;&gt;&gt; 
+  &lt;&lt;run $invFilters.push(&quot;edible&quot;)&gt;&gt;
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;set Filter to weapon&quot;&gt;&gt; 
+  &lt;&lt;set $invFilters to [&quot;weapon&quot;]&gt;&gt;
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
+&lt;&lt;link &quot;push Filter to weapon&quot;&gt;&gt; 
+  &lt;&lt;run $invFilters.push(&quot;weapon&quot;)&gt;&gt;
+  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+&lt;&lt;/link&gt;&gt;
 
-&lt;&lt;for _i, _value range $inventory&gt;&gt;
-&lt;&lt;if $invFilters.includes(&quot;None&quot;) or $inventory[_i].tags.includes($invFilters)&gt;&gt;&lt;&lt;hovertip &quot;$inventory[_i].description&quot;&gt;&gt;&lt;&lt;= $inventory[_i].name&gt;&gt;&lt;&lt;/hovertip&gt;&gt; &lt;&lt;if $inventory[_i].count&gt;&gt;($inventory[_i].count)&lt;&lt;/if&gt;&gt;: &lt;&lt;if $inventory[_i].tags.includes(&quot;weapon&quot;)&gt;&gt;&lt;&lt;link &quot;Equip sword&quot;&gt;&gt;
-&lt;&lt;for _i, _value range $inventory&gt;&gt;
-  &lt;&lt;set $player.rightHand to $inventory[_i].sprite&gt;&gt;
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-&lt;&lt;/link&gt;&gt; | &lt;&lt;/if&gt;&gt;&lt;&lt;if $inventory[_i].tags.includes(&quot;armor&quot;)&gt;&gt;&lt;&lt;link &quot;Equip armor&quot;&gt;&gt;
-&lt;&lt;for _i, _value range $inventory&gt;&gt;
-  &lt;&lt;if $inventory[_i].tags.includes(&quot;helmet&quot;)&gt;&gt;
-  &lt;&lt;elseif $inventory[_i].tags.includes(&quot;chestplate&quot;)&gt;&gt;
-    &lt;&lt;set $player.chestplateLHand to $inventory[_i].spriteLHand&gt;&gt;
-    &lt;&lt;set $player.chestplate to $inventory[_i].sprite&gt;&gt;
-    &lt;&lt;set $player.chestplateRHand to $inventory[_i].spriteRHand&gt;&gt;
-  &lt;&lt;elseif $inventory[_i].tags.includes(&quot;leggings&quot;)&gt;&gt;
-  &lt;&lt;elseif $inventory[_i].tags.includes(&quot;boots&quot;)&gt;&gt;
-  &lt;&lt;/if&gt;&gt;
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-&lt;&lt;/for&gt;&gt;
-&lt;&lt;/link&gt;&gt; | &lt;&lt;/if&gt;&gt;&lt;&lt;if $inventory[_i].tags.includes(&quot;edible&quot;)&gt;&gt;&lt;&lt;link &quot;Eat item&quot;&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set _isNone to $invFilters.includes(&quot;None&quot;)&gt;&gt;
 
-&lt;&lt;/link&gt;&gt; | &lt;&lt;/if&gt;&gt;&lt;&lt;capture _i&gt;&gt;&lt;&lt;link &quot;Discard item&quot;&gt;&gt;
-  &lt;&lt;run delete $inventory[_i]&gt;&gt;
-  &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
-&lt;&lt;/link&gt;&gt;&lt;&lt;/capture&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/for&gt;&gt;</tw-passagedata><tw-passagedata pid="353" name="Barks" tags="widget" position="2875,725" size="100,100">&lt;&lt;widget &quot;GettingCrittedPlayer&quot;&gt;&gt;
+&lt;&lt;for _i, _item range $inventory&gt;&gt;
+    &lt;&lt;capture _i&gt;&gt;
+        &lt;&lt;if _item.tags.includes($invFilters) or _isNone &gt;&gt;
+            &lt;&lt;hovertip _item.description&gt;&gt;&lt;&lt;= $inventory[_i].name&gt;&gt;&lt;&lt;/hovertip&gt;&gt;
+            &lt;&lt;if _item.count&gt;&gt;(_item.count)&lt;&lt;/if&gt;&gt; |
+
+            &lt;&lt;if _item.tags.includes(&quot;weapon&quot;)&gt;&gt;
+
+                &lt;&lt;if $player.rightHand is &quot;None&quot;&gt;&gt;
+                    &lt;&lt;link &quot;Equip right hand&quot;&gt;&gt;
+                        &lt;&lt;set $player.rightHand = clone($inventory[_i])&gt;&gt;
+                        &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                        &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                    &lt;&lt;/link&gt;&gt;
+                &lt;&lt;else&gt;&gt;
+                    Unaquipable
+                &lt;&lt;/if&gt;&gt;
+                 | 
+                &lt;&lt;if $player.leftHand is &quot;None&quot;&gt;&gt;
+                    &lt;&lt;link &quot;Equip left hand&quot;&gt;&gt;
+                        &lt;&lt;set $player.leftHand = clone($inventory[_i])&gt;&gt;
+                        &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                        &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                    &lt;&lt;/link&gt;&gt; |
+                &lt;&lt;else&gt;&gt;
+                    Unnaquipable |
+                &lt;&lt;/if&gt;&gt;
+
+    		&lt;&lt;/if&gt;&gt;
+    		    &lt;&lt;if _item.tags.includes(&quot;armor&quot;)&gt;&gt;
+                &lt;&lt;link &quot;Equip armor&quot;&gt;&gt;
+                    &lt;&lt;if $inventory[_i].tags.includes(&quot;helmet&quot;)&gt;&gt;
+                        &lt;&lt;if $player.helmet !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.helmet = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;elseif $inventory[_i].tags.includes(&quot;chestplate&quot;)&gt;&gt;
+                        &lt;&lt;if $player.chestplate !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.chestplate = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;elseif $inventory[_i].tags.includes(&quot;leggings&quot;)&gt;&gt;
+                        &lt;&lt;if $player.leggings !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.leggings = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;elseif $inventory[_i].tags.includes(&quot;boots&quot;)&gt;&gt;
+                        &lt;&lt;if $player.boots !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.boots = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;/if&gt;&gt;
+                &lt;&lt;/link&gt;&gt;
+                | 
+            &lt;&lt;/if&gt;&gt;
+            &lt;&lt;if _item.tags.includes(&quot;clothes&quot;)&gt;&gt;
+                &lt;&lt;link &quot;Wear clothe&quot;&gt;&gt;
+                    &lt;&lt;if $inventory[_i].tags.includes(&quot;shirt&quot;)&gt;&gt;
+                          &lt;&lt;if $player.shirt !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.shirt = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;elseif $inventory[_i].tags.includes(&quot;pants&quot;)&gt;&gt;
+                        &lt;&lt;if $player.pants !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.pants = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;elseif $inventory[_i].tags.includes(&quot;shoes&quot;)&gt;&gt;
+                        &lt;&lt;if $player.boots !== &quot;None&quot;&gt;&gt;
+                            &lt;&lt;script&gt;&gt;
+                              UI.alert(&quot;You have already equipped something in that slot!&lt;br&gt;Unequip it first.&quot;);
+                            &lt;&lt;/script&gt;&gt;
+                        &lt;&lt;else&gt;&gt;
+                            &lt;&lt;set $player.boots = clone($inventory[_i])&gt;&gt;
+                            &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                            &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                        &lt;&lt;/if&gt;&gt;
+                    &lt;&lt;/if&gt;&gt;
+                &lt;&lt;/link&gt;&gt;
+                | 
+            &lt;&lt;/if&gt;&gt;
+            &lt;&lt;link &quot;Remove 1&quot;&gt;&gt;
+                &lt;&lt;if $inventory[_i].count &gt; 1&gt;&gt;
+                    &lt;&lt;set $inventory[_i].count -= 1&gt;&gt;
+                &lt;&lt;else&gt;&gt;
+                    &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                &lt;&lt;/if&gt;&gt;
+                &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+            &lt;&lt;/link&gt;&gt;
+            &lt;&lt;if $inventory[_i].count &gt;= 5&gt;&gt;
+                | &lt;&lt;link &quot;Remove 5&quot;&gt;&gt;
+                    &lt;&lt;set $inventory[_i].count -= 5&gt;&gt;
+                    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                &lt;&lt;/link&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+            &lt;&lt;if $inventory[_i].count &gt;= 10&gt;&gt;
+                | &lt;&lt;link &quot;Remove 10&quot;&gt;&gt;
+                    &lt;&lt;set $inventory[_i].count -= 10&gt;&gt;
+                    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                &lt;&lt;/link&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+            &lt;&lt;if $inventory[_i].count &gt;= 2&gt;&gt;
+                | &lt;&lt;link &quot;Remove all&quot;&gt;&gt;
+                    &lt;&lt;run delete $inventory[_i]&gt;&gt;
+                    &lt;&lt;goto &quot;Wardrobe&quot;&gt;&gt;
+                &lt;&lt;/link&gt;&gt;
+            &lt;&lt;/if&gt;&gt;
+        &lt;&lt;/if&gt;&gt;
+    &lt;br&gt;
+    &lt;&lt;/capture&gt;&gt;
+&lt;&lt;/for&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="353" name="Barks" tags="widget" position="2875,725" size="100,100">&lt;&lt;widget &quot;GettingCrittedPlayer&quot;&gt;&gt;
 
     &lt;&lt;set _barkChanceCrit to random(0, 100)&gt;&gt;
 
@@ -30663,91 +30715,109 @@ Blunt: &lt;&lt;= $armorBluntDEF.toFixed(2)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if settings.hair == true &amp;&amp; $player.helmet !== &quot;&quot;&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.hairBack&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hair?.back&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.body&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.bodyLeftArm&quot;/&gt;
+&lt;&lt;if settings.weapons == true&gt;&gt;
+	&lt;img class=&quot;leftWeapon&quot; @src = &quot;$player.leftHand?.sprite&quot;/&gt;
+&lt;&lt;/if&gt;&gt;
+
+	&lt;&lt;if settings.boobs === true or $gender is &quot;Female&quot;&gt;&gt;
+		&lt;img class=&quot;skin&quot; @src = &quot;$player.body?.spriteFemale&quot;/&gt;
+	&lt;&lt;elseif settings.boobs === false or $gender is &quot;Male&quot;&gt;&gt;
+		&lt;img class=&quot;skin&quot; @src = &quot;$player.body?.spriteMale&quot;/&gt;
+	&lt;&lt;/if&gt;&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.body?.spriteLeftArm&quot;/&gt;
 
 &lt;&lt;if settings.clothes == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.boots&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.pants&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.shirtLHand&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.shirt&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.boots?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.pants?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.shirt?.spriteLHand&quot;/&gt;
+	&lt;&lt;if settings.boobs === true or $gender is &quot;Female&quot;&gt;&gt;
+		&lt;img class=&quot;skin&quot; @src = &quot;$player.shirt?.spriteFemale&quot;/&gt;
+	&lt;&lt;elseif settings.boobs === false or $gender is &quot;Male&quot;&gt;&gt;
+		&lt;img class=&quot;skin&quot; @src = &quot;$player.shirt?.spriteMale&quot;/&gt;
+	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-
-
-&lt;&lt;if settings.armor == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.bootsArmor&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.leggings&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplateLHand&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplate&quot;/&gt;
+&lt;&lt;if settings.armor === true&gt;&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.bootsArmor?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.leggings?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplate?.spriteLHand&quot;/&gt;
+	&lt;&lt;if settings.boobs === true or $gender is &quot;Female&quot;&gt;&gt;
+		&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplate?.spriteFemale&quot;/&gt;
+	&lt;&lt;elseif settings.boobs === false or $gender is &quot;Male&quot;&gt;&gt;
+		&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplate?.spriteMale&quot;/&gt;
+	&lt;&lt;/if&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.bodyRightArm&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.body?.spriteRightArm&quot;/&gt;
 
 &lt;&lt;if settings.clothes == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.shirtRHand&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.shirt?.spriteRHand&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if settings.armor == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplateRhand&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.chestplate?.spriteRHand&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if settings.eyes == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.eyes&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.eyes.sprite&quot;/&gt;
 &lt;&lt;elseif settings.eyes == false&gt;&gt;
 	/*animated eyes off???*/
 &lt;&lt;/if&gt;&gt;
 
 /*outfits*/
 &lt;&lt;if settings.outfits == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBodyL&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBody&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBodyR&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticLeggings&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBoots&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBodyL?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBody?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBodyR?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticLeggings?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticBoots?.sprite&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.necklace&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.necklace?.sprite&quot;/&gt;
 
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.necklace&quot;/&gt;
-
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.lowerBack2&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.lowerBack1&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.back2&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.back1&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.lowerBack2?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.lowerBack1?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.back2?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.back1?.sprite&quot;/&gt;
 
 &lt;&lt;if settings.capes == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cape&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cape?.sprite&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipL&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipR&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipL?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipR?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipLmace?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipRmace?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hipsSheathe?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.backLeftSheathe?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.backRightSheathe?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.lowerBackLeftSheathe?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.lowerBackRightSheathe?.sprite&quot;/&gt;
 
 /*hair*/
 &lt;&lt;if settings.hair == true &amp;&amp; $player.helmet !== &quot;&quot;&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.hairFront&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.hairTop&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hair?.front&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.hair?.top&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if settings.armor == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.helmet&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.helmet?.sprite&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if settings.outfits == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticHead&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticHead?.sprite&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
 /* weapons */
 &lt;&lt;if settings.weapons == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.leftHand&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.rightHand&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.rightHand?.sprite&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if settings.outfits == true&gt;&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticHandL&quot;/&gt;
-	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticHandR&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticHandL?.sprite&quot;/&gt;
+	&lt;img class=&quot;skin&quot; @src = &quot;$player.cosmeticHandR?.sprite&quot;/&gt;
 &lt;&lt;/if&gt;&gt;
 /* RINGS */
 

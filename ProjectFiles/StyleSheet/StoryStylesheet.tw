@@ -21,6 +21,11 @@
   top: 0;
   right: 0;
 }
+.leftWeapon {
+  position: absolute;
+  top: 0;
+  right: -29px;
+}
 .armor1 {
   position: absolute;
   top: 0;
@@ -71,7 +76,6 @@
   top: 0;
   right: 0;
 }
-}
 .ring 1 {
   position: absolute;
   top: 0;
@@ -111,6 +115,10 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.left {
+  text-align: justify;
 }
 
 .heavy-sword {

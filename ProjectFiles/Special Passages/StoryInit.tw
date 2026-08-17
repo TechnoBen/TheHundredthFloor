@@ -1586,7 +1586,7 @@
     tags: ["weapon", "sword"],
     passives: [""],
     description: ["A lightweight weapon made out of copper.<br>?s + $inventory[_i].weaponSlashDMG<br>?p + $inventory[_i].weaponPierceDMG"],
-    sprite: "Textures/weapons/coppersword.png",
+    sprite: "Textures/Weapons/Copper sword.png",
     moveset: "Sword",
     weaponSlashDMG: 2,
     weaponPierceDMG: 0.5,
@@ -1595,14 +1595,59 @@
     bleedCountDealt: 2,
     bleedPotencyDealt: 1
   },
-  copperSword: {
+  copperRapier: {
     name: "Copper rapier",
     id: "copperRapier",
     tags: ["weapon", "rapier"],
     passives: [""],
     description: ["A lightweight weapon made out of copper.<br>?p + $inventory[_i].weaponPierceDMG"],
-    sprite: "Textures/weapons/copperrapier.png",
+    sprite: "Textures/Weapons/Copper rapier.png",
     moveset: "Rapier",
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
+  },
+  copperHeavySword: {
+    name: "Copper heavy sword",
+    id: "copperHeavySword",
+    tags: ["weapon", "heavy sword"],
+    passives: [""],
+    description: ["A heavy weapon made out of copper.<br>?p + $inventory[_i].weaponPierceDMG"],
+    sprite: "Textures/Weapons/Copper heavy.png",
+    moveset: "Heavy sword",
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
+  },
+  copperMace: {
+    name: "Copper mace",
+    id: "copperMace",
+    tags: ["weapon", "mace"],
+    passives: [""],
+    description: ["A heavy weapon made out of copper.<br>?b + $inventory[_i].weaponBluntDMG"],
+    sprite: "Textures/Weapons/Copper mace.png",
+    moveset: "Mace",
+    weaponSlashDMG: 0,
+    weaponPierceDMG: 1,
+    weaponBluntDMG: 0,
+    weaponMagicDMG: 0,
+    bleedCountDealt: 0.75,
+    bleedPotencyDealt: 0.25
+  },
+  copperDagger: {
+    name: "Copper dagger",
+    id: "copperDagger",
+    tags: ["weapon", "dagger"],
+    passives: [""],
+    description: ["A small, lightweight weapon made out of copper.<br>?p + $inventory[_i].weaponPierceDMG"],
+    sprite: "Textures/Weapons/Copper dagger.png",
+    moveset: "Dagger",
     weaponSlashDMG: 0,
     weaponPierceDMG: 1,
     weaponBluntDMG: 0,
@@ -1613,19 +1658,74 @@
 }>>
 
 <<set setup.armors = {
-  leatherChestplate: {
-    name: "Leather chestplate",
-    id: "leatherChestplate",
+  starterChestplate: {
+    name: "Starter chestplate",
+    id: "starterChestplate",
     tags: ["armor", "light armor", "chestplate"],
     passives: [""],
-    description: ["A light piece of armor.<br>?s + $inventory[_i].armorSlashDEF<br>?p + $inventory[_i].armorPierceDEF<br>?b + $inventory[_i].armorBluntDEF"],
+    description: ["A light piece of armor that covers nothing but your chest.<br>?s + $inventory[_i].armorSlashDEF<br>?p + $inventory[_i].armorPierceDEF<br>?b + $inventory[_i].armorBluntDEF"],
     spriteLHand: "",
-    sprite: "Textures/Armor/Starter breastplate.png",
+    spriteMale: "Textures/Armor/Starter breastplate.png",
+    spriteFemale: "Textures/Armor/Starter breastplate female.png",
     spriteRHand: "",
     armorSlashDEF: 1.8,
     armorPierceDEF: 0.8,
     armorBluntDEF: 1.5,
     armorMagicDEF: 0
+  }
+}>>
+
+<<set setup.clothes = { 
+  starterShirt: {
+    name: "Starter shirt",
+    id: "starterShirt",
+    tags: ["clothes", "shirt"],
+    description: ["Your starting shirt. It's comfortable. Surprisingly."],
+    spriteMale: "Textures/Clothes/Shirts/Shirt body.png",
+    spriteFemale: "Textures/Clothes/Shirts/Shirt body female.png",
+    spriteLHand: "Textures/Clothes/Shirts/Shirt left hand.png",
+    spriteRHand: "Textures/Clothes/Shirts/Shirt right hand.png"
+  },
+  openShoulderShirt: {
+    name: "Open shoulder shirt",
+    id: "openShoulderShirt",
+    tags: ["clothes", "shirt"],
+    description: ["A shirt with open shoulders. It's comfortable."],
+    spriteMale: "Textures/Clothes/Shirts/Open shoulder body.png",
+    spriteFemale: "Textures/Clothes/Shirts/Open shoulder body female 1.png",
+    spriteLHand: "Textures/Clothes/Shirts/Shirt left hand.png",
+    spriteRHand: "Textures/Clothes/Shirts/Shirt right hand.png"
+  },
+  openShoulderShirt1: {
+    name: "Open shoulder shirt",
+    id: "openShoulderShirt1",
+    tags: ["clothes", "shirt"],
+    description: ["A shirt with open shoulders. It's comfortable."],
+    spriteMale: "Textures/Clothes/Shirts/Open shoulder body.png",
+    spriteFemale: "Textures/Clothes/Shirts/Open shoulder body female 2.png",
+    spriteLHand: "Textures/Clothes/Shirts/Shirt left hand.png",
+    spriteRHand: "Textures/Clothes/Shirts/Shirt right hand.png"
+  },
+  whiteJeans: {
+    name: "White jeans",
+    id: "whiteJeans",
+    tags: ["clothes", "pants"],
+    description: ["A pair of white jeans."],
+    sprite: "Textures/Clothes/Pants/White jeans.png",
+  },
+  graySkirt: {
+    name: "Gray skirt",
+    id: "graySkirt",
+    tags: ["clothes", "pants", "skirts"],
+    description: ["A gray skirt."],
+    sprite: "Textures/Clothes/Pants/Gray skirt.png",
+  },
+  oldBoots: {
+    name: "Old boots",
+    id: "oldBoots",
+    tags: ["clothes", "shoes"],
+    description: ["A pair of old boots. You started the game with those.<br>They are not exactly comfortable."],
+    sprite: "Textures/Clothes/Boots/Boots.png",
   }
 }>>
 
@@ -2070,7 +2170,6 @@
 <<set $faints to 0>>
 <<set $cookedmeals to 0>>
 <<set $hoursWorked to 0>>
-<<set $hairColor to "None">>
 <<set $onFire to 0>>
 <<set $SP to 1>>
 <<set $poisoned1 to 0>>
@@ -2091,52 +2190,51 @@
 }>>
 
 <<set $player = {
-  body: "Textures/Body/Body Pale.png",
-  bodyRightArm: "Textures/Body/Right arm.png",
-  bodyLeftArm: "Textures/Body/Left arm.png",
-  eyes: "",
-  hairFront: "",
-  hairTop: "",
-  hairBack: "",
-  cosmeticHandR: "",
-  cosmeticHandL: "",
-  cosmeticHead: "",
-  cosmeticBodyR: "",
-  cosmeticBodyL: "",
-  cosmeticBody: "",
-  cosmeticLeggings: "",
-  cosmeticBoots: "",
-  helmet: "",
-  necklace: "",
-  cape: "",
-  chestplate: "",
-  chestplateLHand: "",
-  chestplateRHand: "",
-  leggings: "",
-  bootsArmor: "",
-  shirt: "",
-  shirtRHand: "",
-  shirtLHand: "",
-  pant: "",
-  boots: "",
-  rightHand: "",
-  leftHand: "",
-  finger1: "",
-  finger2: "",
-  finger3: "",
-  finger4: "",
-  finger5: "",
-  finger6: "",
-  finger7: "",
-  finger8: "",
-  finger9: "",
-  finger10: "",
-  hipR: "",
-  hipL: "",
-  back1: "",
-  back2: "",
-  lowerBack1: "",
-  lowerBack2: ""
+  body: {spriteMale: "Textures/Body/Body Pale.png", spriteFemale: "Textures/Body/Body Pale female.png", spriteRightArm: "Textures/Body/Right pale arm.png", spriteLeftArm: "Textures/Body/Left pale arm.png"},
+  eyes: {sprite: "Textures/Eyes/Dark Red eyes.png"},
+  hair: {front: "None", top: "None", back: "None"},
+  cosmeticHandR: "None",
+  cosmeticHandL: "None",
+  cosmeticHead: "None",
+  cosmeticBodyR: "None",
+  cosmeticBodyL: "None",
+  cosmeticBody: "None",
+  cosmeticLeggings: "None",
+  cosmeticBoots: "None",
+  helmet: "None",
+  necklace: "None",
+  cape: "None",
+  chestplate: "None",
+  leggings: "None",
+  bootsArmor: "None",
+  shirt: "None",
+  pant: "None",
+  boots: "None",
+  rightHand: "None",
+  leftHand: "None",
+  finger1: "None",
+  finger2: "None",
+  finger3: "None",
+  finger4: "None",
+  finger5: "None",
+  finger6: "None",
+  finger7: "None",
+  finger8: "None",
+  finger9: "None",
+  finger10: "None",
+  hipR: "None",
+  hipL: "None",
+  hipRmace: "None",
+  hipLmace: "None",
+  back1: "None",
+  back2: "None",
+  lowerBack1: "None",
+  lowerBack2: "None",
+  hipsSheath: "None",
+  backLeftSheathe: "None",
+  backRightSheathe: "None",
+  lowerBackLeftSheathe: "None",
+  lowerBackRightSheathe: "None"
 }>>
 
 <<set $inventory = {
